@@ -1,78 +1,57 @@
-/* Structure générale */
-body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    color: #333;
+:root {
+    /* Light Mode Colors */
+    --color-background: white;
+    --color-primary: #EDBA40; /* Orange-jaune clair */
+    --color-secondary: #E28C33; /* Orange */
+    --color-accent: #E0652B; /* Orange un peu rouge */
+    --color-text: #260E03; /* Noir foncé pour le texte */
+  
+    /* Dark Mode Colors */
+    --color-background-dark: #030725; /* Bleu très foncé */
+    --color-primary-dark: #E9B5EF; /* Rose pastel */
+    --color-secondary-dark: #a885e1; /* Violet clair */
+    --color-accent-dark: #9BA5F6; /* Bleu ciel */
+    --color-text-dark: white; /* Blanc pour le texte */
+  
+    /* Other Variables */
+    --transition-duration: 0.3s;
+    --box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   }
   
-  .hidden {
-    display: none;
+  body {
+    background-color: var(--color-background);
+    color: var(--color-text);
+    transition: background-color var(--transition-duration), color var(--transition-duration);
   }
   
-  header, footer {
-    background: #333;
-    color: #fff;
-    padding: 10px;
+  .dark-theme {
+    background-color: var(--color-background-dark);
+    color: var(--color-text-dark);
   }
   
-  /* Menu burger */
-  #burger-menu {
-    cursor: pointer;
-  }
-  
-  /* Animations */
-  .scroll-indicator {
-    animation: bounce 1s infinite;
-  }
-  
-  /* Intro video */
-  #intro {
-    position: relative;
-    height: 100vh;
-  }
-  
-  #intro video {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-  }
-  
-  /* Arbre de compétences */
-  #skill-tree {
-    /* Styles d'arbre de compétences */
-  }
-  
-  /* Portfolio cartes */
+  /* Card styles */
   .card {
-    width: 200px;
-    border: 1px solid #ccc;
-    transition: transform 0.3s;
+    background-color: var(--color-primary);
+    transition: transform var(--transition-duration), box-shadow var(--transition-duration);
   }
   
+  /* Hover effects */
   .card:hover {
     transform: translateY(-10px);
+    box-shadow: var(--box-shadow);
   }
   
-  /* Projets en barre rapide */
-  .quickbar {
-    display: flex;
-    gap: 10px;
+  /* Skills tree */
+  .skill-icon {
+    opacity: 0.2;
+    transition: opacity var(--transition-duration);
   }
   
-  /* Effet de texte arc-en-ciel */
-  .rainbow-text {
-    background-image: linear-gradient(90deg, #ff0040, #ff9000, #ff0, #0f0, #00f, #9000ff);
-    -webkit-background-clip: text;
-    color: transparent;
-    animation: rainbow-text-animation 5s infinite;
+  .skill-icon.highlighted {
+    opacity: 1;
   }
   
-  @keyframes rainbow-text-animation {
-    0% { background-position: 0%; }
-    100% { background-position: 100%; }
-  }
-
+  /* Puff effect */
   .puff {
     position: absolute;
     width: 50px;
@@ -87,3 +66,23 @@ body {
     0% { transform: scale(0.5); opacity: 1; }
     100% { transform: scale(2); opacity: 0; }
   }
+  
+  /* Additional styles for the dark theme */
+  .dark-theme .card {
+    background-color: var(--color-secondary-dark);
+  }
+  
+  .dark-theme .skill-icon {
+    opacity: 0.2; /* Default opacity for icons in dark theme */
+  }
+  
+  /* Adjustments for tooltip, quickbar, etc. can also be included here */
+  .tooltip {
+    position: absolute;
+    background: var(--color-background);
+    color: var(--color-text);
+    padding: 5px 10px;
+    border-radius: 5px;
+    box-shadow: var(--box-shadow);
+  }
+  
