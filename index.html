@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfolio</title>
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+  <!-- Loader -->
+  <div id="loader">
+    <h2>Chargement...</h2>
+  </div>
+
+  <!-- Header avec Menu Burger et Logo -->
+  <header>
+    <div id="logo">MonLogo</div>
+    <nav>
+      <div id="burger-menu">&#9776;</div>
+      <ul id="nav-links" class="hidden">
+        <li><a href="#intro">Accueil</a></li>
+        <li><a href="#presentation">Présentation</a></li>
+        <li><a href="#competences">Compétences</a></li>
+        <li><a href="#portfolio">Portfolio</a></li>
+        <li><a href="#projets">Projets</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Introduction avec vidéo -->
+  <section id="intro">
+    <video autoplay muted loop id="intro-video">
+      <source src="intro.mp4" type="video/mp4">
+    </video>
+    <div class="scroll-indicator">▼</div>
+  </section>
+
+  <!-- Présentation avec CV, photo, réseaux sociaux -->
+  <section id="presentation">
+    <h2>À propos de moi</h2>
+    <div class="content">
+      <img src="photo.jpg" alt="Photo de profil">
+      <div id="cv">
+        <p>Mon CV...</p>
+        <p>Compétences principales, réseaux sociaux...</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Compétences sous forme d'arbre -->
+  <section id="competences">
+    <h2>Compétences</h2>
+    <div id="skill-tree">
+      <!-- Arbre de compétences, à compléter avec des éléments spécifiques -->
+    </div>
+  </section>
+
+  <!-- Portfolio sous forme de cartes -->
+  <section id="portfolio">
+    <h2>Portfolio</h2>
+    <div class="card-grid">
+      <!-- Exemple de carte -->
+      <div class="card" data-category="dev front">
+        <img src="projet1.jpg" alt="Projet 1">
+        <h3>Projet 1</h3>
+      </div>
+      <!-- Autres cartes -->
+    </div>
+  </section>
+
+  <!-- Barre d'actions rapides pour les projets -->
+  <section id="projets">
+    <h2>Projets</h2>
+    <div class="quickbar">
+      <!-- Exemples de projets dans la barre d'action -->
+      <div class="quickbar-item" data-tooltip="Projet 1">
+        <img src="project1-icon.svg" alt="Projet 1">
+      </div>
+      <!-- Autres projets -->
+    </div>
+    <div id="project-details">
+      <!-- Détails dynamiques des projets apparaissent ici -->
+    </div>
+  </section>
+
+  <!-- Formulaire de contact façon "lettre" -->
+  <section id="contact">
+    <h2>Contactez-moi</h2>
+    <form id="contact-form">
+      <label for="name">Nom :</label>
+      <input type="text" id="name" name="name">
+      <label for="email">Email :</label>
+      <input type="email" id="email" name="email">
+      <label for="message">Message :</label>
+      <textarea id="message" name="message"></textarea>
+      <button type="submit">Envoyer</button>
+    </form>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>Retrouvez-moi sur :</p>
+    <!-- Icônes de réseaux sociaux ici -->
+  </footer>
+
+  <!-- JavaScript pour les effets et interactions -->
+  <script src="assets/js/main.js"></script>
+</body>
+</html>
