@@ -101,4 +101,24 @@ document.addEventListener("DOMContentLoaded", function() {
       });
     });
   });
+
+  function toggleTheme() {
+    document.body.classList.toggle("dark-theme");
+  
+    // Enregistrer la préférence de thème dans le localStorage
+    if (document.body.classList.contains("dark-theme")) {
+      localStorage.setItem("theme", "dark");
+    } else {
+      localStorage.setItem("theme", "light");
+    }
+  }
+  
+  // Appliquer le thème sauvegardé lorsque la page est chargée
+  window.addEventListener("DOMContentLoaded", () => {
+    const savedTheme = localStorage.getItem("theme");
+    if (savedTheme === "dark") {
+      document.body.classList.add("dark-theme");
+    }
+  });
+  
   
