@@ -18,6 +18,20 @@
     --box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   }
 
+  /* Styles pour le loader */
+  #loader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--color-background);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 10; /* Pour s'assurer qu'il est au-dessus de tous les autres éléments */
+  }
+
 /* Réinitialisation de marges et paddings */
 * {
   margin: 0;
@@ -44,30 +58,93 @@ header video {
   object-fit: cover;
 }
 
-/* Navigation */
-nav {
+/* Conteneur de vidéos */
+.video-container {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+}
+
+/* Les deux vidéos occuperont toute la taille du conteneur */
+.video-container video {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 1rem;
-  background: var(--color-secondary);
+  height: 100%;
+  object-fit: cover;
 }
 
-/* Menu burger */
+/* Style du menu burger */
 .menu-burger {
-  font-size: 1.5rem;
+  width: 50px;
+  height: 50px;
+  background-color: var(--color-primary);
   color: var(--color-text);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.5rem;
   cursor: pointer;
+  border-radius: 8px;
+  box-shadow: var(--box-shadow);
+  margin-right: 10px; /* Ajout d'espace entre le burger et le bouton */
 }
 
-/* Logo */
-.logo {
-  width: 50px;
-  height: auto;
+/* Conteneur pour le menu burger et le bouton de changement de thème */
+.nav-container {
+  display: flex;
+  justify-content: flex-start; /* Aligner les éléments à gauche */
+  align-items: center;
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  z-index: 20;
+  width: auto; /* Ajuste la largeur pour s'adapter à son contenu */
+  padding: 0 20px; /* Espacement intérieur */
+}
+
+/* Assurez-vous que le menu déroulant suive correctement le défilement */
+#nav-links {
+  display: none;
+  flex-direction: column;
+  position: absolute;
+  top: 70px; /* Position sous le menu burger */
+  left: 20px;
+  background-color: var(--color-secondary);
+  padding: 1rem;
+  border-radius: 8px;
+  box-shadow: var(--box-shadow);
+}
+
+/* Afficher le menu lorsque la classe 'show' est active */
+#nav-links.show {
+  display: flex;
+}
+
+/* Ajustement des liens dans le menu */
+#nav-links li {
+  margin: 0.5rem 0;
+}
+
+/* Positionnement du logo au quart de la largeur de l'écran */
+#logo {
+  position: absolute;
+  top: 50%; /* Centrer verticalement */
+  left: 25%; /* Positionner le logo à 25% de la largeur de l'écran */
+  transform: translateY(-50%); /* Centrer verticalement par rapport à son propre centre */
+  font-size: 2rem;
+  font-weight: bold;
+  color: var(--color-text);
+  z-index: 10;
+  opacity: 0; /* Le logo est caché au départ */
+  transition: opacity 1s ease; /* Ajout d'une transition pour le fondu */
+}
+
+/* Effet de fondu pour faire apparaître le logo */
+#logo.show {
+  opacity: 1; /* Afficher le logo en fondu */
 }
 
 /* Sections */
@@ -149,6 +226,29 @@ section {
   display: flex;
   flex-direction: column;
   gap: 1rem;
+}
+
+/* Style du bouton de changement de thème */
+button {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0; /* Pas de padding car on utilise l'icône */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Style de l'icône du bouton de changement de thème */
+button svg {
+  width: 24px;
+  height: 24px;
+  fill: var(--color-text); /* Utiliser la couleur du texte pour l'icône */
+}
+
+/* Enlevez les bordures sur hover */
+button:hover svg {
+  fill: var(--color-secondary); /* Changer la couleur de l'icône au survol */
 }
 
 #contact input, #contact textarea, #contact button {

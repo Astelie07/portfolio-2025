@@ -14,13 +14,36 @@
 
   <!-- Header avec Menu Burger et Logo -->
   <header>
-    <video autoplay muted loop>
-      <source src="your-video.mp4" type="video/mp4">
-      Votre navigateur ne supporte pas la vidéo HTML5.
-  </video>
-    <div id="logo">MonLogo</div>
-    <nav>
+    <div class="nav-container">
+      <!-- Menu burger -->
       <div class="menu-burger">☰</div>
+  
+      <!-- Bouton de changement de thème avec l'icône SVG -->
+      <!-- Le bouton pour changer de thème -->
+      <button id="theme-toggle" onclick="toggleTheme()">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+          <path d="M12 2c5.514 0 10 4.486 10 10s-4.486 10-10 10-10-4.486-10-10 4.486-10 10-10zm0-2c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm0 4c-4.418 0-8 3.582-8 8s3.582 8 8 8v-16z"/>
+        </svg>
+      </button>
+    </div>
+  
+    <!-- Conteneur de vidéos -->
+    <div class="video-container">
+      <video id="first-video" autoplay muted>
+        <source src="assets/video/light-opening.mp4" type="video/mp4">
+        Votre navigateur ne supporte pas la vidéo HTML5.
+      </video>
+  
+      <video id="second-video" autoplay muted loop style="display: none;">
+        <source src="assets/video/light-iddle.mp4" type="video/mp4">
+        Votre navigateur ne supporte pas la vidéo HTML5.
+      </video>
+    </div>
+  
+    <div id="logo">MonLogo</div>
+  
+    <!-- Menu de navigation -->
+    <nav>
       <ul id="nav-links" class="hidden">
         <li><a href="#intro">Accueil</a></li>
         <li><a href="#presentation">Présentation</a></li>
@@ -30,11 +53,8 @@
         <li><a href="#contact">Contact</a></li>
       </ul>
     </nav>
-
-    <button onclick="toggleTheme()">Changer de thème</button>
-
   </header>
-
+  
 
 <!-- Sections de contenu -->
 <section id="presentation">
