@@ -3,17 +3,14 @@
 function toggleTheme() {
   // Select the <link> element
   let theme = document.getElementById('theme');
-  let dark_video = document.getElementById('dark_video');
-  let light_video = document.getElementById('light_video');
+  let video = document.getElementById('second-video');
 
   if (theme.getAttribute('href') == 'assets/css/style.css') {
       theme.setAttribute('href', 'assets/css/dark-style.css');
-      light_video.style.display="none";
-      dark_video.style.display="block";
+      video.setAttribute('src', 'assets/video/dark-iddle.mp4');
   } else {
       theme.setAttribute('href', 'assets/css/style.css');
-      dark_video.style.display="none";
-      light_video.style.display="block";
+      video.setAttribute('src', 'assets/video/light-iddle.mp4');
   }
 }
 
@@ -79,20 +76,5 @@ document.addEventListener("DOMContentLoaded", function() {
       navLinks.classList.remove("show");
     });
   });
-
-// Vérifier si un thème a été sauvegardé et l'appliquer lors du chargement de la page
-window.addEventListener('load', () => {
-  const savedTheme = localStorage.getItem('theme');
-  const themeLink = document.getElementById('theme-link');
-  
-  // Appliquer le thème sauvegardé
-  if (savedTheme === 'dark') {
-    themeLink.setAttribute('href', 'assets/css/dark.css');
-  } else {
-    themeLink.setAttribute('href', 'assets/css/light.css');
-  }
-});
-
-
 
 });
