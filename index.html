@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Portfolio</title>
-  <link rel="stylesheet" href="assets/css/style.css">
+  <title>Portfolio</title>  
+  <link id="theme" rel="stylesheet" type="text/css" href="assets/css/style.css" />
 </head>
 <body>
   <!-- Loader -->
@@ -17,10 +17,7 @@
     <div class="nav-container">
       <!-- Menu burger -->
       <div class="menu-burger">☰</div>
-  
-      <!-- Bouton de changement de thème avec l'icône SVG -->
-      <!-- Le bouton pour changer de thème -->
-      <button id="theme-toggle" onclick="toggleTheme()">
+      <button onclick="toggleTheme()">
         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
           <path d="M12 2c5.514 0 10 4.486 10 10s-4.486 10-10 10-10-4.486-10-10 4.486-10 10-10zm0-2c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm0 4c-4.418 0-8 3.582-8 8s3.582 8 8 8v-16z"/>
         </svg>
@@ -29,13 +26,14 @@
   
     <!-- Conteneur de vidéos -->
     <div class="video-container">
-      <video id="first-video" autoplay muted>
+      <video id="first-video" muted>
         <source src="assets/video/light-opening.mp4" type="video/mp4">
         Votre navigateur ne supporte pas la vidéo HTML5.
       </video>
   
       <video id="second-video" autoplay muted loop style="display: none;">
-        <source src="assets/video/light-iddle.mp4" type="video/mp4">
+        <source src="assets/video/light-iddle.mp4" type="video/mp4" id="light_video">
+        <source src="assets/video/dark-iddle.mp4" type="video/mp4" style="display: none;" id="dark_video">
         Votre navigateur ne supporte pas la vidéo HTML5.
       </video>
     </div>
@@ -57,6 +55,7 @@
   
 
 <!-- Sections de contenu -->
+<div id="content">
 <section id="presentation">
     <h2>Présentation</h2>
     <p>Bienvenue sur ma page !</p>
@@ -98,6 +97,7 @@
   <p>Retrouvez-moi sur :</p>
   <p>&copy; 2025 HENRYON Astélie</p>
 </footer>
+</div>
 
   <!-- JavaScript pour les effets et interactions -->
   <script src="assets/js/main.js"></script>

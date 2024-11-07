@@ -1,15 +1,17 @@
-:root {
-    /* Light Mode Colors */
-    --color-background: white;
-    --color-primary: #EDBA40; /* Orange-jaune clair */
-    --color-secondary: #E28C33; /* Orange */
-    --color-accent: #E0652B; /* Orange un peu rouge */
-    --color-text: #260E03; /* Noir foncé pour le texte */
+:root {  
+    /* Dark Mode Colors */
+    --color-background: #030725; /* Bleu très foncé */
+    --color-primary: #E9B5EF; /* Rose pastel */
+    --color-secondary: #a885e1; /* Violet clair */
+    --color-accent: #9BA5F6; /* Bleu ciel */
+    --color-text: white; /* Blanc pour le texte */
   
     /* Other Variables */
     --transition-duration: 0.3s;
     --box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   }
+
+/* ------------------------------------------------DARK THEME----------------------------------------------*/
 
   /* Styles pour le loader */
   #loader {

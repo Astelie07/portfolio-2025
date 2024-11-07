@@ -1,14 +1,42 @@
-// Masquer le loader, afficher le contenu principal et lancer la première vidéo une fois la page chargée
-window.addEventListener("load", function() {
+/*------------------------------------DEBUT THEMES--------------------------------*/
+
+function toggleTheme() {
+  // Select the <link> element
+  let theme = document.getElementById('theme');
+  let dark_video = document.getElementById('dark_video');
+  let light_video = document.getElementById('light_video');
+
+  if (theme.getAttribute('href') == 'assets/css/style.css') {
+      theme.setAttribute('href', 'assets/css/dark-style.css');
+      light_video.style.display="none";
+      dark_video.style.display="block";
+  } else {
+      theme.setAttribute('href', 'assets/css/style.css');
+      dark_video.style.display="none";
+      light_video.style.display="block";
+  }
+}
+
+/*------------------------------------FIN THEMES--------------------------------*/
+
+document.addEventListener("DOMContentLoaded", function() {
   const loader = document.getElementById("loader");
   const content = document.getElementById("content");
   const firstVideo = document.getElementById("first-video");
   const secondVideo = document.getElementById("second-video");
   const logo = document.getElementById("logo");
+  
+  // Vérifier si l'élément content existe
+  if (!content) {
+    console.error("L'élément content n'a pas été trouvé.");
+    return;
+  }
 
-  // Masque le loader avec une transition en douceur
+  // Masquer le loader avec une transition en douceur
   loader.style.opacity = "1";
   loader.style.transition = "opacity 0.5s ease";
+
+  firstVideo.pause(); // S'assurer que la première vidéo est mise en pause au départ
 
   // Masquer le loader après la transition
   setTimeout(() => {
@@ -17,10 +45,11 @@ window.addEventListener("load", function() {
       loader.style.display = "none";
       content.style.display = "block";
 
-      // Démarre la première vidéo une fois le loader disparu
-      firstVideo.play();
-    }, 500); // Délai de 0.5s pour la transition
-  }, 500); // Commence la transition immédiatement
+        firstVideo.play().catch(error => {
+          console.error("Erreur lors de la lecture de la vidéo : ", error);
+        });
+    }, 500); // Transition du loader
+  }, 500); // Délai de 0.5s pour commencer la transition du loader
 
   // Quand la première vidéo est terminée, afficher la deuxième vidéo et faire apparaître le logo
   firstVideo.addEventListener("ended", function() {
@@ -30,48 +59,40 @@ window.addEventListener("load", function() {
 
     // Ajouter la classe "show" pour déclencher le fondu du logo
     logo.classList.add("show");
+
+    // Lancer la deuxième vidéo dès qu'elle est visible
+    secondVideo.play().catch(error => {
+      console.error("Erreur lors de la lecture de la deuxième vidéo : ", error);
+    });
   });
 
-  // Assurez-vous que la deuxième vidéo commence à jouer dès qu'elle est visible
-  secondVideo.play();
-});
+  // Menu burger
+  const burgerIcon = document.querySelector(".menu-burger");
+  const navLinks = document.getElementById("nav-links");
 
-// Cibler les éléments du DOM pour le menu burger
-const burgerIcon = document.querySelector(".menu-burger");
-const navLinks = document.getElementById("nav-links");
-
-// Basculer la classe "show" pour afficher ou masquer le menu
-burgerIcon.addEventListener("click", () => {
-  navLinks.classList.toggle("show");
-});
-
-// Fermer le menu lorsqu'un lien est cliqué
-navLinks.querySelectorAll("a").forEach(link => {
-  link.addEventListener("click", () => {
-    navLinks.classList.remove("show");
+  burgerIcon.addEventListener("click", () => {
+    navLinks.classList.toggle("show");
   });
-});
 
-// Fonction pour changer le thème
-function toggleTheme() {
-  // Récupérer le body
-  const body = document.body;
+  navLinks.querySelectorAll("a").forEach(link => {
+    link.addEventListener("click", () => {
+      navLinks.classList.remove("show");
+    });
+  });
+
+// Vérifier si un thème a été sauvegardé et l'appliquer lors du chargement de la page
+window.addEventListener('load', () => {
+  const savedTheme = localStorage.getItem('theme');
+  const themeLink = document.getElementById('theme-link');
   
-  // Basculer entre le mode clair et sombre
-  body.classList.toggle("dark-mode");
-
-  // Sauvegarder l'état du thème dans le localStorage pour qu'il persiste lors du rechargement de la page
-  if (body.classList.contains("dark-mode")) {
-    localStorage.setItem("theme", "dark");
+  // Appliquer le thème sauvegardé
+  if (savedTheme === 'dark') {
+    themeLink.setAttribute('href', 'assets/css/dark.css');
   } else {
-    localStorage.setItem("theme", "light");
+    themeLink.setAttribute('href', 'assets/css/light.css');
   }
-}
+});
 
-// Vérifier si un thème a été sauvegardé et l'appliquer
-window.addEventListener("load", () => {
-  const savedTheme = localStorage.getItem("theme");
-  if (savedTheme === "dark") {
-    document.body.classList.add("dark-mode");
-  }
+
+
 });
