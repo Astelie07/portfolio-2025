@@ -11,7 +11,7 @@
     --box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   }
 
-  /* Styles pour le loader */
+  /* -------------------------------------------------- LOADER */
   #loader_div {
     display: flex;
     align-items: center;
@@ -43,16 +43,7 @@
   height: 100%;
   overflow: hidden;
   box-sizing: border-box;
-  animation: animloader 6s linear infinite;
-  }
-
-  @keyframes animloader {
-  0% {
-      height: 100%;
-  }
-  100% {
-      height: 0%;
-  }
+  transition: width 0.2s ease;
   }
 
   .cat_paw {
@@ -91,7 +82,8 @@
       border-radius: 150px ;
   }
 
-  /* Réinitialisation de marges et paddings */
+/* ------------------------------FIN LOADER--------------------------*/
+
   * {
     margin: 0;
     padding: 0;
@@ -105,7 +97,7 @@
     overflow-x: hidden;
   }
 
-  /* Header avec vidéo en plein écran */
+  /* -------------------------------------------------------------- HEADER */
   header {
     width: 100%;
     height: 100vh;
@@ -118,15 +110,13 @@
     object-fit: cover;
   }
 
-  /* Conteneur de vidéos */
+  /* --------------------------------------- Vidéos */
   .video-container {
     position: relative;
     width: 100%;
     height: 100vh;
     overflow: hidden;
   }
-
-  /* Les deux vidéos occuperont toute la taille du conteneur */
   .video-container video {
     position: absolute;
     top: 0;
