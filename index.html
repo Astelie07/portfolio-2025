@@ -8,11 +8,14 @@
 </head>
 <body>
   <!-- Loader -->
-  <div id="loader">
-    <h2>Chargement...</h2>
+  <div id="loader_div">
+    <img src="assets/img/cat.gif" alt="petit gif dun chat qui dort" style="width: 20%;" id="catgif"/>
+    <span class="loader">Chargement...</span>
+    <div class="cat_paw"></div>
   </div>
 
   <!-- Header avec Menu Burger et Logo -->
+  <div id="content" style="display: none;">
   <header>
     <div class="nav-container">
       <!-- Menu burger -->
@@ -37,7 +40,9 @@
       </video>
     </div>
   
-    <div id="logo">MonLogo</div>
+    <div id="logo" style="position: absolute;top: 50%;left: 10px;transform: translateY(-50%);font-size: 2rem;font-weight: bold;z-index: 10;">
+      <img src="assets/img/titre_.png" id="light-logo" style="width: 50%;"/>
+    </div>
   
     <!-- Menu de navigation -->
     <nav>
@@ -54,7 +59,7 @@
   
 
 <!-- Sections de contenu -->
-<div id="content">
+
 <section id="presentation">
     <h2>Présentation</h2>
     <p>Bienvenue sur ma page !</p>

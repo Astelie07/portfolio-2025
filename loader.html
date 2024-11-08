@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loader</title>
+    <style>
+        body {
+            background-color: #FCF8DA;
+        }
+
+        #loader_div {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            height: 100vh; /* Utilise toute la hauteur de la fenêtre */
+        }
+
+       .loader {
+        font-size: 48px;
+        font-family: Arial, Helvetica, sans-serif;
+        font-weight: bold;
+        display: inline-block;
+        -webkit-text-stroke-width: 1px;
+        -webkit-text-stroke-color: #E0652B;
+        color: #E0652B;
+        letter-spacing: 2px;
+        position: relative;
+        box-sizing: border-box;
+        }
+
+        .loader::after {
+        content: 'Chargement...';
+        position: absolute;
+        left: 0;
+        top: 0;
+        color: #FCF8DA;
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+        box-sizing: border-box;
+        animation: animloader 6s linear infinite;
+        }
+
+        @keyframes animloader {
+        0% {
+            height: 100%;
+        }
+        100% {
+            height: 0%;
+        }
+        }
+
+        .cat_paw {
+            width: calc(6 * 30px);
+            height: 50px;
+            display: flex;
+            color: #E28C33;
+            filter: drop-shadow(30px 25px 0 currentColor) drop-shadow(60px 0 0 currentColor) drop-shadow(120px 0 0 currentColor);
+            clip-path: inset(0 100% 0 0);
+            animation: l12 2s infinite steps(7);
+            
+            /* Positionnement en bas à droite */
+            position: fixed;
+            bottom: 0;
+            right: 0;
+            margin: 1rem; /* Optionnel : espace par rapport au bord */
+        }
+        .cat_paw:before {
+            content: "";
+            width: 30px;
+            height: 25px;
+            --c: no-repeat radial-gradient(farthest-side, currentColor 92%, #0000);
+            background: 
+                var(--c) left / 70% 70%,
+                var(--c) right / 20% 20%,
+                var(--c) top 0 right 15% / 20% 20%,
+                var(--c) bottom 0 right 15% / 20% 20%;
+        }
+
+        @keyframes l12 {
+            100% { clip-path: inset(0 -30px 0 0); }
+        }
+
+        #catgif{
+            background-color: #EDBA40;
+            border-radius: 150px ;
+        }
+      
+    </style>
+</head>
+<body>
+    <div id="loader_div">
+    <img src="assets/img/cat.gif" alt="petit gif dun chat qui dort" style="width: 20%;" id="catgif"/>
+    <span class="loader">Chargement...</span>
+    <div class="cat_paw"></div>
+    </div>
+</body>
+</html>

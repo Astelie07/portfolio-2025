@@ -1,6 +1,6 @@
 :root {
     /* Light Mode Colors */
-    --color-background: white;
+    --color-background: #FCF8DA;
     --color-primary: #EDBA40; /* Orange-jaune clair */
     --color-secondary: #E28C33; /* Orange */
     --color-accent: #E0652B; /* Orange un peu rouge */
@@ -12,260 +12,319 @@
   }
 
   /* Styles pour le loader */
-  #loader {
-    position: fixed;
+  #loader_div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    height: 100vh; /* Utilise toute la hauteur de la fenêtre */
+  }
+
+  .loader {
+    font-size: 48px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    display: inline-block;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: var(--color-accent);
+    color: var(--color-accent);
+    letter-spacing: 2px;
+    position: relative;
+    box-sizing: border-box;
+  }
+
+  .loader::after {
+  content: 'Chargement...';
+  position: absolute;
+  left: 0;
+  top: 0;
+  color: var(--color-background);
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  box-sizing: border-box;
+  animation: animloader 6s linear infinite;
+  }
+
+  @keyframes animloader {
+  0% {
+      height: 100%;
+  }
+  100% {
+      height: 0%;
+  }
+  }
+
+  .cat_paw {
+      width: calc(6 * 30px);
+      height: 50px;
+      display: flex;
+      color: var(--color-accent);
+      filter: drop-shadow(30px 25px 0 currentColor) drop-shadow(60px 0 0 currentColor) drop-shadow(120px 0 0 currentColor);
+      clip-path: inset(0 100% 0 0);
+      animation: l12 2s infinite steps(7);
+      
+      /* Positionnement en bas à droite */
+      position: fixed;
+      bottom: 0;
+      right: 0;
+      margin: 1rem; /* Optionnel : espace par rapport au bord */
+  }
+  .cat_paw:before {
+      content: "";
+      width: 30px;
+      height: 25px;
+      --c: no-repeat radial-gradient(farthest-side, currentColor 92%, #0000);
+      background: 
+          var(--c) left / 70% 70%,
+          var(--c) right / 20% 20%,
+          var(--c) top 0 right 15% / 20% 20%,
+          var(--c) bottom 0 right 15% / 20% 20%;
+  }
+
+  @keyframes l12 {
+      100% { clip-path: inset(0 -30px 0 0); }
+  }
+
+  #catgif{
+      background-color: var(--color-primary);
+      border-radius: 150px ;
+  }
+
+  /* Réinitialisation de marges et paddings */
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  body {
+    font-family: Arial, sans-serif;
+    color: var(--color-text);
+    background-color: var(--color-background);
+    overflow-x: hidden;
+  }
+
+  /* Header avec vidéo en plein écran */
+  header {
+    width: 100%;
+    height: 100vh;
+    position: relative;
+  }
+
+  header video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  /* Conteneur de vidéos */
+  .video-container {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+  }
+
+  /* Les deux vidéos occuperont toute la taille du conteneur */
+  .video-container video {
+    position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: var(--color-background);
+    object-fit: cover;
+  }
+
+  /* Style du menu burger */
+  .menu-burger {
+    width: 50px;
+    height: 50px;
+    background-color: var(--color-primary);
+    color: var(--color-text);
     display: flex;
     justify-content: center;
     align-items: center;
-    z-index: 10; /* Pour s'assurer qu'il est au-dessus de tous les autres éléments */
+    font-size: 1.5rem;
+    cursor: pointer;
+    border-radius: 8px;
+    box-shadow: var(--box-shadow);
+    margin-right: 10px; /* Ajout d'espace entre le burger et le bouton */
   }
 
-/* Réinitialisation de marges et paddings */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
+  /* Conteneur pour le menu burger et le bouton de changement de thème */
+  .nav-container {
+    display: flex;
+    justify-content: flex-start; /* Aligner les éléments à gauche */
+    align-items: center;
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    z-index: 20;
+    width: auto; /* Ajuste la largeur pour s'adapter à son contenu */
+    padding: 0 20px; /* Espacement intérieur */
+  }
 
-body {
-  font-family: Arial, sans-serif;
-  color: var(--color-text);
-  overflow-x: hidden;
-}
+  /* Assurez-vous que le menu déroulant suive correctement le défilement */
+  #nav-links {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 70px; /* Position sous le menu burger */
+    left: 20px;
+    background-color: var(--color-secondary);
+    padding: 1rem;
+    border-radius: 8px;
+    box-shadow: var(--box-shadow);
+  }
 
-/* Header avec vidéo en plein écran */
-header {
-  width: 100%;
-  height: 100vh;
-  position: relative;
-}
+  /* Afficher le menu lorsque la classe 'show' est active */
+  #nav-links.show {
+    display: flex;
+  }
 
-header video {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
+  /* Ajustement des liens dans le menu */
+  #nav-links li {
+    margin: 0.5rem 0;
+  }
 
-/* Conteneur de vidéos */
-.video-container {
-  position: relative;
-  width: 100%;
-  height: 100vh;
-  overflow: hidden;
-}
+  /* Positionnement du logo au quart de la largeur de l'écran */
+  #logo {
+    opacity: 0; /* Le logo est caché au départ */
+    transition: opacity 1s ease; /* Ajout d'une transition pour le fondu */
+  }
 
-/* Les deux vidéos occuperont toute la taille du conteneur */
-.video-container video {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
+  /* Effet de fondu pour faire apparaître le logo */
+  #logo.show {
+    opacity: 1; /* Afficher le logo en fondu */
+  }
 
-/* Style du menu burger */
-.menu-burger {
-  width: 50px;
-  height: 50px;
-  background-color: var(--color-primary);
-  color: var(--color-text);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 1.5rem;
-  cursor: pointer;
-  border-radius: 8px;
-  box-shadow: var(--box-shadow);
-  margin-right: 10px; /* Ajout d'espace entre le burger et le bouton */
-}
+  /* Sections */
+  section {
+    width: 100%;
+    padding: 2rem;
+    text-align: center;
+    border-bottom: 1px solid var(--border-color);
+  }
 
-/* Conteneur pour le menu burger et le bouton de changement de thème */
-.nav-container {
-  display: flex;
-  justify-content: flex-start; /* Aligner les éléments à gauche */
-  align-items: center;
-  position: fixed;
-  top: 20px;
-  left: 20px;
-  z-index: 20;
-  width: auto; /* Ajuste la largeur pour s'adapter à son contenu */
-  padding: 0 20px; /* Espacement intérieur */
-}
+  #presentation {
+    background: var(--color-primary);
+  }
 
-/* Assurez-vous que le menu déroulant suive correctement le défilement */
-#nav-links {
-  display: none;
-  flex-direction: column;
-  position: absolute;
-  top: 70px; /* Position sous le menu burger */
-  left: 20px;
-  background-color: var(--color-secondary);
-  padding: 1rem;
-  border-radius: 8px;
-  box-shadow: var(--box-shadow);
-}
+  #competence {
+    background: var(--color-primary);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+    position: relative;
+  }
 
-/* Afficher le menu lorsque la classe 'show' est active */
-#nav-links.show {
-  display: flex;
-}
+  .icons-container {
+    display: flex;
+    gap: 2rem;
+    position: relative;
+  }
 
-/* Ajustement des liens dans le menu */
-#nav-links li {
-  margin: 0.5rem 0;
-}
+  .icon {
+    width: 60px;
+    height: 60px;
+    background-color: var(--color-accent);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--color-text);
+    font-size: 1.5rem;
+    position: relative;
+  }
 
-/* Positionnement du logo au quart de la largeur de l'écran */
-#logo {
-  position: absolute;
-  top: 50%; /* Centrer verticalement */
-  left: 25%; /* Positionner le logo à 25% de la largeur de l'écran */
-  transform: translateY(-50%); /* Centrer verticalement par rapport à son propre centre */
-  font-size: 2rem;
-  font-weight: bold;
-  color: var(--color-text);
-  z-index: 10;
-  opacity: 0; /* Le logo est caché au départ */
-  transition: opacity 1s ease; /* Ajout d'une transition pour le fondu */
-}
+  /* Traits de connexion en CSS */
+  .icon::before {
+    content: "";
+    position: absolute;
+    width: 80px;
+    height: 2px;
+    background: var(--color-text);
+    top: 50%;
+    left: 100%;
+    transform: translateY(-50%);
+  }
+  .icon:last-child::before {
+    display: none;
+  }
 
-/* Effet de fondu pour faire apparaître le logo */
-#logo.show {
-  opacity: 1; /* Afficher le logo en fondu */
-}
+  #portfolio {
+    background: var(--color-primary);
+  }
 
-/* Sections */
-section {
-  width: 100%;
-  padding: 2rem;
-  text-align: center;
-  border-bottom: 1px solid var(--border-color);
-}
+  #projet {
+    background: var(--color-primary);
+  }
 
-#presentation {
-  background: var(--color-primary);
-}
+  /* Section Contact avec formulaire */
+  #contact {
+    background: var(--color-primary);
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
 
-#competence {
-  background: var(--color-primary);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding-top: 4rem;
-  padding-bottom: 4rem;
-  position: relative;
-}
+  #contact form {
+    max-width: 500px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
 
-.icons-container {
-  display: flex;
-  gap: 2rem;
-  position: relative;
-}
+  /* Style du bouton de changement de thème */
+  button {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0; /* Pas de padding car on utilise l'icône */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
 
-.icon {
-  width: 60px;
-  height: 60px;
-  background-color: var(--color-accent);
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: var(--color-text);
-  font-size: 1.5rem;
-  position: relative;
-}
+  /* Style de l'icône du bouton de changement de thème */
+  button svg {
+    width: 24px;
+    height: 24px;
+    fill: var(--color-text); /* Utiliser la couleur du texte pour l'icône */
+  }
 
-/* Traits de connexion en CSS */
-.icon::before {
-  content: "";
-  position: absolute;
-  width: 80px;
-  height: 2px;
-  background: var(--color-text);
-  top: 50%;
-  left: 100%;
-  transform: translateY(-50%);
-}
-.icon:last-child::before {
-  display: none;
-}
+  /* Enlevez les bordures sur hover */
+  button:hover svg {
+    fill: var(--color-secondary); /* Changer la couleur de l'icône au survol */
+  }
 
-#portfolio {
-  background: var(--color-primary);
-}
+  #contact input, #contact textarea, #contact button {
+    padding: 0.8rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+  }
 
-#projet {
-  background: var(--color-primary);
-}
+  #contact button {
+    background-color: var(--color-secondary);
+    color: var(--color-text);
+    cursor: pointer;
+  }
 
-/* Section Contact avec formulaire */
-#contact {
-  background: var(--color-primary);
-  padding: 2rem;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
+  #contact button:hover {
+    background-color: var(--color-accent);
+  }
 
-#contact form {
-  max-width: 500px;
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-}
-
-/* Style du bouton de changement de thème */
-button {
-  background-color: transparent;
-  border: none;
-  cursor: pointer;
-  padding: 0; /* Pas de padding car on utilise l'icône */
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-/* Style de l'icône du bouton de changement de thème */
-button svg {
-  width: 24px;
-  height: 24px;
-  fill: var(--color-text); /* Utiliser la couleur du texte pour l'icône */
-}
-
-/* Enlevez les bordures sur hover */
-button:hover svg {
-  fill: var(--color-secondary); /* Changer la couleur de l'icône au survol */
-}
-
-#contact input, #contact textarea, #contact button {
-  padding: 0.8rem;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  font-size: 1rem;
-}
-
-#contact button {
-  background-color: var(--color-secondary);
-  color: var(--color-text);
-  cursor: pointer;
-}
-
-#contact button:hover {
-  background-color: var(--color-accent);
-}
-
-/* Footer */
-footer {
-  width: 100%;
-  padding: 1rem;
-  text-align: center;
-  background: var(--color-secondary);
-  color: var(--color-text);
-}
+  /* Footer */
+  footer {
+    width: 100%;
+    padding: 1rem;
+    text-align: center;
+    background: var(--color-secondary);
+    color: var(--color-text);
+  }

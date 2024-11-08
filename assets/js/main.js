@@ -4,20 +4,23 @@ function toggleTheme() {
   // Select the <link> element
   let theme = document.getElementById('theme');
   let video = document.getElementById('second-video');
+  let logo = document.getElementById('light-logo');
 
   if (theme.getAttribute('href') == 'assets/css/style.css') {
       theme.setAttribute('href', 'assets/css/dark-style.css');
       video.setAttribute('src', 'assets/video/dark-iddle.mp4');
+      logo.setAttribute('src', 'assets/img/titre_dark.png');
   } else {
       theme.setAttribute('href', 'assets/css/style.css');
       video.setAttribute('src', 'assets/video/light-iddle.mp4');
+      logo.setAttribute('src', 'assets/img/titre_.png');
   }
 }
 
 /*------------------------------------FIN THEMES--------------------------------*/
 
 document.addEventListener("DOMContentLoaded", function() {
-  const loader = document.getElementById("loader");
+  const loader = document.getElementById("loader_div");
   const content = document.getElementById("content");
   const firstVideo = document.getElementById("first-video");
   const secondVideo = document.getElementById("second-video");
