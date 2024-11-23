@@ -282,7 +282,7 @@
   /* Footer */
   footer {
     width: 100%;
-    padding: 1rem;
+    padding: 0.2rem;
     text-align: center;
     background: var(--color-secondary);
     color: var(--color-text);
@@ -607,7 +607,7 @@
   
   .list-item {
     line-height: 4;
-    color: #aaa;
+    color: var(--color-background);
   }
   
   .contact-text {
@@ -617,15 +617,20 @@
   }
   
   .place {
-    margin-left: 62px;
+    margin-left: 35px;
   }
   
   .phone {
-    margin-left: 56px;
+    margin-left: 30px;
   }
   
   .gmail {
-    margin-left: 53px;
+    margin-left: 25px;
+  }
+
+  .gmail:hover {
+    margin-left: 25px;
+    -webkit-text-stroke: 0.2px var(--color-background);
   }
   
   .contact-text a {
@@ -651,7 +656,7 @@
   }
   
   .social-media-list li a {
-    color: var(--color-background);
+    color: var(--color-primary);
   }
   
   .social-media-list li {
@@ -662,8 +667,8 @@
     margin: 10px 3px;
     line-height: 60px;
     border-radius: 50%;
-    color: var(--color-background);
-    background-color: rgb(27,27,27);
+    color: var(--color-primary);
+    background-color: var(--color-text);
     cursor: pointer; 
     transition: all .2s ease-in-out;
   }
@@ -678,7 +683,7 @@
     line-height: 60px;
     border-radius: 50%;
     opacity: 0;
-    box-shadow: 0 0 0 1px var(--color-background);
+    box-shadow: 0 0 0 1px var(--color-primary);
     transition: all .2s ease-in-out;
   }
   
@@ -693,7 +698,7 @@
   }
   
   .social-media-list li:hover a {
-    color: #000;
+    color: var(--color-text);
   }
   
   .copyright {
@@ -704,7 +709,7 @@
   }
   
   hr {
-    border-color: rgba(255,255,255,.6);
+    border: solid 1px var(--color-primary);
   }
   
   /* Begin Media Queries*/
