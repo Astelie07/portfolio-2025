@@ -254,8 +254,6 @@
     background: var(--color-primary);
   }
 
- 
-
   /* Style du bouton de changement de thème */
   #theme {
     background-color: transparent;
@@ -282,7 +280,6 @@
   /* Footer */
   footer {
     width: 100%;
-    padding: 0.2rem;
     text-align: center;
     background: var(--color-secondary);
     color: var(--color-text);
@@ -554,43 +551,81 @@
   
   /* Left contact page */
   .form-horizontal {
-    /*float: left;*/
     max-width: 400px;
-    font-family: 'Lato';
     font-weight: 400;
   }
   
-  .form-control, 
-  textarea {
+  .form-control {
     max-width: 400px;
     background-color: var(--color-text);
     color: var(--color-background);
-    letter-spacing: 1px;
+  }
+
+  .form-group{
+    max-width: 400px;
+    min-width: 350px;
+    margin: 5px;
+  }
+
+  .form-group div input, .form-control{
+    max-width: 400px;
+    min-width: 350px;
+    border: none;
+    border-radius: 10px;
+    padding: 0.5rem;
   }
   
-  .send-button {
-    margin-top: 15px;
-    height: 34px;
-    width: 400px;
-    overflow: hidden;
-    transition: all .2s ease-in-out;
+  #submit {
+    margin: 10px auto auto auto;
+    text-align: center;
+    position: relative;
+    padding: 10px 25px;
+    width: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1rem;
+    border-radius: 15px;
+    border: 2px solid var(--color-background);
+    background: var(--color-accent);
+    color: var(--color-background);
+    cursor: pointer;
+    outline: none;
+    transition: 200ms;
+  }
+
+  #submit:hover{
+    color: var(--color-text);
+    border-color: var(--color-text);
+    background-color: var(--color-primary);
   }
   
-  .alt-send-button {
-    width: 400px;
-    height: 34px;
-    transition: all .2s ease-in-out;
+  #send-icon {
+    position: absolute;
+    color: transparent; /* To hide the check icon */
+    transition: 200ms;
+  }
+
+  #submit:focus {
+    color: transparent;
+    outline: none;
+    border: 2px solid transparent;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    padding: 25px 25px;
+    border-left: 2px solid var(--color-background);
+    animation: spin 2s 500ms forwards;
+  }
+
+  #submit:focus i {
+    animation: check 300ms 2300ms forwards;
   }
   
-  .send-text {
-    display: block;
-    margin-top: 10px;
-    font: 700 12px 'Lato', sans-serif;
-    letter-spacing: 2px;
-  }
-  
-  .alt-send-button:hover {
-    transform: translate3d(0px, -29px, 0px);
+  @keyframes check {
+    to {
+      color: var(--color-background);
+    }
   }
   
   /* Begin Right Contact Page */
