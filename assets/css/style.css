@@ -559,7 +559,6 @@
     background: linear-gradient(grey, lightgrey);
     width: 200px;  /* Taille par défaut */
     height: 200px;
-    /* position: absolute; */
     cursor: pointer;
     transition: transform 0.2s, box-shadow 0.3s ease-in-out;
   }
