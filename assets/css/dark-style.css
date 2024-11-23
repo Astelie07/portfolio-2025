@@ -5,6 +5,10 @@
     --color-secondary: #a885e1; /* Violet clair */
     --color-accent: #9BA5F6; /* Bleu ciel */
     --color-text: white; /* Blanc pour le texte */
+
+    --color1: #BABDF6;
+    --color2: #9BA5F6;
+    --color3: #E3CEF3;
   
     /* Other Variables */
     --transition-duration: 0.3s;
@@ -228,9 +232,6 @@ footer {
 /* <!-- --------------------------------  CARD  ------------------------------- --> */
 
 .card {
-  --color1: #BABDF6;
-  --color2: #9BA5F6;
-  --color3: #E3CEF3;
   width: 71.5vw;
   height: 100vw;
   
@@ -251,7 +252,7 @@ footer {
   transition: transform 0.5s ease, box-shadow 0.2s ease;
   will-change: transform, filter;
   
-  background-color: #030725;
+  background-color: #030725;                /* ------------------------------- BG A CHANGER ICI */
   background-image: var(--front);
   background-size: cover;
   background-repeat: no-repeat;
@@ -473,7 +474,6 @@ footer {
   text-align: center;
   margin: 0 auto;
   padding: 40px 0;
-  font: 300 60px 'Oswald', sans-serif;
   color: var(--color-background);
   text-transform: uppercase;
   letter-spacing: 6px;
@@ -586,7 +586,6 @@ footer {
 }
 
 .contact-text {
-  font: 300 18px 'Lato', sans-serif;
   letter-spacing: 1.9px;
   color: var(--color-text);
 }
@@ -677,7 +676,6 @@ footer {
 }
 
 .copyright {
-  font: 200 14px 'Oswald', sans-serif;
   color: var(--color-secondary);
   letter-spacing: 1px;
   text-align: center;

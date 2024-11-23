@@ -148,3 +148,58 @@ $cards
     e.target.elements.email.value = '';
     e.target.elements.message.value = '';
   });
+
+// -------------------------------------------------------------- PROJET --------------------------------------------------------
+
+$(document).ready(function () {
+  // Lorsque vous cliquez sur un hexagone
+  $('.clipped-border').on('click', function () {
+      var targetId = $(this).data('target'); // Récupérer l'ID de la description à afficher
+      var projectDiv = $('#projets'); // Sélectionner la div #projets avec jQuery
+      var targetDescription = $(targetId); // Trouver la description correspondante
+      var hexagonOffset = $(this).offset(); // Position de l'hexagone
+
+      // Si la description est déjà active, la fermer
+      if (targetDescription.hasClass('active')) {
+          targetDescription.removeClass('active');
+          // Réduire la taille de #projets à sa taille d'origine avec transition
+          projectDiv.css('height', 'auto');
+      } else {
+          // Fermer toutes les autres descriptions
+          $('.description').removeClass('active');
+          projectDiv.css('height', 'auto'); 
+
+          // Afficher la description correspondante avec la transition
+          targetDescription.addClass('active');
+
+          // Mettre à jour la position de la description sous l'hexagone
+          targetDescription.css({
+              top: hexagonOffset.top + $(this).outerHeight(), // Placer sous l'hexagone
+          });
+
+          // Calculer la nouvelle hauteur pour #projets, juste un peu plus grande que la description
+          var descriptionHeight = targetDescription.outerHeight(); // Hauteur de la description affichée
+          var padding = 40; // Un petit espace autour de la description
+          var newHeight = descriptionHeight + padding; // Calculer la nouvelle hauteur de #projets
+
+          // Ne pas étirer #projets au-delà de la hauteur nécessaire
+          var currentHeight = projectDiv.outerHeight();
+          if (newHeight > currentHeight) {
+              // Appliquer une transition fluide pour ajuster la hauteur de #projets
+              setTimeout(function() {
+                  projectDiv.css('height', newHeight + 'px'); // Ajuster la hauteur de #projets
+              }, 10); // Attendre un court instant avant de modifier la hauteur pour que la transition prenne effet
+          }
+      }
+  });
+
+  // Fermer toutes les descriptions si l'on clique en dehors
+  $(document).on('click', function (event) {
+      if (!$(event.target).closest('.clipped-border').length && !$(event.target).closest('.description').length) {
+          $('.description').removeClass('active');
+          $('#projets').css('height', 'auto'); // Réduire la taille de #projets à sa taille d'origine
+      }
+  });
+});
+
+

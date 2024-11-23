@@ -3,98 +3,207 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Loader</title>
+    <title>Dynamic Hexagon Gallery</title>
     <style>
-        body {
-            background-color: #FCF8DA;
+        :root {
+            --width: 200px;
+            --height: 200px;
         }
 
-        #loader_div {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            flex-direction: column;
-            height: 100vh; /* Utilise toute la hauteur de la fenêtre */
-        }
-
-       .loader {
-        font-size: 48px;
-        font-family: Arial, Helvetica, sans-serif;
-        font-weight: bold;
-        display: inline-block;
-        -webkit-text-stroke-width: 1px;
-        -webkit-text-stroke-color: #E0652B;
-        color: #E0652B;
-        letter-spacing: 2px;
-        position: relative;
-        box-sizing: border-box;
-        }
-
-        .loader::after {
-        content: 'Chargement...';
-        position: absolute;
-        left: 0;
-        top: 0;
-        color: #FCF8DA;
-        width: 100%;
-        height: 100%;
-        overflow: hidden;
-        box-sizing: border-box;
-        animation: animloader 6s linear infinite;
-        }
-
-        @keyframes animloader {
-        0% {
+        html, body {
+            background: radial-gradient(mistyrose, pink);
+            background-size: cover;
+            background-position: center;
             height: 100%;
-        }
-        100% {
-            height: 0%;
-        }
+            width: 100%;
+            margin: 0;
+            overflow: hidden;
+            transition: background 0.5s ease-in-out;
         }
 
-        .cat_paw {
-            width: calc(6 * 30px);
-            height: 50px;
-            display: flex;
-            color: #E28C33;
-            filter: drop-shadow(30px 25px 0 currentColor) drop-shadow(60px 0 0 currentColor) drop-shadow(120px 0 0 currentColor);
-            clip-path: inset(0 100% 0 0);
-            animation: l12 2s infinite steps(7);
-            
-            /* Positionnement en bas à droite */
+        .gallery {
+            position: relative;
+            height: 100%;
+            width: 100%;
+        }
+
+        .clipped-border {
+            -webkit-clip-path: polygon(50% 0%, 95% 25%, 95% 75%, 50% 100%, 5% 75%, 5% 25%);
+            clip-path: polygon(50% 0%, 95% 25%, 95% 75%, 50% 100%, 5% 75%, 5% 25%);
+            position: absolute;
+            cursor: pointer;
+            width: var(--width);
+            height: var(--height);
+            transition: transform 0.2s,
+        }
+
+        .clipped-border:hover {
+            transform: scale(1.2);
+            z-index: 10;
+        }
+
+        /* Unique border colors for each hexagon */
+        .clipped-border:nth-child(1) { top: 50px; left: 125px; }
+        .clipped-border:nth-child(2) { top: 200px; left: 275px; }
+        .clipped-border:nth-child(3) { top: 350px; left: 125px; }
+        .clipped-border:nth-child(4) { top: 500px; left: 275px; }
+        .clipped-border:nth-child(5) { top: 650px; left: 125px; }
+
+        .clipped-border img {
+            width: 100%;
+            height: 100%;
+            clip-path: inherit;
+        }
+
+        /* Description container styled with transition */
+        .description {
             position: fixed;
-            bottom: 0;
+            top: 0;
             right: 0;
-            margin: 1rem; /* Optionnel : espace par rapport au bord */
-        }
-        .cat_paw:before {
-            content: "";
-            width: 30px;
-            height: 25px;
-            --c: no-repeat radial-gradient(farthest-side, currentColor 92%, #0000);
-            background: 
-                var(--c) left / 70% 70%,
-                var(--c) right / 20% 20%,
-                var(--c) top 0 right 15% / 20% 20%,
-                var(--c) bottom 0 right 15% / 20% 20%;
+            height: 100%;
+            width: 66%; /* Takes two-thirds of the page */
+            padding: 30px;
+            background: rgba(255, 255, 255, 0.95);
+            border-left: 5px solid lightgray;
+            overflow-y: auto;
+            opacity: 0;
+            transform: translateX(100%);
+            transition: opacity 0.5s ease, transform 0.5s ease;
         }
 
-        @keyframes l12 {
-            100% { clip-path: inset(0 -30px 0 0); }
+        .description.active {
+            opacity: 1;
+            transform: translateX(0);
         }
 
-        #catgif{
-            background-color: #EDBA40;
-            border-radius: 150px ;
+        .description h1 {
+            margin-top: 0;
+            color: #333;
+            font-size: 36px;
         }
-      
+
+        .description img {
+            max-width: 100%;
+            height: auto;
+            margin: 20px 0;
+        }
+
+        .description p {
+            font-size: 18px;
+        }
+
+        .description button {
+            margin-top: 20px;
+            padding: 10px 20px;
+            background-color: #FF5733;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        .description button:hover {
+            background-color: #cc4629;
+        }
     </style>
 </head>
 <body>
-    <div id="loader_div">
-    <img src="assets/img/cat.gif" alt="petit gif dun chat qui dort" style="width: 20%;" id="catgif"/>
-    <span class="loader">Chargement...</span>
-    <div class="cat_paw"></div>
+    <div class="gallery">
+        <div class="clipped-border" data-target="#description-1" data-bg="https://proxy.duckduckgo.com/iu/?u=http%3A%2F%2Fwww.gettyimages.com.au%2Fgi-resources%2Fimages%2Ffrontdoor%2Fcreative%2FPanoramicImagesRM%2FFD_image.jpg&f=1">
+            <img src="https://proxy.duckduckgo.com/iu/?u=http%3A%2F%2Fwww.gettyimages.com.au%2Fgi-resources%2Fimages%2Ffrontdoor%2Fcreative%2FPanoramicImagesRM%2FFD_image.jpg&f=1" alt="Image 1">
+        </div>
+        <div class="clipped-border" data-target="#description-2" data-bg="https://proxy.duckduckgo.com/iu/?u=http%3A%2F%2Fbpucette.b.p.pic.centerblog.net%2Ffv86ll9r.jpg&f=1">
+            <img src="https://proxy.duckduckgo.com/iu/?u=http%3A%2F%2Fbpucette.b.p.pic.centerblog.net%2Ffv86ll9r.jpg&f=1" alt="Image 2">
+        </div>
+        <div class="clipped-border" data-target="#description-3" data-bg="https://proxy.duckduckgo.com/iu/?u=https%3A%2F%2Fimagejournal.org%2Fwp-content%2Fuploads%2Fbb-plugin%2Fcache%2F23466317216_b99485ba14_o-panorama.jpg&f=1">
+            <img src="https://proxy.duckduckgo.com/iu/?u=https%3A%2F%2Fimagejournal.org%2Fwp-content%2Fuploads%2Fbb-plugin%2Fcache%2F23466317216_b99485ba14_o-panorama.jpg&f=1" alt="Image 3">
+        </div>
+        <div class="clipped-border" data-target="#description-4" data-bg="https://proxy.duckduckgo.com/iu/?u=http%3A%2F%2Fwww.lokeshdhakar.com%2Fprojects%2Flightbox2%2Fimages%2Fimage-4.jpg&f=1">
+            <img src="https://proxy.duckduckgo.com/iu/?u=http%3A%2F%2Fwww.lokeshdhakar.com%2Fprojects%2Flightbox2%2Fimages%2Fimage-4.jpg&f=1" alt="Image 4">
+        </div>
+        <div class="clipped-border" data-target="#description-5" data-bg="https://images.pexels.com/photos/932638/pexels-photo-932638.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260">
+            <img src="https://images.pexels.com/photos/932638/pexels-photo-932638.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" alt="Image 5">
+        </div>
     </div>
+
+    <!-- Description panels -->
+    <div class="description" id="description-1">
+        <h1>Nature's Beauty</h1>
+        <img src="https://proxy.duckduckgo.com/iu/?u=http%3A%2F%2Fwww.gettyimages.com.au%2Fgi-resources%2Fimages%2Ffrontdoor%2Fcreative%2FPanoramicImagesRM%2FFD_image.jpg&f=1" alt="Image 1">
+        <p>This page showcases the beauty of nature with its scenic landscapes. Explore the details and immerse yourself in the tranquility of this breathtaking view.</p>
+        <button onclick="closeDescription()">Close</button>
+    </div>
+
+    <div class="description" id="description-2">
+        <h1>Light and Creativity</h1>
+        <img src="https://proxy.duckduckgo.com/iu/?u=http%3A%2F%2Fbpucette.b.p.pic.centerblog.net%2Ffv86ll9r.jpg&f=1" alt="Image 2">
+        <p>The play of light and shadows in this image creates a sense of artistic expression. The colors blend to form a creative masterpiece.</p>
+        <button onclick="closeDescription()">Close</button>
+    </div>
+
+    <div class="description" id="description-3">
+        <h1>Panoramic View</h1>
+        <img src="https://proxy.duckduckgo.com/iu/?u=https%3A%2F%2Fimagejournal.org%2Fwp-content%2Fuploads%2Fbb-plugin%2Fcache%2F23466317216_b99485ba14_o-panorama.jpg&f=1" alt="Image 3">
+        <p>This panoramic shot highlights the beauty of wide-open spaces, showcasing a blend of colors and emotions.</p>
+        <button onclick="closeDescription()">Close</button>
+    </div>
+
+    <div class="description" id="description-4">
+        <h1>Colors and Lights</h1>
+        <img src="https://proxy.duckduckgo.com/iu/?u=http%3A%2F%2Fwww.lokeshdhakar.com%2Fprojects%2Flightbox2%2Fimages%2Fimage-4.jpg&f=1" alt="Image 4">
+        <p>This image captures the harmony of colors and light in an artistic manner, evoking a sense of peace.</p>
+        <button onclick="closeDescription()">Close</button>
+    </div>
+
+    <div class="description" id="description-5">
+        <h1>Wildlife and Serenity</h1>
+        <img src="https://images.pexels.com/photos/932638/pexels-photo-932638.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" alt="Image 5">
+        <p>The calm beauty of wildlife is showcased in this peaceful image, offering a moment of serenity amidst the chaos of life.</p>
+        <button onclick="closeDescription()">Close</button>
+    </div>
+
+    <script>
+        const hexagons = document.querySelectorAll('.clipped-border');
+        const descriptions = document.querySelectorAll('.description');
+
+        // Change background on hover
+        hexagons.forEach(hexagon => {
+            hexagon.addEventListener('mouseenter', () => {
+                const bgImage = hexagon.getAttribute('data-bg');
+                document.body.style.backgroundImage = `url(${bgImage})`;
+                document.body.style.backgroundSize = 'cover';
+                document.body.style.backgroundPosition = 'center';
+            });
+
+            hexagon.addEventListener('mouseleave', () => {
+                document.body.style.backgroundImage = 'radial-gradient(mistyrose, pink)';
+            });
+        });
+
+        // Toggle description panels
+        function closeDescription() {
+            descriptions.forEach(desc => desc.classList.remove('active'));
+        }
+
+        hexagons.forEach(hexagon => {
+            hexagon.addEventListener('click', () => {
+                const targetId = hexagon.getAttribute('data-target');
+                const targetDescription = document.querySelector(targetId);
+
+                // If the description is open, close it; if it's closed, open it
+                if (targetDescription.classList.contains('active')) {
+                    targetDescription.classList.remove('active');
+                } else {
+                    // Hide all descriptions first
+                    descriptions.forEach(desc => desc.classList.remove('active'));
+
+                    // Show the targeted description
+                    targetDescription.classList.add('active');
+                }
+            });
+        });
+
+    </script>
 </body>
 </html>
