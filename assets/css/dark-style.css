@@ -193,25 +193,8 @@ section {
   background: var(--color-primary);
 }
 
-/* Section Contact avec formulaire */
-#contact {
-  background: var(--color-primary);
-  padding: 2rem;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-#contact form {
-  max-width: 500px;
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-}
-
 /* Style du bouton de changement de thème */
-button {
+#theme {
   background-color: transparent;
   border: none;
   cursor: pointer;
@@ -222,32 +205,15 @@ button {
 }
 
 /* Style de l'icône du bouton de changement de thème */
-button svg {
+#theme svg {
   width: 24px;
   height: 24px;
   fill: var(--color-text); /* Utiliser la couleur du texte pour l'icône */
 }
 
 /* Enlevez les bordures sur hover */
-button:hover svg {
+#theme:hover svg {
   fill: var(--color-secondary); /* Changer la couleur de l'icône au survol */
-}
-
-#contact input, #contact textarea, #contact button {
-  padding: 0.8rem;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  font-size: 1rem;
-}
-
-#contact button {
-  background-color: var(--color-secondary);
-  color: var(--color-text);
-  cursor: pointer;
-}
-
-#contact button:hover {
-  background-color: var(--color-accent);
 }
 
 /* Footer */
@@ -494,3 +460,127 @@ footer {
     }
   }
 }
+
+ /* --------------------------------CONTACT-------------------------------------- */
+
+  /* Section Contact avec formulaire */
+  #contact {
+    background: var(--color-primary);
+    padding: 2rem;
+  }
+
+  #contact form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  #contact input, #contact textarea, #contact button {
+    padding: 0.8rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+  }
+
+  #contact button {
+    background-color: var(--color-secondary);
+    color: var(--color-text);
+    cursor: pointer;
+  }
+
+  #contact button:hover {
+    background-color: var(--color-accent);
+  }
+
+  .full{ 
+    width: 80%; 
+    display: inline-block; 
+    margin:2%; 
+    margin-left: 10%; 
+    text-align: center; 
+    background-color: black; 
+    color: white; 
+    border:15px solid var(--color-secondary); 
+    border-radius: 5px; 
+    margin-top: 8%; 
+  } 
+
+    .full h3{ 
+    font-size: 2rem; 
+    display:block; 
+    margin: 2%; 
+    } 
+
+    .lt{ 
+    padding: 2%;
+    } 
+    .rt{ 
+    padding: 2%; 
+    } 
+    
+    .lt textarea{ 
+    width: 94%; 
+    } 
+    .btn-primary{ 
+    background-color: black; 
+    border: 2px solid white; 
+    border-radius: 5%; 
+    } 
+    .list-item{ 
+    list-style-type: none; 
+    } 
+    .list-item span{ 
+    margin-left: 10px; 
+    font-size: 1.4rem; 
+    } 
+    .list-item a{ 
+    color: white; 
+    display: inline-block; 
+    } 
+    .list-item a:hover{ 
+    text-decoration: underline; 
+    } 
+    .form-control{ 
+    background-color: var(--color-background); 
+    color: var(--color-text);
+    } 
+        
+    @media screen and (min-width: 770px){ 
+    .full{ 
+        width: 70%; 
+        margin-left: 15%; 
+    } 
+    .lt textarea{ 
+    width: 95%; 
+    margin-left: 2.4%; 
+    } 
+    } 
+        
+    @media screen and (min-width: 1100px){ 
+    .full{ 
+        width: 65%; 
+        margin-top: 5%; 
+    } 
+    .lt{ 
+        width: 55%; 
+        display: inline-block; 
+        float: left; 
+        margin-right: 0; 
+    } 
+    .rt{ 
+        width: 35%; 
+        display: inline-block; 
+        margin-left: 0; 
+    } 
+    .list-item{ 
+    margin-bottom: 10%; 
+    } 
+    .contact-list{ 
+        margin-top: 22%; 
+        padding-right: 8%; 
+    } 
+    .fa-envelope, .gmail{ 
+        display: inline-block; 
+        width: auto; 
+    } 
+    }
