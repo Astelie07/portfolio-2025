@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dynamic Hexagon Gallery</title>
+    <style>
+          :root {
+  --color1: #ff9a9e;
+  --color2: #fad0c4;
+  --color3: #fbc2eb;
+}
+
+/* Gradient animé pour #projets */
+#projets {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  overflow: hidden;
+  position: relative; /* Nécessaire pour positionner les particules */
+  background: linear-gradient(-45deg, var(--color3), var(--color2), var(--color1));
+  background-size: 400% 400%;
+  animation: gradientProjets 15s ease infinite;
+}
+
+@keyframes gradientProjets {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* Particules */
+.particle-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none; /* Les clics traversent cette couche */
+  overflow: hidden;
+}
+
+.particle {
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.7) 10%, rgba(255, 255, 255, 0) 60%);
+  border-radius: 50%;
+  animation: particleMove linear infinite, particleScale 2s ease-in-out infinite;
+  mix-blend-mode: screen;
+  opacity: 0.7;
+}
+
+@keyframes particleMove {
+  0% {
+    transform: translateY(100vh) translateX(calc(var(--random-x) * 1vw));
+  }
+  100% {
+    transform: translateY(-10vh) translateX(calc(var(--random-x) * 1vw));
+  }
+}
+
+@keyframes particleScale {
+  0%, 100% {
+    transform: scale(0.4);
+  }
+  50% {
+    transform: scale(2.2);
+  }
+}
+
+/* Génération des particules */
+.particle:nth-child(1) {
+  --random-x: 10;
+  animation-duration: 25s;
+  animation-delay: -5s;
+}
+.particle:nth-child(2) {
+  --random-x: 50;
+  animation-duration: 20s;
+  animation-delay: -3s;
+}
+.particle:nth-child(3) {
+  --random-x: 30;
+  animation-duration: 30s;
+  animation-delay: -10s;
+}
+/* Ajoutez plus de particules en copiant les classes ci-dessus */
+
+
+  .gallery {
+    display: flex; /* Utilisation de flexbox pour l'alignement horizontal */
+    justify-content: center; /* Centrer les éléments horizontalement */
+    gap: 20px; /* Espacement entre les hexagones */
+    flex-wrap: wrap; /* Permet de faire revenir les hexagones à la ligne si l'espace est insuffisant */
+}
+
+.clipped-border {
+    -webkit-clip-path: polygon(50% 0%, 95% 25%, 95% 75%, 50% 100%, 5% 75%, 5% 25%);
+    clip-path: polygon(50% 0%, 95% 25%, 95% 75%, 50% 100%, 5% 75%, 5% 25%);
+    cursor: pointer;
+    width: var(--width);
+    height: var(--height);
+    transition: transform 0.2s;
+    margin: 0; /* Assurez-vous qu'il n'y a pas de marge extérieure supplémentaire */
+    padding: 5px;
+    background: linear-gradient(var(--color-background), lightgrey);
+    width: 200px;  /* Taille par défaut */
+    height: 200px;
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.3s ease-in-out;
+  }
+
+  .clipped-border:before {
+    content: '';
+    position: absolute;
+    opacity: 0.5;
+    width: 350px;
+    height: 70px;
+    background: white;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    transform: rotate(45deg);
+    transition: transform 0.5s ease-in-out;
+  }
+
+.clipped-border:hover {
+    transform: scale(1.2);
+    transition-duration: 0.5s;
+    z-index: 10;
+}
+
+.clipped-border img {
+    width: 100%;
+    height: 100%;
+    clip-path: inherit;
+}
+
+.clipped-border:hover:before {
+  transform: translate(-100px, 400%) rotate(45deg);  /* Mouvement du reflet avec l'élément */
+}
+
+/* Conteneur global qui s'adapte à la description avec une transition */
+#projets {
+  transition: height 0.5s ease-in-out; /* On anime la hauteur de la div globale */
+  overflow: hidden; /* Pour éviter le débordement de contenu */
+}
+
+/* Style de la description */
+.description {
+  display: none;
+  top: 10px;
+  text-align: center;
+  margin:auto;
+  width: 100%;
+  max-width: 800px; /* Largeur maximale de la description */
+  margin-top: 20px;
+  padding: 20px;
+  background-color: rgba(255, 255, 255, 0.95);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  border-radius: 8px;
+  opacity: 0;
+  transform: translateY(-20px);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+/* Lorsque la description est active */
+.description.active {
+  display: block; /* Afficher la description */
+  opacity: 1;
+  transform: translateY(0); /* Effet de montée */
+}
+
+/* Style pour le contenu de la description */
+.description h1 {
+  margin-top: 0;
+}
+
+.description img {
+  max-width: 100%;
+  height: auto;
+  margin: 20px 0;
+}
+
+.description p {
+  font-size: 18px;
+}
+    </style>
+</head>
+<body>
+    <section id="projets">
+        <h2>Projet</h2>
+      
+        <!-- Conteneur des particules -->
+        <div class="particle-container">
+          <div class="particle"></div>
+          <div class="particle"></div>
+          <div class="particle"></div>
+          <!-- Ajoutez plus de particules ici si nécessaire -->
+        </div>
+      
+        <!-- Galerie d'hexagones -->
+        <div class="gallery">
+          <div class="clipped-border" data-target="#description-1" data-bg="https://proxy.duckduckgo.com/iu/?u=http%3A%2F%2Fwww.gettyimages.com.au%2Fgi-resources%2Fimages%2Ffrontdoor%2Fcreative%2FPanoramicImagesRM%2FFD_image.jpg&f=1">
+            <img src="https://proxy.duckduckgo.com/iu/?u=http%3A%2F%2Fwww.gettyimages.com.au%2Fgi-resources%2Fimages%2Ffrontdoor%2Fcreative%2FPanoramicImagesRM%2FFD_image.jpg&f=1" alt="Image 1">
+          </div>
+          <div class="clipped-border" data-target="#description-2" data-bg="https://proxy.duckduckgo.com/iu/?u=http%3A%2F%2Fbpucette.b.p.pic.centerblog.net%2Ffv86ll9r.jpg&f=1">
+            <img src="https://proxy.duckduckgo.com/iu/?u=http%3A%2F%2Fbpucette.b.p.pic.centerblog.net%2Ffv86ll9r.jpg&f=1" alt="Image 2">
+          </div>
+          <div class="clipped-border" data-target="#description-3" data-bg="https://proxy.duckduckgo.com/iu/?u=https%3A%2F%2Fimagejournal.org%2Fwp-content%2Fuploads%2Fbb-plugin%2Fcache%2F23466317216_b99485ba14_o-panorama.jpg&f=1">
+            <img src="https://proxy.duckduckgo.com/iu/?u=https%3A%2F%2Fimagejournal.org%2Fwp-content%2Fuploads%2Fbb-plugin%2Fcache%2F23466317216_b99485ba14_o-panorama.jpg&f=1" alt="Image 3">
+          </div>
+          <div class="clipped-border" data-target="#description-4" data-bg="https://proxy.duckduckgo.com/iu/?u=http%3A%2F%2Fwww.lokeshdhakar.com%2Fprojects%2Flightbox2%2Fimages%2Fimage-4.jpg&f=1">
+            <img src="https://proxy.duckduckgo.com/iu/?u=http%3A%2F%2Fwww.lokeshdhakar.com%2Fprojects%2Flightbox2%2Fimages%2Fimage-4.jpg&f=1" alt="Image 4">
+          </div>
+          <div class="clipped-border" data-target="#description-5" data-bg="https://images.pexels.com/photos/932638/pexels-photo-932638.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260">
+            <img src="https://images.pexels.com/photos/932638/pexels-photo-932638.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" alt="Image 5">
+          </div>
+        </div>
+      </section>
+      
+
+    <script>
+        $(document).ready(function () {
+  // Lorsque vous cliquez sur un hexagone
+  $('.clipped-border').on('click', function () {
+      var targetId = $(this).data('target'); // Récupérer l'ID de la description à afficher
+      var projectDiv = $('#projets'); // Sélectionner la div #projets avec jQuery
+      var targetDescription = $(targetId); // Trouver la description correspondante
+      var hexagonOffset = $(this).offset(); // Position de l'hexagone
+
+      // Si la description est déjà active, la fermer
+      if (targetDescription.hasClass('active')) {
+          targetDescription.removeClass('active');
+          // Réduire la taille de #projets à sa taille d'origine avec transition
+          projectDiv.css('height', 'auto');
+      } else {
+          // Fermer toutes les autres descriptions
+          $('.description').removeClass('active');
+          projectDiv.css('height', 'auto'); 
+
+          // Afficher la description correspondante avec la transition
+          targetDescription.addClass('active');
+
+          // Mettre à jour la position de la description sous l'hexagone
+          targetDescription.css({
+              top: hexagonOffset.top + $(this).outerHeight(), // Placer sous l'hexagone
+          });
+
+          // Calculer la nouvelle hauteur pour #projets, juste un peu plus grande que la description
+          var descriptionHeight = targetDescription.outerHeight(); // Hauteur de la description affichée
+          var padding = 40; // Un petit espace autour de la description
+          var newHeight = descriptionHeight + padding; // Calculer la nouvelle hauteur de #projets
+
+          // Ne pas étirer #projets au-delà de la hauteur nécessaire
+          var currentHeight = projectDiv.outerHeight();
+          if (newHeight > currentHeight) {
+              // Appliquer une transition fluide pour ajuster la hauteur de #projets
+              setTimeout(function() {
+                  projectDiv.css('height', newHeight + 'px'); // Ajuster la hauteur de #projets
+              }, 10); // Attendre un court instant avant de modifier la hauteur pour que la transition prenne effet
+          }
+      }
+  });
+
+  // Fermer toutes les descriptions si l'on clique en dehors
+  $(document).on('click', function (event) {
+      if (!$(event.target).closest('.clipped-border').length && !$(event.target).closest('.description').length) {
+          $('.description').removeClass('active');
+          $('#projets').css('height', 'auto'); // Réduire la taille de #projets à sa taille d'origine
+      }
+  });
+});
+    </script>
+</body>
+</html>

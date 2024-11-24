@@ -462,7 +462,137 @@ footer {
   }
 }
 
-/* --------------------------------CONTACT-------------------------------------- */
+/* ----------------------------------------------------------------PROJETS---------------------------------------------------------------------- */
+
+:root {
+  --width: 200px;
+  --height: 200px;
+}
+
+#projets {
+  /* background-size: cover;
+  background-position: center; */
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  overflow: hidden;
+  background: linear-gradient(-45deg, var(--color3), var(--color2), var(--color1));
+  background-size: 400% 400%;
+  animation: gradientProjets 15s ease infinite;
+}
+
+@keyframes gradientProjets {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.gallery {
+  display: flex; /* Utilisation de flexbox pour l'alignement horizontal */
+  justify-content: center; /* Centrer les éléments horizontalement */
+  gap: 20px; /* Espacement entre les hexagones */
+  flex-wrap: wrap; /* Permet de faire revenir les hexagones à la ligne si l'espace est insuffisant */
+}
+
+.clipped-border {
+  -webkit-clip-path: polygon(50% 0%, 95% 25%, 95% 75%, 50% 100%, 5% 75%, 5% 25%);
+  clip-path: polygon(50% 0%, 95% 25%, 95% 75%, 50% 100%, 5% 75%, 5% 25%);
+  cursor: pointer;
+  width: var(--width);
+  height: var(--height);
+  transition: transform 0.2s;
+  margin: 0; /* Assurez-vous qu'il n'y a pas de marge extérieure supplémentaire */
+  padding: 5px;
+  background: linear-gradient(var(--color-background), darkblue);
+  width: 200px;  /* Taille par défaut */
+  height: 200px;
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.3s ease-in-out;
+}
+
+.clipped-border:before {
+  content: '';
+  position: absolute;
+  opacity: 0.5;
+  width: 350px;
+  height: 70px;
+  background: white;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  transform: rotate(45deg);
+  transition: transform 0.5s ease-in-out;
+}
+
+.clipped-border:hover {
+  transform: scale(1.2);
+  transition-duration: 0.5s;
+  z-index: 10;
+}
+
+.clipped-border img {
+  width: 100%;
+  height: 100%;
+  clip-path: inherit;
+}
+
+.clipped-border:hover:before {
+transform: translate(-100px, 400%) rotate(45deg);  /* Mouvement du reflet avec l'élément */
+}
+
+/* Conteneur global qui s'adapte à la description avec une transition */
+#projets {
+transition: height 0.5s ease-in-out; /* On anime la hauteur de la div globale */
+overflow: hidden; /* Pour éviter le débordement de contenu */
+}
+
+/* Style de la description */
+.description {
+display: none;
+top: 10px;
+text-align: center;
+margin:auto;
+width: 100%;
+max-width: 800px; /* Largeur maximale de la description */
+margin-top: 20px;
+padding: 20px;
+background-color: rgba(255, 255, 255, 0.95);
+box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+border-radius: 8px;
+opacity: 0;
+transform: translateY(-20px);
+transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+/* Lorsque la description est active */
+.description.active {
+display: block; /* Afficher la description */
+opacity: 1;
+transform: translateY(0); /* Effet de montée */
+}
+
+/* Style pour le contenu de la description */
+.description h1 {
+margin-top: 0;
+}
+
+.description img {
+max-width: 100%;
+height: auto;
+margin: 20px 0;
+}
+
+.description p {
+font-size: 18px;
+}
+
+/* -----------------------------------------------CONTACT-------------------------------------------- */
 
 #contact {
   width: 100%;
