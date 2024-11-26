@@ -529,6 +529,10 @@
   --height: 200px;
 }
 
+#projets > p{
+  margin-bottom: 15px;
+}
+
 #projets {
   /* background-size: cover;
   background-position: center; */
@@ -536,10 +540,12 @@
   width: 100%;
   margin: 0;
   overflow: hidden;
-  background: linear-gradient(-45deg, var(--color3), var(--color2), var(--color1));
+  background: linear-gradient(-45deg, var(--color-background), var(--color-background), var(--color3));
   background-size: 400% 400%;
+  transition: height 0.5s ease-in-out; 
   animation: gradientProjets 15s ease infinite;
 }
+
 
 @keyframes gradientProjets {
   0% {
@@ -569,7 +575,7 @@
   transition: transform 0.2s;
   margin: 0; /* Assurez-vous qu'il n'y a pas de marge extérieure supplémentaire */
   padding: 5px;
-  background: linear-gradient(var(--color-background), white);
+  background: linear-gradient(var(--color2), var(--color1));
   width: 200px;  /* Taille par défaut */
   height: 200px;
   cursor: pointer;
@@ -606,12 +612,6 @@
 transform: translate(-100px, 400%) rotate(45deg);  /* Mouvement du reflet avec l'élément */
 }
 
-/* Conteneur global qui s'adapte à la description avec une transition */
-#projets {
-transition: height 0.5s ease-in-out; /* On anime la hauteur de la div globale */
-overflow: hidden; /* Pour éviter le débordement de contenu */
-}
-
 /* Style de la description */
 .description {
 display: none;
@@ -619,11 +619,11 @@ top: 10px;
 text-align: center;
 margin:auto;
 width: 100%;
-max-width: 800px; /* Largeur maximale de la description */
+max-width: 80%; /* Largeur maximale de la description */
 margin-top: 20px;
 padding: 20px;
-background-color: rgba(255, 255, 255, 0.95);
-box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+background-color: var(--color-background);
+border: solid 2px var(--color-accent);
 border-radius: 8px;
 opacity: 0;
 transform: translateY(-20px);
