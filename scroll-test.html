@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dynamic Hexagon Gallery</title>
+    <style>
+          body {
+      height: 3000px;
+      background-color: #fdf8e3;
+    }
+
+    /* Boîte d'alerte normale */
+    #alertBox, #warningBox {
+      position: fixed;
+      top: 75%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      padding: 20px;
+      border-radius: 10px;
+      display: none;
+      z-index: 1000;
+    }
+
+    #overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.5);
+      display: none;
+      z-index: 999;
+    }
+
+    /* 🔥 Alerte menaçante 🔥 */
+    #warningBox {
+      font-size: 22px;
+      font-weight: bold;
+      padding: 30px;
+    }
+
+    /* Effet de vibration */
+    .shake {
+      animation: shake 0.5s infinite;
+    }
+
+    @keyframes shake {
+      0%, 100% { transform: translate(-50%, -50%); }
+      25% { transform: translate(-52%, -48%); }
+      50% { transform: translate(-48%, -52%); }
+      75% { transform: translate(-50%, -50%); }
+    }
+
+    /* 💥 Effet Glitch 💥 */
+    .glitch {
+      animation: glitch 1s linear infinite;
+      animation: glitchEffect 1s linear infinite;
+    }
+
+    @keyframes glitchEffect {
+      0% { transform: translate(1px, -1px) rotate(0.5deg); }
+      20% { transform: translate(-1px, 1px) rotate(-0.5deg); }
+      40% { transform: translate(2px, -2px) rotate(0.8deg); }
+      60% { transform: translate(-2px, 2px) rotate(-0.8deg); }
+      80% { transform: translate(1px, -1px) rotate(0.5deg); }
+      100% { transform: translate(0px, 0px) rotate(0deg); }
+    }
+
+    @keyframes glitchEffect{
+      2%,64%{
+      transform: translate(2px,0) skew(0deg);
+      }
+      4%,60%{
+        transform: translate(-2px,0) skew(0deg);
+      }
+      62%{
+        transform: translate(0,0) skew(5deg); 
+      }
+    }
+
+    /* Effet Flash */
+    .flash {
+      animation: flash 0.05s infinite alternate;
+    }
+
+    @keyframes flash {
+      0% { background: rgba(255, 136, 0, 0.2); }
+      100% { background: rgba(255, 255, 255, 0.2); }
+    }
+
+/* ---------------------------DIALOGUE */
+
+* {
+            box-sizing: border-box;
+        }
+        
+        #app {
+            display: flex;
+            justify-content: center;
+            align-items: flex-end;
+            padding-bottom: 3rem;
+            height: 100vh;
+        }
+        
+        .dialogue {
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            max-height: 50%;
+            min-height: 300px;
+            min-width: 1024px;
+            width: 60%;
+            background-color: #fdf8e3;
+            padding: 20px;
+            border-radius: 15px;
+        }
+        
+        .dialogue-character {
+            font-family: "Varela Round", sans-serif;
+            font-size: 2rem;
+            color: #482016;
+            background-color: #dd8530;
+            padding: 10px;
+            border-radius: 20px;
+            margin-bottom: 10px;
+            display: inline-block;
+            animation: bounce 1s infinite alternate;
+        }
+        
+        @keyframes bounce {
+            from {
+                transform: translateY(0);
+            }
+            to {
+                transform: translateY(-5px);
+            }
+        }
+        
+        .dialogue-text {
+            font-family: "Hind", sans-serif;
+            font-size: 1.5rem;
+            color: #807256;
+        }
+    </style>
+</head>
+<body>
+  <link href="https://fonts.googleapis.com/css2?family=Hind:wght@400;700&family=Varela+Round&display=swap" rel="stylesheet">
+
+  <body>
+  
+    <div id="overlay"></div>
+  
+    <!-- Alerte normale -->
+    <div id="alertBox">
+      <div class="dialogue" onclick="closeAlert()">
+              <div>
+                  <span class="dialogue-character">Astélie</span>
+                  <div class="dialogue-text" id="dialogue-text">Hey ! Ne scroll pas comme ça ! J'ai travaillé pour écrire tous ces textes !</div>
+              </div>
+          </div>
+    </div>
+  
+    <!-- 🔥 Alerte menaçante 🔥 -->
+    <div id="warningBox" class="shake">
+      <div class="dialogue" onclick="closeWarning()">
+              <div>
+                  <span class="dialogue-character">Astélie</span>
+                  <div class="dialogue-text" id="dialogue-text">JE T'AI DIS DE TE CALMER !</div>
+              </div>
+          </div>
+    </div>   
+  </body>
+  
+    <script>
+       let lastScrollY = window.scrollY;
+    let lastTime = Date.now();
+    let alertShown = false;
+    let alertCount = 0;
+
+    window.addEventListener("scroll", function () {
+      if (alertShown) return;
+
+      let now = Date.now();
+      let deltaTime = now - lastTime;
+      let deltaY = window.scrollY - lastScrollY;
+      let speed = deltaY / deltaTime;
+
+      if (speed > 3 && deltaY > 50) {
+        alertShown = true;
+        if (alertCount == 3) {
+          showWarning();
+        } else if(alertCount < 3) {
+          showAlert();
+        }
+      }
+
+      lastScrollY = window.scrollY;
+      lastTime = now;
+    });
+
+    function showAlert() {
+      alertCount++;
+      document.getElementById("alertBox").style.display = "block";
+      document.getElementById("overlay").style.display = "block";
+      document.body.style.overflow = "hidden";
+    }
+
+    function closeAlert() {
+      document.getElementById("alertBox").style.display = "none";
+      document.getElementById("overlay").style.display = "none";
+      document.body.style.overflow = "auto";
+      setTimeout(() => alertShown = false, 1500);
+    }
+
+    function showWarning() {
+      document.getElementById("warningBox").style.display = "block";
+      document.getElementById("overlay").style.display = "block";
+      document.body.style.overflow = "hidden";
+
+      // 🔥 Active le glitch et les flashs
+      document.body.classList.add("glitch", "flash");
+
+      // Forcer le scroll vers le haut avec un effet de "bug"
+      let scrollInterval = setInterval(() => {
+        window.scrollTo({ top: window.scrollY - 20 + (Math.random() * 10 - 5), behavior: "smooth" });
+      }, 100);
+    }
+
+    function closeWarning() {
+      document.getElementById("warningBox").style.display = "none";
+      document.getElementById("overlay").style.display = "none";
+      document.body.style.overflow = "auto";
+      alertCount ++;
+      setTimeout(() => alertShown = false, 2000);
+
+      // ❌ Supprime les effets glitch et flash
+      document.body.classList.remove("glitch", "flash");
+    }
+
+    </script>
+</body>
+</html>
