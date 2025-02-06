@@ -83,7 +83,7 @@
 
   #catgif{
       background-color: var(--color-primary);
-      border-radius: 150px ;
+      border-radius: 50% ;
   }
 
 /* ------------------------------FIN LOADER--------------------------*/
