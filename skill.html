@@ -1,0 +1,847 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>skills</title>
+    <style>
+        :root {
+            --container_color: #ffc878;
+            --container_color2: #f8ba70;
+            --container_color3: #eba867;
+            --text_color: #331f28;
+            --text_shadow: #ce9c5f;
+            --tool_color: #2f4f4f;
+            --fruit_color: #ff1493;
+            --vegetable_color: #008000;
+            --flower_color: #db36d3;
+            --goods_color: #009b6f;
+            --seed_color: #a52a2a;
+            --mineral_color: #6e005a;
+            --resource_color: #406672;
+            --cooking_color: #dc3c00;
+            --crafting_color: #943d28;
+            --decoration_color: #6419be;
+            --fish_color: #00008b;
+            --wearable_color: #000;
+            --gradient-bg: linear-gradient(180deg, var(--container_color) 0%, var(--container_color2) 50%, var(--container_color3) 100%);
+        }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            cursor: url("https://assets.codepen.io/7237686/cursor.gif"), auto;
+        }
+        @font-face {
+            font-family: svFont;
+            src: url(https://assets.codepen.io/7237686/rainyhearts.woff) format("woff");
+        }
+        @font-face {
+            font-family: pixelFont;
+            src: url(https://assets.codepen.io/7237686//pixelFont.woff) format("woff");
+        }
+        body {
+            font-family: svFont;
+            color: var(--text_color);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            padding: 2rem;
+        }
+        @media (max-width: 46.875rem) {
+            body {
+                padding: 1rem;
+            }
+        }
+        .btn {
+            display: inline-block;
+            background-color: var(--container_color);
+            border: none;
+            border-radius: 1.25rem;
+        }
+        h1, h2, h3 {
+            font-weight: 500;
+        }
+        h1, h2, h3, p, span {
+            user-select: none;
+        }
+        .disabled img {
+            pointer-events: none;
+        }
+        ::-webkit-scrollbar {
+            width: 0.6rem;
+            background: #db7812;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #ad520b;
+        }
+        .skills {
+            width: 100%;
+            max-width: 60rem;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            position: relative;
+        }
+        @media (max-width: 65rem) {
+            .skills {
+                flex-direction: row;
+            }
+        }
+        .skills__content {
+            width: 100%;
+            background: var(--gradient-bg);
+            border-radius: 28px;
+        }
+        .skills__content__inventory, .skills__content__info {
+            border-style: solid;
+            border-width: 20px;
+            border-image-slice: 24 22;
+            border-image-repeat: round;
+            border-radius: 20px;
+        }
+        @media (max-width: 65rem) {
+            .skills__content__inventory, .skills__content__info {
+                overflow: auto;
+            }
+        }
+        .skills__content__inventory .items__container, .skills__content__info .items__container, .skills__content__inventory .items__container--disabled, .skills__content__info .items__container--disabled {
+            border-style: solid;
+            border-width: 20px;
+            border-image-slice: 24 22;
+            border-image-repeat: round;
+            border-radius: 20px;
+            border-image-source: url("https://assets.codepen.io/7237686/itemsborder.png");
+            width: 74px;
+            height: 74px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+        }
+        @media (max-width: 1560px) {
+            .skills__content__inventory .items__container, .skills__content__info .items__container, .skills__content__inventory .items__container--disabled, .skills__content__info .items__container--disabled {
+                width: 64px;
+                height: 64px;
+            }
+        }
+        .skills__content__inventory .items__container .items__number, .skills__content__info .items__container .items__number, .skills__content__inventory .items__container--disabled .items__number, .skills__content__info .items__container--disabled .items__number {
+            font-size: 0.9rem;
+            position: absolute;
+            top: -35px;
+            left: 40%;
+            font-weight: 500;
+            color: #696969;
+            font-family: pixelFont;
+        }
+        .skills__content__inventory .items__container .items__number--first, .skills__content__info .items__container .items__number--first, .skills__content__inventory .items__container--disabled .items__number--first, .skills__content__info .items__container--disabled .items__number--first {
+            color: #f00;
+        }
+        .skills__content__inventory .items__container .item__container .item__img, .skills__content__info .items__container .item__container .item__img, .skills__content__inventory .items__container--disabled .item__container .item__img, .skills__content__info .items__container--disabled .item__container .item__img {
+            height: 70px;
+            width: 70px;
+            image-rendering: pixelated;
+            image-rendering: crisp-edges;
+            transition: 0.2s all;
+        }
+        @media (max-width: 1560px) {
+            .skills__content__inventory .items__container .item__container .item__img, .skills__content__info .items__container .item__container .item__img, .skills__content__inventory .items__container--disabled .item__container .item__img, .skills__content__info .items__container--disabled .item__container .item__img {
+                height: 64px;
+                width: 64px;
+            }
+        }
+        .skills__content__inventory .items__container .item__container .item__img:hover, .skills__content__info .items__container .item__container .item__img:hover, .skills__content__inventory .items__container--disabled .item__container .item__img:hover, .skills__content__info .items__container--disabled .item__container .item__img:hover {
+            transform: scale(1.06);
+        }
+        .skills__content__inventory .items__container .item__container .item__img--small, .skills__content__info .items__container .item__container .item__img--small, .skills__content__inventory .items__container--disabled .item__container .item__img--small, .skills__content__info .items__container--disabled .item__container .item__img--small {
+            height: 40px;
+            width: 40px;
+        }
+        .skills__content__inventory .items__container .item__container .item__quantity, .skills__content__info .items__container .item__container .item__quantity, .skills__content__inventory .items__container--disabled .item__container .item__quantity, .skills__content__info .items__container--disabled .item__container .item__quantity {
+            color: #fff;
+            position: absolute;
+            bottom: -70%;
+            right: -60%;
+            font-size: 1.3rem;
+            letter-spacing: 2px;
+            text-shadow: -2px 0 #000, 0 2px #000, 2px 0 #000, 0 -2px #000;
+            font-family: pixelFont;
+        }
+        @media (max-width: 1560px) {
+            .skills__content__inventory .items__container .item__container .item__quantity, .skills__content__info .items__container .item__container .item__quantity, .skills__content__inventory .items__container--disabled .item__container .item__quantity, .skills__content__info .items__container--disabled .item__container .item__quantity {
+                bottom: -100%;
+                right: -90%;
+            }
+        }
+        .skills__content__inventory .items__container .item__container .item__quality, .skills__content__info .items__container .item__container .item__quality, .skills__content__inventory .items__container--disabled .item__container .item__quality, .skills__content__info .items__container--disabled .item__container .item__quality {
+            position: absolute;
+            left: -60%;
+            bottom: -70%;
+        }
+        @media (max-width: 1560px) {
+            .skills__content__inventory .items__container .item__container .item__quality, .skills__content__info .items__container .item__container .item__quality, .skills__content__inventory .items__container--disabled .item__container .item__quality, .skills__content__info .items__container--disabled .item__container .item__quality {
+                bottom: -100%;
+                left: -90%;
+            }
+        }
+        .skills__content__inventory .items__container .item__container .item__quality img, .skills__content__info .items__container .item__container .item__quality img, .skills__content__inventory .items__container--disabled .item__container .item__quality img, .skills__content__info .items__container--disabled .item__container .item__quality img {
+            height: 1.5625rem;
+        }
+        .skills__content__inventory .items__container .item__container .item__tooltip, .skills__content__info .items__container .item__container .item__tooltip, .skills__content__inventory .items__container--disabled .item__container .item__tooltip, .skills__content__info .items__container--disabled .item__container .item__tooltip {
+            display: none;
+            position: absolute;
+            left: 3.125rem;
+            top: 0;
+            z-index: 89999;
+            min-width: 22rem;
+            border-radius: 1.125rem;
+            filter: drop-shadow(-0.6rem 0.6rem rgba(0, 0, 0, 0.3));
+            color: #212;
+            background-color: var(--container_color);
+        }
+        @media (max-width: 1560px) {
+            .skills__content__inventory .items__container .item__container .item__tooltip, .skills__content__info .items__container .item__container .item__tooltip, .skills__content__inventory .items__container--disabled .item__container .item__tooltip, .skills__content__info .items__container--disabled .item__container .item__tooltip {
+                min-width: 18rem;
+            }
+        }
+        .skills__content__inventory .items__container .item__container .item__tooltip .item__tooltip__title, .skills__content__info .items__container .item__container .item__tooltip .item__tooltip__title, .skills__content__inventory .items__container--disabled .item__container .item__tooltip .item__tooltip__title, .skills__content__info .items__container--disabled .item__container .item__tooltip .item__tooltip__title {
+            border-style: solid;
+            border-width: 20px;
+            border-image-slice: 24 22;
+            border-image-repeat: round;
+            border-radius: 20px;
+            border-image-source: url("https://assets.codepen.io/7237686/tooltipbordertop.png");
+            text-shadow: var(--text_shadow) -2px 1px;
+            white-space: nowrap;
+        }
+        .skills__content__inventory .items__container .item__container .item__tooltip .item__tooltip__title h2, .skills__content__info .items__container .item__container .item__tooltip .item__tooltip__title h2, .skills__content__inventory .items__container--disabled .item__container .item__tooltip .item__tooltip__title h2, .skills__content__info .items__container--disabled .item__container .item__tooltip .item__tooltip__title h2 {
+            font-size: 3rem;
+        }
+        .skills__content__inventory .items__container .item__container .item__tooltip .item__tooltip__title .item__tooltip__category, .skills__content__info .items__container .item__container .item__tooltip .item__tooltip__title .item__tooltip__category, .skills__content__inventory .items__container--disabled .item__container .item__tooltip .item__tooltip__title .item__tooltip__category, .skills__content__info .items__container--disabled .item__container .item__tooltip .item__tooltip__title .item__tooltip__category {
+            font-size: 2.5rem;
+            text-shadow: var(--text_shadow) 2px 1px;
+        }
+        .skills__content__inventory .items__container .item__container .item__tooltip .item__tooltip__title .item__tooltip__category--tool, .skills__content__info .items__container .item__container .item__tooltip .item__tooltip__title .item__tooltip__category--tool, .skills__content__inventory .items__container--disabled .item__container .item__tooltip .item__tooltip__title .item__tooltip__category--tool, .skills__content__info .items__container--disabled .item__container .item__tooltip .item__tooltip__title .item__tooltip__category--tool {
+            color: var(--tool_color);
+        }
+        .skills__content__inventory .items__container .item__container .item__tooltip .item__tooltip__title .item__tooltip__category--fruit, .skills__content__info .items__container .item__container .item__tooltip .item__tooltip__title .item__tooltip__category--fruit, .skills__content__inventory .items__container--disabled .item__container .item__tooltip .item__tooltip__title .item__tooltip__category--fruit, .skills__content__info .items__container--disabled .item__container .item__tooltip .item__tooltip__title .item__tooltip__category--fruit {
+            color: var(--fruit_color);
+        }
+        .skills__content__inventory .items__container .item__container .item__tooltip .item__tooltip__title .item__tooltip__category--vegetable, .skills__content__info .items__container .item__container .item__tooltip .item__tooltip__title .item__tooltip__category--vegetable, .skills__content__inventory .items__container--disabled .item__container .item__tooltip .item__tooltip__title .item__tooltip__category--vegetable, .skills__content__info .items__container--disabled .item__container .item__tooltip .item__tooltip__title .item__tooltip__category--vegetable {
+            color: var(--vegetable_color);
+        }
+        .skills__content__inventory .items__container .item__container .item__tooltip .item__tooltip__title .item__tooltip__category--flower, .skills__content__info .items__container .item__container .item__tooltip .item__tooltip__title .item__tooltip__category--flower, .skills__content__inventory .items__container--disabled .item__container .item__tooltip .item__tooltip__title .item__tooltip__category--flower, .skills__content__info .items__container--disabled .item__container .item__tooltip .item__tooltip__title .item__tooltip__category--flower {
+            color: var(--flower_color);
+        }
+        .skills__content__inventory .items__container .item__container .item__tooltip .item__tooltip__title .item__tooltip__category--goods, .skills__content__info .items__container .item__container .item__tooltip .item__tooltip__title .item__tooltip__category--goods, .skills__content__inventory .items__container--disabled .item__container .item__tooltip .item__tooltip__title .item__tooltip__category--goods, .skills__content__info .items__container--disabled .item__container .item__tooltip .item__tooltip__title .item__tooltip__category--goods {
+            color: var(--goods_color);
+        }
+        .skills__content__inventory .items__container .item__container .item__tooltip .item__tooltip__title .item__tooltip__category--seed, .skills__content__info .items__container .item__container .item__tooltip .item__tooltip__title .item__tooltip__category--seed, .skills__content__inventory .items__container--disabled .item__container .item__tooltip .item__tooltip__title .item__tooltip__category--seed, .skills__content__info .items__container--disabled .item__container .item__tooltip .item__tooltip__title .item__tooltip__category--seed {
+            color: var(--seed_color);
+        }
+        .skills__content__inventory .items__container .item__container .item__tooltip .item__tooltip__title .item__tooltip__category--mineral, .skills__content__info .items__container .item__container .item__tooltip .item__tooltip__title .item__tooltip__category--mineral, .skills__content__inventory .items__container--disabled .item__container .item__tooltip .item__tooltip__title .item__tooltip__category--mineral, .skills__content__info .items__container--disabled .item__container .item__tooltip .item__tooltip__title .item__tooltip__category--mineral {
+            color: var(--mineral_color);
+        }
+        .skills__content__inventory .items__container .item__container .item__tooltip .item__tooltip__title .item__tooltip__category--resource, .skills__content__info .items__container .item__container .item__tooltip .item__tooltip__title .item__tooltip__category--resource, .skills__content__inventory .items__container--disabled .item__container .item__tooltip .item__tooltip__title .item__tooltip__category--resource, .skills__content__info .items__container--disabled .item__container .item__tooltip .item__tooltip__title .item__tooltip__category--resource {
+            color: var(--resource_color);
+        }
+        .skills__content__inventory .items__container .item__container .item__tooltip .item__tooltip__title .item__tooltip__category--cooking, .skills__content__info .items__container .item__container .item__tooltip .item__tooltip__title .item__tooltip__category--cooking, .skills__content__inventory .items__container--disabled .item__container .item__tooltip .item__tooltip__title .item__tooltip__category--cooking, .skills__content__info .items__container--disabled .item__container .item__tooltip .item__tooltip__title .item__tooltip__category--cooking {
+            color: var(--cooking_color);
+        }
+        .skills__content__inventory .items__container .item__container .item__tooltip .item__tooltip__title .item__tooltip__category--crafting, .skills__content__info .items__container .item__container .item__tooltip .item__tooltip__title .item__tooltip__category--crafting, .skills__content__inventory .items__container--disabled .item__container .item__tooltip .item__tooltip__title .item__tooltip__category--crafting, .skills__content__info .items__container--disabled .item__container .item__tooltip .item__tooltip__title .item__tooltip__category--crafting {
+            color: var(--crafting_color);
+        }
+        .skills__content__inventory .items__container .item__container .item__tooltip .item__tooltip__title .item__tooltip__category--decoration, .skills__content__info .items__container .item__container .item__tooltip .item__tooltip__title .item__tooltip__category--decoration, .skills__content__inventory .items__container--disabled .item__container .item__tooltip .item__tooltip__title .item__tooltip__category--decoration, .skills__content__info .items__container--disabled .item__container .item__tooltip .item__tooltip__title .item__tooltip__category--decoration {
+            color: var(--decoration_color);
+        }
+        .skills__content__inventory .items__container .item__container .item__tooltip .item__tooltip__title .item__tooltip__category--fish, .skills__content__info .items__container .item__container .item__tooltip .item__tooltip__title .item__tooltip__category--fish, .skills__content__inventory .items__container--disabled .item__container .item__tooltip .item__tooltip__title .item__tooltip__category--fish, .skills__content__info .items__container--disabled .item__container .item__tooltip .item__tooltip__title .item__tooltip__category--fish {
+            color: var(--fish_color);
+        }
+        .skills__content__inventory .items__container .item__container .item__tooltip .item__tooltip__title .item__tooltip__category--wearable, .skills__content__info .items__container .item__container .item__tooltip .item__tooltip__title .item__tooltip__category--wearable, .skills__content__inventory .items__container--disabled .item__container .item__tooltip .item__tooltip__title .item__tooltip__category--wearable, .skills__content__info .items__container--disabled .item__container .item__tooltip .item__tooltip__title .item__tooltip__category--wearable {
+            color: var(--wearable_color);
+        }
+        .skills__content__inventory .items__container .item__container .item__tooltip .item__tooltip__info, .skills__content__info .items__container .item__container .item__tooltip .item__tooltip__info, .skills__content__inventory .items__container--disabled .item__container .item__tooltip .item__tooltip__info, .skills__content__info .items__container--disabled .item__container .item__tooltip .item__tooltip__info {
+            border-style: solid;
+            border-width: 20px;
+            border-image-slice: 24 22;
+            border-image-repeat: round;
+            border-radius: 20px;
+            border-image-source: url("https://assets.codepen.io/7237686/tooltipborderbottom.png");
+            font-size: 2rem;
+            text-shadow: var(--text_shadow) -2px 1px;
+        }
+        .skills__content__inventory .items__container .item__container .item__tooltip .item__tooltip__info ul, .skills__content__info .items__container .item__container .item__tooltip .item__tooltip__info ul, .skills__content__inventory .items__container--disabled .item__container .item__tooltip .item__tooltip__info ul, .skills__content__info .items__container--disabled .item__container .item__tooltip .item__tooltip__info ul {
+            margin-bottom: 1.25rem;
+            list-style: none;
+            margin-top: 10px;
+        }
+        .skills__content__inventory .items__container .item__container .item__tooltip .item__tooltip__info ul li, .skills__content__info .items__container .item__container .item__tooltip .item__tooltip__info ul li, .skills__content__inventory .items__container--disabled .item__container .item__tooltip .item__tooltip__info ul li, .skills__content__info .items__container--disabled .item__container .item__tooltip .item__tooltip__info ul li {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+        .skills__content__inventory .items__container .item__container .item__tooltip .item__tooltip__info ul li img, .skills__content__info .items__container .item__container .item__tooltip .item__tooltip__info ul li img, .skills__content__inventory .items__container--disabled .item__container .item__tooltip .item__tooltip__info ul li img, .skills__content__info .items__container--disabled .item__container .item__tooltip .item__tooltip__info ul li img {
+            height: 40px;
+        }
+        .skills__content__inventory .items__container .item__container:hover .item__tooltip, .skills__content__info .items__container .item__container:hover .item__tooltip, .skills__content__inventory .items__container--disabled .item__container:hover .item__tooltip, .skills__content__info .items__container--disabled .item__container:hover .item__tooltip {
+            display: block;
+        }
+        @media (max-width: 46.875rem) {
+            .skills__content__inventory .items__container .item__container:hover .item__tooltip, .skills__content__info .items__container .item__container:hover .item__tooltip, .skills__content__inventory .items__container--disabled .item__container:hover .item__tooltip, .skills__content__info .items__container--disabled .item__container:hover .item__tooltip {
+                display: none;
+            }
+        }
+        .skills__content__inventory .items__container .item__container:active .item__tooltip, .skills__content__info .items__container .item__container:active .item__tooltip, .skills__content__inventory .items__container--disabled .item__container:active .item__tooltip, .skills__content__info .items__container--disabled .item__container:active .item__tooltip {
+            display: none;
+        }
+        .skills__content__inventory {
+            border-image-source: url("https://assets.codepen.io/7237686/bordertop.png");
+            /* border-image-source: url("https://assets.codepen.io/7237686/borderbottom.png");
+            */
+            padding: 1rem;
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+        .skills__content__inventory .inventory--hotbar, .skills__content__inventory .inventory--rows {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(70px, 1fr));
+            row-gap: 0.3125rem;
+        }
+        .skills__content__inventory .inventory--hotbar {
+            row-gap: 1rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="skills">
+        <div class="skills__content">
+          <div class="skills__content__inventory">
+            <div class="inventory--hotbar">
+              <div class="items__container">
+                <span class="items__number items__number--first">1</span>
+                <div class="item__container" draggable="true">
+                  <img class="item__img" src="https://assets.codepen.io/7237686/infinity_blade.svg?format=auto" alt="infinity_blade" draggable="false" />
+                  <div class="item__tooltip" draggable="false">
+                    <div class="item__tooltip__title">
+                      <h2>Infinity Blade</h2>
+                    </div>
+                    <div class="item__tooltip__info">
+                      The true form of the Galaxy Sword
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="items__container">
+                <span class="items__number">2</span>
+                <div class="item__container" draggable="true">
+                  <img class="item__img" src="https://assets.codepen.io/7237686/iridium_pickaxe.svg?format=auto" alt="iridium_pickaxe" draggable="false" />
+                  <div class="item__tooltip" draggable="false">
+                    <div class="item__tooltip__title">
+                      <h2>Iridium Pickaxe</h2>
+                      <h3 class="item__tooltip__category item__tooltip__category--tool">
+                        Tool
+                      </h3>
+                    </div>
+                    <div class="item__tooltip__info">Used to break stones.</div>
+                  </div>
+                </div>
+              </div>
+              <div class="items__container">
+                <span class="items__number">3</span>
+                <div class="item__container" draggable="true">
+                  <img class="item__img" src="https://assets.codepen.io/7237686/iridium_axe.svg?format=auto" alt="iridium_axe" draggable="false" />
+                  <div class="item__tooltip" draggable="false">
+                    <div class="item__tooltip__title">
+                      <h2>Iridium Axe</h2>
+                      <h3 class="item__tooltip__category item__tooltip__category--tool">
+                        Tool
+                      </h3>
+                    </div>
+                    <div class="item__tooltip__info">Used to chop wood.</div>
+                  </div>
+                </div>
+              </div>
+              <div class="items__container">
+                <span class="items__number">4</span>
+                <div class="item__container" draggable="true">
+                  <img class="item__img" src="https://assets.codepen.io/7237686/iridium_hoe.svg?format=auto" alt="iridium_hoe" draggable="false" />
+                  <div class="item__tooltip" draggable="false">
+                    <div class="item__tooltip__title">
+                      <h2>Iridium Hoe</h2>
+                      <h3 class="item__tooltip__category item__tooltip__category--tool">
+                        Tool
+                      </h3>
+                    </div>
+                    <div class="item__tooltip__info">
+                      Used to dig and till soil.
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="items__container">
+                <span class="items__number">5</span>
+                <div class="item__container" draggable="true">
+                  <img class="item__img" src="https://assets.codepen.io/7237686/iridium_watering_can.svg?format=auto" alt="iridium_watering_can" draggable="false" />
+                  <div class="item__tooltip" draggable="false">
+                    <div class="item__tooltip__title">
+                      <h2>Iridium Hoe</h2>
+                      <h3 class="item__tooltip__category item__tooltip__category--tool">
+                        Tool
+                      </h3>
+                    </div>
+                    <div class="item__tooltip__info">
+                      Used to water crops. It can be refilled at any water source
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="items__container">
+                <span class="items__number">6</span>
+                <div class="item__container" draggable="true">
+                  <img class="item__img" src="https://assets.codepen.io/7237686/golden_scythe.svg?format=auto" alt="golden_scythe" draggable="false" />
+                  <div class="item__tooltip" draggable="false">
+                    <div class="item__tooltip__title">
+                      <h2>Golden Scythe</h2>
+                      <h3 class="item__tooltip__category item__tooltip__category--tool">
+                        Tool
+                      </h3>
+                    </div>
+                    <div class="item__tooltip__info">
+                      It's more powerful than a normal scythe.
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="items__container">
+                <span class="items__number">7</span>
+                <div class="item__container" draggable="true">
+                  <img class="item__img" src="https://assets.codepen.io/7237686/copper_pan.svg?format=auto" alt="copper_pan" draggable="false" />
+                  <div class="item__tooltip" draggable="false">
+                    <div class="item__tooltip__title">
+                      <h2>Copper Pan</h2>
+                      <h3 class="item__tooltip__category item__tooltip__category--tool">
+                        Tool
+                      </h3>
+                    </div>
+                    <div class="item__tooltip__info">
+                      Use to gather ore from streams.
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="items__container">
+                <span class="items__number">8</span>
+                <div class="item__container"></div>
+              </div>
+              <div class="items__container">
+                <span class="items__number">9</span>
+                <div class="item__container"></div>
+              </div>
+              <div class="items__container">
+                <span class="items__number">0</span>
+                <div class="item__container"></div>
+              </div>
+              <div class="items__container">
+                <span class="items__number">-</span>
+                <div class="item__container"></div>
+              </div>
+              <div class="items__container">
+                <span class="items__number">=</span>
+                <div class="item__container"></div>
+              </div>
+            </div>
+            <div class="inventory--rows">
+              <div class="items__container">
+                <div class="item__container" draggable="true">
+                  <img class="item__img" src="https://assets.codepen.io/7237686/triple_shot_espresso.svg?format=auto" alt="triple_shot_espresso" draggable="false" />
+                  <span class="item__quantity">10</span>
+                  <div class="item__tooltip" draggable="false">
+                    <div class="item__tooltip__title">
+                      <h2>Triple Shot Espresso</h2>
+                      <h3 class="item__tooltip__category item__tooltip__category--cooking">
+                        Cooking
+                      </h3>
+                    </div>
+                    <div class="item__tooltip__info">
+                      It's more potent than regular coffee!
+                      <ul class="health">
+                        <li>
+                          <img src="https://assets.codepen.io/7237686/energy.svg?format=auto" alt="energy" />
+                          +8 Energy
+                        </li>
+                        <li>
+                          <img src="https://assets.codepen.io/7237686/health.svg?format=auto" alt="health" />
+                          +3 Health
+                        </li>
+                        <li>
+                          <img src="https://assets.codepen.io/7237686/speed.svg?format=auto" alt="speed" />
+                          +1 Speed
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="items__container">
+                <div class="item__container" draggable="true">
+                  <img class="item__img" src="https://assets.codepen.io/7237686/coffee.svg?format=auto" alt="coffee" draggable="false" />
+                  <span class="item__quantity" draggable="false">120</span>
+                  <div class="item__tooltip" draggable="false">
+                    <div class="item__tooltip__title">
+                      <h2>Coffee</h2>
+                    </div>
+                    <div class="item__tooltip__info">
+                      It smells delicious. This is sure to give you a boost
+                      <ul class="health">
+                        <li>
+                          <img src="https://assets.codepen.io/7237686/energy.svg?format=auto" alt="energy" />
+                          +3 Energy
+                        </li>
+                        <li>
+                          <img src="https://assets.codepen.io/7237686/health.svg?format=auto" alt="health" />
+                          +1 Health
+                        </li>
+                        <li>
+                          <img src="https://assets.codepen.io/7237686/speed.svg?format=auto" alt="speed" />
+                          +1 Speed
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="items__container">
+                <div class="item__container" draggable="true">
+                  <img class="item__img" src="https://assets.codepen.io/7237686/cheese.svg?format=auto" alt="cheese" draggable="false" />
+                  <span class="item__quantity">8</span>
+                  <span class="item__quality">
+                    <img src="https://assets.codepen.io/7237686/gold_quality.svg?format=auto" alt="gold_quality" />
+                  </span>
+                  <div class="item__tooltip">
+                    <div class="item__tooltip__title">
+                      <h2>Cheese</h2>
+                      <h3 class="item__tooltip__category item__tooltip__category--goods">
+                        Artisan Goods
+                      </h3>
+                    </div>
+                    <div class="item__tooltip__info">
+                      It's your basic cheese.
+                      <ul class="health">
+                        <li>
+                          <img src="https://assets.codepen.io/7237686/energy.svg?format=auto" alt="energy" />
+                          +225 Energy
+                        </li>
+                        <li>
+                          <img src="https://assets.codepen.io/7237686/health.svg?format=auto" alt="health" />
+                          +101 Health
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+      
+              <div class="items__container">
+                <div class="item__container" draggable="true">
+                  <img class="item__img" src="https://assets.codepen.io/7237686/mango.svg?format=auto" alt="mango" draggable="false" />
+                  <span class="item__quantity">12</span>
+                  <div class="item__tooltip" draggable="false">
+                    <div class="item__tooltip__title">
+                      <h2>Mango</h2>
+                      <h3 class="item__tooltip__category item__tooltip__category--fruit">
+                        Fruit
+                      </h3>
+                    </div>
+                    <div class="item__tooltip__info">
+                      A big, sweet tropical fruit with a unique flavor.
+                      <ul class="health">
+                        <li>
+                          <img src="https://assets.codepen.io/7237686/energy.svg?format=auto" alt="energy" />
+                          +100 Energy
+                        </li>
+                        <li>
+                          <img src="https://assets.codepen.io/7237686/health.svg?format=auto" alt="health" />
+                          +45 Health
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="items__container">
+                <div class="item__container" draggable="true">
+                  <img class="item__img" src="https://assets.codepen.io/7237686/prismatic_shard.svg?format=auto" alt="prismatic_shard" draggable="false" />
+                  <span class="item__quantity">99</span>
+                  <div class="item__tooltip" draggable="false">
+                    <div class="item__tooltip__title">
+                      <h2>Prismatic Shard</h2>
+                      <h3 class="item__tooltip__category item__tooltip__category--mineral">
+                        Mineral
+                      </h3>
+                    </div>
+                    <div class="item__tooltip__info">
+                      A very rare and powerful substance with unknown origins
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="items__container">
+                <div class="item__container" draggable="true">
+                  <img class="item__img" src="https://assets.codepen.io/7237686/sunflower.svg?format=auto" alt="sunflower" draggable="false" />
+                  <span class="item__quantity">10</span>
+                  <div class="item__tooltip" draggable="false">
+                    <div class="item__tooltip__title">
+                      <h2>Sunflower</h2>
+                      <h3 class="item__tooltip__category item__tooltip__category--flower">
+                        Flower
+                      </h3>
+                    </div>
+      
+                    <div class="item__tooltip__info">
+                      A tropical bloom that thrives in the humid summer air. Has a
+                      sweet, tangy aroma.
+                      <ul class="health">
+                        <li>
+                          <img src="https://assets.codepen.io/7237686/energy.svg?format=auto" alt="energy" />
+                          +45 Energy
+                        </li>
+                        <li>
+                          <img src="https://assets.codepen.io/7237686/health.svg?format=auto" alt="health" />
+                          +20 Health
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="items__container">
+                <div class="item__container" draggable="true">
+                  <img class="item__img" src="https://assets.codepen.io/7237686/poppy_seeds.svg?format=auto" alt="poppy_seeds" draggable="false" />
+                  <span class="item__quantity">134</span>
+                  <div class="item__tooltip" draggable="false">
+                    <div class="item__tooltip__title">
+                      <h2>Poppy Seeds</h2>
+                      <h3 class="item__tooltip__category item__tooltip__category--seed">
+                        Seed
+                      </h3>
+                    </div>
+                    <div class="item__tooltip__info">
+                      Plant in summer. Produces a bright red flower in 7 days.
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="items__container">
+                <div class="item__container" draggable="true">
+                  <img class="item__img" src="https://assets.codepen.io/7237686/tomato_seeds.svg?format=auto" alt="tomato_seeds" draggable="false" />
+                  <span class="item__quantity">56</span>
+                  <div class="item__tooltip" draggable="false">
+                    <div class="item__tooltip__title">
+                      <h2>Tomato Seeds</h2>
+                      <h3 class="item__tooltip__category item__tooltip__category--seed">
+                        Seed
+                      </h3>
+                    </div>
+                    <div class="item__tooltip__info">
+                      Plant these in the summer. Takes 11 days to mature, and
+                      continues to produce after first harvest.
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="items__container">
+                <div class="item__container" draggable="true">
+                  <img class="item__img" src="https://assets.codepen.io/7237686/stone.svg?format=auto" alt="stone" draggable="false" />
+                  <span class="item__quantity">243</span>
+                  <div class="item__tooltip" draggable="false">
+                    <div class="item__tooltip__title">
+                      <h2>Stone</h2>
+                      <h3 class="item__tooltip__category item__tooltip__category--resource">
+                        Resource
+                      </h3>
+                    </div>
+                    <div class="item__tooltip__info">
+                      A common material with many uses in crafting and building.
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="items__container">
+                <div class="item__container" draggable="true">
+                  <img class="item__img" src="https://assets.codepen.io/7237686/wood.svg?format=auto" alt="wood" draggable="false" />
+                  <span class="item__quantity">152</span>
+                  <div class="item__tooltip" draggable="false">
+                    <div class="item__tooltip__title">
+                      <h2>Wood</h2>
+                      <h3 class="item__tooltip__category item__tooltip__category--resource">
+                        Resource
+                      </h3>
+                    </div>
+                    <div class="item__tooltip__info">
+                      A sturdy, yet flexible plant material with a wide variety of
+                      uses.
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="items__container">
+                <div class="item__container" draggable="true">
+                  <img class="item__img" src="https://assets.codepen.io/7237686/pink_cake.svg?format=auto" alt="pink_cake" draggable="false" />
+                  <div class="item__tooltip" draggable="false">
+                    <div class="item__tooltip__title">
+                      <h2>Pink Cake</h2>
+                      <h3 class="item__tooltip__category items__tooltip__category--cooking">
+                        Cooking
+                      </h3>
+                    </div>
+                    <div class="item__tooltip__info">
+                      There's little heart candies on top.
+                      <ul class="health">
+                        <li>
+                          <img src="https://assets.codepen.io/7237686/energy.svg?format=auto" alt="energy" />
+                          +250 Energy
+                        </li>
+                        <li>
+                          <img src="https://assets.codepen.io/7237686/health.svg?format=auto" alt="health" />
+                          +112 Health
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="items__container">
+                <div class="item__container" draggable="true">
+                  <img class="item__img" src="https://assets.codepen.io/7237686/strange_bun.svg?format=auto" alt="strange_bun" draggable="false" />
+                  <div class="item__tooltip" draggable="false">
+                    <div class="item__tooltip__title">
+                      <h2>Strange Bun</h2>
+                      <h3 class="item__tooltip__category item__tooltip__category--cooking">
+                        Cooking
+                      </h3>
+                    </div>
+                    <div class="item__tooltip__info">
+                      What's inside?
+                      <ul class="health">
+                        <li>
+                          <img src="https://assets.codepen.io/7237686/energy.svg?format=auto" alt="energy" />
+                          +100 Energy
+                        </li>
+                        <li>
+                          <img src="https://assets.codepen.io/7237686/health.svg?format=auto" alt="health" />
+                          +45 Health
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="items__container">
+                <div class="item__container" draggable="true">
+                  <img class="item__img" src="https://assets.codepen.io/7237686/mega_bomb.svg?format=auto" alt="mega_bomb" draggable="false" />
+                  <span class="item__quantity">16</span>
+                  <div class="item__tooltip" draggable="false">
+                    <div class="item__tooltip__title">
+                      <h2>Mega Bomb</h2>
+                      <h3 class="item__tooltip__category item__tooltip__category--crafting">
+                        Crafting
+                      </h3>
+                    </div>
+                    <div class="item__tooltip__info">
+                      Generates a powerful explosion. Use with extreme caution.
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="items__container">
+                <div class="item__container" draggable="true">
+                  <img class="item__img" src="https://assets.codepen.io/7237686/corn.svg?format=auto" alt="corn" draggable="false" />
+                  <span class="item__quantity">30</span>
+                  <div class="item__tooltip" draggable="false">
+                    <div class="item__tooltip__title">
+                      <h2>Corn</h2>
+                      <h3 class="item__tooltip__category item__tooltip__category--vegetable">
+                        Vegetable
+                      </h3>
+                    </div>
+                    <div class="item__tooltip__info">
+                      One of the most popular grains. The sweet, fresh cobs are a
+                      summer favorite.
+                      <ul class="health">
+                        <li>
+                          <img src="https://assets.codepen.io/7237686/energy.svg?format=auto" alt="energy" />
+                          +25 Energy
+                        </li>
+                        <li>
+                          <img src="https://assets.codepen.io/7237686/health.svg?format=auto" alt="health" />
+                          +11 Health
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="items__container">
+                <div class="item__container" draggable="true">
+                  <img class="item__img" src="https://assets.codepen.io/7237686/tuna.svg?format=auto" alt="tuna" draggable="false" />
+                  <span class="item__quality">
+                    <img src="https://assets.codepen.io/7237686/gold_quality.svg?format=auto" alt="gold_quality" />
+                  </span>
+                  <div class="item__tooltip" draggable="false">
+                    <div class="item__tooltip__title">
+                      <h2>Tuna</h2>
+                      <h3 class="item__tooltip__category item__tooltip__category--fish">
+                        Fish
+                      </h3>
+                    </div>
+                    <div class="item__tooltip__info">
+                      A large fish that lives in the ocean.
+                      <ul class="health">
+                        <li>
+                          <img src="https://assets.codepen.io/7237686/energy.svg?format=auto" alt="energy" />
+                          +68 Energy
+                        </li>
+                        <li>
+                          <img src="https://assets.codepen.io/7237686/health.svg?format=auto" alt="health" />
+                          +30 Health
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="items__container">
+                <div class="item__container"></div>
+              </div>
+              <div class="items__container">
+                <div class="item__container"></div>
+              </div>
+              <div class="items__container">
+                <div class="item__container"></div>
+              </div>
+              <div class="items__container">
+                <div class="item__container"></div>
+              </div>
+              <div class="items__container">
+                <div class="item__container"></div>
+              </div>
+              <div class="items__container">
+                <div class="item__container"></div>
+              </div>
+              <div class="items__container">
+                <div class="item__container"></div>
+              </div>
+              <div class="items__container">
+                <div class="item__container"></div>
+              </div>
+              <div class="items__container">
+                <div class="item__container"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+    </div>
+</body>
+</html>
