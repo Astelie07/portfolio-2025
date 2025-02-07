@@ -82,6 +82,45 @@ document.addEventListener("DOMContentLoaded", function() {
 
 });
 
+//-------------------------------------------------------SKILLS
+
+//=======DRAG AND DROP================
+const items = document.querySelectorAll(".item__container");
+const itemContainers = document.querySelectorAll(".items__container");
+
+items.forEach((item) => {
+  item.addEventListener("dragstart", dragStart);
+});
+
+itemContainers.forEach((square) => {
+  square.addEventListener("dragover", dragOver);
+  square.addEventListener("drop", dragDrop);
+});
+
+let beingDragged;
+
+function dragStart(e) {
+  beingDragged = e.target;
+
+  let img = new Image();
+  img.src =
+    "data:image/gif;base64,R0lGODlhAQABAIAAAAUEBAAAACwAAAAAAQABAAACAkQBADs=";
+  e.dataTransfer.setDragImage(img, 0, 0);
+}
+
+function dragDrop(e) {
+  if (e.target.tagName === "IMG") {
+    return;
+  }
+
+  e.target.append(beingDragged);
+}
+
+function dragOver(e) {
+  e.preventDefault();
+}
+
+
 // <!-- --------------------------------------------------------------- -->
 
 var x;
