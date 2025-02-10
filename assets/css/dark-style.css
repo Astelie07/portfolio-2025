@@ -144,16 +144,325 @@ section {
   background: var(--color-primary);
 }
 
+.dark-img{
+  display: block;
+}
+
+.light-img{
+  display: none;
+}
+
+/* ---------------------------------------- COMPETENCES + SKILLS ------------------------------------------------------------------------------- */
+
 #competences {
   background-color: var(--color-primary);
-  background: url('../img/tree-dark.png');
   display: flex;
   justify-content: center;
   align-items: center;
-  padding-top: 4rem;
-  padding-bottom: 4rem;
+  flex-wrap: wrap;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
   position: relative;
 }
+
+#competences h2{
+  width: 100%;
+  text-align: center;
+  margin: 10px auto;
+}
+
+#skill-commentary{
+  position: absolute;
+  background: #fff;
+  color: var(--color-background);
+  padding: 20px 25px;
+  border-radius: 50%;
+  font-size: 1rem;
+  border: solid 2px var(--color-accent);
+  position: absolute;
+  bottom: 15%;
+  right: 15%;
+}
+
+.skill_character{
+  position: relative;
+  margin: auto  25px;
+  max-width: 350px;
+}
+
+/*--------------------------SKILLS---------------------------*/
+:root {
+  /* --container_color: #ffc878;
+  --container_color2: #f8ba70;
+  --container_color3: #eba867; */
+  --container_color: #e6d7f3;
+  --container_color2: #d3bce9;
+  --container_color3: #be9fe0;
+  --text_color: #231f33;
+  --text_shadow: #705dc5af;
+  --fruit_color: #ff1493;
+  --flower_color: #f354eb;
+  --goods_color: #048d66;
+  --seed_color: #ca6410;
+  --cooking_color: #266e14;
+  --fish_color: #0621b8;
+  --wearable_color: #000;
+  --gradient-bg: linear-gradient(180deg, var(--container_color) 0%, var(--container_color2) 50%, var(--container_color3) 100%); 
+}
+@font-face {
+  font-family: svFont;
+  src: url(https://assets.codepen.io/7237686/rainyhearts.woff) format("woff");
+}
+@font-face {
+  font-family: pixelFont;
+  src: url(https://assets.codepen.io/7237686//pixelFont.woff) format("woff");
+}
+.disabled img {
+  pointer-events: none;
+}
+::-webkit-scrollbar {
+  width: 0.6rem;
+  background: #db7812;
+}
+::-webkit-scrollbar-thumb {
+  background: #ad520b;
+}
+.skills {
+  width: 100%;
+  max-width: 60rem;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+@media (max-width: 65rem) {
+  .skills {
+      flex-direction: row;
+  }
+}
+.skills__content {
+  font-family: svFont;
+  width: 100%;
+  background: var(--gradient-bg);
+  border-radius: 28px;
+}
+.skills__content__inventory, .skills__content__info {
+  border-style: solid;
+  border-width: 20px;
+  border-image-slice: 24 22;
+  border-image-repeat: round;
+  border-radius: 20px;
+}
+@media (max-width: 65rem) {
+  .skills__content__inventory, .skills__content__info {
+      overflow: auto;
+  }
+}
+.skills__content__inventory .items__container, .skills__content__info .items__container, .skills__content__inventory .items__container--disabled, .skills__content__info .items__container--disabled {
+  border-style: solid;
+  border-width: 20px;
+  border-image-slice: 24 22;
+  border-image-repeat: round;
+  border-radius: 20px;
+  border-image-source: url("https://assets.codepen.io/7237686/itemsborder.png");
+  width: 74px;
+  height: 74px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+@media (max-width: 1560px) {
+  .skills__content__inventory .items__container, .skills__content__info .items__container, .skills__content__inventory .items__container--disabled, .skills__content__info .items__container--disabled {
+      width: 64px;
+      height: 64px;
+  }
+}
+.skills__content__inventory .items__container .items__number, .skills__content__info .items__container .items__number, .skills__content__inventory .items__container--disabled .items__number, .skills__content__info .items__container--disabled .items__number {
+  font-size: 0.9rem;
+  position: absolute;
+  top: -35px;
+  left: 40%;
+  font-weight: 500;
+  color: #696969;
+  font-family: pixelFont;
+}
+.skills__content__inventory .items__container .items__number--first, .skills__content__info .items__container .items__number--first, .skills__content__inventory .items__container--disabled .items__number--first, .skills__content__info .items__container--disabled .items__number--first {
+  color: #f00;
+}
+.skills__content__inventory .items__container .item__container .item__img, .skills__content__info .items__container .item__container .item__img, .skills__content__inventory .items__container--disabled .item__container .item__img, .skills__content__info .items__container--disabled .item__container .item__img {
+  height: 70px;
+  width: 70px;
+  image-rendering: pixelated;
+  image-rendering: crisp-edges;
+  transition: 0.2s all;
+}
+@media (max-width: 1560px) {
+  .skills__content__inventory .items__container .item__container .item__img, .skills__content__info .items__container .item__container .item__img, .skills__content__inventory .items__container--disabled .item__container .item__img, .skills__content__info .items__container--disabled .item__container .item__img {
+      height: 64px;
+      width: 64px;
+  }
+}
+.skills__content__inventory .items__container .item__container .item__img:hover, .skills__content__info .items__container .item__container .item__img:hover, .skills__content__inventory .items__container--disabled .item__container .item__img:hover, .skills__content__info .items__container--disabled .item__container .item__img:hover {
+  transform: scale(1.06);
+}
+.skills__content__inventory .items__container .item__container .item__img--small, .skills__content__info .items__container .item__container .item__img--small, .skills__content__inventory .items__container--disabled .item__container .item__img--small, .skills__content__info .items__container--disabled .item__container .item__img--small {
+  height: 40px;
+  width: 40px;
+}
+.skills__content__inventory .items__container .item__container .item__quantity, .skills__content__info .items__container .item__container .item__quantity, .skills__content__inventory .items__container--disabled .item__container .item__quantity, .skills__content__info .items__container--disabled .item__container .item__quantity {
+  color: #fff;
+  position: absolute;
+  bottom: -70%;
+  right: -60%;
+  font-size: 1.3rem;
+  letter-spacing: 2px;
+  text-shadow: -2px 0 #000, 0 2px #000, 2px 0 #000, 0 -2px #000;
+  font-family: pixelFont;
+}
+@media (max-width: 1560px) {
+  .skills__content__inventory .items__container .item__container .item__quantity, .skills__content__info .items__container .item__container .item__quantity, .skills__content__inventory .items__container--disabled .item__container .item__quantity, .skills__content__info .items__container--disabled .item__container .item__quantity {
+      bottom: -100%;
+      right: -90%;
+  }
+}
+.skills__content__inventory .items__container .item__container .item__quality, .skills__content__info .items__container .item__container .item__quality, .skills__content__inventory .items__container--disabled .item__container .item__quality, .skills__content__info .items__container--disabled .item__container .item__quality {
+  position: absolute;
+  left: -60%;
+  bottom: -70%;
+}
+@media (max-width: 1560px) {
+  .skills__content__inventory .items__container .item__container .item__quality, .skills__content__info .items__container .item__container .item__quality, .skills__content__inventory .items__container--disabled .item__container .item__quality, .skills__content__info .items__container--disabled .item__container .item__quality {
+      bottom: -100%;
+      left: -90%;
+  }
+}
+.skills__content__inventory .items__container .item__container .item__quality img, .skills__content__info .items__container .item__container .item__quality img, .skills__content__inventory .items__container--disabled .item__container .item__quality img, .skills__content__info .items__container--disabled .item__container .item__quality img {
+  height: 1.5625rem;
+}
+.skills__content__inventory .items__container .item__container .item__tooltip, .skills__content__info .items__container .item__container .item__tooltip, .skills__content__inventory .items__container--disabled .item__container .item__tooltip, .skills__content__info .items__container--disabled .item__container .item__tooltip {
+  display: none;
+  position: absolute;
+  left: 3.125rem;
+  top: 0;
+  z-index: 89999;
+  min-width: 22rem;
+  border-radius: 1.125rem;
+  filter: drop-shadow(-0.6rem 0.6rem rgba(0, 0, 0, 0.3));
+  color: #212;
+  background-color: var(--container_color);
+}
+@media (max-width: 1560px) {
+  .skills__content__inventory .items__container .item__container .item__tooltip, .skills__content__info .items__container .item__container .item__tooltip, .skills__content__inventory .items__container--disabled .item__container .item__tooltip, .skills__content__info .items__container--disabled .item__container .item__tooltip {
+      min-width: 18rem;
+  }
+}
+.skills__content__inventory .items__container .item__container .item__tooltip .item__tooltip__title, .skills__content__info .items__container .item__container .item__tooltip .item__tooltip__title, .skills__content__inventory .items__container--disabled .item__container .item__tooltip .item__tooltip__title, .skills__content__info .items__container--disabled .item__container .item__tooltip .item__tooltip__title {
+  border-style: solid;
+  border-width: 20px;
+  border-image-slice: 24 22;
+  border-image-repeat: round;
+  border-radius: 20px;
+  border-image-source: url("https://assets.codepen.io/7237686/tooltipbordertop.png");
+  text-shadow: var(--text_shadow) -2px 1px;
+  white-space: nowrap;
+}
+.skills__content__inventory .items__container .item__container .item__tooltip .item__tooltip__title h2, .skills__content__info .items__container .item__container .item__tooltip .item__tooltip__title h2, .skills__content__inventory .items__container--disabled .item__container .item__tooltip .item__tooltip__title h2, .skills__content__info .items__container--disabled .item__container .item__tooltip .item__tooltip__title h2 {
+  font-size: 3rem;
+}
+.skills__content__inventory .items__container .item__container .item__tooltip .item__tooltip__title .item__tooltip__category, .skills__content__info .items__container .item__container .item__tooltip .item__tooltip__title .item__tooltip__category, .skills__content__inventory .items__container--disabled .item__container .item__tooltip .item__tooltip__title .item__tooltip__category, .skills__content__info .items__container--disabled .item__container .item__tooltip .item__tooltip__title .item__tooltip__category {
+  font-size: 2.5rem;
+  text-shadow: var(--text_shadow) 2px 1px;
+}
+.skills__content__inventory .items__container .item__container .item__tooltip .item__tooltip__title .item__tooltip__category--tool, .skills__content__info .items__container .item__container .item__tooltip .item__tooltip__title .item__tooltip__category--tool, .skills__content__inventory .items__container--disabled .item__container .item__tooltip .item__tooltip__title .item__tooltip__category--tool, .skills__content__info .items__container--disabled .item__container .item__tooltip .item__tooltip__title .item__tooltip__category--tool {
+  color: var(--tool_color);
+}
+.skills__content__inventory .items__container .item__container .item__tooltip .item__tooltip__title .item__tooltip__category--fruit, .skills__content__info .items__container .item__container .item__tooltip .item__tooltip__title .item__tooltip__category--fruit, .skills__content__inventory .items__container--disabled .item__container .item__tooltip .item__tooltip__title .item__tooltip__category--fruit, .skills__content__info .items__container--disabled .item__container .item__tooltip .item__tooltip__title .item__tooltip__category--fruit {
+  color: var(--fruit_color);
+}
+.skills__content__inventory .items__container .item__container .item__tooltip .item__tooltip__title .item__tooltip__category--vegetable, .skills__content__info .items__container .item__container .item__tooltip .item__tooltip__title .item__tooltip__category--vegetable, .skills__content__inventory .items__container--disabled .item__container .item__tooltip .item__tooltip__title .item__tooltip__category--vegetable, .skills__content__info .items__container--disabled .item__container .item__tooltip .item__tooltip__title .item__tooltip__category--vegetable {
+  color: var(--vegetable_color);
+}
+.skills__content__inventory .items__container .item__container .item__tooltip .item__tooltip__title .item__tooltip__category--flower, .skills__content__info .items__container .item__container .item__tooltip .item__tooltip__title .item__tooltip__category--flower, .skills__content__inventory .items__container--disabled .item__container .item__tooltip .item__tooltip__title .item__tooltip__category--flower, .skills__content__info .items__container--disabled .item__container .item__tooltip .item__tooltip__title .item__tooltip__category--flower {
+  color: var(--flower_color);
+}
+.skills__content__inventory .items__container .item__container .item__tooltip .item__tooltip__title .item__tooltip__category--goods, .skills__content__info .items__container .item__container .item__tooltip .item__tooltip__title .item__tooltip__category--goods, .skills__content__inventory .items__container--disabled .item__container .item__tooltip .item__tooltip__title .item__tooltip__category--goods, .skills__content__info .items__container--disabled .item__container .item__tooltip .item__tooltip__title .item__tooltip__category--goods {
+  color: var(--goods_color);
+}
+.skills__content__inventory .items__container .item__container .item__tooltip .item__tooltip__title .item__tooltip__category--seed, .skills__content__info .items__container .item__container .item__tooltip .item__tooltip__title .item__tooltip__category--seed, .skills__content__inventory .items__container--disabled .item__container .item__tooltip .item__tooltip__title .item__tooltip__category--seed, .skills__content__info .items__container--disabled .item__container .item__tooltip .item__tooltip__title .item__tooltip__category--seed {
+  color: var(--seed_color);
+}
+.skills__content__inventory .items__container .item__container .item__tooltip .item__tooltip__title .item__tooltip__category--mineral, .skills__content__info .items__container .item__container .item__tooltip .item__tooltip__title .item__tooltip__category--mineral, .skills__content__inventory .items__container--disabled .item__container .item__tooltip .item__tooltip__title .item__tooltip__category--mineral, .skills__content__info .items__container--disabled .item__container .item__tooltip .item__tooltip__title .item__tooltip__category--mineral {
+  color: var(--mineral_color);
+}
+.skills__content__inventory .items__container .item__container .item__tooltip .item__tooltip__title .item__tooltip__category--resource, .skills__content__info .items__container .item__container .item__tooltip .item__tooltip__title .item__tooltip__category--resource, .skills__content__inventory .items__container--disabled .item__container .item__tooltip .item__tooltip__title .item__tooltip__category--resource, .skills__content__info .items__container--disabled .item__container .item__tooltip .item__tooltip__title .item__tooltip__category--resource {
+  color: var(--resource_color);
+}
+.skills__content__inventory .items__container .item__container .item__tooltip .item__tooltip__title .item__tooltip__category--cooking, .skills__content__info .items__container .item__container .item__tooltip .item__tooltip__title .item__tooltip__category--cooking, .skills__content__inventory .items__container--disabled .item__container .item__tooltip .item__tooltip__title .item__tooltip__category--cooking, .skills__content__info .items__container--disabled .item__container .item__tooltip .item__tooltip__title .item__tooltip__category--cooking {
+  color: var(--cooking_color);
+}
+.skills__content__inventory .items__container .item__container .item__tooltip .item__tooltip__title .item__tooltip__category--crafting, .skills__content__info .items__container .item__container .item__tooltip .item__tooltip__title .item__tooltip__category--crafting, .skills__content__inventory .items__container--disabled .item__container .item__tooltip .item__tooltip__title .item__tooltip__category--crafting, .skills__content__info .items__container--disabled .item__container .item__tooltip .item__tooltip__title .item__tooltip__category--crafting {
+  color: var(--crafting_color);
+}
+.skills__content__inventory .items__container .item__container .item__tooltip .item__tooltip__title .item__tooltip__category--decoration, .skills__content__info .items__container .item__container .item__tooltip .item__tooltip__title .item__tooltip__category--decoration, .skills__content__inventory .items__container--disabled .item__container .item__tooltip .item__tooltip__title .item__tooltip__category--decoration, .skills__content__info .items__container--disabled .item__container .item__tooltip .item__tooltip__title .item__tooltip__category--decoration {
+  color: var(--decoration_color);
+}
+.skills__content__inventory .items__container .item__container .item__tooltip .item__tooltip__title .item__tooltip__category--fish, .skills__content__info .items__container .item__container .item__tooltip .item__tooltip__title .item__tooltip__category--fish, .skills__content__inventory .items__container--disabled .item__container .item__tooltip .item__tooltip__title .item__tooltip__category--fish, .skills__content__info .items__container--disabled .item__container .item__tooltip .item__tooltip__title .item__tooltip__category--fish {
+  color: var(--fish_color);
+}
+.skills__content__inventory .items__container .item__container .item__tooltip .item__tooltip__title .item__tooltip__category--wearable, .skills__content__info .items__container .item__container .item__tooltip .item__tooltip__title .item__tooltip__category--wearable, .skills__content__inventory .items__container--disabled .item__container .item__tooltip .item__tooltip__title .item__tooltip__category--wearable, .skills__content__info .items__container--disabled .item__container .item__tooltip .item__tooltip__title .item__tooltip__category--wearable {
+  color: var(--wearable_color);
+}
+.skills__content__inventory .items__container .item__container .item__tooltip .item__tooltip__info, .skills__content__info .items__container .item__container .item__tooltip .item__tooltip__info, .skills__content__inventory .items__container--disabled .item__container .item__tooltip .item__tooltip__info, .skills__content__info .items__container--disabled .item__container .item__tooltip .item__tooltip__info {
+  border-style: solid;
+  border-width: 20px;
+  border-image-slice: 24 22;
+  border-image-repeat: round;
+  border-radius: 20px;
+  border-image-source: url("https://assets.codepen.io/7237686/tooltipborderbottom.png");
+  font-size: 2rem;
+  text-shadow: var(--text_shadow) -2px 1px;
+}
+.skills__content__inventory .items__container .item__container .item__tooltip .item__tooltip__info ul, .skills__content__info .items__container .item__container .item__tooltip .item__tooltip__info ul, .skills__content__inventory .items__container--disabled .item__container .item__tooltip .item__tooltip__info ul, .skills__content__info .items__container--disabled .item__container .item__tooltip .item__tooltip__info ul {
+  margin-bottom: 1.25rem;
+  list-style: none;
+  margin-top: 10px;
+}
+.skills__content__inventory .items__container .item__container .item__tooltip .item__tooltip__info ul li, .skills__content__info .items__container .item__container .item__tooltip .item__tooltip__info ul li, .skills__content__inventory .items__container--disabled .item__container .item__tooltip .item__tooltip__info ul li, .skills__content__info .items__container--disabled .item__container .item__tooltip .item__tooltip__info ul li {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+.skills__content__inventory .items__container .item__container .item__tooltip .item__tooltip__info ul li img, .skills__content__info .items__container .item__container .item__tooltip .item__tooltip__info ul li img, .skills__content__inventory .items__container--disabled .item__container .item__tooltip .item__tooltip__info ul li img, .skills__content__info .items__container--disabled .item__container .item__tooltip .item__tooltip__info ul li img {
+  height: 40px;
+}
+.skills__content__inventory .items__container .item__container:hover .item__tooltip, .skills__content__info .items__container .item__container:hover .item__tooltip, .skills__content__inventory .items__container--disabled .item__container:hover .item__tooltip, .skills__content__info .items__container--disabled .item__container:hover .item__tooltip {
+  display: block;
+}
+@media (max-width: 46.875rem) {
+  .skills__content__inventory .items__container .item__container:hover .item__tooltip, .skills__content__info .items__container .item__container:hover .item__tooltip, .skills__content__inventory .items__container--disabled .item__container:hover .item__tooltip, .skills__content__info .items__container--disabled .item__container:hover .item__tooltip {
+      display: none;
+  }
+}
+.skills__content__inventory .items__container .item__container:active .item__tooltip, .skills__content__info .items__container .item__container:active .item__tooltip, .skills__content__inventory .items__container--disabled .item__container:active .item__tooltip, .skills__content__info .items__container--disabled .item__container:active .item__tooltip {
+  display: none;
+}
+.skills__content__inventory {
+  border-image-source: url("https://assets.codepen.io/7237686/bordertop.png");
+  /* border-image-source: url("https://assets.codepen.io/7237686/borderbottom.png");
+  */
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+.skills__content__inventory .inventory--rows {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(70px, 1fr));
+  row-gap: 0.3125rem;
+}
+
+/* ---------------------------------------- LIGHT DARK --------------------------------------------- */
 
 .icons-container {
   display: flex;
@@ -190,11 +499,7 @@ section {
 }
 
 #portfolio {
-  background: var(--color-primary);
-}
-
-#projet {
-  background: var(--color-primary);
+  background: url('../img/tree-dark.png'); 
 }
 
 /* Style du bouton de changement de thème */
