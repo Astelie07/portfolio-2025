@@ -264,7 +264,7 @@ section {
   border-image-slice: 24 22;
   border-image-repeat: round;
   border-radius: 20px;
-  border-image-source: url("https://assets.codepen.io/7237686/itemsborder.png");
+  border-image-source: url("https://assets.codepen.io/7237686/itemsborder.png");      /* BORDER SLOT */
   width: 74px;
   height: 74px;
   display: flex;
@@ -363,7 +363,7 @@ section {
   border-image-slice: 24 22;
   border-image-repeat: round;
   border-radius: 20px;
-  border-image-source: url("https://assets.codepen.io/7237686/tooltipbordertop.png");
+  border-image-source: url("https://assets.codepen.io/7237686/tooltipbordertop.png");       /*bordure haut infos*/
   text-shadow: var(--text_shadow) -2px 1px;
   white-space: nowrap;
 }
@@ -419,7 +419,7 @@ section {
   border-image-slice: 24 22;
   border-image-repeat: round;
   border-radius: 20px;
-  border-image-source: url("https://assets.codepen.io/7237686/tooltipborderbottom.png");
+  border-image-source: url("https://assets.codepen.io/7237686/tooltipborderbottom.png");      /*contour bas infos*/
   font-size: 2rem;
   text-shadow: var(--text_shadow) -2px 1px;
 }
@@ -448,9 +448,7 @@ section {
   display: none;
 }
 .skills__content__inventory {
-  border-image-source: url("https://assets.codepen.io/7237686/bordertop.png");
-  /* border-image-source: url("https://assets.codepen.io/7237686/borderbottom.png");
-  */
+  border-image-source: url("https://assets.codepen.io/7237686/bordertop.png");              /*bordure grand inventaire*/
   padding: 1rem;
   display: flex;
   flex-direction: column;
