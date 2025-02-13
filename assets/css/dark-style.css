@@ -265,7 +265,7 @@ section {
   border-image-repeat: round;
   border-radius: 20px;
   /*border-image-source: url("https://assets.codepen.io/7237686/itemsborder.png");      /* BORDER SLOT */
-  border-image-source: url("../assets/img/illus/slot_d.png");
+  border-image-source: url("../img/illus/slot_d.png");
   width: 74px;
   height: 74px;
   display: flex;
@@ -365,7 +365,7 @@ section {
   border-image-repeat: round;
   border-radius: 20px;
   /*border-image-source: url("https://assets.codepen.io/7237686/tooltipbordertop.png");       /*bordure haut infos*/
-  border-image-source: url("../assets/img/illus/tooltip_top_d.png");
+  border-image-source: url("../img/illus/tooltip_top_d.png");
   text-shadow: var(--text_shadow) -2px 1px;
   white-space: nowrap;
 }
@@ -422,7 +422,7 @@ section {
   border-image-repeat: round;
   border-radius: 20px;
   /*border-image-source: url("https://assets.codepen.io/7237686/tooltipborderbottom.png");      /*contour bas infos*/
-  border-image-source: url("../assets/img/illus/tooltip_bottom_d.png");
+  border-image-source: url("../img/illus/tooltip_bottom_d.png");
   font-size: 2rem;
   text-shadow: var(--text_shadow) -2px 1px;
 }
@@ -452,7 +452,7 @@ section {
 }
 .skills__content__inventory {
   /*border-image-source: url("https://assets.codepen.io/7237686/bordertop.png");              /*bordure grand inventaire*/
-  border-image-source: url("../assets/img/illus/inventory-border_d.png");
+  border-image-source: url("../img/illus/inventory-border_d.png");
   padding: 1rem;
   display: flex;
   flex-direction: column;
