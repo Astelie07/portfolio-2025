@@ -490,12 +490,9 @@
     display: none;
   }
   .skills__content__inventory {
-    border-image-source: url("../assets/img/illus/inventory-border.png");
+    border-image-source: url("../img/illus/inventory-border.png");
     /* border-image-source: url("https://assets.codepen.io/7237686/borderbottom.png");
-    */
-    background-image: url("../assets/img/illus/inventory-border.png");
-    background-size: cover;  
-      
+    */      
     padding: 1rem;
     display: flex;
     flex-direction: column;
