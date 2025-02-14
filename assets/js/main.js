@@ -240,21 +240,4 @@ $(document).ready(function () {
       }
   });
 
-  // Récupérer les éléments nécessaires -------------------------------------- test portfolio sect
-  const toggleButton = document.getElementById("toggle-button");
-  const hiddenCards = document.querySelector(".cards.hidden");
-
-  // Ajouter un gestionnaire d'événement pour le bouton
-  toggleButton.addEventListener("click", () => {
-    // Toggle la visibilité de la deuxième ligne
-    hiddenCards.classList.toggle("hidden");
-
-    // Modifier la flèche du bouton selon l'état
-    if (hiddenCards.classList.contains("hidden")) {
-      toggleButton.textContent = "▼";
-    } else {
-      toggleButton.textContent = "▲";
-    }
-  });
-
 });

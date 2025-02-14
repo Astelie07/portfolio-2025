@@ -1233,31 +1233,4 @@ font-size: 18px;
     }
   }
 
-/*---------------------------portfolio section ------------------------------*/
-
-  .hidden {
-    display: none;
-  }
-
-  #toggle-button {
-    width: 100%; /* Prend toute la largeur */
-    background: none; /* Pas de couleur de fond */
-    border: none; /* Pas de bordure */
-    text-align: center; /* Texte centré */
-    cursor: pointer; /* Change le curseur en pointeur */
-    font-size: 5rem; /* Taille du texte (ajustez selon vos besoins) */
-    color: var(--color-background); /* Couleur du texte */
-    animation: move-up-down 1.5s infinite;
-  }
-  
-
-/* Définition de l'animation */
-@keyframes move-up-down {
-  0%, 100% {
-    transform: translateY(0); /* Position initiale */
-  }
-  50% {
-    transform: translateY(20px); /* Déplacement vers le haut */
-  }
-}
 
