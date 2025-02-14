@@ -541,7 +541,10 @@
   }
 
   #portfolio {
-    background: url('../img/tree-light.png');
+    background: url('../img/tree-light.png'); 
+    background-repeat: no-repeat;
+    background-size: cover; /* Ajuste l'image pour couvrir tout l'écran */
+    background-position: center; /* Centre l'image */
   }
 
   /* Style du bouton de changement de thème */
