@@ -188,6 +188,53 @@ $cards
     e.target.elements.email.value = '';
     e.target.elements.message.value = '';
   });
+  
+  document.querySelectorAll('.filter-btn').forEach(button => {
+    button.addEventListener('click', () => {
+        let filter = button.getAttribute('data-filter');
+        document.querySelectorAll('.card:not(.clone)').forEach(card => { // Exclut les clones
+            if (filter === 'all' || card.classList.contains(filter)) {
+                card.style.display = "block";
+            } else {
+                card.style.display = "none";
+            }
+        });
+    });
+});
+
+//------------------------portfolio scroll test
+
+const container = document.querySelector('.cards-wrapper');
+let isDown = false;
+let startX;
+let scrollLeft;
+
+// Drag avec la souris
+container.addEventListener('mousedown', (e) => {
+    isDown = true;
+    startX = e.pageX - container.offsetLeft;
+    scrollLeft = container.scrollLeft;
+});
+container.addEventListener('mouseleave', () => isDown = false);
+container.addEventListener('mouseup', () => isDown = false);
+container.addEventListener('mousemove', (e) => {
+    if (!isDown) return;
+    e.preventDefault();
+    const x = e.pageX - container.offsetLeft;
+    const walk = (x - startX) * 2;
+    container.scrollLeft = scrollLeft - walk;
+});
+
+// Effet de boucle au scroll
+container.addEventListener('scroll', () => {
+    if (container.scrollLeft <= 0) {
+        container.scrollLeft = container.scrollWidth / 2; // Revient à la fin
+    } else if (container.scrollLeft >= container.scrollWidth / 2) {
+        container.scrollLeft = 1; // Revient au début
+    }
+});
+
+
 
 // -------------------------------------------------------------- PROJETS --------------------------------------------------------
 
@@ -243,50 +290,5 @@ $(document).ready(function () {
 
 });
 
-//------------------------portfolio scroll test
 
-const wrapper = document.querySelector('.cards-wrapper');
-const cardsContainer = document.querySelector('.cards');
-const cards = [...document.querySelectorAll('.card')];
-let isDown = false;
-let startX;
-let scrollLeft;
-
-// 🌀 Clone les cartes pour l'effet de boucle
-cards.forEach(card => {
-    let clone = card.cloneNode(true);
-    cardsContainer.appendChild(clone);
-});
-
-// 🖱️ Drag Scroll
-wrapper.addEventListener('mousedown', (e) => {
-    isDown = true;
-    startX = e.pageX - wrapper.offsetLeft;
-    scrollLeft = wrapper.scrollLeft;
-});
-
-wrapper.addEventListener('mouseleave', () => isDown = false);
-wrapper.addEventListener('mouseup', () => isDown = false);
-
-wrapper.addEventListener('mousemove', (e) => {
-    if (!isDown) return;
-    e.preventDefault();
-    const x = e.pageX - wrapper.offsetLeft;
-    const walk = (x - startX) * 2.5; // Ajuste la vitesse
-    wrapper.scrollLeft = scrollLeft - walk;
-});
-
-// 🔄 Gestion du scroll infini
-function checkScroll() {
-    const scrollMax = cardsContainer.scrollWidth / 2;
-    if (wrapper.scrollLeft >= scrollMax) {
-        wrapper.scrollLeft = 0; // Revient au début sans saccade
-    } else if (wrapper.scrollLeft <= 0) {
-        wrapper.scrollLeft = scrollMax; // Va à la fin sans saccade
-    }
-}
-
-wrapper.addEventListener('scroll', () => {
-    requestAnimationFrame(checkScroll);
-});
 
