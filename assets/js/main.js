@@ -150,8 +150,9 @@ $cards
     var px_spark = (50+(px - 50)/7);
     var py_spark = (50+(py - 50)/7);
     var p_opc = 20+(Math.abs(pa)*1.5);
-    var ty = ((tp - 50)/2) * -1;
-    var tx = ((lp - 50)/1.5) * .5;
+    var ty = ((tp - 50) / 4) * -1;
+    var tx = ((lp - 50) / 3) * 0.5;
+
     // css to apply for active card
     var grad_pos = `background-position: ${lp}% ${tp}%;`
     var sprk_pos = `background-position: ${px_spark}% ${py_spark}%;`
@@ -241,3 +242,51 @@ $(document).ready(function () {
   });
 
 });
+
+//------------------------portfolio scroll test
+
+const wrapper = document.querySelector('.cards-wrapper');
+const cardsContainer = document.querySelector('.cards');
+const cards = [...document.querySelectorAll('.card')];
+let isDown = false;
+let startX;
+let scrollLeft;
+
+// 🌀 Clone les cartes pour l'effet de boucle
+cards.forEach(card => {
+    let clone = card.cloneNode(true);
+    cardsContainer.appendChild(clone);
+});
+
+// 🖱️ Drag Scroll
+wrapper.addEventListener('mousedown', (e) => {
+    isDown = true;
+    startX = e.pageX - wrapper.offsetLeft;
+    scrollLeft = wrapper.scrollLeft;
+});
+
+wrapper.addEventListener('mouseleave', () => isDown = false);
+wrapper.addEventListener('mouseup', () => isDown = false);
+
+wrapper.addEventListener('mousemove', (e) => {
+    if (!isDown) return;
+    e.preventDefault();
+    const x = e.pageX - wrapper.offsetLeft;
+    const walk = (x - startX) * 2.5; // Ajuste la vitesse
+    wrapper.scrollLeft = scrollLeft - walk;
+});
+
+// 🔄 Gestion du scroll infini
+function checkScroll() {
+    const scrollMax = cardsContainer.scrollWidth / 2;
+    if (wrapper.scrollLeft >= scrollMax) {
+        wrapper.scrollLeft = 0; // Revient au début sans saccade
+    } else if (wrapper.scrollLeft <= 0) {
+        wrapper.scrollLeft = scrollMax; // Va à la fin sans saccade
+    }
+}
+
+wrapper.addEventListener('scroll', () => {
+    requestAnimationFrame(checkScroll);
+});
+

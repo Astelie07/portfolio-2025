@@ -569,6 +569,9 @@ footer {
   background-position: 50% 50%;
   transform-origin: center;
 
+  color: var(--color3);
+  flex-shrink: 0;
+
   @media screen and (min-width: 600px) {
     width: clamp(12.9vw, 61vh, 18vw);
     height: clamp(18vw, 85vh, 25.2vw);
@@ -727,25 +730,28 @@ footer {
 
 @keyframes holoCard {
   0%, 100% {
-    transform: rotateZ(0deg) rotateX(0deg) rotateY(0deg);
+      transform: rotateZ(0deg) rotateX(0deg) rotateY(0deg);
   }
   33%, 37% {
-    transform: rotateZ(3deg) rotateX(5deg) rotateY(5deg);
+      transform: rotateZ(1.5deg) rotateX(2deg) rotateY(2deg);
   }
   66%, 70% {
-    transform: rotateZ(-3deg) rotateX(-5deg) rotateY(-5deg);
+      transform: rotateZ(-1.5deg) rotateX(-2deg) rotateY(-2deg);
   }
 }
 
 .cards { 
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   align-items: center;
   justify-content: space-evenly;
   perspective: 2000px;
   position: relative;
   z-index: 1;
-  transform: translate3d(0.1px, 0.1px, 0.1px )
+  transform: translate3d(0.1px, 0.1px, 0.1px );
+
+  gap: 20px;
+  width: max-content;
 }
 
 @media screen and (min-width: 600px) {
@@ -770,6 +776,16 @@ footer {
       animation-delay: 0.75s;
     }
   }
+}
+
+.cards-wrapper {
+  display: flex;
+  overflow-x: hidden; /* Cache les clones pour l'effet infini */
+  white-space: nowrap;
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+  cursor: grab;
+  position: relative;
 }
 
 /* ----------------------------------------------------------------PROJETS---------------------------------------------------------------------- */
