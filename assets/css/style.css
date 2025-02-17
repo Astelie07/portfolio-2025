@@ -186,10 +186,6 @@
     border-bottom: 1px solid var(--border-color);
   }
 
-  #presentation {
-    background: var(--color-primary);
-  }
-
   /* ---------------------------------------- WAVES BORDER ------------------------------------------------------------------------------- */
 
   @keyframes move_wave {
@@ -267,20 +263,45 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    background-color: var(--color-background); /* Couleur de fond douce */
-    color: var(--color-text);
-    padding: 40px;
-    border-radius: 10px;
-    max-width: 1000px;
+    background: rgb(11,134,180);
+    background: linear-gradient(180deg, rgba(11,134,180,1) 0%, rgba(11,134,180,1) 50%, rgba(57,180,226,1) 92%, var(--color-primary) 100%);
+    color: var(--color-background);
+    padding: 40px 25rem;
     margin: auto;
   }
+
+  .wavy {
+    margin: 1.5em 0;
+    text-align: center;
+    border: none;
+  }
+  
+  .wavy:before {
+    content: '';
+    display: inline-block;
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    background: var(--color-primary);
+    margin: 0 0.4em;
+  }
+  
+  .wavy:after {
+    content: '';
+    display: inline-block;
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    background: var(--color3);
+    margin: 0 0.4em;
+  }
+   
 
   /* Titre bien positionné */
   #presentation h2 {
       text-align: center;
       font-size: 28px;
       font-weight: bold;
-      margin-bottom: 20px;
   }
 
   /* Conteneur pour image + texte */
@@ -293,10 +314,10 @@
 
   /* Image bien dimensionnée */
   #presentation img {
-      width: 250px;
+      max-width: 350px;
       height: auto;
       border-radius: 10px;
-      box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2);
+      box-shadow: 5px 5px 15px rgba(90, 236, 255, 0.2);
   }
 
   /* Texte principal */
@@ -308,13 +329,17 @@
   .presentation-text h3 {
       font-size: 22px;
       font-weight: bold;
+      margin-bottom: 2rem;
+      color: var(--color-primary);
+      text-shadow: 1px 1px 0px var(--color-accent);
   }
 
   /* Infos personnelles en deux colonnes */
   .presentation-info {
       display: flex;
       justify-content: space-between;
-      margin-top: 15px;
+      width: 66%;
+      margin:15px auto auto;
   }
 
   .presentation-info ul {
@@ -323,12 +348,14 @@
   }
 
   .presentation-info li {
+      text-align: left;
       margin-bottom: 8px;
       font-size: 16px;
   }
 
   .presentation-info strong {
-      color: var(--color-secondary); /* Doré pour mettre en avant */
+      color: var(--color-primary);
+      text-shadow: 1px 1px 0px var(--seed_color);
   }
 
   /* Texte global */
@@ -1341,7 +1368,7 @@ font-size: 18px;
     text-align: center;
   }
   
-  hr {
+  hr .contact-hr{
     border: solid 1px var(--color-primary);
   }
   
