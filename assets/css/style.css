@@ -190,6 +190,100 @@
     background: var(--color-primary);
   }
 
+  /* ---------------------------------------- PRESENTATION ------------------------------------------------------------------------------- */
+
+  #presentation {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: var(--color-background); /* Couleur de fond douce */
+    color: var(--color-text);
+    padding: 40px;
+    border-radius: 10px;
+    max-width: 1000px;
+    margin: auto;
+  }
+
+  /* Titre bien positionné */
+  #presentation h2 {
+      text-align: center;
+      font-size: 28px;
+      font-weight: bold;
+      margin-bottom: 20px;
+  }
+
+  /* Conteneur pour image + texte */
+  .presentation-content {
+      display: flex;
+      align-items: center;
+      gap: 30px;
+      width: 100%;
+  }
+
+  /* Image bien dimensionnée */
+  #presentation img {
+      width: 250px;
+      height: auto;
+      border-radius: 10px;
+      box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2);
+  }
+
+  /* Texte principal */
+  .presentation-text {
+      flex: 1;
+  }
+
+  /* Sous-titre */
+  .presentation-text h3 {
+      font-size: 22px;
+      font-weight: bold;
+  }
+
+  /* Infos personnelles en deux colonnes */
+  .presentation-info {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 15px;
+  }
+
+  .presentation-info ul {
+      list-style: none;
+      padding: 0;
+  }
+
+  .presentation-info li {
+      margin-bottom: 8px;
+      font-size: 16px;
+  }
+
+  .presentation-info strong {
+      color: var(--color-secondary); /* Doré pour mettre en avant */
+  }
+
+  /* Texte global */
+  .presentation-text p {
+      text-align: justify;
+      font-size: 16px;
+      line-height: 1.5;
+  }
+
+  /* Responsive Design */
+  @media (max-width: 768px) {
+      .presentation-content {
+          flex-direction: column;
+          text-align: center;
+      }
+
+      #presentation img {
+          margin-bottom: 20px;
+      }
+
+      .presentation-info {
+          flex-direction: column;
+          align-items: center;
+      }
+  }
+
   /* ---------------------------------------- COMPETENCES + SKILLS ------------------------------------------------------------------------------- */
 
   #competences {
