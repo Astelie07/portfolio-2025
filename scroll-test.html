@@ -142,6 +142,13 @@
             font-size: 1.5rem;
             color: #807256;
         }
+
+        .scroll-chara{
+          position: absolute;
+          max-width: 350px;
+          bottom: 0;
+          right: 0;
+        }
     </style>
 </head>
 <body>
@@ -153,11 +160,12 @@
   
     <!-- Alerte normale -->
     <div id="alertBox">
-      <div class="dialogue" onclick="closeAlert()">
+          <div class="dialogue" onclick="closeAlert()">
               <div>
                   <span class="dialogue-character">Astélie</span>
                   <div class="dialogue-text" id="dialogue-text">Hey ! Ne scroll pas comme ça ! J'ai travaillé pour écrire tous ces textes !</div>
               </div>
+              <img src="assets/img/illus/nomad1-light.png" class="scroll-chara"/>
           </div>
     </div>
   
@@ -168,7 +176,8 @@
                   <span class="dialogue-character">Astélie</span>
                   <div class="dialogue-text" id="dialogue-text">JE T'AI DIS DE TE CALMER !</div>
               </div>
-          </div>
+              <img src="assets/img/illus/mad.png" class="scroll-chara"/>
+      </div>
     </div>   
   </body>
   
