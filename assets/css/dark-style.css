@@ -275,7 +275,7 @@ section {
 }
 
 /* Image bien dimensionnée */
-#presentation img {
+#presentation #photo {
     max-width: 350px;
     height: auto;
     border-radius: 10px;
@@ -289,6 +289,7 @@ section {
 
 /* Sous-titre */
 .presentation-text h3 {
+  text-align: left;
     font-size: 22px;
     font-weight: bold;
     margin-bottom: 2rem;
@@ -334,7 +335,7 @@ section {
         text-align: center;
     }
 
-    #presentation img {
+    #presentation #photo {
         margin-bottom: 20px;
     }
 
@@ -343,6 +344,62 @@ section {
         align-items: center;
     }
 }
+
+/*-----------------------------------------------------INTERETS---------------------------------------------*/
+
+interets {
+  text-align: center;
+  padding: -10px auto 20px;
+  width: max-content;
+}
+
+.interets h3{
+  margin: -10px auto 20px;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+    justify-content: center;
+    max-width: 800px;
+    margin: auto;
+}
+
+.grid-item {
+    background: rgba(77, 66, 105, 0.1); /* Fond transparent */
+    border: 1px solid rgba(81, 80, 92, 0.3);
+    padding: 20px;
+      border-radius: 8px;
+      font-weight: bold;
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      gap: 10px;
+  }
+
+  .grid-item:hover {
+    background: rgba(57, 58, 107, 0.178);
+    border: 1px solid var(--color-primary);
+  }
+
+  .grid-item i {
+      font-size: 20px;
+      opacity: 0.7;
+  }
+
+  .interets img{
+    max-width: 150px;
+  }
+
+  .interets img:first-of-type{
+    float: left;
+    transform: scale(1, -1);
+  }
+
+  .interets img:nth-of-type(2){
+    float: right;
+  }
 
 /* ---------------------------------------- COMPETENCES + SKILLS ------------------------------------------------------------------------------- */
 
@@ -360,7 +417,7 @@ section {
 #competences h2{
   width: 100%;
   text-align: center;
-  margin: 10px auto;
+  margin: -30px auto 10px;
 }
 
 #skill-commentary{
