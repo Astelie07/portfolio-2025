@@ -452,6 +452,28 @@
     position: relative;
   }
 
+  .filter-btn {
+    cursor: pointer;
+    border: none;
+    background: var(--color-accent);
+    color: var(--color-background);
+    border-radius: 20px;
+    line-height: 1;
+    margin: 0.5em;
+    padding: 1em 2em;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .filter-btn:hover {
+      color: var(--color-text); 
+  }
+
+  .filter-btn:focus{
+    background-color: var(--color-primary);
+    color: var(--color-text);
+  }
+  
   #competences h2{
     width: 100%;
     text-align: center;
