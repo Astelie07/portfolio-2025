@@ -1098,6 +1098,11 @@
     position: relative;
 }
 
+.img-fluid{
+    max-width : 20%;
+    border: solid 2px var(--color-primary); 
+}
+
   /* ----------------------------------------------------------------PROJETS---------------------------------------------------------------------- */
 
 .projects-section {
