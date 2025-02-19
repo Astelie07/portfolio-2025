@@ -17,7 +17,7 @@ function toggleTheme() {
   }
 }
 
-/*------------------------------------FIN THEMES--------------------------------*/
+/*------------------------------------LOADER--------------------------------*/
 
 document.addEventListener("DOMContentLoaded", function() {
   const loader = document.getElementById("loader_div");
@@ -202,7 +202,7 @@ $cards
     });
 });
 
-//------------------------portfolio scroll test
+//------------------------portfolio horizontal scroll
 
 const container = document.querySelector('.cards-wrapper');
 let isDown = false;
@@ -236,57 +236,67 @@ container.addEventListener('scroll', () => {
 
 // -------------------------------------------------------------- PROJETS --------------------------------------------------------
 
-$(document).ready(function () {
-  // Lorsque vous cliquez sur un hexagone
-  $('.clipped-border').on('click', function () {
-      var targetId = $(this).data('target'); // Récupérer l'ID de la description à afficher
-      var projectDiv = $('#projets'); // Sélectionner la div #projets avec jQuery
-      var targetDescription = $(targetId); // Trouver la description correspondante
-      var hexagonOffset = $(this).offset(); // Position de l'hexagone
+document.addEventListener("DOMContentLoaded", function () {
+    const tabs = document.querySelectorAll(".project-tab");
+    const projects = document.querySelectorAll(".project-details");
 
-      // Si la description est déjà active, la fermer
-      if (targetDescription.hasClass('active')) {
-          targetDescription.removeClass('active');
-          // Réduire la taille de #projets à sa taille d'origine avec transition
-          projectDiv.css('height', 'auto');
-      } else {
-          // Fermer toutes les autres descriptions
-          $('.description').removeClass('active');
-          projectDiv.css('height', 'auto'); 
+    tabs.forEach(tab => {
+        tab.addEventListener("click", function () {
+            const projectId = this.getAttribute("data-project");
 
-          // Afficher la description correspondante avec la transition
-          targetDescription.addClass('active');
+            // Supprime la classe active de tous les onglets
+            tabs.forEach(t => t.classList.remove("active"));
+            this.classList.add("active");
 
-          // Mettre à jour la position de la description sous l'hexagone
-          targetDescription.css({
-              top: hexagonOffset.top + $(this).outerHeight(), // Placer sous l'hexagone
-          });
+            // Cache tous les projets
+            projects.forEach(project => project.classList.add("hidden"));
 
-          // Calculer la nouvelle hauteur pour #projets, juste un peu plus grande que la description
-          var descriptionHeight = targetDescription.outerHeight(); // Hauteur de la description affichée
-          var padding = 40; // Un petit espace autour de la description
-          var newHeight = descriptionHeight + padding; // Calculer la nouvelle hauteur de #projets
-
-          // Ne pas étirer #projets au-delà de la hauteur nécessaire
-          var currentHeight = projectDiv.outerHeight();
-          if (newHeight > currentHeight) {
-              // Appliquer une transition fluide pour ajuster la hauteur de #projets
-              setTimeout(function() {
-                  projectDiv.css('height', newHeight + 'px'); // Ajuster la hauteur de #projets
-              }, 10); // Attendre un court instant avant de modifier la hauteur pour que la transition prenne effet
-          }
-      }
-  });
-
-  // Fermer toutes les descriptions si l'on clique en dehors
-  $(document).on('click', function (event) {
-      if (!$(event.target).closest('.clipped-border').length && !$(event.target).closest('.description').length) {
-          $('.description').removeClass('active');
-          $('#projets').css('height', 'auto'); // Réduire la taille de #projets à sa taille d'origine
-      }
-  });
-
+            // Affiche le projet sélectionné
+            document.getElementById(`project-${projectId}`).classList.remove("hidden");
+        });
+    });
 });
+
+document.addEventListener("DOMContentLoaded", function () {
+    const tabs = document.querySelectorAll(".project-tab");
+    const projects = document.querySelectorAll(".project-details");
+    let activeIndex = 0;
+    let userClicked = false;
+
+    function showProject(index) {
+        projects.forEach((project, i) => {
+            project.classList.remove("active");
+            tabs[i].classList.remove("active");
+            if (i === index) {
+                project.classList.add("active");
+                tabs[i].classList.add("active");
+                // Changer le background pour correspondre au projet actif
+                document.querySelector(".projects-section").style.backgroundImage = `url(https://via.placeholder.com/1200x800?text=Projet+${i+1})`;
+            }
+        });
+    }
+
+    tabs.forEach((tab, index) => {
+        tab.addEventListener("click", function () {
+            userClicked = true; // L'utilisateur a cliqué, on arrête le défilement automatique
+            activeIndex = index;
+            showProject(activeIndex);
+        });
+    });
+
+    // Défilement automatique toutes les minutes (si l'utilisateur n'a pas cliqué)
+    function autoScroll() {
+        if (!userClicked) {
+            activeIndex = (activeIndex + 1) % projects.length;
+            showProject(activeIndex);
+        }
+    }
+
+    // Lancer le premier affichage
+    showProject(activeIndex);
+    setInterval(autoScroll, 60000); // Change de projet toutes les 60 secondes
+});
+
 
 
 
