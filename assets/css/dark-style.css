@@ -232,7 +232,7 @@ section {
 }
 
 .wavy {
-  margin: 1.5em 0;
+  margin: 15px 0;
   text-align: center;
   border: none;
 }
@@ -438,7 +438,6 @@ interets {
 #competences h2{
   width: 100%;
   text-align: center;
-  margin: -30px auto 10px;
 }
 
 #skill-commentary{
@@ -456,8 +455,8 @@ interets {
 
 .skill_character{
   position: relative;
-  margin: auto  25px;
-  max-width: 350px;
+  margin: auto -25px auto 25px;
+    max-width: 18rem;
 }
 
 /*--------------------------SKILLS---------------------------*/
@@ -772,9 +771,11 @@ interets {
 
 #portfolio {
   background: url('../img/tree-dark.png'); 
-    background-repeat: no-repeat;
-    background-size: cover; /* Ajuste l'image pour couvrir tout l'écran */
-    background-position: center; /* Centre l'image */
+  background-repeat: no-repeat;
+  background-size: cover; /* Ajuste l'image pour couvrir tout l'écran */
+  background-position: center; /* Centre l'image */
+  color: var(--color-background);
+  padding: 10px 0;
 }
 
 /* Style du bouton de changement de thème */
