@@ -282,7 +282,7 @@
     width: 14px;
     height: 14px;
     border-radius: 50%;
-    background: var(--color-primary);
+    background: var(--color-accent);
     margin: 0 0.4em;
   }
   
@@ -292,7 +292,7 @@
     width: 14px;
     height: 14px;
     border-radius: 50%;
-    background: var(--color3);
+    background: var(--color-accent);
     margin: 0 0.4em;
   }
    
@@ -477,7 +477,6 @@
   #competences h2{
     width: 100%;
     text-align: center;
-    margin: -30px auto 10px;
   }
 
   #skill-commentary{
@@ -494,8 +493,8 @@
 
   .skill_character{
     position: relative;
-    margin: auto  25px;
-    max-width: 350px;
+    margin: auto -25px auto 25px;
+    max-width: 18rem;
   }
 
   .dark-img{
