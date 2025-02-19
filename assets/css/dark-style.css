@@ -225,10 +225,10 @@ section {
   display: flex;
   flex-direction: column;
   align-items: center;
-  background: var(--color-secondary);
-  background: linear-gradient(180deg, var(--color-secondary) 0%, var(--color-secondary) 50%, ##464db3 92%, var(--color-primary) 100%);
-  color: var(--color-background);
-  padding: 40px 25rem;
+  /* background: var(--color-primary); */
+  background: linear-gradient(180deg, var(--color-primary) 0%, var(--color-primary) 50%, # #464db3 92%, var(--color-primary) 100%);
+  color: var(--color-text);
+  padding: 40px 10rem;
   margin: auto;
 }
 
@@ -244,7 +244,7 @@ section {
   width: 14px;
   height: 14px;
   border-radius: 50%;
-  background: var(--color-background);
+  background: var(--color-accent);
   margin: 0 0.4em;
 }
 
@@ -254,7 +254,7 @@ section {
   width: 14px;
   height: 14px;
   border-radius: 50%;
-  background: var(--color-background);
+  background: var(--color-accent);
   margin: 0 0.4em;
 }
  
@@ -290,11 +290,11 @@ section {
 /* Sous-titre */
 .presentation-text h3 {
   text-align: left;
-    font-size: 22px;
-    font-weight: bold;
-    margin-bottom: 2rem;
-    color: var(--color-background);
-    text-shadow: 1px 1px 0px var(--color-accent);
+  font-size: 22px;
+  font-weight: bold;
+  margin-bottom: 2rem;
+  color: var(--color-secondary);
+  text-shadow: 1px 1px 0px var(--color-background);
 }
 
 /* Infos personnelles en deux colonnes */
@@ -317,8 +317,8 @@ section {
 }
 
 .presentation-info strong {
-    color: var(--color-background);
-    text-shadow: 1px 1px 0px var(--color-accent);
+    color: var(--color-secondary);
+    text-shadow: 1px 1px 0px var(--color-background);
 }
 
 /* Texte global */
