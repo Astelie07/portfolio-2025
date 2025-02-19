@@ -142,41 +142,6 @@
     <div class="skills__content">
       <div class="skills__content__inventory">
         <div class="inventory--rows">
-            <!-- CAFE : A GARDER POUR REF --------------------------------
-            <div class="items__container">
-              <div class="item__container" draggable="true">
-                <img class="item__img" src="https://assets.codepen.io/7237686/triple_shot_espresso.svg?format=auto" alt="triple_shot_espresso" draggable="false" />
-                <span class="item__quantity">8</span>
-                <span class="item__quality">
-                  <img src="https://assets.codepen.io/7237686/gold_quality.svg?format=auto" alt="gold_quality" />
-                </span>
-                <div class="item__tooltip" draggable="false">
-                  <div class="item__tooltip__title">
-                    <h2>Triple Shot Espresso</h2>
-                    <h3 class="item__tooltip__category item__tooltip__category--cooking">
-                      Cooking
-                    </h3>
-                  </div>
-                  <div class="item__tooltip__info">
-                    It's more potent than regular coffee!
-                    <ul class="health">
-                      <li>
-                        <img src="https://assets.codepen.io/7237686/energy.svg?format=auto" alt="energy" />
-                        +8 Energy
-                      </li>
-                      <li>
-                        <img src="https://assets.codepen.io/7237686/health.svg?format=auto" alt="health" />
-                        +3 Health
-                      </li>
-                      <li>
-                        <img src="https://assets.codepen.io/7237686/speed.svg?format=auto" alt="speed" />
-                        +1 Speed
-                      </li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
-            </div> -->
             <!-- REACT -->
             <div class="items__container">
               <div class="item__container" draggable="true">
@@ -799,36 +764,50 @@
     <h2>Projet</h2>
     <p>Quelques projets qui arrivent !</p>
 
-    <div class="gallery">
-      <div class="clipped-border" data-target="#description-1" data-bg="https://proxy.duckduckgo.com/iu/?u=http%3A%2F%2Fwww.gettyimages.com.au%2Fgi-resources%2Fimages%2Ffrontdoor%2Fcreative%2FPanoramicImagesRM%2FFD_image.jpg&f=1">
-          <img src="https://proxy.duckduckgo.com/iu/?u=http%3A%2F%2Fwww.gettyimages.com.au%2Fgi-resources%2Fimages%2Ffrontdoor%2Fcreative%2FPanoramicImagesRM%2FFD_image.jpg&f=1" alt="Image 1">
-      </div>
-      <div class="clipped-border" data-target="#description-2" data-bg="https://proxy.duckduckgo.com/iu/?u=http%3A%2F%2Fbpucette.b.p.pic.centerblog.net%2Ffv86ll9r.jpg&f=1">
-          <img src="https://proxy.duckduckgo.com/iu/?u=http%3A%2F%2Fbpucette.b.p.pic.centerblog.net%2Ffv86ll9r.jpg&f=1" alt="Image 2">
-      </div>
-      <div class="clipped-border" data-target="#description-3" data-bg="https://proxy.duckduckgo.com/iu/?u=https%3A%2F%2Fimagejournal.org%2Fwp-content%2Fuploads%2Fbb-plugin%2Fcache%2F23466317216_b99485ba14_o-panorama.jpg&f=1">
-          <img src="https://proxy.duckduckgo.com/iu/?u=https%3A%2F%2Fimagejournal.org%2Fwp-content%2Fuploads%2Fbb-plugin%2Fcache%2F23466317216_b99485ba14_o-panorama.jpg&f=1" alt="Image 3">
-      </div>
-  </div>
+    <!-- Sélection verticale des projets -->
+    <div class="project-selection">
+        <div class="project-tab active" data-project="1">Projet 1</div>
+        <div class="separator"></div> <!-- Remplace hr par div -->
+        <div class="project-tab" data-project="2">Projet 2</div>
+        <div class="separator"></div> <!-- Remplace hr par div -->
+        <div class="project-tab" data-project="3">Projet 3</div>
+    </div>
 
-  <!-- Description panels -->
-  <div class="description" id="description-1">
-      <h1>Elémonster</h1>
-      <img src="https://proxy.duckduckgo.com/iu/?u=http%3A%2F%2Fwww.gettyimages.com.au%2Fgi-resources%2Fimages%2Ffrontdoor%2Fcreative%2FPanoramicImagesRM%2FFD_image.jpg&f=1" alt="Image 1">
-      <p>This page showcases the beauty of nature with its scenic landscapes. Explore the details and immerse yourself in the tranquility of this breathtaking view.</p>
-  </div>
+    <!-- Contenu dynamique des projets -->
+    <div class="project-content">
+        <!-- Projet 1 (Affiché par défaut) -->
+        <div class="project-details" id="project-1">
+            <h2>Projet 1</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam dignissim consectetur eros.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam dignissim consectetur eros.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam dignissim consectetur eros.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam dignissim consectetur eros.</p>
+            <div class="gallery">
+                <img src="https://via.placeholder.com/150" alt="Projet 1 - Image 1">
+                <img src="https://via.placeholder.com/150" alt="Projet 1 - Image 2">
+                <img src="https://via.placeholder.com/150" alt="Projet 1 - Image 3">
+            </div>
+        </div>
 
-  <div class="description" id="description-2">
-      <h1>RPG classique</h1>
-      <img src="https://proxy.duckduckgo.com/iu/?u=http%3A%2F%2Fbpucette.b.p.pic.centerblog.net%2Ffv86ll9r.jpg&f=1" alt="Image 2">
-      <p>The play of light and shadows in this image creates a sense of artistic expression. The colors blend to form a creative masterpiece.</p>
-  </div>
+        <!-- Projet 2 -->
+        <div class="project-details hidden" id="project-2">
+            <h2>Projet 2</h2>
+            <p>Vestibulum auctor eros eu neque pharetra, nec euismod purus ultricies.</p>
+            <div class="gallery">
+                <img src="https://via.placeholder.com/150" alt="Projet 2 - Image 1">
+                <img src="https://via.placeholder.com/150" alt="Projet 2 - Image 2">
+                <img src="https://via.placeholder.com/150" alt="Projet 2 - Image 3">
+            </div>
+        </div>
 
-  <div class="description" id="description-3">
-      <h1>Jeu de rythme Emilie Jolie</h1>
-      <img src="https://proxy.duckduckgo.com/iu/?u=https%3A%2F%2Fimagejournal.org%2Fwp-content%2Fuploads%2Fbb-plugin%2Fcache%2F23466317216_b99485ba14_o-panorama.jpg&f=1" alt="Image 3">
-      <p>This panoramic shot highlights the beauty of wide-open spaces, showcasing a blend of colors and emotions.</p>
-  </div>
+        <!-- Projet 3 -->
+        <div class="project-details hidden" id="project-3">
+            <h2>Projet 3</h2>
+            <p>Donec sagittis libero a velit consequat, sit amet luctus quam dapibus.</p>
+            <div class="gallery">
+                <img src="https://via.placeholder.com/150" alt="Projet 3 - Image 1">
+                <img src="https://via.placeholder.com/150" alt="Projet 3 - Image 2">
+                <img src="https://via.placeholder.com/150" alt="Projet 3 - Image 3">
+            </div>
+        </div>
+    </div>
 </section>
 
 <!-- ------------------------------------------------------------- CONTACT ------------------------------------------------------- -->
