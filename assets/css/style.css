@@ -1100,21 +1100,20 @@
 
   /* ----------------------------------------------------------------PROJETS---------------------------------------------------------------------- */
 
-
 .projects-section {
     display: flex;
-    width: 100vw; /* Pleine largeur */
+    width: 100%;
     min-height: 22rem;
     position: relative; /* Pour superposer le background */
-    background: lightblue;
+    background: var(--color-secondary);
     overflow: hidden;
 }
 
 /* Section de sélection */
 .project-selection {
     width: 25%;
-    background: linear-gradient(to right, rgba(100, 130, 200, 0.8), rgba(30, 50, 100, 0)); /* Dégradé */
-    color: white;
+    background: linear-gradient(to right, rgba(210, 80, 0, 0.8), rgba(210, 80, 0, 0)); 
+    color: var(--color-background);
     display: flex;
     flex-direction: column;
     justify-content: center; /* Centre verticalement */
@@ -1134,12 +1133,12 @@
 }
 
 .project-tab:hover {
-    background: #90BBFF;
+    background: var(--color-accent);
 }
 
 .project-tab.active {
-    background: rgba(100, 130, 200, 0.5);
-    color : darkblue;
+    background: var(--color-primary);
+    color : var(--color-text);
 }
 
 /* Séparateurs verticaux */
@@ -1168,7 +1167,7 @@
     height: 100%;
     background-size: cover;
     background-position: center;
-    color: darkblue;
+    color: var(--color-text);
     padding: 50px;
     transition: opacity 0.5s ease-in-out;
 }
@@ -1206,6 +1205,7 @@
     from { opacity: 0; transform: translateY(10px); }
     to { opacity: 1; transform: translateY(0); }
 }
+
   /* ----------------------------------------------------------------CONTACT---------------------------------------------------------------------- */
 
   #contact {
