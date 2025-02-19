@@ -439,6 +439,29 @@
     float: right;
   }
 
+  /*--------CV-------------*/
+
+  #cv{
+    margin-top:50px;
+  }
+
+  #cv a{
+    padding:15px;
+    margin-top:25px;
+    background-color:var(--color-secondary);
+    border : solid 2px var(--color-secondary);
+    border-radius : 20px;
+    text-decoration: none;
+    color : white;
+    transition:1s;
+  }
+
+  #cv a:hover{
+    background-color:var(--color-primary);
+    color : rgb(11 108 145);
+    border : solid 2px rgb(11 108 145);
+  }
+
   /* ---------------------------------------- COMPETENCES + SKILLS ------------------------------------------------------------------------------- */
 
   #competences {
@@ -447,9 +470,18 @@
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
-    padding-top: 2rem;
+    padding-top:0px;
     padding-bottom: 2rem;
     position: relative;
+  }
+
+  #competences p{
+    text-align:justify;
+    margin-bottom:10px;
+  }
+
+  #competences p span{
+    background-color : white;
   }
 
   .filter-btn {
@@ -1098,9 +1130,11 @@
     position: relative;
 }
 
-.img-fluid{
-    max-width : 20%;
-    border: solid 2px var(--color-primary); 
+.img-fluid {
+    max-width: 90%;
+    border: solid 2px var(--color-accent);
+    border-radius: 15px;
+    margin: 15px auto;
 }
 
   /* ----------------------------------------------------------------PROJETS---------------------------------------------------------------------- */
