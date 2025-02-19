@@ -1102,6 +1102,7 @@
 
 .projects-section {
     display: flex;
+    padding:0;
     width: 100%;
     min-height: 22rem;
     position: relative; /* Pour superposer le background */
