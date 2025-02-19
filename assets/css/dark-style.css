@@ -1,7 +1,7 @@
 :root {  
     /* Dark Mode Colors */
     --color-background: #030725; /* Bleu très foncé */
-    --color-primary: rgb(0, 0, 88); /* Rose pastel */
+    --color-primary: rgb(0, 0, 88); /* Bleu moins foncé */
     --color-secondary: #859ce1; /* Violet clair */
     --color-accent: #9BA5F6; /* Bleu ciel */
     --color-text: white; /* Blanc pour le texte */
@@ -1061,131 +1061,111 @@ footer {
 
 /* ----------------------------------------------------------------PROJETS---------------------------------------------------------------------- */
 
-:root {
-  --width: 200px;
-  --height: 200px;
+.projects-section {
+    padding: 0;
+    display: flex;
+    width: 100%;
+    min-height: 22rem;
+    position: relative; /* Pour superposer le background */
+    background: var(--color-primary);
+    overflow: hidden;
 }
 
-#projets > p{
-  margin-bottom: 15px;
+/* Section de sélection */
+.project-selection {
+    width: 25%;
+    background: linear-gradient(to right, var(--color-background), rgba(0, 0, 100, 0)); 
+    color: var(--color-secondary);
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Centre verticalement */
+    align-items: center;
+    padding: 50px 0;
+    position: relative;
+    z-index: 2; /* Pour être au-dessus du fond */
 }
 
-#projets {
-  /* background-size: cover;
-  background-position: center; */
-  height: 100%;
-  width: 100%;
-  margin: 0;
-  overflow: hidden;
-  background: linear-gradient(-45deg, var(--color-background), darkblue);
-  background-size: 400% 400%;
-  animation: gradientProjets 15s ease infinite;
-  transition: height 0.5s ease-in-out;
+.project-tab {
+    padding: 15px;
+    text-align: center;
+    cursor: pointer;
+    transition: background 0.3s;
+    border-radius : 10px;
+    width: 80%;
 }
 
-@keyframes gradientProjets {
-  0% {
-    background-position: 0% 50%;
-  }
-  50% {
-    background-position: 100% 50%;
-  }
-  100% {
-    background-position: 0% 50%;
-  }
+.project-tab:hover {
+    background: var(--color-background);
 }
 
+.project-tab.active {
+    background: var(--color-primary);
+    color : var(--color-text);
+}
+
+/* Séparateurs verticaux */
+.separator {
+    width: 2px; /* Largeur du trait vertical */
+    height: 30px; /* Hauteur du trait */
+    background-color: rgba(255, 255, 255, 0.5); /* Légèrement transparent */
+    margin: 10px 0; /* Espacement entre les onglets */
+}
+
+/* Contenu du projet */
+.project-content {
+    flex: 1;
+    padding: 20px;
+    position: relative;
+    z-index: 1;
+}
+
+/* Appliquer un background dynamique */
+.project-details {
+    display: none; /* Caché par défaut */
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    color: var(--color-text);
+    padding: 50px;
+    transition: opacity 0.5s ease-in-out;
+}
+
+.project-details.active {
+    display: block;
+    opacity: 1;
+}
+
+/* Galerie d'images */
 .gallery {
-  display: flex; /* Utilisation de flexbox pour l'alignement horizontal */
-  justify-content: center; /* Centrer les éléments horizontalement */
-  gap: 20px; /* Espacement entre les hexagones */
-  flex-wrap: wrap; /* Permet de faire revenir les hexagones à la ligne si l'espace est insuffisant */
+    display: flex;
+    gap: 10px;
+    margin-top: 15px;
 }
 
-.clipped-border {
-  -webkit-clip-path: polygon(50% 0%, 95% 25%, 95% 75%, 50% 100%, 5% 75%, 5% 25%);
-  clip-path: polygon(50% 0%, 95% 25%, 95% 75%, 50% 100%, 5% 75%, 5% 25%);
-  cursor: pointer;
-  width: var(--width);
-  height: var(--height);
-  transition: transform 0.2s;
-  margin: 0; /* Assurez-vous qu'il n'y a pas de marge extérieure supplémentaire */
-  padding: 5px;
-  background: linear-gradient(var(--color1), var(--color2));
-  width: 200px;  /* Taille par défaut */
-  height: 200px;
-  cursor: pointer;
-  transition: transform 0.2s, box-shadow 0.3s ease-in-out;
+.gallery img {
+    width: 100px;
+    height: 100px;
+    border-radius: 5px;
+    transition: transform 0.3s;
 }
 
-.clipped-border:before {
-  content: '';
-  position: absolute;
-  opacity: 0.5;
-  width: 350px;
-  height: 70px;
-  background: white;
-  top: 0;
-  left: 0;
-  z-index: 1;
-  transform: rotate(45deg);
-  transition: transform 0.5s ease-in-out;
+.gallery img:hover {
+    transform: scale(1.1);
 }
 
-.clipped-border:hover {
-  transform: scale(1.2);
-  transition-duration: 0.5s;
-  z-index: 10;
+/* Cacher les projets non actifs */
+.hidden {
+    display: none;
 }
 
-.clipped-border img {
-  width: 100%;
-  height: 100%;
-  clip-path: inherit;
-}
-
-.clipped-border:hover:before {
-transform: translate(-100px, 400%) rotate(45deg);  /* Mouvement du reflet avec l'élément */
-}
-
-/* Style de la description */
-.description {
-display: none;
-top: 10px;
-text-align: center;
-margin:auto;
-width: 100%;
-max-width: 80%; /* Largeur maximale de la description */
-margin-top: 20px;
-padding: 20px;
-background-color: var(--color-background);
-border: solid 2px var(--color-accent);
-border-radius: 8px;
-opacity: 0;
-transform: translateY(-20px);
-transition: opacity 0.5s ease, transform 0.5s ease;
-}
-
-/* Lorsque la description est active */
-.description.active {
-display: block; /* Afficher la description */
-opacity: 1;
-transform: translateY(0); /* Effet de montée */
-}
-
-/* Style pour le contenu de la description */
-.description h1 {
-margin-top: 0;
-}
-
-.description img {
-max-width: 100%;
-height: auto;
-margin: 20px 0;
-}
-
-.description p {
-font-size: 18px;
+/* Animation d'apparition */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
 }
 
 /* -----------------------------------------------CONTACT-------------------------------------------- */
