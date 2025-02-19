@@ -271,7 +271,7 @@
   }
 
   .wavy {
-    margin: 1.5em 0;
+    margin: 15px 0;
     text-align: center;
     border: none;
   }
@@ -815,6 +815,7 @@
     background-repeat: no-repeat;
     background-size: cover; /* Ajuste l'image pour couvrir tout l'écran */
     background-position: center; /* Centre l'image */
+    padding: 10px 0;
   }
 
   /* Style du bouton de changement de thème */
