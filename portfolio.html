@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cartes interactives</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        /* Grande div qui change en fonction de la carte sélectionnée */
+        .main-display {
+            background-color: #FFA726;
+            color: white;
+            text-align: center;
+            padding: 40px;
+            border-radius: 15px;
+            width: 80%;
+            max-width: 900px;
+            margin: 20px auto;
+            box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Conteneur des cartes avec scroll horizontal */
+        .cards-wrapper {
+            display: flex;
+            overflow-x: auto;
+            scroll-snap-type: x mandatory;
+            padding: 10px 30px;
+            -webkit-overflow-scrolling: touch;
+            position: relative;
+            z-index: 1;
+        }
+
+        .cards-container {
+            display: flex;
+            gap: 15px;
+        }
+
+        /* Cartes */
+        .card-details {
+            width: 100px;
+            height: 150px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            background-color: #f0f0f0;
+            border-radius: 8px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+            opacity: 0;
+            transition: opacity 0.5s ease-in-out, transform 0.3s ease-in-out;
+            transform: translateY(10px);
+            scroll-snap-align: center;
+            padding: 10px;
+            text-align: center;
+            cursor: pointer;
+            position: relative;
+        }
+
+        .card-details img {
+            width: 100px;
+            height: 100px;
+            border-radius: 5px;
+            margin-bottom: 10px;
+        }
+
+        /* Carte active */
+        .card-details.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Animation au survol */
+        .card-details:hover {
+            transform: translateY(-10px) scale(1.05);
+            transition: transform 0.3s ease-out;
+            z-index: 2;
+        }
+
+        /* Animation au clic */
+        .card-details:active {
+            transform: scale(1.1);
+            transition: transform 0.1s ease-in;
+        }
+
+        /* Filtre des thèmes */
+        .filters {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-bottom: 20px;
+            position: relative;
+            z-index: 10;
+        }
+
+        .filter-btn {
+            padding: 10px;
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: background 0.3s;
+        }
+
+        .filter-btn:hover {
+            background-color: #0056b3;
+        }
+
+        .filter-btn.active {
+            background-color: #004085;
+        }
+
+        /* Masquer les cartes non visibles */
+        .hidden {
+            display: none !important;
+        }
+
+        /* Couleurs des cartes par thème */
+        .ux-ui { background-color: #260e03; }
+        .video { background-color: #21211f; }
+        .graphisme { background-color: #1b333a; }
+        .modelisation { background-color: #164656; }
+        .jeu-video { background-color: #105871; }
+        .dessin { background-color: #0b6b8d; }
+
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <div class="main-display">
+            <h2 id="display-title">Sélectionne une carte</h2>
+            <p id="display-content">Clique sur une carte pour afficher son contenu ici.</p>
+        </div>
+
+        <div class="filters">
+            <button class="filter-btn active" data-filter="all">Tout</button>
+            <button class="filter-btn" data-filter="ux-ui">UX / UI</button>
+            <button class="filter-btn" data-filter="video">Vidéo</button>
+            <button class="filter-btn" data-filter="graphisme">Graphisme</button>
+            <button class="filter-btn" data-filter="modelisation">Modélisation</button>
+            <button class="filter-btn" data-filter="jeu-video">Jeu vidéo</button>
+            <button class="filter-btn" data-filter="dessin">Dessin</button>
+        </div>
+
+        <div class="cards-wrapper">
+            <div class="cards-container">
+                <div class="card-details ux-ui" data-theme="ux-ui" data-title="Carte 1" data-content="Voici le contenu spécifique de la carte 1.">
+                    <img src="https://via.placeholder.com/150" alt="Carte 1"> Carte 1
+                </div>
+                <div class="card-details video" data-theme="video" data-title="Carte 2" data-content="Voici le contenu spécifique de la carte 2.">
+                    <img src="https://via.placeholder.com/150" alt="Carte 2"> Carte 2
+                </div>
+                <div class="card-details graphisme" data-theme="graphisme" data-title="Carte 3" data-content="Voici le contenu spécifique de la carte 3.">
+                    <img src="https://via.placeholder.com/150" alt="Carte 3"> Carte 3
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const filterButtons = document.querySelectorAll(".filter-btn");
+            const cards = document.querySelectorAll(".card-details");
+            const cardsContainer = document.querySelector(".cards-wrapper");
+
+            function applyFilter(filter) {
+                cards.forEach(card => {
+                    if (filter === "all" || card.getAttribute("data-theme") === filter) {
+                        card.classList.remove("hidden");
+                        setTimeout(() => card.classList.add("active"), 100);
+                    } else {
+                        card.classList.remove("active");
+                        setTimeout(() => card.classList.add("hidden"), 500);
+                    }
+                });
+
+                setTimeout(() => {
+                    const firstVisibleCard = document.querySelector(".card-details:not(.hidden)");
+                    if (firstVisibleCard) {
+                        centerCard(firstVisibleCard);
+                    }
+                }, 600);
+            }
+
+            function centerCard(card) {
+                const containerWidth = cardsContainer.offsetWidth;
+                const cardOffset = card.offsetLeft - (containerWidth / 2) + (card.offsetWidth / 2);
+                
+                let currentScroll = cardsContainer.scrollLeft;
+                let step = (cardOffset - currentScroll) / 20;
+
+                let animation = setInterval(() => {
+                    currentScroll += step;
+                    cardsContainer.scrollLeft = currentScroll;
+
+                    if (Math.abs(currentScroll - cardOffset) < Math.abs(step)) {
+                        clearInterval(animation);
+                        cardsContainer.scrollLeft = cardOffset;
+                    }
+                }, 15);
+            }
+
+            filterButtons.forEach(button => {
+                button.addEventListener("click", function() {
+                    filterButtons.forEach(b => b.classList.remove("active"));
+                    this.classList.add("active");
+                    applyFilter(this.getAttribute("data-filter"));
+                });
+            });
+
+            cards.forEach(card => {
+                card.addEventListener("click", function() {
+                    document.getElementById("display-title").textContent = this.getAttribute("data-title");
+                    document.getElementById("display-content").textContent = this.getAttribute("data-content");
+                    centerCard(this);
+                });
+            });
+
+            applyFilter("all");
+        });
+    </script>
+
+</body>
+</html>
