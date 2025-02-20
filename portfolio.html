@@ -11,42 +11,45 @@
             padding: 0;
             background-color: #f4f4f4;
         }
-
+        
         .container {
             max-width: 1200px;
             margin: 0 auto;
             padding: 20px;
         }
-
+        
+        /* Grande div qui change en fonction de la carte sélectionnée */
         /* Grande div qui change en fonction de la carte sélectionnée */
         .main-display {
-            background-color: #FFA726;
+            background-color: #FFA726; /* Orange clair */
             color: white;
             text-align: center;
             padding: 40px;
             border-radius: 15px;
             width: 80%;
             max-width: 900px;
-            margin: 20px auto;
+            margin: 20px auto; /* Centrage horizontal */
             box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
         }
-
+        
+        
         /* Conteneur des cartes avec scroll horizontal */
         .cards-wrapper {
             display: flex;
             overflow-x: auto;
             scroll-snap-type: x mandatory;
-            padding: 10px 30px;
-            -webkit-overflow-scrolling: touch;
-            position: relative;
-            z-index: 1;
+            padding: 10px 30px; /* Ajoute un padding latéral */
         }
-
+        
+        /* Conteneur des cartes */
         .cards-container {
+            overflow: visible; 
+            position: relative; 
             display: flex;
             gap: 15px;
+            color:white
         }
-
+        
         /* Cartes */
         .card-details {
             width: 100px;
@@ -65,45 +68,35 @@
             padding: 10px;
             text-align: center;
             cursor: pointer;
-            position: relative;
         }
-
+        
         .card-details img {
             width: 100px;
             height: 100px;
             border-radius: 5px;
             margin-bottom: 10px;
         }
-
+        
         /* Carte active */
         .card-details.active {
             opacity: 1;
             transform: translateY(0);
         }
-
-        /* Animation au survol */
-        .card-details:hover {
-            transform: translateY(-10px) scale(1.05);
-            transition: transform 0.3s ease-out;
-            z-index: 2;
+        
+        .card {
+            transition: transform 0.3s ease, z-index 0.3s ease;
+            z-index: 1;
+            position: relative; 
         }
-
-        /* Animation au clic */
-        .card-details:active {
-            transform: scale(1.1);
-            transition: transform 0.1s ease-in;
-        }
-
+        
         /* Filtre des thèmes */
         .filters {
             display: flex;
             justify-content: center;
             gap: 10px;
             margin-bottom: 20px;
-            position: relative;
-            z-index: 10;
         }
-
+        
         .filter-btn {
             padding: 10px;
             background-color: #007BFF;
@@ -113,58 +106,249 @@
             border-radius: 5px;
             transition: background 0.3s;
         }
-
+        
         .filter-btn:hover {
             background-color: #0056b3;
         }
-
+        
         .filter-btn.active {
             background-color: #004085;
         }
-
+        
         /* Masquer les cartes non visibles */
         .hidden {
             display: none !important;
         }
+        
+        /* Classe UX / UI */
+        .ux-ui {
+            background-color: #260e03;
+        }
+        
+        /* Classe Video */
+        .video {
+            background-color: #21211f;
+        }
+        
+        /* Classe Graphisme */
+        .graphisme {
+            background-color: #1b333a;
+        }
+        
+        /* Classe Modelisation */
+        .modelisation {
+            background-color: #164656;
+        }
+        
+        /* Classe Jeu vidéo */
+        .jeu-video {
+            background-color: #105871;
+        }
+        
+        /* Classe Dessin */
+        .dessin {
+            background-color: #0b6b8d;
+        }
+        
+        /* Style de la barre de défilement horizontal */
+        .cards-wrapper {
+            display: flex;
+            overflow-x: auto;
+            scroll-snap-type: x mandatory;
+            padding: 10px 30px;
+            -webkit-overflow-scrolling: touch;
+        }
+        
+        .cards-wrapper::-webkit-scrollbar {
+            height: 14px; 
+        }
+        
+        /* Piste de la barre de défilement */
+        .cards-wrapper::-webkit-scrollbar-track {
+            background-color: #7bdbfd; 
+            border-radius: 20px; 
+            box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.1); 
+        }
+        
+        /* La barre de défilement */
+        .cards-wrapper::-webkit-scrollbar-thumb {
+            background-color: #ffa200;
+            border-radius: 20px; 
+            border: 4px solid #ffffff; 
+        }
+        
+        /* Au survol de la barre de défilement */
+        .cards-wrapper::-webkit-scrollbar-thumb:hover {
+            background-color: #ffcc00; 
+        }
+        
+        /* Animation au survol */
+        .card-details:hover {
+            transform: translateY(-10px) scale(1.05); 
+            transition: transform 0.3s ease-out, box-shadow 0.3s ease-out; /* Transition fluide */
+        }
+        
+        /* Animation au clic */
+        .card-details:active {
+            transform: scale(1.1); 
+            transition: transform 0.1s ease-in, box-shadow 0.1s ease-in;
+        }
+        
+        
 
-        /* Couleurs des cartes par thème */
-        .ux-ui { background-color: #260e03; }
-        .video { background-color: #21211f; }
-        .graphisme { background-color: #1b333a; }
-        .modelisation { background-color: #164656; }
-        .jeu-video { background-color: #105871; }
-        .dessin { background-color: #0b6b8d; }
 
     </style>
 </head>
 <body>
-
     <div class="container">
+        <!-- Grande div qui change en fonction de la carte sélectionnée -->
         <div class="main-display">
             <h2 id="display-title">Sélectionne une carte</h2>
             <p id="display-content">Clique sur une carte pour afficher son contenu ici.</p>
         </div>
 
+        <!-- Filtre pour les thèmes -->
         <div class="filters">
             <button class="filter-btn active" data-filter="all">Tout</button>
-            <button class="filter-btn" data-filter="ux-ui">UX / UI</button>
-            <button class="filter-btn" data-filter="video">Vidéo</button>
-            <button class="filter-btn" data-filter="graphisme">Graphisme</button>
-            <button class="filter-btn" data-filter="modelisation">Modélisation</button>
-            <button class="filter-btn" data-filter="jeu-video">Jeu vidéo</button>
-            <button class="filter-btn" data-filter="dessin">Dessin</button>
+            <button class="filter-btn ux-ui" data-filter="ux-ui">UX / UI</button>
+            <button class="filter-btn video" data-filter="video">Vidéo</button>
+            <button class="filter-btn graphisme" data-filter="graphisme">Graphisme</button>
+            <button class="filter-btn modelisation" data-filter="modelisation">Modélisation</button>
+            <button class="filter-btn jeu-video" data-filter="jeu-video">Jeu vidéo</button>
+            <button class="filter-btn dessin" data-filter="dessin">Dessin</button>
         </div>
 
+        <!-- Cartes de sélection avec un wrapper pour le défilement horizontal -->
         <div class="cards-wrapper">
             <div class="cards-container">
+                <!-- 32 cartes -->
                 <div class="card-details ux-ui" data-theme="ux-ui" data-title="Carte 1" data-content="Voici le contenu spécifique de la carte 1.">
-                    <img src="https://via.placeholder.com/150" alt="Carte 1"> Carte 1
+                    <img src="https://via.placeholder.com/150" alt="Carte 1">
+                    Carte 1
                 </div>
                 <div class="card-details video" data-theme="video" data-title="Carte 2" data-content="Voici le contenu spécifique de la carte 2.">
-                    <img src="https://via.placeholder.com/150" alt="Carte 2"> Carte 2
+                    <img src="https://via.placeholder.com/150" alt="Carte 2">
+                    Carte 2
                 </div>
                 <div class="card-details graphisme" data-theme="graphisme" data-title="Carte 3" data-content="Voici le contenu spécifique de la carte 3.">
-                    <img src="https://via.placeholder.com/150" alt="Carte 3"> Carte 3
+                    <img src="https://via.placeholder.com/150" alt="Carte 3">
+                    Carte 3
+                </div>
+                <div class="card-details modelisation" data-theme="modelisation" data-title="Carte 4" data-content="Voici le contenu spécifique de la carte 4.">
+                    <img src="https://via.placeholder.com/150" alt="Carte 4">
+                    Carte 4
+                </div>
+                <div class="card-details jeu-video" data-theme="jeu-video" data-title="Carte 5" data-content="Voici le contenu spécifique de la carte 5.">
+                    <img src="https://via.placeholder.com/150" alt="Carte 5">
+                    Carte 5
+                </div>
+                <div class="card-details dessin" data-theme="dessin" data-title="Carte 6" data-content="Voici le contenu spécifique de la carte 6.">
+                    <img src="https://via.placeholder.com/150" alt="Carte 6">
+                    Carte 6
+                </div>
+                <div class="card-details ux-ui" data-theme="ux-ui" data-title="Carte 7" data-content="Voici le contenu spécifique de la carte 7.">
+                    <img src="https://via.placeholder.com/150" alt="Carte 7">
+                    Carte 7
+                </div>
+                <div class="card-details video" data-theme="video" data-title="Carte 8" data-content="Voici le contenu spécifique de la carte 8.">
+                    <img src="https://via.placeholder.com/150" alt="Carte 8">
+                    Carte 8
+                </div>
+                <div class="card-details graphisme" data-theme="graphisme" data-title="Carte 9" data-content="Voici le contenu spécifique de la carte 9.">
+                    <img src="https://via.placeholder.com/150" alt="Carte 9">
+                    Carte 9
+                </div>
+                <div class="card-details modelisation" data-theme="modelisation" data-title="Carte 10" data-content="Voici le contenu spécifique de la carte 10.">
+                    <img src="https://via.placeholder.com/150" alt="Carte 10">
+                    Carte 10
+                </div>
+                <div class="card-details jeu-video" data-theme="jeu-video" data-title="Carte 11" data-content="Voici le contenu spécifique de la carte 11.">
+                    <img src="https://via.placeholder.com/150" alt="Carte 11">
+                    Carte 11
+                </div>
+                <div class="card-details dessin" data-theme="dessin" data-title="Carte 12" data-content="Voici le contenu spécifique de la carte 12.">
+                    <img src="https://via.placeholder.com/150" alt="Carte 12">
+                    Carte 12
+                </div>
+                <div class="card-details ux-ui" data-theme="ux-ui" data-title="Carte 13" data-content="Voici le contenu spécifique de la carte 13.">
+                    <img src="https://via.placeholder.com/150" alt="Carte 13">
+                    Carte 13
+                </div>
+                <div class="card-details video" data-theme="video" data-title="Carte 14" data-content="Voici le contenu spécifique de la carte 14.">
+                    <img src="https://via.placeholder.com/150" alt="Carte 14">
+                    Carte 14
+                </div>
+                <div class="card-details graphisme" data-theme="graphisme" data-title="Carte 15" data-content="Voici le contenu spécifique de la carte 15.">
+                    <img src="https://via.placeholder.com/150" alt="Carte 15">
+                    Carte 15
+                </div>
+                <div class="card-details modelisation" data-theme="modelisation" data-title="Carte 16" data-content="Voici le contenu spécifique de la carte 16.">
+                    <img src="https://via.placeholder.com/150" alt="Carte 16">
+                    Carte 16
+                </div>
+                <div class="card-details jeu-video" data-theme="jeu-video" data-title="Carte 17" data-content="Voici le contenu spécifique de la carte 17.">
+                    <img src="https://via.placeholder.com/150" alt="Carte 17">
+                    Carte 17
+                </div>
+                <div class="card-details dessin" data-theme="dessin" data-title="Carte 18" data-content="Voici le contenu spécifique de la carte 18.">
+                    <img src="https://via.placeholder.com/150" alt="Carte 18">
+                    Carte 18
+                </div>
+                <div class="card-details ux-ui" data-theme="ux-ui" data-title="Carte 19" data-content="Voici le contenu spécifique de la carte 19.">
+                    <img src="https://via.placeholder.com/150" alt="Carte 19">
+                    Carte 19
+                </div>
+                <div class="card-details video" data-theme="video" data-title="Carte 20" data-content="Voici le contenu spécifique de la carte 20.">
+                    <img src="https://via.placeholder.com/150" alt="Carte 20">
+                    Carte 20
+                </div>
+                <div class="card-details graphisme" data-theme="graphisme" data-title="Carte 21" data-content="Voici le contenu spécifique de la carte 21.">
+                    <img src="https://via.placeholder.com/150" alt="Carte 21">
+                    Carte 21
+                </div>
+                <div class="card-details modelisation" data-theme="modelisation" data-title="Carte 22" data-content="Voici le contenu spécifique de la carte 22.">
+                    <img src="https://via.placeholder.com/150" alt="Carte 22">
+                    Carte 22
+                </div>
+                <div class="card-details jeu-video" data-theme="jeu-video" data-title="Carte 23" data-content="Voici le contenu spécifique de la carte 23.">
+                    <img src="https://via.placeholder.com/150" alt="Carte 23">
+                    Carte 23
+                </div>
+                <div class="card-details dessin" data-theme="dessin" data-title="Carte 24" data-content="Voici le contenu spécifique de la carte 24.">
+                    <img src="https://via.placeholder.com/150" alt="Carte 24">
+                    Carte 24
+                </div>
+                <div class="card-details ux-ui" data-theme="ux-ui" data-title="Carte 25" data-content="Voici le contenu spécifique de la carte 25.">
+                    <img src="https://via.placeholder.com/150" alt="Carte 25">
+                    Carte 25
+                </div>
+                <div class="card-details video" data-theme="video" data-title="Carte 26" data-content="Voici le contenu spécifique de la carte 26.">
+                    <img src="https://via.placeholder.com/150" alt="Carte 26">
+                    Carte 26
+                </div>
+                <div class="card-details graphisme" data-theme="graphisme" data-title="Carte 27" data-content="Voici le contenu spécifique de la carte 27.">
+                    <img src="https://via.placeholder.com/150" alt="Carte 27">
+                    Carte 27
+                </div>
+                <div class="card-details modelisation" data-theme="modelisation" data-title="Carte 28" data-content="Voici le contenu spécifique de la carte 28.">
+                    <img src="https://via.placeholder.com/150" alt="Carte 28">
+                    Carte 28
+                </div>
+                <div class="card-details jeu-video" data-theme="jeu-video" data-title="Carte 29" data-content="Voici le contenu spécifique de la carte 29.">
+                    <img src="https://via.placeholder.com/150" alt="Carte 29">
+                    Carte 29
+                </div>
+                <div class="card-details dessin" data-theme="dessin" data-title="Carte 30" data-content="Voici le contenu spécifique de la carte 30.">
+                    <img src="https://via.placeholder.com/150" alt="Carte 30">
+                    Carte 30
+                </div>
+                <div class="card-details ux-ui" data-theme="ux-ui" data-title="Carte 31" data-content="Voici le contenu spécifique de la carte 31.">
+                    <img src="https://via.placeholder.com/150" alt="Carte 31">
+                    Carte 31
+                </div>
+                <div class="card-details video" data-theme="video" data-title="Carte 32" data-content="Voici le contenu spécifique de la carte 32.">
+                    <img src="https://via.placeholder.com/150" alt="Carte 32">
+                    Carte 32
                 </div>
             </div>
         </div>
@@ -172,66 +356,75 @@
 
     <script>
         document.addEventListener("DOMContentLoaded", function() {
-            const filterButtons = document.querySelectorAll(".filter-btn");
-            const cards = document.querySelectorAll(".card-details");
-            const cardsContainer = document.querySelector(".cards-wrapper");
-
-            function applyFilter(filter) {
-                cards.forEach(card => {
-                    if (filter === "all" || card.getAttribute("data-theme") === filter) {
-                        card.classList.remove("hidden");
-                        setTimeout(() => card.classList.add("active"), 100);
-                    } else {
-                        card.classList.remove("active");
-                        setTimeout(() => card.classList.add("hidden"), 500);
-                    }
-                });
-
-                setTimeout(() => {
-                    const firstVisibleCard = document.querySelector(".card-details:not(.hidden)");
-                    if (firstVisibleCard) {
-                        centerCard(firstVisibleCard);
-                    }
-                }, 600);
-            }
-
-            function centerCard(card) {
-                const containerWidth = cardsContainer.offsetWidth;
-                const cardOffset = card.offsetLeft - (containerWidth / 2) + (card.offsetWidth / 2);
-                
-                let currentScroll = cardsContainer.scrollLeft;
-                let step = (cardOffset - currentScroll) / 20;
-
-                let animation = setInterval(() => {
-                    currentScroll += step;
-                    cardsContainer.scrollLeft = currentScroll;
-
-                    if (Math.abs(currentScroll - cardOffset) < Math.abs(step)) {
-                        clearInterval(animation);
-                        cardsContainer.scrollLeft = cardOffset;
-                    }
-                }, 15);
-            }
-
-            filterButtons.forEach(button => {
-                button.addEventListener("click", function() {
-                    filterButtons.forEach(b => b.classList.remove("active"));
-                    this.classList.add("active");
-                    applyFilter(this.getAttribute("data-filter"));
-                });
-            });
-
+        const filterButtons = document.querySelectorAll(".filter-btn");
+        const cards = document.querySelectorAll(".card-details");
+        const cardsContainer = document.querySelector(".cards-wrapper");
+    
+        // Application du filtre
+        function applyFilter(filter) {
             cards.forEach(card => {
-                card.addEventListener("click", function() {
-                    document.getElementById("display-title").textContent = this.getAttribute("data-title");
-                    document.getElementById("display-content").textContent = this.getAttribute("data-content");
-                    centerCard(this);
-                });
+                if (filter === "all" || card.getAttribute("data-theme") === filter) {
+                    card.classList.remove("hidden");
+                    setTimeout(() => card.classList.add("active"), 100);
+                } else {
+                    card.classList.remove("active");
+                    setTimeout(() => card.classList.add("hidden"), 500);
+                }
             });
-
-            applyFilter("all");
+    
+            // Centrer la première carte visible après filtrage
+            setTimeout(() => {
+                const firstVisibleCard = document.querySelector(".card-details:not(.hidden)");
+                if (firstVisibleCard) {
+                    centerCard(firstVisibleCard);
+                }
+            }, 600);
+        }
+    
+        // Centrer une carte dans la vue
+        function centerCard(card) {
+        const containerWidth = cardsContainer.offsetWidth;
+        const cardOffset = card.offsetLeft - (containerWidth / 2) + (card.offsetWidth / 2);
+        
+        // Créer un effet de défilement progressif avec plusieurs étapes
+        let currentScroll = cardsContainer.scrollLeft;
+        let step = (cardOffset - currentScroll) / 20; // Diviser le déplacement en 20 étapes
+      
+        let animation = setInterval(() => {
+            currentScroll += step;
+            cardsContainer.scrollLeft = currentScroll;
+    
+            // Arrêter l'animation si on est proche de la cible
+            if (Math.abs(currentScroll - cardOffset) < Math.abs(step)) {
+                clearInterval(animation);
+                cardsContainer.scrollLeft = cardOffset; // S'assurer que la carte est bien centrée
+            }
+          }, 15); // Rafraîchissement rapide pour un effet fluide
+        } 
+    
+    
+        // Gestion des filtres
+        filterButtons.forEach(button => {
+            button.addEventListener("click", function() {
+                filterButtons.forEach(b => b.classList.remove("active"));
+                this.classList.add("active");
+                applyFilter(this.getAttribute("data-filter"));
+            });
         });
-    </script>
+    
+        // Sélection d'une carte
+        cards.forEach(card => {
+            card.addEventListener("click", function() {
+                document.getElementById("display-title").textContent = this.getAttribute("data-title");
+                document.getElementById("display-content").textContent = this.getAttribute("data-content");
+                centerCard(this);
+            });
+        });
+    
+        // Activer "Tout afficher" au chargement
+        applyFilter("all");
+    });
+ </script>
 
 </body>
 </html>
