@@ -482,6 +482,8 @@
 
   #competences p span{
     background-color : white;
+    padding: 3px;
+    border-radius: 10px;
   }
 
   .filter-btn {
