@@ -443,6 +443,8 @@ interets {
 
   #competences p span{
     background-color : var(--color-background);
+    padding: 3px;
+    border-radius: 10px;
   }
 
 .filter-btn {
