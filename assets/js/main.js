@@ -200,7 +200,7 @@ $cards
             }
         });
     });
-});
+  });
 
 //------------------------portfolio horizontal scroll
 
@@ -223,15 +223,6 @@ container.addEventListener('mousemove', (e) => {
     const x = e.pageX - container.offsetLeft;
     const walk = (x - startX) * 2;
     container.scrollLeft = scrollLeft - walk;
-});
-
-// Effet de boucle au scroll
-container.addEventListener('scroll', () => {
-    if (container.scrollLeft <= 0) {
-        container.scrollLeft = container.scrollWidth / 2; // Revient à la fin
-    } else if (container.scrollLeft >= container.scrollWidth / 2) {
-        container.scrollLeft = 1; // Revient au début
-    }
 });
 
 // -------------------------------------------------------------- PROJETS --------------------------------------------------------

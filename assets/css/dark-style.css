@@ -507,6 +507,41 @@ interets {
   color: var(--color-text);
 }
 
+.ux-ui {
+  background-color: #05224F;
+  color: var(--color-accent);
+}
+
+/* Classe Video */
+.video {
+  background-color: #102454;
+  color: var(--color-accent);
+}
+
+/* Classe Graphisme */
+.graphisme {
+  background-color: #1B2858;
+  color: var(--color-accent);
+}
+
+/* Classe Modelisation */
+.modelisation {
+  background-color: #262B5C;
+  color: var(--color-accent);
+}
+
+/* Classe Jeu vidéo */
+.jeu-video {
+  background-color: #302E60;
+  color: var(--color-accent);
+}
+
+/* Classe Dessin */
+.dessin {
+  background-color: #3B3164;
+  color: var(--color-accent);
+}
+
 #competences h2{
   width: 100%;
   text-align: center;
@@ -533,9 +568,6 @@ interets {
 
 /*--------------------------SKILLS---------------------------*/
 :root {
-  /* --container_color: #ffc878;
-  --container_color2: #f8ba70;
-  --container_color3: #eba867; */
   --container_color: #f8f7ff;
   --container_color2: #e6edff;
   --container_color3: #d4ebff;
@@ -905,7 +937,6 @@ footer {
   transition: transform 0.5s ease, box-shadow 0.2s ease;
   will-change: transform, filter;
   
-  background-color: #030725;                /* ------------------------------- BG A CHANGER ICI */
   background-image: var(--front);
   background-size: cover;
   background-repeat: no-repeat;
@@ -1081,6 +1112,11 @@ footer {
   66%, 70% {
       transform: rotateZ(-1.5deg) rotateX(-2deg) rotateY(-2deg);
   }
+}
+
+.card h4 {
+  margin: 15px auto auto 15px;
+  text-align: left;
 }
 
 .cards { 
