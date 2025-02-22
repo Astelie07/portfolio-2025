@@ -1,4 +1,4 @@
-:root {
+  :root {
     /* Light Mode Colors */
     --color-background: #FCF8DA;
     --color-primary: #EDBA40; /* Orange-jaune clair */
@@ -13,6 +13,10 @@
     /* Other Variables */
     --transition-duration: 0.3s;
     --box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  }
+
+  *{
+    transition:0.5s;
   }
 
   /* -------------------------------------------------- LOADER */
