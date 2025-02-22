@@ -301,7 +301,7 @@ section {
     display: flex;
     justify-content: space-between;
     width: 66%;
-    margin:15px auto auto;
+    margin:15px 0 auto;
 }
 
 .presentation-info ul {
@@ -402,31 +402,69 @@ interets {
 
 /*--------CV-------------*/
 
-  #cv{
-    margin-top:50px;
-  }
+#cv{
+  margin-top:50px;
+  position: relative; 
+  display: inline-block;
+}
 
-  #cv a{
-    padding:15px;
-    margin-top:25px;
-    background-color:var(--color-secondary);
-    border : solid 2px var(--color-secondary);
-    border-radius : 20px;
-    text-decoration: none;
-    color : var(--color-background);
-    transition:1s;
-  }
+#cv::before {
+  content: "⎯ •⟶"; /* Flèche solide vers la gauche */
+  position: absolute;
+  left: -3em; /* Ajuste la distance à gauche */
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--color-accent);
+  font-size: 2.5em; /* Plus grand */
+  animation: bounce-left 1.5s infinite ease-in-out;
+}
 
-  #cv a:hover{
-    background-color:white;
-    color : var(--color-primary);
-    border : solid 2px var(--color-primary);
-  }
+/* Flèche droite */
+#cv::after {
+  content: "⟵•⎯"; /* Flèche solide vers la droite */
+  position: absolute;
+  right: -3em; /* Ajuste la distance à droite */
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--color-accent);
+  font-size: 2.5em; /* Plus grand */
+  animation: bounce-right 1.5s infinite ease-in-out;
+}
+
+/* Animation subtile */
+@keyframes bounce-left {
+  0%, 100% { transform: translateY(-50%) translateX(0); }
+  50% { transform: translateY(-50%) translateX(-5px); }
+}
+
+@keyframes bounce-right {
+  0%, 100% { transform: translateY(-50%) translateX(0); }
+  50% { transform: translateY(-50%) translateX(5px); }
+}
+
+#cv a{
+  position: relative;
+  z-index: 1;
+  padding:15px;
+  margin-top:25px;
+  background-color:var(--color-secondary);
+  border : solid 2px var(--color-secondary);
+  border-radius : 20px;
+  text-decoration: none;
+  color : white;
+  transition:0.5s;
+}
+
+#cv a:hover{
+  background-color:var(--color-accent);
+  color : var(--color-background);
+  border : solid 2px var(--color-background);
+}
 
   /* ---------------------------------------- COMPETENCES + SKILLS ------------------------------------------------------------------------------- */
 
   #competences {
-    background-color: var(--color-primary);
+    background: linear-gradient(180deg, var(--color-primary) 0%, var(--color-primary) 30%, #040A34 100%);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -442,7 +480,7 @@ interets {
   }
 
   #competences p span{
-    background-color : var(--color-background);
+    background-color : #d9b7ff5b;
     padding: 3px;
     border-radius: 10px;
   }
@@ -806,8 +844,8 @@ interets {
 #portfolio {
   background: url('../img/tree-dark.png'); 
   background-repeat: no-repeat;
-  background-size: cover; /* Ajuste l'image pour couvrir tout l'écran */
-  background-position: center; /* Centre l'image */
+  background-size: cover; 
+  background-position: top;
   color: var(--color-background);
   padding: 10px 0;
 }
