@@ -382,8 +382,8 @@ interets {
   }
 
   .grid-item:hover {
-    background: rgba(57, 58, 107, 0.178);
-    border: 1px solid var(--color-primary);
+    background: rgba(92, 94, 172, 0.178);
+    border: 1px solid var(--color-accent);
   }
 
   .grid-item i {
