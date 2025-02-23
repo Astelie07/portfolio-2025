@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Musique et Images</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0;
+            text-align: center;
+        }
+
+        .image-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            padding: 20px;
+            justify-content: center;
+        }
+
+        .image-container img {
+            width: 150px;
+            height: 150px;
+            object-fit: cover;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+
+        .image-container img:hover {
+            transform: scale(1.1);
+        }
+
+        .music-bar {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: auto;
+            background-color: #d45500c2;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 0 10px 0 0;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .music-bar span {
+            font-size: 16px;
+        }
+
+        .play-pause-btn {
+            background-color: white;
+            color: #d45500;
+            border: 1px solid #d45500;
+            padding: 5px 10px;
+            border-radius: 50%;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 32px;
+            height: 32px;
+        }
+
+        .play-pause-btn:hover {
+            background-color: #d45500;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <h1>Choisissez une image pour changer la musique</h1>
+
+    <div class="image-container">
+        <img src="https://via.placeholder.com/150/FF5733" alt="Image 1" onclick="changeMusic('assets/music/The Windmill Song-klonoa.mp3', 'The Windmill Song - Klonoa : Door to Phantomhive')">
+        <img src="https://via.placeholder.com/150/33FF57" alt="Image 2" onclick="changeMusic('assets/music/Untamed Heart-Klonoa.mp3', 'Untamed Heart - Klonoa : Door to Phantomhive')">
+        <img src="https://via.placeholder.com/150/3357FF" alt="Image 3" onclick="changeMusic('assets/music/Fluff-Puff Peaks - Super Mario Bros. Wonder.mp3', 'Fluff-Puff Peaks - Super Mario Bros. Wonder')">
+        <img src="https://via.placeholder.com/150/FF5733" alt="Image 4" onclick="changeMusic('assets/music/Comet Observatory 3 - Super Mario Galaxy.mp3', 'Comet Observatory 3 - Super Mario Galaxy')">
+        <img src="https://via.placeholder.com/150/33FF57" alt="Image 5" onclick="changeMusic('assets/music/Village Cocorico - zelda oot.mp3', 'Cocorico village - Zelda : Ocarina of Time')">
+        <img src="https://via.placeholder.com/150/3357FF" alt="Image 6" onclick="changeMusic('assets/music/Song of Healing-Zelda mm.mp3', 'Song of Healing - Zelda : Majora\'s Mask')">
+        <img src="https://via.placeholder.com/150/FF5733" alt="Image 7" onclick="changeMusic('assets/music/Banquest Rainforest-chicory.mp3', 'Banquest Rainforest - Chicory : A colorful tale')">
+        <img src="https://via.placeholder.com/150/33FF57" alt="Image 8" onclick="changeMusic('assets/music/Greenpath-Hollow knight.mp3', 'Greenpath - Hollow knight')">
+        <img src="https://via.placeholder.com/150/3357FF" alt="Image 9" onclick="changeMusic('assets/music/Realm Overworld-zelda st.mp3', 'Realm Overworld - Zelda : Spirit Tracks')">
+        <img src="https://via.placeholder.com/150/33FF57" alt="Image 10" onclick="changeMusic('assets/music/Tower of Spirits-zelda st.mp3', 'Tower of Spirits - Zelda : Spirit Tracks')">
+        <img src="https://via.placeholder.com/150/3357FF" alt="Image 11" onclick="changeMusic('assets/music/Where We Used To Play-omori.mp3', 'Where We Used To Play - Omori')">
+        <img src="https://via.placeholder.com/150/3357FF" alt="Image 12" onclick="changeMusic('assets/music/Professor Layton and the Unwound FutureLost Future - Puzzles.mp3', 'Puzzles - Professor Layton : The Unwound Future')">
+    </div>
+
+    <audio id="audioPlayer" autoplay>
+        <source src="assets/music/Untamed Heart-Klonoa.mp3" type="audio/mpeg">
+        Votre navigateur ne supporte pas l'audio HTML.
+    </audio>
+    
+    <div class="music-bar" id="musicBar">
+        🎵 <span id="currentMusic">Pas de musique en cours</span>
+        <button class="play-pause-btn" id="playPauseBtn">&#10074;&#10074;</button>
+    </div>
+  
+    <script>
+        const audioPlayer = document.getElementById("audioPlayer");
+        const currentMusic = document.getElementById("currentMusic");
+        const playPauseBtn = document.getElementById("playPauseBtn");
+
+        // Volume par défaut à 10 %
+        audioPlayer.volume = 0.1;
+
+        // Gestion Play / Pause avec icônes
+        playPauseBtn.addEventListener("click", () => {
+            if (audioPlayer.paused) {
+                audioPlayer.play();
+                playPauseBtn.innerHTML = "&#10074;&#10074;"; // Icône pause
+            } else {
+                audioPlayer.pause();
+                playPauseBtn.innerHTML = "&#9654;"; // Icône play
+            }
+        });
+
+        // Changer la musique
+        function changeMusic(musicFile, musicName) {
+            audioPlayer.src = musicFile;
+            audioPlayer.play();
+            audioPlayer.volume = 0.2;
+            currentMusic.textContent = musicName;
+            playPauseBtn.innerHTML = "&#10074;&#10074;"; // Icône pause par défaut quand la musique change
+        }
+    </script>
+</body>
+</html>
