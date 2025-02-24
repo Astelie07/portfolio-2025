@@ -1217,111 +1217,204 @@
 
   /* ----------------------------------------------------------------PROJETS---------------------------------------------------------------------- */
 
-.projects-section {
-    display: flex;
-    padding:0;
-    width: 100%;
-    min-height: 22rem;
-    position: relative; /* Pour superposer le background */
-    background: var(--color-secondary);
-    overflow: hidden;
-}
+  .projects-section {
+      display: flex;
+      padding:0;
+      width: 100%;
+      min-height: 22rem;
+      position: relative; /* Pour superposer le background */
+      background: var(--color-secondary);
+      overflow: hidden;
+  }
 
-/* Section de sélection */
-.project-selection {
-    width: 25%;
-    background: linear-gradient(to right, rgba(210, 80, 0, 0.8), rgba(210, 80, 0, 0)); 
-    color: var(--color-background);
-    display: flex;
-    flex-direction: column;
-    justify-content: center; /* Centre verticalement */
-    align-items: center;
-    padding: 50px 0;
-    position: relative;
-    z-index: 2; /* Pour être au-dessus du fond */
-}
+  /* Section de sélection */
+  .project-selection {
+      width: 25%;
+      background: linear-gradient(to right, rgba(210, 80, 0, 0.8), rgba(210, 80, 0, 0)); 
+      color: var(--color-background);
+      display: flex;
+      flex-direction: column;
+      justify-content: center; /* Centre verticalement */
+      align-items: center;
+      padding: 50px 0;
+      position: relative;
+      z-index: 2; /* Pour être au-dessus du fond */
+  }
 
-.project-tab {
-    padding: 15px;
-    text-align: center;
-    cursor: pointer;
-    transition: background 0.3s;
-    border-radius : 10px;
-    width: 80%;
-}
+  .project-tab {
+      padding: 15px;
+      text-align: center;
+      cursor: pointer;
+      transition: background 0.3s;
+      border-radius : 10px;
+      width: 80%;
+  }
 
-.project-tab:hover {
-    background: var(--color-accent);
-}
+  .project-tab:hover {
+      background: var(--color-accent);
+  }
 
-.project-tab.active {
-    background: var(--color-primary);
-    color : var(--color-text);
-}
+  .project-tab.active {
+      background: var(--color-primary);
+      color : var(--color-text);
+  }
 
-/* Séparateurs verticaux */
-.separator {
-    width: 2px; /* Largeur du trait vertical */
-    height: 30px; /* Hauteur du trait */
-    background-color: rgba(255, 255, 255, 0.5); /* Légèrement transparent */
-    margin: 10px 0; /* Espacement entre les onglets */
-}
+  /* Séparateurs verticaux */
+  .separator {
+      width: 2px; /* Largeur du trait vertical */
+      height: 30px; /* Hauteur du trait */
+      background-color: rgba(255, 255, 255, 0.5); /* Légèrement transparent */
+      margin: 10px 0; /* Espacement entre les onglets */
+  }
 
-/* Contenu du projet */
-.project-content {
+  /* Contenu du projet */
+  .project-content {
     flex: 1;
     padding: 20px;
-    position: relative;
-    z-index: 1;
-}
+    position: relative; /* Garde la position relative pour gérer les enfants */
+    min-height: auto; /* Permet à la hauteur de s'adapter au contenu */
+    overflow: visible; /* Empêche la coupure du contenu */
+  }
 
-/* Appliquer un background dynamique */
-.project-details {
-    display: none; /* Caché par défaut */
-    position: absolute;
-    top: 0;
-    left: 0;
+  /* Appliquer un background dynamique */
+  .project-details {
+    display: none; /* Toujours caché par défaut */
+    position: relative; /* Relative pour suivre la hauteur naturelle */
     width: 100%;
-    height: 100%;
+    padding: 50px;
     background-size: cover;
     background-position: center;
     color: var(--color-text);
-    padding: 50px;
+    opacity: 0;
     transition: opacity 0.5s ease-in-out;
+    animation: fadeIn 0.5s ease-in-out;
+  }
+
+  /* Montrer le projet actif avec une animation douce */
+  .project-details.active {
+      display: block;
+      opacity: 1;
+  }
+
+  /* Cacher les projets non actifs */
+  .hidden {
+      display: none;
+  }
+
+  /* Animation d'apparition */
+  @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+  }
+
+  /* Style général des détails de projet */
+.project-content .project-details {
+  border-radius: 16px;
+  padding: 24px;
+  font-family: 'Arial', sans-serif;
+  max-width: 100%;
+  line-height: 1.6;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.project-details.active {
-    display: block;
-    opacity: 1;
+/* Paragraphes centrés pour les introductions */
+#project-1 p:first-of-type, #project-1 h2 {
+  text-align: center;
 }
 
-/* Galerie d'images */
-.gallery {
-    display: flex;
-    gap: 10px;
-    margin-top: 15px;
+/* Ligne de séparation */
+.project-details hr {
+  margin: 15px 25%;
+  color: var(--color-primary);
+  background-color: var(--color-primary);
 }
 
-.gallery img {
-    width: 100px;
-    height: 100px;
-    border-radius: 5px;
-    transition: transform 0.3s;
+/* Mise en valeur des strong */
+.project-details strong {
+  text-shadow: 1px 1px 0px var(--color-primary);
 }
 
-.gallery img:hover {
-    transform: scale(1.1);
+.project-details li strong {
+  background-color: var(--color-primary);
+  border-radius: 10px;
 }
 
-/* Cacher les projets non actifs */
-.hidden {
-    display: none;
+/* Liens */
+.project-details a {
+  color: var(--color-background);
+  text-decoration: none;
+  padding: 10px;
+  border-radius: 15px;
 }
 
-/* Animation d'apparition */
-@keyframes fadeIn {
-    from { opacity: 0; transform: translateY(10px); }
-    to { opacity: 1; transform: translateY(0); }
+.project-details a:hover {
+  color: var(--color-primary);
+  background-color: var(--color-text);
+}
+
+/* Contenu général */
+.project-content {
+  text-align: left;
+  font-size: 1.1em;
+  margin: 10px 0;
+}
+
+/* Liste */
+.project-content ul {
+  padding-left: 20px;
+  list-style: none;
+}
+
+.project-content li {
+  padding: 0 10px;
+  font-size: 1.1em;
+  display: flex;
+  align-items: center;
+}
+
+/* Icônes */
+.project-content li strong {
+  margin-left: 8px;
+}
+
+.project-content h2, #project-1 p:first-of-type{
+  text-align: center;
+}
+
+/* --- Galerie d'images --- */
+
+/* Galerie en grille */
+.project-content .gallery {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 colonnes égales */
+  gap: 20px;
+  margin: 20px 0;
+  align-items: start;
+  text-align: center;
+}
+
+/* Style des éléments individuels */
+.project-content .gallery-item {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+/* Style des images */
+.project-content .gallery img, 
+.project-content .gallery iframe {
+  max-width: 100%;
+  height: 450px; /* Hauteur uniforme pour toutes les images */
+  object-fit: cover; /* Remplissage sans déformation */
+  object-position: center; /* Centrage de l'image */
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.project-content .gallery img:hover,
+.project-content .gallery iframe:hover {
+  transform: scale(1.05);
 }
 
   /* ----------------------------------------------------------------CONTACT---------------------------------------------------------------------- */
