@@ -1732,18 +1732,19 @@
 }
 
 .music-bar {
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  width: auto;
-  background-color: #d45500c2;
-  color: white;
-  padding: 10px 20px;
-  border-radius: 0 10px 0 0;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
-  display: flex;
-  align-items: center;
-  gap: 10px; 
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: auto;
+    background-color: var(--color-accent);
+    color: white;
+    padding: 5px 10px;
+    border-radius: 0 10px 0 0;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    z-index: 20;
 }
 
 .music-bar span {
