@@ -1673,3 +1673,67 @@ transform: scale(1.05);
     width: 99%;
   }
 }
+
+/* ---------------------------- MUSIC STICKERS ---------------------------- */
+
+.image-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  padding: 20px;
+  justify-content: center;  
+}
+
+.image-container img {
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+  cursor: pointer;
+  transition: transform 0.3s ease; 
+}
+
+.image-container img:hover {
+  transform: scale(1.1);  
+}
+
+.music-bar {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: auto;
+    background-color: var(--color-accent);
+    color: white;
+    padding: 5px 10px;
+    border-radius: 0 10px 0 0;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    z-index: 20;
+}
+
+.music-bar span {
+  font-size: 16px;  
+}
+
+.play-pause-btn {
+  background-color: white;
+  color: #d45500;
+  border: 1px solid #d45500;
+  padding: 5px 10px;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;  
+}
+
+.play-pause-btn:hover {
+  background-color: #d45500;
+  color: white;  
+}
+
