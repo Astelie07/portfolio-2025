@@ -395,12 +395,12 @@ interets {
     max-width: 150px;
   }
 
-  .interets img:first-of-type{
+  .interets img:first-of-type, .interets img:nth-of-type(2){
     float: left;
     transform: scale(1, -1);
   }
 
-  ..interets img:nth-of-type(3), .interets img:nth-of-type(4){
+  .interets img:nth-of-type(3), .interets img:nth-of-type(4){
     float: right;
   }
 
@@ -1692,7 +1692,7 @@ transform: scale(1.05);
   transition: transform 0.3s ease; 
 }
 
-.image-container img:hover, .sticker {
+.image-container img:hover, .sticker:hover {
   transform: scale(1.1);  
 }
 
@@ -1717,23 +1717,23 @@ transform: scale(1.05);
 }
 
 .play-pause-btn {
-  background-color: white;
-  color: #d45500;
-  border: 1px solid #d45500;
-  padding: 5px 10px;
-  border-radius: 50%;
-  cursor: pointer;
-  font-size: 16px;
-  transition: background-color 0.3s;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 32px;
-  height: 32px;  
+    background-color: white;
+    color: var(--color2);
+    border: var(--color2);
+    padding: 5px 10px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
 }
 
 .play-pause-btn:hover {
-  background-color: #d45500;
-  color: white;  
+    background-color: var(--color-primary);
+    color: white;
 }
 
