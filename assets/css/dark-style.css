@@ -400,7 +400,7 @@ interets {
     transform: scale(1, -1);
   }
 
-  .interets img:nth-of-type(3){
+  ..interets img:nth-of-type(3), .interets img:nth-of-type(4){
     float: right;
   }
 
