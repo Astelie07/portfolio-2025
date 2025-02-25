@@ -1726,7 +1726,7 @@
   transition: transform 0.3s ease; 
 }
 
-.image-container img:hover {
+.sticker {
   transform: scale(1.1);  
 }
 
