@@ -434,9 +434,13 @@
     max-width: 150px;
   }
 
-  .interets img:first-of-type{
+  .interets img:first-of-type, .interets img:nth-of-type(2){
     float: left;
     transform: scale(1, -1);
+  }
+
+  .interets img:first-of-type:hover, .interets img:nth-of-type(2):hover{
+    transform: scale(1.1, -1.1);
   }
 
   .interets img:nth-of-type(3), .interets img:nth-of-type(4){
@@ -1198,12 +1202,21 @@
 
   .cards-wrapper {
     display: flex;
-    overflow-x: hidden; /* Cache les clones pour l'effet infini */
     white-space: nowrap;
-    scroll-behavior: smooth;
     -webkit-overflow-scrolling: touch;
     cursor: grab;
     position: relative;
+    overflow-x: auto;
+    scroll-behavior: auto;
+    user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    scrollbar-width: none;
+  }
+
+  .cards-wrapper:active {
+      cursor: grabbing;
   }
 
   .img-fluid {
