@@ -205,24 +205,48 @@ $cards
 //------------------------portfolio horizontal scroll
 
 const container = document.querySelector('.cards-wrapper');
-let isDown = false;
-let startX;
-let scrollLeft;
 
-// Drag avec la souris
+let isDragging = false;
+let lastX = 0;
+let velocity = 0;
+let rafId;
+
+const updateScroll = () => {
+    container.scrollLeft -= velocity;
+    velocity *= 0.95; // Ajoute une inertie pour un effet smooth
+    if (Math.abs(velocity) > 0.1) {
+        rafId = requestAnimationFrame(updateScroll);
+    } else {
+        cancelAnimationFrame(rafId);
+    }
+};
+
 container.addEventListener('mousedown', (e) => {
-    isDown = true;
-    startX = e.pageX - container.offsetLeft;
-    scrollLeft = container.scrollLeft;
+    isDragging = true;
+    lastX = e.clientX;
+    velocity = 0;
+    cancelAnimationFrame(rafId); // Stoppe l'inertie quand on clique
 });
-container.addEventListener('mouseleave', () => isDown = false);
-container.addEventListener('mouseup', () => isDown = false);
+
 container.addEventListener('mousemove', (e) => {
-    if (!isDown) return;
+    if (!isDragging) return;
     e.preventDefault();
-    const x = e.pageX - container.offsetLeft;
-    const walk = (x - startX) * 2;
-    container.scrollLeft = scrollLeft - walk;
+    
+    let delta = e.clientX - lastX;
+    lastX = e.clientX;
+    
+    container.scrollLeft -= delta; // Déplace instantanément
+    velocity = delta; // Stocke la vitesse pour l’inertie
+});
+
+container.addEventListener('mouseup', () => {
+    isDragging = false;
+    rafId = requestAnimationFrame(updateScroll); // Lance l'inertie
+});
+
+container.addEventListener('mouseleave', () => {
+    isDragging = false;
+    rafId = requestAnimationFrame(updateScroll);
 });
 
 // -------------------------------------------------------------- PROJETS --------------------------------------------------------
