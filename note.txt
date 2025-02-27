@@ -1,0 +1,25 @@
+A faire :
+
+PC --------------------------------------------
+
+- dark loader
+- variable universelle pour theme
+- portfolio.html complet
+- style portfolio.html ok
+- Projets OK
+- Form contact opti
+- form contact fonctionnel
+- rangement pour alt et unecessary
+- menu burger fixed + ok
+- css pc fini
+
+TEL ------------------------------------------
+
+- css header
+- css description
+- css skills
+- css cards
+- css portfolio.html
+- css projet
+- css contact
+- css autre (musiques, stickers etc...)
