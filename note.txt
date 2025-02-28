@@ -7,7 +7,6 @@ PC --------------------------------------------
 - portfolio.html complet
 - style portfolio.html ok
 - Projets OK
-- Form contact opti
 - form contact fonctionnel
 - rangement pour alt et unecessary
 - menu burger fixed + ok
