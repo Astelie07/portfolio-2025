@@ -14,10 +14,12 @@
     --transition-duration: 0.3s;
     --box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   }
-
+  
   *{
     transition:0.5s;
   }
+
+
 
   /* -------------------------------------------------- LOADER */
   #loader_div {
@@ -441,11 +443,17 @@
 
   .interets img:first-of-type:hover, .interets img:nth-of-type(2):hover{
     transform: scale(1.1, -1.1);
+    cursor: pointer;
   }
 
   .interets img:nth-of-type(3), .interets img:nth-of-type(4){
     float: right;
   }
+
+  .interets img:nth-of-type(3):hover, .interets img:nth-of-type(4):hover{
+    cursor: pointer;
+  }
+
   /*--------CV-------------*/
 
   #cv{
@@ -1239,10 +1247,17 @@
       overflow: hidden;
   }
 
+  #h2-projet {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+  }
+
   /* Section de sélection */
   .project-selection {
       width: 25%;
-      background: linear-gradient(to right, rgba(210, 80, 0, 0.8), rgba(210, 80, 0, 0)); 
+      /* background: linear-gradient(to right, rgba(210, 80, 0, 0.8), rgba(210, 80, 0, 0));  */
       color: var(--color-background);
       display: flex;
       flex-direction: column;
@@ -1453,13 +1468,14 @@
     margin: 0 auto;
     padding: 20px;
     position: relative;
-    max-width: 840px;
+    max-width: 900px;
   }
   
   /* Left contact page */
   .form-horizontal {
     max-width: 400px;
     font-weight: 400;
+    margin-right: 50px;
   }
   
   .form-control {
@@ -1537,7 +1553,8 @@
   
   /* Begin Right Contact Page */
   .direct-contact-container {
-    max-width: 400px;
+    max-width: 450px;
+    text-align: left;
   }
   
   /* Location, Phone, Email Section */
@@ -1648,8 +1665,8 @@
     text-align: center;
   }
   
-  hr .contact-hr{
-    border: solid 1px var(--color-primary);
+  .contact-hr{
+    border: solid 1px var(--color-background);
   }
   
   /* Begin Media Queries*/
@@ -1723,21 +1740,31 @@
 
 /* ---------------------------- MUSIC STICKERS ---------------------------- */
 
-.image-container {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-  padding: 20px;
-  justify-content: center;  
+.sticker-huepoe, .sticker-fleurdefeu, .sticker-flute-st, .sticker-ocarina{
+  position: absolute;
+  cursor: pointer;
+  max-width: 150px;
 }
 
-.image-container img {
-  width: 150px;
-  height: 150px;
-  object-fit: cover;
-  cursor: pointer;
-  transition: transform 0.3s ease; 
+.sticker-huepoe{
+  top: -10%;
+  right: 10%;
 }
+
+.sticker-fleurdefeu{
+  margin: -100px auto auto 100px;
+}
+
+.sticker-ocarina {
+  top: 15%;
+  left: -40%;
+}
+
+.sticker-flute-st{
+  top: 15%;
+  right: -40%;
+}
+
 
 .sticker:hover {
   transform: scale(1.1);  

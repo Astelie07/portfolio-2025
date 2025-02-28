@@ -400,12 +400,17 @@ interets {
     transform: scale(1, -1);
   }
 
-    .interets img:first-of-type:hover, .interets img:nth-of-type(2):hover{
+  .interets img:first-of-type:hover, .interets img:nth-of-type(2):hover{
     transform: scale(1.1, -1.1);
+    cursor: pointer;
   }
 
   .interets img:nth-of-type(3), .interets img:nth-of-type(4){
     float: right;
+  }
+
+  .interets img:nth-of-type(3):hover, .interets img:nth-of-type(4):hover{
+    cursor: pointer;
   }
 
 /*--------CV-------------*/
@@ -1209,6 +1214,13 @@ footer {
     overflow: hidden;
 }
 
+#h2-projet {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+}
+
 /* Section de sélection */
 .project-selection {
     width: 25%;
@@ -1423,13 +1435,14 @@ transform: scale(1.05);
   margin: 0 auto;
   padding: 20px;
   position: relative;
-  max-width: 840px;
+  max-width: 900px;
 }
 
 /* Left contact page */
 .form-horizontal {
   max-width: 400px;
   font-weight: 400;
+  margin-right: 50px;
 }
 
 .form-control {
@@ -1507,7 +1520,8 @@ transform: scale(1.05);
 
 /* Begin Right Contact Page */
 .direct-contact-container {
-  max-width: 400px;
+  max-width: 450px;
+  text-align: left;
 }
 
 /* Location, Phone, Email Section */
@@ -1525,6 +1539,10 @@ transform: scale(1.05);
 .contact-text {
   letter-spacing: 1.9px;
   color: var(--color-text);
+}
+
+.contact-hr{
+  border: solid 1px var(--color-primary);
 }
 
 .place {
@@ -1688,6 +1706,31 @@ transform: scale(1.05);
 }
 
 /* ---------------------------- MUSIC STICKERS ---------------------------- */
+
+.sticker-huepoe, .sticker-fleurdefeu, .sticker-flute-st, .sticker-ocarina{
+  position: absolute;
+  cursor: pointer;
+  max-width: 150px;
+}
+
+.sticker-huepoe{
+  top: -10%;
+  right: 10%;
+}
+
+.sticker-fleurdefeu{
+  margin: -100px auto auto 100px;
+}
+
+.sticker-ocarina {
+  top: 15%;
+  left: -40%;
+}
+
+.sticker-flute-st{
+  top: 15%;
+  right: -40%;
+}
 
 .image-container {
   display: flex;
