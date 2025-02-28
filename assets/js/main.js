@@ -285,8 +285,6 @@ document.addEventListener("DOMContentLoaded", function () {
             if (i === index) {
                 project.classList.add("active");
                 tabs[i].classList.add("active");
-                // Changer le background pour correspondre au projet actif
-                document.querySelector(".projects-section").style.backgroundImage = `url(https://via.placeholder.com/1200x800?text=Projet+${i+1})`;
             }
         });
     }

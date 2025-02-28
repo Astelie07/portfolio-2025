@@ -520,41 +520,6 @@ interets {
   color: var(--color-text);
 }
 
-.ux-ui {
-  background-color: #05224F;
-  color: var(--color-accent);
-}
-
-/* Classe Video */
-.video {
-  background-color: #102454;
-  color: var(--color-accent);
-}
-
-/* Classe Graphisme */
-.graphisme {
-  background-color: #1B2858;
-  color: var(--color-accent);
-}
-
-/* Classe Modelisation */
-.modelisation {
-  background-color: #262B5C;
-  color: var(--color-accent);
-}
-
-/* Classe Jeu vidéo */
-.jeu-video {
-  background-color: #302E60;
-  color: var(--color-accent);
-}
-
-/* Classe Dessin */
-.dessin {
-  background-color: #3B3164;
-  color: var(--color-accent);
-}
-
 #competences h2{
   width: 100%;
   text-align: center;
@@ -929,7 +894,7 @@ footer {
   width: 100%;
   padding: 1rem;
   text-align: center;
-  background: var(--color-secondary);
+  background: var(--color-accent);
   color: var(--color-text);
 }
 
@@ -1202,16 +1167,83 @@ footer {
     margin: 15px auto;
 }
 
+.ux-ui {
+  background: url("../img/cards/ux-dark.png");
+  background-size: cover ;
+}
+
+.ux-ui-btn{
+    background-color: #05224F;
+    color: var(--color-accent);
+  }
+
+/* Classe Video */
+.video {
+  background-image: url("../img/cards/video-dark.png");
+  background-size:cover ;
+}
+
+.video-btn{
+    background-color: #102454;
+    color: var(--color-accent);
+  }
+
+/* Classe Graphisme */
+.graphisme {
+  background-image: url("../img/cards/grapg-dark.png");
+  background-size:cover ;
+}
+
+.graphisme-btn{
+    background-color: #1B2858;
+    color: var(--color-accent);
+  }
+
+/* Classe Modelisation */
+.modelisation {
+  background-image: url("../img/cards/mode-dark.png");
+  background-size:cover ;
+}
+
+.modelisation-btn{
+    background-color: #262B5C;
+    color: var(--color-accent);
+  }
+
+/* Classe Jeu vidéo */
+.jeu-video {
+  background-image: url("../img/cards/jv-dark.png");
+  background-size:cover ;
+}
+
+.jeu-video-btn{
+    background-color: #302E60;
+    color: var(--color-accent);
+  }
+
+/* Classe Dessin */
+.dessin {
+  background-image: url("../img/cards/dessin-dark.png");
+  background-size:cover ;
+}
+
+.dessin-btn{
+    background-color: #3B3164;
+    color: var(--color-accent);
+  }
+
 /* ----------------------------------------------------------------PROJETS---------------------------------------------------------------------- */
 
 .projects-section {
-    padding: 0;
-    display: flex;
-    width: 100%;
-    min-height: 22rem;
-    position: relative; /* Pour superposer le background */
-    background: var(--color-primary);
-    overflow: hidden;
+  display: flex;
+  padding:0;
+  width: 100%;
+  min-height: 22rem;
+  position: relative; 
+  background: url("../img/projet-dark.png");
+  background-position: 50% 50%;
+  background-size: cover;
+  overflow: hidden;
 }
 
 #h2-projet {
@@ -1224,7 +1256,6 @@ footer {
 /* Section de sélection */
 .project-selection {
     width: 25%;
-    background: linear-gradient(to right, var(--color-background), rgba(0, 0, 100, 0)); 
     color: var(--color-secondary);
     display: flex;
     flex-direction: column;
@@ -1416,7 +1447,7 @@ transform: scale(1.05);
 #contact {
   width: 100%;
   height: 100%;
-  background-color: var(--color-secondary);
+  background-color: var(--color-accent);
 }
 
 .section-header {
@@ -1477,7 +1508,7 @@ transform: scale(1.05);
   font-size: 1rem;
   border-radius: 15px;
   border: 2px solid var(--color-background);
-  background: var(--color-accent);
+  background: var(--color-secondary);
   color: var(--color-background);
   cursor: pointer;
   outline: none;
@@ -1486,7 +1517,7 @@ transform: scale(1.05);
 
 #submit:hover{
   color: var(--color-text);
-  border-color: var(--color-text);
+  border-color: var(--color-primary);
   background-color: var(--color-primary);
 }
 
@@ -1631,7 +1662,7 @@ transform: scale(1.05);
 }
 
 .copyright {
-  color: var(--color-secondary);
+  color: var(--color-accent);
   letter-spacing: 1px;
   text-align: center;
 }
@@ -1757,7 +1788,7 @@ transform: scale(1.05);
     bottom: 0;
     left: 0;
     width: auto;
-    background-color: var(--color-accent);
+    background-color: rgba(0, 0, 88, 0.856);
     color: white;
     padding: 5px 10px;
     border-radius: 0 10px 0 0;
@@ -1792,4 +1823,3 @@ transform: scale(1.05);
     background-color: var(--color-primary);
     color: white;
 }
-

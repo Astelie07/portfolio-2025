@@ -560,35 +560,6 @@
     background-color: var(--color-primary);
     color: var(--color-text);
   }
-
-  .ux-ui {
-    background-color: #260e03;
-  }
-
-  /* Classe Video */
-  .video {
-    background-color: rgb(33, 33, 31);
-  }
-
-  /* Classe Graphisme */
-  .graphisme {
-    background-color: #1b333a;
-  }
-
-  /* Classe Modelisation */
-  .modelisation {
-    background-color: #164656;
-  }
-
-  /* Classe Jeu vidéo */
-  .jeu-video {
-    background-color: #105871;
-  }
-
-  /* Classe Dessin */
-  .dessin {
-    background-color: #0b6b8d;
-  }
   
   #competences h2{
     width: 100%;
@@ -877,8 +848,6 @@
   }
   .skills__content__inventory {
     border-image-source: url("../img/illus/inventory-border.png");
-    /* border-image-source: url("https://assets.codepen.io/7237686/borderbottom.png");
-    */      
     padding: 1rem;
     display: flex;
     flex-direction: column;
@@ -1234,6 +1203,66 @@
       margin: 15px auto;
   }
 
+  .ux-ui {
+    background: url("../img/cards/ux-light.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+
+  .ux-ui-btn{
+    background-color: #260e03;
+  }
+
+  /* Classe Video */
+  .video {
+    background-image: url("../img/cards/video-light.png");
+    background-size:cover ;
+  }
+
+  .video-btn{
+    background-color: #21211f;
+  }
+
+  /* Classe Graphisme */
+  .graphisme {
+    background-image: url("../img/cards/graph-light.png");
+    background-size:cover ;
+  }
+
+  .graphisme-btn{
+    background-color: #1b333a;
+  }
+
+  /* Classe Modelisation */
+  .modelisation {
+    background-image: url("../img/cards/mode-light.png");
+    background-size:cover ;
+  }
+
+  .modelisation-btn{
+    background-color: #164656;
+  }
+
+  /* Classe Jeu vidéo */
+  .jeu-video {
+    background-image: url("../img/cards/jv-light.png");
+    background-size:cover ;
+  }
+
+  .jeu-video-btn{
+    background-color: #105871;
+  }
+
+  /* Classe Dessin */
+  .dessin {
+    background-image: url("../img/cards/dessin-light.png");
+    background-size:cover ;
+  }
+
+  .dessin-btn{
+    background-color: #0b6b8d;
+  }
 
   /* ----------------------------------------------------------------PROJETS---------------------------------------------------------------------- */
 
@@ -1242,8 +1271,10 @@
       padding:0;
       width: 100%;
       min-height: 22rem;
-      position: relative; /* Pour superposer le background */
-      background: var(--color-secondary);
+      position: relative; 
+      background: url("../img/projet-light.png");
+      background-position: 50% 50%;
+      background-size: cover;
       overflow: hidden;
   }
 
@@ -1257,8 +1288,6 @@
   /* Section de sélection */
   .project-selection {
       width: 25%;
-      /* background: linear-gradient(to right, rgba(210, 80, 0, 0.8), rgba(210, 80, 0, 0));  */
-      color: var(--color-background);
       display: flex;
       flex-direction: column;
       justify-content: center; /* Centre verticalement */
@@ -1368,7 +1397,7 @@
 
 /* Liens */
 .project-details a {
-  color: var(--color-background);
+  color: var(--color-accent);
   text-decoration: none;
   padding: 10px;
   border-radius: 15px;
@@ -1775,7 +1804,7 @@
     bottom: 0;
     left: 0;
     width: auto;
-    background-color: var(--color-accent);
+    background-color: #d45500cc;
     color: white;
     padding: 5px 10px;
     border-radius: 0 10px 0 0;
@@ -1791,9 +1820,9 @@
 }
 
 .play-pause-btn {
-  background-color: white;
-  color: #d45500;
-  border: 1px solid #d45500;
+  background-color: var(--color-background);
+  color: var(--color-accent);
+  border: 1px solid var(--color-accent);
   padding: 5px 10px;
   border-radius: 50%;
   cursor: pointer;
@@ -1807,6 +1836,6 @@
 }
 
 .play-pause-btn:hover {
-  background-color: #d45500;
-  color: white;  
+  background-color: var(--color-accent)  ;
+  color: var(--color-background);  
 }
