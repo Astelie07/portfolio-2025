@@ -389,6 +389,23 @@ section {
     line-height: 1.5;
 }
 
+/* Responsive Design */
+@media (max-width: 768px) {
+    .presentation-content {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    #presentation #photo {
+        margin-bottom: 20px;
+    }
+
+    .presentation-info {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
 /*-----------------------------------------------------INTERETS---------------------------------------------*/
 
 interets {
@@ -627,7 +644,11 @@ interets {
   flex-direction: column;
   position: relative;
 }
-
+@media (max-width: 65rem) {
+  .skills {
+      flex-direction: row;
+  }
+}
 .skills__content {
   font-family: svFont;
   width: 100%;
@@ -641,7 +662,11 @@ interets {
   border-image-repeat: round;
   border-radius: 20px;
 }
-
+@media (max-width: 65rem) {
+  .skills__content__inventory, .skills__content__info {
+      overflow: auto;
+  }
+}
 .skills__content__inventory .items__container, .skills__content__info .items__container, .skills__content__inventory .items__container--disabled, .skills__content__info .items__container--disabled {
   border-style: solid;
   border-width: 20px;
@@ -657,7 +682,12 @@ interets {
   justify-content: center;
   position: relative;
 }
-
+@media (max-width: 1560px) {
+  .skills__content__inventory .items__container, .skills__content__info .items__container, .skills__content__inventory .items__container--disabled, .skills__content__info .items__container--disabled {
+      width: 64px;
+      height: 64px;
+  }
+}
 .skills__content__inventory .items__container .items__number, .skills__content__info .items__container .items__number, .skills__content__inventory .items__container--disabled .items__number, .skills__content__info .items__container--disabled .items__number {
   font-size: 0.9rem;
   position: absolute;
@@ -677,7 +707,12 @@ interets {
   image-rendering: crisp-edges;
   transition: 0.2s all;
 }
-
+@media (max-width: 1560px) {
+  .skills__content__inventory .items__container .item__container .item__img, .skills__content__info .items__container .item__container .item__img, .skills__content__inventory .items__container--disabled .item__container .item__img, .skills__content__info .items__container--disabled .item__container .item__img {
+      height: 64px;
+      width: 64px;
+  }
+}
 .skills__content__inventory .items__container .item__container .item__img:hover, .skills__content__info .items__container .item__container .item__img:hover, .skills__content__inventory .items__container--disabled .item__container .item__img:hover, .skills__content__info .items__container--disabled .item__container .item__img:hover {
   transform: scale(1.06);
 }
@@ -695,13 +730,23 @@ interets {
   text-shadow: -2px 0 #000, 0 2px #000, 2px 0 #000, 0 -2px #000;
   font-family: pixelFont;
 }
-
+@media (max-width: 1560px) {
+  .skills__content__inventory .items__container .item__container .item__quantity, .skills__content__info .items__container .item__container .item__quantity, .skills__content__inventory .items__container--disabled .item__container .item__quantity, .skills__content__info .items__container--disabled .item__container .item__quantity {
+      bottom: -100%;
+      right: -90%;
+  }
+}
 .skills__content__inventory .items__container .item__container .item__quality, .skills__content__info .items__container .item__container .item__quality, .skills__content__inventory .items__container--disabled .item__container .item__quality, .skills__content__info .items__container--disabled .item__container .item__quality {
   position: absolute;
   left: -60%;
   bottom: -70%;
 }
-
+@media (max-width: 1560px) {
+  .skills__content__inventory .items__container .item__container .item__quality, .skills__content__info .items__container .item__container .item__quality, .skills__content__inventory .items__container--disabled .item__container .item__quality, .skills__content__info .items__container--disabled .item__container .item__quality {
+      bottom: -100%;
+      left: -90%;
+  }
+}
 .skills__content__inventory .items__container .item__container .item__quality img, .skills__content__info .items__container .item__container .item__quality img, .skills__content__inventory .items__container--disabled .item__container .item__quality img, .skills__content__info .items__container--disabled .item__container .item__quality img {
   height: 1.5625rem;
 }
@@ -717,13 +762,18 @@ interets {
   color: #212;
   background-color: var(--container_color);
 }
-
+@media (max-width: 1560px) {
+  .skills__content__inventory .items__container .item__container .item__tooltip, .skills__content__info .items__container .item__container .item__tooltip, .skills__content__inventory .items__container--disabled .item__container .item__tooltip, .skills__content__info .items__container--disabled .item__container .item__tooltip {
+      min-width: 18rem;
+  }
+}
 .skills__content__inventory .items__container .item__container .item__tooltip .item__tooltip__title, .skills__content__info .items__container .item__container .item__tooltip .item__tooltip__title, .skills__content__inventory .items__container--disabled .item__container .item__tooltip .item__tooltip__title, .skills__content__info .items__container--disabled .item__container .item__tooltip .item__tooltip__title {
   border-style: solid;
   border-width: 20px;
   border-image-slice: 24 22;
   border-image-repeat: round;
   border-radius: 20px;
+  /*border-image-source: url("https://assets.codepen.io/7237686/tooltipbordertop.png");       /*bordure haut infos*/
   border-image-source: url("../img/illus/tooltip_top_d.png");
   text-shadow: var(--text_shadow) -2px 1px;
   white-space: nowrap;
@@ -801,7 +851,11 @@ interets {
 .skills__content__inventory .items__container .item__container:hover .item__tooltip, .skills__content__info .items__container .item__container:hover .item__tooltip, .skills__content__inventory .items__container--disabled .item__container:hover .item__tooltip, .skills__content__info .items__container--disabled .item__container:hover .item__tooltip {
   display: block;
 }
-
+@media (max-width: 46.875rem) {
+  .skills__content__inventory .items__container .item__container:hover .item__tooltip, .skills__content__info .items__container .item__container:hover .item__tooltip, .skills__content__inventory .items__container--disabled .item__container:hover .item__tooltip, .skills__content__info .items__container--disabled .item__container:hover .item__tooltip {
+      display: none;
+  }
+}
 .skills__content__inventory .items__container .item__container:active .item__tooltip, .skills__content__info .items__container .item__container:active .item__tooltip, .skills__content__inventory .items__container--disabled .item__container:active .item__tooltip, .skills__content__info .items__container--disabled .item__container:active .item__tooltip {
   display: none;
 }
@@ -1669,6 +1723,75 @@ transform: scale(1.05);
   color: var(--color-accent);
   letter-spacing: 1px;
   text-align: center;
+}
+
+/* Begin Media Queries*/
+@media screen and (max-width: 850px) {
+  .contact-wrapper {
+    display: flex;
+    flex-direction: column;
+  }
+  .direct-contact-container, .form-horizontal {
+    margin: 0 auto;
+  }  
+  
+  .direct-contact-container {
+    margin-top: 60px;
+    max-width: 300px;
+  }    
+  .social-media-list li {
+    height: 60px;
+    width: 60px;
+    line-height: 60px;
+  }
+  .social-media-list li:after {
+    width: 60px;
+    height: 60px;
+    line-height: 60px;
+  }
+}
+
+@media screen and (max-width: 569px) {
+
+  .direct-contact-container, .form-wrapper {
+    float: none;
+    margin: 0 auto;
+  }  
+  .form-control, textarea {
+    
+    margin: 0 auto;
+  }
+ 
+  
+  .name, .email, textarea {
+    width: 280px;
+  } 
+  
+  .direct-contact-container {
+    margin-top: 60px;
+    max-width: 280px;
+  }  
+  .social-media-list {
+    left: 0;
+  }
+  .social-media-list li {
+    height: 55px;
+    width: 55px;
+    line-height: 55px;
+    font-size: 2rem;
+  }
+  .social-media-list li:after {
+    width: 55px;
+    height: 55px;
+    line-height: 55px;
+  }
+  
+}
+
+@media screen and (max-width: 410px) {
+  .send-button {
+    width: 99%;
+  }
 }
 
 /* ---------------------------- MUSIC STICKERS ---------------------------- */
