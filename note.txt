@@ -1,7 +1,8 @@
 A faire :
 
 PC --------------------------------------------
-              
+
+- lien index vers portfolio
 - variable universelle pour theme    
 - portfolio.html complet
 - style portfolio.html ok
