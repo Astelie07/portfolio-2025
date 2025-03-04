@@ -2,8 +2,9 @@ A faire :
 
 PC --------------------------------------------
 
-- dark loader
-- variable universelle pour theme
+- dark loader                        OK
+- dark firstvideo
+- variable universelle pour theme    
 - portfolio.html complet
 - style portfolio.html ok
 - Projets OK
