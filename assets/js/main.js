@@ -21,50 +21,24 @@ function toggleTheme() {
 
 /*------------------------------------LOADER--------------------------------*/
 
-document.addEventListener("DOMContentLoaded", function () {
-    let theme = document.getElementById("theme");
-    let secondVideo = document.getElementById("second-video");
-    let l_logo = document.getElementById("light-logo");
+document.addEventListener("DOMContentLoaded", function() {
 
-    // Vérifier s'il y a un thème enregistré
-    const savedTheme = localStorage.getItem("theme");
+  /*Detect local theme preference*/
 
-    if (savedTheme) {
-        applyTheme(savedTheme);
-    } else {
-        // Sinon, détecter la préférence système
-        const systemPreference = window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
-        applyTheme(systemPreference);
-    }
+  let theme = document.getElementById('theme');
+  const secondVideo = document.getElementById("second-video");
+  let l_logo = document.getElementById('light-logo');
 
-    // Écouter les changements du système (si l'utilisateur n'a pas déjà choisi)
-    window.matchMedia("(prefers-color-scheme: dark)").addEventListener("change", (e) => {
-        if (!localStorage.getItem("theme")) {
-            applyTheme(e.matches ? "dark" : "light");
-        }
-    });
-
-    // Bouton de changement de thème
-    document.getElementById("toggle-theme").addEventListener("click", function () {
-        let currentTheme = theme.getAttribute("href") === "assets/css/style.css" ? "light" : "dark";
-        let newTheme = currentTheme === "dark" ? "light" : "dark";
-
-        // Appliquer et enregistrer
-        applyTheme(newTheme);
-        localStorage.setItem("theme", newTheme);
-    });
-
-    function applyTheme(mode) {
-        if (mode === "dark") {
-            theme.setAttribute("href", "assets/css/dark-style.css");
-            secondVideo.setAttribute("src", "assets/video/dark-iddle.mp4");
-            l_logo.setAttribute("src", "assets/img/titre_dark.png");
-        } else {
-            theme.setAttribute("href", "assets/css/style.css");
-            secondVideo.setAttribute("src", "assets/video/light-iddle.mp4");
-            l_logo.setAttribute("src", "assets/img/titre_.png");
-        }
-    }
+  const isDarkMode = window.matchMedia("(prefers-color-scheme: dark)").matches;
+  if (isDarkMode) {
+      theme.setAttribute('href', 'assets/css/dark-style.css');
+      secondVideo.setAttribute('src', 'assets/video/dark-iddle.mp4');
+      l_logo.setAttribute('src', 'assets/img/titre_dark.png');
+  } else {
+      theme.setAttribute('href', 'assets/css/style.css');
+      secondVideo.setAttribute('src', 'assets/video/light-iddle.mp4');
+      l_logo.setAttribute('src', 'assets/img/titre_.png');
+  }
 
   /*Fin detection theme*/
   
