@@ -573,10 +573,10 @@ interets {
 }
 ::-webkit-scrollbar {
   width: 0.6rem;
-  background: #db7812;
+  background: var(--color-accent);
 }
 ::-webkit-scrollbar-thumb {
-  background: #ad520b;
+  background: var(--color-primary);
 }
 .skills {
   width: 100%;
