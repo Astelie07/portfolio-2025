@@ -1,7 +1,9 @@
 /*------------------------------------DEBUT THEMES--------------------------------*/
 
 function toggleTheme() {
-  // Select the <link> element
+
+  /*Theme changer*/
+
   let theme = document.getElementById('theme');
   let video = document.getElementById('second-video');
   let logo = document.getElementById('light-logo');
@@ -15,11 +17,31 @@ function toggleTheme() {
       video.setAttribute('src', 'assets/video/light-iddle.mp4');
       logo.setAttribute('src', 'assets/img/titre_.png');
   }
-}
+}  
 
 /*------------------------------------LOADER--------------------------------*/
 
 document.addEventListener("DOMContentLoaded", function() {
+
+  /*Detect local theme preference*/
+
+  let theme = document.getElementById('theme');
+  let video = document.getElementById('second-video');
+  let l-logo = document.getElementById('light-logo');
+
+  const isDarkMode = window.matchMedia("(prefers-color-scheme: dark)").matches;
+  if (isDarkMode) {
+      theme.setAttribute('href', 'assets/css/dark-style.css');
+      video.setAttribute('src', 'assets/video/dark-iddle.mp4');
+      l-logo.setAttribute('src', 'assets/img/titre_dark.png');
+  } else {
+      theme.setAttribute('href', 'assets/css/style.css');
+      video.setAttribute('src', 'assets/video/light-iddle.mp4');
+      l-logo.setAttribute('src', 'assets/img/titre_.png');
+  }
+
+  /*Fin detection theme*/
+  
   const loader = document.getElementById("loader_div");
   const content = document.getElementById("content");
   const firstVideo = document.getElementById("first-video");
