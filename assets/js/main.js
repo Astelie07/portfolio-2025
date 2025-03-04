@@ -17,6 +17,8 @@ function toggleTheme() {
       video.setAttribute('src', 'assets/video/light-iddle.mp4');
       logo.setAttribute('src', 'assets/img/titre_.png');
   }
+
+  localStorage.setItem("theme", theme.getAttribute('href'));
 }  
 
 /*------------------------------------LOADER--------------------------------*/
@@ -26,18 +28,33 @@ document.addEventListener("DOMContentLoaded", function() {
   /*Detect local theme preference*/
 
   let theme = document.getElementById('theme');
-  const secondVideo = document.getElementById("second-video");
+  let secondVideo = document.getElementById("second-video");
   let l_logo = document.getElementById('light-logo');
 
-  const isDarkMode = window.matchMedia("(prefers-color-scheme: dark)").matches;
-  if (isDarkMode) {
-      theme.setAttribute('href', 'assets/css/dark-style.css');
-      secondVideo.setAttribute('src', 'assets/video/dark-iddle.mp4');
-      l_logo.setAttribute('src', 'assets/img/titre_dark.png');
+  // 🔹 Vérifier s'il y a un thème enregistré dans localStorage
+  let savedTheme = localStorage.getItem("theme");
+
+  if (savedTheme) {
+      theme.setAttribute('href', savedTheme);
+      if (savedTheme.includes("dark")) {
+          secondVideo.setAttribute('src', 'assets/video/dark-iddle.mp4');
+          l_logo.setAttribute('src', 'assets/img/titre_dark.png');
+      } else {
+          secondVideo.setAttribute('src', 'assets/video/light-iddle.mp4');
+          l_logo.setAttribute('src', 'assets/img/titre_.png');
+      }
   } else {
-      theme.setAttribute('href', 'assets/css/style.css');
-      secondVideo.setAttribute('src', 'assets/video/light-iddle.mp4');
-      l_logo.setAttribute('src', 'assets/img/titre_.png');
+      // 🔹 Si aucun thème stocké, suivre la préférence système
+      const isDarkMode = window.matchMedia("(prefers-color-scheme: dark)").matches;
+      if (isDarkMode) {
+          theme.setAttribute('href', 'assets/css/dark-style.css');
+          secondVideo.setAttribute('src', 'assets/video/dark-iddle.mp4');
+          l_logo.setAttribute('src', 'assets/img/titre_dark.png');
+      } else {
+          theme.setAttribute('href', 'assets/css/style.css');
+          secondVideo.setAttribute('src', 'assets/video/light-iddle.mp4');
+          l_logo.setAttribute('src', 'assets/img/titre_.png');
+      }
   }
 
   /*Fin detection theme*/
