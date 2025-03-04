@@ -473,13 +473,13 @@ interets {
 
 /*--------CV-------------*/
 
-#cv{
+.cv{
   margin-top:50px;
   position: relative; 
   display: inline-block;
 }
 
-#cv::before {
+.cv::before {
   content: "⎯ •⟶"; /* Flèche solide vers la gauche */
   position: absolute;
   left: -3em; /* Ajuste la distance à gauche */
@@ -491,7 +491,7 @@ interets {
 }
 
 /* Flèche droite */
-#cv::after {
+.cv::after {
   content: "⟵•⎯"; /* Flèche solide vers la droite */
   position: absolute;
   right: -3em; /* Ajuste la distance à droite */
@@ -513,7 +513,7 @@ interets {
   50% { transform: translateY(-50%) translateX(5px); }
 }
 
-#cv a{
+.cv a{
   position: relative;
   z-index: 1;
   padding:15px;
@@ -526,7 +526,7 @@ interets {
   transition:0.5s;
 }
 
-#cv a:hover{
+.cv a:hover{
   background-color:var(--color-accent);
   color : var(--color-background);
   border : solid 2px var(--color-background);
