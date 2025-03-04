@@ -20,7 +20,6 @@
         }
         
         /* Grande div qui change en fonction de la carte sélectionnée */
-        /* Grande div qui change en fonction de la carte sélectionnée */
         .main-display {
             background-color: #FFA726; /* Orange clair */
             color: white;
@@ -272,10 +271,24 @@
                   <img src="assets/img/portfolio/inktober-min.png" class="img-fluid" alt="">
                 </div>
                 
-                <div class="card-details ux-ui" data-theme="ux-ui" data-title="Carte 5" data-content="Voici le contenu spécifique de la carte 10.">
-                  <h4>Faux Doctolib</h4>
-                  <img src="assets/img/portfolio/doctolib-min.png" class="img-fluid" alt="">
+                <div class="card-details jeu-video" data-theme="jeu-video" data-title="Roll a ball" data-content="Création d'un petit jeu en une journée consistant à jouer une balle ramassant des objets. Il fallait ajouter un compteur de points, des obstacles ainsi qu'un affichage lorsque tous les objets ont été ramassés. La première vidéo est la version finale, la seconde est une version test." data-category="Jeu vidéo" data-date="23 Octobre 2023">
+                    <h4>Roll a ball</h4>
+                    
+                    <!-- Miniature de l'image affichée initialement -->
+                    <img src="assets/img/portfolio/roll-a-ball-min.png" class="img-fluid" alt="Miniature du jeu Roll a Ball" onclick="openGallery()">
+                    
+                    <!-- Galerie qui s'affiche dans un modal après clic -->
+                    <div class="gallery-modal" id="galleryModal" style="display: none;">
+                        <div class="gallery-modal-content">
+                            <span class="close" onclick="closeGallery()">&times;</span>
+                            <div class="gallery">
+                                <iframe width="650" height="450" src="https://www.youtube.com/embed/DpQMb_K9xPg?si=2kmA0Ua2Co6qft2T" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                                <iframe width="650" height="450" src="https://www.youtube.com/embed/hMdnVAD2cpU?si=CYxq9dFlOI1Zdunp" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                            </div>
+                        </div>
+                    </div>
                 </div>
+
                 
                 <div class="card-details jeu-video" data-theme="jeu-video" data-title="Carte 6" data-content="Voici le contenu spécifique de la carte 11.">
                   <h4>Rollaball</h4>
@@ -292,16 +305,42 @@
                   <img src="assets/img/portfolio/fps-min.png" class="img-fluid" alt="">
                 </div>
                 
-                <div class="card-details ux-ui" data-theme="ux-ui" data-title="Carte 9" data-content="Voici le contenu spécifique de la carte 14.">
-                  <h4>Figma site Rouen</h4>
-                  <img src="assets/img/portfolio/rouen-figma-min.png" class="img-fluid" alt="">
+                <div class="card-details ux-ui" data-theme="ux-ui" data-title="Redesign site de Rouen" data-content="Notre exercice consistait à prendre en main Figma, en redesignant le site de <a href='https://rouen.fr/' target='_blank'>Rouen</a>. Les images sont le résultat de cet exercice." data-category="Site Web / Figma" data-date="Février 2023">
+                    <h4>Figma site Rouen</h4>
+                    
+                    <!-- Miniature de l'image affichée initialement -->
+                    <img src="assets/img/portfolio/rouen-figma-min.png" class="img-fluid" alt="Miniature du redesign du site de Rouen" onclick="openGallery()">
+                    
+                    <!-- Galerie qui s'affiche dans un modal après clic -->
+                    <div class="gallery-modal" id="galleryModal" style="display: none;">
+                        <div class="gallery-modal-content">
+                            <span class="close" onclick="closeGallery()">&times;</span>
+                            <div class="gallery">
+                                <img src="assets/img/portfolio/rouen-figma1.png" class="img-fluid" alt="Première page du 'nouveau' site de Rouen.">
+                                <img src="assets/img/portfolio/rouen-figma2.png" class="img-fluid" alt="Deuxième page du 'nouveau' site de Rouen.">
+                                <img src="assets/img/portfolio/rouen-figma1-portable.png" class="img-fluid" alt="Version sur portable du 'nouveau' site de Rouen.">
+                                <img src="assets/img/portfolio/rouen-figma2-portable.png" class="img-fluid" alt="Version sur portable du 'nouveau' site de Rouen.">
+                            </div>
+                        </div>
+                    </div>
                 </div>
                 
-                <div class="card-details graphisme" data-theme="graphisme" data-title="Carte 10" data-content="Voici le contenu spécifique de la carte 15.">
-                  <h4>Projet Personnel et Professionnel</h4>
-                  <img src="assets/img/portfolio/ppp_afiche_m.png" class="img-fluid" alt="">
+                <div class="card-details graphisme" data-theme="graphisme" data-title="Projet Personnel et Professionnel" data-content="Pour ce projet personnel et professionnel, nous avions pour mission de prendre contact avec d'anciens élèves de MMI, dans le but de les interviewer sur leur métier actuel ainsi que leur parcours. Le rendu final a pour objectif de nous montrer les différents débouchés professionnels possibles après le BUT MMI. L'affiche pour la journée porte ouverte a été créée par Lylian, Martin et Quentin, bien que ma participation se soit principalement concentrée sur les interviews." data-members="Lylian FAUCON, Martin FAUVEL, Quentin GALLIEGUE, Eva GUEDIN, Quentin GOUAS" data-category="Graphisme" data-date="novembre 2022 - janvier 2023">
+                    <h4>Projet Personnel et Professionnel</h4>
+                    <!-- Miniature de l'affiche -->
+                    <img src="assets/img/portfolio/ppp_afiche_m.png" class="img-fluid" alt="Affiche projet personnel et professionnel" onclick="openGallery()">
+                    
+                    <!-- Galerie modale (affichage sur clic) -->
+                    <div class="gallery-modal" id="galleryModal" style="display: none;">
+                        <div class="gallery-modal-content">
+                            <span class="close" onclick="closeGallery()">&times;</span>
+                            <div class="gallery">
+                                <a href="assets/download/ppp_pdf.pdf" target="_blank" style="text-decoration:underline">Document final</a>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                
+
                 <div class="card-details jeu-video" data-theme="jeu-video" data-title="Premier essai 2D sur Unity" data-content="Premier essaie de jeu vidéo 2D sur Unity. Il s'agit d'un tableau simple, sur lequel le petit monstre peut ramasser des sacs d'engrenages et des fraises qui augmentent chacuns des valeurs que l'on peut voir dans la console." data-date="Janvier 2023" data-software="Unity">
                     <h4>Premier essai 2D sur Unity</h4>
                     <img src="assets/img/portfolio/2dtest-min.png" class="img-fluid" alt="Premier essai 2D sur Unity">
@@ -415,57 +454,51 @@
         const filterButtons = document.querySelectorAll(".filter-btn");
         const cards = document.querySelectorAll(".card-details");
         const cardsContainer = document.querySelector(".cards-wrapper");
-        const portfolioDetails = document.getElementById("portfolio-details");
-        const portfolioTitle = document.getElementById("portfolio-title");
-        const portfolioContent = document.getElementById("portfolio-content");
-        const portfolioInfoList = document.getElementById("portfolio-info-list");
     
-        // Fonction pour afficher les détails d'une carte
-        function showCardDetails(card) {
-            // Mettre à jour le titre de la carte
-            portfolioTitle.textContent = card.getAttribute("data-title");
-    
-            // Mettre à jour le contenu de la carte
-            portfolioContent.innerHTML = card.getAttribute("data-content");
-    
-            // Mise à jour des informations supplémentaires (par exemple, catégorie, date, logiciel, etc.)
-            const category = card.getAttribute("data-theme");
-            const date = card.getAttribute("data-date") || "Date inconnue"; // Ajouter un attribut "data-date" si nécessaire
-            const software = card.getAttribute("data-software") || "Logiciel inconnu"; // Ajouter un attribut "data-software" si nécessaire
-            
-            portfolioInfoList.innerHTML = `
-                <li><strong>Catégorie</strong>: ${category}</li>
-                <li><strong>Date</strong>: ${date}</li>
-                <li><strong>Logiciel</strong>: ${software}</li>
-            `;
-    
-            // Afficher la section des détails
-            portfolioDetails.style.display = "block";
-    
-            // Centrer la carte dans la vue
-            centerCard(card);
-        }
-    
-        // Fonction pour centrer une carte dans le conteneur
-        function centerCard(card) {
-            const containerWidth = cardsContainer.offsetWidth;
-            const cardOffset = card.offsetLeft - (containerWidth / 2) + (card.offsetWidth / 2);
-            
-            let currentScroll = cardsContainer.scrollLeft;
-            let step = (cardOffset - currentScroll) / 20;
-    
-            let animation = setInterval(() => {
-                currentScroll += step;
-                cardsContainer.scrollLeft = currentScroll;
-    
-                if (Math.abs(currentScroll - cardOffset) < Math.abs(step)) {
-                    clearInterval(animation);
-                    cardsContainer.scrollLeft = cardOffset;
+        // Application du filtre
+        function applyFilter(filter) {
+            cards.forEach(card => {
+                if (filter === "all" || card.getAttribute("data-theme") === filter) {
+                    card.classList.remove("hidden");
+                    setTimeout(() => card.classList.add("active"), 100);
+                } else {
+                    card.classList.remove("active");
+                    setTimeout(() => card.classList.add("hidden"), 500);
                 }
-            }, 15);
+            });
+    
+            // Centrer la première carte visible après filtrage
+            setTimeout(() => {
+                const firstVisibleCard = document.querySelector(".card-details:not(.hidden)");
+                if (firstVisibleCard) {
+                    centerCard(firstVisibleCard);
+                }
+            }, 600);
         }
     
-        // Gérer les filtres
+        // Centrer une carte dans la vue
+        function centerCard(card) {
+        const containerWidth = cardsContainer.offsetWidth;
+        const cardOffset = card.offsetLeft - (containerWidth / 2) + (card.offsetWidth / 2);
+        
+        // Créer un effet de défilement progressif avec plusieurs étapes
+        let currentScroll = cardsContainer.scrollLeft;
+        let step = (cardOffset - currentScroll) / 20; // Diviser le déplacement en 20 étapes
+      
+        let animation = setInterval(() => {
+            currentScroll += step;
+            cardsContainer.scrollLeft = currentScroll;
+    
+            // Arrêter l'animation si on est proche de la cible
+            if (Math.abs(currentScroll - cardOffset) < Math.abs(step)) {
+                clearInterval(animation);
+                cardsContainer.scrollLeft = cardOffset; // S'assurer que la carte est bien centrée
+            }
+          }, 15); // Rafraîchissement rapide pour un effet fluide
+        } 
+    
+    
+        // Gestion des filtres
         filterButtons.forEach(button => {
             button.addEventListener("click", function() {
                 filterButtons.forEach(b => b.classList.remove("active"));
@@ -474,17 +507,20 @@
             });
         });
     
-        // Sélectionner une carte
+        // Sélection d'une carte
         cards.forEach(card => {
             card.addEventListener("click", function() {
-                showCardDetails(this);
+                document.getElementById("display-title").textContent = this.getAttribute("data-title");
+                document.getElementById("display-content").textContent = this.getAttribute("data-content");
+                centerCard(this);
             });
         });
     
-        // Appliquer le filtre par défaut (tout afficher)
+        // Activer "Tout afficher" au chargement
         applyFilter("all");
     });
-
-    </script>
+ </script>
+ <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+ <script src="assets/js/main.js"></script>
 </body>
 </html>
