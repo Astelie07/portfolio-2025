@@ -1,15 +1,13 @@
 A faire :
 
 PC --------------------------------------------
-
-- dark loader                        OK
-- dark firstvideo
+              
 - variable universelle pour theme    
 - portfolio.html complet
 - style portfolio.html ok
 - Projets OK
 - form contact fonctionnel
-- rangement pour alt et unecessary
+- rangement alt et unecessary
 - menu burger fixed + ok
 - css pc fini
 
