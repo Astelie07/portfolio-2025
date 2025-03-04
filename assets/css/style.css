@@ -456,13 +456,13 @@
 
   /*--------CV-------------*/
 
-  #cv{
+  .cv{
     margin-top:50px;
     position: relative; 
     display: inline-block;
   }
 
-  #cv::before {
+  .cv::before {
     content: "⎯ •⟶"; /* Flèche solide vers la gauche */
     position: absolute;
     left: -3em; /* Ajuste la distance à gauche */
@@ -474,7 +474,7 @@
 }
 
 /* Flèche droite */
-#cv::after {
+.cv::after {
     content: "⟵•⎯"; /* Flèche solide vers la droite */
     position: absolute;
     right: -3em; /* Ajuste la distance à droite */
@@ -496,7 +496,7 @@
     50% { transform: translateY(-50%) translateX(5px); }
 }
 
-  #cv a{
+  .cv a{
     position: relative;
     z-index: 1;
     padding:15px;
@@ -509,7 +509,7 @@
     transition:0.5s;
   }
 
-  #cv a:hover{
+  .cv a:hover{
     background-color:var(--color-primary);
     color : rgb(11 108 145);
     border : solid 2px rgb(11 108 145);
