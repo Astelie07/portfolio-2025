@@ -5,15 +5,18 @@ function toggleTheme() {
   /*Theme changer*/
 
   let theme = document.getElementById('theme');
+  let opvideo = document.getElementById('first-video');
   let video = document.getElementById('second-video');
   let logo = document.getElementById('light-logo');
 
   if (theme.getAttribute('href') == 'assets/css/style.css') {
       theme.setAttribute('href', 'assets/css/dark-style.css');
+      opvideo.setAttribute('src', 'assets/video/dark-opening.mp4');
       video.setAttribute('src', 'assets/video/dark-iddle.mp4');
       logo.setAttribute('src', 'assets/img/titre_dark.png');
   } else {
       theme.setAttribute('href', 'assets/css/style.css');
+      opvideo.setAttribute('src', 'assets/video/light-opening.mp4');
       video.setAttribute('src', 'assets/video/light-iddle.mp4');
       logo.setAttribute('src', 'assets/img/titre_.png');
   }
@@ -28,6 +31,7 @@ document.addEventListener("DOMContentLoaded", function() {
   /*Detect local theme preference*/
 
   let theme = document.getElementById('theme');
+  let firstVideo = document.getElementById("first-video");
   let secondVideo = document.getElementById("second-video");
   let l_logo = document.getElementById('light-logo');
 
@@ -37,9 +41,11 @@ document.addEventListener("DOMContentLoaded", function() {
   if (savedTheme) {
       theme.setAttribute('href', savedTheme);
       if (savedTheme.includes("dark")) {
+          firstVideo.setAttribute('src', 'assets/video/dark-opening.mp4');
           secondVideo.setAttribute('src', 'assets/video/dark-iddle.mp4');
           l_logo.setAttribute('src', 'assets/img/titre_dark.png');
       } else {
+          firstVideo.setAttribute('src', 'assets/video/light-opening.mp4');
           secondVideo.setAttribute('src', 'assets/video/light-iddle.mp4');
           l_logo.setAttribute('src', 'assets/img/titre_.png');
       }
@@ -48,10 +54,12 @@ document.addEventListener("DOMContentLoaded", function() {
       const isDarkMode = window.matchMedia("(prefers-color-scheme: dark)").matches;
       if (isDarkMode) {
           theme.setAttribute('href', 'assets/css/dark-style.css');
+          firstVideo.setAttribute('src', 'assets/video/dark-opening.mp4');
           secondVideo.setAttribute('src', 'assets/video/dark-iddle.mp4');
           l_logo.setAttribute('src', 'assets/img/titre_dark.png');
       } else {
           theme.setAttribute('href', 'assets/css/style.css');
+          firstVideo.setAttribute('src', 'assets/video/light-opening.mp4');
           secondVideo.setAttribute('src', 'assets/video/light-iddle.mp4');
           l_logo.setAttribute('src', 'assets/img/titre_.png');
       }
@@ -61,8 +69,6 @@ document.addEventListener("DOMContentLoaded", function() {
   
   const loader = document.getElementById("loader_div");
   const content = document.getElementById("content");
-  const firstVideo = document.getElementById("first-video");
-  /* const secondVideo = document.getElementById("second-video"); */
   const logo = document.getElementById("logo");
   
   // Vérifier si l'élément content existe
