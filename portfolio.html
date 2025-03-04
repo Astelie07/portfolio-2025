@@ -11,15 +11,58 @@
             margin: 0;
             padding: 0;
             background-color: #f4f4f4;
+            display: flex;
         }
         
+        /* Style de la barre latérale */
+        .sidebar {
+            width: 250px;
+            background-color: #333;
+            color: white;
+            height: 100vh;
+            position: fixed;
+            top: 0;
+            left: 0;
+            padding-top: 20px;
+        }
+        
+        .sidebar h2 {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        
+        .sidebar .filter-btn {
+            display: block;
+            width: 100%;
+            padding: 15px;
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            text-align: left;
+            cursor: pointer;
+            border-radius: 5px;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+            font-weight: bold;
+            transition: background 0.3s;
+        }
+
+        .sidebar .filter-btn:hover {
+            background-color: #0056b3;
+        }
+
+        .sidebar .filter-btn.active {
+            background-color: #004085;
+        }
+
+        /* Conteneur principal à droite */
         .container {
+            margin-left: 260px; /* Espacement à gauche pour la barre latérale */
             max-width: 1200px;
             margin: 0 auto;
             padding: 20px;
         }
         
-        /* Grande div qui change en fonction de la carte sélectionnée */
         /* Grande div qui change en fonction de la carte sélectionnée */
         .main-display {
             background-color: #FFA726; /* Orange clair */
@@ -29,29 +72,24 @@
             border-radius: 15px;
             width: 80%;
             max-width: 900px;
-            margin: 20px auto; /* Centrage horizontal */
+            margin: 20px auto;
             box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
         }
-        
         
         /* Conteneur des cartes avec scroll horizontal */
         .cards-wrapper {
             display: flex;
             overflow-x: auto;
             scroll-snap-type: x mandatory;
-            padding: 10px 30px; /* Ajoute un padding latéral */
+            padding: 10px 30px;
         }
         
-        /* Conteneur des cartes */
         .cards-container {
-            overflow: visible; 
-            position: relative; 
             display: flex;
             gap: 15px;
-            color:white
+            color: white;
         }
         
-        /* Cartes */
         .card-details {
             width: 100px;
             height: 150px;
@@ -70,137 +108,41 @@
             text-align: center;
             cursor: pointer;
         }
-        
+
         .card-details img {
             width: 100px;
             height: 100px;
             border-radius: 5px;
             margin-bottom: 10px;
         }
-        
-        /* Carte active */
+
         .card-details.active {
             opacity: 1;
             transform: translateY(0);
         }
-        
-        .card {
-            transition: transform 0.3s ease, z-index 0.3s ease;
-            z-index: 1;
-            position: relative; 
-        }
-        
-        /* Filtre des thèmes */
-        .filters {
-            display: flex;
-            justify-content: center;
-            gap: 10px;
-            margin-bottom: 20px;
-        }
-        
-        .filter-btn {
-            padding: 10px;
-            background-color: #007BFF;
-            color: white;
-            border: none;
-            cursor: pointer;
-            border-radius: 5px;
-            transition: background 0.3s;
-        }
-        
-        .filter-btn:hover {
-            background-color: #0056b3;
-        }
-        
+
         .filter-btn.active {
             background-color: #004085;
         }
         
-        /* Masquer les cartes non visibles */
-        .hidden {
-            display: none !important;
-        }
-        
-        /* Classe UX / UI */
-        .ux-ui {
-            background-color: #260e03;
-        }
-        
-        /* Classe Video */
-        .video {
-            background-color: #21211f;
-        }
-        
-        /* Classe Graphisme */
-        .graphisme {
-            background-color: #1b333a;
-        }
-        
-        /* Classe Modelisation */
-        .modelisation {
-            background-color: #164656;
-        }
-        
-        /* Classe Jeu vidéo */
-        .jeu-video {
-            background-color: #105871;
-        }
-        
-        /* Classe Dessin */
-        .dessin {
-            background-color: #0b6b8d;
-        }
-        
-        /* Style de la barre de défilement horizontal */
-        .cards-wrapper {
-            display: flex;
-            overflow-x: auto;
-            scroll-snap-type: x mandatory;
-            padding: 10px 30px;
-            -webkit-overflow-scrolling: touch;
-        }
-        
-        .cards-wrapper::-webkit-scrollbar {
-            height: 14px; 
-        }
-        
-        /* Piste de la barre de défilement */
-        .cards-wrapper::-webkit-scrollbar-track {
-            background-color: #7bdbfd; 
-            border-radius: 20px; 
-            box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.1); 
-        }
-        
-        /* La barre de défilement */
-        .cards-wrapper::-webkit-scrollbar-thumb {
-            background-color: #ffa200;
-            border-radius: 20px; 
-            border: 4px solid #ffffff; 
-        }
-        
-        /* Au survol de la barre de défilement */
-        .cards-wrapper::-webkit-scrollbar-thumb:hover {
-            background-color: #ffcc00; 
-        }
-        
-        /* Animation au survol */
-        .card-details:hover {
-            transform: translateY(-10px) scale(1.05); 
-            transition: transform 0.3s ease-out, box-shadow 0.3s ease-out; /* Transition fluide */
-        }
-        
-        /* Animation au clic */
-        .card-details:active {
-            transform: scale(1.1); 
-            transition: transform 0.1s ease-in, box-shadow 0.1s ease-in;
-        }
-        
-        
-
+        /* Autres styles... */
 
     </style>
 </head>
 <body>
+    <!-- Barre latérale -->
+    <div class="sidebar">
+        <h2>Filtres</h2>
+        <button class="filter-btn active" data-filter="all">Tout</button>
+        <button class="filter-btn ux-ui" data-filter="ux-ui">UX / UI</button>
+        <button class="filter-btn video" data-filter="video">Vidéo</button>
+        <button class="filter-btn graphisme" data-filter="graphisme">Graphisme</button>
+        <button class="filter-btn modelisation" data-filter="modelisation">Modélisation</button>
+        <button class="filter-btn jeu-video" data-filter="jeu-video">Jeu vidéo</button>
+        <button class="filter-btn dessin" data-filter="dessin">Dessin</button>
+    </div>
+
+    <!-- Conteneur principal -->
     <div class="container">
         <!-- Grande div qui change en fonction de la carte sélectionnée -->
         <div class="main-display">
@@ -208,211 +150,90 @@
             <p id="display-content">Clique sur une carte pour afficher son contenu ici.</p>
         </div>
 
-        <!-- Filtre pour les thèmes -->
-        <div class="filters">
-            <button class="filter-btn active" data-filter="all">Tout</button>
-            <button class="filter-btn ux-ui" data-filter="ux-ui">UX / UI</button>
-            <button class="filter-btn video" data-filter="video">Vidéo</button>
-            <button class="filter-btn graphisme" data-filter="graphisme">Graphisme</button>
-            <button class="filter-btn modelisation" data-filter="modelisation">Modélisation</button>
-            <button class="filter-btn jeu-video" data-filter="jeu-video">Jeu vidéo</button>
-            <button class="filter-btn dessin" data-filter="dessin">Dessin</button>
-        </div>
-
-        <!-- Cartes de sélection avec un wrapper pour le défilement horizontal -->
+        <!-- Cartes de sélection -->
         <div class="cards-wrapper">
             <div class="cards-container">
-                <div class="card-details ux-ui" data-theme="ux-ui" data-title="Carte 5" data-content="Voici le contenu spécifique de la carte 5.">
+                <!-- Exemples de cartes -->
+                <div class="card-details ux-ui" data-theme="ux-ui" data-title="Carte 1" data-content="Voici le contenu spécifique de la carte 1.">
                   <h4>Portfolio 2024</h4>
                   <img src="assets/img/portfolio/portfolio-2024.png" class="img-fluid" alt="">
                 </div>
-                <div class="card-details jeu-video" data-theme="jeu-video" data-title="Carte 1" data-content="Voici le contenu spécifique de la carte 6.">
+                <div class="card-details jeu-video" data-theme="jeu-video" data-title="Carte 2" data-content="Voici le contenu spécifique de la carte 2.">
                   <h4>The Escape</h4>
                   <img src="assets/img/portfolio/escape-min.png" class="img-fluid" alt="">
                 </div>
-                <div class="card-details ux-ui" data-theme="ux-ui" data-title="Carte 2" data-content="Voici le contenu spécifique de la carte 7.">
-                  <h4>Altea</h4>
-                  <img src="assets/img/portfolio/altea-min.png" class="img-fluid" alt="">
-                </div>
-                <div class="card-details ux-ui" data-theme="ux-ui" data-title="Carte 3" data-content="Voici le contenu spécifique de la carte 8.">
-                  <h4>Dashboard Figma</h4>
-                  <img src="assets/img/portfolio/dashboard-min.png" class="img-fluid" alt="">
-                </div>
-                <div class="card-details dessin" data-theme="dessin" data-title="Carte 4" data-content="Voici le contenu spécifique de la carte 9.">
-                  <h4>Inktober 2023</h4>
-                  <img src="assets/img/portfolio/inktober-min.png" class="img-fluid" alt="">
-                </div>
-                <div class="card-details ux-ui" data-theme="ux-ui" data-title="Carte 5" data-content="Voici le contenu spécifique de la carte 10.">
-                  <h4>Faux Doctolib</h4>
-                  <img src="assets/img/portfolio/doctolib-min.png" class="img-fluid" alt="">
-                </div>
-                <div class="card-details jeu-video" data-theme="jeu-video" data-title="Carte 6" data-content="Voici le contenu spécifique de la carte 11.">
-                  <h4>Rollaball</h4>
-                  <img src="assets/img/portfolio/rollaball-min.png" class="img-fluid" alt="">
-                </div>
-                <div class="card-details modelisation" data-theme="modelisation" data-title="Carte 7" data-content="Voici le contenu spécifique de la carte 12.">
-                  <h4>Modélisations Blender</h4>
-                  <img src="assets/img/portfolio/scene-min.png" class="img-fluid" alt="">
-                </div>
-                <div class="card-details jeu-video" data-theme="jeu-video" data-title="Carte 8" data-content="Voici le contenu spécifique de la carte 13.">
-                  <h4>Test FPS Unity</h4>
-                  <img src="assets/img/portfolio/fps-min.png" class="img-fluid" alt="">
-                </div>
-                <div class="card-details ux-ui" data-theme="ux-ui" data-title="Carte 9" data-content="Voici le contenu spécifique de la carte 14.">
-                  <h4>Figma site Rouen</h4>
-                  <img src="assets/img/portfolio/rouen-figma-min.png" class="img-fluid" alt="">
-                </div>
-                <div class="card-details graphisme" data-theme="graphisme" data-title="Carte 10" data-content="Voici le contenu spécifique de la carte 15.">
-                  <h4>Projet Personnel et Professionnel</h4>
-                  <img src="assets/img/portfolio/ppp_afiche_m.png" class="img-fluid" alt="">
-                </div>
-                <div class="card-details jeu-video" data-theme="jeu-video" data-title="Carte 11" data-content="Voici le contenu spécifique de la carte 16.">
-                  <h4>Test 2d Unity</h4>
-                  <img src="assets/img/portfolio/2dtest-min.png" class="img-fluid" alt="">
-                </div>
-                <div class="card-details ux-ui" data-theme="ux-ui" data-title="Carte 12" data-content="Voici le contenu spécifique de la carte 17.">
-                  <h4>Figma Or3o</h4>
-                  <img src="assets/img/portfolio/or3o-min.png" class="img-fluid" alt="">
-                </div>
-                <div class="card-details modelisation" data-theme="modelisation" data-title="Carte 13" data-content="Voici le contenu spécifique de la carte 18.">
-                  <h4>Modélisation Jinx Bomb</h4>
-                  <img src="assets/img/portfolio/3d_rendu2_m.png" class="img-fluid" alt="">
-                </div>
-                <div class="card-details ux-ui" data-theme="ux-ui" data-title="Carte 14" data-content="Voici le contenu spécifique de la carte 19.">
-                  <h4>Omniversus</h4>
-                  <img src="assets/img/portfolio/omniversus.png" class="img-fluid" alt="">
-                </div>
-                <div class="card-details video" data-theme="video" data-title="Carte 15" data-content="Voici le contenu spécifique de la carte 20.">
-                  <h4>Animal crossing contre le covid ?</h4>
-                  <img src="assets/img/portfolio/animal_crossing.png" class="img-fluid" alt="">
-                </div>
-                <div class="card-details ux-ui" data-theme="ux-ui" data-title="Carte 16" data-content="Voici le contenu spécifique de la carte 21.">
-                  <h4>Tableau de bord</h4>
-                  <img src="assets/img/portfolio/site_303_min.jpg" class="img-fluid" alt="">
-                </div>
-                <div class="card-details graphisme" data-theme="graphisme" data-title="Carte 17" data-content="Voici le contenu spécifique de la carte 22.">
-                  <h4>Pictogrammes MMI</h4>
-                  <img src="assets/img/portfolio/crea_graph_affiche_m.jpg" class="img-fluid" alt="">
-                </div>
-                <div class="card-details video" data-theme="video" data-title="Carte 18" data-content="Voici le contenu spécifique de la carte 23.">
-                  <h4>Crescendo vidéo</h4>
-                  <img src="assets/img/portfolio/crescendo.png" class="img-fluid" alt="">
-                </div>
-                <div class="card-details dessin" data-theme="dessin" data-title="Carte 19" data-content="Voici le contenu spécifique de la carte 24.">
-                  <h4>Emotes <strong>OpacityPST</strong></h4>
-                  <img src="assets/img/portfolio/emote_m.png" class="img-fluid" alt="">
-                </div>
-                <div class="card-details dessin" data-theme="dessin" data-title="Carte 25" data-content="Voici le contenu spécifique de la carte 25.">
-                  <h4>Amis de mémoire</h4>
-                  <img src="assets/img/portfolio/dessin_3_1.jpg" class="img-fluid" alt="">
-                </div>
-                <div class="card-details graphisme" data-theme="graphisme" data-title="Carte 26" data-content="Voici le contenu spécifique de la carte 26.">
-                  <h4>E.story</h4>
-                  <img src="assets/img/portfolio/estrory_moyen.png" class="img-fluid" alt="">
-                </div>
-                <div class="card-details graphisme" data-theme="graphisme" data-title="Carte 27" data-content="Voici le contenu spécifique de la carte 27.">
-                  <h4>MMI Foundry</h4>
-                  <img src="assets/img/portfolio/logo_moyen_min.jpg" class="img-fluid" alt="">
-                </div>
-                <div class="card-details graphisme" data-theme="graphisme" data-title="Carte 28" data-content="Voici le contenu spécifique de la carte 28.">
-                  <h4>Mascottes</h4>
-                  <img src="assets/img/portfolio/parry_min.png" class="img-fluid" alt="">
-                </div>
-                <div class="card-details video" data-theme="video" data-title="Carte 29" data-content="Voici le contenu spécifique de la carte 29.">
-                  <h4>Film noir</h4>
-                  <img src="assets/img/portfolio/film_noir.png" class="img-fluid" alt="">
-                </div>
-                <div class="card-details dessin" data-theme="dessin" data-title="Carte 30" data-content="Voici le contenu spécifique de la carte 30.">
-                  <h4>Auto-protrait</h4>
-                  <img src="assets/img/portfolio/dessin_1_1.png" class="img-fluid" alt="">
-                </div>
-                <div class="card-details ux-ui" data-theme="ux-ui" data-title="Carte 31" data-content="Voici le contenu spécifique de la carte 31.">
-                    <h4>Suki Burger</h4>
-                    <img src="assets/img/portfolio/sae105_accueil.jpg" class="img-fluid" alt="">
-                </div>
-                <div class="card-details graphisme" data-theme="graphisme" data-title="Carte 32" data-content="Voici le contenu spécifique de la carte 32.">
-                    <h4>Affiche MMI</h4>
-                    <img src="assets/img/portfolio/affiche_min.jpg" class="img-fluid" alt="">
-                </div>
+                <!-- Ajoutez vos autres cartes ici -->
             </div>
         </div>
-
     </div>
 
     <script>
         document.addEventListener("DOMContentLoaded", function() {
-        const filterButtons = document.querySelectorAll(".filter-btn");
-        const cards = document.querySelectorAll(".card-details");
-        const cardsContainer = document.querySelector(".cards-wrapper");
-    
-        // Application du filtre
-        function applyFilter(filter) {
-            cards.forEach(card => {
-                if (filter === "all" || card.getAttribute("data-theme") === filter) {
-                    card.classList.remove("hidden");
-                    setTimeout(() => card.classList.add("active"), 100);
-                } else {
-                    card.classList.remove("active");
-                    setTimeout(() => card.classList.add("hidden"), 500);
-                }
-            });
-    
-            // Centrer la première carte visible après filtrage
-            setTimeout(() => {
-                const firstVisibleCard = document.querySelector(".card-details:not(.hidden)");
-                if (firstVisibleCard) {
-                    centerCard(firstVisibleCard);
-                }
-            }, 600);
-        }
-    
-        // Centrer une carte dans la vue
-        function centerCard(card) {
-        const containerWidth = cardsContainer.offsetWidth;
-        const cardOffset = card.offsetLeft - (containerWidth / 2) + (card.offsetWidth / 2);
+            const filterButtons = document.querySelectorAll(".filter-btn");
+            const cards = document.querySelectorAll(".card-details");
+            const cardsContainer = document.querySelector(".cards-wrapper");
         
-        // Créer un effet de défilement progressif avec plusieurs étapes
-        let currentScroll = cardsContainer.scrollLeft;
-        let step = (cardOffset - currentScroll) / 20; // Diviser le déplacement en 20 étapes
-      
-        let animation = setInterval(() => {
-            currentScroll += step;
-            cardsContainer.scrollLeft = currentScroll;
-    
-            // Arrêter l'animation si on est proche de la cible
-            if (Math.abs(currentScroll - cardOffset) < Math.abs(step)) {
-                clearInterval(animation);
-                cardsContainer.scrollLeft = cardOffset; // S'assurer que la carte est bien centrée
+            // Application du filtre
+            function applyFilter(filter) {
+                cards.forEach(card => {
+                    if (filter === "all" || card.getAttribute("data-theme") === filter) {
+                        card.classList.remove("hidden");
+                        setTimeout(() => card.classList.add("active"), 100);
+                    } else {
+                        card.classList.remove("active");
+                        setTimeout(() => card.classList.add("hidden"), 500);
+                    }
+                });
+        
+                // Centrer la première carte visible après filtrage
+                setTimeout(() => {
+                    const firstVisibleCard = document.querySelector(".card-details:not(.hidden)");
+                    if (firstVisibleCard) {
+                        centerCard(firstVisibleCard);
+                    }
+                }, 600);
             }
-          }, 15); // Rafraîchissement rapide pour un effet fluide
-        } 
-    
-    
-        // Gestion des filtres
-        filterButtons.forEach(button => {
-            button.addEventListener("click", function() {
-                filterButtons.forEach(b => b.classList.remove("active"));
-                this.classList.add("active");
-                applyFilter(this.getAttribute("data-filter"));
+        
+            // Centrer une carte dans la vue
+            function centerCard(card) {
+                const containerWidth = cardsContainer.offsetWidth;
+                const cardOffset = card.offsetLeft - (containerWidth / 2) + (card.offsetWidth / 2);
+                
+                let currentScroll = cardsContainer.scrollLeft;
+                let step = (cardOffset - currentScroll) / 20;
+            
+                let animation = setInterval(() => {
+                    currentScroll += step;
+                    cardsContainer.scrollLeft = currentScroll;
+        
+                    if (Math.abs(currentScroll - cardOffset) < Math.abs(step)) {
+                        clearInterval(animation);
+                        cardsContainer.scrollLeft = cardOffset;
+                    }
+                }, 15);
+            } 
+        
+            // Gestion des filtres
+            filterButtons.forEach(button => {
+                button.addEventListener("click", function() {
+                    filterButtons.forEach(b => b.classList.remove("active"));
+                    this.classList.add("active");
+                    applyFilter(this.getAttribute("data-filter"));
+                });
             });
-        });
-    
-        // Sélection d'une carte
-        cards.forEach(card => {
-            card.addEventListener("click", function() {
-                document.getElementById("display-title").textContent = this.getAttribute("data-title");
-                document.getElementById("display-content").textContent = this.getAttribute("data-content");
-                centerCard(this);
+        
+            // Sélection d'une carte
+            cards.forEach(card => {
+                card.addEventListener("click", function() {
+                    document.getElementById("display-title").textContent = this.getAttribute("data-title");
+                    document.getElementById("display-content").textContent = this.getAttribute("data-content");
+                    centerCard(this);
+                });
             });
+        
+            // Activer "Tout afficher" au chargement
+            applyFilter("all");
         });
-    
-        // Activer "Tout afficher" au chargement
-        applyFilter("all");
-    });
- </script>
- <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
- <script src="assets/js/main.js"></script>
-
-
+    </script>
 </body>
 </html>
