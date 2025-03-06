@@ -260,6 +260,7 @@
         <div class="main-display">
             <h2 id="display-title">Sélectionne une carte</h2>
             <p id="display-content">Clique sur une carte pour afficher son contenu ici.</p>
+            <div id="display-media"></div> <!-- Zone pour afficher la vidéo, images, etc. -->
         </div>
 
         <!-- ======= Portfolio Details ======= -->
@@ -1058,7 +1059,7 @@
 
     </div>
 
-    <script>
+    <script>/*
         document.addEventListener("DOMContentLoaded", function() {
         const filterButtons = document.querySelectorAll(".filter-btn");
         const cards = document.querySelectorAll(".card-details");
@@ -1127,7 +1128,43 @@
     
         // Activer "Tout afficher" au chargement
         applyFilter("all");
+    });*/
+
+        document.addEventListener("DOMContentLoaded", function() {
+    const filterButtons = document.querySelectorAll(".filter-btn");
+    const cards = document.querySelectorAll(".card-details");
+    const mainDisplay = document.querySelector(".main-display");
+    const displayTitle = document.getElementById("display-title");
+    const displayContent = document.getElementById("display-content");
+    const displayMedia = document.getElementById("display-media");
+
+    // Appliquer le filtre
+    function applyFilter(filter) {
+        cards.forEach(card => {
+            if (filter === "all" || card.getAttribute("data-theme") === filter) {
+                card.classList.remove("hidden");
+                setTimeout(() => card.classList.add("active"), 100);
+            } else {
+                card.classList.remove("active");
+                setTimeout(() => card.classList.add("hidden"), 500);
+            }
+        });
+    }
+
+    // Sélectionner une carte et afficher son contenu dans main-display
+    cards.forEach(card => {
+        card.addEventListener("click", function() {
+            // Mettre à jour le titre et le contenu textuel
+            displayTitle.textContent = this.getAttribute("data-title");
+            displayContent.textContent = this.getAttribute("data-content");
+            
+            // Afficher la vidéo, image ou galerie associée
+            displayMedia.innerHTML = this.getAttribute("data-media");
+        });
     });
+
+    // Gestion des filtres
+    filterButtons.forEach
  </script>
  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
  <script src="assets/js/main.js"></script>
