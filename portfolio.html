@@ -291,53 +291,42 @@
         <div class="cards-wrapper">
             <div class="cards-container">
                 
-                <div class="card-details ux-ui" data-theme="ux-ui" data-title="Carte 5" data-content="Voici le contenu spécifique de la carte 5.">
-                  <h4>Portfolio 2024</h4>
-                  <img src="assets/img/portfolio/portfolio-2024.png" class="img-fluid" alt="">
+                <div class="card-details ux-ui" data-theme="ux-ui" data-title="Portfolio 2024" data-content="Voici le contenu spécifique de la carte 5." data-image="assets/img/portfolio/portfolio-2024.png">
+                    <h4>Portfolio 2024</h4>
+                    <img src="assets/img/portfolio/portfolio-2024.png" class="img-fluid" alt="Portfolio 2024">
                 </div>
-
-                <div class="card-details dessin" data-theme="dessin" data-title="Inktober 2024" data-content="Challenge artistique : un dessin par jour en octobre, avec des thèmes imposés. 31 illustrations inspirées de divers univers (jeux, séries, films, animés)." data-category="Dessin" data-date="Octobre 2024">
+                
+                <div class="card-details dessin" data-theme="dessin" data-title="Inktober 2024" data-content="Challenge artistique : un dessin par jour en octobre, avec des thèmes imposés. 31 illustrations inspirées de divers univers (jeux, séries, films, animés)." data-category="Dessin" data-date="Octobre 2024" data-gallery-images='["assets/img/portfolio/inktober23/inktober-ensemble.png", "assets/img/portfolio/inktober23/inktober_liste.jpg"]'>
                     <h4>Inktober 2024</h4>
                     <img src="assets/img/portfolio/assets/img/portfolio/inktober2024.png" class="img-fluid" alt="Aperçu des dessins Inktober 2024">
                     
-                    <!-- Galerie modale -->
-                    <div class="gallery-modal" id="galleryModalInktober" style="display: none;">
-                        <div class="gallery-modal-content">
-                            <span class="close" onclick="closeGallery()">&times;</span>
-                            <div class="gallery">
-                                <img src="assets/img/portfolio/inktober23/inktober-ensemble.png" width="500px" alt="Mosaïque des 31 dessins">
-                                <img src="assets/img/portfolio/inktober23/inktober_liste.jpg" width="500px" alt="Liste des thèmes de l'inktober">
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="card-details dessin" data-theme="dessin" data-title="Rainbow challenge" data-content="Défi que je me suis imposépendant les vacances d'été de 2024 : un dessin par semaine, d'une couleur différente, avec au minimum 7 personnage de culture populaire de cette même couleur.">
-                    <h4>Rainbow Challenge</h4>
-                    <img src="assets/img/portfolio/inktober-min.png" class="img-fluid" alt="Aperçu des dessins Inktober 2023">
-                    
-                    <!-- Galerie modale -->
-                    <div class="gallery-modal" id="galleryModalInktober" style="display: none;">
-                        <div class="gallery-modal-content">
-                            <span class="close" onclick="closeGallery()">&times;</span>
-                            <div class="gallery">
-                                <img src="assets/img/portfolio/inktober23/inktober-ensemble.png" width="500px" alt="Mosaïque des 31 dessins">
-                                <img src="assets/img/portfolio/inktober23/inktober_liste.jpg" width="500px" alt="Liste des thèmes de l'inktober">
-                            </div>
-                        </div>
+                    <!-- Galerie Inktober 2024 sous la carte -->
+                    <div class="gallery" style="display: none;">
+                        <img src="assets/img/portfolio/inktober23/inktober-ensemble.png" width="500px" alt="Mosaïque des 31 dessins">
+                        <img src="assets/img/portfolio/inktober23/inktober_liste.jpg" width="500px" alt="Liste des thèmes de l'inktober">
                     </div>
                 </div>
                 
+                <div class="card-details dessin" data-theme="dessin" data-title="Rainbow challenge" data-content="Défi artistique pendant les vacances d'été de 2024 : un dessin par semaine avec une couleur différente et minimum 7 personnages.">
+                    <h4>Rainbow Challenge</h4>
+                    <img src="assets/img/portfolio/inktober-min.png" class="img-fluid" alt="Aperçu des dessins Rainbow Challenge 2024">
+                    
+                    <!-- Galerie Rainbow Challenge sous la carte -->
+                    <div class="gallery" style="display: none;">
+                        <img src="assets/img/portfolio/rainbow-challenge1.jpg" width="500px" alt="Mosaïque Rainbow Challenge">
+                        <img src="assets/img/portfolio/rainbow-challenge2.jpg" width="500px" alt="Liste des dessins Rainbow Challenge">
+                    </div>
+                </div>
+
                 <div class="card-details jeu-video" 
                      data-theme="jeu-video" 
                      data-title="The Escape - Projet MMI3" 
                      data-content="Jeu vidéo d'horreur inspiré des Backrooms, créé dans le cadre du projet final du BUT MMI."
                      data-category="Jeu vidéo" 
                      data-date="Septembre 2023 - Février 2024">
-                    
                     <h4>The Escape - Projet MMI3</h4>
                     <img src="assets/img/portfolio/escape-min.png" class="img-fluid" alt="The Escape - Projet MMI3">
-                
+                    
                     <!-- Boutons interactifs pour accéder au site et trailer -->
                     <div class="portfolio-preview">
                         <a href="https://m-u-c-k-a.github.io/backroom-game/" target="_blank" class="btn btn-primary">
@@ -347,7 +336,7 @@
                             🎬 Voir le trailer
                         </a>
                     </div>
-                
+                    
                     <!-- Liste des membres du groupe -->
                     <div class="members-list">
                         <h5>Équipe de développement :</h5>
@@ -359,16 +348,21 @@
                             <li><a href="https://www.linkedin.com/in/tombihoreau/" target="_blank" style="text-decoration:underline">Tom Bihoreau</a></li>
                         </ul>
                     </div>
+                    
+                    <!-- Galerie associée sous la carte -->
+                    <div class="gallery" style="display: none;">
+                        <img src="assets/img/portfolio/escape-1.jpg" width="500px" alt="Image du jeu The Escape">
+                        <img src="assets/img/portfolio/escape-2.jpg" width="500px" alt="Image du jeu The Escape">
+                    </div>
                 </div>
                 
                 <div class="card-details ux-ui" 
                      data-theme="ux-ui" 
                      data-title="Projet Hackathon - Altea" 
                      data-content="Voici le projet Altea, réalisé en 24h lors d'un hackathon, avec un design UX/UI inspiré des plateformes professionnelles.">
-                
                     <h4>Projet Hackathon - Altea</h4>
                     <img src="assets/img/portfolio/altea-min.png" class="img-fluid" alt="Logo de Altea, projet hackathon">
-                
+                    
                     <!-- Informations sur le projet -->
                     <div class="portfolio-details-info">
                         <ul>
@@ -382,28 +376,19 @@
                             </li>
                         </ul>
                     </div>
-                
+                    
                     <!-- Description du projet -->
                     <div class="project-description">
-                        <p>Altea a été créé lors d’un hackathon en décembre 2023, où nous avons imaginé un site web similaire à LinkedIn pour résoudre un problème que rencontrent de nombreux étudiants : l'absence de réponse des recruteurs. Le but de la plateforme est de créer un sentiment d'urgence pour que les entreprises répondent plus rapidement grâce à un système de réputation et de notes.
-                        </p>
-                        <p>Nous avons dû réaliser ce projet en 24h et le présenter au reste de notre promotion. Ce projet nous a permis de travailler sur l'UX/UI en intégrant des besoins spécifiques pour les étudiants et les recruteurs, avec une interface différente pour chaque profil.
-                        </p>
+                        <p>Altea a été créé lors d’un hackathon en décembre 2023, où nous avons imaginé un site web similaire à LinkedIn pour résoudre un problème que rencontrent de nombreux étudiants : l'absence de réponse des recruteurs. Le but de la plateforme est de créer un sentiment d'urgence pour que les entreprises répondent plus rapidement grâce à un système de réputation et de notes.</p>
+                        <p>Nous avons dû réaliser ce projet en 24h et le présenter au reste de notre promotion. Ce projet nous a permis de travailler sur l'UX/UI en intégrant des besoins spécifiques pour les étudiants et les recruteurs, avec une interface différente pour chaque profil.</p>
                     </div>
-                
-                    <!-- Galerie d'images -->
-                    <div class="portfolio-slider">
-                        <div class="swiper-wrapper align-items-center">
-                            <div class="swiper-slide">
-                                <img src="assets/img/portfolio/altea-logo.png" width="500px" alt="Logo de la fausse entreprise Altéa">
-                            </div>
-                            <div class="swiper-slide">
-                                <img src="assets/img/portfolio/altea-pages.png" width="600px" alt="Ensemble des pages Figma du faux site Altéa">
-                            </div>
-                        </div>
-                        <div class="swiper-pagination"></div>
+                    
+                    <!-- Galerie associée sous la carte -->
+                    <div class="gallery" style="display: none;">
+                        <img src="assets/img/portfolio/altea-logo.png" width="500px" alt="Logo de la fausse entreprise Altéa">
+                        <img src="assets/img/portfolio/altea-pages.png" width="600px" alt="Ensemble des pages Figma du faux site Altéa">
                     </div>
-                
+                    
                     <!-- Lien vers le PDF -->
                     <div class="pdf-link">
                         <p>Pour voir le figma en PDF : 
@@ -411,16 +396,14 @@
                         </p>
                     </div>
                 </div>
-
                 
                 <div class="card-details ux-ui" 
                      data-theme="ux-ui" 
                      data-title="Dashboard Figma" 
                      data-content="Conception d'un tableau de bord sous Figma pour le déploiement de sites web à partir d'un dépôt GitHub.">
-                
                     <h4>Dashboard Figma</h4>
                     <img src="assets/img/portfolio/dashboard-min.png" class="img-fluid" alt="Dashboard Figma">
-                
+                    
                     <!-- Informations sur le projet -->
                     <div class="portfolio-details-info">
                         <ul>
@@ -429,50 +412,57 @@
                             <li><strong>Client</strong>: Bear Studio</li>
                         </ul>
                     </div>
-                
+                    
                     <!-- Description du projet -->
                     <div class="project-description">
-                        <p>
-                            Dans le cadre de notre formation, nous avons eu l'opportunité de travailler avec <a href="https://ivan.dalmet.fr" target="_blank">Ivan Dalmet</a> de <a href="https://www.bearstudio.fr" target="_blank">Bear Studio</a> pour apprendre les bonnes pratiques sur Figma. L'objectif était de concevoir un tableau de bord pour les développeurs, permettant de déployer des sites web depuis un dépôt GitHub.<br>
-                            Voici les consignes spécifiques qui nous ont été données :<br>
-                            · Créer un tableau de bord sous Figma.<br>
-                            · Cible : Écran de portable 1440x900px.<br>
-                            · Utiliser des styles de couleurs et des composants.<br>
-                            · Appliquer l'auto-layout pour une mise en page réactive.<br>
-                        </p>
+                        <p>Dans le cadre de notre formation, nous avons eu l'opportunité de travailler avec <a href="https://ivan.dalmet.fr" target="_blank">Ivan Dalmet</a> de <a href="https://www.bearstudio.fr" target="_blank">Bear Studio</a> pour apprendre les bonnes pratiques sur Figma. L'objectif était de concevoir un tableau de bord pour les développeurs, permettant de déployer des sites web depuis un dépôt GitHub.</p>
+                        <p>Voici les consignes spécifiques qui nous ont été données :</p>
+                        <ul>
+                            <li>Créer un tableau de bord sous Figma.</li>
+                            <li>Cible : Écran de portable 1440x900px.</li>
+                            <li>Utiliser des styles de couleurs et des composants.</li>
+                            <li>Appliquer l'auto-layout pour une mise en page réactive.</li>
+                        </ul>
                     </div>
-                
+                    
                     <!-- Vidéo de présentation -->
                     <div class="video-presentation">
                         <iframe width="700px" height="450px" src="https://www.youtube.com/embed/4x3B5n76M04?si=fMTQ2AuKUuqUMocG" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
                     </div>
+                    
+                    <!-- Galerie associée sous la carte -->
+                    <div class="gallery" style="display: none;">
+                        <img src="assets/img/portfolio/dashboard-1.png" width="500px" alt="Capture du Dashboard Figma">
+                        <img src="assets/img/portfolio/dashboard-2.png" width="500px" alt="Exemple du tableau de bord sous Figma">
+                    </div>
                 </div>
-                
+
+                <!-- Carte Inktober 2023 -->
                 <div class="card-details dessin" data-theme="dessin" data-title="Inktober 2023" data-content="Challenge artistique : un dessin par jour en octobre, avec des thèmes imposés. 31 illustrations inspirées de divers univers (jeux, séries, films, animés)." data-category="Dessin" data-date="Octobre 2023">
-                <h4>Inktober 2023</h4>
-                <img src="assets/img/portfolio/inktober-min.png" class="img-fluid" alt="Aperçu des dessins Inktober 2023">
-                
-                <!-- Galerie modale -->
-                <div class="gallery-modal" id="galleryModalInktober" style="display: none;">
-                    <div class="gallery-modal-content">
-                        <span class="close" onclick="closeGallery()">&times;</span>
-                        <div class="gallery">
-                            <img src="assets/img/portfolio/inktober23/inktober-ensemble.png" width="500px" alt="Mosaïque des 31 dessins">
-                            <img src="assets/img/portfolio/inktober23/inktober_liste.jpg" width="500px" alt="Liste des thèmes de l'inktober">
+                    <h4>Inktober 2023</h4>
+                    <img src="assets/img/portfolio/inktober-min.png" class="img-fluid" alt="Aperçu des dessins Inktober 2023" onclick="openGallery('Inktober')">
+                    
+                    <!-- Galerie modale -->
+                    <div class="gallery-modal" id="galleryModalInktober" style="display: none;">
+                        <div class="gallery-modal-content">
+                            <span class="close" onclick="closeGallery()">&times;</span>
+                            <div class="gallery">
+                                <img src="assets/img/portfolio/inktober23/inktober-ensemble.png" width="500px" alt="Mosaïque des 31 dessins">
+                                <img src="assets/img/portfolio/inktober23/inktober_liste.jpg" width="500px" alt="Liste des thèmes de l'inktober">
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
-
                 
+                <!-- Carte Roll a Ball -->
                 <div class="card-details jeu-video" data-theme="jeu-video" data-title="Roll a ball" data-content="Création d'un petit jeu en une journée consistant à jouer une balle ramassant des objets. Il fallait ajouter un compteur de points, des obstacles ainsi qu'un affichage lorsque tous les objets ont été ramassés. La première vidéo est la version finale, la seconde est une version test." data-category="Jeu vidéo" data-date="23 Octobre 2023">
                     <h4>Roll a ball</h4>
                     
                     <!-- Miniature de l'image affichée initialement -->
-                    <img src="assets/img/portfolio/roll-a-ball-min.png" class="img-fluid" alt="Miniature du jeu Roll a Ball" onclick="openGallery()">
+                    <img src="assets/img/portfolio/roll-a-ball-min.png" class="img-fluid" alt="Miniature du jeu Roll a Ball" onclick="openGallery('RollABall')">
                     
                     <!-- Galerie qui s'affiche dans un modal après clic -->
-                    <div class="gallery-modal" id="galleryModal" style="display: none;">
+                    <div class="gallery-modal" id="galleryModalRollABall" style="display: none;">
                         <div class="gallery-modal-content">
                             <span class="close" onclick="closeGallery()">&times;</span>
                             <div class="gallery">
@@ -482,16 +472,15 @@
                         </div>
                     </div>
                 </div>
-
                 
+                <!-- Carte Entraînement SQL - Doctolib -->
                 <div class="card-details site-web" 
                      data-theme="site-web" 
                      data-title="Doctolib - Entraînement SQL" 
                      data-content="Entraînement sur l'utilisation de bases de données via PHP et SQL pour un site web interactif.">
-                
                     <h4>Entraînement SQL - Doctolib</h4>
                     <img src="assets/img/portfolio/rollaball-min.png" class="img-fluid" alt="Doctolib Interface">
-                
+                    
                     <!-- Informations sur le projet -->
                     <div class="portfolio-details-info">
                         <ul>
@@ -500,7 +489,7 @@
                             <li><strong>Technologies</strong>: PHP, SQL</li>
                         </ul>
                     </div>
-                
+                    
                     <!-- Description du projet -->
                     <div class="project-description">
                         <p>
@@ -508,21 +497,22 @@
                             Vous pouvez visionner la vidéo ci-dessous pour découvrir le site final, bien qu'il soit uniquement disponible en local pour l'instant.
                         </p>
                     </div>
-                
+                    
                     <!-- Vidéo présentation -->
                     <div class="video-presentation">
                         <iframe width="650" height="350" src="https://www.youtube.com/embed/gjH7BQIqqIs?si=UYdQuXIaXEKS0FgI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
                     </div>
                 </div>
-                
+
+                <!-- Carte Modélisations Blender -->
                 <div class="card-details modelisation" 
                      data-theme="modelisation" 
                      data-title="Modélisations Blender" 
                      data-content="Création d'un décor inspiré du jeu Sea of Thieves en utilisant Blender, incluant des éléments comme une table, une carte au trésor et des rouleaux de papiers.">
-                
+                    
                     <h4>Modélisations Blender</h4>
-                    <img src="assets/img/portfolio/scene-min.png" class="img-fluid" alt="Modélisation Blender : Décor inspiré de Sea of Thieves">
-                
+                    <img src="assets/img/portfolio/scene-min.png" class="img-fluid" alt="Modélisation Blender : Décor inspiré de Sea of Thieves" onclick="openGallery('Blender')">
+                    
                     <!-- Informations sur le projet -->
                     <div class="portfolio-details-info">
                         <ul>
@@ -531,17 +521,14 @@
                             <li><strong>Logiciel utilisé</strong>: Blender</li>
                         </ul>
                     </div>
-                
+                    
                     <!-- Description du projet -->
                     <div class="project-description">
-                        <p>L'objectif de ce projet était de créer un décor inspiré du jeu vidéo "Sea of Thieves" en utilisant Blender. Ce projet a permis de mettre en œuvre diverses techniques de modélisation 3D pour créer un environnement immersif et réaliste.
-                        </p>
-                        <p>Parmi les éléments modélisés : une table, une carte au trésor, et des rouleaux de papiers. Ces objets ont été intégrés dans une scène représentant un espace de travail typique d'un pirate.
-                        </p>
-                        <p>La dernière image montre la texture appliquée à la carte au trésor pour lui donner un aspect réaliste et vieilli.
-                        </p>
+                        <p>L'objectif de ce projet était de créer un décor inspiré du jeu vidéo "Sea of Thieves" en utilisant Blender. Ce projet a permis de mettre en œuvre diverses techniques de modélisation 3D pour créer un environnement immersif et réaliste.</p>
+                        <p>Parmi les éléments modélisés : une table, une carte au trésor, et des rouleaux de papiers. Ces objets ont été intégrés dans une scène représentant un espace de travail typique d'un pirate.</p>
+                        <p>La dernière image montre la texture appliquée à la carte au trésor pour lui donner un aspect réaliste et vieilli.</p>
                     </div>
-                
+                    
                     <!-- Slider des images -->
                     <div class="portfolio-slider">
                         <div class="swiper-wrapper align-items-center">
@@ -558,11 +545,14 @@
                         <div class="swiper-pagination"></div>
                     </div>
                 </div>
-
                 
-                <div class="card-details jeu-video" data-theme="jeu-video" data-title="FPS Unity" 
+                <!-- Carte FPS Unity -->
+                <div class="card-details jeu-video" 
+                     data-theme="jeu-video" 
+                     data-title="FPS Unity" 
                      data-content="Prototype d'un jeu de tir à la première personne (FPS) réalisé sous Unity. Utilisation d'assets de l'Asset Store et premières expérimentations avec le moteur physique et le système de tir." 
-                     data-category="Jeu vidéo" data-date="Octobre 2023">
+                     data-category="Jeu vidéo" 
+                     data-date="Octobre 2023">
                     <h4>FPS Unity</h4>
                     <img src="assets/img/portfolio/fps-min.png" class="img-fluid" alt="Aperçu du FPS Unity">
                     
@@ -574,14 +564,20 @@
                     </div>
                 </div>
                 
-                <div class="card-details ux-ui" data-theme="ux-ui" data-title="Redesign site de Rouen" data-content="Notre exercice consistait à prendre en main Figma, en redesignant le site de <a href='https://rouen.fr/' target='_blank'>Rouen</a>. Les images sont le résultat de cet exercice." data-category="Site Web / Figma" data-date="Février 2023">
+                <!-- Carte Figma site Rouen -->
+                <div class="card-details ux-ui" 
+                     data-theme="ux-ui" 
+                     data-title="Redesign site de Rouen" 
+                     data-content="Notre exercice consistait à prendre en main Figma, en redesignant le site de <a href='https://rouen.fr/' target='_blank'>Rouen</a>. Les images sont le résultat de cet exercice." 
+                     data-category="Site Web / Figma" 
+                     data-date="Février 2023">
                     <h4>Figma site Rouen</h4>
                     
                     <!-- Miniature de l'image affichée initialement -->
-                    <img src="assets/img/portfolio/rouen-figma-min.png" class="img-fluid" alt="Miniature du redesign du site de Rouen" onclick="openGallery()">
+                    <img src="assets/img/portfolio/rouen-figma-min.png" class="img-fluid" alt="Miniature du redesign du site de Rouen" onclick="openGallery('RouenFigma')">
                     
                     <!-- Galerie qui s'affiche dans un modal après clic -->
-                    <div class="gallery-modal" id="galleryModal" style="display: none;">
+                    <div class="gallery-modal" id="galleryModalRouenFigma" style="display: none;">
                         <div class="gallery-modal-content">
                             <span class="close" onclick="closeGallery()">&times;</span>
                             <div class="gallery">
@@ -593,14 +589,22 @@
                         </div>
                     </div>
                 </div>
-                
-                <div class="card-details graphisme" data-theme="graphisme" data-title="Projet Personnel et Professionnel" data-content="Pour ce projet personnel et professionnel, nous avions pour mission de prendre contact avec d'anciens élèves de MMI, dans le but de les interviewer sur leur métier actuel ainsi que leur parcours. Le rendu final a pour objectif de nous montrer les différents débouchés professionnels possibles après le BUT MMI. L'affiche pour la journée porte ouverte a été créée par Lylian, Martin et Quentin, bien que ma participation se soit principalement concentrée sur les interviews." data-members="Lylian FAUCON, Martin FAUVEL, Quentin GALLIEGUE, Eva GUEDIN, Quentin GOUAS" data-category="Graphisme" data-date="novembre 2022 - janvier 2023">
+
+                <!-- Projet Personnel et Professionnel -->
+                <div class="card-details graphisme" 
+                     data-theme="graphisme" 
+                     data-title="Projet Personnel et Professionnel" 
+                     data-content="Pour ce projet personnel et professionnel, nous avions pour mission de prendre contact avec d'anciens élèves de MMI, dans le but de les interviewer sur leur métier actuel ainsi que leur parcours. Le rendu final a pour objectif de nous montrer les différents débouchés professionnels possibles après le BUT MMI. L'affiche pour la journée porte ouverte a été créée par Lylian, Martin et Quentin, bien que ma participation se soit principalement concentrée sur les interviews." 
+                     data-members="Lylian FAUCON, Martin FAUVEL, Quentin GALLIEGUE, Eva GUEDIN, Quentin GOUAS" 
+                     data-category="Graphisme" 
+                     data-date="novembre 2022 - janvier 2023">
+                    
                     <h4>Projet Personnel et Professionnel</h4>
                     <!-- Miniature de l'affiche -->
-                    <img src="assets/img/portfolio/ppp_afiche_m.png" class="img-fluid" alt="Affiche projet personnel et professionnel" onclick="openGallery()">
+                    <img src="assets/img/portfolio/ppp_afiche_m.png" class="img-fluid" alt="Affiche projet personnel et professionnel" onclick="openGallery('ppp')">
                     
                     <!-- Galerie modale (affichage sur clic) -->
-                    <div class="gallery-modal" id="galleryModal" style="display: none;">
+                    <div class="gallery-modal" id="galleryModalppp" style="display: none;">
                         <div class="gallery-modal-content">
                             <span class="close" onclick="closeGallery()">&times;</span>
                             <div class="gallery">
@@ -609,7 +613,8 @@
                         </div>
                     </div>
                 </div>
-
+                
+                <!-- Premier essai 2D sur Unity -->
                 <div class="card-details jeu-video" 
                      data-theme="jeu-video" 
                      data-title="Premier essai 2D sur Unity" 
@@ -621,7 +626,7 @@
                     
                     <!-- Image principale -->
                     <img src="assets/img/portfolio/2dtest-min.png" class="img-fluid" alt="Premier essai de jeu 2D avec Unity montrant un petit monstre et des objets à collecter">
-                
+                    
                     <!-- Description du projet -->
                     <div class="project-description">
                         <p>
@@ -631,7 +636,7 @@
                             Chaque objet collecté augmente une valeur spécifique, et ces valeurs sont affichées dans la console pour que le joueur puisse suivre ses progrès.
                         </p>
                     </div>
-                
+                    
                     <!-- Galerie d'images -->
                     <div class="portfolio-slider">
                         <div class="swiper-wrapper align-items-center">
@@ -648,18 +653,29 @@
                         <div class="swiper-pagination"></div>
                     </div>
                 </div>
-
-
-                <div class="card-details ux-ui" data-theme="ux-ui" data-title="Site - Figma Or3o" data-content="Création d’un site sur Figma pour l’artiste Or3o. Le site contient une section 'About', une section 'Boutique' et une section 'Concert'." data-category="UX/UI" data-date="Janvier 2023">
-                    <h4>Site - Figma Or3o</h4>
-                    <img src="assets/img/portfolio/or3o.png" class="img-fluid" alt="Aperçu du Figma Or3o">
                 
+                <!-- Site - Figma Or3o -->
+                <div class="card-details ux-ui" 
+                     data-theme="ux-ui" 
+                     data-title="Site - Figma Or3o" 
+                     data-content="Création d’un site sur Figma pour l’artiste Or3o. Le site contient une section 'About', une section 'Boutique' et une section 'Concert'." 
+                     data-category="UX/UI" 
+                     data-date="Janvier 2023">
+                    
+                    <h4>Site - Figma Or3o</h4>
+                    <img src="assets/img/portfolio/or3o.png" class="img-fluid" alt="Aperçu du Figma Or3o" onclick="openGallery('Or3o')">
+                    
                     <!-- Galerie modale pour vidéo et image -->
-                    <div class="gallery-modal" id="galleryModal" style="display: none;">
+                    <div class="gallery-modal" id="galleryModalOr3o" style="display: none;">
                         <div class="gallery-modal-content">
                             <span class="close" onclick="closeGallery()">&times;</span>
                             <div class="gallery">
-                                <iframe width="700" height="450" src="https://www.youtube.com/embed/TRG72vlBCUY?si=Pi9OIcMUfpbNWWOV" title="Présentation du site Or3o" frameborder="0" allowfullscreen></iframe>
+                                <iframe width="700" height="450" 
+                                        src="https://www.youtube.com/embed/TRG72vlBCUY?si=Pi9OIcMUfpbNWWOV" 
+                                        title="Présentation du site Or3o" 
+                                        frameborder="0" 
+                                        allowfullscreen>
+                                </iframe>
                                 <img src="assets/img/portfolio/or3o.png" width="600px" alt="Ensemble du Figma sur Or3o">
                             </div>
                             <a href="assets/download/Site Or3o.pdf" target="_blank" style="text-decoration:underline">Voir le Figma en PDF</a>
@@ -667,14 +683,15 @@
                     </div>
                 </div>
 
+                <!-- Pictogrammes MMI -->
                 <div class="card-details modelisation" 
                      data-theme="modelisation" 
                      data-title="Pictogrammes représentant des matières MMI" 
                      data-content="Modélisation 3D des pictogrammes illustrant différentes matières du programme MMI.">
-                
+                    
                     <h4>Pictogrammes MMI</h4>
-                    <img src="assets/img/portfolio/3d_rendu2_m.png" class="img-fluid" alt="Pictogrammes 3D MMI">
-                
+                    <img src="assets/img/portfolio/3d_rendu2_m.png" class="img-fluid" alt="Pictogrammes 3D MMI" onclick="openGallery('Pictogrammes')">
+                    
                     <!-- Informations sur le projet -->
                     <div class="portfolio-details-info">
                         <ul>
@@ -682,14 +699,14 @@
                             <li><strong>Date</strong>: Décembre 2022</li>
                         </ul>
                     </div>
-                
+                    
                     <!-- Description du projet -->
                     <div class="project-description">
                         <p>
                             Cette modélisation 3D présente une série de pictogrammes représentant les matières du programme MMI (Métiers du Multimédia et de l'Internet). Les pictogrammes ont été réalisés sous Blender pour mettre en valeur les différentes spécialités, telles que la programmation, le design graphique, la création 3D, et plus encore. 
                         </p>
                     </div>
-                
+                    
                     <!-- Galerie d'images -->
                     <div class="portfolio-slider">
                         <div class="swiper-wrapper align-items-center">
@@ -704,31 +721,40 @@
                         <div class="swiper-pagination"></div>
                     </div>
                 </div>
-
-                <div class="card-details ux-ui" data-theme="ux-ui" data-title="Omniversus" data-content="Création d’un jeu vidéo mobile sur Figma en 3 heures, inspiré de Multiversus mais en jeu de cartes." data-category="UX/UI" data-date="Décembre 2022">
-                    <h4>Omniversus</h4>
-                    <img src="assets/img/portfolio/omniversus.png" class="img-fluid" alt="Aperçu du projet Omniversus">
                 
+                <!-- Omniversus -->
+                <div class="card-details ux-ui" 
+                     data-theme="ux-ui" 
+                     data-title="Omniversus" 
+                     data-content="Création d’un jeu vidéo mobile sur Figma en 3 heures, inspiré de Multiversus mais en jeu de cartes." 
+                     data-category="UX/UI" 
+                     data-date="Décembre 2022">
+                    
+                    <h4>Omniversus</h4>
+                    <img src="assets/img/portfolio/omniversus.png" class="img-fluid" alt="Aperçu du projet Omniversus" onclick="openGallery('Omniversus')">
+                    
                     <!-- Galerie modale -->
-                    <div class="gallery-modal" id="galleryModal" style="display: none;">
+                    <div class="gallery-modal" id="galleryModalOmniversus" style="display: none;">
                         <div class="gallery-modal-content">
                             <span class="close" onclick="closeGallery()">&times;</span>
                             <div class="gallery">
-                                <iframe width="700" height="450" src="https://www.youtube.com/embed/Nc-OSfFKBGc?si=bg-Z_edX5Wa-977e" title="Présentation du projet Omniversus" frameborder="0" allowfullscreen></iframe>
+                                <iframe width="700" height="450" 
+                                        src="https://www.youtube.com/embed/Nc-OSfFKBGc?si=bg-Z_edX5Wa-977e" 
+                                        title="Présentation du projet Omniversus" 
+                                        frameborder="0" 
+                                        allowfullscreen>
+                                </iframe>
                                 <img src="assets/img/portfolio/omniversus-ensemble.png" width="500px" alt="Ensemble des pages Figma du projet Omniversus">
                             </div>
                         </div>
                     </div>
                 </div>
                 
-                <div class="card-details video" 
-                     data-theme="video" 
-                     data-title="Reportage : Animal Crossing et la pandémie" 
-                     data-content="Reportage vidéo sur l'impact d'Animal Crossing durant la pandémie, réalisé par un groupe d'étudiants dans le cadre d'une ressource audiovisuelle.">
-                
+                <!-- Animal Crossing et la pandémie -->
+                <div class="card-details video" data-theme="video" data-title="Reportage : Animal Crossing et la pandémie" data-content="Reportage vidéo sur l'impact d'Animal Crossing durant la pandémie, réalisé par un groupe d'étudiants dans le cadre d'une ressource audiovisuelle.">
                     <h4>Animal Crossing et la pandémie</h4>
-                    <img src="assets/img/portfolio/animal_crossing.png" class="img-fluid" alt="Affiche du reportage sur Animal Crossing et la pandémie">
-                
+                    <img src="assets/img/portfolio/animal_crossing.png" class="img-fluid" alt="Affiche du reportage sur Animal Crossing et la pandémie" onclick="openGallery('AnimalCrossing')">
+                    
                     <!-- Informations sur le projet -->
                     <div class="portfolio-details-info">
                         <ul>
@@ -741,29 +767,23 @@
                             <li><strong>Date</strong>: Décembre 2022</li>
                         </ul>
                     </div>
-                
-                    <!-- Description du projet -->
-                    <div class="project-description">
-                        <p>
-                            Dans le cadre de notre ressource Audiovisuel du troisième semestre, nous avons réalisé une interview sur une problématique libre. L'objectif était de maîtriser les codes du journalisme vidéo. 
-                        </p>
-                        <p>
-                            La problématique choisie était la suivante : <i>"Comment Animal Crossing s'est-il imposé dans un contexte sociologique et une crise sanitaire dramatique ?"</i>
-                        </p>
-                        <p>
-                            Nous avons cherché à explorer l'impact de ce jeu vidéo dans une période de confinement et son influence dans la société durant cette crise mondiale.
-                        </p>
-                    </div>
-                
-                    <!-- Vidéo du reportage -->
-                    <div class="portfolio-slider">
-                        <div class="swiper-wrapper align-items-center">
-                            <div class="swiper-slide">
-                                <iframe width="700" height="450" src="https://www.youtube.com/embed/RWPCWhiIM0I" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                    
+                    <!-- Galerie modale -->
+                    <div class="gallery-modal" id="galleryModalAnimalCrossing" style="display: none;">
+                        <div class="gallery-modal-content">
+                            <span class="close" onclick="closeGallery()">&times;</span>
+                            <div class="gallery">
+                                <iframe width="700" height="450" 
+                                        src="https://www.youtube.com/embed/Qi4d-1JzrA8?si=hdzXeUQ5PytxGTb2" 
+                                        title="Reportage : Animal Crossing et la pandémie - YouTube" 
+                                        frameborder="0" 
+                                        allowfullscreen>
+                                </iframe>
                             </div>
                         </div>
                     </div>
                 </div>
+
                 
                 <div class="card-details site-web" 
                      data-theme="site-web" 
@@ -776,7 +796,7 @@
                     
                     <!-- Image principale -->
                     <img src="assets/img/portfolio/site_303_min.jpg" class="img-fluid" alt="Tableau de bord interactif montrant la situation de la pandémie avec des graphiques dynamiques">
-                
+                    
                     <!-- Description du projet -->
                     <div class="project-description">
                         <p>
@@ -789,7 +809,7 @@
                             Parmi les graphiques inclus, nous avons respecté la consigne de présenter au moins 4 types différents, dont un graphique particulier qui n'a pas été vu en cours, afin d'ajouter une touche d'innovation au projet.
                         </p>
                     </div>
-                
+                    
                     <!-- Galerie d'images -->
                     <div class="portfolio-slider">
                         <div class="swiper-wrapper align-items-center">
@@ -806,8 +826,14 @@
                         <div class="swiper-pagination"></div>
                     </div>
                 </div>
+
                 
-                <div class="card-details graphisme" data-theme="graphisme" data-title="Pictogrammes représentant des matières MMI" data-content="Création de pictogrammes pour représenter les champs d’activités suivants : Programmation, Web, Design graphique, Création 3D, Motion design et Communication. Présentation sur une affiche (format A1) et simulations de mise en place dans l’espace du département." data-category="Graphisme" data-date="02 octobre 2022">
+                <div class="card-details graphisme" 
+                     data-theme="graphisme" 
+                     data-title="Pictogrammes représentant des matières MMI" 
+                     data-content="Création de pictogrammes pour représenter les champs d’activités suivants : Programmation, Web, Design graphique, Création 3D, Motion design et Communication. Présentation sur une affiche (format A1) et simulations de mise en place dans l’espace du département." 
+                     data-category="Graphisme" 
+                     data-date="02 octobre 2022">
                     <h4>Pictogrammes MMI</h4>
                     <img src="assets/img/portfolio/crea_graph_affiche_m.jpg" class="img-fluid" alt="Affiche avec pictogrammes MMI">
                     
@@ -825,15 +851,16 @@
                         </div>
                     </div>
                 </div>
+
                 
                 <div class="card-details video" 
                      data-theme="video" 
                      data-title="Crescendo" 
                      data-content="Court-métrage intitulé 'Crescendo' mettant en avant un aspect de l'IUT.">
-                
+                    
                     <h4>Crescendo</h4>
                     <img src="assets/img/portfolio/crescendo.png" class="img-fluid" alt="Affiche Crescendo">
-                
+                    
                     <!-- Informations sur le projet -->
                     <div class="portfolio-details-info">
                         <ul>
@@ -845,7 +872,7 @@
                             <li><strong>Date</strong>: Octobre 2022</li>
                         </ul>
                     </div>
-                
+                    
                     <!-- Description du projet -->
                     <div class="project-description">
                         <p>
@@ -853,10 +880,16 @@
                             Vous pouvez visionner le court-métrage en entier dans la vidéo ci-dessous.
                         </p>
                     </div>
-                
+                    
                     <!-- Vidéo de présentation -->
                     <div class="video-presentation">
-                        <iframe width="760" height="515" src="https://www.youtube.com/embed/4XpPN0i-VOQ" title="Crescendo court-métrage" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                        <iframe width="760" height="515" 
+                                src="https://www.youtube.com/embed/4XpPN0i-VOQ" 
+                                title="Crescendo court-métrage" 
+                                frameborder="0" 
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                                allowfullscreen>
+                        </iframe>
                     </div>
                 </div>
                 
@@ -869,14 +902,14 @@
                     
                     <h4>Emotes pour OpacityPST</h4>
                     <img src="assets/img/portfolio/emote_m.png" class="img-fluid" alt="Emote OpacityPST">
-                
+                    
                     <!-- Boutons interactifs pour voir la chaîne Twitch et les émotes -->
                     <div class="portfolio-preview">
                         <a href="https://www.twitch.tv/opacitypst" target="_blank" class="btn btn-primary">
                             🎮 Voir sur Twitch
                         </a>
                     </div>
-                
+                    
                     <!-- Informations sur les 3 émotes -->
                     <div class="emote-description">
                         <h5>Emotes créées :</h5>
@@ -886,7 +919,7 @@
                             <li><strong>Haussant les épaules :</strong> Emote représentant un personnage haussant les épaules, en mode "meh".</li>
                         </ul>
                     </div>
-                
+                    
                     <!-- Galerie des émotes -->
                     <div class="swiper-gallery">
                         <h5>Visitez la galerie des émotes :</h5>
@@ -914,8 +947,8 @@
                 </div>
 
                 <div class="card-details dessin" data-theme="dessin" data-title="Carte 25" data-content="Voici le contenu spécifique de la carte 25.">
-                  <h4>Amis de mémoire</h4>
-                  <img src="assets/img/portfolio/dessin_3_1.jpg" class="img-fluid" alt="">
+                    <h4>Amis de mémoire</h4>
+                    <img src="assets/img/portfolio/dessin_3_1.jpg" class="img-fluid" alt="">
                 </div>
                 
                 <div class="card-details graphisme" 
@@ -927,7 +960,7 @@
                     
                     <h4>E.story & Chai à vin</h4>
                     <img src="assets/img/portfolio/estrory_moyen.png" class="img-fluid" alt="Logo de l'événement E.story">
-                
+                    
                     <!-- Bouton pour voir le projet complet -->
                     <div class="portfolio-preview">
                         <a href="assets/img/portfolio/estory_charte_graphique.png" target="_blank" class="btn btn-primary">
@@ -948,7 +981,7 @@
                     
                     <h4>MMI Foundry</h4>
                     <img src="assets/img/portfolio/logo_moyen_min.jpg" class="img-fluid" alt="Logo MMI Foundry">
-                
+                    
                     <!-- Bouton pour voir plus d'images -->
                     <div class="image-preview">
                         <a href="assets/img/portfolio/affiche_foundry.jpg" target="_blank" class="btn btn-primary">
@@ -956,12 +989,17 @@
                         </a>
                     </div>
                 </div>
-
                 
-                <div class="card-details graphisme" data-theme="graphisme" data-title="Mascottes" data-content="Création de deux mascottes pour un public enfant (5-12 ans) : Patty, un ornithorynque bleu pour une chasse au trésor à Elbeuf, et Splif, un chat borgne mascotte d’une association de clowns bénévoles en hôpital." data-category="Graphisme / Communication" data-date="Mars 2022">
+                <div class="card-details graphisme" 
+                     data-theme="graphisme" 
+                     data-title="Mascottes" 
+                     data-content="Création de deux mascottes pour un public enfant (5-12 ans) : Patty, un ornithorynque bleu pour une chasse au trésor à Elbeuf, et Splif, un chat borgne mascotte d’une association de clowns bénévoles en hôpital." 
+                     data-category="Graphisme / Communication" 
+                     data-date="Mars 2022">
+                    
                     <h4>Mascottes</h4>
                     <img src="assets/img/portfolio/parry_min.png" class="img-fluid" alt="Aperçu de la mascotte Patty">
-                
+                    
                     <!-- Galerie modale -->
                     <div class="gallery-modal" id="galleryModalMascottes" style="display: none;">
                         <div class="gallery-modal-content">
@@ -973,7 +1011,7 @@
                         </div>
                     </div>
                 </div>
-                
+
                 <div class="card-details video" 
                      data-theme="video" 
                      data-title="Film noir" 
@@ -983,7 +1021,7 @@
                     
                     <h4>Film noir</h4>
                     <img src="assets/img/portfolio/film_noir.png" class="img-fluid" alt="Affiche du court-métrage Film Noir">
-                
+                    
                     <!-- Bouton pour voir la vidéo -->
                     <div class="video-preview">
                         <a href="https://www.youtube.com/watch?v=Y6pFoDfNRxs" target="_blank" class="btn btn-primary">
@@ -991,9 +1029,15 @@
                         </a>
                     </div>
                 </div>
-
                 
-                <div class="card-details site-web" data-theme="site-web" data-title="Food truck Suki-Burger" data-content="Créer un food-truck ainsi qu'un site internet pour le représenter. Il s'agit de mon premier site internet. Le site n'étant pas en ligne, vous voyez des screenshots des différentes pages du site. Dans l'ordre : l'accueil, le menu, 'où sommes-nous', 'à propos' et les partenaires. À noter : la page 'à propos' est aussi disponible en anglais. Aussi, nous avons créé un menu en anglais dans le style visuel du food-truck." data-date="Novembre - Décembre 2021" data-category="Site Web" data-link="Ce site n'est pas en ligne">
+                <div class="card-details site-web" 
+                     data-theme="site-web" 
+                     data-title="Food truck Suki-Burger" 
+                     data-content="Créer un food-truck ainsi qu'un site internet pour le représenter. Il s'agit de mon premier site internet. Le site n'étant pas en ligne, vous voyez des screenshots des différentes pages du site. Dans l'ordre : l'accueil, le menu, 'où sommes-nous', 'à propos' et les partenaires. À noter : la page 'à propos' est aussi disponible en anglais. Aussi, nous avons créé un menu en anglais dans le style visuel du food-truck." 
+                     data-date="Novembre - Décembre 2021" 
+                     data-category="Site Web" 
+                     data-link="Ce site n'est pas en ligne">
+                    
                     <h4>Food truck Suki-Burger</h4>
                     
                     <!-- Miniature affichée initialement -->
@@ -1020,10 +1064,10 @@
                      data-theme="graphisme" 
                      data-title="Affiche promotion MMI" 
                      data-content="Affiche réalisée pour la promotion de la formation MMI, avec une photo d'Esteban Kervran et un montage graphique.">
-                
+                    
                     <h4>Affiche promotion MMI</h4>
                     <img src="assets/img/portfolio/affiche_min.jpg" class="img-fluid" alt="Affiche promotion MMI">
-                
+                    
                     <!-- Informations sur le projet -->
                     <div class="portfolio-details-info">
                         <ul>
@@ -1031,7 +1075,7 @@
                             <li><strong>Date</strong>: Novembre 2021</li>
                         </ul>
                     </div>
-                
+                    
                     <!-- Description du projet -->
                     <div class="project-description">
                         <p>
@@ -1041,19 +1085,17 @@
                             La personne sur la photo est <a href="https://www.linkedin.com/in/estebankervran/" target="_blank" style="text-decoration:underline">Esteban Kervran</a>, étudiant de la formation MMI.
                         </p>
                     </div>
-                
+                    
                     <!-- Galerie d'images -->
                     <div class="portfolio-slider">
                         <div class="swiper-wrapper align-items-center">
                             <div class="swiper-slide">
-                                <img src="assets/img/portfolio/affiche.jpg" width="500px" alt="Affiche promotion formatio BUT MMI">
+                                <img src="assets/img/portfolio/affiche.jpg" width="500px" alt="Affiche promotion formation BUT MMI">
                             </div>
                         </div>
                         <div class="swiper-pagination"></div>
                     </div>
-                </div>
-
-                
+                </div>                
             </div>
         </div>
 
@@ -1116,39 +1158,7 @@
             });
         });
     
-        // Sélection d'une carte
-        /*cards.forEach(card => {
-            card.addEventListener("click", function() {
-                document.getElementById("display-title").textContent = this.getAttribute("data-title");
-                document.getElementById("display-content").textContent = this.getAttribute("data-content");
-                centerCard(this);
-            });
-        });*/
-        // Sélection d'une carte
-        /*cards.forEach(card => {
-            card.addEventListener("click", function() {
-                const title = this.getAttribute("data-title");
-                const content = this.getAttribute("data-content");
-    
-                // Mise à jour du contenu de la section détails
-                document.querySelector("#portfolio-details .portfolio-title").textContent = title;
-                document.querySelector("#portfolio-details .portfolio-info p").textContent = content;
-                centerCard(this);
-    
-                // Affichage de la vidéo ou autre contenu si nécessaire
-                const iframeSrc = this.querySelector("iframe");
-                const videoContainer = document.querySelector(".col-lg-8");
-    
-                if (iframeSrc) {
-                    videoContainer.innerHTML = iframeSrc.outerHTML; // Remplacer le contenu avec la vidéo
-                }
-            });
-        });
-        
-            // Activer "Tout afficher" au chargement
-            applyFilter("all");
-        }); */
-        // Sélection d'une carte
+    // Sélection d'une carte
     cards.forEach(card => {
         card.addEventListener("click", function() {
             // Mettre à jour le contenu de la section principale avec les détails de la carte
