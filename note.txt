@@ -3,6 +3,7 @@ A faire :
 PC --------------------------------------------
 
 - lien index vers portfolio
+- pour portfolio : enlever dessins "simples" (potes, klonoa, celeste etc...) -> dans une gallery sous cartes
 - variable universelle pour theme    
 - portfolio.html complet
 - style portfolio.html ok
