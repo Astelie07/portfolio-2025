@@ -1106,8 +1106,7 @@
                 }
             }, 15); // Rafraîchissement rapide pour un effet fluide
         } 
-    
-    
+
         // Gestion des filtres
         filterButtons.forEach(button => {
             button.addEventListener("click", function() {
@@ -1126,29 +1125,66 @@
             });
         });*/
         // Sélection d'une carte
+        /*cards.forEach(card => {
+            card.addEventListener("click", function() {
+                const title = this.getAttribute("data-title");
+                const content = this.getAttribute("data-content");
+    
+                // Mise à jour du contenu de la section détails
+                document.querySelector("#portfolio-details .portfolio-title").textContent = title;
+                document.querySelector("#portfolio-details .portfolio-info p").textContent = content;
+                centerCard(this);
+    
+                // Affichage de la vidéo ou autre contenu si nécessaire
+                const iframeSrc = this.querySelector("iframe");
+                const videoContainer = document.querySelector(".col-lg-8");
+    
+                if (iframeSrc) {
+                    videoContainer.innerHTML = iframeSrc.outerHTML; // Remplacer le contenu avec la vidéo
+                }
+            });
+        });
+        
+            // Activer "Tout afficher" au chargement
+            applyFilter("all");
+        }); */
+        // Sélection d'une carte
     cards.forEach(card => {
         card.addEventListener("click", function() {
-            const title = this.getAttribute("data-title");
-            const content = this.getAttribute("data-content");
+            // Mettre à jour le contenu de la section principale avec les détails de la carte
+            document.getElementById("display-title").textContent = this.getAttribute("data-title");
+            document.getElementById("display-content").textContent = this.getAttribute("data-content");
 
-            // Mise à jour du contenu de la section détails
-            document.querySelector("#portfolio-details .portfolio-title").textContent = title;
-            document.querySelector("#portfolio-details .portfolio-info p").textContent = content;
-            centerCard(this);
+            // Afficher le type de contenu (vidéo, image, etc.) basé sur le type
+            const contentType = this.getAttribute("data-type"); // Ajouter data-type à chaque carte
 
-            // Affichage de la vidéo ou autre contenu si nécessaire
-            const iframeSrc = this.querySelector("iframe");
-            const videoContainer = document.querySelector(".col-lg-8");
+            const mainDisplay = document.querySelector(".main-display");
 
-            if (iframeSrc) {
-                videoContainer.innerHTML = iframeSrc.outerHTML; // Remplacer le contenu avec la vidéo
+            // Vider le contenu précédent
+            mainDisplay.innerHTML = `
+                <h2 id="display-title">${this.getAttribute("data-title")}</h2>
+                <p id="display-content">${this.getAttribute("data-content")}</p>
+            `;
+
+            // Ajouter le contenu selon le type
+            if (contentType === "video") {
+                const videoSrc = this.getAttribute("data-video-src"); // Ajouter data-video-src à chaque carte
+                mainDisplay.innerHTML += `<iframe width="700" height="450" src="${videoSrc}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>`;
+            } else if (contentType === "gallery") {
+                // Exemple pour une galerie d'images, en supposant que tu as une liste d'images
+                const images = this.getAttribute("data-images").split(","); // Ajouter data-images à chaque carte
+                images.forEach(imgSrc => {
+                    mainDisplay.innerHTML += `<img src="${imgSrc}" width="700px" alt="Image de la galerie" />`;
+                });
             }
+
+            centerCard(this); // Centrer la carte sélectionnée
         });
     });
-    
-        // Activer "Tout afficher" au chargement
-        applyFilter("all");
-    });   
+
+    // Activer "Tout afficher" au chargement
+    applyFilter("all");
+});
  </script>
  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
  <script src="assets/js/main.js"></script>
