@@ -187,6 +187,57 @@
             transition: transform 0.1s ease-in, box-shadow 0.1s ease-in;
         }
         
+        /* Conteneur des détails de la carte (section dynamique) */
+        #portfolio-details {
+            margin-top: 20px;
+            padding: 40px;
+            background-color: #f7f7f7;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        /* Titre des détails */
+        .portfolio-details .portfolio-title {
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+        
+        /* Contenu vidéo ou galerie */
+        .portfolio-details iframe,
+        .portfolio-details img {
+            max-width: 100%; /* Assure que la vidéo/image est responsive */
+            border: none;
+            border-radius: 8px;
+        }
+        
+        /* Descriptions et informations sur le projet */
+        .portfolio-info {
+            padding: 20px;
+            background-color: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        .portfolio-info h3 {
+            font-size: 22px;
+            margin-bottom: 15px;
+        }
+        
+        .portfolio-info ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        
+        .portfolio-info ul li {
+            margin: 10px 0;
+        }
+        
+        .portfolio-info ul li strong {
+            font-weight: bold;
+        }
+
+        
 
     </style>
 </head>
@@ -1008,7 +1059,7 @@
     </div>
 
     <script>
-        document.addEventListener("DOMContentLoaded", function() {
+        /*document.addEventListener("DOMContentLoaded", function() {
         const filterButtons = document.querySelectorAll(".filter-btn");
         const cards = document.querySelectorAll(".card-details");
         const cardsContainer = document.querySelector(".cards-wrapper");
@@ -1076,7 +1127,89 @@
     
         // Activer "Tout afficher" au chargement
         applyFilter("all");
-    });
+    });*/
+
+        document.addEventListener("DOMContentLoaded", function() {
+            const filterButtons = document.querySelectorAll(".filter-btn");
+            const cards = document.querySelectorAll(".card-details");
+            const cardsContainer = document.querySelector(".cards-wrapper");
+        
+            // Application du filtre
+            function applyFilter(filter) {
+                cards.forEach(card => {
+                    if (filter === "all" || card.getAttribute("data-theme") === filter) {
+                        card.classList.remove("hidden");
+                        setTimeout(() => card.classList.add("active"), 100);
+                    } else {
+                        card.classList.remove("active");
+                        setTimeout(() => card.classList.add("hidden"), 500);
+                    }
+                });
+        
+                // Centrer la première carte visible après filtrage
+                setTimeout(() => {
+                    const firstVisibleCard = document.querySelector(".card-details:not(.hidden)");
+                    if (firstVisibleCard) {
+                        centerCard(firstVisibleCard);
+                    }
+                }, 600);
+            }
+        
+            // Centrer une carte dans la vue
+            function centerCard(card) {
+                const containerWidth = cardsContainer.offsetWidth;
+                const cardOffset = card.offsetLeft - (containerWidth / 2) + (card.offsetWidth / 2);
+                
+                // Créer un effet de défilement progressif avec plusieurs étapes
+                let currentScroll = cardsContainer.scrollLeft;
+                let step = (cardOffset - currentScroll) / 20; // Diviser le déplacement en 20 étapes
+              
+                let animation = setInterval(() => {
+                    currentScroll += step;
+                    cardsContainer.scrollLeft = currentScroll;
+        
+                    // Arrêter l'animation si on est proche de la cible
+                    if (Math.abs(currentScroll - cardOffset) < Math.abs(step)) {
+                        clearInterval(animation);
+                        cardsContainer.scrollLeft = cardOffset; // S'assurer que la carte est bien centrée
+                    }
+                }, 15); // Rafraîchissement rapide pour un effet fluide
+            }
+        
+            // Gestion des filtres
+            filterButtons.forEach(button => {
+                button.addEventListener("click", function() {
+                    filterButtons.forEach(b => b.classList.remove("active"));
+                    this.classList.add("active");
+                    applyFilter(this.getAttribute("data-filter"));
+                });
+            });
+        
+            // Sélection d'une carte
+            cards.forEach(card => {
+                card.addEventListener("click", function() {
+                    const title = this.getAttribute("data-title");
+                    const content = this.getAttribute("data-content");
+        
+                    // Mise à jour du contenu de la section détails
+                    document.querySelector("#portfolio-details .portfolio-title").textContent = title;
+                    document.querySelector("#portfolio-details .portfolio-info p").textContent = content;
+                    centerCard(this);
+        
+                    // Affichage de la vidéo ou autre contenu si nécessaire
+                    const iframeSrc = this.querySelector("iframe");
+                    const videoContainer = document.querySelector(".col-lg-8");
+        
+                    if (iframeSrc) {
+                        videoContainer.innerHTML = iframeSrc.outerHTML; // Remplacer le contenu avec la vidéo
+                    }
+                });
+            });
+        
+            // Activer "Tout afficher" au chargement
+            applyFilter("all");
+        });
+
  </script>
  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
  <script src="assets/js/main.js"></script>
