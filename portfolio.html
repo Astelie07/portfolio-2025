@@ -4,15 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link id="theme" rel="stylesheet" type="text/css" href="assets/css/style.css" />
-    <title>Cartes interactives</title>
+    <title>Portfolio | Details</title>
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f4f4f4;
-        }
-        
         .container {
             max-width: 1200px;
             margin: 0 auto;
@@ -250,11 +243,72 @@
                   <h4>Portfolio 2024</h4>
                   <img src="assets/img/portfolio/portfolio-2024.png" class="img-fluid" alt="">
                 </div>
-                
-                <div class="card-details jeu-video" data-theme="jeu-video" data-title="Carte 1" data-content="Voici le contenu spécifique de la carte 6.">
-                  <h4>The Escape</h4>
-                  <img src="assets/img/portfolio/escape-min.png" class="img-fluid" alt="">
+
+                <div class="card-details dessin" data-theme="dessin" data-title="Inktober 2024" data-content="Challenge artistique : un dessin par jour en octobre, avec des thèmes imposés. 31 illustrations inspirées de divers univers (jeux, séries, films, animés)." data-category="Dessin" data-date="Octobre 2024">
+                    <h4>Inktober 2024</h4>
+                    <img src="assets/img/portfolio/inktober-min.png" class="img-fluid" alt="Aperçu des dessins Inktober 2024">
+                    
+                    <!-- Galerie modale -->
+                    <div class="gallery-modal" id="galleryModalInktober" style="display: none;">
+                        <div class="gallery-modal-content">
+                            <span class="close" onclick="closeGallery()">&times;</span>
+                            <div class="gallery">
+                                <img src="assets/img/portfolio/inktober23/inktober-ensemble.png" width="500px" alt="Mosaïque des 31 dessins">
+                                <img src="assets/img/portfolio/inktober23/inktober_liste.jpg" width="500px" alt="Liste des thèmes de l'inktober">
+                            </div>
+                        </div>
+                    </div>
                 </div>
+
+                <div class="card-details dessin" data-theme="dessin" data-title="Rainbow challenge" data-content="Défi que je me suis imposépendant les vacances d'été de 2024 : un dessin par semaine, d'une couleur différente, avec au minimum 7 personnage de culture populaire de cette même couleur.">
+                    <h4>Rainbow Challenge</h4>
+                    <img src="assets/img/portfolio/inktober-min.png" class="img-fluid" alt="Aperçu des dessins Inktober 2023">
+                    
+                    <!-- Galerie modale -->
+                    <div class="gallery-modal" id="galleryModalInktober" style="display: none;">
+                        <div class="gallery-modal-content">
+                            <span class="close" onclick="closeGallery()">&times;</span>
+                            <div class="gallery">
+                                <img src="assets/img/portfolio/inktober23/inktober-ensemble.png" width="500px" alt="Mosaïque des 31 dessins">
+                                <img src="assets/img/portfolio/inktober23/inktober_liste.jpg" width="500px" alt="Liste des thèmes de l'inktober">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="card-details jeu-video" 
+                     data-theme="jeu-video" 
+                     data-title="The Escape - Projet MMI3" 
+                     data-content="Jeu vidéo d'horreur inspiré des Backrooms, créé dans le cadre du projet final du BUT MMI."
+                     data-category="Jeu vidéo" 
+                     data-date="Septembre 2023 - Février 2024">
+                    
+                    <h4>The Escape - Projet MMI3</h4>
+                    <img src="assets/img/portfolio/escape-min.png" class="img-fluid" alt="The Escape - Projet MMI3">
+                
+                    <!-- Boutons interactifs pour accéder au site et trailer -->
+                    <div class="portfolio-preview">
+                        <a href="https://m-u-c-k-a.github.io/backroom-game/" target="_blank" class="btn btn-primary">
+                            🎮 Jouer au jeu
+                        </a>
+                        <a href="https://www.youtube.com/embed/rvK_ZZMRh08?si=6s_oHPKoeThFsKl7" target="_blank" class="btn btn-secondary">
+                            🎬 Voir le trailer
+                        </a>
+                    </div>
+                
+                    <!-- Liste des membres du groupe -->
+                    <div class="members-list">
+                        <h5>Équipe de développement :</h5>
+                        <ul>
+                            <li><a href="https://www.linkedin.com/in/bilal-boukhorissa-6153622a1/" target="_blank" style="text-decoration:underline">Bilal Boukhorissa</a></li>
+                            <li><a href="https://www.linkedin.com/in/nabil-boukhorissa/" target="_blank" style="text-decoration:underline">Nabil Boukhorissa</a></li>
+                            <li><a href="https://www.linkedin.com/in/esther-amegnisse/" target="_blank" style="text-decoration:underline">Esther Amegnisse</a></li>
+                            <li><a href="https://www.linkedin.com/in/hugo-delacour/" target="_blank" style="text-decoration:underline">Hugo Delacour</a></li>
+                            <li><a href="https://www.linkedin.com/in/tombihoreau/" target="_blank" style="text-decoration:underline">Tom Bihoreau</a></li>
+                        </ul>
+                    </div>
+                </div>
+
                 
                 <div class="card-details ux-ui" data-theme="ux-ui" data-title="Carte 2" data-content="Voici le contenu spécifique de la carte 7.">
                   <h4>Altea</h4>
@@ -266,10 +320,22 @@
                   <img src="assets/img/portfolio/dashboard-min.png" class="img-fluid" alt="">
                 </div>
                 
-                <div class="card-details dessin" data-theme="dessin" data-title="Carte 4" data-content="Voici le contenu spécifique de la carte 9.">
-                  <h4>Inktober 2023</h4>
-                  <img src="assets/img/portfolio/inktober-min.png" class="img-fluid" alt="">
+                <div class="card-details dessin" data-theme="dessin" data-title="Inktober 2023" data-content="Challenge artistique : un dessin par jour en octobre, avec des thèmes imposés. 31 illustrations inspirées de divers univers (jeux, séries, films, animés)." data-category="Dessin" data-date="Octobre 2023">
+                <h4>Inktober 2023</h4>
+                <img src="assets/img/portfolio/inktober-min.png" class="img-fluid" alt="Aperçu des dessins Inktober 2023">
+                
+                <!-- Galerie modale -->
+                <div class="gallery-modal" id="galleryModalInktober" style="display: none;">
+                    <div class="gallery-modal-content">
+                        <span class="close" onclick="closeGallery()">&times;</span>
+                        <div class="gallery">
+                            <img src="assets/img/portfolio/inktober23/inktober-ensemble.png" width="500px" alt="Mosaïque des 31 dessins">
+                            <img src="assets/img/portfolio/inktober23/inktober_liste.jpg" width="500px" alt="Liste des thèmes de l'inktober">
+                        </div>
+                    </div>
                 </div>
+            </div>
+
                 
                 <div class="card-details jeu-video" data-theme="jeu-video" data-title="Roll a ball" data-content="Création d'un petit jeu en une journée consistant à jouer une balle ramassant des objets. Il fallait ajouter un compteur de points, des obstacles ainsi qu'un affichage lorsque tous les objets ont été ramassés. La première vidéo est la version finale, la seconde est une version test." data-category="Jeu vidéo" data-date="23 Octobre 2023">
                     <h4>Roll a ball</h4>
@@ -300,9 +366,18 @@
                   <img src="assets/img/portfolio/scene-min.png" class="img-fluid" alt="">
                 </div>
                 
-                <div class="card-details jeu-video" data-theme="jeu-video" data-title="Carte 8" data-content="Voici le contenu spécifique de la carte 13.">
-                  <h4>Test FPS Unity</h4>
-                  <img src="assets/img/portfolio/fps-min.png" class="img-fluid" alt="">
+                <div class="card-details jeu-video" data-theme="jeu-video" data-title="FPS Unity" 
+                     data-content="Prototype d'un jeu de tir à la première personne (FPS) réalisé sous Unity. Utilisation d'assets de l'Asset Store et premières expérimentations avec le moteur physique et le système de tir." 
+                     data-category="Jeu vidéo" data-date="Octobre 2023">
+                    <h4>FPS Unity</h4>
+                    <img src="assets/img/portfolio/fps-min.png" class="img-fluid" alt="Aperçu du FPS Unity">
+                    
+                    <!-- Bouton pour voir la vidéo -->
+                    <div class="video-preview">
+                        <a href="https://www.youtube.com/embed/UCc51j6VgEw?si=jz75hu6rjgaDkRHK" target="_blank" class="btn btn-primary">
+                            Voir la vidéo 🎮
+                        </a>
+                    </div>
                 </div>
                 
                 <div class="card-details ux-ui" data-theme="ux-ui" data-title="Redesign site de Rouen" data-content="Notre exercice consistait à prendre en main Figma, en redesignant le site de <a href='https://rouen.fr/' target='_blank'>Rouen</a>. Les images sont le résultat de cet exercice." data-category="Site Web / Figma" data-date="Février 2023">
@@ -346,19 +421,43 @@
                     <img src="assets/img/portfolio/2dtest-min.png" class="img-fluid" alt="Premier essai 2D sur Unity">
                 </div>
 
-                <div class="card-details ux-ui" data-theme="ux-ui" data-title="Carte 12" data-content="Voici le contenu spécifique de la carte 17.">
-                  <h4>Figma Or3o</h4>
-                  <img src="assets/img/portfolio/or3o-min.png" class="img-fluid" alt="">
+                <div class="card-details ux-ui" data-theme="ux-ui" data-title="Site - Figma Or3o" data-content="Création d’un site sur Figma pour l’artiste Or3o. Le site contient une section 'About', une section 'Boutique' et une section 'Concert'." data-category="UX/UI" data-date="Janvier 2023">
+                    <h4>Site - Figma Or3o</h4>
+                    <img src="assets/img/portfolio/or3o.png" class="img-fluid" alt="Aperçu du Figma Or3o">
+                
+                    <!-- Galerie modale pour vidéo et image -->
+                    <div class="gallery-modal" id="galleryModal" style="display: none;">
+                        <div class="gallery-modal-content">
+                            <span class="close" onclick="closeGallery()">&times;</span>
+                            <div class="gallery">
+                                <iframe width="700" height="450" src="https://www.youtube.com/embed/TRG72vlBCUY?si=Pi9OIcMUfpbNWWOV" title="Présentation du site Or3o" frameborder="0" allowfullscreen></iframe>
+                                <img src="assets/img/portfolio/or3o.png" width="600px" alt="Ensemble du Figma sur Or3o">
+                            </div>
+                            <a href="assets/download/Site Or3o.pdf" target="_blank" style="text-decoration:underline">Voir le Figma en PDF</a>
+                        </div>
+                    </div>
                 </div>
+
                 
                 <div class="card-details modelisation" data-theme="modelisation" data-title="Carte 13" data-content="Voici le contenu spécifique de la carte 18.">
                   <h4>Modélisation Jinx Bomb</h4>
                   <img src="assets/img/portfolio/3d_rendu2_m.png" class="img-fluid" alt="">
                 </div>
                 
-                <div class="card-details ux-ui" data-theme="ux-ui" data-title="Carte 14" data-content="Voici le contenu spécifique de la carte 19.">
-                  <h4>Omniversus</h4>
-                  <img src="assets/img/portfolio/omniversus.png" class="img-fluid" alt="">
+                <div class="card-details ux-ui" data-theme="ux-ui" data-title="Omniversus" data-content="Création d’un jeu vidéo mobile sur Figma en 3 heures, inspiré de Multiversus mais en jeu de cartes." data-category="UX/UI" data-date="Décembre 2022">
+                    <h4>Omniversus</h4>
+                    <img src="assets/img/portfolio/omniversus.png" class="img-fluid" alt="Aperçu du projet Omniversus">
+                
+                    <!-- Galerie modale -->
+                    <div class="gallery-modal" id="galleryModal" style="display: none;">
+                        <div class="gallery-modal-content">
+                            <span class="close" onclick="closeGallery()">&times;</span>
+                            <div class="gallery">
+                                <iframe width="700" height="450" src="https://www.youtube.com/embed/Nc-OSfFKBGc?si=bg-Z_edX5Wa-977e" title="Présentation du projet Omniversus" frameborder="0" allowfullscreen></iframe>
+                                <img src="assets/img/portfolio/omniversus-ensemble.png" width="500px" alt="Ensemble des pages Figma du projet Omniversus">
+                            </div>
+                        </div>
+                    </div>
                 </div>
                 
                 <div class="card-details video" data-theme="video" data-title="Carte 15" data-content="Voici le contenu spécifique de la carte 20.">
@@ -371,9 +470,23 @@
                     <img src="assets/img/portfolio/site_303_min.jpg" class="img-fluid" alt="Emoticone personnage champagne line art">
                 </div>
                 
-                <div class="card-details graphisme" data-theme="graphisme" data-title="Carte 17" data-content="Voici le contenu spécifique de la carte 22.">
-                  <h4>Pictogrammes MMI</h4>
-                  <img src="assets/img/portfolio/crea_graph_affiche_m.jpg" class="img-fluid" alt="">
+                <div class="card-details graphisme" data-theme="graphisme" data-title="Pictogrammes représentant des matières MMI" data-content="Création de pictogrammes pour représenter les champs d’activités suivants : Programmation, Web, Design graphique, Création 3D, Motion design et Communication. Présentation sur une affiche (format A1) et simulations de mise en place dans l’espace du département." data-category="Graphisme" data-date="02 octobre 2022">
+                    <h4>Pictogrammes MMI</h4>
+                    <img src="assets/img/portfolio/crea_graph_affiche_m.jpg" class="img-fluid" alt="Affiche avec pictogrammes MMI">
+                    
+                    <!-- Galerie modale (affichage sur clic) -->
+                    <div class="gallery-modal" id="galleryModal" style="display: none;">
+                        <div class="gallery-modal-content">
+                            <span class="close" onclick="closeGallery()">&times;</span>
+                            <div class="gallery">
+                                <img src="assets/img/portfolio/crea_grapg_picto.gif" width="600px" alt="Gif des pictogrammes">
+                                <img src="assets/img/portfolio/crea_graph_mont_1.jpg" width="600px" alt="Montage pictogrammes sur les murs">
+                                <img src="assets/img/portfolio/crea_graph_mont_2.jpg" width="450px" alt="Montage pictogrammes sur les murs">
+                                <img src="assets/img/portfolio/crea_graph_mont_3.jpg" width="600px" alt="Montage pictogrammes sur les murs">
+                            </div>
+                            <a href="assets/download/crea_graph_démarche.pdf" target="_blank" style="text-decoration:underline">Démarche artistique</a>
+                        </div>
+                    </div>
                 </div>
                 
                 <div class="card-details video" data-theme="video" data-title="Carte 18" data-content="Voici le contenu spécifique de la carte 23.">
@@ -381,40 +494,138 @@
                   <img src="assets/img/portfolio/crescendo.png" class="img-fluid" alt="">
                 </div>
                 
-                <div class="card-details dessin" data-theme="dessin" data-title="Carte 19" data-content="Voici le contenu spécifique de la carte 24.">
-                  <h4>Emotes <strong>OpacityPST</strong></h4>
-                  <img src="assets/img/portfolio/emote_m.png" class="img-fluid" alt="">
-                </div>
+                <div class="card-details dessin" 
+                     data-theme="dessin" 
+                     data-title="Emotes pour OpacityPST" 
+                     data-content="Création d'émotes pour le streamer OpacityPST afin de dynamiser ses lives Twitch."
+                     data-category="Dessin" 
+                     data-date="09 septembre 2022">
+                    
+                    <h4>Emotes pour OpacityPST</h4>
+                    <img src="assets/img/portfolio/emote_m.png" class="img-fluid" alt="Emote OpacityPST">
                 
+                    <!-- Boutons interactifs pour voir la chaîne Twitch et les émotes -->
+                    <div class="portfolio-preview">
+                        <a href="https://www.twitch.tv/opacitypst" target="_blank" class="btn btn-primary">
+                            🎮 Voir sur Twitch
+                        </a>
+                    </div>
+                
+                    <!-- Informations sur les 3 émotes -->
+                    <div class="emote-description">
+                        <h5>Emotes créées :</h5>
+                        <ul>
+                            <li><strong>Victoire :</strong> Emote représentant un personnage tenant une bouteille de champagne.</li>
+                            <li><strong>Dormir :</strong> Emote du personnage dormant.</li>
+                            <li><strong>Haussant les épaules :</strong> Emote représentant un personnage haussant les épaules, en mode "meh".</li>
+                        </ul>
+                    </div>
+                
+                    <!-- Galerie des émotes -->
+                    <div class="swiper-gallery">
+                        <h5>Visitez la galerie des émotes :</h5>
+                        <div class="swiper">
+                            <div class="swiper-wrapper align-items-center">
+                                <div class="swiper-slide">
+                                    <img src="assets/img/portfolio/emote_champagne.png" alt="Emoticone champagne">
+                                </div>
+                                <div class="swiper-slide">
+                                    <img src="assets/img/portfolio/emote_line.png" alt="Emoticone line art">
+                                </div>
+                                <div class="swiper-slide">
+                                    <img src="assets/img/portfolio/emote_ex.png" alt="Emoticone exemple">
+                                </div>
+                                <div class="swiper-slide">
+                                    <img src="assets/img/portfolio/emote_dors.png" alt="Emoticone dormant">
+                                </div>
+                                <div class="swiper-slide">
+                                    <img src="assets/img/portfolio/emote_Meh.png" alt="Emoticone haussant les épaules">
+                                </div>
+                            </div>
+                            <div class="swiper-pagination"></div>
+                        </div>
+                    </div>
+                </div>
+
                 <div class="card-details dessin" data-theme="dessin" data-title="Carte 25" data-content="Voici le contenu spécifique de la carte 25.">
                   <h4>Amis de mémoire</h4>
                   <img src="assets/img/portfolio/dessin_3_1.jpg" class="img-fluid" alt="">
                 </div>
                 
-                <div class="card-details graphisme" data-theme="graphisme" data-title="Carte 26" data-content="Voici le contenu spécifique de la carte 26.">
-                  <h4>E.story</h4>
-                  <img src="assets/img/portfolio/estrory_moyen.png" class="img-fluid" alt="">
+                <div class="card-details graphisme" 
+                     data-theme="graphisme" 
+                     data-title="E.story & Chai à vin" 
+                     data-content="Événement mêlant nouvelles technologies et histoire normande, organisé dans un ancien chai à vin de Rouen."
+                     data-category="Graphisme / Communication" 
+                     data-date="Mai 2022">
+                    
+                    <h4>E.story & Chai à vin</h4>
+                    <img src="assets/img/portfolio/estrory_moyen.png" class="img-fluid" alt="Logo de l'événement E.story">
+                
+                    <!-- Bouton pour voir le projet complet -->
+                    <div class="portfolio-preview">
+                        <a href="assets/img/portfolio/estory_charte_graphique.png" target="_blank" class="btn btn-primary">
+                            📜 Voir la charte graphique
+                        </a>
+                        <a href="assets/img/portfolio/estory_flyer_202_page-0001.jpg" target="_blank" class="btn btn-secondary">
+                            📰 Voir le flyer
+                        </a>
+                    </div>
                 </div>
                 
-                <div class="card-details graphisme" data-theme="graphisme" data-title="Carte 27" data-content="Voici le contenu spécifique de la carte 27.">
-                  <h4>MMI Foundry</h4>
-                  <img src="assets/img/portfolio/logo_moyen_min.jpg" class="img-fluid" alt="">
+                <div class="card-details graphisme" 
+                     data-theme="graphisme" 
+                     data-title="MMI Foundry" 
+                     data-content="Création d'un logo décliné en trois formats (grand, moyen, petit), ainsi qu'une affiche et divers mockups pour la mise en situation de l'identité visuelle sur différents supports (carte, casquette, mug, stylo, t-shirt, façade)."
+                     data-category="Graphisme" 
+                     data-date="Avril-Mai 2022">
+                    
+                    <h4>MMI Foundry</h4>
+                    <img src="assets/img/portfolio/logo_moyen_min.jpg" class="img-fluid" alt="Logo MMI Foundry">
+                
+                    <!-- Bouton pour voir plus d'images -->
+                    <div class="image-preview">
+                        <a href="assets/img/portfolio/affiche_foundry.jpg" target="_blank" class="btn btn-primary">
+                            Voir l'affiche 🎨
+                        </a>
+                    </div>
+                </div>
+
+                
+                <div class="card-details graphisme" data-theme="graphisme" data-title="Mascottes" data-content="Création de deux mascottes pour un public enfant (5-12 ans) : Patty, un ornithorynque bleu pour une chasse au trésor à Elbeuf, et Splif, un chat borgne mascotte d’une association de clowns bénévoles en hôpital." data-category="Graphisme / Communication" data-date="Mars 2022">
+                    <h4>Mascottes</h4>
+                    <img src="assets/img/portfolio/parry_min.png" class="img-fluid" alt="Aperçu de la mascotte Patty">
+                
+                    <!-- Galerie modale -->
+                    <div class="gallery-modal" id="galleryModalMascottes" style="display: none;">
+                        <div class="gallery-modal-content">
+                            <span class="close" onclick="closeGallery()">&times;</span>
+                            <div class="gallery">
+                                <img src="assets/img/portfolio/parry (2).png" width="400px" alt="Mascotte Parry">
+                                <img src="assets/img/portfolio/splif.png" width="500px" alt="Mascotte Splif">
+                            </div>
+                        </div>
+                    </div>
                 </div>
                 
-                <div class="card-details graphisme" data-theme="graphisme" data-title="Carte 28" data-content="Voici le contenu spécifique de la carte 28.">
-                  <h4>Mascottes</h4>
-                  <img src="assets/img/portfolio/parry_min.png" class="img-fluid" alt="">
-                </div>
+                <div class="card-details video" 
+                     data-theme="video" 
+                     data-title="Film noir" 
+                     data-content="Court-métrage inspiré des classiques du film noir. Rôle : metteuse en scène et accessoiriste."
+                     data-category="Vidéo" 
+                     data-date="Mars 2022">
+                    
+                    <h4>Film noir</h4>
+                    <img src="assets/img/portfolio/film_noir.png" class="img-fluid" alt="Affiche du court-métrage Film Noir">
                 
-                <div class="card-details video" data-theme="video" data-title="Carte 29" data-content="Voici le contenu spécifique de la carte 29.">
-                  <h4>Film noir</h4>
-                  <img src="assets/img/portfolio/film_noir.png" class="img-fluid" alt="">
+                    <!-- Bouton pour voir la vidéo -->
+                    <div class="video-preview">
+                        <a href="https://www.youtube.com/watch?v=Y6pFoDfNRxs" target="_blank" class="btn btn-primary">
+                            🎬 Regarder le court-métrage
+                        </a>
+                    </div>
                 </div>
-                
-                <div class="card-details dessin" data-theme="dessin" data-title="Carte 30" data-content="Voici le contenu spécifique de la carte 30.">
-                    <h4>Auto-protrait</h4>
-                  <img src="assets/img/portfolio/dessin_1_1.png" class="img-fluid" alt="">
-                </div>
+
                 
                 <div class="card-details site-web" data-theme="site-web" data-title="Food truck Suki-Burger" data-content="Créer un food-truck ainsi qu'un site internet pour le représenter. Il s'agit de mon premier site internet. Le site n'étant pas en ligne, vous voyez des screenshots des différentes pages du site. Dans l'ordre : l'accueil, le menu, 'où sommes-nous', 'à propos' et les partenaires. À noter : la page 'à propos' est aussi disponible en anglais. Aussi, nous avons créé un menu en anglais dans le style visuel du food-truck." data-date="Novembre - Décembre 2021" data-category="Site Web" data-link="Ce site n'est pas en ligne">
                     <h4>Food truck Suki-Burger</h4>
@@ -437,7 +648,7 @@
                             </div>
                         </div>
                     </div>
-</div>
+                </div>
                 
                 <div class="card-details graphisme" data-theme="graphisme" data-title="Carte 32" data-content="Voici le contenu spécifique de la carte 32.">
                     <h4>Affiche MMI</h4>
