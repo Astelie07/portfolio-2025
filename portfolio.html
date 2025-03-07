@@ -89,58 +89,22 @@
             gap: 10px;
             margin-bottom: 20px;
         }
-        
+                
         .filter-btn {
-            padding: 10px;
-            background-color: #007BFF;
+            color: #63afffbe;
+        }
+
+        .filter-btn:first-of-type {
+            color: #002e5f;
+        }
+
+        .filter-btn:first-of-type:active {
             color: white;
-            border: none;
-            cursor: pointer;
-            border-radius: 5px;
-            transition: background 0.3s;
-        }
-        
-        .filter-btn:hover {
-            background-color: #0056b3;
-        }
-        
-        .filter-btn.active {
-            background-color: #004085;
         }
         
         /* Masquer les cartes non visibles */
         .hidden {
             display: none !important;
-        }
-        
-        /* Classe UX / UI */
-        .ux-ui {
-            background-color: #260e03;
-        }
-        
-        /* Classe Video */
-        .video {
-            background-color: #21211f;
-        }
-        
-        /* Classe Graphisme */
-        .graphisme {
-            background-color: #1b333a;
-        }
-        
-        /* Classe Modelisation */
-        .modelisation {
-            background-color: #164656;
-        }
-        
-        /* Classe Jeu vidéo */
-        .jeu-video {
-            background-color: #105871;
-        }
-        
-        /* Classe Dessin */
-        .dessin {
-            background-color: #0b6b8d;
         }
         
         /* Style de la barre de défilement horizontal */
@@ -298,7 +262,7 @@
                 
                 <div class="card-details dessin" data-theme="dessin" data-title="Inktober 2024" data-content="Challenge artistique : un dessin par jour en octobre, avec des thèmes imposés. 31 illustrations inspirées de divers univers (jeux, séries, films, animés)." data-category="Dessin" data-date="Octobre 2024" data-gallery-images='["assets/img/portfolio/inktober23/inktober-ensemble.png", "assets/img/portfolio/inktober23/inktober_liste.jpg"]'>
                     <h4>Inktober 2024</h4>
-                    <img src="assets/img/portfolio/assets/img/portfolio/inktober2024.png" class="img-fluid" alt="Aperçu des dessins Inktober 2024">
+                    <img src="assets/img/portfolio/inktober2024.png" class="img-fluid" alt="Aperçu des dessins Inktober 2024">
                     
                     <!-- Galerie Inktober 2024 sous la carte -->
                     <div class="gallery" style="display: none;">
@@ -1101,114 +1065,220 @@
 
     </div>
 
+    <div><a href="index.html">Retour</a></div>
+
     <script>
-    // Fonction pour ouvrir la galerie modale spécifique
-    function openGallery(project) {
-        var modalId = 'galleryModal' + project;
-        document.getElementById(modalId).style.display = "block";
-    }
+//     // Fonction pour ouvrir la galerie modale spécifique
+//     function openGallery(project) {
+//         var modalId = 'galleryModal' + project;
+//         document.getElementById(modalId).style.display = "block";
+//     }
     
-    // Fonction pour fermer toutes les galeries modales
-    function closeGallery() {
-        var modals = document.querySelectorAll('.gallery-modal');
-        modals.forEach(function(modal) {
-            modal.style.display = "none";
-        });
-    }
+//     // Fonction pour fermer toutes les galeries modales
+//     function closeGallery() {
+//         var modals = document.querySelectorAll('.gallery-modal');
+//         modals.forEach(function(modal) {
+//             modal.style.display = "none";
+//         });
+//     }
 
-    document.addEventListener("DOMContentLoaded", function() {
-        const filterButtons = document.querySelectorAll(".filter-btn");
-        const cards = document.querySelectorAll(".card-details");
-        const cardsContainer = document.querySelector(".cards-wrapper");
+
+//     document.addEventListener("DOMContentLoaded", function() {
+//         const filterButtons = document.querySelectorAll(".filter-btn");
+//         const cards = document.querySelectorAll(".card-details");
+//         const cardsContainer = document.querySelector(".cards-wrapper");
     
-        // Application du filtre
-        function applyFilter(filter) {
-            cards.forEach(card => {
-                if (filter === "all" || card.getAttribute("data-theme") === filter) {
-                    card.classList.remove("hidden");
-                    setTimeout(() => card.classList.add("active"), 100);
-                } else {
-                    card.classList.remove("active");
-                    setTimeout(() => card.classList.add("hidden"), 500);
-                }
-            });
+//         // Application du filtre
+//         function applyFilter(filter) {
+//             cards.forEach(card => {
+//                 if (filter === "all" || card.getAttribute("data-theme") === filter) {
+//                     card.classList.remove("hidden");
+//                     setTimeout(() => card.classList.add("active"), 100);
+//                 } else {
+//                     card.classList.remove("active");
+//                     setTimeout(() => card.classList.add("hidden"), 500);
+//                 }
+//             });
     
-            // Centrer la première carte visible après filtrage
-            setTimeout(() => {
-                const firstVisibleCard = document.querySelector(".card-details:not(.hidden)");
-                if (firstVisibleCard) {
-                    centerCard(firstVisibleCard);
-                }
-            }, 600);
-        }
+//             // Centrer la première carte visible après filtrage
+//             setTimeout(() => {
+//                 const firstVisibleCard = document.querySelector(".card-details:not(.hidden)");
+//                 if (firstVisibleCard) {
+//                     centerCard(firstVisibleCard);
+//                 }
+//             }, 600);
+//         }
     
-        // Centrer une carte dans la vue
-        function centerCard(card) {
-            const containerWidth = cardsContainer.offsetWidth;
-            const cardOffset = card.offsetLeft - (containerWidth / 2) + (card.offsetWidth / 2);
+//         // Centrer une carte dans la vue
+//         function centerCard(card) {
+//             const containerWidth = cardsContainer.offsetWidth;
+//             const cardOffset = card.offsetLeft - (containerWidth / 2) + (card.offsetWidth / 2);
             
-            // Créer un effet de défilement progressif avec plusieurs étapes
-            let currentScroll = cardsContainer.scrollLeft;
-            let step = (cardOffset - currentScroll) / 20; // Diviser le déplacement en 20 étapes
+//             // Créer un effet de défilement progressif avec plusieurs étapes
+//             let currentScroll = cardsContainer.scrollLeft;
+//             let step = (cardOffset - currentScroll) / 20; // Diviser le déplacement en 20 étapes
           
-            let animation = setInterval(() => {
-                currentScroll += step;
-                cardsContainer.scrollLeft = currentScroll;
+//             let animation = setInterval(() => {
+//                 currentScroll += step;
+//                 cardsContainer.scrollLeft = currentScroll;
         
-                // Arrêter l'animation si on est proche de la cible
-                if (Math.abs(currentScroll - cardOffset) < Math.abs(step)) {
-                    clearInterval(animation);
-                    cardsContainer.scrollLeft = cardOffset; // S'assurer que la carte est bien centrée
-                }
-            }, 15); // Rafraîchissement rapide pour un effet fluide
-        } 
+//                 // Arrêter l'animation si on est proche de la cible
+//                 if (Math.abs(currentScroll - cardOffset) < Math.abs(step)) {
+//                     clearInterval(animation);
+//                     cardsContainer.scrollLeft = cardOffset; // S'assurer que la carte est bien centrée
+//                 }
+//             }, 15); // Rafraîchissement rapide pour un effet fluide
+//         } 
 
-        // Gestion des filtres
-        filterButtons.forEach(button => {
-            button.addEventListener("click", function() {
-                filterButtons.forEach(b => b.classList.remove("active"));
-                this.classList.add("active");
-                applyFilter(this.getAttribute("data-filter"));
-            });
-        });
+//         // Gestion des filtres
+//         filterButtons.forEach(button => {
+//             button.addEventListener("click", function() {
+//                 filterButtons.forEach(b => b.classList.remove("active"));
+//                 this.classList.add("active");
+//                 applyFilter(this.getAttribute("data-filter"));
+//             });
+//         });
     
+//     // Sélection d'une carte
+//     cards.forEach(card => {
+//         card.addEventListener("click", function() {
+//             // Mettre à jour le contenu de la section principale avec les détails de la carte
+//             document.getElementById("display-title").textContent = this.getAttribute("data-title");
+//             document.getElementById("display-content").textContent = this.getAttribute("data-content");
+
+//             // Afficher le type de contenu (vidéo, image, etc.) basé sur le type
+//             const contentType = this.getAttribute("data-type"); // Ajouter data-type à chaque carte
+
+//             const mainDisplay = document.querySelector(".main-display");
+
+//             // Vider le contenu précédent
+//             mainDisplay.innerHTML = `
+//                 <h2 id="display-title">${this.getAttribute("data-title")}</h2>
+//                 <p id="display-content">${this.getAttribute("data-content")}</p>
+//             `;
+
+//             // Ajouter le contenu selon le type
+//             if (contentType === "video") {
+//                 const videoSrc = this.getAttribute("data-video-src"); // Ajouter data-video-src à chaque carte
+//                 mainDisplay.innerHTML += `<iframe width="700" height="450" src="${videoSrc}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>`;
+//             } else if (contentType === "gallery") {
+//                 // Exemple pour une galerie d'images, en supposant que tu as une liste d'images
+//                 const images = this.getAttribute("data-images").split(","); // Ajouter data-images à chaque carte
+//                 images.forEach(imgSrc => {
+//                     mainDisplay.innerHTML += `<img src="${imgSrc}" width="700px" alt="Image de la galerie" />`;
+//                 });
+//             }
+
+//             centerCard(this); // Centrer la carte sélectionnée
+//         });
+//     });
+
+//     // Activer "Tout afficher" au chargement
+//     applyFilter("all");
+// });
+
+document.addEventListener("DOMContentLoaded", function() {
+    const filterButtons = document.querySelectorAll(".filter-btn");
+    const cards = document.querySelectorAll(".card-details");
+    const cardsContainer = document.querySelector(".cards-wrapper");
+    const mediaContainer = document.getElementById("display-media"); // Récupérer la div principale
+
+    // Application du filtre
+    function applyFilter(filter) {
+        cards.forEach(card => {
+            if (filter === "all" || card.getAttribute("data-theme") === filter) {
+                card.classList.remove("hidden");
+                setTimeout(() => card.classList.add("active"), 100);
+            } else {
+                card.classList.remove("active");
+                setTimeout(() => card.classList.add("hidden"), 500);
+            }
+        });
+
+        setTimeout(() => {
+            const firstVisibleCard = document.querySelector(".card-details:not(.hidden)");
+            if (firstVisibleCard) {
+                centerCard(firstVisibleCard);
+            }
+        }, 600);
+    }
+
+    // Centrer une carte dans la vue
+    function centerCard(card) {
+        const containerWidth = cardsContainer.offsetWidth;
+        const cardOffset = card.offsetLeft - (containerWidth / 2) + (card.offsetWidth / 2);
+
+        let currentScroll = cardsContainer.scrollLeft;
+        let step = (cardOffset - currentScroll) / 20;
+
+        let animation = setInterval(() => {
+            currentScroll += step;
+            cardsContainer.scrollLeft = currentScroll;
+
+            if (Math.abs(currentScroll - cardOffset) < Math.abs(step)) {
+                clearInterval(animation);
+                cardsContainer.scrollLeft = cardOffset;
+            }
+        }, 15);
+    }
+
+    // Gestion des filtres
+    filterButtons.forEach(button => {
+        button.addEventListener("click", function() {
+            filterButtons.forEach(b => b.classList.remove("active"));
+            this.classList.add("active");
+            applyFilter(this.getAttribute("data-filter"));
+        });
+    });
+
     // Sélection d'une carte
     cards.forEach(card => {
         card.addEventListener("click", function() {
-            // Mettre à jour le contenu de la section principale avec les détails de la carte
+            // Mettre à jour le titre et le texte
             document.getElementById("display-title").textContent = this.getAttribute("data-title");
             document.getElementById("display-content").textContent = this.getAttribute("data-content");
 
-            // Afficher le type de contenu (vidéo, image, etc.) basé sur le type
-            const contentType = this.getAttribute("data-type"); // Ajouter data-type à chaque carte
+            // 🛠️ Correction principale : mise à jour correcte de `display-media`
+            mediaContainer.innerHTML = ""; // Nettoyer avant d'ajouter du nouveau contenu
 
-            const mainDisplay = document.querySelector(".main-display");
+            // Si c'est une vidéo
+            if (this.hasAttribute("data-video-src")) {
+                const videoSrc = this.getAttribute("data-video-src");
+                const iframe = document.createElement("iframe");
+                iframe.width = "700";
+                iframe.height = "450";
+                iframe.src = videoSrc;
+                iframe.setAttribute("title", "Vidéo");
+                iframe.setAttribute("frameborder", "0");
+                iframe.setAttribute("allow", "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture");
+                iframe.setAttribute("allowfullscreen", true);
+                
+                mediaContainer.appendChild(iframe);
+            }
 
-            // Vider le contenu précédent
-            mainDisplay.innerHTML = `
-                <h2 id="display-title">${this.getAttribute("data-title")}</h2>
-                <p id="display-content">${this.getAttribute("data-content")}</p>
-            `;
-
-            // Ajouter le contenu selon le type
-            if (contentType === "video") {
-                const videoSrc = this.getAttribute("data-video-src"); // Ajouter data-video-src à chaque carte
-                mainDisplay.innerHTML += `<iframe width="700" height="450" src="${videoSrc}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>`;
-            } else if (contentType === "gallery") {
-                // Exemple pour une galerie d'images, en supposant que tu as une liste d'images
-                const images = this.getAttribute("data-images").split(","); // Ajouter data-images à chaque carte
+            // Si c'est une galerie d’images
+            if (this.hasAttribute("data-images")) {
+                const images = this.getAttribute("data-images").split(",");
                 images.forEach(imgSrc => {
-                    mainDisplay.innerHTML += `<img src="${imgSrc}" width="700px" alt="Image de la galerie" />`;
+                    const img = document.createElement("img");
+                    img.src = imgSrc;
+                    img.width = 700;
+                    img.classList.add("img-fluid");
+                    img.alt = "Image du projet";
+
+                    mediaContainer.appendChild(img);
                 });
             }
 
-            centerCard(this); // Centrer la carte sélectionnée
+            centerCard(this);
         });
     });
 
     // Activer "Tout afficher" au chargement
     applyFilter("all");
 });
+
+
  </script>
  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
  <script src="assets/js/main.js"></script>
