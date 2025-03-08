@@ -434,7 +434,6 @@
 
                     <div class="gallery-modal" id="galleryModalInktober" style="display: none;">
                         <div class="gallery-modal-content">
-                            <span class="close" onclick="closeGallery()">&times;</span>
                             <div class="gallery">
                                 <img src="assets/img/portfolio/inktober23/inktober-ensemble.png" width="500px" alt="Mosaïque des 31 dessins">
                                 <img src="assets/img/portfolio/inktober23/inktober_liste.jpg" width="500px" alt="Liste des thèmes de l'inktober">
@@ -456,7 +455,6 @@
 
                     <div class="gallery-modal" id="galleryModalRollABall" >
                         <div class="gallery-modal-content">
-                            <span class="close" onclick="closeGallery()">&times;</span>
                             <div class="gallery">
                                 <iframe width="650" height="450" src="https://www.youtube.com/embed/DpQMb_K9xPg?si=2kmA0Ua2Co6qft2T" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
                                 <iframe width="650" height="450" src="https://www.youtube.com/embed/hMdnVAD2cpU?si=CYxq9dFlOI1Zdunp" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
@@ -585,7 +583,6 @@
                     <!-- Galerie qui s'affiche dans un modal après clic -->
                     <div class="gallery-modal" id="galleryModalRouenFigma" style="display: none;">
                         <div class="gallery-modal-content">
-                            <span class="close" onclick="closeGallery()">&times;</span>
                             <div class="gallery">
                                 <img src="assets/img/portfolio/rouen-figma1.png" class="img-fluid" alt="Première page du 'nouveau' site de Rouen.">
                                 <img src="assets/img/portfolio/rouen-figma2.png" class="img-fluid" alt="Deuxième page du 'nouveau' site de Rouen.">
@@ -616,7 +613,6 @@
                     <!-- Galerie modale (affichage sur clic) -->
                     <div class="gallery-modal" id="galleryModalppp" style="display: none;">
                         <div class="gallery-modal-content">
-                            <span class="close" onclick="closeGallery()">&times;</span>
                             <div class="gallery">
                                 <a href="assets/download/ppp_pdf.pdf" target="_blank" style="text-decoration:underline">Document final</a>
                             </div>
@@ -685,7 +681,6 @@
                     <!-- Galerie modale pour vidéo et image -->
                     <div class="gallery-modal" id="galleryModalOr3o" style="display: none;">
                         <div class="gallery-modal-content">
-                            <span class="close" onclick="closeGallery()">&times;</span>
                             <div class="gallery">
                                 <iframe width="700" height="450" 
                                         src="https://www.youtube.com/embed/TRG72vlBCUY?si=Pi9OIcMUfpbNWWOV" 
@@ -761,7 +756,6 @@
                     <!-- Galerie modale -->
                     <div class="gallery-modal" id="galleryModalOmniversus" style="display: none;">
                         <div class="gallery-modal-content">
-                            <span class="close" onclick="closeGallery()">&times;</span>
                             <div class="gallery">
                                 <iframe width="700" height="450" 
                                         src="https://www.youtube.com/embed/Nc-OSfFKBGc?si=bg-Z_edX5Wa-977e" 
@@ -799,7 +793,6 @@
                     <!-- Galerie modale -->
                     <div class="gallery-modal" id="galleryModalAnimalCrossing" style="display: none;">
                         <div class="gallery-modal-content">
-                            <span class="close" onclick="closeGallery()">&times;</span>
                             <div class="gallery">
                                 <iframe width="700" height="450" 
                                         src="https://www.youtube.com/embed/Qi4d-1JzrA8?si=hdzXeUQ5PytxGTb2" 
@@ -873,7 +866,6 @@
                     <!-- Galerie modale (affichage sur clic) -->
                     <div class="gallery-modal" id="galleryModal" style="display: none;">
                         <div class="gallery-modal-content">
-                            <span class="close" onclick="closeGallery()">&times;</span>
                             <div class="gallery">
                                 <img src="assets/img/portfolio/crea_grapg_picto.gif" width="600px" alt="Gif des pictogrammes">
                                 <img src="assets/img/portfolio/crea_graph_mont_1.jpg" width="600px" alt="Montage pictogrammes sur les murs">
@@ -1051,7 +1043,6 @@
                     <!-- Galerie modale -->
                     <div class="gallery-modal" id="galleryModalMascottes" style="display: none;">
                         <div class="gallery-modal-content">
-                            <span class="close" onclick="closeGallery()">&times;</span>
                             <div class="gallery">
                                 <img src="assets/img/portfolio/parry (2).png" width="400px" alt="Mascotte Parry">
                                 <img src="assets/img/portfolio/splif.png" width="500px" alt="Mascotte Splif">
@@ -1100,7 +1091,6 @@
                     <!-- Galerie qui s'affiche dans un modal après clic -->
                     <div class="gallery-modal" id="galleryModal" style="display: none;">
                         <div class="gallery-modal-content">
-                            <span class="close" onclick="closeGallery()">&times;</span>
                             <div class="gallery">
                                 <img src="assets/img/portfolio/sae105_accueil.jpg" class="img-fluid" alt="Page d'accueil du site Suki-Burger">
                                 <img src="assets/img/portfolio/sae105_menu.jpg" class="img-fluid" alt="Page du menu Suki-Burger">
@@ -1156,6 +1146,8 @@
                 </div>                
             </div>
         </div>
+
+        <div id="display-media" class="display-media"></div>
 
     </div>
 
@@ -1264,8 +1256,27 @@ document.addEventListener("DOMContentLoaded", function() {
     applyFilter("all");
 });
 
+document.addEventListener("DOMContentLoaded", function () {
+    const cards = document.querySelectorAll(".card-details");
+    const mediaContainer = document.getElementById("display-media"); // Le conteneur global
 
- </script>
+    cards.forEach(card => {
+        card.addEventListener("click", function () {
+            const cardMedia = this.querySelector(".display-media"); // Récupère le media de la carte cliquée
+            
+            if (cardMedia) {
+                mediaContainer.innerHTML = ""; // Nettoie le conteneur global
+                const clonedMedia = cardMedia.cloneNode(true); // Clone le media
+                clonedMedia.style.display = "block"; // S'assurer qu'il est bien visible
+                mediaContainer.appendChild(clonedMedia); // L'afficher dans le conteneur global
+            }
+        });
+    });
+});
+
+
+
+    </script>
  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
  <script src="assets/js/main.js"></script>
 </body>
