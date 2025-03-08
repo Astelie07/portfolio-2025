@@ -32,6 +32,7 @@
             overflow-x: auto;
             scroll-snap-type: x mandatory;
             padding: 10px 30px; /* Ajoute un padding latéral */
+            white-space: wrap;
         }
         
         /* Conteneur des cartes */
@@ -62,12 +63,17 @@
             text-align: center;
             cursor: pointer;
         }
+
+        .card-details h4{
+            font-size: smaller;
+        }
         
         .card-details img {
             width: 100px;
-            height: 100px;
+            max-height: 100px;
             border-radius: 5px;
-            margin-bottom: 10px;
+            /*margin-bottom: 10px;*/
+            bottom: 0px;
         }
         
         /* Carte active */
@@ -264,10 +270,12 @@
                     <h4>Inktober 2024</h4>
                     <img src="assets/img/portfolio/inktober2024.png" class="img-fluid" alt="Aperçu des dessins Inktober 2024">
                     
-                    <!-- Galerie Inktober 2024 sous la carte -->
-                    <div class="gallery" style="display: none;">
-                        <img src="assets/img/portfolio/inktober23/inktober-ensemble.png" width="500px" alt="Mosaïque des 31 dessins">
-                        <img src="assets/img/portfolio/inktober23/inktober_liste.jpg" width="500px" alt="Liste des thèmes de l'inktober">
+                    <div class="display-media" style="display: none;">
+                        <!-- Galerie Inktober 2024 sous la carte -->
+                        <div class="gallery" style="display: none;">
+                            <img src="assets/img/portfolio/inktober23/inktober-ensemble.png" width="500px" alt="Mosaïque des 31 dessins">
+                            <img src="assets/img/portfolio/inktober23/inktober_liste.jpg" width="500px" alt="Liste des thèmes de l'inktober">
+                        </div>
                     </div>
                 </div>
                 
@@ -276,9 +284,13 @@
                     <img src="assets/img/portfolio/inktober-min.png" class="img-fluid" alt="Aperçu des dessins Rainbow Challenge 2024">
                     
                     <!-- Galerie Rainbow Challenge sous la carte -->
-                    <div class="gallery" style="display: none;">
+                    <div class="display-media" style="display: none;">
+
+                    <div class="gallery">
                         <img src="assets/img/portfolio/rainbow-challenge1.jpg" width="500px" alt="Mosaïque Rainbow Challenge">
                         <img src="assets/img/portfolio/rainbow-challenge2.jpg" width="500px" alt="Liste des dessins Rainbow Challenge">
+                    </div>
+
                     </div>
                 </div>
 
@@ -292,6 +304,8 @@
                     <img src="assets/img/portfolio/escape-min.png" class="img-fluid" alt="The Escape - Projet MMI3">
                     
                     <!-- Boutons interactifs pour accéder au site et trailer -->
+                    <div class="display-media" style="display: none;">
+
                     <div class="portfolio-preview">
                         <a href="https://m-u-c-k-a.github.io/backroom-game/" target="_blank" class="btn btn-primary">
                             🎮 Jouer au jeu
@@ -318,6 +332,7 @@
                         <img src="assets/img/portfolio/escape-1.jpg" width="500px" alt="Image du jeu The Escape">
                         <img src="assets/img/portfolio/escape-2.jpg" width="500px" alt="Image du jeu The Escape">
                     </div>
+                    </div>
                 </div>
                 
                 <div class="card-details ux-ui" 
@@ -328,6 +343,8 @@
                     <img src="assets/img/portfolio/altea-min.png" class="img-fluid" alt="Logo de Altea, projet hackathon">
                     
                     <!-- Informations sur le projet -->
+                    <div class="display-media" style="display: none;">
+
                     <div class="portfolio-details-info">
                         <ul>
                             <li><strong>Catégorie</strong>: UX/UI</li>
@@ -359,6 +376,8 @@
                             <a href="assets/download/Altea.pdf" target="_blank" style="text-decoration:underline">cliquez ici</a>.
                         </p>
                     </div>
+
+                    </div>
                 </div>
                 
                 <div class="card-details ux-ui" 
@@ -368,6 +387,8 @@
                     <h4>Dashboard Figma</h4>
                     <img src="assets/img/portfolio/dashboard-min.png" class="img-fluid" alt="Dashboard Figma">
                     
+                    <div class="display-media" style="display: none;">
+
                     <!-- Informations sur le projet -->
                     <div class="portfolio-details-info">
                         <ul>
@@ -399,6 +420,8 @@
                         <img src="assets/img/portfolio/dashboard-1.png" width="500px" alt="Capture du Dashboard Figma">
                         <img src="assets/img/portfolio/dashboard-2.png" width="500px" alt="Exemple du tableau de bord sous Figma">
                     </div>
+
+                    </div>
                 </div>
 
                 <!-- Carte Inktober 2023 -->
@@ -407,6 +430,8 @@
                     <img src="assets/img/portfolio/inktober-min.png" class="img-fluid" alt="Aperçu des dessins Inktober 2023" onclick="openGallery('Inktober')">
                     
                     <!-- Galerie modale -->
+                    <div class="display-media" style="display: none;">
+
                     <div class="gallery-modal" id="galleryModalInktober" style="display: none;">
                         <div class="gallery-modal-content">
                             <span class="close" onclick="closeGallery()">&times;</span>
@@ -416,6 +441,7 @@
                             </div>
                         </div>
                     </div>
+                    </div>
                 </div>
                 
                 <!-- Carte Roll a Ball -->
@@ -423,10 +449,12 @@
                     <h4>Roll a ball</h4>
                     
                     <!-- Miniature de l'image affichée initialement -->
-                    <img src="assets/img/portfolio/roll-a-ball-min.png" class="img-fluid" alt="Miniature du jeu Roll a Ball" onclick="openGallery('RollABall')">
+                    <img src="assets/img/portfolio/rollaball-min.png" class="img-fluid" alt="Miniature du jeu Roll a Ball" onclick="openGallery('RollABall')">
                     
                     <!-- Galerie qui s'affiche dans un modal après clic -->
-                    <div class="gallery-modal" id="galleryModalRollABall" style="display: none;">
+                    <div class="display-media" style="display: none;">
+
+                    <div class="gallery-modal" id="galleryModalRollABall" >
                         <div class="gallery-modal-content">
                             <span class="close" onclick="closeGallery()">&times;</span>
                             <div class="gallery">
@@ -435,16 +463,19 @@
                             </div>
                         </div>
                     </div>
+                    </div>
                 </div>
                 
                 <!-- Carte Entraînement SQL - Doctolib -->
-                <div class="card-details site-web" 
-                     data-theme="site-web" 
+                <div class="card-details ux-ui" 
+                     data-theme="ux-ui" 
                      data-title="Doctolib - Entraînement SQL" 
                      data-content="Entraînement sur l'utilisation de bases de données via PHP et SQL pour un site web interactif.">
                     <h4>Entraînement SQL - Doctolib</h4>
-                    <img src="assets/img/portfolio/rollaball-min.png" class="img-fluid" alt="Doctolib Interface">
+                    <img src="assets/img/portfolio/doctolib-min.png" class="img-fluid" alt="Doctolib Interface">
                     
+                    <div class="display-media" style="display: none;">
+
                     <!-- Informations sur le projet -->
                     <div class="portfolio-details-info">
                         <ul>
@@ -466,6 +497,8 @@
                     <div class="video-presentation">
                         <iframe width="650" height="350" src="https://www.youtube.com/embed/gjH7BQIqqIs?si=UYdQuXIaXEKS0FgI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
                     </div>
+
+                    </div>
                 </div>
 
                 <!-- Carte Modélisations Blender -->
@@ -477,6 +510,8 @@
                     <h4>Modélisations Blender</h4>
                     <img src="assets/img/portfolio/scene-min.png" class="img-fluid" alt="Modélisation Blender : Décor inspiré de Sea of Thieves" onclick="openGallery('Blender')">
                     
+                    <div class="display-media" style="display: none;">
+
                     <!-- Informations sur le projet -->
                     <div class="portfolio-details-info">
                         <ul>
@@ -508,6 +543,8 @@
                         </div>
                         <div class="swiper-pagination"></div>
                     </div>
+
+                    </div>
                 </div>
                 
                 <!-- Carte FPS Unity -->
@@ -520,11 +557,15 @@
                     <h4>FPS Unity</h4>
                     <img src="assets/img/portfolio/fps-min.png" class="img-fluid" alt="Aperçu du FPS Unity">
                     
+                    <div class="display-media" style="display: none;">
+
                     <!-- Bouton pour voir la vidéo -->
                     <div class="video-preview">
                         <a href="https://www.youtube.com/embed/UCc51j6VgEw?si=jz75hu6rjgaDkRHK" target="_blank" class="btn btn-primary">
                             Voir la vidéo 🎮
                         </a>
+                    </div>
+
                     </div>
                 </div>
                 
@@ -536,9 +577,10 @@
                      data-category="Site Web / Figma" 
                      data-date="Février 2023">
                     <h4>Figma site Rouen</h4>
-                    
                     <!-- Miniature de l'image affichée initialement -->
                     <img src="assets/img/portfolio/rouen-figma-min.png" class="img-fluid" alt="Miniature du redesign du site de Rouen" onclick="openGallery('RouenFigma')">
+
+                    <div class="display-media" style="display: none;">                    
                     
                     <!-- Galerie qui s'affiche dans un modal après clic -->
                     <div class="gallery-modal" id="galleryModalRouenFigma" style="display: none;">
@@ -552,6 +594,8 @@
                             </div>
                         </div>
                     </div>
+
+                </div>
                 </div>
 
                 <!-- Projet Personnel et Professionnel -->
@@ -567,6 +611,8 @@
                     <!-- Miniature de l'affiche -->
                     <img src="assets/img/portfolio/ppp_afiche_m.png" class="img-fluid" alt="Affiche projet personnel et professionnel" onclick="openGallery('ppp')">
                     
+                    <div class="display-media" style="display: none;">
+
                     <!-- Galerie modale (affichage sur clic) -->
                     <div class="gallery-modal" id="galleryModalppp" style="display: none;">
                         <div class="gallery-modal-content">
@@ -575,6 +621,8 @@
                                 <a href="assets/download/ppp_pdf.pdf" target="_blank" style="text-decoration:underline">Document final</a>
                             </div>
                         </div>
+                    </div>
+
                     </div>
                 </div>
                 
@@ -586,11 +634,12 @@
                      data-date="Janvier 2023" 
                      data-software="Unity">
                     
-                    <h4>Premier essai 2D sur Unity</h4>
-                    
+                    <h4>Premier essai 2D sur Unity</h4>                    
                     <!-- Image principale -->
                     <img src="assets/img/portfolio/2dtest-min.png" class="img-fluid" alt="Premier essai de jeu 2D avec Unity montrant un petit monstre et des objets à collecter">
                     
+                    <div class="display-media" style="display: none;">
+
                     <!-- Description du projet -->
                     <div class="project-description">
                         <p>
@@ -616,6 +665,8 @@
                         </div>
                         <div class="swiper-pagination"></div>
                     </div>
+
+                    </div>
                 </div>
                 
                 <!-- Site - Figma Or3o -->
@@ -628,6 +679,8 @@
                     
                     <h4>Site - Figma Or3o</h4>
                     <img src="assets/img/portfolio/or3o.png" class="img-fluid" alt="Aperçu du Figma Or3o" onclick="openGallery('Or3o')">
+
+                    <div class="display-media" style="display: none;">
                     
                     <!-- Galerie modale pour vidéo et image -->
                     <div class="gallery-modal" id="galleryModalOr3o" style="display: none;">
@@ -645,6 +698,8 @@
                             <a href="assets/download/Site Or3o.pdf" target="_blank" style="text-decoration:underline">Voir le Figma en PDF</a>
                         </div>
                     </div>
+
+                    </div>
                 </div>
 
                 <!-- Pictogrammes MMI -->
@@ -655,6 +710,8 @@
                     
                     <h4>Pictogrammes MMI</h4>
                     <img src="assets/img/portfolio/3d_rendu2_m.png" class="img-fluid" alt="Pictogrammes 3D MMI" onclick="openGallery('Pictogrammes')">
+
+                    <div class="display-media" style="display: none;">
                     
                     <!-- Informations sur le projet -->
                     <div class="portfolio-details-info">
@@ -684,6 +741,8 @@
                         </div>
                         <div class="swiper-pagination"></div>
                     </div>
+
+                    </div>
                 </div>
                 
                 <!-- Omniversus -->
@@ -697,6 +756,8 @@
                     <h4>Omniversus</h4>
                     <img src="assets/img/portfolio/omniversus.png" class="img-fluid" alt="Aperçu du projet Omniversus" onclick="openGallery('Omniversus')">
                     
+                    <div class="display-media" style="display: none;">
+
                     <!-- Galerie modale -->
                     <div class="gallery-modal" id="galleryModalOmniversus" style="display: none;">
                         <div class="gallery-modal-content">
@@ -712,6 +773,7 @@
                             </div>
                         </div>
                     </div>
+                    </div>
                 </div>
                 
                 <!-- Animal Crossing et la pandémie -->
@@ -719,6 +781,8 @@
                     <h4>Animal Crossing et la pandémie</h4>
                     <img src="assets/img/portfolio/animal_crossing.png" class="img-fluid" alt="Affiche du reportage sur Animal Crossing et la pandémie" onclick="openGallery('AnimalCrossing')">
                     
+                    <div class="display-media" style="display: none;">
+
                     <!-- Informations sur le projet -->
                     <div class="portfolio-details-info">
                         <ul>
@@ -746,21 +810,23 @@
                             </div>
                         </div>
                     </div>
+                    </div>
                 </div>
 
-                
-                <div class="card-details site-web" 
-                     data-theme="site-web" 
+                <!-- Tableau de bord covid -->
+                <div class="card-details ux-ui" 
+                     data-theme="ux-ui" 
                      data-title="Tableau de bord" 
                      data-content="Création d'un tableau de bord interactif pour afficher les graphiques concernant la situation de la pandémie dans la Drôme, avec interaction à une base de données. Ce projet implique l'utilisation d'outils graphiques et de données dynamiques." 
                      data-date="Décembre 2022" 
                      data-category="Site Web">
                     
                     <h4>Tableau de bord</h4>
-                    
                     <!-- Image principale -->
                     <img src="assets/img/portfolio/site_303_min.jpg" class="img-fluid" alt="Tableau de bord interactif montrant la situation de la pandémie avec des graphiques dynamiques">
                     
+                    <div class="display-media" style="display: none;">
+
                     <!-- Description du projet -->
                     <div class="project-description">
                         <p>
@@ -789,9 +855,10 @@
                         </div>
                         <div class="swiper-pagination"></div>
                     </div>
+
+                    </div>
                 </div>
 
-                
                 <div class="card-details graphisme" 
                      data-theme="graphisme" 
                      data-title="Pictogrammes représentant des matières MMI" 
@@ -801,6 +868,8 @@
                     <h4>Pictogrammes MMI</h4>
                     <img src="assets/img/portfolio/crea_graph_affiche_m.jpg" class="img-fluid" alt="Affiche avec pictogrammes MMI">
                     
+                    <div class="display-media" style="display: none;">
+
                     <!-- Galerie modale (affichage sur clic) -->
                     <div class="gallery-modal" id="galleryModal" style="display: none;">
                         <div class="gallery-modal-content">
@@ -814,6 +883,7 @@
                             <a href="assets/download/crea_graph_démarche.pdf" target="_blank" style="text-decoration:underline">Démarche artistique</a>
                         </div>
                     </div>
+                    </div>
                 </div>
 
                 
@@ -825,6 +895,8 @@
                     <h4>Crescendo</h4>
                     <img src="assets/img/portfolio/crescendo.png" class="img-fluid" alt="Affiche Crescendo">
                     
+                    <div class="display-media" style="display: none;">
+
                     <!-- Informations sur le projet -->
                     <div class="portfolio-details-info">
                         <ul>
@@ -855,6 +927,7 @@
                                 allowfullscreen>
                         </iframe>
                     </div>
+                    </div>
                 </div>
                 
                 <div class="card-details dessin" 
@@ -867,6 +940,8 @@
                     <h4>Emotes pour OpacityPST</h4>
                     <img src="assets/img/portfolio/emote_m.png" class="img-fluid" alt="Emote OpacityPST">
                     
+                    <div class="display-media" style="display: none;">
+
                     <!-- Boutons interactifs pour voir la chaîne Twitch et les émotes -->
                     <div class="portfolio-preview">
                         <a href="https://www.twitch.tv/opacitypst" target="_blank" class="btn btn-primary">
@@ -908,6 +983,7 @@
                             <div class="swiper-pagination"></div>
                         </div>
                     </div>
+                    </div>
                 </div>
 
                 <div class="card-details dessin" data-theme="dessin" data-title="Carte 25" data-content="Voici le contenu spécifique de la carte 25.">
@@ -915,6 +991,8 @@
                     <img src="assets/img/portfolio/dessin_3_1.jpg" class="img-fluid" alt="">
                 </div>
                 
+                <div class="display-media" style="display: none;">
+
                 <div class="card-details graphisme" 
                      data-theme="graphisme" 
                      data-title="E.story & Chai à vin" 
@@ -935,6 +1013,7 @@
                         </a>
                     </div>
                 </div>
+                </div>
                 
                 <div class="card-details graphisme" 
                      data-theme="graphisme" 
@@ -946,11 +1025,14 @@
                     <h4>MMI Foundry</h4>
                     <img src="assets/img/portfolio/logo_moyen_min.jpg" class="img-fluid" alt="Logo MMI Foundry">
                     
+                    <div class="display-media" style="display: none;">
+
                     <!-- Bouton pour voir plus d'images -->
                     <div class="image-preview">
                         <a href="assets/img/portfolio/affiche_foundry.jpg" target="_blank" class="btn btn-primary">
                             Voir l'affiche 🎨
                         </a>
+                    </div>
                     </div>
                 </div>
                 
@@ -964,6 +1046,8 @@
                     <h4>Mascottes</h4>
                     <img src="assets/img/portfolio/parry_min.png" class="img-fluid" alt="Aperçu de la mascotte Patty">
                     
+                    <div class="display-media" style="display: none;">
+
                     <!-- Galerie modale -->
                     <div class="gallery-modal" id="galleryModalMascottes" style="display: none;">
                         <div class="gallery-modal-content">
@@ -973,6 +1057,7 @@
                                 <img src="assets/img/portfolio/splif.png" width="500px" alt="Mascotte Splif">
                             </div>
                         </div>
+                    </div>
                     </div>
                 </div>
 
@@ -986,16 +1071,19 @@
                     <h4>Film noir</h4>
                     <img src="assets/img/portfolio/film_noir.png" class="img-fluid" alt="Affiche du court-métrage Film Noir">
                     
+                    <div class="display-media" style="display: none;">
+
                     <!-- Bouton pour voir la vidéo -->
                     <div class="video-preview">
                         <a href="https://www.youtube.com/watch?v=Y6pFoDfNRxs" target="_blank" class="btn btn-primary">
                             🎬 Regarder le court-métrage
                         </a>
                     </div>
+                    </div>
                 </div>
                 
-                <div class="card-details site-web" 
-                     data-theme="site-web" 
+                <div class="card-details ux-ui" 
+                     data-theme="ux-ui" 
                      data-title="Food truck Suki-Burger" 
                      data-content="Créer un food-truck ainsi qu'un site internet pour le représenter. Il s'agit de mon premier site internet. Le site n'étant pas en ligne, vous voyez des screenshots des différentes pages du site. Dans l'ordre : l'accueil, le menu, 'où sommes-nous', 'à propos' et les partenaires. À noter : la page 'à propos' est aussi disponible en anglais. Aussi, nous avons créé un menu en anglais dans le style visuel du food-truck." 
                      data-date="Novembre - Décembre 2021" 
@@ -1007,6 +1095,8 @@
                     <!-- Miniature affichée initialement -->
                     <img src="assets/img/portfolio/sae105_accueil.jpg" class="img-fluid" alt="Page d'accueil du site Suki-Burger" onclick="openGallery()">
                     
+                    <div class="display-media" style="display: none;">
+
                     <!-- Galerie qui s'affiche dans un modal après clic -->
                     <div class="gallery-modal" id="galleryModal" style="display: none;">
                         <div class="gallery-modal-content">
@@ -1022,6 +1112,7 @@
                             </div>
                         </div>
                     </div>
+                    </div>
                 </div>
                 
                 <div class="card-details graphisme" 
@@ -1032,6 +1123,8 @@
                     <h4>Affiche promotion MMI</h4>
                     <img src="assets/img/portfolio/affiche_min.jpg" class="img-fluid" alt="Affiche promotion MMI">
                     
+                    <div class="display-media" style="display: none;">
+
                     <!-- Informations sur le projet -->
                     <div class="portfolio-details-info">
                         <ul>
@@ -1059,6 +1152,7 @@
                         </div>
                         <div class="swiper-pagination"></div>
                     </div>
+                    </div>
                 </div>                
             </div>
         </div>
@@ -1068,114 +1162,6 @@
     <div><a href="index.html">Retour</a></div>
 
     <script>
-//     // Fonction pour ouvrir la galerie modale spécifique
-//     function openGallery(project) {
-//         var modalId = 'galleryModal' + project;
-//         document.getElementById(modalId).style.display = "block";
-//     }
-    
-//     // Fonction pour fermer toutes les galeries modales
-//     function closeGallery() {
-//         var modals = document.querySelectorAll('.gallery-modal');
-//         modals.forEach(function(modal) {
-//             modal.style.display = "none";
-//         });
-//     }
-
-
-//     document.addEventListener("DOMContentLoaded", function() {
-//         const filterButtons = document.querySelectorAll(".filter-btn");
-//         const cards = document.querySelectorAll(".card-details");
-//         const cardsContainer = document.querySelector(".cards-wrapper");
-    
-//         // Application du filtre
-//         function applyFilter(filter) {
-//             cards.forEach(card => {
-//                 if (filter === "all" || card.getAttribute("data-theme") === filter) {
-//                     card.classList.remove("hidden");
-//                     setTimeout(() => card.classList.add("active"), 100);
-//                 } else {
-//                     card.classList.remove("active");
-//                     setTimeout(() => card.classList.add("hidden"), 500);
-//                 }
-//             });
-    
-//             // Centrer la première carte visible après filtrage
-//             setTimeout(() => {
-//                 const firstVisibleCard = document.querySelector(".card-details:not(.hidden)");
-//                 if (firstVisibleCard) {
-//                     centerCard(firstVisibleCard);
-//                 }
-//             }, 600);
-//         }
-    
-//         // Centrer une carte dans la vue
-//         function centerCard(card) {
-//             const containerWidth = cardsContainer.offsetWidth;
-//             const cardOffset = card.offsetLeft - (containerWidth / 2) + (card.offsetWidth / 2);
-            
-//             // Créer un effet de défilement progressif avec plusieurs étapes
-//             let currentScroll = cardsContainer.scrollLeft;
-//             let step = (cardOffset - currentScroll) / 20; // Diviser le déplacement en 20 étapes
-          
-//             let animation = setInterval(() => {
-//                 currentScroll += step;
-//                 cardsContainer.scrollLeft = currentScroll;
-        
-//                 // Arrêter l'animation si on est proche de la cible
-//                 if (Math.abs(currentScroll - cardOffset) < Math.abs(step)) {
-//                     clearInterval(animation);
-//                     cardsContainer.scrollLeft = cardOffset; // S'assurer que la carte est bien centrée
-//                 }
-//             }, 15); // Rafraîchissement rapide pour un effet fluide
-//         } 
-
-//         // Gestion des filtres
-//         filterButtons.forEach(button => {
-//             button.addEventListener("click", function() {
-//                 filterButtons.forEach(b => b.classList.remove("active"));
-//                 this.classList.add("active");
-//                 applyFilter(this.getAttribute("data-filter"));
-//             });
-//         });
-    
-//     // Sélection d'une carte
-//     cards.forEach(card => {
-//         card.addEventListener("click", function() {
-//             // Mettre à jour le contenu de la section principale avec les détails de la carte
-//             document.getElementById("display-title").textContent = this.getAttribute("data-title");
-//             document.getElementById("display-content").textContent = this.getAttribute("data-content");
-
-//             // Afficher le type de contenu (vidéo, image, etc.) basé sur le type
-//             const contentType = this.getAttribute("data-type"); // Ajouter data-type à chaque carte
-
-//             const mainDisplay = document.querySelector(".main-display");
-
-//             // Vider le contenu précédent
-//             mainDisplay.innerHTML = `
-//                 <h2 id="display-title">${this.getAttribute("data-title")}</h2>
-//                 <p id="display-content">${this.getAttribute("data-content")}</p>
-//             `;
-
-//             // Ajouter le contenu selon le type
-//             if (contentType === "video") {
-//                 const videoSrc = this.getAttribute("data-video-src"); // Ajouter data-video-src à chaque carte
-//                 mainDisplay.innerHTML += `<iframe width="700" height="450" src="${videoSrc}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>`;
-//             } else if (contentType === "gallery") {
-//                 // Exemple pour une galerie d'images, en supposant que tu as une liste d'images
-//                 const images = this.getAttribute("data-images").split(","); // Ajouter data-images à chaque carte
-//                 images.forEach(imgSrc => {
-//                     mainDisplay.innerHTML += `<img src="${imgSrc}" width="700px" alt="Image de la galerie" />`;
-//                 });
-//             }
-
-//             centerCard(this); // Centrer la carte sélectionnée
-//         });
-//     });
-
-//     // Activer "Tout afficher" au chargement
-//     applyFilter("all");
-// });
 
 document.addEventListener("DOMContentLoaded", function() {
     const filterButtons = document.querySelectorAll(".filter-btn");
@@ -1237,8 +1223,8 @@ document.addEventListener("DOMContentLoaded", function() {
             // Mettre à jour le titre et le texte
             document.getElementById("display-title").textContent = this.getAttribute("data-title");
             document.getElementById("display-content").textContent = this.getAttribute("data-content");
+            document.getElementById("display-media").textContent = this.getAttribute("display-media");
 
-            // 🛠️ Correction principale : mise à jour correcte de `display-media`
             mediaContainer.innerHTML = ""; // Nettoyer avant d'ajouter du nouveau contenu
 
             // Si c'est une vidéo
