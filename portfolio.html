@@ -30,35 +30,7 @@
 
     <!-- Conteneur principal -->
     <div class="container">
-        <!-- Grande div qui change en fonction de la carte sélectionnée -->
-        <div class="main-display">
-            <h2 id="display-title">Sélectionne une carte</h2>
-            <p id="display-content">Clique sur une carte pour afficher son contenu ici.</p>
-            <div id="display-media"></div> <!-- Zone pour afficher la vidéo, images, etc. -->
-        </div>
-
-        <!-- ======= Portfolio Details ======= -->
-        <div id="portfolio-details" class="portfolio-details" style="display: none;">
-          <div class="container">
-            <div class="row">
-              <div class="col-lg-8">
-                <h2 id="portfolio-title">Titre du projet</h2>
-        
-                <!-- Zone de contenu, peut être un iframe, une vidéo, ou autre -->
-                <div id="portfolio-content">
-                  <!-- Ce contenu sera mis à jour dynamiquement -->
-                </div>
-              </div>
-        
-              <div class="col-lg-4 portfolio-info">
-                <h3>Informations</h3>
-                <ul id="portfolio-info-list">
-                  <!-- Les informations de chaque carte seront insérées ici -->
-                </ul>
-              </div>
-            </div>
-          </div>
-        </div><!-- End Portfolio Details -->
+       
 
 
         <!-- Cartes de sélection -->
@@ -951,9 +923,42 @@
             </div>
         </div>
 
-        <div id="display-media" class="display-media"></div>
+        
+
+         <!-- Grande div qui change en fonction de la carte sélectionnée -->
+         <div class="main-display">
+            <h2 id="display-title">Sélectionne une carte</h2>
+            <p id="display-content">Clique sur une carte pour afficher son contenu ici.</p>
+            <div id="display-media"></div> <!-- Zone pour afficher la vidéo, images, etc. -->
+        </div>
+
+        <!-- ======= Portfolio Details ======= -->
+        <div id="portfolio-details" class="portfolio-details" style="display: none;">
+          <div class="container">
+            <div class="row">
+              <div class="col-lg-8">
+                <h2 id="portfolio-title">Titre du projet</h2>
+        
+                <!-- Zone de contenu, peut être un iframe, une vidéo, ou autre -->
+                <div id="portfolio-content">
+                  <!-- Ce contenu sera mis à jour dynamiquement -->
+                </div>
+              </div>
+        
+              <div class="col-lg-4 portfolio-info">
+                <h3>Informations</h3>
+                <ul id="portfolio-info-list">
+                  <!-- Les informations de chaque carte seront insérées ici -->
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div id="display-media" class="display-media"></div>
+        </div><!-- End Portfolio Details -->
 
     </div>
+
+    
 
     <div><a href="index.html">Retour</a></div>
 </div>
@@ -969,6 +974,25 @@
         linkElement.href = style;
         document.head.appendChild(linkElement);
     }
+
+    document.addEventListener("DOMContentLoaded", function() {
+    
+        const loader = document.getElementById("loader_div");
+        const content = document.getElementById("content");
+
+        // Masquer le loader avec une transition en douceur
+        loader.style.opacity = "1";
+        loader.style.transition = "opacity 0.5s ease";
+        
+        // Masquer le loader après la transition
+        setTimeout(() => {
+        loader.style.opacity = "0";
+        setTimeout(() => {
+            loader.style.display = "none";
+            content.style.display = "block";
+        }, 500); // Transition du loader
+        }, 500); // Délai de 0.5s pour commencer la transition du loader
+    });
 
     document.addEventListener("DOMContentLoaded", function() {
         const filterButtons = document.querySelectorAll(".filter-btn");
@@ -1091,6 +1115,5 @@
 
     </script>
  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
- <script src="assets/js/main.js"></script>
 </body>
 </html>
