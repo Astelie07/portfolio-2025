@@ -5,213 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link id="theme" rel="stylesheet" type="text/css" href="assets/css/style.css" />
     <title>Portfolio | Details</title>
-    <style>
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 20px;
-        }
-        
-        /* Grande div qui change en fonction de la carte sélectionnée */
-        .main-display {
-            background-color: #FFA726; /* Orange clair */
-            color: white;
-            text-align: center;
-            padding: 40px;
-            border-radius: 15px;
-            width: 80%;
-            max-width: 900px;
-            margin: 20px auto; /* Centrage horizontal */
-            box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
-        }
-        
-        
-        /* Conteneur des cartes avec scroll horizontal */
-        .cards-wrapper {
-            display: flex;
-            overflow-x: auto;
-            scroll-snap-type: x mandatory;
-            padding: 10px 30px; /* Ajoute un padding latéral */
-            white-space: wrap;
-        }
-        
-        /* Conteneur des cartes */
-        .cards-container {
-            overflow: visible; 
-            position: relative; 
-            display: flex;
-            gap: 15px;
-            color:white
-        }
-        
-        /* Cartes */
-        .card-details {
-            width: 100px;
-            height: 150px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            background-color: #f0f0f0;
-            border-radius: 8px;
-            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
-            opacity: 0;
-            transition: opacity 0.5s ease-in-out, transform 0.3s ease-in-out;
-            transform: translateY(10px);
-            scroll-snap-align: center;
-            padding: 10px;
-            text-align: center;
-            cursor: pointer;
-        }
-
-        .card-details h4{
-            font-size: smaller;
-        }
-        
-        .card-details img {
-            width: 100px;
-            max-height: 100px;
-            border-radius: 5px;
-            /*margin-bottom: 10px;*/
-            bottom: 0px;
-        }
-        
-        /* Carte active */
-        .card-details.active {
-            opacity: 1;
-            transform: translateY(0);
-        }
-        
-        .card {
-            transition: transform 0.3s ease, z-index 0.3s ease;
-            z-index: 1;
-            position: relative; 
-        }
-        
-        /* Filtre des thèmes */
-        .filters {
-            display: flex;
-            justify-content: center;
-            gap: 10px;
-            margin-bottom: 20px;
-        }
-                
-        .filter-btn {
-            color: #63afffbe;
-        }
-
-        .filter-btn:first-of-type {
-            color: #002e5f;
-        }
-
-        .filter-btn:first-of-type:active {
-            color: white;
-        }
-        
-        /* Masquer les cartes non visibles */
-        .hidden {
-            display: none !important;
-        }
-        
-        /* Style de la barre de défilement horizontal */
-        .cards-wrapper {
-            display: flex;
-            overflow-x: auto;
-            scroll-snap-type: x mandatory;
-            padding: 10px 30px;
-            -webkit-overflow-scrolling: touch;
-        }
-        
-        .cards-wrapper::-webkit-scrollbar {
-            height: 14px; 
-        }
-        
-        /* Piste de la barre de défilement */
-        .cards-wrapper::-webkit-scrollbar-track {
-            background-color: #7bdbfd; 
-            border-radius: 20px; 
-            box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.1); 
-        }
-        
-        /* La barre de défilement */
-        .cards-wrapper::-webkit-scrollbar-thumb {
-            background-color: #ffa200;
-            border-radius: 20px; 
-            border: 4px solid #ffffff; 
-        }
-        
-        /* Au survol de la barre de défilement */
-        .cards-wrapper::-webkit-scrollbar-thumb:hover {
-            background-color: #ffcc00; 
-        }
-        
-        /* Animation au survol */
-        .card-details:hover {
-            transform: translateY(-10px) scale(1.05); 
-            transition: transform 0.3s ease-out, box-shadow 0.3s ease-out; /* Transition fluide */
-        }
-        
-        /* Animation au clic */
-        .card-details:active {
-            transform: scale(1.1); 
-            transition: transform 0.1s ease-in, box-shadow 0.1s ease-in;
-        }
-        
-        /* Conteneur des détails de la carte (section dynamique) */
-        #portfolio-details {
-            margin-top: 20px;
-            padding: 40px;
-            background-color: #f7f7f7;
-            border-radius: 10px;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-        }
-        
-        /* Titre des détails */
-        .portfolio-details .portfolio-title {
-            font-size: 24px;
-            font-weight: bold;
-            margin-bottom: 20px;
-        }
-        
-        /* Contenu vidéo ou galerie */
-        .portfolio-details iframe,
-        .portfolio-details img {
-            max-width: 100%; /* Assure que la vidéo/image est responsive */
-            border: none;
-            border-radius: 8px;
-        }
-        
-        /* Descriptions et informations sur le projet */
-        .portfolio-info {
-            padding: 20px;
-            background-color: #ffffff;
-            border-radius: 8px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-        }
-        
-        .portfolio-info h3 {
-            font-size: 22px;
-            margin-bottom: 15px;
-        }
-        
-        .portfolio-info ul {
-            list-style-type: none;
-            padding: 0;
-        }
-        
-        .portfolio-info ul li {
-            margin: 10px 0;
-        }
-        
-        .portfolio-info ul li strong {
-            font-weight: bold;
-        }
-
-        
-
-    </style>
 </head>
 <body>
+    
+    <!-- Loader -->
+    <div id="loader_div">
+        <img src="assets/img/cat.gif" alt="petit gif dun chat qui dort" style="width: 20%;" id="catgif"/>
+        <span class="loader">Chargement...</span>
+        <div class="cat_paw"></div>
+    </div>
+
+<div id="content">
     <!-- Barre latérale -->
     <div class="sidebar">
         <h2>Filtres</h2>
@@ -1152,129 +956,138 @@
     </div>
 
     <div><a href="index.html">Retour</a></div>
+</div>
 
     <script>
 
-document.addEventListener("DOMContentLoaded", function() {
-    const filterButtons = document.querySelectorAll(".filter-btn");
-    const cards = document.querySelectorAll(".card-details");
-    const cardsContainer = document.querySelector(".cards-wrapper");
-    const mediaContainer = document.getElementById("display-media"); // Récupérer la div principale
+    const urlParams = new URLSearchParams(window.location.search);
+    const style = urlParams.get("style");
 
-    // Application du filtre
-    function applyFilter(filter) {
+    if (style) {
+        let linkElement = document.createElement("link");
+        linkElement.rel = "stylesheet";
+        linkElement.href = style;
+        document.head.appendChild(linkElement);
+    }
+
+    document.addEventListener("DOMContentLoaded", function() {
+        const filterButtons = document.querySelectorAll(".filter-btn");
+        const cards = document.querySelectorAll(".card-details");
+        const cardsContainer = document.querySelector(".cards-wrapper");
+        const mediaContainer = document.getElementById("display-media"); // Récupérer la div principale
+
+        // Application du filtre
+        function applyFilter(filter) {
+            cards.forEach(card => {
+                if (filter === "all" || card.getAttribute("data-theme") === filter) {
+                    card.classList.remove("hidden");
+                    setTimeout(() => card.classList.add("active"), 100);
+                } else {
+                    card.classList.remove("active");
+                    setTimeout(() => card.classList.add("hidden"), 500);
+                }
+            });
+
+            setTimeout(() => {
+                const firstVisibleCard = document.querySelector(".card-details:not(.hidden)");
+                if (firstVisibleCard) {
+                    centerCard(firstVisibleCard);
+                }
+            }, 600);
+        }
+
+        // Centrer une carte dans la vue
+        function centerCard(card) {
+            const containerWidth = cardsContainer.offsetWidth;
+            const cardOffset = card.offsetLeft - (containerWidth / 2) + (card.offsetWidth / 2);
+
+            let currentScroll = cardsContainer.scrollLeft;
+            let step = (cardOffset - currentScroll) / 20;
+
+            let animation = setInterval(() => {
+                currentScroll += step;
+                cardsContainer.scrollLeft = currentScroll;
+
+                if (Math.abs(currentScroll - cardOffset) < Math.abs(step)) {
+                    clearInterval(animation);
+                    cardsContainer.scrollLeft = cardOffset;
+                }
+            }, 15);
+        }
+
+        // Gestion des filtres
+        filterButtons.forEach(button => {
+            button.addEventListener("click", function() {
+                filterButtons.forEach(b => b.classList.remove("active"));
+                this.classList.add("active");
+                applyFilter(this.getAttribute("data-filter"));
+            });
+        });
+
+        // Sélection d'une carte
         cards.forEach(card => {
-            if (filter === "all" || card.getAttribute("data-theme") === filter) {
-                card.classList.remove("hidden");
-                setTimeout(() => card.classList.add("active"), 100);
-            } else {
-                card.classList.remove("active");
-                setTimeout(() => card.classList.add("hidden"), 500);
-            }
+            card.addEventListener("click", function() {
+                // Mettre à jour le titre et le texte
+                document.getElementById("display-title").textContent = this.getAttribute("data-title");
+                document.getElementById("display-content").textContent = this.getAttribute("data-content");
+                document.getElementById("display-media").textContent = this.getAttribute("display-media");
+
+                mediaContainer.innerHTML = ""; // Nettoyer avant d'ajouter du nouveau contenu
+
+                // Si c'est une vidéo
+                if (this.hasAttribute("data-video-src")) {
+                    const videoSrc = this.getAttribute("data-video-src");
+                    const iframe = document.createElement("iframe");
+                    iframe.width = "700";
+                    iframe.height = "450";
+                    iframe.src = videoSrc;
+                    iframe.setAttribute("title", "Vidéo");
+                    iframe.setAttribute("frameborder", "0");
+                    iframe.setAttribute("allow", "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture");
+                    iframe.setAttribute("allowfullscreen", true);
+                    
+                    mediaContainer.appendChild(iframe);
+                }
+
+                // Si c'est une galerie d’images
+                if (this.hasAttribute("data-images")) {
+                    const images = this.getAttribute("data-images").split(",");
+                    images.forEach(imgSrc => {
+                        const img = document.createElement("img");
+                        img.src = imgSrc;
+                        img.width = 700;
+                        img.classList.add("img-fluid");
+                        img.alt = "Image du projet";
+
+                        mediaContainer.appendChild(img);
+                    });
+                }
+
+                centerCard(this);
+            });
         });
 
-        setTimeout(() => {
-            const firstVisibleCard = document.querySelector(".card-details:not(.hidden)");
-            if (firstVisibleCard) {
-                centerCard(firstVisibleCard);
-            }
-        }, 600);
-    }
-
-    // Centrer une carte dans la vue
-    function centerCard(card) {
-        const containerWidth = cardsContainer.offsetWidth;
-        const cardOffset = card.offsetLeft - (containerWidth / 2) + (card.offsetWidth / 2);
-
-        let currentScroll = cardsContainer.scrollLeft;
-        let step = (cardOffset - currentScroll) / 20;
-
-        let animation = setInterval(() => {
-            currentScroll += step;
-            cardsContainer.scrollLeft = currentScroll;
-
-            if (Math.abs(currentScroll - cardOffset) < Math.abs(step)) {
-                clearInterval(animation);
-                cardsContainer.scrollLeft = cardOffset;
-            }
-        }, 15);
-    }
-
-    // Gestion des filtres
-    filterButtons.forEach(button => {
-        button.addEventListener("click", function() {
-            filterButtons.forEach(b => b.classList.remove("active"));
-            this.classList.add("active");
-            applyFilter(this.getAttribute("data-filter"));
-        });
+        // Activer "Tout afficher" au chargement
+        applyFilter("all");
     });
 
-    // Sélection d'une carte
-    cards.forEach(card => {
-        card.addEventListener("click", function() {
-            // Mettre à jour le titre et le texte
-            document.getElementById("display-title").textContent = this.getAttribute("data-title");
-            document.getElementById("display-content").textContent = this.getAttribute("data-content");
-            document.getElementById("display-media").textContent = this.getAttribute("display-media");
+    document.addEventListener("DOMContentLoaded", function () {
+        const cards = document.querySelectorAll(".card-details");
+        const mediaContainer = document.getElementById("display-media"); // Le conteneur global
 
-            mediaContainer.innerHTML = ""; // Nettoyer avant d'ajouter du nouveau contenu
-
-            // Si c'est une vidéo
-            if (this.hasAttribute("data-video-src")) {
-                const videoSrc = this.getAttribute("data-video-src");
-                const iframe = document.createElement("iframe");
-                iframe.width = "700";
-                iframe.height = "450";
-                iframe.src = videoSrc;
-                iframe.setAttribute("title", "Vidéo");
-                iframe.setAttribute("frameborder", "0");
-                iframe.setAttribute("allow", "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture");
-                iframe.setAttribute("allowfullscreen", true);
+        cards.forEach(card => {
+            card.addEventListener("click", function () {
+                const cardMedia = this.querySelector(".display-media"); // Récupère le media de la carte cliquée
                 
-                mediaContainer.appendChild(iframe);
-            }
-
-            // Si c'est une galerie d’images
-            if (this.hasAttribute("data-images")) {
-                const images = this.getAttribute("data-images").split(",");
-                images.forEach(imgSrc => {
-                    const img = document.createElement("img");
-                    img.src = imgSrc;
-                    img.width = 700;
-                    img.classList.add("img-fluid");
-                    img.alt = "Image du projet";
-
-                    mediaContainer.appendChild(img);
-                });
-            }
-
-            centerCard(this);
+                if (cardMedia) {
+                    mediaContainer.innerHTML = ""; // Nettoie le conteneur global
+                    const clonedMedia = cardMedia.cloneNode(true); // Clone le media
+                    clonedMedia.style.display = "block"; // S'assurer qu'il est bien visible
+                    mediaContainer.appendChild(clonedMedia); // L'afficher dans le conteneur global
+                }
+            });
         });
     });
-
-    // Activer "Tout afficher" au chargement
-    applyFilter("all");
-});
-
-document.addEventListener("DOMContentLoaded", function () {
-    const cards = document.querySelectorAll(".card-details");
-    const mediaContainer = document.getElementById("display-media"); // Le conteneur global
-
-    cards.forEach(card => {
-        card.addEventListener("click", function () {
-            const cardMedia = this.querySelector(".display-media"); // Récupère le media de la carte cliquée
-            
-            if (cardMedia) {
-                mediaContainer.innerHTML = ""; // Nettoie le conteneur global
-                const clonedMedia = cardMedia.cloneNode(true); // Clone le media
-                clonedMedia.style.display = "block"; // S'assurer qu'il est bien visible
-                mediaContainer.appendChild(clonedMedia); // L'afficher dans le conteneur global
-            }
-        });
-    });
-});
-
-
 
     </script>
  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>

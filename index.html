@@ -947,9 +947,18 @@
     </div>
   </div>
   <div class="cv">
-    <!-- portfolio.html -->
-    <a href="#"> Détails </a>
+    <button id="portfolio-button" style="background-color: none;border: none;cursor: pointer;"><a>Détails</a></button>
   </div>
+
+  <script>
+    document.getElementById("portfolio-button").addEventListener("click", function() {
+        // Récupérer la feuille de style active
+        let activeStyle = document.querySelector("link[rel='stylesheet']").getAttribute("href");
+    
+        // Rediriger vers portfolio.html avec le paramètre de style
+        window.location.href = `portfolio.html?style=${encodeURIComponent(activeStyle)}`;
+    });
+  </script>
 </section>
 
 
