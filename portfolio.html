@@ -846,6 +846,7 @@
                     </div>
                 </div>
                 
+                <!-- ------------- Suki Burger ------------- -->
                 <div class="card-details ux-ui" 
                      data-theme="ux-ui" 
                      data-title="Food truck Suki-Burger" 
@@ -855,29 +856,37 @@
                      data-link="Ce site n'est pas en ligne">
                     
                     <h4>Food truck Suki-Burger</h4>
-                    
-                    <!-- Miniature affichée initialement -->
                     <img src="assets/img/portfolio/sae105_accueil.jpg" class="img-fluid" alt="Page d'accueil du site Suki-Burger" onclick="openGallery()">
                     
                     <div class="display-media" style="display: none;">
 
-                    <!-- Galerie qui s'affiche dans un modal après clic -->
-                    <div class="gallery-modal" id="galleryModal" style="display: none;">
-                        <div class="gallery-modal-content">
-                            <div class="gallery">
-                                <img src="assets/img/portfolio/sae105_accueil.jpg" class="img-fluid" alt="Page d'accueil du site Suki-Burger">
-                                <img src="assets/img/portfolio/sae105_menu.jpg" class="img-fluid" alt="Page du menu Suki-Burger">
-                                <img src="assets/img/portfolio/sae105_ou.jpg" class="img-fluid" alt="Page 'Où sommes-nous' Suki-Burger">
-                                <img src="assets/img/portfolio/sae105_a_propos.jpg" class="img-fluid" alt="Page 'À propos' Suki-Burger">
-                                <img src="assets/img/portfolio/sae105_partenaires.jpg" class="img-fluid" alt="Page des partenaires Suki-Burger">
-                                <img src="assets/img/portfolio/sae105_menu.png" class="img-fluid" alt="Menu en anglais Suki-Burger">
-                                <img src="assets/img/portfolio/sae105_logo.png" class="img-fluid" alt="Logo Suki-Burger">
-                            </div>
-                        </div>
-                    </div>
+                    <div id="sukiGalleryContainer">
+
+                    <a href="assets/img/portfolio/sae105_accueil.jpg" target="_blank">
+                      <img src="assets/img/portfolio/sae105_accueil.jpg" class="sukiGallery" alt="Page d'accueil du site Suki-Burger">
+                    </a>
+                    <a href="assets/img/portfolio/sae105_menu.jpg" target="_blank">
+                      <img src="assets/img/portfolio/sae105_menu.jpg" class="sukiGallery" alt="Page du menu Suki-Burger">
+                    </a>
+                    <a href="assets/img/portfolio/sae105_ou.jpg" target="_blank">
+                      <img src="assets/img/portfolio/sae105_ou.jpg" class="sukiGallery" alt="Page 'Où sommes-nous' Suki-Burger">                  
+                    </a>
+                    <a href="assets/img/portfolio/sae105_a_propos.jpg" target="_blank">
+                      <img src="assets/img/portfolio/sae105_a_propos.jpg" class="sukiGallery" alt="Page 'À propos' Suki-Burger">
+                    </a>
+                    <a href="assets/img/portfolio/sae105_partenaires.jpg" target="_blank">
+                      <img src="assets/img/portfolio/sae105_partenaires.jpg" class="sukiGallery" alt="Page des partenaires Suki-Burger">
+                    </a>
+                    <a href="assets/img/portfolio/sae105_logo.png" target="_blank">
+                      <img src="assets/img/portfolio/sae105_logo.png" class="sukiGallery" alt="Logo Suki-Burger">                 
+                    </a>
+
+                </div>
+
                     </div>
                 </div>
                 
+                <!-- ------------- AFFICHE MMI ------------- -->
                 <div class="card-details graphisme" 
                      data-theme="graphisme" 
                      data-title="Affiche promotion MMI" 
@@ -886,7 +895,9 @@
                     <h4>Affiche promotion MMI</h4>
                     <img src="assets/img/portfolio/affiche_min.jpg" class="img-fluid" alt="Affiche promotion MMI">
                     
-                    <div class="display-media" style="display: none;">
+                    <div class="display-media" style="display: none;" id="mmiAfficheTxt">
+
+                    <a href="assets/img/portfolio/affiche.jpg" target="_blank"><img src="assets/img/portfolio/affiche.jpg" alt="Affiche promotion formation BUT MMI" id="mmiAffiche"></a> 
 
                     <!-- Informations sur le projet -->
                     <div class="portfolio-details-info">
@@ -904,23 +915,14 @@
                         <p>
                             La personne sur la photo est <a href="https://www.linkedin.com/in/estebankervran/" target="_blank" >Esteban Kervran</a>, étudiant de la formation MMI.
                         </p>
+                        <p>
+                            <br>Cliquez sur l'image pour charger l'affiche dans un nouvel onglet.
+                        </p>
                     </div>
-                    
-                    <!-- Galerie d'images -->
-                    <div class="portfolio-slider">
-                        <div class="swiper-wrapper align-items-center">
-                            <div class="swiper-slide">
-                                <img src="assets/img/portfolio/affiche.jpg" width="500px" alt="Affiche promotion formation BUT MMI">
-                            </div>
-                        </div>
-                        <div class="swiper-pagination"></div>
-                    </div>
-                    </div>
+                </div>
                 </div>                
             </div>
         </div>
-
-        
 
          <!-- Grande div qui change en fonction de la carte sélectionnée -->
          <div class="main-display">
@@ -959,7 +961,6 @@
 </div>
 
     <script>
-
     const urlParams = new URLSearchParams(window.location.search);
     const style = urlParams.get("style");
 
@@ -1108,6 +1109,10 @@
         });
     });
 
+    $(document).on("click", '[data-toggle="lightbox"]', function(event) {
+        event.preventDefault();
+        $(this).ekkoLightbox();
+    });
     </script>
  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </body>

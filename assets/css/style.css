@@ -2107,5 +2107,30 @@
 
 .display-media .gallery{
   text-align: center;
-  
+}
+
+#mmiAffiche{
+  float: right;
+  max-width: 9em;
+  margin-right: 0;
+  border: solid 1px var(--color-primary);
+  border-radius: 5px;
+  transition: 0.5s;
+}
+
+#mmiAffiche:hover, .sukiGallery:hover{
+  scale: 1.1;
+  cursor: pointer;
+}
+
+.sukiGallery{
+  max-width: 15%;
+  vertical-align: middle;
+  border-radius: 10px;
+}
+
+#sukiGalleryContainer{
+  background-color: var(--color-primary);
+  border-radius: 15px;
+  padding:10px;
 }
