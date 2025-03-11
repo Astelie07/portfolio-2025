@@ -1852,9 +1852,10 @@
   width: 100vw;
 }
 
-#content #sidebar h2{
-  padding: 55px auto 15px;
-  color: var(--color-text);
+#sidebar + h2{
+    margin: 0;
+    padding: 2rem;
+    color: var(--color-text);
 }
 
 .container {
