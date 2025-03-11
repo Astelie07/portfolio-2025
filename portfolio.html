@@ -18,7 +18,7 @@
 <div id="content">
     <!-- Barre latérale -->
     <div class="sidebar">
-        <h2 class="wavy" style="margin: 0 auto 50px;">Portfolio</h2>
+        <h2 class="wavy" style="margin:0;padding:2rem;">Portfolio</h2>
         <button class="filter-btn active" data-filter="all">Tout</button>
         <button class="filter-btn ux-ui" data-filter="ux-ui">UX / UI</button>
         <button class="filter-btn video" data-filter="video">Vidéo</button>
@@ -81,16 +81,20 @@
 
                     <div class="portfolio-preview">
                         <a href="https://m-u-c-k-a.github.io/backroom-game/" target="_blank" class="btn btn-primary">
-                            🎮 Jouer au jeu
+                            💻 Vers le site web
                         </a>
                         <a href="https://www.youtube.com/embed/rvK_ZZMRh08?si=6s_oHPKoeThFsKl7" target="_blank" class="btn btn-secondary">
                             🎬 Voir le trailer
+                        </a>
+                        <!-- ATENTION LIEN A CHANGER !!!!!!! -->
+                        <a href="https://m-u-c-k-a.github.io/backroom-game/" target="_blank" class="btn btn-primary">
+                            🎮 Télécharger le jeu
                         </a>
                     </div>
                     
                     <!-- Liste des membres du groupe -->
                     <div class="members-list">
-                        <h5>Équipe de développement :</h5>
+                        <h5>Autres membre de l'équipe de développement :</h5>
                         <ul>
                             <li><a href="https://www.linkedin.com/in/bilal-boukhorissa-6153622a1/" target="_blank" >Bilal Boukhorissa</a></li>
                             <li><a href="https://www.linkedin.com/in/nabil-boukhorissa/" target="_blank" >Nabil Boukhorissa</a></li>
@@ -101,7 +105,7 @@
                     </div>
                     
                     <!-- Galerie associée sous la carte -->
-                    <div class="gallery" style="display: none;">
+                    <div class="gallery">
                         <img src="assets/img/portfolio/escape-1.jpg" width="500px" alt="Image du jeu The Escape">
                         <img src="assets/img/portfolio/escape-2.jpg" width="500px" alt="Image du jeu The Escape">
                     </div>
@@ -138,7 +142,7 @@
                     </div>
                     
                     <!-- Galerie associée sous la carte -->
-                    <div class="gallery" style="display: none;">
+                    <div class="gallery">
                         <img src="assets/img/portfolio/altea-logo.png" width="500px" alt="Logo de la fausse entreprise Altéa">
                         <img src="assets/img/portfolio/altea-pages.png" width="600px" alt="Ensemble des pages Figma du faux site Altéa">
                     </div>
@@ -189,7 +193,7 @@
                     </div>
                     
                     <!-- Galerie associée sous la carte -->
-                    <div class="gallery" style="display: none;">
+                    <div class="gallery">
                         <img src="assets/img/portfolio/dashboard-1.png" width="500px" alt="Capture du Dashboard Figma">
                         <img src="assets/img/portfolio/dashboard-2.png" width="500px" alt="Exemple du tableau de bord sous Figma">
                     </div>
@@ -205,7 +209,7 @@
                     <!-- Galerie modale -->
                     <div class="display-media" style="display: none;">
 
-                    <div class="gallery-modal" id="galleryModalInktober" style="display: none;">
+                    <div class="gallery-modal" id="galleryModalInktober">
                         <div class="gallery-modal-content">
                             <div class="gallery">
                                 <img src="assets/img/portfolio/inktober23/inktober-ensemble.png" width="500px" alt="Mosaïque des 31 dessins">
@@ -219,11 +223,8 @@
                 <!-- Carte Roll a Ball -->
                 <div class="card-details jeu-video" data-theme="jeu-video" data-title="Roll a ball" data-content="Création d'un petit jeu en une journée consistant à jouer une balle ramassant des objets. Il fallait ajouter un compteur de points, des obstacles ainsi qu'un affichage lorsque tous les objets ont été ramassés. La première vidéo est la version finale, la seconde est une version test." data-category="Jeu vidéo" data-date="23 Octobre 2023">
                     <h4>Roll a ball</h4>
-                    
-                    <!-- Miniature de l'image affichée initialement -->
                     <img src="assets/img/portfolio/rollaball-min.png" class="img-fluid" alt="Miniature du jeu Roll a Ball" onclick="openGallery('RollABall')">
                     
-                    <!-- Galerie qui s'affiche dans un modal après clic -->
                     <div class="display-media" style="display: none;">
 
                     <div class="gallery-modal" id="galleryModalRollABall" >
@@ -300,19 +301,10 @@
                     </div>
                     
                     <!-- Slider des images -->
-                    <div class="portfolio-slider">
-                        <div class="swiper-wrapper align-items-center">
-                            <div class="swiper-slide">
-                                <img src="assets/img/portfolio/scene1.png" width="700px" alt="Modélisation 3D d'une scène Sea of Thieves : Table et objets">
-                            </div>
-                            <div class="swiper-slide">
-                                <img src="assets/img/portfolio/scene2.png" width="700px" alt="Modélisation 3D d'une carte au trésor et objets Sea of Thieves">
-                            </div>
-                            <div class="swiper-slide">
-                                <img src="assets/img/portfolio/carteuv2.png" width="700px" alt="Texture utilisée pour la carte au trésor">
-                            </div>
-                        </div>
-                        <div class="swiper-pagination"></div>
+                    <div class="gallery">
+                        <img src="assets/img/portfolio/scene1.png" width="700px" alt="Modélisation 3D d'une scène Sea of Thieves : Table et objets">
+                        <img src="assets/img/portfolio/scene2.png" width="700px" alt="Modélisation 3D d'une carte au trésor et objets Sea of Thieves">
+                        <img src="assets/img/portfolio/carteuv2.png" width="700px" alt="Texture utilisée pour la carte au trésor">
                     </div>
 
                     </div>
@@ -354,7 +346,7 @@
                     <div class="display-media" style="display: none;">                    
                     
                     <!-- Galerie qui s'affiche dans un modal après clic -->
-                    <div class="gallery-modal" id="galleryModalRouenFigma" style="display: none;">
+                    <div class="gallery-modal" id="galleryModalRouenFigma">
                         <div class="gallery-modal-content">
                             <div class="gallery">
                                 <img src="assets/img/portfolio/rouen-figma1.png" class="img-fluid" alt="Première page du 'nouveau' site de Rouen.">
@@ -384,9 +376,10 @@
                     <div class="display-media" style="display: none;">
 
                     <!-- Galerie modale (affichage sur clic) -->
-                    <div class="gallery-modal" id="galleryModalppp" style="display: none;">
+                    <div class="gallery-modal" id="galleryModalppp">
                         <div class="gallery-modal-content">
                             <div class="gallery">
+                                <!-- MANQUE L'AFFICHE ! -->
                                 <a href="assets/download/ppp_pdf.pdf" target="_blank" >Document final</a>
                             </div>
                         </div>
