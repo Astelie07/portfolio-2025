@@ -1504,7 +1504,6 @@ transform: scale(1.05);
 
 #contact {
   width: 100%;
-  height: 100%;
   background-color: var(--color-accent);
 }
 
@@ -2177,4 +2176,3 @@ transform: scale(1.05);
   border-radius: 15px;
   padding:10px;
 }
-
