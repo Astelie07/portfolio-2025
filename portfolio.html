@@ -124,7 +124,6 @@
 
                     <div class="portfolio-details-info">
                         <ul>
-                            <li><strong>Catégorie</strong>: UX/UI</li>
                             <li><strong>Date</strong>: Décembre 2023</li>
                             <li><strong>Autres membres de l'équipe</strong>: 
                                 <a href="https://www.linkedin.com/in/esther-amegnisse/" target="_blank">Esther Amegnisse</a>, 
@@ -169,10 +168,14 @@
                     <!-- Informations sur le projet -->
                     <div class="portfolio-details-info">
                         <ul>
-                            <li><strong>Catégorie</strong>: UX/UI Design</li>
                             <li><strong>Date</strong>: Novembre 2023</li>
                             <li><strong>Client</strong>: Bear Studio</li>
                         </ul>
+                    </div>
+                    
+                    <!-- Vidéo de présentation -->
+                    <div class="video-presentation" style="float:right;">
+                        <iframe width="45%" height="45%" src="https://www.youtube.com/embed/4x3B5n76M04?si=fMTQ2AuKUuqUMocG" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
                     </div>
                     
                     <!-- Description du projet -->
@@ -187,53 +190,48 @@
                         </ul>
                     </div>
                     
-                    <!-- Vidéo de présentation -->
-                    <div class="video-presentation">
-                        <iframe width="700px" height="450px" src="https://www.youtube.com/embed/4x3B5n76M04?si=fMTQ2AuKUuqUMocG" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-                    </div>
-                    
                     <!-- Galerie associée sous la carte -->
                     <div class="gallery">
-                        <img src="assets/img/portfolio/dashboard-1.png" width="500px" alt="Capture du Dashboard Figma">
-                        <img src="assets/img/portfolio/dashboard-2.png" width="500px" alt="Exemple du tableau de bord sous Figma">
+                        <img src="assets/img/portfolio/dashboard-ensemble.png" width="500px" alt="Capture du Dashboard Figma">
+                        <img src="assets/img/portfolio/dashboard-min.png" width="500px" alt="Exemple du tableau de bord sous Figma">
                     </div>
 
                     </div>
                 </div>
 
                 <!-- Carte Inktober 2023 -->
-                <div class="card-details dessin" data-theme="dessin" data-title="Inktober 2023" data-content="Challenge artistique : un dessin par jour en octobre, avec des thèmes imposés. 31 illustrations inspirées de divers univers (jeux, séries, films, animés)." data-category="Dessin" data-date="Octobre 2023">
+                <div class="card-details dessin" data-theme="dessin" data-title="Inktober 2023" 
+                    data-content="Challenge artistique : un dessin par jour en octobre, avec des thèmes imposés. 31 illustrations inspirées de divers univers (jeux, séries, films, animés)." 
+                    data-category="Dessin" data-date="Octobre 2023">
                     <h4>Inktober 2023</h4>
-                    <img src="assets/img/portfolio/inktober-min.png" class="img-fluid" alt="Aperçu des dessins Inktober 2023" onclick="openGallery('Inktober')">
+                    <img src="assets/img/portfolio/inktober-min.png" class="img-fluid" alt="Aperçu des dessins Inktober 2023">
                     
                     <!-- Galerie modale -->
                     <div class="display-media" style="display: none;">
 
-                    <div class="gallery-modal" id="galleryModalInktober">
-                        <div class="gallery-modal-content">
-                            <div class="gallery">
-                                <img src="assets/img/portfolio/inktober23/inktober-ensemble.png" width="500px" alt="Mosaïque des 31 dessins">
-                                <img src="assets/img/portfolio/inktober23/inktober_liste.jpg" width="500px" alt="Liste des thèmes de l'inktober">
-                            </div>
-                        </div>
+                    <div class="gallery" id="galleryModalInktober">
+                        <img src="assets/img/portfolio/inktober23/inktober-ensemble.png" width="500px" alt="Mosaïque des 31 dessins">
+                        <img src="assets/img/portfolio/inktober23/inktober_liste.jpg" width="500px" alt="Liste des thèmes de l'inktober">
                     </div>
                     </div>
                 </div>
                 
                 <!-- Carte Roll a Ball -->
-                <div class="card-details jeu-video" data-theme="jeu-video" data-title="Roll a ball" data-content="Création d'un petit jeu en une journée consistant à jouer une balle ramassant des objets. Il fallait ajouter un compteur de points, des obstacles ainsi qu'un affichage lorsque tous les objets ont été ramassés. La première vidéo est la version finale, la seconde est une version test." data-category="Jeu vidéo" data-date="23 Octobre 2023">
+                <div class="card-details jeu-video" data-theme="jeu-video" 
+                    data-title="Roll a ball" 
+                    data-content="Création d'un petit jeu en une journée consistant à jouer une balle ramassant des objets. 
+                    Il fallait ajouter un compteur de points, des obstacles ainsi qu'un affichage lorsque tous les objets ont été ramassés."
+                    data-category="Jeu vidéo" data-date="23 Octobre 2023">
                     <h4>Roll a ball</h4>
-                    <img src="assets/img/portfolio/rollaball-min.png" class="img-fluid" alt="Miniature du jeu Roll a Ball" onclick="openGallery('RollABall')">
+                    <img src="assets/img/portfolio/rollaball-min.png" class="img-fluid" alt="Miniature du jeu Roll a Ball">
                     
                     <div class="display-media" style="display: none;">
 
-                    <div class="gallery-modal" id="galleryModalRollABall" >
-                        <div class="gallery-modal-content">
-                            <div class="gallery">
-                                <iframe width="650" height="450" src="https://www.youtube.com/embed/DpQMb_K9xPg?si=2kmA0Ua2Co6qft2T" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-                                <iframe width="650" height="450" src="https://www.youtube.com/embed/hMdnVAD2cpU?si=CYxq9dFlOI1Zdunp" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-                            </div>
-                        </div>
+                    <p>La première vidéo est la version finale, la seconde est une version test.</p>
+
+                    <div class="gallery">
+                        <iframe width="45%" height="40%" src="https://www.youtube.com/embed/DpQMb_K9xPg?si=2kmA0Ua2Co6qft2T" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                        <iframe width="45%" height="40%" src="https://www.youtube.com/embed/hMdnVAD2cpU?si=CYxq9dFlOI1Zdunp" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
                     </div>
                     </div>
                 </div>
@@ -251,7 +249,6 @@
                     <!-- Informations sur le projet -->
                     <div class="portfolio-details-info">
                         <ul>
-                            <li><strong>Catégorie</strong>: UX/UI / Développement</li>
                             <li><strong>Date</strong>: Octobre 2023</li>
                             <li><strong>Technologies</strong>: PHP, SQL</li>
                         </ul>
@@ -280,14 +277,13 @@
                      data-content="Création d'un décor inspiré du jeu Sea of Thieves en utilisant Blender, incluant des éléments comme une table, une carte au trésor et des rouleaux de papiers.">
                     
                     <h4>Modélisations Blender</h4>
-                    <img src="assets/img/portfolio/scene-min.png" class="img-fluid" alt="Modélisation Blender : Décor inspiré de Sea of Thieves" onclick="openGallery('Blender')">
+                    <img src="assets/img/portfolio/scene-min.png" class="img-fluid" alt="Modélisation Blender : Décor inspiré de Sea of Thieves">
                     
                     <div class="display-media" style="display: none;">
 
                     <!-- Informations sur le projet -->
                     <div class="portfolio-details-info">
                         <ul>
-                            <li><strong>Catégorie</strong>: Modélisation</li>
                             <li><strong>Date</strong>: Septembre - Octobre 2023</li>
                             <li><strong>Logiciel utilisé</strong>: Blender</li>
                         </ul>
@@ -341,7 +337,7 @@
                      data-date="Février 2023">
                     <h4>Figma site Rouen</h4>
                     <!-- Miniature de l'image affichée initialement -->
-                    <img src="assets/img/portfolio/rouen-figma-min.png" class="img-fluid" alt="Miniature du redesign du site de Rouen" onclick="openGallery('RouenFigma')">
+                    <img src="assets/img/portfolio/rouen-figma-min.png" class="img-fluid" alt="Miniature du redesign du site de Rouen">
 
                     <div class="display-media" style="display: none;">                    
                     
@@ -371,7 +367,7 @@
                     
                     <h4>Projet Personnel et Professionnel</h4>
                     <!-- Miniature de l'affiche -->
-                    <img src="assets/img/portfolio/ppp_afiche_m.png" class="img-fluid" alt="Affiche projet personnel et professionnel" onclick="openGallery('ppp')">
+                    <img src="assets/img/portfolio/ppp_afiche_m.png" class="img-fluid" alt="Affiche projet personnel et professionnel">
                     
                     <div class="display-media" style="display: none;">
 
@@ -427,7 +423,7 @@
                      data-date="Janvier 2023">
                     
                     <h4>Site - Figma Or3o</h4>
-                    <img src="assets/img/portfolio/or3o.png" class="img-fluid" alt="Aperçu du Figma Or3o" onclick="openGallery('Or3o')">
+                    <img src="assets/img/portfolio/or3o.png" class="img-fluid" alt="Aperçu du Figma Or3o">
 
                     <div class="display-media" style="display: none;">
                     
@@ -452,14 +448,13 @@
                      data-content="Modélisation 3D des pictogrammes illustrant différentes matières du programme MMI.">
                     
                     <h4>Pictogrammes MMI</h4>
-                    <img src="assets/img/portfolio/3d_rendu2_m.png" class="img-fluid" alt="Pictogrammes 3D MMI" onclick="openGallery('Pictogrammes')">
+                    <img src="assets/img/portfolio/3d_rendu2_m.png" class="img-fluid" alt="Pictogrammes 3D MMI">
 
                     <div class="display-media" style="display: none;">
                     
                     <!-- Informations sur le projet -->
                     <div class="portfolio-details-info">
                         <ul>
-                            <li><strong>Catégorie</strong>: Modélisation</li>
                             <li><strong>Date</strong>: Décembre 2022</li>
                         </ul>
                     </div>
@@ -489,7 +484,7 @@
                      data-date="Décembre 2022">
                     
                     <h4>Omniversus</h4>
-                    <img src="assets/img/portfolio/omniversus.png" class="img-fluid" alt="Aperçu du projet Omniversus" onclick="openGallery('Omniversus')">
+                    <img src="assets/img/portfolio/omniversus.png" class="img-fluid" alt="Aperçu du projet Omniversus">
                     
                     <div class="display-media" style="display: none;">
 
@@ -509,7 +504,7 @@
                 <!-- ------------- Animal Crossing et la pandémie ------------- -->
                 <div class="card-details video" data-theme="video" data-title="Reportage : Animal Crossing et la pandémie" data-content="Reportage vidéo sur l'impact d'Animal Crossing durant la pandémie, réalisé par un groupe d'étudiants dans le cadre d'une ressource audiovisuelle.">
                     <h4>Animal Crossing et la pandémie</h4>
-                    <img src="assets/img/portfolio/animal_crossing.png" class="img-fluid" alt="Affiche du reportage sur Animal Crossing et la pandémie" onclick="openGallery('AnimalCrossing')">
+                    <img src="assets/img/portfolio/animal_crossing.png" class="img-fluid" alt="Affiche du reportage sur Animal Crossing et la pandémie">
                     
                     <div class="display-media" style="display: none;">
 
@@ -521,7 +516,6 @@
                                 <a href="https://www.linkedin.com/in/martin-fauvel/" target="_blank" >Martin FAUVEL</a>, 
                                 <a href="https://www.linkedin.com/in/eva-guedin/" target="_blank" >Eva GUEDIN</a>
                             </li>
-                            <li><strong>Catégorie</strong>: Vidéo</li>
                             <li><strong>Date</strong>: Décembre 2022</li>
                         </ul>
                     </div>
@@ -611,7 +605,6 @@
                                 <a href="https://www.linkedin.com/in/eva-guedin/" target="_blank" >Eva GUEDIN</a>, 
                                 <a href="https://www.linkedin.com/in/quentin-gouas/" target="_blank" >Quentin GOUAS</a>
                             </li>
-                            <li><strong>Catégorie</strong>: Vidéo</li>
                             <li><strong>Date</strong>: Octobre 2022</li>
                         </ul>
                     </div>
@@ -775,7 +768,7 @@
                      data-link="Ce site n'est pas en ligne">
                     
                     <h4>Food truck Suki-Burger</h4>
-                    <img src="assets/img/portfolio/sae105_accueil.jpg" class="img-fluid" alt="Page d'accueil du site Suki-Burger" onclick="openGallery()">
+                    <img src="assets/img/portfolio/sae105_accueil.jpg" class="img-fluid" alt="Page d'accueil du site Suki-Burger">
                     
                     <div class="display-media" style="display: none;">
 
@@ -821,7 +814,6 @@
                     <!-- Informations sur le projet -->
                     <div class="portfolio-details-info">
                         <ul>
-                            <li><strong>Catégorie</strong>: Graphisme</li>
                             <li><strong>Date</strong>: Novembre 2021</li>
                         </ul>
                     </div>
