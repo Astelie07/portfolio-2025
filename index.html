@@ -11,16 +11,16 @@
 </head>
 <body>
   <!-- Loader -->
-  <div id="loader_div">
+  <div id="loader_div" aria-hidden="true">
     <img src="assets/img/cat.gif" alt="petit gif dun chat qui dort" style="width: 20%;" id="catgif"/>
     <span class="loader">Chargement...</span>
     <div class="cat_paw"></div>
   </div>
 
   <!-- Header avec Menu Burger et Logo -->
-  <div id="content" style="display: none;">
+  <div id="content" style="display: none;" >
   <header>
-    <div class="nav-container">
+    <div class="nav-container" aria-hidden="true">
       <!-- Menu burger -->
       <div class="menu-burger">☰</div>
       <button onclick="toggleTheme()" id="theme">
@@ -31,7 +31,7 @@
     </div>
   
     <!-- Conteneur de vidéos -->
-    <div class="video-container">
+    <div class="video-container" aria-hidden="true">
       <video id="first-video" muted>
         <source src="assets/video/light-opening.mp4" type="video/mp4">
         Votre navigateur ne supporte pas la vidéo HTML5.
@@ -43,12 +43,12 @@
       </video>
 
       <div id="logo" style="position: absolute;top: 50%;left: 10px;transform: translateY(-50%);font-size: 2rem;font-weight: bold;z-index: 10;text-align: left;">
-      <img src="assets/img/titre_.png" id="light-logo" style="width: 50%;"/>
+      <img src="assets/img/titre_.png" id="light-logo" style="width: 50%;" alt="Portfolio Astélie HENRYON"/>
     </div>
     </div>
   
     <!-- Menu de navigation -->
-    <nav>
+    <nav aria-hidden="true">
       <ul id="nav-links" class="hidden">
         <li><a href="#intro">Accueil</a></li>
         <li><a href="#presentation">Présentation</a></li>
@@ -63,7 +63,7 @@
 
 <!-- Sections de contenu -->
 
-<div class="waveWrapper waveAnimation">   <!-- Animation transition -->
+<div class="waveWrapper waveAnimation" aria-hidden="true">   <!-- Animation transition -->
   <div class="waveWrapperInner bgTop">
     <div class="wave waveTop light-img" style="background-image: url('assets/img/illus/wave.png')"></div>
     <div class="wave waveTop dark-img" style="background-image: url('assets/img/illus/wave-dark.png')"></div>
@@ -81,7 +81,7 @@
 <section id="presentation">
   <h2 class="wavy">Présentation</h2>
   <div class="presentation-content">
-      <img src="assets/img/me.gif" class="img-fluid" alt="Photo" id="photo">
+      <img src="assets/img/me.gif" class="img-fluid" alt="Photo" id="photo" alt="Photo de moi (2023)">
       <div class="presentation-text">
           <h3>Astélie HENRYON</h3>
           <p class="fst-italic">
@@ -108,10 +108,10 @@
 
   <div class="interets">
     <h3>Centres d'Intérêts</h3>
-    <img src="assets/img/illus/blue-portal.png" alt="Portail bleu" class="light-img sticker" onclick="changeMusic('assets/music/Banquest Rainforest-chicory.mp3', 'Banquest Rainforest - Chicory : A colorful tale')">
-    <img src="assets/img/illus/blue-portal.png" alt="Portail bleu" class="dark-img sticker" onclick="changeMusic('assets/music/Greenpath-Hollow knight.mp3', 'Greenpath - Hollow knight')">
-    <img src="assets/img/illus/orange-portal.png" alt="Portail orange" class="light-img sticker" onclick="changeMusic('assets/music/Where We Used To Play-omori.mp3', 'Where We Used To Play - Omori')">
-    <img src="assets/img/illus/purple-portal.png" alt="Portail violet" class="dark-img sticker" onclick="changeMusic('assets/music/Professor Layton and the Unwound FutureLost Future - Puzzles.mp3', 'Puzzles - Professor Layton : The Unwound Future')">
+    <img src="assets/img/illus/blue-portal.png" alt="Portail bleu" class="light-img sticker" aria-hidden="true" onclick="changeMusic('assets/music/Banquest Rainforest-chicory.mp3', 'Banquest Rainforest - Chicory : A colorful tale')">
+    <img src="assets/img/illus/blue-portal.png" alt="Portail bleu" class="dark-img sticker" aria-hidden="true" onclick="changeMusic('assets/music/Greenpath-Hollow knight.mp3', 'Greenpath - Hollow knight')">
+    <img src="assets/img/illus/orange-portal.png" alt="Portail orange" class="light-img sticker" aria-hidden="true" onclick="changeMusic('assets/music/Where We Used To Play-omori.mp3', 'Where We Used To Play - Omori')">
+    <img src="assets/img/illus/purple-portal.png" alt="Portail violet" class="dark-img sticker" aria-hidden="true" onclick="changeMusic('assets/music/Professor Layton and the Unwound FutureLost Future - Puzzles.mp3', 'Puzzles - Professor Layton : The Unwound Future')">
     
     <div class="grid-container">
         <div class="grid-item"><i class="fas fa-pen"></i> Écriture et narration</div>
@@ -135,8 +135,6 @@
 
 <section id="competences">
   <h2 class="wavy">Compétences</h2>
-
-  
   
   <div class="skills">
     <p>
@@ -147,7 +145,7 @@
       À vous de <span>l’explorer</span> et de <span>l'organiser</span> selon vos priorités :
     </p>
     <div class="skills__content">
-      <div class="skills__content__inventory">
+      <div class="skills__content__inventory" aria-hidden="true">
         <div class="inventory--rows">
             <!-- REACT -->
             <div class="items__container">
@@ -694,12 +692,12 @@
   </div>
 
   <div>
-    <img src="assets/img/illus/huepoe.png" alt="huepoe klonoa" class="light-img sticker sticker-huepoe" onclick="changeMusic('assets/music/The Windmill Song-klonoa.mp3', 'The Windmill Song - Klonoa : Door to Phantomhive')">
-    <img src="assets/img/illus/huepoe.png" alt="huepoe klonoa" class="dark-img sticker sticker-huepoe" onclick="changeMusic('assets/music/Untamed Heart-Klonoa.mp3', 'Untamed Heart - Klonoa : Door to Phantomhive')">
+    <img src="assets/img/illus/huepoe.png" alt="huepoe klonoa" class="light-img sticker sticker-huepoe" aria-hidden="true" onclick="changeMusic('assets/music/The Windmill Song-klonoa.mp3', 'The Windmill Song - Klonoa : Door to Phantomhive')">
+    <img src="assets/img/illus/huepoe.png" alt="huepoe klonoa" class="dark-img sticker sticker-huepoe" aria-hidden="true" onclick="changeMusic('assets/music/Untamed Heart-Klonoa.mp3', 'Untamed Heart - Klonoa : Door to Phantomhive')">
   </div>  
 
-  <img src="assets/img/illus/perso_skill-light.png" class="light-img skill_character"></img>
-  <img src="assets/img/illus/perso_skill-dark.png" class="dark-img skill_character">
+  <img src="assets/img/illus/perso_skill-light.png" class="light-img skill_character" alt="Petit personnage tenant les icons de C et d'Unreal Engine"></img>
+  <img src="assets/img/illus/perso_skill-dark.png" class="dark-img skill_character" alt="Petit personnage tenant les icons de C et d'Unreal Engine"></img>
 
   <p id="skill-commentary">Tant à ajouter, mais<br> il faut continuer<br> d'apprendre avant. </p> 
 </section>
@@ -709,8 +707,8 @@
 
 <section id="portfolio">
   <div>
-    <img src="assets/img/illus/fleurdefeu.png" alt="Fleur de feu Mario" class="light-img sticker sticker-fleurdefeu" onclick="changeMusic('assets/music/Fluff-Puff Peaks - Super Mario Bros. Wonder.mp3', 'Fluff-Puff Peaks - Super Mario Bros. Wonder')">
-    <img src="assets/img/illus/bubbleflower.png" alt="Fleur de bulles Mario" class="dark-img sticker sticker-fleurdefeu" onclick="changeMusic('assets/music/Comet Observatory 3 - Super Mario Galaxy.mp3', 'Comet Observatory 3 - Super Mario Galaxy')">
+    <img src="assets/img/illus/fleurdefeu.png" alt="Fleur de feu Mario" class="light-img sticker sticker-fleurdefeu" aria-hidden="true" onclick="changeMusic('assets/music/Fluff-Puff Peaks - Super Mario Bros. Wonder.mp3', 'Fluff-Puff Peaks - Super Mario Bros. Wonder')">
+    <img src="assets/img/illus/bubbleflower.png" alt="Fleur de bulles Mario" class="dark-img sticker sticker-fleurdefeu" aria-hidden="true" onclick="changeMusic('assets/music/Comet Observatory 3 - Super Mario Galaxy.mp3', 'Comet Observatory 3 - Super Mario Galaxy')">
   </div> 
 
   <h2 class="wavy">Portfolio</h2>
@@ -728,14 +726,14 @@
     <div class="cards">
       <div class="card animated modelisation">
         <h4>Animations 3D</h4>
-        <img src="assets/img/portfolio/portfolio-render.png" class="img-fluid" alt="">
+        <img src="assets/img/portfolio/portfolio-render.png" class="img-fluid" alt="Animation  3D Blender pour portfolio 2025">
         <div class="portfolio-info">
           <p>Premières animations 3D prévues<br>pour le protfolio</p>
         </div>
       </div>
       <div class="card animated dessin">
         <h4>Inktober 2024</h4>
-        <img src="assets/img/portfolio/inktober2024.png" class="img-fluid" alt="">
+        <img src="assets/img/portfolio/inktober2024.png" class="img-fluid" alt="Présentation en mosaïque des 31 dessins réalisés en octobre 2024">
           <div class="portfolio-info">
             <p>31 dessins en 1 mois</p>
           </div>
@@ -744,14 +742,14 @@
     <div class="cards">
       <div class="card animated ux-ui">
         <h4>Portfolio 2024</h4>
-        <img src="assets/img/portfolio/portfolio-2024.png" class="img-fluid" alt="">
+        <img src="assets/img/portfolio/portfolio-2024.png" class="img-fluid" alt="Première page portfolio 2023-2024">
         <div class="portfolio-info">
           <p>Précédent portfolio</p>
         </div>
       </div>
       <div class="card animated jeu-video">
         <h4>The Escape</h4>
-        <img src="assets/img/portfolio/escape-min.png" class="img-fluid" alt="">
+        <img src="assets/img/portfolio/escape-min.png" class="img-fluid" alt="Affiche de projet final d'étude MMI : The Escape">
         <div class="portfolio-info">
           <p>Projet finale de MMI3</p>
         </div>
@@ -765,7 +763,7 @@
       </div>
       <div class="card animated ux-ui">
         <h4>Dashboard Figma</h4>
-        <img src="assets/img/portfolio/dashboard-min.png" class="img-fluid" alt="">
+        <img src="assets/img/portfolio/dashboard-min.png" class="img-fluid" alt="Miniature du dashboard réalisé sur figma">
           <div class="portfolio-info">
             <p>Entrainement à Figma avec<br>un dashboard</p>
           </div>
@@ -773,7 +771,7 @@
     </div><div class="cards">
       <div class="card animated dessin">
         <h4>Inktober 2023</h4>
-        <img src="assets/img/portfolio/inktober-min.png" class="img-fluid" alt="">
+        <img src="assets/img/portfolio/inktober-min.png" class="img-fluid" alt="Présentation en mosaïque des 31 dessins réalisés en octobre 2023">
           <div class="portfolio-info">
             <p>31 dessins en 1 mois</p>
           </div>
