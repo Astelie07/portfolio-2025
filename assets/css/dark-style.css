@@ -1988,8 +1988,8 @@ transform: scale(1.05);
   margin-bottom: 20px;
 }
       
-.filter-btn {
-  color: var(--color-primary);
+#content .filter-btn {
+  color: var(--color-accent);
 }
 
 .filter-btn:first-of-type {
