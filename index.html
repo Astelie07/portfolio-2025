@@ -141,8 +141,8 @@
       Polyvalente et touche-à-tout, je navigue entre <span>technique</span> et <span>créativité</span> pour donner vie à des projets qui allient sens et esthétisme. 
       Du back au front, de l’architecture au design, j’adapte mes outils à chaque besoin : JavaScript, Python, HTML, CSS, C#, et bien d’autres encore. L’anglais technique ? Aucun souci. 
       Que ce soit pour structurer une base de données, optimiser une interface ou façonner une identité visuelle, je veille aux détails sans perdre de vue l’ensemble. 
-      Et parce qu’un bon artisan a toujours son matériel sous la main, voici un aperçu de mon <span>inventaire</span> !<br>
-      À vous de <span>l’explorer</span> et de <span>l'organiser</span> selon vos priorités :
+      <p id="inventDes">Et parce qu’un bon artisan a toujours son matériel sous la main, voici un aperçu de mon <span>inventaire</span> !<br>
+      À vous de <span>l’explorer</span> et de <span>l'organiser</span> selon vos priorités :</p>
     </p>
     <div class="skills__content">
       <div class="skills__content__inventory" aria-hidden="true">
@@ -691,6 +691,55 @@
     </div>
   </div>
 
+  <div id="skills-tel">
+    <h3>Langages</h3>
+    <ul>
+      <li><i class="fab fa-php fa-3x"></i><h4>PHP</h4></li>
+      <li><i class="fas fa-cogs fa-3x"></i><h4>C#</h4></li>
+      <li><i class="fas fa-code fa-3x"></i><h4>C++</h4></li>
+      <li><i class="fas fa-database fa-3x"></i><h4>SQL</h4></li>
+      <li><i class="fab fa-python fa-3x"></i><h4>Python</h4></li>
+      <li><i class="fab fa-less fa-3x"></i><h4>Less</h4></li>
+      <li><i class="fab fa-html5 fa-3x"></i><h4>HTML5</h4></li>
+      <li><i class="fab fa-css3-alt fa-3x"></i><h4>CSS3 / SCSS</h4></li>
+      <li><i class="fab fa-js fa-3x"></i><h4>JavaScript</h4></li>
+    </ul>
+    
+    <h3>Développement Web</h3>
+    <ul>
+      <li><i class="fas fa-cogs fa-3x"></i>
+    <h4>Tailwind</h4></li>
+      <li><i class="fab fa-wordpress fa-3x"></i><h4>WordPress</h4></li>
+      <li><i class="fab fa-react fa-3x"></i><h4>React</h4></li>
+      <li><i class="fab fa-node fa-3x"></i><h4>Node.js</h4></li>
+      <li><i class="fas fa-cogs fa-3x"></i><h4>Vite</h4></li>
+      <li><i class="fab fa-angular fa-3x"></i><h4>Angular</h4></li>
+      <li><i class="fab fa-node-js fa-3x"></i><h4>Express</h4></li>
+    </ul>
+    
+    <h3>Outils</h3>
+    <ul>
+      <li><i class="fab fa-unity fa-3x"></i><h4>Unity</h4></li>
+      <li><i class="fas fa-paint-brush fa-3x"></i><h4>Clip Studio Paint</h4></li>
+      <li><i class="fab fa-figma fa-3x"></i><h4>Figma</h4></li>
+      <li><i class="fas fa-tools fa-3x"></i><h4>Canva</h4></li>
+      <li><i class="fas fa-cogs fa-3x"></i><h4>Blender</h4></li>
+      <li><i class="fas fa-cogs fa-3x"></i><h4>Git</h4></li>
+      <li><i class="fas fa-tools fa-3x"></i><h4>Adobe</h4></li>
+    </ul>
+    
+    <h3>Compétences</h3>
+    <ul>
+      <li><i class="fas fa-pencil-alt fa-3x"></i><h4>Graphisme</h4></li>
+      <li><i class="fas fa-language fa-3x"></i><h4>Anglais</h4></li>
+      <li><i class="fas fa-comments fa-3x"></i><h4>Communication</h4></li>
+      <li><i class="fas fa-language fa-3x"></i><h4>Japonais</h4></li>
+      <li><i class="fas fa-language fa-3x"></i><h4>Espagnol</h4></li>
+      <li><i class="fas fa-project-diagram fa-3x"></i><h4>Gestion de projet</h4></li>
+      <li><i class="fas fa-video fa-3x"></i><h4>Audiovisuel</h4></li>
+    </ul>
+    </div>
+
   <div>
     <img src="assets/img/illus/huepoe.png" alt="huepoe klonoa" class="light-img sticker sticker-huepoe" aria-hidden="true" onclick="changeMusic('assets/music/The Windmill Song-klonoa.mp3', 'The Windmill Song - Klonoa : Door to Phantomhive')">
     <img src="assets/img/illus/huepoe.png" alt="huepoe klonoa" class="dark-img sticker sticker-huepoe" aria-hidden="true" onclick="changeMusic('assets/music/Untamed Heart-Klonoa.mp3', 'Untamed Heart - Klonoa : Door to Phantomhive')">
@@ -885,13 +934,7 @@
           </div>
       </div>
     </div><div class="cards">
-      <div class="card animated dessin">
-        <h4>Amis de mémoire</h4>
-        <img src="assets/img/portfolio/dessin_3_1.jpg" class="img-fluid" alt="">
-          <div class="portfolio-info">
-            <p>Dessin de mon groupe d'amis de<br>lycée pour nos un an de<br>séparation</p>
-          </div>
-      </div>
+      
       <div class="card animated graphisme">
         <h4>E.story</h4>
         <img src="assets/img/portfolio/estrory_moyen.png" class="img-fluid" alt="">
@@ -1132,6 +1175,9 @@
         <button class="play-pause-btn" id="playPauseBtn">&#10074;&#10074;</button>
     </div>
 </div>
+
+  <!-- Include FontAwesome CDN -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 
   <script>
         const audioPlayer = document.getElementById("audioPlayer");

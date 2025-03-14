@@ -859,6 +859,116 @@
     row-gap: 0.3125rem;
   }
 
+  /* ---------------------------------------- SKILL TEL ---------------------------------------- */
+
+  #skills-tel{
+  display:none;
+  }
+
+/* Espacement amélioré des titres h3 */
+  #skills-tel h3 {
+    font-size: 20px;
+    margin-top: 40px;
+    color: #222;
+    border-bottom: 2px solid #222;
+    display: inline-block;
+    padding-bottom: 5px;
+    cursor: pointer;
+    transition: margin 0.3s ease-in-out; 
+  }
+
+  /* Ajout d'espace entre les h3 */
+  #skills-tel h3 + ul {
+    margin-top: 10px;
+    margin-bottom: 30px; 
+  }
+
+  /* Animation d’apparition/disparition */
+  #skills-tel ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap; 
+    justify-content: center;
+    gap: 20px;
+    opacity: 1;
+    max-height: 500px;
+    overflow: hidden;
+    transition: max-height 0.4s ease, opacity 0.4s ease;
+  }
+
+  /* Masquage progressif */
+  #skills-tel ul.hidden {
+    opacity: 0;
+    max-height: 0;
+    margin-bottom: 0;
+  }
+
+  /* Style des items */
+  #skills-tel li {
+    background: white;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease-in-out;
+    width: 100%; 
+    max-width: 150px; 
+    text-align: center;
+    box-sizing: border-box; 
+  }
+
+  #skills-tel li:hover {
+    transform: scale(1.1);
+  }
+
+  #skills-tel i {
+    font-size: 3rem;
+  }
+
+  #skills-tel h4 {
+    font-size: 14px;
+    margin-top: 10px;
+    text-align: center;
+  }
+
+  /* Responsive Design pour Mobile */
+  @media (max-width: 1040px) {
+
+    .skills__content, #inventDes{
+      display: none;
+    }
+
+    #skills-tel{
+      display:block;
+    }
+    
+    #skills-tel ul {
+      flex-direction: row; 
+      justify-content: center; 
+      gap: 10px; 
+    }
+
+    #skills-tel li {
+      width: calc(50% - 10px); 
+      padding: 10px; 
+    }
+
+    #skills-tel i {
+      font-size: 2rem; 
+    }
+
+    #skills-tel h4 {
+      font-size: 12px; 
+    }
+  }
+
+  @media (max-width: 500px) {
+    li {
+      width: 100%;
+    }
+  }
+
+
   /* ---------------------------------------- LIGHT DARK --------------------------------------------- */
 
   .icons-container {
