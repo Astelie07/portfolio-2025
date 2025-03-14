@@ -1033,6 +1033,11 @@ interets {
   -webkit-text-stroke: 1px var(--color-background); 
 }
 
+/* ------------------------------------------ Style du bouton de changement de thème ------------------------------------------*/
+
+#gallery-dessin img{
+  max-width: 20%;
+}
 
 /* Style du bouton de changement de thème */
 #theme {

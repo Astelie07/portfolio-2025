@@ -1014,6 +1014,12 @@
   }
 
   /* ------------------------------------------ Style du bouton de changement de thème ------------------------------------------*/
+
+  #gallery-dessin img{
+    max-width: 20%;
+  }
+
+  /* ------------------------------------------ Style du bouton de changement de thème ------------------------------------------*/
   #theme {
     background-color: transparent;
     border: none;
