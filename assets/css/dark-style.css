@@ -1028,6 +1028,17 @@ interets {
   padding: 10px 0;
 }
 
+#portfolio-button a{
+  background-color: var(--color-background);
+  color: var(--color-text);
+  border: none;
+}
+
+#portfolio-button a:hover{
+  background-color: #000;
+  color: lavender;
+}
+
 #portfolio h2 {
   color: white;
   -webkit-text-stroke: 1px var(--color-background); 
@@ -1636,9 +1647,13 @@ box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 transition: transform 0.3s ease;
 }
 
+.dessin-items{
+  transition: transform 0.3s ease;
+}
+
 .project-content .gallery img:hover,
-.project-content .gallery iframe:hover {
-transform: scale(1.05);
+.project-content .gallery iframe:hover, .dessin-items:hover {
+  transform: scale(1.05);
 }
 
 /* -----------------------------------------------CONTACT-------------------------------------------- */

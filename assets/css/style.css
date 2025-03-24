@@ -1013,6 +1013,17 @@
     padding: 10px 0;
   }
 
+  #portfolio-button a{
+    background-color: var(--color-text);
+    color: var(--color-background);
+    border: none;
+  }
+
+  #portfolio-button a:hover{
+    background-color: #000;
+    color: var(--color-primary);
+  }
+
   /* ------------------------------------------ Style du bouton de changement de thème ------------------------------------------*/
 
   #gallery-dessin img{
@@ -1600,8 +1611,12 @@
   transition: transform 0.3s ease;
 }
 
+.dessin-items{
+  transition: transform 0.3s ease;
+}
+
 .project-content .gallery img:hover,
-.project-content .gallery iframe:hover {
+.project-content .gallery iframe:hover, .dessin-items:hover {
   transform: scale(1.05);
 }
 
