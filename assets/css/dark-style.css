@@ -1033,6 +1033,32 @@ interets {
   -webkit-text-stroke: 1px var(--color-background); 
 }
 
+#portfolio > p:first-of-type {
+  -webkit-text-stroke: 0.5px var(--color-accent); 
+}
+
+  /* ------------------------------------------ Style du bouton de changement de thème ------------------------------------------*/
+
+  #gallery-dessin img{
+    max-width: 20%;
+    margin: 1rem;
+    background-color: var(--color-background);
+    border-radius: 1rem;
+  }
+
+  #gallery-dessin{
+    max-width: 85%;
+    margin: 1rem auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+
+  #gallery-titre{
+    margin-top: 3rem;
+  }
+
 /* ------------------------------------------ Style du bouton de changement de thème ------------------------------------------*/
 
 #gallery-dessin img{
@@ -2107,9 +2133,11 @@ transform: scale(1.05);
   color: var(--color-accent);
 }
 
-.filter-btn:first-of-type {
+#content .filter-btn:first-of-type {
   color: var(--color-background);
 }
+
+
 
 .filter-btn:active, .filter-btn:focus {
   color: white;

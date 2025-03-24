@@ -1017,6 +1017,22 @@
 
   #gallery-dessin img{
     max-width: 20%;
+    margin: 1rem;
+    background-color: var(--color-background);
+    border-radius: 1rem;
+  }
+
+  #gallery-dessin{
+    max-width: 85%;
+    margin: 1rem auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+
+  #gallery-titre{
+    margin-top: 3rem;
   }
 
   /* ------------------------------------------ Style du bouton de changement de thème ------------------------------------------*/
