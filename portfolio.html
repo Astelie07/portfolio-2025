@@ -282,7 +282,7 @@
                     
                     <!-- Vidéo présentation -->
                     <div class="video-presentation">
-                        <iframe width="650" height="350" src="https://www.youtube.com/embed/gjH7BQIqqIs?si=UYdQuXIaXEKS0FgI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                        <iframe width="100%" height="auto" src="https://www.youtube.com/embed/gjH7BQIqqIs?si=UYdQuXIaXEKS0FgI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
                     </div>
 
                     </div>
@@ -427,7 +427,7 @@
                     </div>
                     
                     <!-- Video demo -->
-                    <iframe width="700" height="450" src="https://www.youtube.com/embed/HVrJjX17qVk?si=DsUhfQulmpWZ1cjI" title="Premier essai 2D sur Unity - YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                    <iframe width="100%" height="auto" src="https://www.youtube.com/embed/HVrJjX17qVk?si=DsUhfQulmpWZ1cjI" title="Premier essai 2D sur Unity - YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
                             
                     </div>
                 </div>
@@ -447,7 +447,7 @@
                     
                     <!-- Galerie modale pour vidéo et image -->
                     <div class="gallery-modal" id="galleryOr3o">
-                        <iframe width="700" height="450" 
+                        <iframe width="100%" height="auto" 
                                 src="https://www.youtube.com/embed/TRG72vlBCUY?si=Pi9OIcMUfpbNWWOV" 
                                 title="Présentation du site Or3o" 
                                 frameborder="0" 
@@ -508,7 +508,7 @@
 
                     <!-- Galerie modale -->
                     <div class="gallery-modal" id="galleryOmniversus">
-                        <iframe width="700" height="450" 
+                        <iframe width="100%" height="auto" 
                             src="https://www.youtube.com/embed/Nc-OSfFKBGc?si=bg-Z_edX5Wa-977e" 
                             title="Présentation du projet Omniversus" 
                             frameborder="0" 
@@ -982,8 +982,8 @@
                 if (this.hasAttribute("data-video-src")) {
                     const videoSrc = this.getAttribute("data-video-src");
                     const iframe = document.createElement("iframe");
-                    iframe.width = "700";
-                    iframe.height = "450";
+                    iframe.width = "100%";
+                    iframe.height = "auto";
                     iframe.src = videoSrc;
                     iframe.setAttribute("title", "Vidéo");
                     iframe.setAttribute("frameborder", "0");
