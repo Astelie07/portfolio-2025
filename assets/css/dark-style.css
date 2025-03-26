@@ -2313,7 +2313,7 @@ transition: transform 0.3s ease;
 }
 
 #sukiGalleryContainer{
-  background-color: var(--color-primary);
+  background-color: rgba(0, 0, 88, 0.3);
   border-radius: 15px;
   padding:10px;
 }
@@ -2465,4 +2465,53 @@ transition: transform 0.3s ease;
       gap: 5px;
       margin: -2rem 1rem auto;
     }
+
+    /*------PORTFOLIO-------*/
+
+    img, iframe{
+      border-radius:10px;
+    }
+
+    .main-display{
+      margin-top: 3rem;
+      max-height:5000px;
+      height:100%;
+    }
+
+    #emote-gallery img{
+      margin:15px auto;
+      width:100%;
+    }
+
+    .portfolio-preview{
+      margin-bottom:10px;
+    }
+
+    #galleryModalInktober img{
+      width:100%;
+      margin-bottom:10px;
+    }
+
+    #inktober24-gallery img, #Gallery2020 img{
+      width:100%;
+    }
+
+    #sukiGalleryContainer{
+      display:flex;
+      flex-direction:column;
+    }
+
+    .sukiGallery, #galleryMascottes img, #pictoGallery img,#mmiAffiche, #galleryOmniversus img, #gallerySot img, #jinx-gallery img, #galleryOr3o img, #figmadGallery img, #hackGallery img{
+      max-width:100%;
+    }
+
+    #Gallery2020, #hackGallery img, #gallerySot, #jinx-gallery{
+      margin-top:15px;
+    }
+
+    #galleryRouen img{
+      margin:0;
+      width:100%;
+    }
+
 }
