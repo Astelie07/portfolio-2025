@@ -1003,10 +1003,11 @@ interets {
 }
 
 #portfolio {
-  background: url('../img/tree-dark.png'); 
-  background-repeat: no-repeat;
-  background-size: cover; 
-  background-position: top;
+  background: url('../img/tree-dark.png') no-repeat center top;
+  background-size: cover;
+  background-attachment: fixed; 
+  min-height: 100vh; 
+  width: 100%;
   color: var(--color-background);
   padding: 10px 0;
 }
@@ -2137,7 +2138,7 @@ transition: transform 0.3s ease;
 
 
 
-.filter-btn:active, .filter-btn:focus {
+.filter-btn:active, .filter-btn:focus, #content .filter-btn:first-of-type:active, #content .filter-btn:first-of-type:focus {
   color: white;
 }
 
@@ -2391,9 +2392,9 @@ transition: transform 0.3s ease;
     }
 
     #gallery-titre{
-      background-color:var(--color-background);
+      background-color:white;
       margin:3rem 50px auto;
-      padding:5px;
+      padding:10px 20px;
       border-radius:2rem;
     }
 
@@ -2404,7 +2405,7 @@ transition: transform 0.3s ease;
     #gallery-dessin img{
       border:solid 2px var(--color-accent);
       max-width:45%;
-      margin:0.5rem;
+      margin:0.4rem;
     }
 
     .project-selection{
