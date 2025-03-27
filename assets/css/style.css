@@ -988,9 +988,11 @@
 
   #portfolio {
     background: url('../img/tree-light.png'); 
-    background-repeat: no-repeat;
-    background-size: cover; 
-    background-position: top; 
+    background-size: cover;
+    background-attachment: fixed; 
+    min-height: 100vh; 
+    width: 100%;
+    color: var(--color-background);
     padding: 10px 0;
   }
 
@@ -2349,7 +2351,7 @@
     #gallery-dessin img{
       border:solid 2px var(--color-accent);
       max-width:45%;
-      margin:0.5rem;
+      margin:0.4rem;
     }
 
     .project-selection{
