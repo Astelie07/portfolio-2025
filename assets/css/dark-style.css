@@ -1005,7 +1005,6 @@ interets {
 #portfolio {
   background: url('../img/tree-dark.png') no-repeat center top;
   background-size: cover;
-  background-attachment: fixed; 
   min-height: 100vh; 
   width: 100%;
   color: var(--color-background);
