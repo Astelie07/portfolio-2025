@@ -346,37 +346,43 @@ document.addEventListener("DOMContentLoaded", function () {
     const projects = document.querySelectorAll(".project-details");
     let activeIndex = 0;
     let userClicked = false;
+    const isMobile = window.innerWidth < 768; 
 
     function showProject(index) {
-        projects.forEach((project, i) => {
-            project.classList.remove("active");
-            tabs[i].classList.remove("active");
-            if (i === index) {
-                project.classList.add("active");
-                tabs[i].classList.add("active");
-            }
-        });
+        if (isMobile) {
+            // Sur mobile, afficher tous les projets
+            projects.forEach(project => project.classList.add("active"));
+            tabs.forEach(tab => tab.classList.add("active"));
+        } else {
+            // Comportement sur pc : un projet actif
+            projects.forEach((project, i) => {
+                project.classList.remove("active");
+                tabs[i].classList.remove("active");
+                if (i === index) {
+                    project.classList.add("active");
+                    tabs[i].classList.add("active");
+                }
+            });
+        }
     }
 
     tabs.forEach((tab, index) => {
         tab.addEventListener("click", function () {
-            userClicked = true; // L'utilisateur a cliqué, on arrête le défilement automatique
+            userClicked = true;
             activeIndex = index;
             showProject(activeIndex);
         });
     });
 
-    // Défilement automatique toutes les minutes (si l'utilisateur n'a pas cliqué)
     function autoScroll() {
-        if (!userClicked) {
+        if (!userClicked && !isMobile) {
             activeIndex = (activeIndex + 1) % projects.length;
             showProject(activeIndex);
         }
     }
 
-    // Lancer le premier affichage
     showProject(activeIndex);
-    setInterval(autoScroll, 60000); // Change de projet toutes les 60 secondes
+    if (!isMobile) setInterval(autoScroll, 60000); 
 });
 
 
