@@ -2,12 +2,9 @@ A faire :
 
 PC --------------------------------------------
 
-- lien index vers portfolio
-- pour portfolio : enlever dessins "simples" (potes, klonoa, celeste etc...) -> dans une gallery sous cartes
 - variable universelle pour theme    
 - portfolio.html complet
 - style portfolio.html ok
-- Projets OK
 - form contact fonctionnel
 - rangement alt et unecessary
 - menu burger fixed + ok
@@ -16,8 +13,6 @@ PC --------------------------------------------
 TEL ------------------------------------------
 
 - css header
-- css description
-- css skills
 - css cards
 - css portfolio.html
 - css projet
