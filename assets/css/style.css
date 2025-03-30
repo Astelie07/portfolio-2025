@@ -566,10 +566,18 @@
   }
 
   .dark-img{
+    display: none;
+  }
+  
+  .dark-img-promo{
     display: none !important;
   }
   
   .light-img{
+    display: block;
+  }
+  
+  .light-img-promo{
     display: block !important;
   }
 
@@ -2286,6 +2294,10 @@
 
 /* Responsive Design -----------------------------------------------------------*/
   @media (max-width: 768px) {
+      #promo{
+        font-size: 15px;
+      }
+
       .presentation-content {
           flex-direction: column;
           text-align: center;

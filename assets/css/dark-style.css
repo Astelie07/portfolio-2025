@@ -203,10 +203,18 @@ section {
 }
 
 .dark-img{
+  display: block;
+}
+
+.dark-img-promo{
   display: block !important;
 }
 
 .light-img{
+  display: none;
+}
+
+.light-img-promo{
   display: none !important;
 }
 
@@ -2339,6 +2347,10 @@ transition: transform 0.3s ease;
 
 /* Responsive Design -----------------------------------------------------------*/
   @media (max-width: 768px) {
+      #promo{
+        font-size: 15px;
+      }
+
       .presentation-content {
           flex-direction: column;
           text-align: center;
