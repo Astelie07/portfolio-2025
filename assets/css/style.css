@@ -1015,6 +1015,22 @@
     color: var(--color-primary);
   }
 
+  /*---portfolio style---*/
+
+  #gallerySot img, #emote-gallery img, #gallerySot img, #Gallery2020 img{
+    max-width: 30%;
+    margin: 15px auto;
+  }
+
+  #galleryModalInktober img, #jinx-gallery img, #galleryOmniversus img, #galleryOr3o img, #figmadGallery img, #hackGallery img{
+    max-width: 45%;
+    margin: 15px auto;
+  }
+
+  #pictoGallery img, #galleryRouen img{
+    max-width: 22%;
+  }
+
   /* ------------------------------------------ Style du bouton de changement de thème ------------------------------------------*/
 
   #gallery-dessin img{
@@ -2008,6 +2024,16 @@
   width: 100vw;
 }
 
+#content-portfolio {
+  text-align: center;
+  background-image: url("../img/projet-light.png");
+  background-position: top center; /* Image en haut */
+  background-size: cover; /* L'image couvre toute la div sans la déformer */
+  min-height: 100vh;
+  min-width: 100vw;
+}
+
+
 #sidebar + h2{
     margin: 0;
     padding: 2rem;
@@ -2028,8 +2054,6 @@
   padding: 15px 40px;
   border-radius: 15px;
   width: 90%;
-  max-width: 1000px;
-  max-height: 500px;
   margin: 20px auto -25px; /* Centrage horizontal */
   box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
 }
@@ -2452,7 +2476,6 @@
 
     .main-display{
       margin-top: 3rem;
-      max-height:5000px;
       height:100%;
     }
 
