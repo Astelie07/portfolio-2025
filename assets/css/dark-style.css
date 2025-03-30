@@ -203,11 +203,11 @@ section {
 }
 
 .dark-img{
-  display: block;
+  display: block !important;
 }
 
 .light-img{
-  display: none;
+  display: none !important;
 }
 
 /* ---------------------------------------- WAVES BORDER ------------------------------------------------------------------------------- */
@@ -1423,6 +1423,25 @@ footer {
 .dessin-btn{
     background-color: #3B3164;
     color: var(--color-accent);
+  }
+
+  #promo{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--color-accent);
+    color: var(--color-background);
+    font-weight: bold;
+    font-size: 50px;
+  }
+
+  #promo p{
+    padding: 25px;
+  }
+
+  #promo a{
+    color: var(--color-background);
   }
 
 /* ----------------------------------------------------------------PROJETS---------------------------------------------------------------------- */

@@ -566,11 +566,11 @@
   }
 
   .dark-img{
-    display: none;
+    display: none !important;
   }
   
   .light-img{
-    display: block;
+    display: block !important;
   }
 
   /*--------------------------SKILLS---------------------------------------------*/
@@ -989,6 +989,7 @@
   #portfolio {
     background: url('../img/tree-light.png'); 
     background-size: cover;
+    background-position: top;
     min-height: 100vh; 
     width: 100%;
     color: var(--color-text);
@@ -1387,6 +1388,25 @@
 
   .dessin-btn{
     background-color: #0b6b8d;
+  }
+
+  #promo{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--color-accent);
+    color: white;
+    font-weight: bold;
+    font-size: 50px;
+  }
+
+  #promo p{
+    padding: 25px;
+  }
+
+  #promo a{
+    color: white;
   }
 
   /* ----------------------------------------------------------------PROJETS---------------------------------------------------------------------- */
