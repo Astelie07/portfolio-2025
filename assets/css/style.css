@@ -1027,10 +1027,6 @@
     margin: 15px auto;
   }
 
-  #pictoGallery img, #galleryRouen img{
-    max-width: 22%;
-  }
-
   /* ------------------------------------------ Style du bouton de changement de thème ------------------------------------------*/
 
   #gallery-dessin img{
@@ -2316,7 +2312,7 @@
   padding:10px;
 }
 
-#escape-links{
+#escape-links, .portfolio-preview, .image-preview{
   display: flex;
   justify-content: center;
   margin-bottom: 15px;
@@ -2338,8 +2334,13 @@
   margin: 20px auto;
 }
 
-#escape-gallery{
-  
+#escape-gallery img, #pictoGallery img, #galleryRouen img{
+  margin-bottom: 1rem;
+}
+
+.btn-primary, .btn-secondary, .btn{
+  background-color: var(--color-text);
+  border: none;
 }
 
 /* Responsive Design -----------------------------------------------------------*/
@@ -2528,17 +2529,12 @@
       flex-direction:column;
     }
 
-    .sukiGallery, #galleryMascottes img, #pictoGallery img,#mmiAffiche, #galleryOmniversus img, #gallerySot img, #jinx-gallery img, #galleryOr3o img, #figmadGallery img, #hackGallery img{
+    .sukiGallery, #galleryMascottes img, #mmiAffiche, #galleryOmniversus img, #gallerySot img, #jinx-gallery img, #galleryOr3o img, #figmadGallery img, #hackGallery img{
       max-width:100%;
     }
 
     #Gallery2020, #hackGallery img, #gallerySot, #jinx-gallery{
       margin-top:15px;
-    }
-
-    #galleryRouen img{
-      margin:0;
-      width:100%;
     }
 
 }

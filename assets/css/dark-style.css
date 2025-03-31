@@ -1051,10 +1051,6 @@ interets {
     margin: 15px auto;
   }
 
-  #pictoGallery img, #galleryRouen img{
-    max-width: 22%;
-  }
-
   /* ------------------------------------------ Style du bouton de changement de thème ------------------------------------------*/
 
   #gallery-dessin img{
@@ -2545,7 +2541,7 @@ transition: transform 0.3s ease;
       flex-direction:column;
     }
 
-    .sukiGallery, #galleryMascottes img, #pictoGallery img,#mmiAffiche, #galleryOmniversus img, #gallerySot img, #jinx-gallery img, #galleryOr3o img, #figmadGallery img, #hackGallery img{
+    .sukiGallery, #galleryMascottes img,#mmiAffiche, #galleryOmniversus img, #gallerySot img, #jinx-gallery img, #galleryOr3o img, #figmadGallery img, #hackGallery img{
       max-width:100%;
     }
 
@@ -2553,9 +2549,5 @@ transition: transform 0.3s ease;
       margin-top:15px;
     }
 
-    #galleryRouen img{
-      margin:0;
-      width:100%;
-    }
 
 }

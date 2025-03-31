@@ -363,7 +363,7 @@
                 <div class="card-details ux-ui" 
                      data-theme="ux-ui" 
                      data-title="Redesign site de Rouen" 
-                     data-content="Notre exercice consistait à prendre en main Figma, en redesignant le site de <a href='https://rouen.fr/' target='_blank'>Rouen</a>. Les images sont le résultat de cet exercice." 
+                     data-content="Notre exercice consistait à prendre en main Figma, en redesignant le site de https://rouen.fr/. Les images sont le résultat de cet exercice." 
                      data-category="Site Web / Figma" 
                      data-date="Février 2023">
                     <h4>Figma site Rouen</h4>
@@ -374,12 +374,12 @@
                     
                     <!-- Galerie qui s'affiche dans un modal après clic -->
                     <div class="gallery-modal" id="galleryRouen">
-                        <div class="gallery-modal-content">
-                            <div class="gallery">
-                                <img src="assets/img/portfolio/rouen-figma1.png" class="img-fluid" alt="Première page du 'nouveau' site de Rouen.">
-                                <img src="assets/img/portfolio/rouen-figma2.png" class="img-fluid" alt="Deuxième page du 'nouveau' site de Rouen.">
-                                <img src="assets/img/portfolio/rouen-figma1-portable.png" class="img-fluid" alt="Version sur portable du 'nouveau' site de Rouen.">
-                                <img src="assets/img/portfolio/rouen-figma2-portable.png" class="img-fluid" alt="Version sur portable du 'nouveau' site de Rouen.">
+                        <div class="gallery-modal-content container">
+                            <div class="gallery row">
+                                <img class="col-md-4" src="assets/img/portfolio/rouen-figma1.png" class="img-fluid" alt="Première page du 'nouveau' site de Rouen.">
+                                <img class="col-md-4" src="assets/img/portfolio/rouen-figma2.png" class="img-fluid" alt="Deuxième page du 'nouveau' site de Rouen.">
+                                <img class="col-md-2" src="assets/img/portfolio/rouen-figma1-portable.png" class="img-fluid" alt="Version sur portable du 'nouveau' site de Rouen.">
+                                <img class="col-md-2" src="assets/img/portfolio/rouen-figma2-portable.png" class="img-fluid" alt="Version sur portable du 'nouveau' site de Rouen.">
                             </div>
                         </div>
                     </div>
@@ -609,12 +609,14 @@
                     <div class="display-media" style="display: none;">
 
                     <!-- Galerie modale (affichage sur clic) -->
-                        <div class="gallery" id="pictoGallery">
-                            <img src="assets/img/portfolio/crea_grapg_picto.gif" width="600px" alt="Gif des pictogrammes">
-                            <img src="assets/img/portfolio/crea_graph_mont_1.jpg" width="600px" alt="Montage pictogrammes sur les murs">
-                            <img src="assets/img/portfolio/crea_graph_mont_2.jpg" width="450px" alt="Montage pictogrammes sur les murs">
-                            <img src="assets/img/portfolio/crea_graph_mont_3.jpg" width="600px" alt="Montage pictogrammes sur les murs">
+                    <div class="container">  
+                        <div class="gallery row" id="pictoGallery">
+                            <img class="col-md-8" src="assets/img/portfolio/crea_grapg_picto.gif" width="600px" alt="Gif des pictogrammes">
+                            <img class="col-md-4" src="assets/img/portfolio/crea_graph_mont_3.jpg" width="600px" alt="Montage pictogrammes sur les murs">
+                            <img class="col-md-4" src="assets/img/portfolio/crea_graph_mont_2.jpg" width="450px" alt="Montage pictogrammes sur les murs">
+                            <img class="col-md-8" src="assets/img/portfolio/crea_graph_mont_1.jpg" width="600px" alt="Montage pictogrammes sur les murs">
                         </div>
+                    </div>
                     </div>
                 </div>
 
