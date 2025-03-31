@@ -2086,7 +2086,7 @@ transition: transform 0.3s ease;
 /* Grande div qui change en fonction de la carte sélectionnée */
 .main-display {
   background-color: var(--color-accent); /* Orange clair */
-  color: white;
+  color: var(--color-background);
   text-align: left;
   padding: 15px 40px;
   border-radius: 15px;
@@ -2353,6 +2353,50 @@ transition: transform 0.3s ease;
   background-color: rgba(0, 0, 88, 0.3);
   border-radius: 15px;
   padding:10px;
+}
+
+#escape-links, .portfolio-preview, .image-preview{
+  display: flex;
+  justify-content: center;
+  margin-bottom: 15px;
+}
+
+#escape-member{
+  float: left;
+}
+
+#mercure{
+  float: right;
+}
+
+#hr-escape{
+  clear: both;
+  color: white;
+  border: white 1px solid;
+  width: 90%;
+  margin: 20px auto;
+}
+
+#escape-gallery img, #pictoGallery img, #galleryRouen img{
+  margin-bottom: 1rem;
+}
+
+.btn-primary, .btn-secondary, .btn{
+  background-color: var(--color-text);
+  border: none;
+}
+
+#content-portfolio {
+  text-align: center;
+  background-image: url("../img/projet-dark.png");
+  background-position: top center;
+  background-size: cover;
+  min-height: 100vh;
+  min-width: 100vw;
+}
+
+.filter-btn:not(:first-of-type){
+  color: var(--color1);
 }
 
 /* Responsive Design -----------------------------------------------------------*/
