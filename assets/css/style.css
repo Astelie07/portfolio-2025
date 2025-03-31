@@ -2316,6 +2316,32 @@
   padding:10px;
 }
 
+#escape-links{
+  display: flex;
+  justify-content: center;
+  margin-bottom: 15px;
+}
+
+#escape-member{
+  float: left;
+}
+
+#mercure{
+  float: right;
+}
+
+#hr-escape{
+  clear: both;
+  color: white;
+  border: white 1px solid;
+  width: 90%;
+  margin: 20px auto;
+}
+
+#escape-gallery{
+  
+}
+
 /* Responsive Design -----------------------------------------------------------*/
   @media (max-width: 768px) {
       #promo{

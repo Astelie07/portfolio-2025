@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link id="theme" rel="stylesheet" type="text/css" href="assets/css/style.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <title>Portfolio | Details</title>
 </head>
 <body >
@@ -54,8 +55,8 @@
                     </div>
 
                     <div class="gallery" id="inktober24-gallery">
-                        <img src="assets/img/portfolio/portfolio-2024.png" width="40%" alt="Accueil portfolio 2024">
-                        <img src="assets/img/portfolio/inktober24-17-31.png" width="40%" alt="Liste des thèmes de l'inktober">
+                        <img src="assets/img/portfolio/portfolio-home.png" width="40%" alt="Accueil portfolio 2024">
+                        <img src="assets/img/portfolio/portfolio-2024-dark.png" width="40%" alt="Accueil portfolio 2024 dark theme">
                     </div>
                     </div>
                 </div>
@@ -97,7 +98,7 @@
                     <!-- Boutons interactifs pour accéder au site et trailer -->
                     <div class="display-media" style="display: none;">
 
-                    <div class="portfolio-preview">
+                    <div class="portfolio-preview" id="escape-links">
                         <a href="https://m-u-c-k-a.github.io/backroom-game/" target="_blank" class="btn btn-primary">
                             💻 Vers le site web
                         </a>
@@ -105,13 +106,13 @@
                             🎬 Voir le trailer
                         </a>
                         <!-- ATENTION LIEN A CHANGER !!!!!!! -->
-                        <a href="https://m-u-c-k-a.github.io/backroom-game/" target="_blank" class="btn btn-primary">
+                        <a href="https://drive.google.com/file/d/1OnxE9-CM5teGECS5SuXqscY07XfH_v6X/view?usp=drive_link" target="_blank" class="btn btn-primary">
                             🎮 Télécharger le jeu
                         </a>
                     </div>
                     
                     <!-- Liste des membres du groupe -->
-                    <div class="members-list">
+                    <div id="escape-member">
                         <h5>Autres membre de l'équipe de développement :</h5>
                         <ul>
                             <li><a href="https://www.linkedin.com/in/bilal-boukhorissa-6153622a1/" target="_blank" >Bilal Boukhorissa</a></li>
@@ -121,13 +122,25 @@
                             <li><a href="https://www.linkedin.com/in/tombihoreau/" target="_blank" >Tom Bihoreau</a></li>
                         </ul>
                     </div>
+
+                    <div class="sketchfab-embed-wrapper" id="mercure"> 
+                        <p>Un exemple de créature imaginée pour ce projet :</p>
+                        <iframe title="Mercure animation marche" frameborder="0" allowfullscreen mozallowfullscreen="true" webkitallowfullscreen="true" allow="autoplay; fullscreen; xr-spatial-tracking" xr-spatial-tracking execution-while-out-of-viewport execution-while-not-rendered web-share src="https://sketchfab.com/models/b31e52818f3c41b3814ae3f74acadc6d/embed"></iframe> 
+                    </div>
+
+                    <hr id="hr-escape">
                     
                     <!-- Galerie associée sous la carte -->
-                    <div class="gallery">
-                        <img src="assets/img/portfolio/escape-1.jpg" width="500px" alt="Image du jeu The Escape">
-                        <img src="assets/img/portfolio/escape-2.jpg" width="500px" alt="Image du jeu The Escape">
+                <div class="container">
+                    <div class="gallery row" id="escape-gallery">
+                        <p class="col-sm-12">Quelques images du jeu :</p>
+                        <img class="col-md-9" src="assets/img/portfolio/escape-e1-1.PNG" width="500px" alt="Image du jeu The Escape">
+                        <img class="col-md-3" src="assets/img/portfolio/escape-e1-2.png" width="500px" alt="Image du jeu The Escape">
+                        <img class="col-md-8" src="assets/img/portfolio/escape-e2-1.PNG" width="500px" alt="Image du jeu The Escape">
+                        <img class="col-md-4" src="assets/img/portfolio/escape-e2-2.png" width="500px" alt="Image du jeu The Escape">
                     </div>
                     </div>
+                </div>
                 </div>
                 
                 <div class="card-details ux-ui" 
