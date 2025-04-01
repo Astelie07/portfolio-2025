@@ -1798,11 +1798,12 @@ transition: transform 0.3s ease;
 }
 
 .list-item {
-  line-height: 4;
+  line-height: 2;
   color: var(--color-background);
 }
 
 .contact-text {
+  font-size: 30px;  
   letter-spacing: 1.9px;
   color: var(--color-text);
 }
@@ -1819,12 +1820,7 @@ transition: transform 0.3s ease;
   margin-left: 30px;
 }
 
-.gmail {
-  margin-left: 25px;
-}
-
 .gmail:hover {
-  margin-left: 25px;
   -webkit-text-stroke: 0.2px var(--color-background);
 }
 
@@ -2595,3 +2591,6 @@ transition: transform 0.3s ease;
 
 
 }
+
+
+

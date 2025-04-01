@@ -1762,7 +1762,7 @@
   }
   
   .list-item {
-    line-height: 4;
+    line-height: 2;
     color: var(--color-background);
   }
   
@@ -1778,13 +1778,8 @@
   .phone {
     margin-left: 30px;
   }
-  
-  .gmail {
-    margin-left: 25px;
-  }
 
   .gmail:hover {
-    margin-left: 25px;
     -webkit-text-stroke: 0.2px var(--color-background);
   }
   
