@@ -1939,6 +1939,10 @@
     }
   }
 
+.contact-icon{
+    color:var(--color-secondary);
+  }
+
 /* ---------------------------- MUSIC STICKERS ---------------------------- */
 
 .sticker-huepoe, .sticker-fleurdefeu, .sticker-flute-st, .sticker-ocarina{
@@ -2495,8 +2499,20 @@
     #contact .contact-list{
       display: flex;
       flex-direction: column;
-      gap: 5px;
       margin: -2rem 1rem auto;
+    }
+
+    .list-item{
+      display: flex;
+      text-align:center;
+      flex-direction: column;
+      justifiy-content:center;
+      align-items:center;
+      font-size:1rem;
+    }
+
+    .contact-list i{
+      margin-left:25px;
     }
 
     #contact-form{
@@ -2526,7 +2542,6 @@
     .hr-projet{
       display:block;
     }
-
     /*------PORTFOLIO-------*/
 
     img, iframe{
