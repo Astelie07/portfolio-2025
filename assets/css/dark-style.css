@@ -2551,11 +2551,23 @@ transition: transform 0.3s ease;
     #contact .contact-list{
       display: flex;
       flex-direction: column;
-      gap: 5px;
       margin: -2rem 1rem auto;
     }
 
-        #contact-form{
+    .list-item{
+      display: flex;
+      text-align:center;
+      flex-direction: column;
+      justifiy-content:center;
+      align-items:center;
+      font-size:1rem;
+    }
+
+    .contact-list i{
+      margin-left:25px;
+    }
+
+    #contact-form{
       display:flex;
       flex-direction:column;
       justify-content:center;
