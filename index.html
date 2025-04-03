@@ -8,6 +8,47 @@
   
   <script src="https://kit.fontawesome.com/5e3d8daf90.js" crossorigin="anonymous"></script>
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+  <style>
+    /* Cacher les textes et les résumés */
+.github-calendar .contrib-footer,
+.github-calendar .contrib-column { 
+    display: none; 
+}
+
+/* Supprimer les bordures autour du calendrier */
+.github-calendar { 
+    border: none !important;
+    background: transparent;
+}
+
+/* Arrondir les cases */
+.github-calendar .day { 
+    rx: 5px; /* Arrondi */
+    ry: 5px;
+}
+
+/* Cacher les jours et mois */
+.github-calendar .wday, 
+.github-calendar .month {
+    display: none;
+}
+
+/* Centrer le calendrier */
+.calendar-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+/* Changer la couleur des cases */
+.github-calendar .day[data-level='0'] { background-color: #2b2d42; } /* 0 commits */
+.github-calendar .day[data-level='1'] { background-color: #8d99ae; } /* 1-9 commits */
+.github-calendar .day[data-level='2'] { background-color: #ef233c; } /* 10-19 commits */
+.github-calendar .day[data-level='3'] { background-color: #d90429; } /* 20-29 commits */
+.github-calendar .day[data-level='4'] { background-color: #ff0000; } /* 30+ commits */
+
+  </style>
 </head>
 <body>
   <!-- Loader -->
@@ -751,11 +792,13 @@
   <p id="skill-commentary">Tant à ajouter, mais<br> il faut continuer<br> d'apprendre avant. </p> 
 
 
-  <link rel="stylesheet" href="https://unpkg.com/github-calendar@latest/dist/github-calendar-responsive.css"/>
-  <div class="calendar"></div>
+  <div class="calendar-container">
+    <div class="github-calendar"></div>
+  </div>
+  
   <script src="https://unpkg.com/github-calendar@latest/dist/github-calendar.min.js"></script>
   <script>
-      GitHubCalendar(".calendar", "Astelie07", { responsive: true });
+    GitHubCalendar(".github-calendar", "Astelie07", { responsive: true });
   </script>
 
 </section>
