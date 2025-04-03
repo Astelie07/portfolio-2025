@@ -1,20 +1,10 @@
 A faire :
 
 PC --------------------------------------------
-
-- variable universelle pour theme    
+  
 - portfolio.html complet
 - style portfolio.html ok
 - form contact fonctionnel
 - rangement alt et unecessary
 - menu burger fixed + ok
 - css pc fini
-
-TEL ------------------------------------------
-
-- css header
-- css cards
-- css portfolio.html
-- css projet
-- css contact
-- css autre (musiques, stickers etc...)
