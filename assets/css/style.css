@@ -2580,3 +2580,141 @@
     }
 
 }
+
+/* ------------------------------- SCROLL ------------------------------- */
+
+/* Boîte d'alerte normale */
+#alertBox, #warningBox {
+  position: fixed;
+  top: 75%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 20px;
+  border-radius: 10px;
+  display: none;
+  z-index: 1000;
+}
+
+#overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: none;
+  z-index: 999;
+}
+
+/* 🔥 Alerte menaçante 🔥 */
+#warningBox {
+  font-size: 22px;
+  font-weight: bold;
+  padding: 30px;
+}
+
+/* Effet de vibration */
+.shake {
+  animation: shake 0.5s infinite;
+}
+
+@keyframes shake {
+  0%, 100% { transform: translate(-50%, -50%); }
+  25% { transform: translate(-52%, -48%); }
+  50% { transform: translate(-48%, -52%); }
+  75% { transform: translate(-50%, -50%); }
+}
+
+/* 💥 Effet Glitch 💥 */
+.glitch {
+  animation: glitch 1s linear infinite;
+  animation: glitchEffect 1s linear infinite;
+}
+
+@keyframes glitchEffect {
+  0% { transform: translate(1px, -1px) rotate(0.5deg); }
+  20% { transform: translate(-1px, 1px) rotate(-0.5deg); }
+  40% { transform: translate(2px, -2px) rotate(0.8deg); }
+  60% { transform: translate(-2px, 2px) rotate(-0.8deg); }
+  80% { transform: translate(1px, -1px) rotate(0.5deg); }
+  100% { transform: translate(0px, 0px) rotate(0deg); }
+}
+
+@keyframes glitchEffect{
+  2%,64%{
+  transform: translate(2px,0) skew(0deg);
+  }
+  4%,60%{
+    transform: translate(-2px,0) skew(0deg);
+  }
+  62%{
+    transform: translate(0,0) skew(5deg); 
+  }
+}
+
+/* Effet Flash */
+.flash {
+  animation: flash 0.05s infinite alternate;
+}
+
+@keyframes flash {
+  0% { background: rgba(255, 136, 0, 0.2); }
+  100% { background: rgba(255, 255, 255, 0.2); }
+}
+
+/* ---------------------------DIALOGUE */
+    
+#app {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    padding-bottom: 3rem;
+    height: 100vh;
+}
+    
+.dialogue {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    max-height: 50%;
+    min-height: 300px;
+    min-width: 1024px;
+    width: 60%;
+    background-color: var(--color-background);
+    padding: 20px;
+    border-radius: 15px;
+}
+    
+.dialogue-character {
+    font-family: "Varela Round", sans-serif;
+    font-size: 2rem;
+    color: var(--color-text);
+    background-color: var(--color-accent);
+    padding: 10px;
+    border-radius: 20px;
+    margin-bottom: 10px;
+    display: inline-block;
+    animation: bounce 1s infinite alternate;
+}
+    
+@keyframes bounce {
+    from {
+        transform: translateY(0);
+    }
+    to {
+        transform: translateY(-5px);
+    }
+}
+    
+.dialogue-text {
+    font-family: "Hind", sans-serif;
+    font-size: 1.5rem;
+    color: var(--color-text);
+}
+
+.scroll-chara{
+  position: absolute;
+  max-width: 350px;
+  bottom: 0;
+  right: -6rem;
+}

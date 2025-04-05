@@ -1,3 +1,70 @@
+/*------------------------------------SCROLL--------------------------------*/
+
+    let lastScrollY = window.scrollY;
+    let lastTime = Date.now();
+    let alertShown = false;
+    let alertCount = 0;
+
+    window.addEventListener("scroll", function () {
+      if (alertShown) return;
+
+      let now = Date.now();
+      let deltaTime = now - lastTime;
+      let deltaY = window.scrollY - lastScrollY;
+      let speed = deltaY / deltaTime;
+
+      if (speed > 3 && deltaY > 125) {
+        alertShown = true;
+        if (alertCount == 3) {
+          showWarning();
+        } else if(alertCount < 3) {
+          showAlert();
+        }
+      }
+
+      lastScrollY = window.scrollY;
+      lastTime = now;
+    });
+
+    function showAlert() {
+      alertCount++;
+      document.getElementById("alertBox").style.display = "block";
+      document.getElementById("overlay").style.display = "block";
+      document.body.style.overflow = "hidden";
+    }
+
+    function closeAlert() {
+      document.getElementById("alertBox").style.display = "none";
+      document.getElementById("overlay").style.display = "none";
+      document.body.style.overflow = "auto";
+      setTimeout(() => alertShown = false, 1500);
+    }
+
+    function showWarning() {
+      document.getElementById("warningBox").style.display = "block";
+      document.getElementById("overlay").style.display = "block";
+      document.body.style.overflow = "hidden";
+
+      // 🔥 Active le glitch et les flashs
+      document.body.classList.add("glitch", "flash");
+
+      // Forcer le scroll vers le haut avec un effet de "bug"
+      let scrollInterval = setInterval(() => {
+        window.scrollTo({ top: window.scrollY - 20 + (Math.random() * 10 - 5), behavior: "smooth" });
+      }, 100);
+    }
+
+    function closeWarning() {
+      document.getElementById("warningBox").style.display = "none";
+      document.getElementById("overlay").style.display = "none";
+      document.body.style.overflow = "auto";
+      alertCount ++;
+      setTimeout(() => alertShown = false, 2000);
+
+      // ❌ Supprime les effets glitch et flash
+      document.body.classList.remove("glitch", "flash");
+    }
+
 /*------------------------------------DEBUT THEMES--------------------------------*/
 
 function toggleTheme() {
