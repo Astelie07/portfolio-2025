@@ -1466,6 +1466,10 @@ footer {
 
 /* ----------------------------------------------------------------PROJETS---------------------------------------------------------------------- */
 
+.hr-projet{
+    display:none;
+}
+
 .projects-section {
   display: flex;
   padding:0;
@@ -2543,8 +2547,48 @@ transition: transform 0.3s ease;
     #contact .contact-list{
       display: flex;
       flex-direction: column;
-      gap: 5px;
       margin: -2rem 1rem auto;
+    }
+
+    .list-item{
+      display: flex;
+      text-align:center;
+      flex-direction: column;
+      justifiy-content:center;
+      align-items:center;
+      font-size:1rem;
+    }
+
+    .contact-list i{
+      margin-left:25px;
+    }
+
+    #contact-form{
+      display:flex;
+      flex-direction:column;
+      justify-content:center;
+      align-items:center;
+      min-width:auto;
+      max-width: 90%;
+      text-align:center;
+    }
+
+    .form-control, #name, #email{
+      min-width:auto;
+      text-align:center;
+      max-width:100%;
+
+    }
+
+    .form-group{
+      margin-bottom:10px;
+    }
+
+    .contact-wrapper{
+      padding:0 !important;
+    }
+    .hr-projet{
+      display:block;
     }
 
     /*------PORTFOLIO-------*/
