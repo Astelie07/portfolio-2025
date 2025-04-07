@@ -2,10 +2,8 @@ A faire :
 
 PC --------------------------------------------
 
-- css complet
-- form contact fonctionnel
+- ajout site honorine dans portfolio (https://firebell1703.github.io/honorine-portfolio.github.io/)
 - menu burger fixed + ok
 
 + :
 - traitement accessibilité
-- speedpaint dans gallery
