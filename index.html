@@ -1011,16 +1011,6 @@
     <button id="portfolio-button" style="background-color: none;border: none;cursor: pointer;"><a>Détails</a></button>
   </div>
 
-  <h3 id="gallery-titre">Gallerie de quelques réalisations personnelles :</h3>
-  <div id="gallery-dessin">
-    <img class="dessin-items" src="assets/img/gallerie/idwtbamg.png" alt="Fanart de la série 'I don't want to be a magical girl'">
-    <img class="dessin-items" src="assets/img/gallerie/glorpMiku.png" alt="Fanart GlorpMiku">
-    <img class="dessin-items" src="assets/img/gallerie/klonoa.png" alt="Fanart Klonoa : Door to Phantomhive (Wii)">
-    <img class="dessin-items" src="assets/img/gallerie/stella.png" alt="Fanart Stelle. Jeu : SpiritFarer">
-    <img class="dessin-items" src="assets/img/gallerie/avatar.png" alt="Humanisation de mon avatar sur les réseaux sociaux">
-    <img class="dessin-items" src="assets/img/gallerie/dessin_2.png" alt="Profil picture (2021-2023)">
-  </div>
-
   <script>
     document.getElementById("portfolio-button").addEventListener("click", function() {
         // Récupérer la feuille de style active
@@ -1029,6 +1019,66 @@
         // Rediriger vers portfolio.html avec le paramètre de style
         window.location.href = `portfolio.html?style=${encodeURIComponent(activeStyle)}`;
     });
+  </script>
+
+  <h3 id="gallery-titre">Gallerie de quelques réalisations personnelles : <br> Cliquez dessus pour vois le speedpaint !</h3>
+  <div id="gallery-dessin">
+    <div class="item" data-video="direct60.mp4">
+      <img class="dessin-items" src="assets/img/gallerie/direct.png" alt="Fanart en réaction aux annonces de Nintendo en mars - avril 2025">
+    </div>
+    <div class="item" data-video="idwtbamg60.mp4">
+      <img class="dessin-items" src="assets/img/gallerie/idwtbamg.png" alt="Fanart de la série 'I don't want to be a magical girl'">
+    </div>
+    <div class="item" data-video="glorpMiku60.mp4">
+      <img class="dessin-items" src="assets/img/gallerie/glorpMiku.png" alt="Fanart GlorpMiku">
+    </div>
+    <div class="item" data-video="klonoa-60.mp4">
+      <img class="dessin-items" src="assets/img/gallerie/klonoa.png" alt="Fanart Klonoa : Door to Phantomhive (Wii)">
+    </div>
+    <div class="item" data-video="stella60.mp4">
+      <img class="dessin-items" src="assets/img/gallerie/stella.png" alt="Fanart Stelle. Jeu : SpiritFarer">
+    </div>
+    <div class="item" data-video="avatar60.mp4">
+      <img class="dessin-items" src="assets/img/gallerie/avatar.png" alt="Humanisation de mon avatar sur les réseaux sociaux">
+    </div>
+    <div class="item" data-video="#">
+      <img class="dessin-items" src="assets/img/gallerie/dessin_2.png" alt="Profil picture (2021-2023)">
+    </div>
+  </div>
+
+  <div class="modal hidden">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <video controls autoplay muted></video>
+    </div>
+  </div>
+
+  <script>
+    const item = document.querySelectorAll('.item');
+    const modal = document.querySelector('.modal');
+    const video = modal.querySelector('video');
+    const closeBtn = modal.querySelector('.close');
+
+    item.forEach(item => {
+      item.addEventListener('click', () => {
+        const src = "assets/img/gallerie/timelapse/"+item.dataset.video;
+        video.src = src;
+        modal.classList.remove('hidden');
+        video.play();
+      });
+    });
+
+    closeBtn.addEventListener('click', closeModal);
+    modal.addEventListener('click', (e) => {
+      if(e.target === modal) closeModal();
+    });
+
+    function closeModal() {
+      modal.classList.add('hidden');
+      video.pause();
+      video.currentTime = 0;
+    }
+
   </script>
 </section>
 
@@ -1219,7 +1269,7 @@
         function changeMusic(musicFile, musicName) {
             audioPlayer.src = musicFile;
             audioPlayer.play();
-            audioPlayer.volume = 0.5;
+            audioPlayer.volume = 0.4;
             currentMusic.textContent = musicName;
             playPauseBtn.innerHTML = "&#10074;&#10074;"; // Icône pause par défaut quand la musique change
         }

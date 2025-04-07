@@ -1453,7 +1453,7 @@ footer {
     background-color: var(--color-accent);
     color: var(--color-background);
     font-weight: bold;
-    font-size: 50px;
+    font-size: 30px;
   }
 
   #promo p{
@@ -1699,14 +1699,12 @@ transition: transform 0.3s ease;
   margin: -100px auto auto 100px;
 }
 
-.sticker-ocarina {
-  top: 15%;
-  left: -40%;
+.sticker-ocarina{
+  left: 3%;
 }
 
 .sticker-flute-st{
-  top: 15%;
-  right: -40%;
+  right: 3%;
 }
 
 .image-container {
@@ -2307,6 +2305,84 @@ transition: transform 0.3s ease;
     }
 
 
+}
+
+/* ========== CONTACT SECTION COMPACT ========== */
+
+#contact {
+  background: var(--color-accent);
+  color: var(--color-text);
+  text-align: center;
+}
+
+#contact h2 {
+  font-size: 2rem;
+}
+
+.direct-contact-container {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+
+.contact-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.list-item {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+  justify-content: center;
+  font-size: 1rem;
+  margin: 0.5rem 0;
+}
+
+.social-media-list {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  list-style: none;
+  padding: 0;
+}
+
+.contact-icon i {
+  font-size: 1.8rem;
+  color: var(--text-color);
+  transition: color 0.3s;
+}
+
+.contact-icon i, .list-item a {
+  color: var(--color-text);
+}
+
+.contact-icon:hover i, .list-item a:hover {
+  color: var(--color-background);
+}
+
+.copyright {
+  font-size: 0.75rem;
+  opacity: 0.7;
+} 
+
+/* Responsive */
+
+@media (max-width: 768px) {
+  .contact-wrapper {
+    flex-direction: column;
+  }
+
+}
+
+section:last-of-type{
+  padding-bottom: 0.2rem;
+  padding-top: 1rem;
+}
+
+footer{
+  margin-top: 1rem;
 }
 
 /* ------------------------------- SCROLL ------------------------------- */
