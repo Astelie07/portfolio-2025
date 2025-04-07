@@ -2523,3 +2523,85 @@ footer{
   right: -6rem;
 }
 
+/*----------------test gallery--------------------*/
+
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 1rem;
+  justify-items: center; /* centre les items dans leur cellule */
+}
+
+.item {
+  aspect-ratio: 1 / 1;
+  overflow: hidden;
+  cursor: pointer;
+  max-width: 32%;
+  width: 100%;
+  margin: 0.2rem;
+}
+
+.item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s;
+}
+
+.item:hover {
+  transform: scale(1.05);
+  border-radius: 10px;
+}
+
+/* Pour les très grands écrans */
+@media (min-width: 1400px) {
+  .item {
+    max-width: 23%;
+  }
+}
+
+/* Pour les écrans de téléphone */
+@media (max-width: 768px) {
+  .item {
+    max-width: 100%;
+  }
+
+  #gallery-dessin .item .dessin-items {
+    max-width: 100%;
+  }
+}
+
+/* Modal */
+
+.modal {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal.hidden {
+  display: none;
+}
+
+.modal-content {
+  position: relative;
+  max-width: 80%;
+}
+
+.modal-content video {
+  width: 100%;
+  height: auto;
+}
+
+.close {
+  position: absolute;
+  top: -30px;
+  right: 0;
+  font-size: 2rem;
+  color: white;
+  cursor: pointer;
+}

@@ -13,7 +13,7 @@
       let deltaY = window.scrollY - lastScrollY;
       let speed = deltaY / deltaTime;
 
-      if (speed > 3 && deltaY > 150) {
+      if (window.innerWidth > 768 && speed > 3 && deltaY > 150) {
         alertShown = true;
         if (alertCount == 3) {
           showWarning();
