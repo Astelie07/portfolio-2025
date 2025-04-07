@@ -2466,14 +2466,14 @@ footer{
 
 /*----------------test gallery--------------------*/
 
-.gallery {
+#portfolio .gallery {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
   gap: 1rem;
   justify-items: center; /* centre les items dans leur cellule */
 }
 
-.item {
+#portfolio .item {
   aspect-ratio: 1 / 1;
   overflow: hidden;
   cursor: pointer;
@@ -2482,28 +2482,28 @@ footer{
   margin: 0.2rem;
 }
 
-.item img {
+#portfolio .item img {
   width: 100%;
   height: 100%;
   object-fit: cover;
   transition: transform 0.3s;
 }
 
-.item:hover {
+#portfolio .item:hover {
   transform: scale(1.05);
   border-radius: 10px;
 }
 
 /* Pour les très grands écrans */
 @media (min-width: 1400px) {
-  .item {
+  #portfolio .item {
     max-width: 23%;
   }
 }
 
 /* Pour les écrans de téléphone */
 @media (max-width: 768px) {
-  .item {
+  #portfolio .item {
     max-width: 100%;
   }
 
@@ -2514,7 +2514,7 @@ footer{
 
 /* Modal */
 
-.modal {
+#portfolio .modal {
   position: fixed;
   inset: 0;
   background: rgba(0,0,0,0.8);
@@ -2524,21 +2524,21 @@ footer{
   z-index: 1000;
 }
 
-.modal.hidden {
+#portfolio .modal.hidden {
   display: none;
 }
 
-.modal-content {
+#portfolio .modal-content {
   position: relative;
   max-width: 80%;
 }
 
-.modal-content video {
+#portfolio .modal-content video {
   width: 100%;
   height: auto;
 }
 
-.close {
+#portfolio .close {
   position: absolute;
   top: -30px;
   right: 0;
