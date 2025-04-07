@@ -1,24 +1,33 @@
 <?php
-// Get data from form  
-$name = $_POST['name'];
-$email= $_POST['email'];
-$message= $_POST['message'];
 
-$to = "henryonastelie@gmail.com";
-$subject = "Contact via portfolio";
+// Ton email de réception
+$destinataire = "tonmail@tonsite.com";
 
-// The following text will be sent
-// Name = user entered name
-// Email = user entered email
-// Message = user entered message 
-$txt ="Name = ". $name . "\r\n  Email = " 
-    . $email . "\r\n Message =" . $message;
+// Récupération des données
+$nom     = htmlspecialchars($_POST['name']);
+$email   = htmlspecialchars($_POST['email']);
+$message = htmlspecialchars($_POST['message']);
 
-$headers = "From: "+$email;
-if($email != NULL) {
-    mail($to, $subject, $txt, $headers);
+// Sujet du mail
+$sujet = "Nouveau message de $nom via le formulaire de contact";
+
+// Contenu du mail
+$contenu = "Nom : $nom\n";
+$contenu .= "Email : $email\n\n";
+$contenu .= "Message :\n$message";
+
+// Headers
+$headers = "From: $email" . "\r\n" .
+           "Reply-To: $email" . "\r\n" .
+           "X-Mailer: PHP/" . phpversion();
+
+// Envoi
+if (mail($destinataire, $sujet, $contenu, $headers)) {
+  http_response_code(200); // OK
+  echo "Message envoyé avec succès";
+} else {
+  http_response_code(500); // Erreur
+  echo "Une erreur est survenue. Veuillez réessayer.";
 }
 
-// Redirect to
-header("Location:../../index.html");
 ?>

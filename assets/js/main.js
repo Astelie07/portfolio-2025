@@ -13,7 +13,7 @@
       let deltaY = window.scrollY - lastScrollY;
       let speed = deltaY / deltaTime;
 
-      if (speed > 3 && deltaY > 125) {
+      if (speed > 3 && deltaY > 150) {
         alertShown = true;
         if (alertCount == 3) {
           showWarning();
@@ -317,13 +317,6 @@ $cards
       $card.addClass("animated");
     },2500);
   });
-
-  document.querySelector('#contact-form').addEventListener('submit', (e) => {
-    e.preventDefault();
-    e.target.elements.name.value = '';
-    e.target.elements.email.value = '';
-    e.target.elements.message.value = '';
-  });
   
   document.querySelectorAll('.filter-btn').forEach(button => {
     button.addEventListener('click', () => {
@@ -450,6 +443,54 @@ document.addEventListener("DOMContentLoaded", function () {
 
     showProject(activeIndex);
     if (!isMobile) setInterval(autoScroll, 60000); 
+});
+
+// ---------------------------------------------------- FORMULAIRE
+
+$(document).ready(function() {
+  $('#contact-form').on('submit', function(e) {
+    e.preventDefault(); // Empêche l'envoi classique
+
+    const $form = $(this);
+    const $button = $('#submit');
+    const $icon = $('#send-icon');
+
+    $button.prop('disabled', true); // Désactive le bouton
+    $icon.removeClass('fa-check').addClass('fa-spinner fa-spin'); // Animation loading
+
+    $.ajax({
+      type: 'POST',
+      url: $form.attr('action'),
+      data: $form.serialize(),
+      success: function(response) {
+        // Animation succès
+        $icon.removeClass('fa-spinner fa-spin').addClass('fa-check');
+        $button.removeClass('btn-primary').addClass('btn-success').text('Message envoyé !');
+
+        // Reset du formulaire après 2s
+        setTimeout(function() {
+          $form.trigger('reset');
+          $button.prop('disabled', false)
+                 .removeClass('btn-success')
+                 .addClass('btn-primary')
+                 .html('Envoyer <i class="fa-solid fa-check" id="send-icon"></i>');
+        }, 2000);
+      },
+      error: function() {
+        // Animation erreur
+        $icon.removeClass('fa-spinner fa-spin').addClass('fa-xmark');
+        $button.removeClass('btn-primary').addClass('btn-danger').text('Erreur...');
+
+        // Retour à la normale après 2s
+        setTimeout(function() {
+          $button.prop('disabled', false)
+                 .removeClass('btn-danger')
+                 .addClass('btn-primary')
+                 .html('Envoyer <i class="fa-solid fa-check" id="send-icon"></i>');
+        }, 2000);
+      }
+    });
+  });
 });
 
 

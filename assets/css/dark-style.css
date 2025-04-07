@@ -2559,6 +2559,10 @@ transition: transform 0.3s ease;
       font-size:1rem;
     }
 
+    .contact-icon {
+      color: var(--color-accent);
+    }
+
     .contact-list i{
       margin-left:25px;
     }
