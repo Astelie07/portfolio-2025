@@ -1,7 +1,7 @@
 <?php
 
 // Ton email de réception
-$destinataire = "tonmail@tonsite.com";
+$destinataire = "henryonastelie@gmail.com";
 
 // Récupération des données
 $nom     = htmlspecialchars($_POST['name']);
