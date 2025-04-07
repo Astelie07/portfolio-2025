@@ -1,10 +1,11 @@
 A faire :
 
 PC --------------------------------------------
-  
-- portfolio.html complet
-- style portfolio.html ok
+
+- css complet
 - form contact fonctionnel
-- rangement alt et unecessary
 - menu burger fixed + ok
-- css pc fini
+
++ :
+- traitement accessibilité
+- speedpaint dans gallery
