@@ -4,6 +4,7 @@ PC --------------------------------------------
 
 - ajout site honorine dans portfolio (https://firebell1703.github.io/honorine-portfolio.github.io/)
 - menu burger fixed + ok
+- organisation du code (SURTOUT CSS)
 
 + :
 - traitement accessibilité
