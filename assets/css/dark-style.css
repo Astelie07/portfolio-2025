@@ -1054,8 +1054,6 @@ interets {
   /* ------------------------------------------ Style du bouton de changement de thème ------------------------------------------*/
 
   #gallery-dessin img{
-    max-width: 100%;
-    margin: 1rem;
     background-color: var(--color-background);
     border-radius: 1rem;
   }
@@ -1102,7 +1100,7 @@ interets {
 footer {
     width: 100%;
     text-align: center;
-    background: var(--color-secondary);
+    background: var(--color-accent);
     color: var(--color-text);
   }
 
