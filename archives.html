@@ -5,48 +5,65 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Archives | Portfolio</title>
   <style>
+    :root {
+      --color-background: #FCF8DA;
+      --color-primary: #EDBA40;
+      --color-secondary: #E28C33;
+      --color-accent: #E0652B;
+      --color-text: #260E03;
+    
+      --color1: #E0652B;
+      --color2: #E28C33;
+      --color3: #EDBA40;
+    
+      --transition-duration: 0.3s;
+      --box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+    
     * {
       box-sizing: border-box;
       margin: 0;
       padding: 0;
     }
-
+    
     body {
       font-family: 'Segoe UI', sans-serif;
-      background-color: #f4f4f4;
-      color: #333;
+      background-color: var(--color-background);
+      color: var(--color-text);
     }
-
+    
     .archives-explorer-container {
       display: flex;
       min-height: 100vh;
+      background-color: var(--color-background);
     }
-
+    
     .archives-sidebar {
       width: 220px;
-      background-color: #1e1e1e;
+      background-color: var(--color1);
       color: white;
       padding: 1rem;
-      border-right: 2px solid #333;
+      border-right: 2px solid var(--color2);
+      transition: background var(--transition-duration);
     }
-
+    
     .archives-sidebar ul {
       list-style: none;
     }
-
+    
     .archives-sidebar li {
       cursor: pointer;
       padding: 0.5rem;
       margin-bottom: 0.5rem;
       border-radius: 6px;
-      transition: background 0.3s;
+      transition: background var(--transition-duration);
     }
-
+    
     .archives-sidebar li:hover,
     .archives-sidebar li.active {
-      background-color: #333;
+      background-color: var(--color2);
     }
-
+    
     .archives-gallery-display {
       flex: 1;
       padding: 2rem;
@@ -55,34 +72,42 @@
       gap: 1rem;
       justify-content: flex-start;
       align-items: flex-start;
-      background-color: #fafafa;
+      background-color: var(--color-background);
+      transition: all var(--transition-duration);
     }
-
+    
     .archives-gallery-section {
       display: none;
       width: 100%;
       flex-wrap: wrap;
       gap: 1rem;
+      opacity: 0;
+      transform: translateY(10px);
+      transition: opacity var(--transition-duration), transform var(--transition-duration);
     }
-
+    
     .archives-gallery-section.active {
       display: flex;
+      opacity: 1;
+      transform: translateY(0);
     }
-
+    
     .archives-gallery-section img {
       width: 150px;
       height: auto;
       border-radius: 8px;
       object-fit: cover;
       cursor: pointer;
-      transition: transform 0.2s ease;
-      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+      transition: transform 0.2s ease, box-shadow var(--transition-duration);
+      box-shadow: var(--box-shadow);
+      background-color: white;
     }
-
+    
     .archives-gallery-section img:hover {
       transform: scale(1.05);
+      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
     }
-
+    
     /* Lightbox */
     .archives-lightbox {
       display: none;
@@ -95,33 +120,89 @@
       background: rgba(0, 0, 0, 0.8);
       justify-content: center;
       align-items: center;
+      transition: opacity var(--transition-duration);
     }
-
+    
     .archives-lightbox img {
       max-width: 90%;
       max-height: 90%;
       border-radius: 10px;
     }
-
+    
     .archives-lightbox.active {
       display: flex;
     }
-
+    
+    /* Responsive */
     @media screen and (max-width: 768px) {
       .archives-explorer-container {
         flex-direction: column;
       }
-
+    
       .archives-sidebar {
         width: 100%;
         border-right: none;
-        border-bottom: 2px solid #333;
+        border-bottom: 2px solid var(--color2);
       }
-
+    
       .archives-gallery-display {
         justify-content: center;
       }
+    
+      .archives-gallery-section {
+        justify-content: center;
+      }
     }
+
+    .archives-lightbox {
+      display: none;
+      position: fixed;
+      z-index: 1000;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.85);
+      justify-content: center;
+      align-items: center;
+      animation: fadeIn 0.3s ease forwards;
+      cursor: zoom-out;
+    }
+    
+    .archives-lightbox img {
+      max-width: 90%;
+      max-height: 90%;
+      border-radius: 10px;
+      opacity: 0;
+      transform: scale(0.95);
+      transition: all 0.3s ease;
+    }
+    
+    .archives-lightbox.active img {
+      opacity: 1;
+      transform: scale(1);
+    }
+    
+    .archives-lightbox-close {
+      position: absolute;
+      top: 1rem;
+      right: 1.5rem;
+      font-size: 2rem;
+      color: white;
+      cursor: pointer;
+      transition: opacity 0.2s ease;
+      user-select: none;
+    }
+    
+    .archives-lightbox-close:hover {
+      opacity: 0.7;
+    }
+    
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
   </style>
 </head>
 <body>
@@ -170,8 +251,7 @@
         <img src="assets/img/gallerie/monstres/wemai.jpg" alt="Wemai" />
       </div>
       <div id="archives-autres" class="archives-gallery-section">
-        <img src="assets/img/gallerie/dessin_3.png" alt="Dessin 3" />
-        <img src="assets/img/gallerie/dessin_2.png" alt="Dessin 2" />
+        <img src="assets/img/gallerie/dessin_3.jpg" alt="Dessin 3" />
         <img src="assets/img/gallerie/dessin_1.png" alt="Dessin 1" />
         <img src="assets/img/gallerie/dessins/anaru.jpg" alt="Anaru" />
         <img src="assets/img/gallerie/dessins/dhmis.jpg" alt="DHMIS" />
@@ -190,38 +270,61 @@
     </div>
   </div>
 
-  <!-- Lightbox -->
-  <div class="archives-lightbox" id="archives-lightbox">
-    <img src="" alt="Preview" />
-  </div>
+<div class="archives-lightbox" id="lightbox">
+  <span class="archives-lightbox-close" id="lightboxClose">&times;</span>
+  <img src="" alt="Preview">
+</div>
 
-  <script>
-    function showArchivesGallery(id, clickedTab) {
-      document.querySelectorAll('.archives-gallery-section').forEach(section => {
-        section.classList.remove('active');
-      });
-      document.getElementById("archives-" + id).classList.add('active');
+<script>
+  const lightbox = document.getElementById('lightbox');
+  const lightboxImg = lightbox.querySelector('img');
+  const closeBtn = document.getElementById('lightboxClose');
+  let currentIndex = 0;
+  let currentImages = [];
 
-      document.querySelectorAll('.archives-sidebar li').forEach(li => li.classList.remove('active'));
-      clickedTab.classList.add('active');
-    }
-
-    // Lightbox logic
-    const archivesLightbox = document.getElementById('archives-lightbox');
-    const archivesLightboxImg = archivesLightbox.querySelector('img');
-
-    document.querySelectorAll('.archives-gallery-section img').forEach(img => {
-      img.addEventListener('click', () => {
-        archivesLightboxImg.src = img.src;
-        archivesLightbox.classList.add('active');
-      });
+  document.querySelectorAll('.archives-gallery-section img').forEach((img, index) => {
+    img.addEventListener('click', () => {
+      currentImages = [...img.parentNode.querySelectorAll('img')];
+      currentIndex = currentImages.indexOf(img);
+      openLightbox(img.src);
     });
+  });
 
-    archivesLightbox.addEventListener('click', () => {
-      archivesLightbox.classList.remove('active');
-      archivesLightboxImg.src = '';
-    });
-  </script>
+  function openLightbox(src) {
+    lightboxImg.src = src;
+    lightbox.classList.add('active');
+    document.body.style.overflow = 'hidden'; // prevent scroll
+  }
+
+  function closeLightbox() {
+    lightbox.classList.remove('active');
+    lightboxImg.src = '';
+    document.body.style.overflow = 'auto';
+  }
+
+  function showNext() {
+    if (!currentImages.length) return;
+    currentIndex = (currentIndex + 1) % currentImages.length;
+    lightboxImg.src = currentImages[currentIndex].src;
+  }
+
+  function showPrevious() {
+    if (!currentImages.length) return;
+    currentIndex = (currentIndex - 1 + currentImages.length) % currentImages.length;
+    lightboxImg.src = currentImages[currentIndex].src;
+  }
+
+  lightbox.addEventListener('click', closeLightbox);
+  closeBtn.addEventListener('click', closeLightbox);
+
+  document.addEventListener('keydown', (e) => {
+    if (!lightbox.classList.contains('active')) return;
+
+    if (e.key === 'ArrowRight') showNext();
+    if (e.key === 'ArrowLeft') showPrevious();
+    if (e.key === 'Escape') closeLightbox();
+  });
+</script>
 
 </body>
 </html>
