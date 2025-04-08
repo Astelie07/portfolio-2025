@@ -282,6 +282,16 @@
   let currentIndex = 0;
   let currentImages = [];
 
+  function showGallery(id, clickedTab) {
+    document.querySelectorAll('.archives-gallery-section').forEach(section => {
+      section.classList.remove('active');
+    });
+    document.getElementById(id).classList.add('active');
+  
+    document.querySelectorAll('.archives-sidebar li').forEach(li => li.classList.remove('active'));
+    clickedTab.classList.add('active');
+  }
+
   document.querySelectorAll('.archives-gallery-section img').forEach((img, index) => {
     img.addEventListener('click', () => {
       currentImages = [...img.parentNode.querySelectorAll('img')];
