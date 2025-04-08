@@ -1054,7 +1054,7 @@ interets {
   /* ------------------------------------------ Style du bouton de changement de thème ------------------------------------------*/
 
   #gallery-dessin img{
-    max-width: 20%;
+    max-width: 100%;
     margin: 1rem;
     background-color: var(--color-background);
     border-radius: 1rem;
@@ -1074,10 +1074,6 @@ interets {
   }
 
 /* ------------------------------------------ Style du bouton de changement de thème ------------------------------------------*/
-
-#gallery-dessin img{
-  max-width: 20%;
-}
 
 /* Style du bouton de changement de thème */
 #theme {
