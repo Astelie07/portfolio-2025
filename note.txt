@@ -8,3 +8,4 @@ PC --------------------------------------------
 + :
 - traitement accessibilité
 - ajout page archive pour vieux dessins
+- animation badge qd on arrive en bas du portfolio (le site se rappelle de l'IP, animation unique)
