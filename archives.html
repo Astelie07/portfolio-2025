@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Archives | Portfolio</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #f4f4f4;
+      color: #333;
+    }
+
+    .explorer-container {
+      display: flex;
+      min-height: 100vh;
+    }
+
+    .sidebar {
+      width: 220px;
+      background-color: #1e1e1e;
+      color: white;
+      padding: 1rem;
+      border-right: 2px solid #333;
+    }
+
+    .sidebar ul {
+      list-style: none;
+    }
+
+    .sidebar li {
+      cursor: pointer;
+      padding: 0.5rem;
+      margin-bottom: 0.5rem;
+      border-radius: 6px;
+      transition: background 0.3s;
+    }
+
+    .sidebar li:hover, .sidebar li.active {
+      background-color: #333;
+    }
+
+    .gallery-display {
+      flex: 1;
+      padding: 2rem;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      justify-content: flex-start;
+      align-items: flex-start;
+      background-color: #fafafa;
+    }
+
+    .gallery-section {
+      display: none;
+      width: 100%;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    .gallery-section.active {
+      display: flex;
+    }
+
+    .gallery-section img {
+      width: 150px;
+      height: auto;
+      border-radius: 8px;
+      object-fit: cover;
+      cursor: pointer;
+      transition: transform 0.2s ease;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    }
+
+    .gallery-section img:hover {
+      transform: scale(1.05);
+    }
+
+    /* Lightbox */
+    .lightbox {
+      display: none;
+      position: fixed;
+      z-index: 1000;
+      top: 0; left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0,0,0,0.8);
+      justify-content: center;
+      align-items: center;
+    }
+
+    .lightbox img {
+      max-width: 90%;
+      max-height: 90%;
+      border-radius: 10px;
+    }
+
+    .lightbox.active {
+      display: flex;
+    }
+
+    @media screen and (max-width: 768px) {
+      .explorer-container {
+        flex-direction: column;
+      }
+
+      .sidebar {
+        width: 100%;
+        border-right: none;
+        border-bottom: 2px solid #333;
+      }
+
+      .gallery-display {
+        justify-content: center;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="explorer-container">
+    <nav class="sidebar">
+      <ul>
+        <li class="active" onclick="showGallery('princesses', this)">📁 Princesses</li>
+        <li onclick="showGallery('monstres', this)">📁 Monstres</li>
+        <li onclick="showGallery('autres', this)">📁 Autres</li>
+      </ul>
+    </nav>
+
+    <div class="gallery-display">
+      <div id="princesses" class="gallery-section active">
+        <img src="assets/img/gallerie/princesses/1-blanche.jpg" alt="Fanart Blanche-Neige"/>
+        <img src="assets/img/gallerie/princesses/2-cendrillon.jpg" alt="Fanart Cendrillon" />
+        <img src="assets/img/gallerie/princesses/3-Aurore.jpg" alt="Fanart Aurore (La belle au bois dormant)" />
+        <img src="assets/img/gallerie/princesses/4-Ariel.jpg" alt="Fanart Ariel (La petite sirène)" />
+        <img src="assets/img/gallerie/princesses/5-Belle.jpg" alt="Fanart Belle (La belle et la bête)" />
+        <img src="assets/img/gallerie/princesses/6-Jasmine.jpg" alt="Fanart Jasmine (Aladdin)" />
+        <img src="assets/img/gallerie/princesses/7-Pocahantas.jpg" alt="Fanart Pocahantas" />
+        <img src="assets/img/gallerie/princesses/8-Kida.jpg" alt="Fanart Kida (Atlantide, l'empire perdu)" />
+        <img src="assets/img/gallerie/princesses/9-Giselle.jpg" alt="Fanart Giselle (Il était une fois)" />
+        <img src="assets/img/gallerie/princesses/10-Tiana.jpg" alt="Fanart Tiana (La princesse et la grenouille)" />
+        <img src="assets/img/gallerie/princesses/11-Raiponce.jpg" alt="Fanart Raiponce" />
+        <img src="assets/img/gallerie/princesses/12-elsa.jpg" alt="Fanart Elsa (La Reine des neiges)" />
+        <img src="assets/img/gallerie/princesses/13-anna.jpg" alt="Fanart Anna (La Reine des neiges)" />
+      </div>
+      <div id="monstres" class="gallery-section">
+        <img src="assets/img/gallerie/monstres/aby_erika.jpg" alt="Original 1" />
+        <img src="assets/img/gallerie/monstres/bihead.jpg" alt="Original 2" />
+        <img src="assets/img/gallerie/monstres/bolo.jpg" alt="Original 1" />
+        <img src="assets/img/gallerie/monstres/buterchild.jpg" alt="Original 2" />
+        <img src="assets/img/gallerie/monstres/crap.jpg" alt="Original 1" />
+        <img src="assets/img/gallerie/monstres/eddy.jpg" alt="Original 2" />
+        <img src="assets/img/gallerie/monstres/jiji_larte.jpg" alt="Original 1" />
+        <img src="assets/img/gallerie/monstres/lily.jpg" alt="Original 2" />
+        <img src="assets/img/gallerie/monstres/masca-raz.jpg" alt="Original 1" />
+        <img src="assets/img/gallerie/monstres/memaru.jpg" alt="Original 2" />
+        <img src="assets/img/gallerie/monstres/mike.jpg" alt="Original 1" />
+        <img src="assets/img/gallerie/monstres/monstre_min.jpg" alt="Original 2" />
+        <img src="assets/img/gallerie/monstres/ray_truc.jpg" alt="Original 1" />
+        <img src="assets/img/gallerie/monstres/spader.jpg" alt="Original 2" />
+        <img src="assets/img/gallerie/monstres/tsix.jpg" alt="Original 1" />
+        <img src="assets/img/gallerie/monstres/wemai.jpg" alt="Original 2" />
+      </div>
+      <div id="autres" class="gallery-section">
+        <img src="https://placekitten.com/204/200" alt="BD 1" />
+        <img src="https://placekitten.com/205/200" alt="BD 2" />
+      </div>
+    </div>
+  </div>
+
+  <!-- Lightbox -->
+  <div class="lightbox" id="lightbox">
+    <img src="" alt="Preview">
+  </div>
+
+  <script>
+    function showGallery(id, clickedTab) {
+      document.querySelectorAll('.gallery-section').forEach(section => {
+        section.classList.remove('active');
+      });
+      document.getElementById(id).classList.add('active');
+
+      document.querySelectorAll('.sidebar li').forEach(li => li.classList.remove('active'));
+      clickedTab.classList.add('active');
+    }
+
+    // Lightbox logic
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImg = lightbox.querySelector('img');
+
+    document.querySelectorAll('.gallery-section img').forEach(img => {
+      img.addEventListener('click', () => {
+        lightboxImg.src = img.src;
+        lightbox.classList.add('active');
+      });
+    });
+
+    lightbox.addEventListener('click', () => {
+      lightbox.classList.remove('active');
+      lightboxImg.src = '';
+    });
+  </script>
+
+</body>
+</html>
