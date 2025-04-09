@@ -203,13 +203,15 @@
     <nav class="archives-sidebar">
       <ul>
         <strong>2022 - 2025 (liens invalides)</strong>
+        <li class="active" onclick="showArchivesGallery('portfolio25', this)">📁 Portfolio 2025</li> <!-- Pas fini -->
         <li onclick="showArchivesGallery('#', this)">📁 Inktober 2024</li>
         <li onclick="showArchivesGallery('#', this)">📁 Rainbow challenge</li>
-        <li onclick="showArchivesGallery('#', this)">📁 Inktober 2023</li>
+        <li onclick="showArchivesGallery('#', this)">📁 Portfolio 2024</li>
+        <li onclick="showArchivesGallery('inktober23', this)">📁 Inktober 2023</li> <!-- faire plutot 1 par 1 -->
         <li onclick="showArchivesGallery('#', this)">📁 Autres</li>
         <strong>2018 - 2021</strong>
-        <li class="active" onclick="showArchivesGallery('archives-princesses', this)">📁 Princesses</li>
-        <li onclick="showArchivesGallery('archives-monstres', this)">📁 Monstres</li>
+        <li onclick="showArchivesGallery('archives-princesses', this)">📁 Princesses</li> <!-- OK -->
+        <li onclick="showArchivesGallery('archives-monstres', this)">📁 Monstres</li>  <!-- OK -->
         <li onclick="showArchivesGallery('archives-autres', this)">📁 Autres</li>
         <strong> ? - 2017 (liens invalides)</strong>
       </ul>
@@ -217,6 +219,40 @@
     </nav>
 
     <div class="archives-gallery-display">
+      <div id="portfolio25" class="archives-gallery-section">
+        <img src="assets/img/titre_.png" alt="Logo thème light" />
+        <img src="assets/img/titre_dark.png" alt="Logo thème dark" />
+        <img src="assets/img/tree-light.png" alt="Arbre 3d" />
+        <img src="assets/img/tree-dark.png" alt="Arbre 3d thème dark" />
+        <img src="assets/img/projet-light.png" alt="Arrière plan secondaire" />
+        <img src="assets/img/projet-dark.png" alt="Arrière plan secondaire thème dark" />
+        <img src="assets/img/illus/perso_skill-light.png" alt="Personnage inventaire" />
+        <img src="assets/img/illus/perso_skill-dark.png" alt="Personnage inventaire thème sombre" />
+        <img src="assets/img/illus/nomad1-light.png" alt="Personnage scroll 1" />
+        <img src="assets/img/illus/nomad1-dark.png" alt="Personnage scroll 1 thème dark" />
+        <img src="assets/img/illus/mad.png" alt="Personnage scroll 2" />
+        <img src="assets/img/illus/mad-dark.png" alt="Personnage scroll 2 thème dark" />
+        <img src="assets/img/illus/huepoe.png" alt="Sticker Huepoe (Klonoa)" />
+        <img src="assets/img/illus/bubbleflower.png" alt="Sticker fleur à bulle (Mario Bros)"/>
+        <img src="assets/img/illus/fleurdefeu.png" alt="Sticker fleur de feu (Mario Bros)" />
+        <img src="assets/img/illus/flute-st.png" alt="Sticker flûte de Pan Zelda ST" />
+        <img src="assets/img/illus/ocarina.png" alt="Sticker ocarina Zelda OOT" />
+        <img src="assets/img/illus/blue-portal.png" alt="Sticker portail bleu" />
+        <img src="assets/img/illus/orange-portal.png" alt="Sticker portail orange" />
+        <img src="assets/img/illus/purple-portal.png" alt="Sticker portail violet" />
+        <!-- CARTES A AJOUTER -->
+      </div>
+      <div id="inktober23" class="archives-gallery-section">
+        <img src="assets/img/portfolio/inktober23/inktober_liste.jpg" alt="Liste thème Inktober 2023" />
+        <img src="assets/img/portfolio/inktober23/inktober1-4.png" alt="Inktober jours 1-4" />
+        <img src="assets/img/portfolio/inktober23/inktober5-8.png" alt="Inktober jours 5-8" />
+        <img src="assets/img/portfolio/inktober23/inktober9-12.png" alt="Inktober jours 9-12" />
+        <img src="assets/img/portfolio/inktober23/inktober13-16.png" alt="Inktober jours 13-16" />
+        <img src="assets/img/portfolio/inktober23/inktober17-20.png" alt="Inktober jours 17-20" />
+        <img src="assets/img/portfolio/inktober23/inktober21-24.png" alt="Inktober jours 21-24" />
+        <img src="assets/img/portfolio/inktober23/inktober25-28.png" alt="Inktober jours 25-28" />
+        <img src="assets/img/portfolio/inktober23/inktober29-31.png" alt="Inktober jours 29-31" />
+      </div>
       <div id="archives-princesses" class="archives-gallery-section active">
         <img src="assets/img/gallerie/princesses/1-blanche.jpg" alt="Fanart Blanche-Neige" />
         <img src="assets/img/gallerie/princesses/2-cendrillon.jpg" alt="Fanart Cendrillon" />
@@ -265,7 +301,7 @@
         <img src="assets/img/gallerie/dessins/pyroli.jpg" alt="Pyroli" />
         <img src="assets/img/gallerie/dessins/tf2.jpg" alt="TF2" />
         <img src="assets/img/gallerie/dessins/winx.jpg" alt="Winx" />
-      </div>
+      </div>      
     </div>
   </div>
 
