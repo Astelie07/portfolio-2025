@@ -1046,9 +1046,19 @@
     </div>
   </div>
 
-  <div class="cv" id="archives">
-    <a href="archives.html"><button style="background-color: none;border: none;cursor: pointer;">Archives</button></a>
+  <div class="cv">
+    <button id="archives-button" style="background-color: none;border: none;cursor: pointer;"><a>Archives</a></button>
   </div>
+
+  <script>
+    document.getElementById("archives-button").addEventListener("click", function() {
+        // Récupérer la feuille de style active
+        let activeStyle = document.querySelector("link[rel='stylesheet']").getAttribute("href");
+    
+        // Rediriger vers portfolio.html avec le paramètre de style
+        window.location.href = `archives.html?style=${encodeURIComponent(activeStyle)}`;
+    });
+  </script>
 
   <div class="modal hidden">
     <div class="modal-content">
