@@ -1047,6 +1047,10 @@
     margin-top: 3rem;
   }
 
+  #archives{
+    border : none;
+  }
+
   /* ------------------------------------------ Style du bouton de changement de thème ------------------------------------------*/
   #theme {
     background-color: transparent;
