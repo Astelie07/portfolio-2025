@@ -1071,6 +1071,11 @@ interets {
     margin-top: 3rem;
   }
 
+  #archives{
+    border : none;
+    margin:25px;
+  }
+
 /* ------------------------------------------ Style du bouton de changement de thème ------------------------------------------*/
 
 /* Style du bouton de changement de thème */
