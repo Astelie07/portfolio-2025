@@ -280,7 +280,7 @@
         <img src="assets/img/illus/purple-portal.png" alt="Sticker portail violet" />
         <!-- CARTES A AJOUTER -->
       </div>
-      <div id="portfolio24" class="archives-gallery-section active">
+      <div id="portfolio24" class="archives-gallery-section">
         <img src="assets/img/cat.gif" alt="gif chat" />
         <img src="assets/img/archives/anim-final.mp4" alt="Animation" />
         <img src="assets/img/archives/anim-final-dark.mp4" alt="Animation dark" />
@@ -393,94 +393,81 @@
     const lightbox = document.getElementById('lightbox');
     const lightboxImg = lightbox.querySelector('img');
     const closeBtn = document.getElementById('lightboxClose');
-    const prevBtn = document.getElementById('lightboxPrev');
-    const nextBtn = document.getElementById('lightboxNext');
-    
+    const prevArrow = document.getElementById('prevArrow');
+    const nextArrow = document.getElementById('nextArrow');
     let currentIndex = 0;
     let currentImages = [];
-    
-    // Affiche une galerie spécifique + réattache les écouteurs d'événement
+
     function showArchivesGallery(id, clickedTab) {
-      // Affichage de la section correcte
       document.querySelectorAll('.archives-gallery-section').forEach(section => {
         section.classList.remove('active');
       });
       document.getElementById(id).classList.add('active');
     
-      // Onglet actif
       document.querySelectorAll('.archives-sidebar li').forEach(li => li.classList.remove('active'));
       clickedTab.classList.add('active');
-    
-      // Re-initialisation des événements click sur les images visibles
-      attachGalleryListeners();
     }
-    
-    // Réattache les événements click sur les images visibles
-    function attachGalleryListeners() {
-      document.querySelectorAll('.archives-gallery-section.active img').forEach((img, index, array) => {
-        img.onclick = (e) => {
-          e.stopPropagation(); // Empêche la fermeture de la lightbox
-          currentImages = array;
-          currentIndex = index;
-          openLightbox(img.src);
-        };
+
+    document.querySelectorAll('.archives-gallery-section img').forEach((img, index) => {
+      img.addEventListener('click', () => {
+        currentImages = [...img.parentNode.querySelectorAll('img')];
+        currentIndex = currentImages.indexOf(img);
+        openLightbox(img.src);
       });
-    }
-    
-    // Ouvre la lightbox avec l'image spécifiée
+    });
+
     function openLightbox(src) {
       lightboxImg.src = src;
       lightbox.classList.add('active');
-      document.body.style.overflow = 'hidden';
+      document.body.style.overflow = 'hidden'; // Désactive le scroll quand la lightbox est ouverte
     }
     
-    // Ferme la lightbox
     function closeLightbox() {
       lightbox.classList.remove('active');
       lightboxImg.src = '';
-      document.body.style.overflow = 'auto';
+      document.body.style.overflow = 'auto'; // Réactive le scroll
     }
     
-    // Image suivante
     function showNext() {
       if (!currentImages.length) return;
       currentIndex = (currentIndex + 1) % currentImages.length;
       lightboxImg.src = currentImages[currentIndex].src;
     }
     
-    // Image précédente
     function showPrevious() {
       if (!currentImages.length) return;
       currentIndex = (currentIndex - 1 + currentImages.length) % currentImages.length;
       lightboxImg.src = currentImages[currentIndex].src;
     }
+        
+    // Navigation avec les flèches
+    nextArrow.addEventListener('click', (e) => {
+      e.stopPropagation(); // Empêche la propagation pour éviter de fermer la lightbox
+      showNext();
+    });
     
-    // Initialisation
-    attachGalleryListeners();
+    prevArrow.addEventListener('click', (e) => {
+      e.stopPropagation(); // Empêche la propagation pour éviter de fermer la lightbox
+      showPrevious();
+    });
     
-    // Navigation clavier
+    // Fermer la lightbox avec le clic ou le bouton "×"
+    lightbox.addEventListener('click', closeLightbox);
+    closeBtn.addEventListener('click', closeLightbox);
+    
+    // Empêcher la fermeture si l'image est cliquée
+    lightboxImg.addEventListener('click', (e) => {
+      e.stopPropagation();
+    });
+    
+    // Gestion du clavier
     document.addEventListener('keydown', (e) => {
       if (!lightbox.classList.contains('active')) return;
+    
       if (e.key === 'ArrowRight') showNext();
       if (e.key === 'ArrowLeft') showPrevious();
       if (e.key === 'Escape') closeLightbox();
     });
-    
-    // Empêche fermeture quand on clique sur flèches ou croix
-    [closeBtn, prevBtn, nextBtn].forEach(btn => {
-      btn.addEventListener('click', e => e.stopPropagation());
-    });
-    
-    // Navigation boutons
-    closeBtn.addEventListener('click', closeLightbox);
-    prevBtn.addEventListener('click', showPrevious);
-    nextBtn.addEventListener('click', showNext);
-    
-    // Fermeture lightbox si on clique en dehors de l'image
-    lightbox.addEventListener('click', (e) => {
-      if (e.target === lightbox) closeLightbox();
-    });
-
 
 </script>
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
