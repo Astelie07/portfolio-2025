@@ -381,82 +381,88 @@
         }, 500); // Délai de 0.5s pour commencer la transition du loader
     });
   
-  const lightbox = document.getElementById('lightbox');
-  const lightboxImg = lightbox.querySelector('img');
-  const closeBtn = document.getElementById('lightboxClose');
-  const prevBtn = document.getElementById('lightboxPrev');
-  const nextBtn = document.getElementById('lightboxNext');
-  
-  let currentIndex = 0;
-  let currentImages = [];
-  
-  // Gestion des onglets de galeries
-  function showArchivesGallery(id, clickedTab) {
-    document.querySelectorAll('.archives-gallery-section').forEach(section => {
-      section.classList.remove('active');
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImg = lightbox.querySelector('img');
+    const closeBtn = document.getElementById('lightboxClose');
+    const prevBtn = document.getElementById('lightboxPrev');
+    const nextBtn = document.getElementById('lightboxNext');
+    
+    let currentIndex = 0;
+    let currentImages = [];
+    
+    function showArchivesGallery(id, clickedTab) {
+      // Changement de galerie
+      document.querySelectorAll('.archives-gallery-section').forEach(section => {
+        section.classList.remove('active');
+      });
+      document.getElementById(id).classList.add('active');
+    
+      // Mise à jour onglets actifs
+      document.querySelectorAll('.archives-sidebar li').forEach(li => li.classList.remove('active'));
+      clickedTab.classList.add('active');
+    
+      // Réattacher les événements click pour les nouvelles images
+      attachGalleryListeners();
+    }
+    
+    function attachGalleryListeners() {
+      document.querySelectorAll('.archives-gallery-section.active img').forEach((img) => {
+        img.addEventListener('click', (e) => {
+          e.stopPropagation(); // Important pour éviter de fermer la lightbox
+          currentImages = [...img.parentNode.querySelectorAll('img')];
+          currentIndex = currentImages.indexOf(img);
+          openLightbox(img.src);
+        });
+      });
+    }
+    
+    function openLightbox(src) {
+      lightboxImg.src = src;
+      lightbox.classList.add('active');
+      document.body.style.overflow = 'hidden';
+    }
+    
+    function closeLightbox() {
+      lightbox.classList.remove('active');
+      lightboxImg.src = '';
+      document.body.style.overflow = 'auto';
+    }
+    
+    function showNext() {
+      if (!currentImages.length) return;
+      currentIndex = (currentIndex + 1) % currentImages.length;
+      lightboxImg.src = currentImages[currentIndex].src;
+    }
+    
+    function showPrevious() {
+      if (!currentImages.length) return;
+      currentIndex = (currentIndex - 1 + currentImages.length) % currentImages.length;
+      lightboxImg.src = currentImages[currentIndex].src;
+    }
+    
+    // Empêche les clics sur les flèches ou croix de propager vers la lightbox
+    [closeBtn, prevBtn, nextBtn].forEach(btn =>
+      btn.addEventListener('click', e => e.stopPropagation())
+    );
+    
+    // Fermeture en cliquant hors image
+    lightbox.addEventListener('click', closeLightbox);
+    
+    // Navigation flèches et esc
+    document.addEventListener('keydown', (e) => {
+      if (!lightbox.classList.contains('active')) return;
+      if (e.key === 'ArrowRight') showNext();
+      if (e.key === 'ArrowLeft') showPrevious();
+      if (e.key === 'Escape') closeLightbox();
     });
-    document.getElementById(id).classList.add('active');
-  
-    document.querySelectorAll('.archives-sidebar li').forEach(li => li.classList.remove('active'));
-    clickedTab.classList.add('active');
-  }
-  
-  // Gestion du clic sur une image dans une galerie
-  document.querySelectorAll('.archives-gallery-section img').forEach((img) => {
-    img.addEventListener('click', (e) => {
-      e.stopPropagation(); // Empêche la fermeture de la lightbox
-      currentImages = [...img.parentNode.querySelectorAll('img')];
-      currentIndex = currentImages.indexOf(img);
-      openLightbox(img.src);
-    });
-  });
-  
-  function openLightbox(src) {
-    lightboxImg.src = src;
-    lightbox.classList.add('active');
-    document.body.style.overflow = 'hidden';
-  }
-  
-  function closeLightbox() {
-    lightbox.classList.remove('active');
-    lightboxImg.src = '';
-    document.body.style.overflow = 'auto';
-  }
-  
-  function showNext() {
-    if (!currentImages.length) return;
-    currentIndex = (currentIndex + 1) % currentImages.length;
-    lightboxImg.src = currentImages[currentIndex].src;
-  }
-  
-  function showPrevious() {
-    if (!currentImages.length) return;
-    currentIndex = (currentIndex - 1 + currentImages.length) % currentImages.length;
-    lightboxImg.src = currentImages[currentIndex].src;
-  }
-  
-  // Événements
-  lightbox.addEventListener('click', closeLightbox);
-  closeBtn.addEventListener('click', (e) => {
-    e.stopPropagation();
-    closeLightbox();
-  });
-  prevBtn.addEventListener('click', (e) => {
-    e.stopPropagation();
-    showPrevious();
-  });
-  nextBtn.addEventListener('click', (e) => {
-    e.stopPropagation();
-    showNext();
-  });
-  
-  document.addEventListener('keydown', (e) => {
-    if (!lightbox.classList.contains('active')) return;
-  
-    if (e.key === 'ArrowRight') showNext();
-    if (e.key === 'ArrowLeft') showPrevious();
-    if (e.key === 'Escape') closeLightbox();
-  });
+    
+    // Clicks navigation
+    closeBtn.addEventListener('click', closeLightbox);
+    prevBtn.addEventListener('click', showPrevious);
+    nextBtn.addEventListener('click', showNext);
+    
+    // Initialisation
+    attachGalleryListeners();
 
 </script>
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
