@@ -493,8 +493,15 @@
   });
   
   // Navigation avec les flèches
-  nextArrow.addEventListener('click', showNext);
-  prevArrow.addEventListener('click', showPrevious);
+  nextArrow.addEventListener('click', (e) => {
+    e.stopPropagation(); // Empêche la propagation pour éviter de fermer la lightbox
+    showNext();
+  });
+  
+  prevArrow.addEventListener('click', (e) => {
+    e.stopPropagation(); // Empêche la propagation pour éviter de fermer la lightbox
+    showPrevious();
+  });
   
   // Fermer la lightbox avec le clic ou le bouton "×"
   lightbox.addEventListener('click', closeLightbox);
@@ -513,7 +520,6 @@
     if (e.key === 'ArrowLeft') showPrevious();
     if (e.key === 'Escape') closeLightbox();
   });
-
 
 </script>
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
