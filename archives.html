@@ -198,44 +198,42 @@
     /*test*/
 
     /* Flèches de navigation */
-    .lightbox-arrow {
-      position: absolute;
-      top: 50%;
-      transform: translateY(-50%);
-      font-size: 30px;
-      color: white;
-      cursor: pointer;
-      z-index: 1001;
-    }
-    
-    .left {
-      left: 10px;
-    }
-    
-    .right {
-      right: 10px;
-    }
-    
-    /* Style de la lightbox */
-    #lightbox {
-      display: none;
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background-color: rgba(0, 0, 0, 0.7);
-      justify-content: center;
-      align-items: center;
-      z-index: 1000;
-    }
-    
-    #lightbox img {
-      max-width: 80%;
-      max-height: 80%;
-      border-radius: 10px;
-    }
+.lightbox-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 30px;
+  color: white;
+  cursor: pointer;
+  z-index: 1001;
+}
 
+.left {
+  left: 10px;
+}
+
+.right {
+  right: 10px;
+
+/* Style de la lightbox */
+#lightbox {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+#lightbox img {
+  max-width: 80%;
+  max-height: 80%;
+  border-radius: 10px;
+}
 
   </style>
 </head>
@@ -363,7 +361,6 @@
     <span class="lightbox-arrow right" id="nextArrow">&#10095;</span>
   </div>
 
-
 <script>
 
     const urlParams = new URLSearchParams(window.location.search);
@@ -455,71 +452,68 @@
   }); */
 
   const lightbox = document.getElementById('lightbox');
-const lightboxImg = lightbox.querySelector('img');
-const closeBtn = document.getElementById('lightboxClose');
-const prevArrow = document.getElementById('prevArrow');
-const nextArrow = document.getElementById('nextArrow');
-let currentIndex = 0;
-let currentImages = [];
-
-function showArchivesGallery(id, clickedTab) {
-  document.querySelectorAll('.archives-gallery-section').forEach(section => {
-    section.classList.remove('active');
+  const lightboxImg = lightbox.querySelector('img');
+  const closeBtn = document.getElementById('lightboxClose');
+  const prevArrow = document.getElementById('prevArrow');
+  const nextArrow = document.getElementById('nextArrow');
+  let currentIndex = 0;
+  let currentImages = [];
+  
+  function openLightbox(src) {
+    lightboxImg.src = src;
+    lightbox.classList.add('active');
+    document.body.style.overflow = 'hidden'; // Désactive le scroll quand la lightbox est ouverte
+  }
+  
+  function closeLightbox() {
+    lightbox.classList.remove('active');
+    lightboxImg.src = '';
+    document.body.style.overflow = 'auto'; // Réactive le scroll
+  }
+  
+  function showNext() {
+    if (!currentImages.length) return;
+    currentIndex = (currentIndex + 1) % currentImages.length;
+    lightboxImg.src = currentImages[currentIndex].src;
+  }
+  
+  function showPrevious() {
+    if (!currentImages.length) return;
+    currentIndex = (currentIndex - 1 + currentImages.length) % currentImages.length;
+    lightboxImg.src = currentImages[currentIndex].src;
+  }
+  
+  // Ajouter les images à la galerie
+  document.querySelectorAll('.archives-gallery-section img').forEach((img, index) => {
+    img.addEventListener('click', () => {
+      currentImages = [...img.parentNode.querySelectorAll('img')];
+      currentIndex = currentImages.indexOf(img);
+      openLightbox(img.src);
+    });
   });
-  document.getElementById(id).classList.add('active');
-
-  document.querySelectorAll('.archives-sidebar li').forEach(li => li.classList.remove('active'));
-  clickedTab.classList.add('active');
-}
-
-document.querySelectorAll('.archives-gallery-section img').forEach((img, index) => {
-  img.addEventListener('click', () => {
-    currentImages = [...img.parentNode.querySelectorAll('img')];
-    currentIndex = currentImages.indexOf(img);
-    openLightbox(img.src);
+  
+  // Navigation avec les flèches
+  nextArrow.addEventListener('click', showNext);
+  prevArrow.addEventListener('click', showPrevious);
+  
+  // Fermer la lightbox avec le clic ou le bouton "×"
+  lightbox.addEventListener('click', closeLightbox);
+  closeBtn.addEventListener('click', closeLightbox);
+  
+  // Empêcher la fermeture si l'image est cliquée
+  lightboxImg.addEventListener('click', (e) => {
+    e.stopPropagation();
   });
-});
+  
+  // Gestion du clavier
+  document.addEventListener('keydown', (e) => {
+    if (!lightbox.classList.contains('active')) return;
+  
+    if (e.key === 'ArrowRight') showNext();
+    if (e.key === 'ArrowLeft') showPrevious();
+    if (e.key === 'Escape') closeLightbox();
+  });
 
-function openLightbox(src) {
-  lightboxImg.src = src;
-  lightbox.classList.add('active');
-  document.body.style.overflow = 'hidden'; // prevent scroll
-}
-
-function closeLightbox() {
-  lightbox.classList.remove('active');
-  lightboxImg.src = '';
-  document.body.style.overflow = 'auto';
-}
-
-function showNext() {
-  if (!currentImages.length) return;
-  currentIndex = (currentIndex + 1) % currentImages.length;
-  lightboxImg.src = currentImages[currentIndex].src;
-}
-
-function showPrevious() {
-  if (!currentImages.length) return;
-  currentIndex = (currentIndex - 1 + currentImages.length) % currentImages.length;
-  lightboxImg.src = currentImages[currentIndex].src;
-}
-
-// Écoute des clics sur les flèches
-nextArrow.addEventListener('click', showNext);
-prevArrow.addEventListener('click', showPrevious);
-
-// Fermer la lightbox lorsque l'utilisateur clique en dehors de l'image
-lightbox.addEventListener('click', closeLightbox);
-closeBtn.addEventListener('click', closeLightbox);
-
-// Navigation avec les touches du clavier
-document.addEventListener('keydown', (e) => {
-  if (!lightbox.classList.contains('active')) return;
-
-  if (e.key === 'ArrowRight') showNext();
-  if (e.key === 'ArrowLeft') showPrevious();
-  if (e.key === 'Escape') closeLightbox();
-});
 
 </script>
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
