@@ -384,21 +384,43 @@
   const lightbox = document.getElementById('lightbox');
   const lightboxImg = lightbox.querySelector('img');
   const closeBtn = document.getElementById('lightboxClose');
-  const prevArrow = document.getElementById('prevArrow');
-  const nextArrow = document.getElementById('nextArrow');
+  const prevBtn = document.getElementById('lightboxPrev');
+  const nextBtn = document.getElementById('lightboxNext');
+  
   let currentIndex = 0;
   let currentImages = [];
+  
+  // Gestion des onglets de galeries
+  function showArchivesGallery(id, clickedTab) {
+    document.querySelectorAll('.archives-gallery-section').forEach(section => {
+      section.classList.remove('active');
+    });
+    document.getElementById(id).classList.add('active');
+  
+    document.querySelectorAll('.archives-sidebar li').forEach(li => li.classList.remove('active'));
+    clickedTab.classList.add('active');
+  }
+  
+  // Gestion du clic sur une image dans une galerie
+  document.querySelectorAll('.archives-gallery-section img').forEach((img) => {
+    img.addEventListener('click', (e) => {
+      e.stopPropagation(); // Empêche la fermeture de la lightbox
+      currentImages = [...img.parentNode.querySelectorAll('img')];
+      currentIndex = currentImages.indexOf(img);
+      openLightbox(img.src);
+    });
+  });
   
   function openLightbox(src) {
     lightboxImg.src = src;
     lightbox.classList.add('active');
-    document.body.style.overflow = 'hidden'; // Désactive le scroll quand la lightbox est ouverte
+    document.body.style.overflow = 'hidden';
   }
   
   function closeLightbox() {
     lightbox.classList.remove('active');
     lightboxImg.src = '';
-    document.body.style.overflow = 'auto'; // Réactive le scroll
+    document.body.style.overflow = 'auto';
   }
   
   function showNext() {
@@ -413,30 +435,19 @@
     lightboxImg.src = currentImages[currentIndex].src;
   }
   
-  document.querySelectorAll('.archives-gallery-section img').forEach((img, index) => {
-    img.addEventListener('click', () => {
-      currentImages = [...img.parentNode.querySelectorAll('img')];
-      currentIndex = currentImages.indexOf(img);
-      openLightbox(img.src);
-    });
+  // Événements
+  lightbox.addEventListener('click', closeLightbox);
+  closeBtn.addEventListener('click', (e) => {
+    e.stopPropagation();
+    closeLightbox();
   });
-  
-  // Navigation avec les flèches
-  nextArrow.addEventListener('click', (e) => {
-    e.stopPropagation(); // Empêche la propagation pour éviter de fermer la lightbox
-    showNext();
-  });
-  
-  prevArrow.addEventListener('click', (e) => {
-    e.stopPropagation(); // Empêche la propagation pour éviter de fermer la lightbox
+  prevBtn.addEventListener('click', (e) => {
+    e.stopPropagation();
     showPrevious();
   });
-  
-  lightbox.addEventListener('click', closeLightbox);
-  closeBtn.addEventListener('click', closeLightbox);
-  
-  lightboxImg.addEventListener('click', (e) => {
+  nextBtn.addEventListener('click', (e) => {
     e.stopPropagation();
+    showNext();
   });
   
   document.addEventListener('keydown', (e) => {
