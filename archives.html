@@ -453,6 +453,74 @@
     if (e.key === 'ArrowLeft') showPrevious();
     if (e.key === 'Escape') closeLightbox();
   }); */
+
+  const lightbox = document.getElementById('lightbox');
+const lightboxImg = lightbox.querySelector('img');
+const closeBtn = document.getElementById('lightboxClose');
+const prevArrow = document.getElementById('prevArrow');
+const nextArrow = document.getElementById('nextArrow');
+let currentIndex = 0;
+let currentImages = [];
+
+function showArchivesGallery(id, clickedTab) {
+  document.querySelectorAll('.archives-gallery-section').forEach(section => {
+    section.classList.remove('active');
+  });
+  document.getElementById(id).classList.add('active');
+
+  document.querySelectorAll('.archives-sidebar li').forEach(li => li.classList.remove('active'));
+  clickedTab.classList.add('active');
+}
+
+document.querySelectorAll('.archives-gallery-section img').forEach((img, index) => {
+  img.addEventListener('click', () => {
+    currentImages = [...img.parentNode.querySelectorAll('img')];
+    currentIndex = currentImages.indexOf(img);
+    openLightbox(img.src);
+  });
+});
+
+function openLightbox(src) {
+  lightboxImg.src = src;
+  lightbox.classList.add('active');
+  document.body.style.overflow = 'hidden'; // prevent scroll
+}
+
+function closeLightbox() {
+  lightbox.classList.remove('active');
+  lightboxImg.src = '';
+  document.body.style.overflow = 'auto';
+}
+
+function showNext() {
+  if (!currentImages.length) return;
+  currentIndex = (currentIndex + 1) % currentImages.length;
+  lightboxImg.src = currentImages[currentIndex].src;
+}
+
+function showPrevious() {
+  if (!currentImages.length) return;
+  currentIndex = (currentIndex - 1 + currentImages.length) % currentImages.length;
+  lightboxImg.src = currentImages[currentIndex].src;
+}
+
+// Écoute des clics sur les flèches
+nextArrow.addEventListener('click', showNext);
+prevArrow.addEventListener('click', showPrevious);
+
+// Fermer la lightbox lorsque l'utilisateur clique en dehors de l'image
+lightbox.addEventListener('click', closeLightbox);
+closeBtn.addEventListener('click', closeLightbox);
+
+// Navigation avec les touches du clavier
+document.addEventListener('keydown', (e) => {
+  if (!lightbox.classList.contains('active')) return;
+
+  if (e.key === 'ArrowRight') showNext();
+  if (e.key === 'ArrowLeft') showPrevious();
+  if (e.key === 'Escape') closeLightbox();
+});
+
 </script>
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </body>
