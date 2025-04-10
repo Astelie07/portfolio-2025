@@ -244,7 +244,7 @@
         <li class="active" onclick="showArchivesGallery('portfolio25', this)">📁 Portfolio 2025</li> <!-- Pas fini -->
         <li onclick="showArchivesGallery('#', this)">📁 Inktober 2024</li>
         <li onclick="showArchivesGallery('#', this)">📁 Rainbow challenge</li>
-        <li onclick="showArchivesGallery('#', this)">📁 Portfolio 2024</li>
+        <li onclick="showArchivesGallery('portfolio24', this)">📁 Portfolio 2024</li>
         <li onclick="showArchivesGallery('inktober23', this)">📁 Inktober 2023</li> <!-- faire plutot 1 par 1 -->
         <li onclick="showArchivesGallery('#', this)">📁 Autres</li>
         <strong>2018 - 2021</strong>
@@ -279,6 +279,15 @@
         <img src="assets/img/illus/orange-portal.png" alt="Sticker portail orange" />
         <img src="assets/img/illus/purple-portal.png" alt="Sticker portail violet" />
         <!-- CARTES A AJOUTER -->
+      </div>
+      <div id="portfolio24" class="archives-gallery-section active">
+        <img src="assets/img/cat.gif" alt="gif chat" />
+        <img src="assets/img/archives/anim-final.mp4" alt="Animation" />
+        <img src="assets/img/archives/anim-final-dark.mp4" alt="Animation dark" />
+        <img src="assets/img/archives/bg_portfolio.gif" alt="Fond gif arbre" />
+        <img src="assets/img/archives/favicon.png" alt="Favicon" />
+        <img src="assets/img/archives/titre_.png" alt="Logo thème light" />
+        <img src="assets/img/archives/titre_dark.png" alt="Logo thème dark" />
       </div>
       <div id="inktober23" class="archives-gallery-section">
         <img src="assets/img/portfolio/inktober23/inktober_liste.jpg" alt="Liste thème Inktober 2023" />
@@ -390,65 +399,66 @@
     let currentIndex = 0;
     let currentImages = [];
     
+    // Affiche une galerie spécifique + réattache les écouteurs d'événement
     function showArchivesGallery(id, clickedTab) {
-      // Changement de galerie
+      // Affichage de la section correcte
       document.querySelectorAll('.archives-gallery-section').forEach(section => {
         section.classList.remove('active');
       });
       document.getElementById(id).classList.add('active');
     
-      // Mise à jour onglets actifs
+      // Onglet actif
       document.querySelectorAll('.archives-sidebar li').forEach(li => li.classList.remove('active'));
       clickedTab.classList.add('active');
     
-      // Réattacher les événements click pour les nouvelles images
+      // Re-initialisation des événements click sur les images visibles
       attachGalleryListeners();
     }
     
+    // Réattache les événements click sur les images visibles
     function attachGalleryListeners() {
-      document.querySelectorAll('.archives-gallery-section.active img').forEach((img) => {
-        img.addEventListener('click', (e) => {
-          e.stopPropagation(); // Important pour éviter de fermer la lightbox
-          currentImages = [...img.parentNode.querySelectorAll('img')];
-          currentIndex = currentImages.indexOf(img);
+      document.querySelectorAll('.archives-gallery-section.active img').forEach((img, index, array) => {
+        img.onclick = (e) => {
+          e.stopPropagation(); // Empêche la fermeture de la lightbox
+          currentImages = array;
+          currentIndex = index;
           openLightbox(img.src);
-        });
+        };
       });
     }
     
+    // Ouvre la lightbox avec l'image spécifiée
     function openLightbox(src) {
       lightboxImg.src = src;
       lightbox.classList.add('active');
       document.body.style.overflow = 'hidden';
     }
     
+    // Ferme la lightbox
     function closeLightbox() {
       lightbox.classList.remove('active');
       lightboxImg.src = '';
       document.body.style.overflow = 'auto';
     }
     
+    // Image suivante
     function showNext() {
       if (!currentImages.length) return;
       currentIndex = (currentIndex + 1) % currentImages.length;
       lightboxImg.src = currentImages[currentIndex].src;
     }
     
+    // Image précédente
     function showPrevious() {
       if (!currentImages.length) return;
       currentIndex = (currentIndex - 1 + currentImages.length) % currentImages.length;
       lightboxImg.src = currentImages[currentIndex].src;
     }
     
-    // Empêche les clics sur les flèches ou croix de propager vers la lightbox
-    [closeBtn, prevBtn, nextBtn].forEach(btn =>
-      btn.addEventListener('click', e => e.stopPropagation())
-    );
+    // Initialisation
+    attachGalleryListeners();
     
-    // Fermeture en cliquant hors image
-    lightbox.addEventListener('click', closeLightbox);
-    
-    // Navigation flèches et esc
+    // Navigation clavier
     document.addEventListener('keydown', (e) => {
       if (!lightbox.classList.contains('active')) return;
       if (e.key === 'ArrowRight') showNext();
@@ -456,13 +466,21 @@
       if (e.key === 'Escape') closeLightbox();
     });
     
-    // Clicks navigation
+    // Empêche fermeture quand on clique sur flèches ou croix
+    [closeBtn, prevBtn, nextBtn].forEach(btn => {
+      btn.addEventListener('click', e => e.stopPropagation());
+    });
+    
+    // Navigation boutons
     closeBtn.addEventListener('click', closeLightbox);
     prevBtn.addEventListener('click', showPrevious);
     nextBtn.addEventListener('click', showNext);
     
-    // Initialisation
-    attachGalleryListeners();
+    // Fermeture lightbox si on clique en dehors de l'image
+    lightbox.addEventListener('click', (e) => {
+      if (e.target === lightbox) closeLightbox();
+    });
+
 
 </script>
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
