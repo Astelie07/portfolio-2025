@@ -5,11 +5,8 @@ PC --------------------------------------------
 - ajout site honorine dans portfolio (https://firebell1703.github.io/honorine-portfolio.github.io/)
 - menu burger fixed + ok
 - organisation du code (SURTOUT CSS)
-- fin archive
 
 + :
 - traitement accessibilité
 - ajout catégorie 'tout' dans archives
-- possibilité de carroussel dans archive
-- scanner ancien dessin pour + de qualité d'image
 - animation badge qd on arrive en bas du portfolio (le site se rappelle de l'IP, animation unique)
