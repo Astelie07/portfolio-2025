@@ -15,4 +15,19 @@ PC --------------------------------------------
 IDEES + -------------------
 
 - dialogue si 1min inactivité
+
+"
+Hey, tout vas bien ?
+Tu regardes les images de plus près ?         -        ?-?
+Tu t'ennuies ?               -           ;-;
+"
+
+* choix oui / non *
+
+-> oui : continue
+-> non : retour à la page        "Oh, ok !       -      :) "
+
+
+
+
 - continuation scroll horror
