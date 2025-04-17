@@ -14,18 +14,61 @@ PC --------------------------------------------
 
 IDEES + -------------------
 
-- dialogue si 1min inactivité
+- dialogue si 1min inactivité / icon en haut à gauche si déjà activé 1 fois
 
 "
 Hey, tout vas bien ?
 Tu regardes les images de plus près ?         -        ?-?
-Tu t'ennuies ?               -           ;-;
+Tu t'ennuies ?                                -         ;-;
 "
 
 * choix oui / non *
 
 -> oui : continue
 -> non : retour à la page        "Oh, ok !       -      :) "
+
+"
+Ah !                               -        0_0
+Et tu voudrais faire quoi ?        -        ?-?
+"
+
+* choix jouer / regarder un film / rien*
+
+-> 1 :
+
+  "
+Oh si c'est que ça ! Attend je te lance un truc    -    :)
+*bip*
+  "
+
+*faux menu switch avec jeux : puissance 4, morpion*
+
+-> 2 :
+
+  "
+Oh si c'est que ça ! Tu voudrais voir quoi ?    -    :)
+  "
+
+*choix : anime, film, youtube*
+
+"
+C'est parti ! Prends le pop corn    -    :)
+*bip*
+"
+
+Salle cine
+
+"
+J'te vole la fin du pop corn     -    O-O
+"
+
+animation plus de pop corn ? SI !
+
+-> 3 :
+
+"
+OK                  -    :|
+"
 
 
 
