@@ -10,3 +10,9 @@ PC --------------------------------------------
 - traitement accessibilité
 - ajout catégorie 'tout' dans archives
 - animation badge qd on arrive en bas du portfolio (le site se rappelle de l'IP, animation unique)
+
+
+IDEES + -------------------
+
+- dialogue si 1min inactivité
+- continuation scroll horror
