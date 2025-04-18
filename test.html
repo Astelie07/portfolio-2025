@@ -1,57 +1,250 @@
+
 <!DOCTYPE html>
-<html lang="fr">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Portfolio</title>  
-  <link id="theme" rel="stylesheet" type="text/css" href="assets/css/style.css" />
-  
-  <script src="https://kit.fontawesome.com/5e3d8daf90.js" crossorigin="anonymous"></script>
-  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
-  <link href="https://fonts.googleapis.com/css2?family=Hind:wght@400;700&family=Varela+Round&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Badge test</title>
+    <style>
+        * {
+	 box-sizing: border-box;
+        }
+        :root {
+            --hue: 200;
+            --surface: #262626;
+            --text: #F1F3F4;
+            --text-size: 2rem;
+            --brand-1: #A3DAF5;
+            --outline-1: #454F54;
+            --outline-2: #00AAFF;
+            --outline-3: #99DDFF;
+            --red: #FF401A;
+            --yellow: #FFD91A;
+            --blue: #1A66FF;
+            --steel: #1C2022;
+            --game-size: 400px;
+            --spacing: 8px;
+        }
+        @media only screen and (max-height: 600px) {
+            :root {
+                --text-size: 1rem;
+                --spacing: 4px;
+            }
+        }
+        .material-icons, .material-icons-outlined {
+            font-size: var(--text-size);
+            user-select: none;
+            color: var(--text);
+        }
+        html {
+            font-family: Whitney, Helvetica Neue, Helvetica, Arial, sans-serif;
+            background: var(--surface);
+            scroll-behavior: smooth;
+        }
+        body {
+            margin: 0px;
+            position: relative;
+            display: inline-block;
+            width: max-content;
+        }
+        header, footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 calc(var(--spacing) * 4);
+        }
+        .sticky-sides {
+            position: sticky;
+            left: 0;
+            right: 0;
+            width: 100vw;
+        }
+        .rotate-90 {
+            transform: rotate(90deg);
+        }
+        .rotate-135 {
+            transform: rotate(135deg);
+        }
+        .accounts {
+            display: flex;
+            list-style-type: none;
+            padding: 0;
+        }
+        .accounts > li + li {
+            margin-left: var(--spacing);
+        }
+        .accounts > li > img {
+            border-radius: 9999px;
+            border: var(--outline-1) 2px solid;
+            padding: 2px;
+            height: calc(var(--text-size) * 2);
+            width: calc(var(--text-size) * 2);
+        }
+        .info-block {
+            display: flex;
+            align-items: center;
+            color: var(--text);
+        }
+        .info-block > * {
+            display: flex;
+            align-items: center;
+            font-size: var(--text-size);
+        }
+        .info-block > * + * {
+            margin-left: calc(var(--spacing) * 2);
+        }
+        .game-list {
+            display: grid;
+            grid-auto-columns: var(--game-size);
+            grid-template-rows: var(--game-size);
+            grid-auto-flow: column;
+            list-style-type: none;
+            justify-items: center;
+            align-items: center;
+            padding: 0 calc(var(--spacing) * 16);
+        }
+        .game-list > li {
+            scroll-margin: calc(var(--spacing) * 16);
+            height: var(--game-size);
+            width: calc(var(--game-size));
+            pointer-events: none;
+        }
+        .game-list > li > a {
+            height: 100%;
+            width: 100%;
+            display: block;
+            margin: auto;
+            pointer-events: all;
+            border: calc(var(--spacing) / 2) solid transparent;
+            padding: calc(var(--spacing) / 2);
+        }
+        .game-list > li > a > img {
+            height: 100%;
+            width: 100%;
+        }
+        .game-list > li:target > a {
+            animation: game-active 0.5s linear alternate infinite;
+        }
+        @keyframes game-active {
+            from {
+                border-color: var(--outline-2);
+            }
+            to {
+                border-color: var(--outline-3);
+            }
+        }
+        .action-list {
+            display: flex;
+            grid-auto-flow: column;
+            width: 100vw;
+            justify-content: center;
+            padding: calc(var(--spacing) * 4);
+        }
+        .action-list > div {
+            border: calc(var(--spacing) / 4) solid var(--steel);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: calc(var(--text-size) * 2.5);
+            height: calc(var(--text-size) * 2.5);
+            border-radius: 9999px;
+            background-color: var(--outline-1);
+            text-align: center;
+            margin: calc(var(--spacing));
+        }
+        .action-list > div > span {
+            font-size: calc(var(--text-size) * 1.5);
+        }
+        hr {
+            margin: calc(var(--spacing) * 2);
+            color: var(--text);
+        }
+        .red {
+            color: var(--red);
+        }
+        .yellow {
+            color: var(--yellow);
+        }
+        .blue {
+            color: var(--blue);
+        }
+        
+    </style>
 </head>
 <body>
-  <!-- Loader -->
-  <div id="loader_div" aria-hidden="true">
-    <img src="assets/img/cat.gif" alt="petit gif dun chat qui dort" style="width: 20%;" id="catgif"/>
-    <span class="loader">Chargement...</span>
-    <div class="cat_paw"></div>
-  </div>
-
-  <!-- --------------------------- dialogues --------------------------- -->
-
-  <div id="overlay"></div>
-
-  <!-- Alerte normale -->
-  <div id="alertBox">
-    <div class="dialogue" onclick="closeAlert()">
-        <div>
-            <span class="dialogue-character">Astélie</span>
-            <div class="dialogue-text" id="dialogue-text">Hey ! Ne scroll pas comme ça ! J'ai travaillé pour écrire tous ces textes !</div>
-        </div>
-        <img src="assets/img/illus/nomad1-light.png" class="scroll-chara light-img"/>
-        <img src="assets/img/illus/nomad1-dark.png" class="scroll-chara dark-img"/>
+    <header class="sticky-sides">
+      <ul class="accounts">
+        <li><img src='https://emoji.redditmedia.com/6u7nc993g3941_t5_3h47q/splat2-lime'></li>
+        <li><img src='https://emoji.redditmedia.com/jidg6gu1g3941_t5_3h47q/mario'></li>
+        <li><img src='https://emoji.redditmedia.com/vl6p2wgtkou41_t5_3h47q/kirby-star'></li>
+      </ul>
+      <div class='info-block'>
+        <time>5:06PM</time>
+        <span class="material-icons">wifi</span>
+        <span class="material-icons rotate-90">battery_full</span>
+      </div>
+    </header>
+    <main>
+      <ul class="game-list">
+        <li id='splatoon'>
+          <a href='#splatoon'>
+            <img src='https://upload.wikimedia.org/wikipedia/en/4/49/Splatoon_2.jpg'>
+          </a>
+        </li>
+        <li id='super-smash-bros'>
+          <a href='#super-smash-bros'>
+            <img
+              src='https://img-eshop.cdn.nintendo.net/i/08af58551a19df2a73ccb36f720388434a1965776b34675c6f69af3f93280330.jpg'>
+          </a>
+        </li>
+        <li id='breath-of-the-wild'>
+          <a href='#breath-of-the-wild'>
+            <img
+              src='https://i2.wp.com/fantasy-hive.co.uk/wp-content/uploads/2017/09/Zelda-Breath-of-the-Wild-Thumbnail.jpg?resize=300%2C300&ssl=1'>
+          </a>
+        </li>
+        <li id='celeste'>
+          <a href='#celeste'>
+            <img src='https://publish.one37pm.net/wp-content/uploads/2018/12/celeste-mobile.jpg'>
+          </a>
+        </li>
+        <li id='animal-crossing'>
+          <a href='#animal-crossing'>
+          <img src='https://upload.wikimedia.org/wikipedia/en/1/1f/Animal_Crossing_New_Horizons.jpg'>
+          </a>
+        </li>
+        <li id='kirby-star-allies'>
+          <a href='#kirby-star-allies'>
+          <img src='https://upload.wikimedia.org/wikipedia/en/6/65/Kirby_Star_Allies.jpg'>
+          </a>
+        </li>
+      </ul>
+      <div class="action-list sticky-sides">
+        <div><span class="material-icons-outlined red">mark_chat_unread</span></div>
+        <div><span class="material-icons-outlined yellow">local_mall</span></div>
+        <div><span class="material-icons-outlined blue">photo_size_select_actual</span></div>
+        <div><span class="material-icons-outlined rotate-135">videogame_asset</span></div>
+        <div><span class="material-icons">settings</span></div>
+        <div><span class="material-icons-outlined">power_settings_new</span></div>
+      </div>
+    </main>
+    <div class='sticky-sides'>
+      <hr>
     </div>
-  </div>
-
-  <!-- 🔥 Alerte menaçante 🔥 -->
-  <div id="warningBox" class="shake">
-    <div class="dialogue" onclick="closeWarning()">
-            <div>
-                <span class="dialogue-character">Astélie</span>
-                <div class="dialogue-text" id="dialogue-text">JE T'AI DIS DE TE CALMER !</div>
-            </div>
-            <img src="assets/img/illus/mad.png" class="scroll-chara light-img"/>
-            <img src="assets/img/illus/mad-dark.png" class="scroll-chara dark-img"/>
-    </div>
-  </div>   
-
-
-
-  <!-- Include FontAwesome CDN -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-  <script src="assets/js/main.js"></script>
-
-</body>
+    <footer class='sticky-sides'>
+      <div class='info-block'>
+        <span class="material-icons">stay_primary_landscape</span>
+      </div>
+      <div class='info-block'>
+        <div><span class="material-icons">add_circle</span>Options</div>
+        <div><span class="material-icons">cancel</span>Start</div>
+      </div>
+    </footer>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <script>
+        // Just for the preview
+        window.location.hash = '#splatoon'
+        setTimeout(()=>window.location.hash = '#celeste',500);
+        setTimeout(()=>window.location.hash = '#splatoon',2000);
+    </script>
+  </body>
 </html>
