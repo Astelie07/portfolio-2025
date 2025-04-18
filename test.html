@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfolio</title>  
+  <link id="theme" rel="stylesheet" type="text/css" href="assets/css/style.css" />
+  
+  <script src="https://kit.fontawesome.com/5e3d8daf90.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+  <link href="https://fonts.googleapis.com/css2?family=Hind:wght@400;700&family=Varela+Round&display=swap" rel="stylesheet">
+</head>
+<body>
+  <!-- Loader -->
+  <div id="loader_div" aria-hidden="true">
+    <img src="assets/img/cat.gif" alt="petit gif dun chat qui dort" style="width: 20%;" id="catgif"/>
+    <span class="loader">Chargement...</span>
+    <div class="cat_paw"></div>
+  </div>
+
+  <!-- --------------------------- dialogues --------------------------- -->
+
+  <div id="overlay"></div>
+
+  <!-- Alerte normale -->
+  <div id="alertBox">
+    <div class="dialogue" onclick="closeAlert()">
+        <div>
+            <span class="dialogue-character">Astélie</span>
+            <div class="dialogue-text" id="dialogue-text">Hey ! Ne scroll pas comme ça ! J'ai travaillé pour écrire tous ces textes !</div>
+        </div>
+        <img src="assets/img/illus/nomad1-light.png" class="scroll-chara light-img"/>
+        <img src="assets/img/illus/nomad1-dark.png" class="scroll-chara dark-img"/>
+    </div>
+  </div>
+
+  <!-- 🔥 Alerte menaçante 🔥 -->
+  <div id="warningBox" class="shake">
+    <div class="dialogue" onclick="closeWarning()">
+            <div>
+                <span class="dialogue-character">Astélie</span>
+                <div class="dialogue-text" id="dialogue-text">JE T'AI DIS DE TE CALMER !</div>
+            </div>
+            <img src="assets/img/illus/mad.png" class="scroll-chara light-img"/>
+            <img src="assets/img/illus/mad-dark.png" class="scroll-chara dark-img"/>
+    </div>
+  </div>   
+
+
+
+  <!-- Include FontAwesome CDN -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="assets/js/main.js"></script>
+
+</body>
+</html>
