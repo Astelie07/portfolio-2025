@@ -1,0 +1,259 @@
+
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movie</title>
+    <style>
+        @import url("https://fonts.googleapis.com/css2?family=Cabin:ital,wght@0,400..700;1,400..700&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
+
+        body {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          height: 100vh;
+          background: #000 !important;
+        }
+
+        .content {
+          border-radius: 40px;
+          overflow: hidden;
+        }
+
+        .backgroundImage,
+        .reflectsImage {
+          width: 1280px;
+          height: 720px;
+          position: absolute;
+          top: 0;
+          left: 0;
+          z-index: 1;
+        }
+
+        .backgroundImage {
+          filter: brightness(0.5) contrast(1.3);
+          opacity: 1;
+        }
+
+        .box,
+        .blur {
+          width: 1280px;
+          height: 720px;
+          pointer-events: auto;
+          position: absolute;
+          z-index: 2;
+          transform-origin: 0px 0px 0px;
+        }
+
+        .box {
+          transform: matrix3d(
+            0.614952,
+            0.147049,
+            0,
+            0.000199706,
+            -0.0178567,
+            0.487847,
+            0,
+            -0.0000312429,
+            0,
+            0,
+            1,
+            0,
+            137,
+            29,
+            0,
+            1
+          );
+          transition: transform 10s ease-out;
+        }
+
+        .box.no-transform {
+          transform: none;
+        }
+
+        .box p {
+          font-size: 220px;
+          text-align: center;
+          color: #fff;
+          font-weight: 900;
+          height: 100%;
+          margin: 0;
+          text-overflow: ellipsis;
+          overflow: hidden;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          line-height: 220px;
+          position: absolute;
+          mix-blend-mode: exclusion;
+          width: 100%;
+          height: 100%;
+          mix-blend-mode: overlay;
+          opacity: 0;
+          transition: opacity 1s ease-in-out;
+          font-family: "Montserrat", sans-serif;
+          font-weight: 900;
+        }
+
+        @keyframes fade {
+          0% {
+            opacity: 0;
+          }
+          20%,
+          80% {
+            opacity: 1;
+          }
+          100% {
+            opacity: 0;
+          }
+        }
+
+        .blur {
+          filter: blur(200px) brightness(2) opacity(0.2) contrast(1.5);
+          transform: matrix3d(
+              0.614952,
+              0.147049,
+              0,
+              0.000199706,
+              -0.0178567,
+              0.487847,
+              0,
+              -0.0000312429,
+              0,
+              0,
+              1,
+              0,
+              137,
+              29,
+              0,
+              1
+            )
+            scale(1.4);
+          margin-left: -90px;
+          margin-top: -80px;
+        }
+
+        .reflects {
+          filter: blur(30px) brightness(3) opacity(0.4);
+          position: absolute;
+          z-index: 999;
+          -webkit-mask-image: url('data:image/svg+xml;charset=utf8,<svg width="100%" height="100%" viewBox="0 0 1280 720" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;"><g transform="matrix(0.542005,0,0,0.542005,-65.945,-46.4578)"><path d="M1863.46,688.175C1849.66,686.316 1835.77,691.716 1823.15,697.82C1809.91,704.219 1796.64,711.646 1782,712.874C1793.16,714.455 1804.77,712.768 1815.03,708.074C1807.57,712.883 1799.61,717.063 1791.03,719.329C1782.46,721.595 1773.2,721.859 1764.81,718.969C1751.97,714.546 1741.5,703.02 1726.62,703.321C1732.81,714.678 1742.89,723.869 1754.76,728.984C1766.64,734.099 1780.24,735.106 1792.74,731.796C1804.83,728.597 1816.72,721.454 1828.95,724.038C1810.58,732.106 1792.22,740.173 1773.85,748.241C1787.57,751.825 1802.01,738.439 1815.34,743.272C1800.27,750.138 1784.62,755.732 1768.62,759.976C1760.68,762.082 1752.71,762.263 1748.41,759.645C1739.43,754.185 1732.35,745.672 1728.61,735.851C1743.52,740.9 1760.05,741.001 1775.2,735.401C1759.62,736.568 1743.65,730.376 1732.92,719.014C1722.24,707.692 1716.98,691.463 1718.99,676.027C1718.44,680.653 1722.68,684.416 1726.66,686.915C1755.05,704.781 1792.79,706.72 1822.87,691.858C1812.41,695.823 1800.53,695.913 1790.01,692.106C1779.5,688.299 1770.43,680.627 1764.93,670.887C1778.43,677.053 1794.03,676.369 1808.7,674.177C1823.38,671.985 1838.03,668.399 1852.86,669.165C1867.68,669.931 1883.23,675.976 1890.9,688.684C1877.77,677.641 1859.33,673.232 1842.63,677.144C1829.09,680.313 1815.94,688.611 1802.33,685.776C1809.52,688.764 1817.38,690.136 1824.86,691.579C1837.22,687.438 1850.57,686.267 1863.46,688.175ZM1863.46,688.175C1864.13,688.265 1864.79,688.372 1865.46,688.496C1864.79,688.381 1864.13,688.274 1863.46,688.175ZM1655.76,918.762C1655.7,918.237 1655.66,917.7 1655.64,917.15C1682.93,906.309 1710.39,890.582 1734.47,870.748C1738.8,857.288 1740.98,844.32 1740.11,831.55C1748.85,806.452 1762.47,784.772 1779.95,766.935C1780.62,766.332 1781.29,765.736 1781.97,765.145C1782.54,765.471 1783.12,765.786 1783.7,766.09C1785.32,802.341 1759.02,810.062 1745.81,836.547C1739.56,849.073 1748.44,866.575 1739.4,877.263C1721.1,913.005 1704.71,914.767 1673.16,919.311C1669.55,919.832 1667.2,923.559 1668.48,926.981C1672.66,938.186 1688.02,940.453 1691.82,953.856C1692.88,960.619 1689.33,965.272 1684.16,968.254C1674.96,973.552 1674.96,986.681 1684.48,991.364C1686.22,992.217 1688.02,992.933 1689.86,993.504C1682.05,994.683 1671.7,997.766 1670.65,1006.82C1669.55,1016.3 1681.58,1022.22 1683.84,1031.49C1691.89,1064.58 1654.93,1050.47 1669.15,1094.82C1666.6,1093.43 1664.51,1091.93 1662.81,1090.34C1661.33,1088.45 1660.14,1086.33 1659.32,1083.96C1655.65,1073.38 1660.86,1061.94 1666.43,1052.23C1669.23,1045.46 1672.13,1038.31 1672.84,1030.76C1673.54,1023.2 1671.71,1015.05 1666.28,1009.75C1668.8,1002.22 1672.32,995.906 1676.57,990.13C1670.52,986.075 1667.48,979.548 1667.81,973.099C1671.37,969.831 1675.74,967.787 1679.14,964.517C1682.54,961.247 1684.86,956.468 1683.98,951.833C1683.13,947.367 1679.58,943.948 1676,941.154C1671.72,937.824 1667.1,934.903 1663.19,931.147C1659.67,927.759 1656.7,923.52 1655.76,918.762ZM1761.28,854.337C1768.19,856.274 1777.07,863.034 1773.44,872.761C1768.8,876.593 1770.41,873.339 1765.94,872.761C1762.67,872.34 1761.1,873.864 1758.54,871.78C1766.23,864.095 1753.84,852.254 1761.28,854.337ZM1734.96,913.603C1739.08,909.266 1745.4,908.231 1750.24,911.52C1757.04,916.136 1756.47,926.087 1739.94,931.892C1723.33,937.722 1717.72,946.195 1715.18,961.198C1714.77,963.57 1711.64,963.281 1711.62,960.868C1711.43,942.826 1722.98,926.215 1734.96,913.603ZM1714.85,1309.03C1714.83,1309.03 1714.82,1309.02 1714.81,1309.02C1712.6,1308.68 1710.41,1308.01 1708.02,1307.11C1698.53,1303.5 1690.9,1294.49 1689.4,1286.08C1688.08,1278.64 1688.47,1271.89 1689.82,1265.94C1692.25,1254.42 1698.58,1243.22 1705.61,1234.01C1721.43,1213.26 1743.29,1197.15 1767.81,1188.18C1783.06,1182.61 1799.55,1179.61 1813.08,1170.63C1826.6,1161.65 1836.17,1147.31 1850.48,1139.65C1876.42,1125.77 1903.06,1134.2 1923.05,1135.91C1897.96,1135.91 1891.87,1130.84 1871.29,1140.3C1856.97,1146.88 1849.44,1162.82 1836.7,1172.1C1821.5,1183.16 1801.29,1183.3 1782.88,1187.15C1771.76,1189.47 1760.5,1193.59 1752.77,1201.9C1745.85,1209.34 1742.45,1219.35 1736.62,1227.67C1729.89,1237.28 1720.17,1244.29 1711.53,1252.22C1706.36,1256.96 1701.41,1262.34 1697.94,1268.38C1697.74,1274.53 1698.87,1280.68 1701.93,1285.96C1708.11,1296.63 1720.62,1301.63 1732.33,1305.47C1731.58,1305.81 1730.85,1306.13 1730.14,1306.43C1751.96,1302.09 1775.6,1306.93 1793.71,1319.92C1780.77,1326.28 1765.89,1328.36 1750.7,1324.87C1753.22,1326.29 1755.74,1327.72 1758.25,1329.15C1724.53,1331.78 1689.4,1334.85 1660.45,1352.35C1640.75,1364.27 1625.39,1382.04 1610.38,1399.5C1578.62,1436.47 1546.59,1473.82 1523.64,1516.82C1506.77,1548.46 1495.05,1582.84 1489.1,1618.2C1482.01,1618.37 1474.93,1618.54 1467.85,1618.7C1493.38,1554.72 1519.49,1490.22 1558.83,1433.66C1597.65,1377.84 1650.99,1329.65 1715.76,1309.15C1715.45,1309.11 1715.15,1309.07 1714.85,1309.03ZM1931.92,715.49C1939.94,718.529 1944.04,726.859 1945.05,734.821C1938.34,733.156 1931.64,731.492 1924.93,729.827C1931.81,734.233 1938.68,738.639 1945.56,743.045C1929.52,738.747 1913.25,734.418 1896.64,734.532C1886.15,734.604 1875.68,736.472 1865.82,740.029C1880.43,724.51 1903.6,717.619 1924.32,722.631C1899,712.026 1868.26,715.624 1846.08,731.789C1852.19,721.929 1863.27,716.168 1874.43,713.009C1893.2,707.697 1913.67,708.581 1931.92,715.49ZM1810.7,756.939C1825.53,758.264 1840.84,752.648 1851.3,742.046C1848.69,750.623 1841.76,757.762 1833.26,760.621C1824.76,763.479 1814.92,761.983 1810.7,756.939ZM1879.16,701.171C1898.42,687.255 1926.73,687.484 1945.76,701.708C1925.26,694.76 1902.12,695.909 1879.16,701.171ZM1895.22,764.729C1891.05,769.622 1885.3,774.53 1880.83,780.413C1890.8,772.458 1906.44,772.773 1916.08,781.124C1903.1,782.375 1891.45,790.372 1883.4,800.641C1875.36,810.91 1870.52,823.311 1866.73,835.792C1862.98,848.151 1860.18,861.666 1864.65,873.783C1857.18,858.204 1855.82,839.798 1860.9,823.287C1865.98,806.776 1877.47,792.326 1892.4,783.643C1881.93,784.047 1871.69,788.719 1864.52,796.36C1857.35,804.001 1853.34,814.521 1853.6,824.995C1852.35,811.794 1855.89,798.188 1863.43,787.276C1870.96,776.364 1882.43,768.231 1895.22,764.729ZM1889.8,820.803C1884.49,841.237 1888.44,861.331 1900.34,874.922C1890.25,871.604 1883.28,861.519 1881.89,850.989C1880.51,840.459 1884.04,829.725 1889.8,820.803ZM1731.79,1265.78C1753.64,1259.81 1762.12,1231.67 1782.7,1222.2C1793.81,1217.09 1806.63,1218.27 1818.86,1218.58C1831.09,1218.89 1844.47,1217.79 1853.44,1209.46C1847.32,1220.12 1834.56,1224.93 1822.53,1227.43C1810.5,1229.93 1797.76,1231.09 1787.32,1237.57C1779.68,1242.3 1773.92,1249.51 1766.73,1254.89C1753.48,1264.81 1736.48,1267.84 1731.79,1265.78Z"/></g></svg>');
+          mask-repeat: no-repeat;
+          mix-blend-mode: hard-light;
+        }
+
+        .fade-out {
+          opacity: 0;
+          transition: opacity 50s ease-in-out;
+        }
+
+        .fade-out-long {
+          opacity: 0;
+          transition: opacity 15s ease-in-out;
+        }
+
+    </style>
+</head>
+<body>
+  <div class="container">
+    <div class="content" style="display: block; width: 1280px; height: 720px; transform: scale(1.0125);">
+      <img class="backgroundImage" src="https://drive.google.com/thumbnail?id=15OERL0IVk9t757DR2Py05y9obsJibQ91&sz=w1000">
+      <div class="box">
+        <p id="word">Explore</p>
+        <iframe width="1280" height="720" class="video" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen=""></iframe>
+      </div>
+      <div class="blur">
+        <iframe width="1280" height="720" class="video" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen=""></iframe>
+      </div>
+      <div class="reflects">
+        <iframe width="1280" height="720" class="video" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen=""></iframe>
+      </div>
+    </div>
+  </div>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <script>
+        const videoURL =
+          "https://www.youtube.com/embed/hXD8itTKdY0?autoplay=1&amp;mute=1&amp;loop=1&amp;controls=0";
+
+        document.querySelectorAll(".video").forEach((iframe) => {
+          iframe.setAttribute("src", videoURL);
+        });
+
+        const words = [
+          "Explore",
+          "Unravel",
+          "Journey",
+          "Beyond",
+          "Glimpse",
+          "Infinite",
+          "Unseen",
+          "Awaken",
+          "Unknown",
+          "Seek",
+          "Curiosity",
+          "Voyage"
+        ];
+
+        let currentIndex = 0;
+        const wordElement = document.getElementById("word");
+
+        function changeWord() {
+          wordElement.style.opacity = "0";
+
+          setTimeout(() => {
+            wordElement.textContent = words[currentIndex];
+            wordElement.style.opacity = "1";
+
+            currentIndex = (currentIndex + 1) % words.length;
+          }, 1000);
+        }
+
+        setInterval(changeWord, 5000);
+
+        const contentDiv = document.querySelector(".content");
+
+        function adjustContentSize() {
+          const viewportWidth = window.innerWidth;
+
+          const baseWidth = 1300;
+          const scaleFactor =
+            viewportWidth < baseWidth ? (viewportWidth / baseWidth) * 0.8 : 1;
+
+          contentDiv.style.transform = `scale(${scaleFactor})`;
+        }
+
+        window.addEventListener("load", adjustContentSize);
+
+        window.addEventListener("resize", adjustContentSize);
+
+        const backgroundImage = document.querySelector(".backgroundImage");
+        const reflects = document.querySelector(".reflects");
+
+        function fadeOutBackground() {
+          backgroundImage.classList.add("fade-out");
+        }
+
+        function fadeOutReflects() {
+          reflects.classList.add("fade-out-long");
+        }
+
+        setTimeout(fadeOutBackground, 13000);
+
+        setTimeout(fadeOutReflects, 45000);
+
+        const box = document.querySelector(".box");
+
+        function resetTransform() {
+          box.classList.add("no-transform");
+        }
+
+        function applyInitialTransform() {
+          box.classList.remove("no-transform");
+        }
+
+        setTimeout(resetTransform, 60000);
+
+    </script>
+  </body>
+</html>
