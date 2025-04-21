@@ -1,106 +1,173 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
   <meta charset="UTF-8">
-  <title>Just Monika</title>
+  <title>Scène Nomad - Juste Astélie</title>
   <style>
+    :root {
+      --color-background: #FCF8DA;
+      --color-text: #260E03;
+      --color-accent: #E0652B;
+    }
+
     body {
       margin: 0;
-      background-color: #000;
+      background: url('../assets/img/tree-light.png') no-repeat center center/cover;
       font-family: 'Courier New', monospace;
-      color: white;
       overflow: hidden;
     }
 
-    .scene {
+    #app {
       display: flex;
-      flex-direction: column;
-      align-items: center;
       justify-content: center;
+      align-items: flex-end;
+      padding-bottom: 3rem;
       height: 100vh;
       position: relative;
     }
 
-    .monika {
-      width: 300px;
+    .dialogue {
       position: relative;
-      z-index: 1;
-      animation: float 3s ease-in-out infinite;
+      display: flex;
+      flex-direction: column;
+      max-height: 50%;
+      min-height: 300px;
+      min-width: 1024px;
+      width: 60%;
+      background-color: var(--color-background, rgba(0,0,0,0.8));
+      padding: 20px;
+      border-radius: 15px;
+      cursor: pointer;
     }
 
-    @keyframes float {
-      0% { transform: translateY(0); }
-      50% { transform: translateY(-10px); }
-      100% { transform: translateY(0); }
+    .dialogue-character {
+      font-family: "Varela Round", sans-serif;
+      font-size: 2rem;
+      color: var(--color-text, white);
+      background-color: var(--color-accent, #ff0055);
+      padding: 10px;
+      border-radius: 20px;
+      margin-bottom: 10px;
+      display: inline-block;
+      animation: bounce 1s infinite alternate;
     }
 
-    .dialogue-box {
+    @keyframes bounce {
+      from { transform: translateY(0); }
+      to { transform: translateY(-5px); }
+    }
+
+    .dialogue-text {
+      font-family: "Hind", sans-serif;
+      font-size: 1.5rem;
+      color: var(--color-text, white);
+    }
+
+    .scroll-chara {
       position: absolute;
-      bottom: 50px;
-      background: rgba(0, 0, 0, 0.7);
-      padding: 20px 40px;
-      border: 2px solid white;
-      border-radius: 10px;
-      max-width: 80%;
-      text-align: center;
-      z-index: 2;
+      max-width: 350px;
+      bottom: 0;
+      right: -6rem;
+      z-index: 1;
+      transition: opacity 1s ease;
     }
 
-    /* Effet glitch */
-    .monika.glitch {
-      animation: glitch 1s infinite;
+    .glitch {
+      animation: glitch 0.2s infinite;
     }
 
     @keyframes glitch {
-      0% {
-        transform: translate(0);
-        filter: none;
-      }
-      20% {
-        transform: translate(-2px, 2px);
-        filter: hue-rotate(20deg) contrast(1.2);
-      }
-      40% {
-        transform: translate(2px, -1px);
-        filter: hue-rotate(-20deg) contrast(1.2);
-      }
-      60% {
-        transform: translate(-1px, 1px);
-        filter: hue-rotate(10deg) contrast(1.2);
-      }
-      80% {
-        transform: translate(1px, -2px);
-        filter: hue-rotate(-10deg) contrast(1.2);
-      }
-      100% {
-        transform: translate(0);
-        filter: none;
-      }
+      0% { transform: translate(0, 0); }
+      20% { transform: translate(-2px, 2px); }
+      40% { transform: translate(2px, -1px); }
+      60% { transform: translate(-1px, 1px); }
+      80% { transform: translate(1px, -2px); }
+      100% { transform: translate(0, 0); }
+    }
+
+    .popup {
+      position: absolute;
+      background: #ff0044;
+      color: white;
+      padding: 10px;
+      border: 2px solid white;
+      z-index: 999;
+      animation: flicker 0.3s infinite alternate;
+    }
+
+    @keyframes flicker {
+      from { opacity: 0.6; }
+      to { opacity: 1; }
     }
   </style>
 </head>
 <body>
-  <div class="scene">
-    <img src="https://i.imgur.com/2vU4FQm.png" alt="Monika" class="monika glitch">
-    <div class="dialogue-box">
-      <p id="dialogue"></p>
+
+  <div id="app">
+    <div class="dialogue" id="dialogueBox">
+      <div>
+        <span class="dialogue-character">Astélie</span>
+        <div class="dialogue-text" id="dialogueText">Hey... Tu es là ?</div>
+      </div>
+      <img src="../assets/img/illus/nomad1-light.png" class="scroll-chara" id="character"/>
     </div>
   </div>
 
   <script>
-    const text = "Hi there... It's just the two of us now.";
-    let i = 0;
-    const dialogue = document.getElementById("dialogue");
+    const dialogueBox = document.getElementById('dialogueBox');
+    const dialogueText = document.getElementById('dialogueText');
+    const character = document.getElementById('character');
 
-    function type() {
-      if (i < text.length) {
-        dialogue.textContent += text.charAt(i);
-        i++;
-        setTimeout(type, 50);
+    const dialogues = [
+      "Hey... Tu es là ?",
+      "Ça fait longtemps que j'attends.",
+      "C'est calme ici... peut-être trop.",
+      "Tu entends ce silence ?",
+      "Je crois qu'on n'est pas seuls.",
+      "...non.",
+      "Quelque chose cloche.",
+      "Erreur... mémoire corrompue...",
+      "Tu n'aurais pas dû venir ici.",
+      "Système compromis.",
+      "Déconnexion impossible.",
+      "CRITICAL ERROR"
+    ];
+
+    let index = 0;
+    let corrupted = false;
+
+    dialogueBox.addEventListener('click', () => {
+      index++;
+      if (index < dialogues.length) {
+        dialogueText.textContent = dialogues[index];
+      }
+
+      if (index === 6 && !corrupted) {
+        corrupted = true;
+        document.body.style.background = "#000";
+        character.classList.add('glitch');
+        character.style.opacity = "0.6";
+      }
+
+      if (index === 9) {
+        character.style.opacity = "0";
+        generatePopups();
+      }
+    });
+
+    function generatePopups() {
+      for (let i = 0; i < 10; i++) {
+        setTimeout(() => {
+          const popup = document.createElement('div');
+          popup.className = 'popup';
+          popup.style.left = `${Math.random() * 90}vw`;
+          popup.style.top = `${Math.random() * 80}vh`;
+          popup.textContent = "ERREUR FATALE";
+          document.body.appendChild(popup);
+        }, i * 400);
       }
     }
-
-    type();
   </script>
+
 </body>
 </html>
