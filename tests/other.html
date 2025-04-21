@@ -23,8 +23,9 @@
 
     .monika {
       width: 300px;
-      animation: float 3s ease-in-out infinite;
+      position: relative;
       z-index: 1;
+      animation: float 3s ease-in-out infinite;
     }
 
     @keyframes float {
@@ -44,11 +45,43 @@
       text-align: center;
       z-index: 2;
     }
+
+    /* Effet glitch */
+    .monika.glitch {
+      animation: glitch 1s infinite;
+    }
+
+    @keyframes glitch {
+      0% {
+        transform: translate(0);
+        filter: none;
+      }
+      20% {
+        transform: translate(-2px, 2px);
+        filter: hue-rotate(20deg) contrast(1.2);
+      }
+      40% {
+        transform: translate(2px, -1px);
+        filter: hue-rotate(-20deg) contrast(1.2);
+      }
+      60% {
+        transform: translate(-1px, 1px);
+        filter: hue-rotate(10deg) contrast(1.2);
+      }
+      80% {
+        transform: translate(1px, -2px);
+        filter: hue-rotate(-10deg) contrast(1.2);
+      }
+      100% {
+        transform: translate(0);
+        filter: none;
+      }
+    }
   </style>
 </head>
 <body>
   <div class="scene">
-    <img src="https://i.imgur.com/1n5i4uA.png" alt="Monika" class="monika">
+    <img src="https://i.imgur.com/2vU4FQm.png" alt="Monika" class="monika glitch">
     <div class="dialogue-box">
       <p id="dialogue"></p>
     </div>
