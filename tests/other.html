@@ -156,17 +156,31 @@
     });
 
     function generatePopups() {
-      for (let i = 0; i < 10; i++) {
-        setTimeout(() => {
-          const popup = document.createElement('div');
-          popup.className = 'popup';
-          popup.style.left = `${Math.random() * 90}vw`;
-          popup.style.top = `${Math.random() * 80}vh`;
-          popup.textContent = "ERREUR FATALE";
-          document.body.appendChild(popup);
-        }, i * 400);
-      }
+    let count = 0;
+    let delay = 400;
+
+    function spawnPopup() {
+        const popup = document.createElement('div');
+        popup.className = 'popup';
+        popup.style.left = `${Math.random() * 95}vw`;
+        popup.style.top = `${Math.random() * 95}vh`;
+        popup.textContent = "ERROR";
+        document.body.appendChild(popup);
+
+        count++;
+        delay *= 0.85; // accélère progressivement
+
+        if (count < 700) {
+        setTimeout(spawnPopup, delay);
+        } else {
+        // Pause très courte avant l'alerte finale
+        setTimeout(() => alert(""), 1000);
+        }
     }
+
+    spawnPopup();
+    }
+
   </script>
 
 </body>
