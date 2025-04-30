@@ -75,3 +75,5 @@ Au moins 4 nouveaus sprites
 
 
 - continuation scroll horror
+
+Avec la recherche d'alternance, coder c'est dur
