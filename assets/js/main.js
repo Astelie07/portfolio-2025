@@ -104,14 +104,17 @@ document.addEventListener("DOMContentLoaded", function() {
 
   // 🔹 Vérifier s'il y a un thème enregistré dans localStorage
   let savedTheme = localStorage.getItem("theme");
+  console.log(savedTheme);
 
   if (savedTheme) {
       theme.setAttribute('href', savedTheme);
       if (savedTheme.includes("dark")) {
+          theme.setAttribute('href', 'assets/css/dark-style.css');
           firstVideo.setAttribute('src', 'assets/video/dark-opening.mp4');
           secondVideo.setAttribute('src', 'assets/video/dark-iddle.mp4');
           l_logo.setAttribute('src', 'assets/img/titre_dark.png');
       } else {
+          theme.setAttribute('href', 'assets/css/style.css');
           firstVideo.setAttribute('src', 'assets/video/light-opening.mp4');
           secondVideo.setAttribute('src', 'assets/video/light-iddle.mp4');
           l_logo.setAttribute('src', 'assets/img/titre_.png');
