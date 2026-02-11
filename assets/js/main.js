@@ -507,8 +507,12 @@ let imageChosen = false;  // Variable pour vérifier si une image a été choisi
         
           const scrollPosition = window.innerHeight + window.scrollY;
           const documentHeight = document.documentElement.scrollHeight;
-        
+          const jingle = document.getElementById('AppearSound');
+          jingle.volume = 0.5;
+            
           if (scrollPosition >= documentHeight) {
+            jingle.currentTime = 0;
+            jingle.play();
             const lightbox = document.getElementById('lightbox');
             lightbox.style.display = 'flex';
           }
@@ -528,6 +532,7 @@ let imageChosen = false;  // Variable pour vérifier si une image a été choisi
         
             // Jouer le son
             const sound = document.getElementById('clickSound');
+            sound.volume = 0.5;
             sound.currentTime = 0;
             sound.play();
         

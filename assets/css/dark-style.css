@@ -1150,14 +1150,6 @@ footer {
   
 }
 
-.card:hover {
-  box-shadow: 
-    -20px -20px 30px -25px var(--color1), 
-    20px 20px 30px -25px var(--color2), 
-    -7px -7px 10px -5px var(--color1), 
-    7px 7px 10px -5px var(--color2);
-}
-
 .card:before,
 .card:after {
   content: "";
@@ -1172,27 +1164,9 @@ footer {
   transition: all .33s ease;
 }
 
-.card:before {
-  background-position: 50% 50%;
-  background-size: 300% 300%;
-  background-image: linear-gradient(
-    115deg,
-    transparent 0%,
-    var(--color1) 25%,
-    transparent 47%,
-    transparent 53%,
-    var(--color2) 75%,
-    transparent 100%
-  );
-  opacity: .5;
-  filter: brightness(.5) contrast(1);
-  z-index: 1;
-}
-
 .card:after {
-  opacity: 1;
+  opacity: 0.25;
   background-image: url("https://assets.codepen.io/13471/sparkles.gif"), 
-    url(https://assets.codepen.io/13471/holo.png), 
     linear-gradient(125deg, #ff008450 15%, #fca40040 30%, #ffff0030 40%, #00ff8a20 60%, #00cfff40 70%, #cc4cfa50 85%);
   background-position: 50% 50%;
   background-size: 160%;
@@ -1201,7 +1175,6 @@ footer {
   filter: brightness(1) contrast(1);
   transition: all .33s ease;
   mix-blend-mode: color-dodge;
-  opacity: .75;
 }
 
 .card.active:after,
@@ -1248,29 +1221,8 @@ footer {
     transition: none;
     animation: holoGradient 12s ease 0s 1;
   }
-  &:after {
-    transition: none;
-    animation: holoSparkle 12s ease 0s 1;
-  }
 }  
 
-@keyframes holoSparkle {
-  0%, 100% {
-    opacity: .75; background-position: 50% 50%; filter: brightness(1.2) contrast(1.25);
-  }
-  5%, 8% {
-    opacity: 1; background-position: 40% 40%; filter: brightness(.8) contrast(1.2);
-  }
-  13%, 16% {
-    opacity: .5; background-position: 50% 50%; filter: brightness(1.2) contrast(.8);
-  }
-  35%, 38% {
-    opacity: 1; background-position: 60% 60%; filter: brightness(1) contrast(1);
-  }
-  55% {
-    opacity: .33; background-position: 45% 45%; filter: brightness(1.2) contrast(1.25);
-  }
-}
 
 @keyframes holoGradient {
   0%, 100% {
