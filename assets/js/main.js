@@ -235,30 +235,6 @@ function dragOver(e) {
   e.preventDefault();
 }
 
-//-------------------------------------------------SKILLS TEL-----------------------------------
-
-document.addEventListener("DOMContentLoaded", () => {
-  const categories = document.querySelectorAll("h3");
-
-  categories.forEach((category) => {
-    category.addEventListener("click", () => {
-      const list = category.nextElementSibling;
-
-      if (list.classList.contains("hidden")) {
-        list.classList.remove("hidden");
-      } else {
-        list.classList.add("hidden");
-      }
-
-      // Ajuster le margin-bottom des h3 pour garder de l'espace entre eux
-      categories.forEach((h3) => {
-        const siblingList = h3.nextElementSibling;
-        h3.style.marginBottom = siblingList.classList.contains("hidden") ? "30px" : "10px";
-      });
-    });
-  });
-});
-
 
 // <!-- ---------------------------------CARDS -------------------------------------------- -->
 

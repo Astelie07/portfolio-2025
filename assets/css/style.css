@@ -1,14 +1,16 @@
   :root {
     /* Light Mode Colors */
-    --color-background: #FCF8DA;
-    --color-primary: #EDBA40; /* Orange-jaune clair */
-    --color-secondary: #E28C33; /* Orange */
-    --color-accent: #E0652B; /* Orange un peu rouge */
-    --color-text: #260E03; /* Noir foncé pour le texte */
+    /* --color-background: #FCF8DA;
+    --color-primary: #EDBA40; 
+    --color-secondary: #E28C33; 
+    --color-accent: #E0652B; 
+    --color-text: #260E03;  */
 
-    --color1: #E0652B;
-    --color2: #E28C33;
-    --color3: #EDBA40;
+    --color-background: rgb(245,236,210);
+    --color-primary: rgb(44,159,199); 
+    --color-secondary: rgb(251,183,40); 
+    --color-accent: rgb(240,107,4); 
+    --color-text: #1670AC; 
   
     /* Other Variables */
     --transition-duration: 0.3s;
@@ -267,8 +269,8 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    background: rgb(11,134,180);
-    background: linear-gradient(180deg, rgba(11,134,180,1) 0%, rgba(11,134,180,1) 30%, rgba(57,180,226,1) 80%, var(--color-primary) 100%);
+    background: var(--color-text);
+    background: linear-gradient(180deg, var(--color-text) 0%, var(--color-primary) 30%, var(--color-primary) 60%, var(--color-secondary) 100%);
     color: var(--color-background);
     padding: 40px 10rem;
     margin: auto;
@@ -335,7 +337,7 @@
       font-size: 22px;
       font-weight: bold;
       margin-bottom: 2rem;
-      color: var(--color-primary);
+      color: var(--color-secondary);
       text-shadow: 1px 1px 0px var(--color-accent);
   }
 
@@ -358,8 +360,8 @@
       font-size: 16px;
   }
 
-  .presentation-info strong {
-      color: var(--color-primary);
+  .presentation-info strong, .interets h3 {
+      color: var(--color-secondary);
       text-shadow: 1px 1px 0px var(--seed_color);
   }
 
@@ -392,7 +394,7 @@
   }
 
   .grid-item {
-      background: rgba(255, 255, 255, 0.1); /* Fond transparent */
+      background: rgba(255, 255, 255, 0.1); 
       border: 1px solid rgba(255, 255, 255, 0.3);
       padding: 20px;
       border-radius: 8px;
@@ -404,8 +406,7 @@
   }
 
   .grid-item:hover {
-    background: rgba(255, 166, 0, 0.178);
-    border: 1px solid var(--color-primary);
+    background: #1670ac81;
   }
 
   .grid-item i {
@@ -449,7 +450,7 @@
     left: -3em; /* Ajuste la distance à gauche */
     top: 50%;
     transform: translateY(-50%);
-    color: var(--color-background);
+    color: var(--color-accent);
     font-size: 2.5em; /* Plus grand */
     animation: bounce-left 1.5s infinite ease-in-out;
 }
@@ -461,7 +462,7 @@
     right: -3em; /* Ajuste la distance à droite */
     top: 50%;
     transform: translateY(-50%);
-    color: var(--color-background);
+    color: var(--color-accent);
     font-size: 2.5em; /* Plus grand */
     animation: bounce-right 1.5s infinite ease-in-out;
 }
@@ -482,8 +483,8 @@
     z-index: 1;
     padding:15px;
     margin-top:25px;
-    background-color:var(--color-secondary);
-    border : solid 2px var(--color-secondary);
+    background-color:var(--color-primary);
+    border : solid 2px var(--color-primary);
     border-radius : 20px;
     text-decoration: none;
     color : white;
@@ -499,7 +500,7 @@
   /* ---------------------------------------- COMPETENCES + SKILLS ------------------------------------------------------------------------------- */
 
   #competences {
-    background: linear-gradient(180deg, var(--color-primary) 0%, var(--color-primary) 30%, #FFFCEE 100%);
+    background: linear-gradient(180deg, var(--color-secondary) 0%, var(--color-secondary) 30%, #FFFCEE 100%);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -2209,20 +2210,12 @@
 
 #contact {
   background: var(--color-secondary);
-  background: linear-gradient(90deg, var(--color-secondary) 0%, var(--color-primary) 50%, var(--color-secondary) 100%);
   color: var(--color-text);
   text-align: center;
 }
 
 #contact h2 {
   font-size: 2rem;
-}
-
-.direct-contact-container {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 0.2rem;
 }
 
 .contact-list {

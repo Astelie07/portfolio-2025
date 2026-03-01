@@ -1,10 +1,16 @@
 :root {  
     /* Dark Mode Colors */
-    --color-background: #030725; /* Bleu très foncé */
-    --color-primary: rgb(0, 0, 88); /* Bleu moins foncé */
-    --color-secondary: #c6abf8; /* Violet clair */
-    --color-accent: #9BA5F6; /* Bleu ciel */
-    --color-text: white; /* Blanc pour le texte */
+    /* --color-background: #030725; 
+    --color-primary: rgb(0, 0, 88);
+    --color-secondary: #c6abf8; 
+    --color-accent: #9BA5F6;
+    --color-text: white;  */
+
+    --color-background: #190933; 
+    --color-primary: #541388; 
+    --color-secondary: #006B51; 
+    --color-accent: #A3FFDA; 
+    --color-text: #EFC2FF; 
 
     --color1: #BABDF6;
     --color2: #6978e6;
@@ -297,7 +303,8 @@ section {
   display: flex;
   flex-direction: column;
   align-items: center;
-  background: linear-gradient(180deg, var(--color-primary) 0%, var(--color-background) 20%, #030725 80%, var(--color-primary) 100%);
+  background-color: var(--color-primary);
+  background: linear-gradient(180deg, var(--color-secondary) 0%, var(--color-primary) 100%);
   color: var(--color-text);
   padding: 40px 10rem;
   margin: auto;
@@ -364,7 +371,7 @@ section {
   font-size: 22px;
   font-weight: bold;
   margin-bottom: 2rem;
-  color: var(--color-secondary);
+  color: var(--color-accent);
   text-shadow: 1px 1px 0px var(--color-background);
 }
 
@@ -387,8 +394,8 @@ section {
     font-size: 16px;
 }
 
-.presentation-info strong {
-    color: var(--color-secondary);
+.presentation-info strong, .interets h3 {
+    color: var(--color-accent);
     text-shadow: 1px 1px 0px var(--color-background);
 }
 
@@ -478,7 +485,7 @@ interets {
   left: -3em; /* Ajuste la distance à gauche */
   top: 50%;
   transform: translateY(-50%);
-  color: var(--color-accent);
+  color: var(--color-secondary);
   font-size: 2.5em; /* Plus grand */
   animation: bounce-left 1.5s infinite ease-in-out;
 }
@@ -490,7 +497,7 @@ interets {
   right: -3em; /* Ajuste la distance à droite */
   top: 50%;
   transform: translateY(-50%);
-  color: var(--color-accent);
+  color: var(--color-secondary);
   font-size: 2.5em; /* Plus grand */
   animation: bounce-right 1.5s infinite ease-in-out;
 }
@@ -528,7 +535,7 @@ interets {
   /* ---------------------------------------- COMPETENCES + SKILLS ------------------------------------------------------------------------------- */
 
   #competences {
-    background: linear-gradient(180deg, var(--color-primary) 0%, var(--color-primary) 30%, #040A34 100%);
+    background: linear-gradient(180deg, var(--color-primary) 0%, var(--color-primary) 30%, var(--color-background) 100%);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -544,7 +551,7 @@ interets {
   }
 
   #competences p span{
-    background-color : #d9b7ff5b;
+    background-color : #a3ffda42;
     padding: 3px;
     border-radius: 10px;
   }
@@ -2263,20 +2270,12 @@ text-align: center;
 
 #contact {
   background: var(--color-accent);
-  background: linear-gradient(90deg, var(--color-accent) 0%, var(--color-secondary) 50%, var(--color-accent) 100%);
   color: var(--color-background);
   text-align: center;
 }
 
 #contact h2 {
   font-size: 2rem;
-}
-
-.direct-contact-container {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 0.2rem;
 }
 
 .contact-list {
