@@ -174,13 +174,13 @@
   }
 
   /* Positionnement du logo au quart de la largeur de l'écran */
-  #logo {
+  #logo, #second-video {
     opacity: 0; /* Le logo est caché au départ */
     transition: opacity 1s ease; /* Ajout d'une transition pour le fondu */
   }
 
   /* Effet de fondu pour faire apparaître le logo */
-  #logo.show {
+  #logo.show, #second-video {
     opacity: 1; /* Afficher le logo en fondu */
   }
 
@@ -500,7 +500,7 @@
   /* ---------------------------------------- COMPETENCES + SKILLS ------------------------------------------------------------------------------- */
 
   #competences {
-    background: linear-gradient(180deg, var(--color-secondary) 0%, var(--color-secondary) 30%, #FFFCEE 100%);
+    background: linear-gradient(180deg, var(--color-secondary) 0%, var(--color-secondary) 30%, var(--color-background) 100%);
     display: flex;
     justify-content: center;
     align-items: center;

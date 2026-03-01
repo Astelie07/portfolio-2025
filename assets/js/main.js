@@ -79,12 +79,14 @@ function toggleTheme() {
   if (theme.getAttribute('href') == 'assets/css/style.css') {
       theme.setAttribute('href', 'assets/css/dark-style.css');
       opvideo.setAttribute('src', 'assets/video/dark-opening.mp4');
-      video.setAttribute('src', 'assets/video/dark-iddle.mp4');
+      // video.setAttribute('src', 'assets/video/dark-iddle.mp4');
+      video.setAttribute('src', 'assets/img/ocs-d.png');
       logo.setAttribute('src', 'assets/img/titre_dark.png');
   } else {
       theme.setAttribute('href', 'assets/css/style.css');
       opvideo.setAttribute('src', 'assets/video/light-opening.mp4');
-      video.setAttribute('src', 'assets/video/light-iddle.mp4');
+      //video.setAttribute('src', 'assets/video/light-iddle.mp4');
+      video.setAttribute('src', 'assets/img/ocs.png');
       logo.setAttribute('src', 'assets/img/titre_.png');
   }
 
@@ -111,12 +113,12 @@ document.addEventListener("DOMContentLoaded", function() {
       if (savedTheme.includes("dark")) {
           theme.setAttribute('href', 'assets/css/dark-style.css');
           firstVideo.setAttribute('src', 'assets/video/dark-opening.mp4');
-          secondVideo.setAttribute('src', 'assets/video/dark-iddle.mp4');
+          secondVideo.setAttribute('src', 'assets/img/ocs-d.png');
           l_logo.setAttribute('src', 'assets/img/titre_dark.png');
       } else {
           theme.setAttribute('href', 'assets/css/style.css');
           firstVideo.setAttribute('src', 'assets/video/light-opening.mp4');
-          secondVideo.setAttribute('src', 'assets/video/light-iddle.mp4');
+          secondVideo.setAttribute('src', 'assets/img/ocs.png');
           l_logo.setAttribute('src', 'assets/img/titre_.png');
       }
   } else {
@@ -125,12 +127,12 @@ document.addEventListener("DOMContentLoaded", function() {
       if (isDarkMode) {
           theme.setAttribute('href', 'assets/css/dark-style.css');
           firstVideo.setAttribute('src', 'assets/video/dark-opening.mp4');
-          secondVideo.setAttribute('src', 'assets/video/dark-iddle.mp4');
+          secondVideo.setAttribute('src', 'assets/img/ocs-d.png');
           l_logo.setAttribute('src', 'assets/img/titre_dark.png');
       } else {
           theme.setAttribute('href', 'assets/css/style.css');
           firstVideo.setAttribute('src', 'assets/video/light-opening.mp4');
-          secondVideo.setAttribute('src', 'assets/video/light-iddle.mp4');
+          secondVideo.setAttribute('src', 'assets/img/ocs.png');
           l_logo.setAttribute('src', 'assets/img/titre_.png');
       }
   }
@@ -150,6 +152,9 @@ document.addEventListener("DOMContentLoaded", function() {
   // Masquer le loader avec une transition en douceur
   loader.style.opacity = "1";
   loader.style.transition = "opacity 0.5s ease";
+
+  secondVideo.style.opacity = "1";
+  secondVideo.style.transition = "opacity 0.5s ease";
 
   firstVideo.pause(); // S'assurer que la première vidéo est mise en pause au départ
 

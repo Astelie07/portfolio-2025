@@ -184,23 +184,15 @@ header video {
 }
 
 /* Positionnement du logo au quart de la largeur de l'écran */
-#logo {
-  position: absolute;
-  top: 50%; /* Centrer verticalement */
-  left: 25%; /* Positionner le logo à 25% de la largeur de l'écran */
-  transform: translateY(-50%); /* Centrer verticalement par rapport à son propre centre */
-  font-size: 2rem;
-  font-weight: bold;
-  color: var(--color-text);
-  z-index: 10;
-  opacity: 0; /* Le logo est caché au départ */
-  transition: opacity 1s ease; /* Ajout d'une transition pour le fondu */
-}
+  #logo, #second-video {
+    opacity: 0; /* Le logo est caché au départ */
+    transition: opacity 1s ease; /* Ajout d'une transition pour le fondu */
+  }
 
-/* Effet de fondu pour faire apparaître le logo */
-#logo.show {
-  opacity: 1; /* Afficher le logo en fondu */
-}
+  /* Effet de fondu pour faire apparaître le logo */
+  #logo.show, #second-video {
+    opacity: 1; /* Afficher le logo en fondu */
+  }
 
 /* Sections */
 section {
