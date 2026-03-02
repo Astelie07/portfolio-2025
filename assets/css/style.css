@@ -73,7 +73,7 @@
   }
 
   #catgif{
-      background-color: var(--color-primary);
+      background-color: var(--color-secondary);
       border-radius: 50% ;
   }
 
@@ -588,9 +588,9 @@
 
   /*--------------------------SKILLS---------------------------------------------*/
   :root {
-    --container_color: #ffc878;
-    --container_color2: #f8ba70;
-    --container_color3: #eba867;
+    --container_color: #F1EEE3;
+    --container_color2: #D7EEF1;
+    --container_color3: #BCEEFF;
     --text_color: #331f28;
     --text_shadow: #ce9c5f;
     --fruit_color: #ff1493;
@@ -657,7 +657,8 @@
     border-image-slice: 24 22;
     border-image-repeat: round;
     border-radius: 20px;
-    border-image-source: url("https://assets.codepen.io/7237686/itemsborder.png");
+    /* border-image-source: url("https://assets.codepen.io/7237686/itemsborder.png"); */
+    border-image-source: url("../img/illus/slot.png");
     width: 74px;
     height: 74px;
     display: flex;
@@ -756,7 +757,8 @@
     border-image-slice: 24 22;
     border-image-repeat: round;
     border-radius: 20px;
-    border-image-source: url("https://assets.codepen.io/7237686/tooltipbordertop.png");
+    /* border-image-source: url("https://assets.codepen.io/7237686/tooltipbordertop.png"); */
+    border-image-source: url("../img/illus/tooltip_top.png");
     text-shadow: var(--text_shadow) -2px 1px;
     white-space: nowrap;
   }
@@ -812,7 +814,8 @@
     border-image-slice: 24 22;
     border-image-repeat: round;
     border-radius: 20px;
-    border-image-source: url("https://assets.codepen.io/7237686/tooltipborderbottom.png");
+    /* border-image-source: url("https://assets.codepen.io/7237686/tooltipborderbottom.png"); */
+    border-image-source: url("../img/illus/tooltip_bottom.png");
     font-size: 2rem;
     text-shadow: var(--text_shadow) -2px 1px;
   }
