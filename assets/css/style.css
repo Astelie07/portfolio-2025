@@ -1182,8 +1182,8 @@
     background-image: linear-gradient(
       110deg,
       transparent 40%,
-      var(--color-background) 48%,
-      var(--color-primary) 52%,
+      var(--color-secondary) 48%,
+      var(--color-primary) 60%,
       transparent 90%
     );
     background-position: 50% 50%;
@@ -1684,7 +1684,7 @@
 
 #content{
   text-align: center;
-  background-image: url("../img/projet-light.png");
+  background-image: url("../img/background-light.png");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
