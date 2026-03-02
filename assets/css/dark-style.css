@@ -185,13 +185,17 @@ header video {
 
 /* Positionnement du logo au quart de la largeur de l'écran */
   #logo, #second-video {
-    opacity: 0; /* Le logo est caché au départ */
-    transition: opacity 1s ease; /* Ajout d'une transition pour le fondu */
+    opacity: 0; 
+    transition: opacity 1s ease; 
   }
 
   /* Effet de fondu pour faire apparaître le logo */
   #logo.show, #second-video {
-    opacity: 1; /* Afficher le logo en fondu */
+    opacity: 1; 
+  }
+
+   #second-video{
+    float: right;
   }
 
 /* Sections */
