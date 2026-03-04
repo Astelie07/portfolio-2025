@@ -2388,7 +2388,7 @@ section:last-of-type{
 .dialogue-character {
     font-family: "Varela Round", sans-serif;
     font-size: 2rem;
-    color: var(--color-text);
+    color: var(--color-background);
     background-color: var(--color-accent);
     padding: 10px;
     border-radius: 20px;
