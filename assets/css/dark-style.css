@@ -424,8 +424,8 @@ interets {
 }
 
 .grid-item {
-    background: rgba(77, 66, 105, 0.1); /* Fond transparent */
-    border: 1px solid rgba(81, 80, 92, 0.3);
+    background: rgba(175, 0, 255, 0.15);
+    border: 1px solid rgba(192, 156, 255, 0.73);
     padding: 20px;
       border-radius: 8px;
       font-weight: bold;
@@ -436,7 +436,7 @@ interets {
   }
 
   .grid-item:hover {
-    background: rgba(92, 94, 172, 0.178);
+    background: rgba(111, 172, 92, 0.178);
     border: 1px solid var(--color-accent);
   }
 
@@ -476,25 +476,25 @@ interets {
 }
 
 .cv::before {
-  content: "⎯ •⟶"; /* Flèche solide vers la gauche */
+  content: "⎯ •⟶"; 
   position: absolute;
-  left: -3em; /* Ajuste la distance à gauche */
+  left: -3em; 
   top: 50%;
   transform: translateY(-50%);
-  color: var(--color-secondary);
-  font-size: 2.5em; /* Plus grand */
+  color: white;
+  font-size: 2.5em; 
   animation: bounce-left 1.5s infinite ease-in-out;
 }
 
 /* Flèche droite */
 .cv::after {
-  content: "⟵•⎯"; /* Flèche solide vers la droite */
+  content: "⟵•⎯"; 
   position: absolute;
-  right: -3em; /* Ajuste la distance à droite */
+  right: -3em; 
   top: 50%;
   transform: translateY(-50%);
-  color: var(--color-secondary);
-  font-size: 2.5em; /* Plus grand */
+  color: white;
+  font-size: 2.5em; 
   animation: bounce-right 1.5s infinite ease-in-out;
 }
 
@@ -1035,13 +1035,14 @@ interets {
   color: lavender;
 }
 
-#portfolio h2 {
-  color: white;
-  -webkit-text-stroke: 1px var(--color-background); 
+#portfolio > h2:first-of-type, #gallery-titre{
+  text-shadow: -1px -1px 0 var(--color-accent), 1px -1px 0 var(--color-accent), -1px 1px 0 var(--color-accent), 1px 1px 0 var(--color-accent);
 }
 
-#portfolio > p:first-of-type {
-  -webkit-text-stroke: 0.5px var(--color-accent); 
+#portfolio > p:first-of-type{
+  font-size: larger;
+  text-shadow: -0.8px -0.8px 0 var(--color-accent), 0.8px -0.8px 0 var(--color-accent), -0.8px 0.8px 0 var(--color-accent), 0.8px 0.8px 0 var(--color-accent);
+  font-weight: bold;
 }
 
   /*---portfolio style---*/
@@ -1727,7 +1728,7 @@ text-align: center;
 
 #content{
   text-align: center;
-  background-image: url("../img/projet-dark.png");
+  background-image: url("../img/background-dark.png");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;

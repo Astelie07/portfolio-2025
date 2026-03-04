@@ -2437,7 +2437,7 @@ section:last-of-type{
   margin: 0.2rem;
 }
 
- #portfolio > h2:first-of-type{
+#portfolio > h2:first-of-type{
   text-shadow: -1px -1px 0 var(--color-background), 1px -1px 0 var(--color-background), -1px 1px 0 var(--color-background), 1px 1px 0 var(--color-background);
 }
 
