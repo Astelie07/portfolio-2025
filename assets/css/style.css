@@ -125,7 +125,7 @@
   .menu-burger {
     width: 50px;
     height: 50px;
-    background-color: var(--color-primary);
+    background-color: var(--color-secondary);
     color: var(--color-text);
     display: flex;
     justify-content: center;
@@ -134,7 +134,8 @@
     cursor: pointer;
     border-radius: 8px;
     box-shadow: var(--box-shadow);
-    margin-right: 10px; /* Ajout d'espace entre le burger et le bouton */
+    margin-right: 10px; 
+    border: solid 3px var(--color-text);
   }
 
   /* Conteneur pour le menu burger et le bouton de changement de thème */
@@ -449,25 +450,25 @@
   }
 
   .cv::before {
-    content: "⎯ •⟶"; /* Flèche solide vers la gauche */
+    content: "⎯ • ⟶"; /* Flèche solide vers la gauche */
     position: absolute;
-    left: -3em; /* Ajuste la distance à gauche */
+    left: -3em; 
     top: 50%;
     transform: translateY(-50%);
-    color: var(--color-accent);
+    color: var(--color-background);
     font-size: 2.5em; /* Plus grand */
     animation: bounce-left 1.5s infinite ease-in-out;
 }
 
 /* Flèche droite */
 .cv::after {
-    content: "⟵•⎯"; /* Flèche solide vers la droite */
+    content: "⟵ • ⎯"; 
     position: absolute;
-    right: -3em; /* Ajuste la distance à droite */
+    right: -3em;
     top: 50%;
     transform: translateY(-50%);
-    color: var(--color-accent);
-    font-size: 2.5em; /* Plus grand */
+    color: var(--color-background);
+    font-size: 2.5em; 
     animation: bounce-right 1.5s infinite ease-in-out;
 }
 
@@ -539,7 +540,7 @@
   }
 
   .filter-btn:hover {
-      color: var(--color-primary); 
+      color: var(--color-secondary); 
   }
 
   .filter-btn:focus{
@@ -1013,14 +1014,14 @@
   }
 
   #portfolio-button a{
-    background-color: var(--color-text);
+    background-color: var(--color-accent);
     color: var(--color-background);
     border: none;
   }
 
   #portfolio-button a:hover{
-    background-color: #000;
-    color: var(--color-primary);
+    background-color: var(--color-text);
+    color: var(--color-secondary);
   }
 
   /*---portfolio style---*/
@@ -1053,6 +1054,7 @@
 
   #gallery-titre{
     margin-top: 3rem;
+    color: var(--color-background)
   }
 
   #archives{
@@ -1794,10 +1796,6 @@
   gap: 10px;
   margin-bottom: 20px;
 }
-      
-.filter-btn {
-  color: var(--color-primary);
-}
 
 .filter-btn:first-of-type {
   color: var(--color-background);
@@ -2437,6 +2435,16 @@ section:last-of-type{
   max-width: 32%;
   width: 100%;
   margin: 0.2rem;
+}
+
+ #portfolio > h2:first-of-type{
+  text-shadow: -1px -1px 0 var(--color-background), 1px -1px 0 var(--color-background), -1px 1px 0 var(--color-background), 1px 1px 0 var(--color-background);
+}
+
+#portfolio > p:first-of-type{
+  font-size: larger;
+  text-shadow: -0.8px -0.8px 0 var(--color-background), 0.8px -0.8px 0 var(--color-background), -0.8px 0.8px 0 var(--color-background), 0.8px 0.8px 0 var(--color-background);
+  font-weight: bold;
 }
 
 #portfolio .item img {
