@@ -1,30 +1,14 @@
 A faire : -----
 
 - mettre à jour : texte + présentation + CV
-- faire tri dans portfolio
+- faire tri dans portfolio + ajout projets enjmin
 - refaire partie projet
-- ajout enjmin dans portfolio
 
 - ajout stickers 
 	- huepoe - dark : Pamela ?
-	- ocarina - light -> flute
 	- ajout badge d & l à voir(à la place d'ocarinea)
 		-> idées : Hades(L: Souvenir Héra,D: Souvenir Sélénée),
 			
-
-- dans inventaire : (et ranger)
-	Ajouter :
-	- Photoshop
-	- Illustrator
-	- Premiere pro
-	- Reaper
-	- Lmms
-	- Davinci resolve
-	- Godot
-	- GdScript
-	- Excel
-	- Game design
-	- composition musique
 
 IDEES + -------------------
 

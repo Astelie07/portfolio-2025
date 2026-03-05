@@ -479,7 +479,7 @@ $(document).ready(function() {
 
 // -------------------- Badges
 
-let imageChosen = false;  // Variable pour vérifier si une image a été choisie
+let imageChosen = false;  // Si image choisie
 
         // Affiche la lightbox quand on atteint le bas
         window.addEventListener('scroll', function () {
@@ -501,6 +501,7 @@ let imageChosen = false;  // Variable pour vérifier si une image a été choisi
         
         // Gère le clic sur une image
         document.querySelectorAll('.selectable-img').forEach(img => {
+
           img.addEventListener('click', function () {
             // Si une image a déjà été choisie, on arrête la fonction
             if (imageChosen) return;
@@ -525,6 +526,7 @@ let imageChosen = false;  // Variable pour vérifier si une image a été choisi
               lightbox.style.display = 'none';
               
               // Créer l'image flottante pour la placer en bas à droite
+
               const floatingImg = document.createElement('img');
               floatingImg.src = this.src;
               floatingImg.className = 'floating-image';
@@ -535,6 +537,15 @@ let imageChosen = false;  // Variable pour vérifier si une image a été choisi
               floatingImg.style.bottom = '20px';
               floatingImg.style.right = '20px';
               floatingImg.style.zIndex = 1001;
+
+              //Adaptation thème
+              let theme = document.getElementById('theme');
+
+              if (theme.getAttribute('href') == 'assets/css/style.css') {
+                floatingImg.className = 'floating-image light-img';
+              }else{
+                floatingImg.className = 'floating-image dark-img';
+              }
         
               // Appliquer l'animation de scale à l'image flottante
               setTimeout(() => {

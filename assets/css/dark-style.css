@@ -1111,7 +1111,7 @@ interets {
 footer {
     width: 100%;
     text-align: center;
-    color: var(--color-background);
+    color: var(--color-accent);
     margin-top: 1rem;
   }
 
@@ -1657,10 +1657,12 @@ text-align: center;
 
 .sticker-ocarina{
   left: 3%;
+  margin-top: -50px;
 }
 
 .sticker-flute-st{
   right: 3%;
+  margin-top: -50px;
 }
 
 .image-container {
@@ -1688,7 +1690,7 @@ text-align: center;
     bottom: 0;
     left: 0;
     width: auto;
-    background-color: rgba(0, 0, 88, 0.856);
+    background-color: #53138882;
     color: white;
     padding: 5px 10px;
     border-radius: 0 10px 0 0;
@@ -2266,7 +2268,7 @@ text-align: center;
 /* ========== CONTACT SECTION COMPACT ========== */
 
 #contact {
-  background: var(--color-accent);
+  background: #1ba06a;
   color: var(--color-background);
   text-align: center;
 }
@@ -2276,9 +2278,13 @@ text-align: center;
 }
 
 .contact-list {
+  display: flex;
+  flex-direction: row;
   list-style: none;
   padding: 0;
   margin: 0;
+  justify-content: center;
+  gap: 70px;
 }
 
 .list-item {
@@ -2305,11 +2311,11 @@ text-align: center;
 }
 
 .contact-icon i, .list-item a {
-  color: var(--color-contact);
+  color: var(--color-background);
 }
 
 .contact-icon:hover i, .list-item a:hover {
-  color: var(--color-contact);
+  color: var(--color-primary);
 }
 
 .copyright {
@@ -2435,7 +2441,7 @@ section:last-of-type{
     min-height: 300px;
     min-width: 1024px;
     width: 60%;
-    background-color: var(--container_color3);
+    background-color: var(--color-accent);
     padding: 20px;
     border-radius: 15px;
 }
@@ -2443,8 +2449,7 @@ section:last-of-type{
 .dialogue-character {
     font-family: "Varela Round", sans-serif;
     font-size: 2rem;
-    color: var(--color-background);
-    background-color: var(--color2);
+    background-color: var(--color-primary);
     padding: 10px;
     border-radius: 20px;
     margin-bottom: 10px;
@@ -2569,7 +2574,7 @@ section:last-of-type{
         }
         
         .lightbox-content {
-          background: var(--color-contact);
+          background: var(--color-secondary);
           padding: 20px;
           border-radius: 10px;
           text-align: center;

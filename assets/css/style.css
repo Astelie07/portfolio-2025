@@ -1089,8 +1089,8 @@
   footer {
     width: 100%;
     text-align: center;
-  
-    color: var(--color-text);
+    position: relative;
+    color: #f04604;
     margin-top: 1rem;
   }
 
@@ -1631,10 +1631,12 @@
 
 .sticker-ocarina{
   left: 3%;
+  margin-top: -50px;
 }
 
 .sticker-flute-st{
   right: 3%;
+  margin-top: -50px;
 }
 
 .sticker:hover {
@@ -2224,9 +2226,13 @@
 }
 
 .contact-list {
+  display: flex;
+  flex-direction: row;
   list-style: none;
   padding: 0;
   margin: 0;
+  justify-content: center;
+  gap: 70px;
 }
 
 .list-item {
@@ -2258,7 +2264,7 @@
 }
 
 .contact-icon:hover i, .list-item a:hover {
-  color: var(--color-background);
+  color: #f04604;
 }
 
 .copyright {
@@ -2524,7 +2530,7 @@ section:last-of-type{
         }
         
         .lightbox-content {
-          background: white;
+          background: var(--color-background);
           padding: 20px;
           border-radius: 10px;
           text-align: center;
