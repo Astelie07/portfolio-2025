@@ -6,7 +6,6 @@
   <title>Archives | Portfolio</title>
   <link id="theme" rel="stylesheet" type="text/css" href="assets/css/style.css" />
   <style>
-    
     .archives-explorer-container {
       display: flex;
       min-height: 100vh;
@@ -36,7 +35,7 @@
     
     .archives-sidebar li:hover,
     .archives-sidebar li.active {
-      background-color: var(--color2);
+      background-color: var(--color-contact);
     }
     
     .archives-gallery-display {
@@ -67,7 +66,7 @@
       transform: translateY(0);
     }
     
-    .archives-gallery-section img {
+    .archives-gallery-section img, .archives-gallery-section video {
       width: 150px;
       height: auto;
       border-radius: 8px;
@@ -78,7 +77,7 @@
       background-color: rgba(255, 255, 255, 0.25);
     }
     
-    .archives-gallery-section img:hover {
+    .archives-gallery-section img:hover, .archives-gallery-section video:hover {
       transform: scale(1.05);
       box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
     }
@@ -96,12 +95,6 @@
       justify-content: center;
       align-items: center;
       transition: opacity var(--transition-duration);
-    }
-    
-    .archives-lightbox img {
-      max-width: 90%;
-      max-height: 90%;
-      border-radius: 10px;
     }
     
     .archives-lightbox.active {
@@ -144,11 +137,11 @@
       cursor: zoom-out;
     }
     
-    .archives-lightbox img {
+    .archives-lightbox img, .archives-lightbox video {
       max-width: 90%;
       max-height: 90%;
       border-radius: 10px;
-      opacity: 0;
+      /* opacity: 0; */
       transform: scale(0.95);
       transition: all 0.3s ease;
     }
@@ -227,26 +220,37 @@
       z-index: 1000;
     }
     
-    #lightbox img {
+    #lightbox img, #lightbox video {
       max-width: 80%;
       max-height: 80%;
       border-radius: 10px;
     }
 
+    }
+    
+
   </style>
 </head>
-<body>
+<body id="page">
+  <!-- Loader -->
+  <div id="loader_div" aria-hidden="true">
+    <img src="assets/img/cat.gif" alt="petit gif d'un chat qui dort" style="width: 20%;" id="catgif"/>
+    <span class="loader">Chargement...</span>
+    <div class="cat_paw"></div>
+  </div>
 
   <div class="archives-explorer-container">
     <nav class="archives-sidebar">
       <ul>
         <strong>2022 - 2025</strong>
+        <li onclick="showArchivesGallery('inktober25', this)">📁 Inktober 2025</li>
+        <li onclick="showArchivesGallery('dessinmain', this)">📁 Artworks</li>
         <li class="active" onclick="showArchivesGallery('portfolio25', this)">📁 Portfolio 2025</li> <!-- Pas fini -->
-        <li onclick="showArchivesGallery('inktober24', this)">📁 Inktober 2024</li>
-        <li onclick="showArchivesGallery('rainbow', this)">📁 Rainbow challenge</li>
+        <li onclick="showArchivesGallery('inktober24', this)">📁 Inktober 2024</li> <!-- OK -->
+        <li onclick="showArchivesGallery('rainbow', this)">📁 Rainbow challenge</li> <!-- OK -->
         <li onclick="showArchivesGallery('portfolio24', this)">📁 Portfolio 2024</li>
-        <li onclick="showArchivesGallery('inktober23', this)">📁 Inktober 2023</li> <!-- faire plutot 1 par 1 -->
-        <li onclick="showArchivesGallery('autres22', this)">📁 Autres</li>
+        <li onclick="showArchivesGallery('inktober23', this)">📁 Inktober 2023</li> <!-- OK -->
+        <li onclick="showArchivesGallery('autres22', this)">📁 Autres (sketchs)</li>
         <strong>2018 - 2021</strong>
         <li onclick="showArchivesGallery('archives-princesses', this)">📁 Princesses</li> <!-- OK -->
         <li onclick="showArchivesGallery('archives-monstres', this)">📁 Monstres</li>  <!-- OK -->
@@ -257,39 +261,85 @@
     </nav>
 
     <div class="archives-gallery-display">
+
+      <div id="inktober25" class="archives-gallery-section">
+        <img src="assets/img/gallerie/rainbow/rose.png" alt="Rose" />
+      </div>
+
+      <div id="dessinmain" class="archives-gallery-section">
+        <img src="assets/img/gallerie/avatar.png" alt="Persona" />
+        <img src="assets/img/gallerie/glorpMiku.png" alt="Fanart GlorpMiku" />
+        <img src="assets/img/gallerie/idwtbamg.png" alt="Fanart I don't want to be a magical girl" />
+        <img src="assets/img/gallerie/klonoa.png" alt="Klonoa : door to Phantomhive fanart" />
+        <img src="assets/img/gallerie/stella.png" alt="Stella from SpiritFarer" />
+        <img src="assets/img/gallerie/dessin_2.png" alt="Ancienne photo de profil" />
+      </div>
+
+
+
+
+
       <div id="portfolio25" class="archives-gallery-section active">
+
+        <h3 class="division wavy">Light theme</h3>
+
+        <img src="assets/img/ocs.png" alt="Image accueil light" />
+        <img src="assets/img/background-light.png" alt="Background light" />
+        <video>
+        <source src="assets/video/light-opening.mp4" type="video/mp4" alt="vidéo 3d d'iddle light theme">
+          Votre navigateur ne supporte pas la vidéo HTML5.
+        </video><video>
+        <source src="assets/video/light-iddle.mp4" type="video/mp4" alt="vidéo 3d d'iddle light theme">
+          Votre navigateur ne supporte pas la vidéo HTML5.</video>
+        <img src="assets/img/badges/badge1.png" alt="Logo thème light" />
+        <img src="assets/img/badges/badge2.png" alt="Logo thème light" />
+        <img src="assets/img/badges/badge3.png" alt="Logo thème light" />
         <img src="assets/img/titre_.png" alt="Logo thème light" />
-        <img src="assets/img/titre_dark.png" alt="Logo thème dark" />
         <img src="assets/img/tree-light.png" alt="Arbre 3d" />
-        <img src="assets/img/tree-dark.png" alt="Arbre 3d thème dark" />
         <img src="assets/img/projet-light.png" alt="Arrière plan secondaire" />
-        <img src="assets/img/projet-dark.png" alt="Arrière plan secondaire thème dark" />
         <img src="assets/img/illus/perso_skill-light.png" alt="Personnage inventaire" />
-        <img src="assets/img/illus/perso_skill-dark.png" alt="Personnage inventaire thème sombre" />
         <img src="assets/img/illus/nomad1-light.png" alt="Personnage scroll 1" />
-        <img src="assets/img/illus/nomad1-dark.png" alt="Personnage scroll 1 thème dark" />
         <img src="assets/img/illus/mad.png" alt="Personnage scroll 2" />
-        <img src="assets/img/illus/mad-dark.png" alt="Personnage scroll 2 thème dark" />
         <img src="assets/img/illus/huepoe.png" alt="Sticker Huepoe (Klonoa)" />
-        <img src="assets/img/illus/bubbleflower.png" alt="Sticker fleur à bulle (Mario Bros)"/>
         <img src="assets/img/illus/fleurdefeu.png" alt="Sticker fleur de feu (Mario Bros)" />
         <img src="assets/img/illus/flute-st.png" alt="Sticker flûte de Pan Zelda ST" />
+        <img src="assets/img/illus/orange-portal.png" alt="Sticker portail orange" />
+        <img src="assets/img/cards/dessin-light.png" alt="Carte dessin light" />
+        <img src="assets/img/cards/jv-light.png" alt="Carte jeu vidéo light" />
+        <img src="assets/img/cards/mode-light.png" alt="Carte modélisation light" />
+        <img src="assets/img/cards/graph-light.png" alt="Carte graphisme light" />
+        <img src="assets/img/cards/video-light.png" alt="Carte vidéo light" />
+        <img src="assets/img/cards/ux-light.png" alt="Carte UX light" />
+        
+        <h3 class="division wavy">Dark theme</h3>
+
+        <img src="assets/img/ocs-d.png" alt="Image accueil dark" />
+        <img src="assets/img/background-dark.png" alt="Background dark" />
+        <video>
+        <source src="assets/video/dark-opening.mp4" type="video/mp4" alt="vidéo 3d d'iddle dark theme">
+          Votre navigateur ne supporte pas la vidéo HTML5.
+        </video><video>
+        <source src="assets/video/dark-iddle.mp4" type="video/mp4" alt="vidéo 3d d'iddle dark theme">
+          Votre navigateur ne supporte pas la vidéo HTML5.</video>
+        <img src="assets/img/badges/badge1-dark.png" alt="Logo thème dark" />
+        <img src="assets/img/badges/badge2-dark.png" alt="Logo thème dark" />
+        <img src="assets/img/badges/badge3-dark.png" alt="Logo thème dark" />
+        <img src="assets/img/titre_dark.png" alt="Logo thème dark" />
+        <img src="assets/img/tree-dark.png" alt="Arbre 3d thème dark" />
+        <img src="assets/img/projet-dark.png" alt="Arrière plan secondaire thème dark" />
+        <img src="assets/img/illus/perso_skill-dark.png" alt="Personnage inventaire thème sombre" />
+        <img src="assets/img/illus/nomad1-dark.png" alt="Personnage scroll 1 thème dark" />
+        <img src="assets/img/illus/mad-dark.png" alt="Personnage scroll 2 thème dark" />
+        <img src="assets/img/illus/bubbleflower.png" alt="Sticker fleur à bulle (Mario Bros)"/>
         <img src="assets/img/illus/ocarina.png" alt="Sticker ocarina Zelda OOT" />
         <img src="assets/img/illus/blue-portal.png" alt="Sticker portail bleu" />
-        <img src="assets/img/illus/orange-portal.png" alt="Sticker portail orange" />
         <img src="assets/img/illus/purple-portal.png" alt="Sticker portail violet" />
-        <img src="assets/img/cards/dessin-light.png" alt="Carte dessin light" />
         <img src="assets/img/cards/dessin-dark.png" alt="Carte dessin dark" />
-        <img src="assets/img/cards/graph-light.png" alt="Carte graphisme light" />
-        <img src="assets/img/cards/grapg-dark.png" alt="Carte graphisme dark" />
-        <img src="assets/img/cards/jv-light.png" alt="Carte jeu vidéo light" />
         <img src="assets/img/cards/jv-dark.png" alt="Carte jeu vidéo dark" />
-        <img src="assets/img/cards/mode-light.png" alt="Carte modélisation light" />
         <img src="assets/img/cards/mode-dark.png" alt="Carte modélisation dark" />
-        <img src="assets/img/cards/ux-light.png" alt="Carte UX light" />
-        <img src="assets/img/cards/ux-dark.png" alt="Carte UX dark" />
-        <img src="assets/img/cards/video-light.png" alt="Carte vidéo light" />
+        <img src="assets/img/cards/grapg-dark.png" alt="Carte graphisme dark" />
         <img src="assets/img/cards/video-dark.png" alt="Carte vidéo dark" />
+        <img src="assets/img/cards/ux-dark.png" alt="Carte UX dark" />
       </div>
       <div id="inktober24" class="archives-gallery-section">
         <img src="assets/img/gallerie/inktober24/inktober-24.png" alt="Liste thème Inktober 2024" />
@@ -438,121 +488,181 @@
 
   <div class="archives-lightbox" id="lightbox">
     <span class="archives-lightbox-close" id="lightboxClose">&times;</span>
+
+    <img id="lightboxImg">
+    <video id="lightboxVideo" controls loop></video>
+
     <span class="lightbox-arrow left" id="prevArrow">&#10094;</span>
-    <img src="" alt="Preview">
     <span class="lightbox-arrow right" id="nextArrow">&#10095;</span>
   </div>
 
 <script>
+  const urlParams = new URLSearchParams(window.location.search);
+  const style = urlParams.get("style");
 
-    const urlParams = new URLSearchParams(window.location.search);
-    const style = urlParams.get("style");
+  if (style) {
+      let linkElement = document.createElement("link");
+      linkElement.rel = "stylesheet";
+      linkElement.href = style;
+      document.head.appendChild(linkElement);
+  }
 
-    if (style) {
-        let linkElement = document.createElement("link");
-        linkElement.rel = "stylesheet";
-        linkElement.href = style;
-        document.head.appendChild(linkElement);
-    }
+  document.addEventListener("DOMContentLoaded", function() {
 
-    document.addEventListener("DOMContentLoaded", function() {
-    
-        const loader = document.getElementById("loader_div");
-        const content = document.getElementById("content");
+      const loader = document.getElementById("loader_div");
+      const content = document.getElementById("page");
 
-        // Masquer le loader avec une transition en douceur
-        loader.style.opacity = "1";
-        loader.style.transition = "opacity 0.5s ease";
-        
-        // Masquer le loader après la transition
-        setTimeout(() => {
-        loader.style.opacity = "0";
-        setTimeout(() => {
-            loader.style.display = "none";
-            content.style.display = "block";
-        }, 500); // Transition du loader
-        }, 500); // Délai de 0.5s pour commencer la transition du loader
-    });
-  
-    const lightbox = document.getElementById('lightbox');
-    const lightboxImg = lightbox.querySelector('img');
-    const closeBtn = document.getElementById('lightboxClose');
-    const prevArrow = document.getElementById('prevArrow');
-    const nextArrow = document.getElementById('nextArrow');
-    let currentIndex = 0;
-    let currentImages = [];
+      loader.style.opacity = "1";
+      loader.style.transition = "opacity 0.5s ease";
+      
+      setTimeout(() => {
+          loader.style.opacity = "0";
+          setTimeout(() => {
+              loader.style.display = "none";
+              content.style.display = "block";
+          }, 500);
+      }, 500);
+  });
 
-    function showArchivesGallery(id, clickedTab) {
-      document.querySelectorAll('.archives-gallery-section').forEach(section => {
-        section.classList.remove('active');
-      });
-      document.getElementById(id).classList.add('active');
-    
-      document.querySelectorAll('.archives-sidebar li').forEach(li => li.classList.remove('active'));
-      clickedTab.classList.add('active');
-    }
 
-    document.querySelectorAll('.archives-gallery-section img').forEach((img, index) => {
-      img.addEventListener('click', () => {
-        currentImages = [...img.parentNode.querySelectorAll('img')];
-        currentIndex = currentImages.indexOf(img);
-        openLightbox(img.src);
-      });
+  const lightbox = document.getElementById('lightbox');
+  const lightboxImg = document.getElementById('lightboxImg');
+  const lightboxVideo = document.getElementById('lightboxVideo');
+
+  const closeBtn = document.getElementById('lightboxClose');
+  const prevArrow = document.getElementById('prevArrow');
+  const nextArrow = document.getElementById('nextArrow');
+
+  let currentIndex = 0;
+  let currentItems = [];
+
+  function showArchivesGallery(id, clickedTab) {
+    document.querySelectorAll('.archives-gallery-section').forEach(section => {
+      section.classList.remove('active');
     });
 
-    function openLightbox(src) {
-      lightboxImg.src = src;
-      lightbox.classList.add('active');
-      document.body.style.overflow = 'hidden'; // Désactive le scroll quand la lightbox est ouverte
-    }
-    
-    function closeLightbox() {
-      lightbox.classList.remove('active');
-      lightboxImg.src = '';
-      document.body.style.overflow = 'auto'; // Réactive le scroll
-    }
-    
-    function showNext() {
-      if (!currentImages.length) return;
-      currentIndex = (currentIndex + 1) % currentImages.length;
-      lightboxImg.src = currentImages[currentIndex].src;
-    }
-    
-    function showPrevious() {
-      if (!currentImages.length) return;
-      currentIndex = (currentIndex - 1 + currentImages.length) % currentImages.length;
-      lightboxImg.src = currentImages[currentIndex].src;
-    }
-        
-    // Navigation avec les flèches
-    nextArrow.addEventListener('click', (e) => {
-      e.stopPropagation(); // Empêche la propagation pour éviter de fermer la lightbox
-      showNext();
-    });
-    
-    prevArrow.addEventListener('click', (e) => {
-      e.stopPropagation(); // Empêche la propagation pour éviter de fermer la lightbox
-      showPrevious();
-    });
-    
-    // Fermer la lightbox avec le clic ou le bouton "×"
-    lightbox.addEventListener('click', closeLightbox);
-    closeBtn.addEventListener('click', closeLightbox);
-    
-    // Empêcher la fermeture si l'image est cliquée
-    lightboxImg.addEventListener('click', (e) => {
-      e.stopPropagation();
-    });
-    
-    // Gestion du clavier
-    document.addEventListener('keydown', (e) => {
-      if (!lightbox.classList.contains('active')) return;
-    
-      if (e.key === 'ArrowRight') showNext();
-      if (e.key === 'ArrowLeft') showPrevious();
-      if (e.key === 'Escape') closeLightbox();
+    document.getElementById(id).classList.add('active');
+
+    document.querySelectorAll('.archives-sidebar li')
+      .forEach(li => li.classList.remove('active'));
+
+    clickedTab.classList.add('active');
+  }
+
+
+  document.querySelectorAll('.archives-gallery-section img, .archives-gallery-section video').forEach((el) => {
+
+    el.addEventListener('click', () => {
+
+      currentItems = [...el.parentNode.querySelectorAll('img, video')];
+      currentIndex = currentItems.indexOf(el);
+
+      openLightbox(el);
+
     });
 
+  });
+
+  function openLightbox(el) {
+
+    if (el.tagName === "IMG") {
+
+      lightboxVideo.pause();
+      lightboxVideo.style.display = "none";
+
+      lightboxImg.src = el.src;
+      lightboxImg.style.display = "block";
+
+    }
+
+    if (el.tagName === "VIDEO") {
+
+      lightboxImg.style.display = "none";
+
+      const source = el.querySelector("source");
+      const videoSrc = source ? source.src : el.src;
+
+      console.log(videoSrc);
+
+      lightboxVideo.src = videoSrc;
+      lightboxVideo.style.display = "block";
+      lightboxVideo.play();
+
+    }
+
+    lightbox.classList.add('active');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeLightbox() {
+
+    lightbox.classList.remove('active');
+
+    lightboxImg.src = '';
+
+    lightboxVideo.pause();
+    lightboxVideo.src = '';
+
+    document.body.style.overflow = 'auto';
+
+  }
+
+
+  function showNext() {
+
+    if (!currentItems.length) return;
+
+    currentIndex = (currentIndex + 1) % currentItems.length;
+
+    openLightbox(currentItems[currentIndex]);
+
+  }
+
+
+  function showPrevious() {
+
+    if (!currentItems.length) return;
+
+    currentIndex = (currentIndex - 1 + currentItems.length) % currentItems.length;
+
+    openLightbox(currentItems[currentIndex]);
+
+  }
+
+
+  nextArrow.addEventListener('click', (e) => {
+    e.stopPropagation();
+    showNext();
+  });
+
+  prevArrow.addEventListener('click', (e) => {
+    e.stopPropagation();
+    showPrevious();
+  });
+
+
+  lightbox.addEventListener('click', closeLightbox);
+  closeBtn.addEventListener('click', closeLightbox);
+
+
+  lightboxImg.addEventListener('click', (e) => {
+    e.stopPropagation();
+  });
+
+  lightboxVideo.addEventListener('click', (e) => {
+    e.stopPropagation();
+  });
+
+
+  document.addEventListener('keydown', (e) => {
+
+    if (!lightbox.classList.contains('active')) return;
+
+    if (e.key === 'ArrowRight') showNext();
+    if (e.key === 'ArrowLeft') showPrevious();
+    if (e.key === 'Escape') closeLightbox();
+
+  });
 </script>
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </body>

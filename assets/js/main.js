@@ -72,19 +72,19 @@ function toggleTheme() {
   /*Theme changer*/
 
   let theme = document.getElementById('theme');
-  let opvideo = document.getElementById('first-video');
+  //let opvideo = document.getElementById('first-video');
   let video = document.getElementById('second-video');
   let logo = document.getElementById('light-logo');
 
   if (theme.getAttribute('href') == 'assets/css/style.css') {
       theme.setAttribute('href', 'assets/css/dark-style.css');
-      opvideo.setAttribute('src', 'assets/video/dark-opening.mp4');
+      //opvideo.setAttribute('src', 'assets/video/dark-opening.mp4');
       // video.setAttribute('src', 'assets/video/dark-iddle.mp4');
       video.setAttribute('src', 'assets/img/ocs-d.png');
       logo.setAttribute('src', 'assets/img/titre_dark.png');
   } else {
       theme.setAttribute('href', 'assets/css/style.css');
-      opvideo.setAttribute('src', 'assets/video/light-opening.mp4');
+      //opvideo.setAttribute('src', 'assets/video/light-opening.mp4');
       //video.setAttribute('src', 'assets/video/light-iddle.mp4');
       video.setAttribute('src', 'assets/img/ocs.png');
       logo.setAttribute('src', 'assets/img/titre_.png');
@@ -100,7 +100,7 @@ document.addEventListener("DOMContentLoaded", function() {
   /*Detect local theme preference*/
 
   let theme = document.getElementById('theme');
-  let firstVideo = document.getElementById("first-video");
+  //let firstVideo = document.getElementById("first-video");
   let secondVideo = document.getElementById("second-video");
   let l_logo = document.getElementById('light-logo');
 
@@ -112,12 +112,12 @@ document.addEventListener("DOMContentLoaded", function() {
       theme.setAttribute('href', savedTheme);
       if (savedTheme.includes("dark")) {
           theme.setAttribute('href', 'assets/css/dark-style.css');
-          firstVideo.setAttribute('src', 'assets/video/dark-opening.mp4');
+          //firstVideo.setAttribute('src', 'assets/video/dark-opening.mp4');
           secondVideo.setAttribute('src', 'assets/img/ocs-d.png');
           l_logo.setAttribute('src', 'assets/img/titre_dark.png');
       } else {
           theme.setAttribute('href', 'assets/css/style.css');
-          firstVideo.setAttribute('src', 'assets/video/light-opening.mp4');
+          //firstVideo.setAttribute('src', 'assets/video/light-opening.mp4');
           secondVideo.setAttribute('src', 'assets/img/ocs.png');
           l_logo.setAttribute('src', 'assets/img/titre_.png');
       }
@@ -126,12 +126,12 @@ document.addEventListener("DOMContentLoaded", function() {
       const isDarkMode = window.matchMedia("(prefers-color-scheme: dark)").matches;
       if (isDarkMode) {
           theme.setAttribute('href', 'assets/css/dark-style.css');
-          firstVideo.setAttribute('src', 'assets/video/dark-opening.mp4');
+          //firstVideo.setAttribute('src', 'assets/video/dark-opening.mp4');
           secondVideo.setAttribute('src', 'assets/img/ocs-d.png');
           l_logo.setAttribute('src', 'assets/img/titre_dark.png');
       } else {
           theme.setAttribute('href', 'assets/css/style.css');
-          firstVideo.setAttribute('src', 'assets/video/light-opening.mp4');
+          //firstVideo.setAttribute('src', 'assets/video/light-opening.mp4');
           secondVideo.setAttribute('src', 'assets/img/ocs.png');
           l_logo.setAttribute('src', 'assets/img/titre_.png');
       }
@@ -156,7 +156,7 @@ document.addEventListener("DOMContentLoaded", function() {
   secondVideo.style.opacity = "1";
   secondVideo.style.transition = "opacity 0.5s ease";
 
-  firstVideo.pause(); // S'assurer que la première vidéo est mise en pause au départ
+  //firstVideo.pause(); // S'assurer que la première vidéo est mise en pause au départ
 
   // Masquer le loader après la transition
   setTimeout(() => {
@@ -165,26 +165,30 @@ document.addEventListener("DOMContentLoaded", function() {
       loader.style.display = "none";
       content.style.display = "block";
 
-        firstVideo.play().catch(error => {
-          console.error("Erreur lors de la lecture de la vidéo : ", error);
-        });
+      //firstVideo.style.display = "none";
+      secondVideo.style.display = "block";
+
+      console.log("Site chargé");
+        // firstVideo.play().catch(error => {
+        //   console.error("Erreur lors de la lecture de la vidéo : ", error);
+        // });
     }, 500); // Transition du loader
   }, 500); // Délai de 0.5s pour commencer la transition du loader
 
   // Quand la première vidéo est terminée, afficher la deuxième vidéo et faire apparaître le logo
-  firstVideo.addEventListener("ended", function() {
-    // Masquer la première vidéo et afficher la deuxième
-    firstVideo.style.display = "none";
-    secondVideo.style.display = "block";
+  // firstVideo.addEventListener("ended", function() {
+  //   // Masquer la première vidéo et afficher la deuxième
+  //   firstVideo.style.display = "none";
+  //   secondVideo.style.display = "block";
 
-    // Ajouter la classe "show" pour déclencher le fondu du logo
-    logo.classList.add("show");
+  //   // Ajouter la classe "show" pour déclencher le fondu du logo
+  //   logo.classList.add("show");
 
-    // Lancer la deuxième vidéo dès qu'elle est visible
-    secondVideo.play().catch(error => {
-      console.error("Erreur lors de la lecture de la deuxième vidéo : ", error);
-    });
-  });
+  //   // Lancer la deuxième vidéo dès qu'elle est visible
+  //   secondVideo.play().catch(error => {
+  //     console.error("Erreur lors de la lecture de la deuxième vidéo : ", error);
+  //   });
+  // });
 
   // Menu burger
   const burgerIcon = document.querySelector(".menu-burger");
