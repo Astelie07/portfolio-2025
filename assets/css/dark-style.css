@@ -1117,6 +1117,11 @@ interets {
     margin: 0 0.4em;
   }
 
+  .archives-sidebar li:hover,
+  .archives-sidebar li.active {
+    background-color: var(--color-background);
+  }
+
 /* ------------------------------------------ Style du bouton de changement de thème ------------------------------------------*/
 
 /* Style du bouton de changement de thème */

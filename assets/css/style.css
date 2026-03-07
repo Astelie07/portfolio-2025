@@ -1086,6 +1086,11 @@
     margin: 0 0.4em;
   }
 
+  .archives-sidebar li:hover,
+  .archives-sidebar li.active {
+    background-color: var(--color-text);
+  }
+
   /* ------------------------------------------ Style du bouton de changement de thème ------------------------------------------*/
   #theme {
     background-color: transparent;
