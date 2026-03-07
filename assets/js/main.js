@@ -538,7 +538,7 @@ let imageChosen = false;  // Si image choisie
         
               // Positionner l'image flottante en bas à droite
               floatingImg.style.position = 'fixed';
-              floatingImg.style.bottom = '20px';
+              floatingImg.style.top = '20px';
               floatingImg.style.right = '20px';
               floatingImg.style.zIndex = 1001;
 

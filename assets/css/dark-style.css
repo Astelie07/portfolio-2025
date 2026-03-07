@@ -1098,6 +1098,25 @@ interets {
       font-size: x-large;
     }
 
+  .archives-gallery-section .titleGallery{
+      color: var(--color-accent);
+      font-size: x-large;
+      text-align: center;
+      text-transform: uppercase;
+      margin: auto;
+      width: 100%;
+  }  
+
+  .archives-gallery-section .titleGallery:before, .archives-gallery-section .titleGallery:after {
+    content: '';
+    display: inline-block;
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    background: var(--color-secondary);
+    margin: 0 0.4em;
+  }
+
 /* ------------------------------------------ Style du bouton de changement de thème ------------------------------------------*/
 
 /* Style du bouton de changement de thème */
@@ -2643,7 +2662,7 @@ section:last-of-type{
         
         #chosenImageContainer {
           position: fixed;
-          bottom: 20px;
+          top: 20px;
           right: 20px;
           z-index: 1001;
         }
