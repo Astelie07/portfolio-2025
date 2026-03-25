@@ -1,8 +1,16 @@
 A faire : -----
 
 - mettre à jour : texte + présentation + CV
-- faire tri dans portfolio + ajout projets enjmin
+- faire tri dans portfolio 
+- meilleur bouton de lien pour les détails
 - refaire partie projet
+
+- portfolio : à ajouter 
+	globale game jam
+	Projet Eesi
+	Nanoprojet
+	entrainement unity
+	projet m1 (pas mtn)	
 
 - archives : 
 	artworks :  pp sakipe, kdh, direct, miku, idwtbamg, klonoa, stella, persona (tout insta quoi)

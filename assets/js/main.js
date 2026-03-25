@@ -511,10 +511,11 @@ let imageChosen = false;  // Si image choisie
             if (imageChosen) return;
         
             const lightbox = document.getElementById('lightbox');
-            const chosenContainer = document.getElementById('chosenImageContainer');
-            
-            // Nettoie les anciennes images dans chosenContainer
-            chosenContainer.innerHTML = '';
+
+            const chosenBadges = this.classList[0];
+            console.log(chosenBadges);
+            //Les 2 badges sont choisis
+            const badges = document.getElementsByClassName(chosenBadges)
         
             // Jouer le son
             const sound = document.getElementById('clickSound');
@@ -530,56 +531,42 @@ let imageChosen = false;  // Si image choisie
               lightbox.style.display = 'none';
               
               // Créer l'image flottante pour la placer en bas à droite
+              for (let i = 0; i != 2; i++) {
+                const floatingImg = document.createElement('img');
+                floatingImg.src = badges[i].src;
+                floatingImg.className = 'floating-image';
 
-              const floatingImg = document.createElement('img');
-              floatingImg.src = this.src;
-              floatingImg.className = 'floating-image';
-              document.body.appendChild(floatingImg);
-        
-              // Positionner l'image flottante en bas à droite
-              floatingImg.style.position = 'fixed';
-              floatingImg.style.top = '20px';
-              floatingImg.style.right = '20px';
-              floatingImg.style.zIndex = 1001;
 
-              //Adaptation thème
-              let theme = document.getElementById('theme');
 
-              if (theme.getAttribute('href') == 'assets/css/style.css') {
-                floatingImg.className = 'floating-image light-img';
-              }else{
-                floatingImg.className = 'floating-image dark-img';
-              }
-        
-              // Appliquer l'animation de scale à l'image flottante
-              setTimeout(() => {
-                floatingImg.classList.add('clicked');
-              }, 10); // Décalage de 10ms pour garantir que l'image soit visible avant l'animation
-        
+                console.log("Ajout image", i);
+                console.log("Children avant:", document.body.children.length);
+                document.body.appendChild(floatingImg);
+                console.log("Children après:", document.body.children.length);
+
+
+          
+                // Positionner l'image flottante en bas à droite
+                floatingImg.style.position = 'fixed';
+                floatingImg.style.top = '20px';
+                floatingImg.style.right = '20px';
+                floatingImg.style.zIndex = 1001; 
+                
+                floatingImg.classList.add(...badges[i].classList);
+                floatingImg.classList.remove("clicked");
+
               // Gérer le clic sur l'image flottante
               floatingImg.addEventListener('click', function () {
                 // Son
                 const sound = document.getElementById('clickSound');
                 sound.currentTime = 0;
                 sound.play();
-        
-                // Si l'image flottante n'a pas encore l'animation de rétrécissement, appliquer l'animation
-                if (!floatingImg.classList.contains('clicked')) {
-                  // Animation de rétrécissement de l'image flottante
-                  floatingImg.classList.add('clicked');
-        
-                  // Supprimer l'image après l'animation
-                  setTimeout(() => {
-                    floatingImg.remove();
-                  }, 500); // doit correspondre à la durée de l'animation
-                }
               });
-              
-              // Marque l'image comme choisie
-              imageChosen = true;
+              }              
             }, 500); // durée de l'animation de la lightbox
+            imageChosen = true;
           });
         });
+        
 
 
 

@@ -2610,19 +2610,6 @@ section:last-of-type{
           transform: scale(1.05);
         }
         
-        #chosenImageContainer {
-          position: fixed;
-          top: 20px;
-          right: 20px;
-          z-index: 1001;
-        }
-        
-        #chosenImageContainer img {
-          width: 100px;
-          height: auto;
-          border-radius: 8px;
-          animation: fadeInUp 0.5s ease;
-        }
         
         /* Animations */
         @keyframes fadeIn {
@@ -2663,7 +2650,7 @@ section:last-of-type{
         }
         
         .selectable-image:active,
-        .floating-image:active, #chosenImageContainer {
+        .floating-image:active {
           transform: scale(0.9);
           transition: transform 0.1s ease;
         }
