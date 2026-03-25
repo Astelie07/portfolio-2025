@@ -1369,12 +1369,23 @@ footer {
       cursor: grabbing;
   }
 
-.img-fluid {
-    max-width: 90%;
+  .img-fluid-details {
+    width: 90%;
     border: solid 2px var(--color-accent);
     border-radius: 15px;
     margin: 15px auto;
-}
+    height: 50%;
+    position: absolute;
+    top: 0;
+  }
+
+  .img-fluid {
+      max-width: 90%;
+      border: solid 2px var(--color-accent);
+      border-radius: 15px;
+      margin: 15px auto;
+  }
+
 
 .ux-ui {
   background: url("../img/cards/ux-dark.png");
@@ -1843,6 +1854,8 @@ text-align: center;
 
 .card-details h4{
   font-size: smaller;
+  position: absolute;
+  bottom: 0;
 }
 
 .display-media{

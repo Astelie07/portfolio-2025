@@ -1,10 +1,10 @@
 A faire : -----
 
 - mettre à jour : texte + présentation + CV
-- faire tri dans portfolio 
 - meilleur bouton de lien pour les détails
 - refaire partie projet
-- fix badge entre les 2 styles
+- refaire video site or3o (si possible)
+- voir si on peut retrouver figma omniversus : video, lien -> meilleure description
 
 - portfolio : à ajouter 
 	globale game jam
@@ -12,27 +12,30 @@ A faire : -----
 	Nanoprojet
 	entrainement unity
 	projet m1 (pas mtn)	
+	rainbow challenge (index)
+	video portfolio (details)
 
-- archives : 
-	artworks :  pp sakipe, kdh, direct, miku, idwtbamg, klonoa, stella, persona (tout insta quoi)
-	inktober 2025 : tout o-o
-
-
-
+	
 - ajout stickers 
-	- huepoe - dark : Pamela ?
+	- huepoe - dark : Pamela ? Hollow knight charm ? Hollow knight grum ?
+		
 	- ajout badge d & l à voir(à la place d'ocarinea)
-		-> idées : Hades(L: Souvenir Héra,D: Souvenir Sélénée),
+		-> layton : chapeau layton (L), casquette Luke (D)
+	- nvx badge (bonus)					<- seulement si temps + place
+		-> Hades : L : Nectar / Heart | D : Obsidienne
+		-> Omori : L : ? | D : Basil's flower's crown	<- ajout something on click ?
+		-> Oneshot : L : Lightbulb | D : Phosphor lantern
+		-> epic mickey : L : pinceau peinture | D : pinceau dissolvant
 			
 
 IDEES + -------------------
 
-- dialogue si 1min inactivité / icon en haut à gauche si déjà activé 1 fois
+- blague oeil de l'univers ?
+
+- dialogue si 1min inactivité 
 
 "
-Hey, tout vas bien ?
-Tu regardes les images de plus près ?         -        ?-?
-Tu t'ennuies ?                                -         ;-;
+Vous êtes encore là ?           -         ?-?
 "
 
 * choix oui / non *
