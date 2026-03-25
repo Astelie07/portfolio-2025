@@ -4,6 +4,7 @@ A faire : -----
 - faire tri dans portfolio 
 - meilleur bouton de lien pour les détails
 - refaire partie projet
+- fix badge entre les 2 styles
 
 - portfolio : à ajouter 
 	globale game jam
