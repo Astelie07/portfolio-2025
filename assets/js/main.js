@@ -75,9 +75,11 @@ function toggleTheme() {
   //let opvideo = document.getElementById('first-video');
   let video = document.getElementById('second-video');
   let logo = document.getElementById('light-logo');
+  let icon = document.getElementById('icon');
 
   if (theme.getAttribute('href') == 'assets/css/style.css') {
       theme.setAttribute('href', 'assets/css/dark-style.css');
+      icon.setAttribute('href','assets/img/icon-D.ico');
       //opvideo.setAttribute('src', 'assets/video/dark-opening.mp4');
       // video.setAttribute('src', 'assets/video/dark-iddle.mp4');
       video.setAttribute('src', 'assets/img/ocs-d.png');
@@ -86,6 +88,7 @@ function toggleTheme() {
       theme.setAttribute('href', 'assets/css/style.css');
       //opvideo.setAttribute('src', 'assets/video/light-opening.mp4');
       //video.setAttribute('src', 'assets/video/light-iddle.mp4');
+      icon.setAttribute('href','assets/img/icon-L.ico');
       video.setAttribute('src', 'assets/img/ocs.png');
       logo.setAttribute('src', 'assets/img/titre_.png');
   }
@@ -103,6 +106,7 @@ document.addEventListener("DOMContentLoaded", function() {
   //let firstVideo = document.getElementById("first-video");
   let secondVideo = document.getElementById("second-video");
   let l_logo = document.getElementById('light-logo');
+  let favicon = document.getElementById('icon')
 
   // 🔹 Vérifier s'il y a un thème enregistré dans localStorage
   let savedTheme = localStorage.getItem("theme");
@@ -114,9 +118,11 @@ document.addEventListener("DOMContentLoaded", function() {
           theme.setAttribute('href', 'assets/css/dark-style.css');
           //firstVideo.setAttribute('src', 'assets/video/dark-opening.mp4');
           secondVideo.setAttribute('src', 'assets/img/ocs-d.png');
+          favicon.setAttribute('href','assets/img/icon-d.ico');
           l_logo.setAttribute('src', 'assets/img/titre_dark.png');
       } else {
           theme.setAttribute('href', 'assets/css/style.css');
+          favicon.setAttribute('href','assets/img/icon-L.ico');
           //firstVideo.setAttribute('src', 'assets/video/light-opening.mp4');
           secondVideo.setAttribute('src', 'assets/img/ocs.png');
           l_logo.setAttribute('src', 'assets/img/titre_.png');

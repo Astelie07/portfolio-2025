@@ -10,7 +10,8 @@ A faire : -----
 	globale game jam
 	Projet Eesi
 	Nanoprojet
-	entrainement unity
+	entrainement unity (plane)
+	escapausorus
 	projet m1 (pas mtn)	
 	rainbow challenge (index)
 	video portfolio (details)
@@ -19,9 +20,9 @@ A faire : -----
 - ajout stickers 
 	- huepoe - dark : Pamela ? Hollow knight charm ? Hollow knight grum ?
 		
-	- ajout badge d & l à voir(à la place d'ocarinea)
+	- ajout sticker d & l à voir(à la place d'ocarinea)
 		-> layton : chapeau layton (L), casquette Luke (D)
-	- nvx badge (bonus)					<- seulement si temps + place
+	- nvx sticker (bonus)					<- seulement si temps + place
 		-> Hades : L : Nectar / Heart | D : Obsidienne
 		-> Omori : L : ? | D : Basil's flower's crown	<- ajout something on click ?
 		-> Oneshot : L : Lightbulb | D : Phosphor lantern
