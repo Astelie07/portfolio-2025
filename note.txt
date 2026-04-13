@@ -5,6 +5,7 @@ A faire : -----
 - refaire partie projet
 - refaire video site or3o (si possible)
 - voir si on peut retrouver figma omniversus : video, lien -> meilleure description
+- besoin dans inventaire : jira
 
 - portfolio : à ajouter 
 	globale game jam

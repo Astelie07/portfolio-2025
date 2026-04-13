@@ -1737,9 +1737,7 @@
 
 #content-portfolio {
   text-align: center;
-  background-image: url("../img/projet-light.png");
-  background-position: top center; /* Image en haut */
-  background-size: cover; /* L'image couvre toute la div sans la déformer */
+  background-size: cover; 
   min-height: 100vh;
   min-width: 100vw;
 }

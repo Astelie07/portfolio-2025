@@ -1803,8 +1803,8 @@ text-align: center;
 
 /* Grande div qui change en fonction de la carte sélectionnée */
 .main-display {
-  background-color: var(--color-accent); /* Orange clair */
-  color: var(--color-background);
+  background-color: var(--color-primary);
+  color: var(--color-text);
   text-align: left;
   padding: 15px 40px;
   border-radius: 15px;
@@ -2035,14 +2035,13 @@ text-align: center;
 #display-media a{
   margin: 5px;
   border-radius: 3px;
-  text-decoration: none;
-  color: var(--color-background);
+  text-decoration: underline;
+  color: var(--color-accent);
 }
 
 #display-media a:hover{
   text-decoration: none;
-  background-color: var(--color-background);
-  color: var(--color-secondary);
+  color: white;
 }
 
 .display-media .gallery{
@@ -2108,12 +2107,47 @@ text-align: center;
 
 #content-portfolio {
   text-align: center;
-  background-image: url("../img/projet-dark.png");
-  background-position: top center;
-  background-size: cover;
-  min-height: 100vh;
-  min-width: 100vw;
 }
+
+#body-portfolio{
+  background: var(--color-background);
+  background: linear-gradient(-90deg,#002645 0%, #002C21 75%,var(--color-background) 100%);  min-height: 100vh;
+  background-size: cover;
+}
+
+.star {
+  position : absolute;
+  background-color: var(--color-text);
+  clip-path: polygon(50% 0%, 61% 35%, 100% 49%, 63% 62%, 49% 100%, 38% 63%, 0 49%, 39% 36%);
+  box-shadow: 0 0 5px var(--color-background);
+
+  -webkit-animation: blink-2 3.5s linear infinite both;
+	        animation: blink-2 3.5s linear infinite both;
+}
+
+@-webkit-keyframes blink-2 {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.2;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes blink-2 {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.2;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
 
 .filter-btn:not(:first-of-type){
   color: var(--color1);
