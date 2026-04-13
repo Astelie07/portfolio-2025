@@ -2111,7 +2111,7 @@ text-align: center;
 
 #body-portfolio{
   background: var(--color-background);
-  background: linear-gradient(-90deg,#002645 0%, #002C21 75%,var(--color-background) 100%);  min-height: 100vh;
+  background: linear-gradient(90deg,rgb(40, 10, 98) 0%, rgb(21, 25, 85) 100%);
   background-size: cover;
 }
 
@@ -2119,7 +2119,8 @@ text-align: center;
   position : absolute;
   background-color: var(--color-text);
   clip-path: polygon(50% 0%, 61% 35%, 100% 49%, 63% 62%, 49% 100%, 38% 63%, 0 49%, 39% 36%);
-  box-shadow: 0 0 5px var(--color-background);
+  -webkit-box-shadow: 5px 5px 50px 14px var(--color-text); 
+          box-shadow: 5px 5px 50px 14px var(--color-text);
 
   -webkit-animation: blink-2 3.5s linear infinite both;
 	        animation: blink-2 3.5s linear infinite both;
