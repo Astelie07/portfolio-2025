@@ -14,8 +14,10 @@ A faire : -----
 	entrainement unity (plane)
 	escapausorus
 	projet m1 (pas mtn)	
-	rainbow challenge (index)
-	video portfolio (details)
+
+- portfolio / carte 
+	- manque animations 3d portfolio dans portfolio
+	- carte rainbow challenge
 
 	
 - ajout stickers 

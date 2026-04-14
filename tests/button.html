@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* chosen*/
+        .link-btn {
+        box-sizing: border-box;
+        appearance: none;
+        background-color: transparent;
+        border-radius: 0.6em;
+        cursor: pointer;
+        display: flex;
+        align-self: center;
+        font-size: 1rem;
+        line-height: 1;
+        margin: 20px;
+        padding: 1.2em 2.8em;
+        text-decoration: none;
+        text-align: center;
+        text-transform: uppercase;
+        font-family: 'Montserrat', sans-serif;
+        font-weight: 700;
+        }
+
+        .link-btn:hover,
+        .link-btn:focus {
+            color: #fff;
+            outline: 0;
+        }
+
+
+        .link-btn {
+        border-color: blueviolet;
+        color: blueviolet;
+        background-image: linear-gradient(45deg,blueviolet 50%, transparent 50%);
+        background-position: 100%;
+        background-size: 400%;
+        transition: 500ms ease-in-out;
+        }
+
+        .link-btn:hover {
+            background-position: 0;
+        }
+
+    </style>
+</head>
+<body>
+    <h1>Recherche bouton de lien</h1>
+    <button class="link-btn">Read More</button>
+</body>
+</html>

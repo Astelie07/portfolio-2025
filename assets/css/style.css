@@ -277,7 +277,7 @@
     background: var(--color-text);
     background: linear-gradient(180deg, var(--color-text) 0%, var(--color-primary) 30%, var(--color-primary) 60%, var(--color-secondary) 100%);
     color: var(--color-background);
-    padding: 40px 10rem;
+    padding: 30px 10rem 0 10rem;
     margin: auto;
   }
 
@@ -311,7 +311,7 @@
   /* Titre bien positionné */
   #presentation h2 {
       text-align: center;
-      font-size: 28px;
+      font-size: 45px;
       font-weight: bold;
   }
 
@@ -483,23 +483,45 @@
     50% { transform: translateY(-50%) translateX(5px); }
 }
 
-  .cv a{
-    position: relative;
-    z-index: 1;
-    padding:15px;
-    margin-top:25px;
-    background-color:var(--color-primary);
-    border : solid 2px var(--color-primary);
-    border-radius : 20px;
-    text-decoration: none;
-    color : white;
-    transition:0.5s;
+.link-btn {
+  box-sizing: border-box;
+  appearance: none;
+  background-color: transparent;
+  border-radius: 0.6em;
+  cursor: pointer;
+  display: flex;
+  align-self: center;
+  font-size: 1rem;
+  line-height: 1;
+  margin: 20px;
+  padding: 1.2em 2.8em;
+  text-decoration: none;
+  text-align: center;
+  text-transform: uppercase;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  border-color: var(--color-accent);
+  color: var(--color-accent);
+  background-image: linear-gradient(45deg,var(--color-accent) 50%, transparent 50%);
+  background-position: 100%;
+  background-size: 400%;
+  transition: 500ms ease-in-out;
+}
+
+  .link-btn:hover,
+  .link-btn:focus {
+    color: #fff;
+    outline: 0;
   }
 
-  .cv a:hover{
-    background-color:var(--color-primary);
-    color : rgb(11 108 145);
-    border : solid 2px rgb(11 108 145);
+
+  .link-btn a{
+    text-decoration: none;
+    color: white;
+  }
+
+  .link-btn:hover {
+    background-position: 0;
   }
 
   /* ---------------------------------------- COMPETENCES + SKILLS ------------------------------------------------------------------------------- */
@@ -549,6 +571,7 @@
   }
   
   #competences h2{
+    font-size: 45px;
     width: 100%;
     text-align: center;
   }
@@ -1011,6 +1034,8 @@
     width: 100%;
     color: var(--color-text);
     padding: 10px 0;
+    display: flex;
+  flex-direction: column;
   }
 
   #portfolio-button a{
@@ -2483,6 +2508,7 @@ section:last-of-type{
 }
 
 #portfolio > h2:first-of-type{
+  font-size: 45px;
   text-shadow: -1px -1px 0 var(--color-background), 1px -1px 0 var(--color-background), -1px 1px 0 var(--color-background), 1px 1px 0 var(--color-background);
 }
 
