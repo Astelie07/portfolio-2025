@@ -5,6 +5,8 @@
     let alertShown = false;
     let alertCount = 0;
 
+    let jokerEvent = false
+
     window.addEventListener("scroll", function () {
       if (alertShown) return;
 
@@ -13,7 +15,7 @@
       let deltaY = window.scrollY - lastScrollY;
       let speed = deltaY / deltaTime;
 
-      if (window.innerWidth > 768 && speed > 3 && deltaY > 150) {
+      if (window.innerWidth > 768 && speed > 3 && deltaY > 150 && jokerEvent==false) {
         alertShown = true;
         if (alertCount == 3) {
           showWarning();
@@ -212,53 +214,70 @@ document.addEventListener("DOMContentLoaded", function() {
 
 });
 
+
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+
+        document.querySelector(this.getAttribute('href')).scrollIntoView({
+            behavior: 'smooth'
+        });
+        jokerEvent = true;
+        console.log(jokerEvent);
+        setTimeout(() => {
+          jokerEvent = false;
+          console.log(jokerEvent);
+        }, "3000"); 
+    });
+});
+
+
 //-------------------------------------------------------SKILLS-----------------------------------
 
-//=======DRAG AND DROP================
-const items = document.querySelectorAll(".item__container");
-const itemContainers = document.querySelectorAll(".items__container");
+  //=======DRAG AND DROP================
+  const items = document.querySelectorAll(".item__container");
+  const itemContainers = document.querySelectorAll(".items__container");
 
-items.forEach((item) => {
-  item.addEventListener("dragstart", dragStart);
-});
+  items.forEach((item) => {
+    item.addEventListener("dragstart", dragStart);
+  });
 
-itemContainers.forEach((square) => {
-  square.addEventListener("dragover", dragOver);
-  square.addEventListener("drop", dragDrop);
-});
+  itemContainers.forEach((square) => {
+    square.addEventListener("dragover", dragOver);
+    square.addEventListener("drop", dragDrop);
+  });
 
-let beingDragged;
+  let beingDragged;
 
-function dragStart(e) {
-  beingDragged = e.target;
+  function dragStart(e) {
+    beingDragged = e.target;
 
-  let img = new Image();
-  img.src =
-    "data:image/gif;base64,R0lGODlhAQABAIAAAAUEBAAAACwAAAAAAQABAAACAkQBADs=";
-  e.dataTransfer.setDragImage(img, 0, 0);
-}
-
-function dragDrop(e) {
-  if (e.target.tagName === "IMG") {
-    return;
+    let img = new Image();
+    img.src =
+      "data:image/gif;base64,R0lGODlhAQABAIAAAAUEBAAAACwAAAAAAQABAAACAkQBADs=";
+    e.dataTransfer.setDragImage(img, 0, 0);
   }
 
-  e.target.append(beingDragged);
-}
+  function dragDrop(e) {
+    if (e.target.tagName === "IMG") {
+      return;
+    }
 
-function dragOver(e) {
-  e.preventDefault();
-}
+    e.target.append(beingDragged);
+  }
+
+  function dragOver(e) {
+    e.preventDefault();
+  }
 
 
 // <!-- ---------------------------------CARDS -------------------------------------------- -->
 
-var x;
-var $cards = $(".card");
-var $style = $(".hover");
+  var x;
+  var $cards = $(".card");
+  var $style = $(".hover");
 
-$cards
-  .on("mousemove touchmove", function(e) { 
+  $cards.on("mousemove touchmove", function(e) { 
     // normalise touch/mouse
     var pos = [e.offsetX,e.offsetY];
     e.preventDefault();
@@ -327,50 +346,50 @@ $cards
 
 //------------------------portfolio horizontal scroll
 
-const container = document.querySelector('.cards-wrapper');
+  const container = document.querySelector('.cards-wrapper');
 
-let isDragging = false;
-let lastX = 0;
-let velocity = 0;
-let rafId;
+  let isDragging = false;
+  let lastX = 0;
+  let velocity = 0;
+  let rafId;
 
-const updateScroll = () => {
-    container.scrollLeft -= velocity;
-    velocity *= 0.95; // Ajoute une inertie pour un effet smooth
-    if (Math.abs(velocity) > 0.1) {
-        rafId = requestAnimationFrame(updateScroll);
-    } else {
-        cancelAnimationFrame(rafId);
-    }
-};
+  const updateScroll = () => {
+      container.scrollLeft -= velocity;
+      velocity *= 0.95; // Ajoute une inertie pour un effet smooth
+      if (Math.abs(velocity) > 0.1) {
+          rafId = requestAnimationFrame(updateScroll);
+      } else {
+          cancelAnimationFrame(rafId);
+      }
+  };
 
-container.addEventListener('mousedown', (e) => {
-    isDragging = true;
-    lastX = e.clientX;
-    velocity = 0;
-    cancelAnimationFrame(rafId); // Stoppe l'inertie quand on clique
-});
+  container.addEventListener('mousedown', (e) => {
+      isDragging = true;
+      lastX = e.clientX;
+      velocity = 0;
+      cancelAnimationFrame(rafId); // Stoppe l'inertie quand on clique
+  });
 
-container.addEventListener('mousemove', (e) => {
-    if (!isDragging) return;
-    e.preventDefault();
-    
-    let delta = e.clientX - lastX;
-    lastX = e.clientX;
-    
-    container.scrollLeft -= delta; // Déplace instantanément
-    velocity = delta; // Stocke la vitesse pour l’inertie
-});
+  container.addEventListener('mousemove', (e) => {
+      if (!isDragging) return;
+      e.preventDefault();
+      
+      let delta = e.clientX - lastX;
+      lastX = e.clientX;
+      
+      container.scrollLeft -= delta; // Déplace instantanément
+      velocity = delta; // Stocke la vitesse pour l’inertie
+  });
 
-container.addEventListener('mouseup', () => {
-    isDragging = false;
-    rafId = requestAnimationFrame(updateScroll); // Lance l'inertie
-});
+  container.addEventListener('mouseup', () => {
+      isDragging = false;
+      rafId = requestAnimationFrame(updateScroll); // Lance l'inertie
+  });
 
-container.addEventListener('mouseleave', () => {
-    isDragging = false;
-    rafId = requestAnimationFrame(updateScroll);
-});
+  container.addEventListener('mouseleave', () => {
+      isDragging = false;
+      rafId = requestAnimationFrame(updateScroll);
+  });
 
 // -------------------------------------------------------------- PROJETS --------------------------------------------------------
 
@@ -439,61 +458,12 @@ document.addEventListener("DOMContentLoaded", function () {
     if (!isMobile) setInterval(autoScroll, 60000); 
 });
 
-// ---------------------------------------------------- FORMULAIRE
-
-$(document).ready(function() {
-  $('#contact-form').on('submit', function(e) {
-    e.preventDefault(); // Empêche l'envoi classique
-
-    const $form = $(this);
-    const $button = $('#submit');
-    const $icon = $('#send-icon');
-
-    $button.prop('disabled', true); // Désactive le bouton
-    $icon.removeClass('fa-check').addClass('fa-spinner fa-spin'); // Animation loading
-
-    $.ajax({
-      type: 'POST',
-      url: $form.attr('action'),
-      data: $form.serialize(),
-      success: function(response) {
-        // Animation succès
-        $icon.removeClass('fa-spinner fa-spin').addClass('fa-check');
-        $button.removeClass('btn-primary').addClass('btn-success').text('Message envoyé !');
-
-        // Reset du formulaire après 2s
-        setTimeout(function() {
-          $form.trigger('reset');
-          $button.prop('disabled', false)
-                 .removeClass('btn-success')
-                 .addClass('btn-primary')
-                 .html('Envoyer <i class="fa-solid fa-check" id="send-icon"></i>');
-        }, 2000);
-      },
-      error: function() {
-        // Animation erreur
-        $icon.removeClass('fa-spinner fa-spin').addClass('fa-xmark');
-        $button.removeClass('btn-primary').addClass('btn-danger').text('Erreur...');
-
-        // Retour à la normale après 2s
-        setTimeout(function() {
-          $button.prop('disabled', false)
-                 .removeClass('btn-danger')
-                 .addClass('btn-primary')
-                 .html('Envoyer <i class="fa-solid fa-check" id="send-icon"></i>');
-        }, 2000);
-      }
-    });
-  });
-});
 
 // -------------------- Badges
 
-let imageChosen = false;  // Si image choisie
+let imageChosen = false; 
 
-        // Affiche la lightbox quand on atteint le bas
         window.addEventListener('scroll', function () {
-          // Si une image a déjà été choisie, on ne réaffiche pas la lightbox
           if (imageChosen) return;
         
           const scrollPosition = window.innerHeight + window.scrollY;
@@ -509,49 +479,37 @@ let imageChosen = false;  // Si image choisie
           }
         });
         
-        // Gère le clic sur une image
         document.querySelectorAll('.selectable-img').forEach(img => {
 
           img.addEventListener('click', function () {
-            // Si une image a déjà été choisie, on arrête la fonction
             if (imageChosen) return;
         
             const lightbox = document.getElementById('lightbox');
 
             const chosenBadges = this.classList[0];
             console.log(chosenBadges);
-            //Les 2 badges sont choisis
             const badges = document.getElementsByClassName(chosenBadges)
         
-            // Jouer le son
             const sound = document.getElementById('clickSound');
             sound.volume = 0.5;
             sound.currentTime = 0;
             sound.play();
         
-            // Animation de rétrécissement sur l'image sélectionnée dans la lightbox
             this.classList.add('clicked');
         
-            // Après l'animation, cacher la lightbox
             setTimeout(() => {
               lightbox.style.display = 'none';
               
-              // Créer l'image flottante pour la placer en bas à droite
               for (let i = 0; i != 2; i++) {
                 const floatingImg = document.createElement('img');
                 floatingImg.src = badges[i].src;
                 floatingImg.className = 'floating-image';
-
-
 
                 console.log("Ajout image", i);
                 console.log("Children avant:", document.body.children.length);
                 document.body.appendChild(floatingImg);
                 console.log("Children après:", document.body.children.length);
 
-
-          
-                // Positionner l'image flottante en bas à droite
                 floatingImg.style.position = 'fixed';
                 floatingImg.style.top = '20px';
                 floatingImg.style.right = '20px';
@@ -560,15 +518,14 @@ let imageChosen = false;  // Si image choisie
                 floatingImg.classList.add(...badges[i].classList);
                 floatingImg.classList.remove("clicked");
 
-              // Gérer le clic sur l'image flottante
               floatingImg.addEventListener('click', function () {
-                // Son
+
                 const sound = document.getElementById('clickSound');
                 sound.currentTime = 0;
                 sound.play();
               });
               }              
-            }, 500); // durée de l'animation de la lightbox
+            }, 500); 
             imageChosen = true;
           });
         });

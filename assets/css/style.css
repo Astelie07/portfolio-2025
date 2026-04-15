@@ -138,40 +138,49 @@
     border: solid 3px var(--color-text);
   }
 
-  /* Conteneur pour le menu burger et le bouton de changement de thème */
   .nav-container {
     display: flex;
-    justify-content: flex-start; /* Aligner les éléments à gauche */
+    justify-content: flex-start;
     align-items: center;
     position: fixed;
     top: 20px;
     left: 20px;
     z-index: 20;
-    width: auto; /* Ajuste la largeur pour s'adapter à son contenu */
-    padding: 0 20px; /* Espacement intérieur */
+    width: auto; 
+    padding: 0 20px;
   }
 
-  /* Assurez-vous que le menu déroulant suive correctement le défilement */
   #nav-links {
     display: none;
-    flex-direction: column;
-    position: absolute;
-    top: 70px; /* Position sous le menu burger */
+    position: fixed;
+    z-index: 100;
+    top: 70px; 
     left: 20px;
     background-color: var(--color-secondary);
-    padding: 1rem;
+    padding: 1.5rem;
     border-radius: 8px;
     box-shadow: var(--box-shadow);
+    text-align: left;
   }
 
-  /* Afficher le menu lorsque la classe 'show' est active */
   #nav-links.show {
     display: flex;
   }
 
-  /* Ajustement des liens dans le menu */
   #nav-links li {
-    margin: 0.5rem 0;
+    margin: 0.5rem 0.1em;
+  }
+
+  #nav-links ul {
+    display: flex;
+    flex-direction: column;
+    list-style-type: none;
+  }
+
+  #nav-links li a{
+    text-decoration: none;
+    color: var(--color-text);
+    font-size: larger;
   }
 
   /* Positionnement du logo au quart de la largeur de l'écran */
@@ -505,7 +514,7 @@
   background-image: linear-gradient(45deg,var(--color-accent) 50%, transparent 50%);
   background-position: 100%;
   background-size: 400%;
-  transition: 500ms ease-in-out;
+  transition: 300ms ease-in-out;
 }
 
   .link-btn:hover,
