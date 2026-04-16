@@ -12,13 +12,13 @@
 <body id="body-portfolio">
 
     <!-- Loader -->
-    <div id="loader_div">
+    <div id="loader_div" style="display: flex;">
         <img src="assets/img/cat.gif" alt="petit gif dun chat qui dort" style="width: 20%;" id="catgif"/>
         <span class="loader">Chargement...</span>
         <div class="cat_paw"></div>
     </div>
 
-<div id="content-portfolio">
+<div id="content-portfolio" style="display: none;">
 
     <h2 class="wavy" style="margin:0;padding:2rem;">Portfolio</h2>
 
@@ -747,7 +747,11 @@
 
     </div>
 
-    <div class="cv"><a href="index.html">Retour</a></div>
+    <div style="display: flex;justify-content: center;margin: 1rem;">
+    <div class="cv link-btn">
+        <a href="index.html">Retour</a>
+    </div>
+    </div>
 </div>
 
     <script>
@@ -770,22 +774,40 @@
         }
     }
 
-    const urlParams = new URLSearchParams(window.location.search);
-    const style = document.styleSheets[0]
-
-    if (style) {
-        let linkElement = document.createElement("link");
-        linkElement.rel = "stylesheet";
-        linkElement.href = style;
-        document.head.appendChild(linkElement);
-    }
-
     document.addEventListener("DOMContentLoaded", function() {
 
-        //LOADER
+        let theme = document.getElementById('theme');
+        let favicon = document.getElementById('icon')
 
+        let savedTheme = localStorage.getItem("theme");
+        console.log("Saved theme : "+ savedTheme);
+
+        if (savedTheme) {
+            theme.setAttribute('href', savedTheme);
+            if (savedTheme.includes("dark")) {
+                theme.setAttribute('href', 'assets/css/dark-style.css');
+                favicon.setAttribute('href','assets/img/icon-d.ico');
+                createStars();
+            } else {
+                theme.setAttribute('href', 'assets/css/style.css');
+                favicon.setAttribute('href','assets/img/icon-L.ico');
+            }
+        } else {
+            const isDarkMode = window.matchMedia("(prefers-color-scheme: dark)").matches;
+            if (isDarkMode) {
+                theme.setAttribute('href', 'assets/css/dark-style.css');
+                favicon.setAttribute('href','assets/img/icon-d.ico');
+                createStars();
+            } else {
+                theme.setAttribute('href', 'assets/css/style.css');
+                favicon.setAttribute('href','assets/img/icon-L.ico');
+            }
+        }
+
+        /*Fin detection theme, début loader*/
+    
         const loader = document.getElementById("loader_div");
-        const content = document.getElementById("content");
+        const content = document.getElementById("content-portfolio");
 
         loader.style.opacity = "1";
         loader.style.transition = "opacity 0.5s ease";
@@ -797,15 +819,9 @@
             content.style.display = "block";
         }, 500);
         }, 500);
-
-        //STARS
-        console.log(style);
-        // if(style == "assets/css/dark-style.css"){
-        //     createStars();
-        //     console.log("Stars created");
-        // }
-
     });
+
+    // CARDS --------------------
 
     document.addEventListener("DOMContentLoaded", function() {
         const filterButtons = document.querySelectorAll(".filter-btn");

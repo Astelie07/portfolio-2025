@@ -554,6 +554,7 @@ interets {
   background-position: 100%;
   background-size: 400%;
   transition: 300ms ease-in-out;
+  max-width: 25%;
 }
 
   .link-btn:hover,

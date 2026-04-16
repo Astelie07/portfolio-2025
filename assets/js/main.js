@@ -100,6 +100,13 @@ function toggleTheme() {
   localStorage.setItem("theme", theme.getAttribute('href'));
 }  
 
+function pageChanger() {
+  let savedTheme = localStorage.getItem("theme");
+  console.log("Transfered theme : "+ savedTheme);
+
+  localStorage.setItem("theme", theme.getAttribute('href'));
+}
+
 /*------------------------------------LOADER--------------------------------*/
 
 document.addEventListener("DOMContentLoaded", function() {
@@ -114,9 +121,8 @@ document.addEventListener("DOMContentLoaded", function() {
 
   let toggleTheme = document.getElementById('toggleChanger');
 
-  // 🔹 Vérifier s'il y a un thème enregistré dans localStorage
   let savedTheme = localStorage.getItem("theme");
-  console.log(savedTheme);
+  console.log("Saved theme : "+ savedTheme);
 
   if (savedTheme) {
       theme.setAttribute('href', savedTheme);
@@ -278,7 +284,7 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
   }
 
 
-// <!-- ---------------------------------CARDS -------------------------------------------- -->
+//  ---------------------------------CARDS -------------------------------------------- 
 
   var x;
   var $cards = $(".card");
@@ -341,7 +347,7 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
   document.querySelectorAll('.filter-btn').forEach(button => {
     button.addEventListener('click', () => {
         let filter = button.getAttribute('data-filter');
-        document.querySelectorAll('.card:not(.clone)').forEach(card => { // Exclut les clones
+        document.querySelectorAll('.card:not(.clone)').forEach(card => {
             if (filter === 'all' || card.classList.contains(filter)) {
                 card.style.display = "block";
             } else {
