@@ -230,17 +230,12 @@ section {
   display: block;
 }
 
-.dark-img-promo{
-  display: block !important;
-}
+
 
 .light-img{
   display: none;
 }
 
-.light-img-promo{
-  display: none !important;
-}
 
 /* ---------------------------------------- WAVES BORDER ------------------------------------------------------------------------------- */
 
@@ -1554,25 +1549,6 @@ footer {
     color: var(--color-accent);
   }
 
-  #promo{
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    background-color: var(--color-accent);
-    color: var(--color-background);
-    font-weight: bold;
-    font-size: 30px;
-  }
-
-  #promo p{
-    padding: 25px;
-  }
-
-  #promo a{
-    color: var(--color-background);
-  }
-
 /* ----------------------------------------------------------------PROJETS---------------------------------------------------------------------- */
 
 .hr-projet{
@@ -2259,10 +2235,6 @@ text-align: center;
 
 /* Responsive Design -----------------------------------------------------------*/
   @media (max-width: 768px) {
-      #promo{
-        font-size: 15px;
-      }
-
       .presentation-content {
           flex-direction: column;
           text-align: center;

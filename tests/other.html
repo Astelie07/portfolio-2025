@@ -168,12 +168,11 @@
         document.body.appendChild(popup);
 
         count++;
-        delay *= 0.85; // accélère progressivement
+        delay *= 0.85; 
 
         if (count < 700) {
         setTimeout(spawnPopup, delay);
         } else {
-        // Pause très courte avant l'alerte finale
         setTimeout(() => alert(""), 1000);
         }
     }

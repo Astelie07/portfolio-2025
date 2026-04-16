@@ -156,7 +156,7 @@
     z-index: 100;
     top: 70px; 
     left: 20px;
-    background-color: var(--color-secondary);
+    background-color: var(--color-accent);
     padding: 1.5rem;
     border-radius: 8px;
     box-shadow: var(--box-shadow);
@@ -179,7 +179,7 @@
 
   #nav-links li a{
     text-decoration: none;
-    color: var(--color-text);
+    color: white;
     font-size: larger;
   }
 
@@ -607,17 +607,10 @@
     display: none;
   }
   
-  .dark-img-promo{
-    display: none !important;
-  }
-  
   .light-img{
     display: block;
   }
-  
-  .light-img-promo{
-    display: block !important;
-  }
+
 
   /*--------------------------SKILLS---------------------------------------------*/
   :root {
@@ -1501,25 +1494,6 @@
 
   .dessin-btn{
     background-color: #0b6b8d;
-  }
-
-  #promo{
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    background-color: var(--color-accent);
-    color: white;
-    font-weight: bold;
-    font-size: 30px;
-  }
-
-  #promo p{
-    padding: 25px;
-  }
-
-  #promo a{
-    color: white;
   }
 
 /* ----------------------------------------------------------------PROJETS---------------------------------------------------------------------- */

@@ -1,5 +1,8 @@
 A faire : -----
 
+NOTE IMPORTANTE : le transfert de style fonctionne en build!!!!
+Ne pas s'inquiéter si inactif lors d'éditions
+
 - mettre à jour : texte + présentation + CV
 - meilleur bouton de lien pour les détails
 - refaire partie projet
@@ -31,6 +34,7 @@ A faire : -----
 		-> Oneshot : L : Lightbulb | D : Phosphor lantern
 		-> epic mickey : L : pinceau peinture | D : pinceau dissolvant
 			
+- Refaire arbre avec un sol !!!!!! pour transition avec projet (ou contact si autre idee pour projet)
 
 IDEES + -------------------
 
@@ -38,75 +42,12 @@ IDEES + -------------------
 
 - dialogue si 1min inactivité 
 
-"
-Vous êtes encore là ?           -         ?-?
-"
+- score avec petites étoiles
 
-* choix oui / non *
-
--> oui : continue
--> non : retour à la page        "Oh, ok !       -      :) "
-
-"
-Ah !                               -        0_0
-Et tu voudrais faire quoi ?        -        ?-?
-"
-
-* choix jouer / regarder un film / rien*
-
--> 1 :
-
-  "
-Oh si c'est que ça ! Attend je te lance un truc    -    :)
-*bip*
-  "
-
-*faux menu switch avec jeux : puissance 4, morpion*
-
--> 2 :
-
-  "
-Oh si c'est que ça ! Tu voudrais voir quoi ?    -    :)
-  "
-
-*choix : anime, film, youtube*
-
-"
-C'est parti ! Prends le pop corn    -    :)
-*bip*
-"
-
-Salle cine
-
-"
-J'te vole la fin du pop corn     -    O-O
-"
-
-animation plus de pop corn ? SI !
-
--> 3 :
-
-"
-OK                  -    :|
-"
-
-Au moins 4 nouveaus sprites
-
-
-
-- continuation scroll horror
 
 Avec la recherche d'alternance, coder c'est dur
 
 save ---------------------------
-
-<div id="promo">
-  <i class="light-img-promo fa-solid fa-pen-ruler" style="color: #EDBA40;"></i>
-  <i class="dark-img-promo fa-solid fa-pen-ruler" style="color: #3c1d91;"></i>
-  <p>MON INSTAGRAM : <a href="https://www.instagram.com/ast3li3/" target="_blank">@AST3LI3</a> N'HÉSITEZ PAS À ME SUIVRE !</p>
-  <i class="light-img-promo fa-solid fa-pen-ruler" style="color: #EDBA40;"></i>
-  <i class="dark-img-promo fa-solid fa-pen-ruler" style="color: #3c1d91;"></i>
-</div>
 
 <!-- ------------------------------------------------------------- PROJETS ------------------------------------------------------- -->
 

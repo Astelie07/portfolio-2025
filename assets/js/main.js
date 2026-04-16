@@ -21,6 +21,8 @@
           showWarning();
         } else if(alertCount < 3) {
           showAlert();
+        }else if(alertCount > 3){
+          generatePopups();
         }
       }
 
@@ -47,13 +49,16 @@
       document.getElementById("overlay").style.display = "block";
       document.body.style.overflow = "hidden";
 
-      // 🔥 Active le glitch et les flashs
       document.body.classList.add("glitch", "flash");
 
-      // Forcer le scroll vers le haut avec un effet de "bug"
       let scrollInterval = setInterval(() => {
-        window.scrollTo({ top: window.scrollY - 20 + (Math.random() * 10 - 5), behavior: "smooth" });
-      }, 100);
+        window.scrollTo({ top: window.scrollY - 25, behavior: "auto" });
+      }, 50);
+
+      setTimeout(() => {
+        clearInterval(scrollInterval);
+      }, 5000);
+
     }
 
     function closeWarning() {
@@ -67,8 +72,36 @@
       document.body.classList.remove("glitch", "flash");
     }
 
-/*------------------------------------DEBUT THEMES--------------------------------*/
+    function generatePopups() {
+    
+    console.log("ALERT")
+    let count = 0;
+    let delay = 400;
 
+    function spawnPopup() {
+        const popup = document.createElement('div');
+        popup.className = 'popup';
+        popup.style.left = `${Math.random() * 95 - 5}vw`;
+        popup.style.top = `${Math.random() * 95 - 5}vh`;
+        popup.style.width = `${Math.random() * 5 + 10}%`;
+        popup.style.height = `${Math.random() * 10 + 15}%`;
+        popup.textContent = "ERROR";
+        document.body.appendChild(popup);
+
+        count++;
+        delay *= 0.85; 
+
+        if (count < 500) {
+        setTimeout(spawnPopup, delay);
+        } else {
+          if(!alert("Bravo, c'est cassé ! Il ne reste plus qu'à relancer le site...")){window.location.reload(true);}
+        }
+    }
+
+    spawnPopup();
+    }
+
+/*------------------------------------DEBUT THEMES--------------------------------*/
 
 
 function toggleTheme() {
@@ -104,12 +137,10 @@ function toggleTheme() {
       theme.setAttribute('href', 'assets/css/style.css');
   }
 
-  console.log("New theme : "+ savedTheme);
 }  
 
 function pageChanger() {
   let savedTheme = localStorage.getItem("theme");
-  console.log("Transfered theme : "+ savedTheme);
 
   localStorage.setItem("theme", theme.getAttribute('href'));
 }
@@ -129,7 +160,6 @@ document.addEventListener("DOMContentLoaded", function() {
   let toggleTheme = document.getElementById('toggleChanger');
 
   let savedTheme = localStorage.getItem("theme");
-  console.log("Saved theme : "+ savedTheme);
 
   if (savedTheme) {
       theme.setAttribute('href', savedTheme);

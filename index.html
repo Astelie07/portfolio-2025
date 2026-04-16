@@ -11,6 +11,47 @@
   <script src="https://kit.fontawesome.com/5e3d8daf90.js" crossorigin="anonymous"></script>
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
   <link href="https://fonts.googleapis.com/css2?family=Hind:wght@400;700&family=Varela+Round&display=swap" rel="stylesheet">
+  <style>
+    .popup {
+      position: fixed;
+      background: darkred;
+      color: lightcoral;
+      padding: 10px;
+      border: 2px solid white;
+      z-index: 999;
+      animation: flicker 2s infinite alternate linear;
+      font-size: xx-large;
+      transform-origin: 50% 50%;
+      display: flex;
+    justify-content: center;
+    align-items: center;
+    }
+
+    @keyframes flicker {
+      from { 
+        background: darkred;
+        color: lightcoral;
+        scale: 115%;
+        border: 2px solid lightcoral;
+      }
+      50%{
+        background: darkred;
+        color: lightcoral;
+        border: 2px solid lightcoral;
+      }
+      51%{
+        background: lightcoral;
+        color: darkred;
+        border: 2px solid darkred;
+      }
+      to {
+        background: lightcoral;
+        color: darkred;
+        scale:100%;
+        border: 2px solid darkred;
+      }
+    }
+  </style>
 </head>
 <body>
   <!-- Loader -->
