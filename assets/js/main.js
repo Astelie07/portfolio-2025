@@ -74,6 +74,7 @@
 function toggleTheme() {
 
   /*Theme changer*/
+  let savedTheme = localStorage.getItem("theme");
 
   let theme = document.getElementById('theme');
   //let opvideo = document.getElementById('first-video');
@@ -81,23 +82,29 @@ function toggleTheme() {
   let logo = document.getElementById('light-logo');
   let icon = document.getElementById('icon');
 
+  console.log("Current theme : " + theme.getAttribute('href'))
+
   if (theme.getAttribute('href') == 'assets/css/style.css') {
-      theme.setAttribute('href', 'assets/css/dark-style.css');
       icon.setAttribute('href','assets/img/icon-D.ico');
       //opvideo.setAttribute('src', 'assets/video/dark-opening.mp4');
       // video.setAttribute('src', 'assets/video/dark-iddle.mp4');
       video.setAttribute('src', 'assets/img/ocs-d.png');
       logo.setAttribute('src', 'assets/img/titre_dark.png');
+
+      localStorage.setItem("theme", "assets/css/dark-style.css");
+      theme.setAttribute('href', 'assets/css/dark-style.css');
   } else {
-      theme.setAttribute('href', 'assets/css/style.css');
       //opvideo.setAttribute('src', 'assets/video/light-opening.mp4');
       //video.setAttribute('src', 'assets/video/light-iddle.mp4');
       icon.setAttribute('href','assets/img/icon-L.ico');
       video.setAttribute('src', 'assets/img/ocs.png');
       logo.setAttribute('src', 'assets/img/titre_.png');
+
+      localStorage.setItem("theme", "assets/css/style.css");
+      theme.setAttribute('href', 'assets/css/style.css');
   }
 
-  localStorage.setItem("theme", theme.getAttribute('href'));
+  console.log("New theme : "+ savedTheme);
 }  
 
 function pageChanger() {
