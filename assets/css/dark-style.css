@@ -131,57 +131,67 @@ header video {
   object-fit: cover;
 }
 
-/* Style du menu burger */
-.menu-burger {
-  width: 50px;
-  height: 50px;
-  background-color: var(--color-primary);
-  color: var(--color-text);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 1.5rem;
-  cursor: pointer;
-  border-radius: 8px;
-  box-shadow: var(--box-shadow);
-  margin-right: 10px; /* Ajout d'espace entre le burger et le bouton */
-}
+  /* Style du menu burger */
+  .menu-burger {
+    width: 50px;
+    height: 50px;
+    background-color: #006B5173;
+    color: var(--color-text);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5rem;
+    cursor: pointer;
+    border-radius: 8px;
+    box-shadow: var(--box-shadow);
+    margin-right: 10px; 
+    border: solid 3px var(--color-text);
+  }
 
-/* Conteneur pour le menu burger et le bouton de changement de thème */
-.nav-container {
-  display: flex;
-  justify-content: flex-start; /* Aligner les éléments à gauche */
-  align-items: center;
-  position: fixed;
-  top: 20px;
-  left: 20px;
-  z-index: 20;
-  width: auto; /* Ajuste la largeur pour s'adapter à son contenu */
-  padding: 0 20px; /* Espacement intérieur */
-}
+  .nav-container {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    z-index: 20;
+    width: auto; 
+    padding: 0 20px;
+  }
 
-/* Assurez-vous que le menu déroulant suive correctement le défilement */
-#nav-links {
-  display: none;
-  flex-direction: column;
-  position: absolute;
-  top: 70px; /* Position sous le menu burger */
-  left: 20px;
-  background-color: var(--color-secondary);
-  padding: 1rem;
-  border-radius: 8px;
-  box-shadow: var(--box-shadow);
-}
+  #nav-links {
+    display: none;
+    position: fixed;
+    z-index: 100;
+    top: 70px; 
+    left: 20px;
+    background-color: var(--color-secondary);
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: var(--box-shadow);
+    text-align: left;
+  }
 
-/* Afficher le menu lorsque la classe 'show' est active */
-#nav-links.show {
-  display:block;
-}
+  #nav-links.show {
+    display: flex;
+  }
 
-/* Ajustement des liens dans le menu */
-#nav-links li {
-  margin: 0.5rem 0;
-}
+  #nav-links li {
+    margin: 0.5rem 0.1em;
+  }
+
+  #nav-links ul {
+    display: flex;
+    flex-direction: column;
+    list-style-type: none;
+  }
+
+  #nav-links li a{
+    text-decoration: none;
+    color: var(--color-text);
+    font-size: larger;
+  }
 
 /* Positionnement du logo au quart de la largeur de l'écran */
   /* #logo, #second-video {
@@ -1162,27 +1172,81 @@ interets {
 /* ------------------------------------------ Style du bouton de changement de thème ------------------------------------------*/
 
 /* Style du bouton de changement de thème */
-#theme {
-  background-color: transparent;
-  border: none;
-  cursor: pointer;
-  padding: 0; /* Pas de padding car on utilise l'icône */
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
+  #themeChanger {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0; /* Pas de padding car on utilise l'icône */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: -40px;
+  }
 
-/* Style de l'icône du bouton de changement de thème */
-#theme svg {
-  width: 24px;
-  height: 24px;
-  fill: var(--color-text); /* Utiliser la couleur du texte pour l'icône */
-}
+  .theme__toggle,
+  .theme__toggle-wrap {
+      position: fixed;
+  }
 
-/* Enlevez les bordures sur hover */
-#theme:hover svg {
-  fill: var(--color-secondary); /* Changer la couleur de l'icône au survol */
-}
+  .theme__toggle,
+  .theme__toggle:before {
+      display: block;
+  }
+
+  .theme__toggle {
+      z-index: 1;
+      background-color: var(--color-background);
+      border-radius: 25% / 50%;
+      box-shadow: 0 0 0 0.125em hsla(223,90%,55%,0);
+      padding: 0.25em;
+      width: 6em;
+      height: 3em;
+      -webkit-appearance: none;
+      appearance: none;
+      transition:
+  background-color 0.3s ease-in-out,
+  box-shadow 0.15s ease-in-out,
+  transform 0.3s ease-in-out;
+  }
+
+  .theme__toggle:before {
+      background-color: var(--color-text);
+      border-radius: 50%;
+      content: "";
+      width: 2.5em;
+      height: 2.5em;
+      transition:
+  background-color 0.3s ease-in-out,
+  transform 0.3s ease-in-out;
+  }
+
+  .theme__toggle:focus {
+      box-shadow: 0 0 0 0.125em hsl(223,90%,55%);
+      outline: transparent;
+  }
+
+  /* Checked */
+  .theme__toggle:checked {
+      background-color: var(--color-secondary);
+  }
+
+  .theme__toggle:checked:before {
+      transform: translateX(3em);
+      background-color: var(--color-text);
+  }
+
+  @supports selector(:focus-visible) {
+      .theme__toggle:focus {
+        box-shadow: 0 0 0 0.125em hsla(223,90%,55%,0);
+      }
+
+      .theme__toggle:focus-visible {
+        box-shadow: 0 0 0 0.125em hsl(223,90%,55%);
+      }
+
+  }
+
+
 
 /* Footer */
 footer {

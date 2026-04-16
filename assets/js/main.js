@@ -69,6 +69,8 @@
 
 /*------------------------------------DEBUT THEMES--------------------------------*/
 
+
+
 function toggleTheme() {
 
   /*Theme changer*/
@@ -110,6 +112,8 @@ document.addEventListener("DOMContentLoaded", function() {
   let l_logo = document.getElementById('light-logo');
   let favicon = document.getElementById('icon')
 
+  let toggleTheme = document.getElementById('toggleChanger');
+
   // 🔹 Vérifier s'il y a un thème enregistré dans localStorage
   let savedTheme = localStorage.getItem("theme");
   console.log(savedTheme);
@@ -122,6 +126,8 @@ document.addEventListener("DOMContentLoaded", function() {
           secondVideo.setAttribute('src', 'assets/img/ocs-d.png');
           favicon.setAttribute('href','assets/img/icon-d.ico');
           l_logo.setAttribute('src', 'assets/img/titre_dark.png');
+          toggleTheme.checked = true;
+
       } else {
           theme.setAttribute('href', 'assets/css/style.css');
           favicon.setAttribute('href','assets/img/icon-L.ico');
@@ -137,6 +143,7 @@ document.addEventListener("DOMContentLoaded", function() {
           //firstVideo.setAttribute('src', 'assets/video/dark-opening.mp4');
           secondVideo.setAttribute('src', 'assets/img/ocs-d.png');
           l_logo.setAttribute('src', 'assets/img/titre_dark.png');
+          toggleTheme.checked = true;
       } else {
           theme.setAttribute('href', 'assets/css/style.css');
           //firstVideo.setAttribute('src', 'assets/video/light-opening.mp4');

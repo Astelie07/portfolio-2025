@@ -125,8 +125,8 @@
   .menu-burger {
     width: 50px;
     height: 50px;
-    background-color: var(--color-secondary);
-    color: var(--color-text);
+    background-color: rgba(245, 236, 210, 0.54);
+    color: var(--color-accent);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -135,7 +135,7 @@
     border-radius: 8px;
     box-shadow: var(--box-shadow);
     margin-right: 10px; 
-    border: solid 3px var(--color-text);
+    border: solid 3px var(--color-accent);
   }
 
   .nav-container {
@@ -1126,27 +1126,81 @@
   }
 
   /* ------------------------------------------ Style du bouton de changement de thème ------------------------------------------*/
-  #theme {
+  
+  #themeChanger {
     background-color: transparent;
     border: none;
     cursor: pointer;
-    padding: 0; /* Pas de padding car on utilise l'icône */
+    padding: 0; 
     display: flex;
     justify-content: center;
     align-items: center;
+    margin-top: -40px;
   }
 
-  /* Style de l'icône du bouton de changement de thème */
-  #theme svg {
-    width: 24px;
-    height: 24px;
-    fill: var(--color-text); /* Utiliser la couleur du texte pour l'icône */
+  .theme__toggle,
+  .theme__toggle-wrap {
+      position: fixed;
   }
 
-  /* Enlevez les bordures sur hover */
-  #theme:hover svg {
-    fill: var(--color-secondary); /* Changer la couleur de l'icône au survol */
+  .theme__toggle,
+  .theme__toggle:before {
+      display: block;
   }
+
+  .theme__toggle {
+      z-index: 1;
+      background-color: var(--color-background);
+      border-radius: 25% / 50%;
+      box-shadow: 0 0 0 0.125em hsla(223,90%,55%,0);
+      padding: 0.25em;
+      width: 6em;
+      height: 3em;
+      -webkit-appearance: none;
+      appearance: none;
+      transition:
+  background-color 0.3s ease-in-out,
+  box-shadow 0.15s ease-in-out,
+  transform 0.3s ease-in-out;
+  }
+
+  .theme__toggle:before {
+      background-color: var(--color-accent);;
+      border-radius: 50%;
+      content: "";
+      width: 2.5em;
+      height: 2.5em;
+      transition:
+  background-color 0.3s ease-in-out,
+  transform 0.3s ease-in-out;
+  }
+
+  .theme__toggle:focus {
+      box-shadow: 0 0 0 0.125em hsl(223,90%,55%);
+      outline: transparent;
+  }
+
+  /* Checked */
+  .theme__toggle:checked {
+      background-color: var(--color-secondary);
+  }
+
+  .theme__toggle:checked:before {
+      transform: translateX(3em);
+      background-color: var(--color-text);
+  }
+
+  @supports selector(:focus-visible) {
+      .theme__toggle:focus {
+        box-shadow: 0 0 0 0.125em hsla(223,90%,55%,0);
+      }
+
+      .theme__toggle:focus-visible {
+        box-shadow: 0 0 0 0.125em hsl(223,90%,55%);
+      }
+
+  }
+
 
   /* Footer */
   footer {

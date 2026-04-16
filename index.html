@@ -54,10 +54,11 @@
     <div class="nav-container" aria-hidden="true">
       <!-- Menu burger -->
       <div class="menu-burger">☰</div>
-      <button onclick="toggleTheme()" id="theme">
-        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
-          <path d="M12 2c5.514 0 10 4.486 10 10s-4.486 10-10 10-10-4.486-10-10 4.486-10 10-10zm0-2c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm0 4c-4.418 0-8 3.582-8 8s3.582 8 8 8v-16z"/>
-        </svg>
+
+      <button for="theme" onclick="toggleTheme()" id="themeChanger">
+        <span class="theme__toggle-wrap">
+          <input id='toggleChanger' class="theme__toggle" type="checkbox" role="switch" name="theme" value="dark">
+        </span>
       </button>
     </div>
   
@@ -1122,7 +1123,7 @@
     </div>
   </div> 
   <div class="cv link-btn">
-    <a>Détails</a>
+    <a href="portfolio.html">Détails</a>
   </div>
 
   <script>
@@ -1161,7 +1162,7 @@
   </div>
 
   <div class="cv link-btn" id="archives">
-    <a>Archives</a>
+    <a href="archives.html">Archives</a>
   </div>
 
   <script>

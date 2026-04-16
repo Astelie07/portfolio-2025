@@ -3,58 +3,114 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Page de test</title>
     <style>
+        * {
+            border: 0;
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
         body{
-            text-align: center;
-            display: flex;
-            flex-direction: column;
+            height: 200vh;
         }
 
-        /* chosen*/
-        .link-btn {
-        box-sizing: border-box;
-        appearance: none;
-        background-color: transparent;
-        border-radius: 0.6em;
-        cursor: pointer;
-        display: flex;
-        align-self: center;
-        font-size: 1rem;
-        line-height: 1;
-        margin: 20px;
-        padding: 1.2em 2.8em;
-        text-decoration: none;
-        text-align: center;
-        text-transform: uppercase;
-        font-family: 'Montserrat', sans-serif;
-        font-weight: 700;
+        /* Default */
+        .theme__fill {
+            transition: transform 0.3s ease-in-out;
         }
 
-        .link-btn:hover,
-        .link-btn:focus {
-            color: #fff;
-            outline: 0;
+        .theme__fill {
+            background-color: hsl(223,10%,100%);
+            display: block;
+            mix-blend-mode: difference;
+            position: fixed;
+            inset: 0;
+            height: 100%;
+            transform: translateX(-100%);
+        }
+
+        .theme__toggle {
+            z-index: 1;
         }
 
 
-        .link-btn {
-        border-color: blueviolet;
-        color: blueviolet;
-        background-image: linear-gradient(45deg,blueviolet 50%, transparent 50%);
-        background-position: 100%;
-        background-size: 400%;
-        transition: 500ms ease-in-out;
+        .theme__toggle,
+        .theme__toggle-wrap {
+            position: fixed;
         }
 
-        .link-btn:hover {
-            background-position: 0;
+        .theme__toggle,
+        .theme__toggle:before {
+            display: block;
         }
+
+        .theme__toggle {
+            background-color: hsl(48,90%,85%);
+            border-radius: 25% / 50%;
+            box-shadow: 0 0 0 0.125em hsla(223,90%,55%,0);
+            padding: 0.25em;
+            width: 6em;
+            height: 3em;
+            -webkit-appearance: none;
+            appearance: none;
+            transition:
+                background-color 0.3s ease-in-out,
+                box-shadow 0.15s ease-in-out,
+                transform 0.3s ease-in-out;
+        }
+
+        .theme__toggle:before {
+            background-color: hsl(48,90%,55%);
+            border-radius: 50%;
+            content: "";
+            width: 2.5em;
+            height: 2.5em;
+            transition:
+                background-color 0.3s ease-in-out,
+                transform 0.3s ease-in-out;
+        }
+
+        .theme__toggle:focus {
+            box-shadow: 0 0 0 0.125em hsl(223,90%,55%);
+            outline: transparent;
+        }
+
+        /* Checked */
+        .theme__toggle:checked {
+            background-color: hsl(198,90%,15%);
+        }
+
+        .theme__toggle:checked:before {
+            transform: translateX(3em);
+        }
+
+        .theme__toggle:checked:before {
+            background-color: hsl(198,90%,55%);
+        }
+
+        @supports selector(:focus-visible) {
+            .theme__toggle:focus {
+                box-shadow: 0 0 0 0.125em hsla(223,90%,55%,0);
+            }
+
+            .theme__toggle:focus-visible {
+                box-shadow: 0 0 0 0.125em hsl(223,90%,55%);
+            }
+
+        }
+
 
     </style>
 </head>
 <body>
-    <h1>Recherche bouton de lien</h1>
-    <button class="link-btn">Read More</button>
+    <h1>Recherche theme toggle</h1>
+    <button for="theme" class="theme">
+	<span class="theme__toggle-wrap">
+		<input id="theme" class="theme__toggle" type="checkbox" role="switch" name="theme" value="dark">
+		<span class="theme__fill"></span>
+	</span>
+</button>
 </body>
 </html>
