@@ -1363,8 +1363,8 @@
   }
 
   .card h4 {
-    margin: 15px 10px auto auto;
-    text-align: center;
+    margin: 25px 10px auto auto;
+    font-size: xx-large;
   }
   
   .cards { 
@@ -1429,10 +1429,13 @@
   }
 
   .img-fluid {
-      max-width: 90%;
       border: solid 2px var(--color-accent);
       border-radius: 15px;
       margin: 15px auto;
+      max-height: 50%;
+      max-width: 90%;
+      min-height: 50%;
+      min-width: 90%;
   }
 
   .ux-ui {
@@ -1892,6 +1895,32 @@
   position: relative; 
 }
 
+
+
+
+.detailsCard{
+  position: relative;
+  z-index: 2;
+  bottom:15% !important;
+  left: 0;
+  padding: 2% 5%;
+  border-radius: 5%;
+  color: var(--text_color);
+  background-color: var(--color-background);
+  text-decoration: none;
+  cursor: pointer;
+  font-size: larger;
+  border:none;
+  box-shadow: 0px 10px 13px -7px var(--color-text), 5px 5px 15px 5px rgba(0,0,0,0);
+}
+
+.detailsCard:hover{
+  color: var(--color-background);
+  background-color: var(--color-text);
+  box-shadow: 0px 10px 13px -7px var(--text_color), 5px 5px 15px 5px rgba(0,0,0,0);
+}
+
+
 /* Filtre des thèmes */
 .filters {
   display: flex;
@@ -1983,9 +2012,11 @@
 
 /* Descriptions et informations sur le projet */
 .portfolio-info {
-  padding: 20px;
-  border-radius: 8px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  height: 32%;
+  font-size: larger;
 }
 
 .portfolio-info h3 {
@@ -2134,6 +2165,10 @@
       #presentation #photo {
           margin-bottom: 20px;
           width:80%;
+          box-shadow: 5px 5px 15px rgba(90, 236, 255, 0.2);
+          border: solid 2px white;
+          border-radius: 15px;
+          margin: 15px auto;
       }
 
       .presentation-info {
