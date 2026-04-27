@@ -9,20 +9,15 @@ Ne pas s'inquiéter si inactif lors d'éditions
 - voir si on peut retrouver figma omniversus : video, lien -> meilleure description
 - besoin dans inventaire : jira
 
-- portfolio : à ajouter 
-	globale game jam
-	Projet Eesi
-	Nanoprojet
-	entrainement unity (plane)
-	escapausorus
+- portfolio : à ajouter 	
 	projet m1 (pas mtn)	
 
 - portfolio / carte 
-	- manque animations 3d portfolio dans portfolio
-	- carte rainbow challenge
+	carte rainbow challenge
 	globale game jam
-	Projet Eesi
+	Projet Eesi <- serv discord dispo
 	Nanoprojet
+	Omega		<- https://khalerzaad.itch.io/omega
 	entrainement unity (plane)
 	escapausorus
 	projet m1 (pas mtn)
