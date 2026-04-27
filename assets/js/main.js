@@ -384,11 +384,15 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
   document.querySelectorAll('.filter-btn').forEach(button => {
     button.addEventListener('click', () => {
         let filter = button.getAttribute('data-filter');
+        console.log(filter);
+        let filterElements = document.querySelectorAll(filter);
         document.querySelectorAll('.card:not(.clone)').forEach(card => {
             if (filter === 'all' || card.classList.contains(filter)) {
                 card.style.display = "block";
+                filterElements.forEach((element) => element.style.display = "block");
             } else {
                 card.style.display = "none";
+                filterElements.forEach((element) => element.style.display = "none");
             }
         });
     });
