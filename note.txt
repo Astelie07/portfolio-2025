@@ -4,27 +4,28 @@ NOTE IMPORTANTE : le transfert de style fonctionne en build!!!!
 Ne pas s'inquiéter si inactif lors d'éditions
 
 - mettre à jour : texte + présentation + CV
-- meilleur bouton de lien pour les détails
 - refaire partie projet
 - refaire video site or3o (si possible)
 - voir si on peut retrouver figma omniversus : video, lien -> meilleure description
 - besoin dans inventaire : jira
 
-- portfolio : à ajouter 
-	globale game jam
-	Projet Eesi
-	Nanoprojet
-	entrainement unity (plane)
-	escapausorus
+- portfolio : à ajouter 	
 	projet m1 (pas mtn)	
 
 - portfolio / carte 
-	- manque animations 3d portfolio dans portfolio
-	- carte rainbow challenge
+	carte rainbow challenge
+	globale game jam
+	Projet Eesi <- serv discord dispo
+	Nanoprojet
+	Omega		<- https://khalerzaad.itch.io/omega
+	entrainement unity (plane)
+	escapausorus
+	projet m1 (pas mtn)
 
 	
 - ajout stickers 
 	- huepoe - dark : Pamela ? Hollow knight charm ? Hollow knight grum ?
+	Huepoe = dark -> anneau light ?
 		
 	- ajout sticker d & l à voir(à la place d'ocarinea)
 		-> layton : chapeau layton (L), casquette Luke (D)
