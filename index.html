@@ -77,7 +77,7 @@
     </div>
   </div>
 
-  <!-- 🔥 Alerte menaçante 🔥 -->
+  <!--  Alerte menaçante -->
   <div id="warningBox" class="shake">
     <div class="dialogue" onclick="closeWarning()">
             <div>
@@ -1017,17 +1017,6 @@
 
       <div class="card_container">
       <div class="card animated jeu-video">
-        <h4>Ready Fire Ants !</h4>
-        <img src="assets/img/portfolio/rfa.jpg" class="img-fluid" alt="Affiche Ready fire ants">
-        <div class="portfolio-info">
-          <p>Nanoprojet : "Jeu de course Coop"</p>
-        </div>
-      </div>
-      <a href="portfolio.html#" onclick="pageChanger()"><button class="detailsCard">Détails</button></a>
-      </div>
-
-      <div class="card_container">
-      <div class="card animated jeu-video">
         <h4>Omega</h4>
         <img src="assets/img/portfolio/omega.png" class="img-fluid" alt="Logo Omega">
           <div class="portfolio-info">
@@ -1345,7 +1334,6 @@
       <a href="portfolio.html#" onclick="pageChanger()"><button class="detailsCard">Détails</button></a>
       </div>
 
-
     </div>
   </div> 
 
@@ -1361,6 +1349,7 @@
 
   <h3 id="gallery-titre">Gallerie de quelques réalisations personnelles : <br> Cliquez dessus pour voir le speedpaint !</h3>
   <div id="gallery-dessin">
+
     <div class="item" data-video="direct60.mp4">
       <img class="dessin-items" src="assets/img/gallerie/direct.png" alt="Fanart en réaction aux annonces de Nintendo en mars - avril 2025">
     </div>
@@ -1379,9 +1368,7 @@
     <div class="item" data-video="avatar60.mp4">
       <img class="dessin-items" src="assets/img/gallerie/avatar.png" alt="Humanisation de mon avatar sur les réseaux sociaux">
     </div>
-    <div class="item" data-video="#">
-      <img class="dessin-items" src="assets/img/gallerie/dessin_2.png" alt="Profil picture (2021-2023)">
-    </div>
+
   </div>
 
   <div class="cv link-btn" id="archives" onclick="pageChanger()">
@@ -1432,6 +1419,173 @@
     }
 
   </script>
+
+  <!-- ------------------------------------------------------------- Games ------------------------------------------------------- -->
+
+    <div class="projects-section">
+
+      <h2 class="wavy" id="h2-projet">PROJECTS</h2>  
+      
+      <!-- Sélection verticale des projets -->
+        
+        <div class="project-selection">
+            <div class="project-tab active" data-project="1">Endheld</div>
+            <div class="separator"></div> 
+            <div class="project-tab" data-project="2">Ready Fire Ants !</div>
+        </div>
+
+        <div class="project-content">
+          
+            <div class="project-details active" id="project-1">
+              <div class="game-page">
+
+                  <div class="game-header">
+                      <h2>Endheld</h2>
+                      <p class="game-tagline"><em>You’ve just found a lost console, what will you do with it?</em></p>
+                  </div>
+
+                  <div class="game-showcase">
+
+                      <div class="game-trailer">
+                          <iframe 
+                              src="https://www.youtube.com/embed/lBNhGxc1KEA"
+                              title="Trailer du jeu"
+                              frameborder="0"
+                              allowfullscreen>
+                          </iframe>
+                      </div>
+
+                      <div class="game-info">
+                          <h3>· Informations</h3>
+
+                          <p><strong>Type :</strong> Point and Click / Puzzle</p>
+                          <p><strong>Plateform :</strong> PC</p>
+                          <p><strong>Statut :</strong> Available</p>
+                          <p><strong>Credit :</strong> Game & Narrative Designer / Assist Programmer</p>
+
+                          <div class="game-links">
+                              <a href="https://astelie.itch.io/endheld" target="_blank">🎮 Page itch.io</a>
+                          </div>
+                      </div>
+
+                  </div>
+
+                  <hr>
+
+                  <div class="game-description">
+                      <h3>✨ Pitch</h3>
+                      <p>
+                          Endheld is a narrative interface exploration game inspired by Nintendo’s 2010s aesthetic.
+                          Find clues in conversations, records and pictures to delve into the world of Luca: a queer teenager who used his handheld console as a refuge from the family and identity-related challenges he faced.
+                          Between melancholy and nostalgia, his story is now in your hands. <br>
+                          Note: The game was originally designed to be played on a Steam Deck to provide a more immersive experience. It was later adapted for PC.
+                      </p>
+                  </div>
+
+                  <div class="game-features">
+
+                      <h3>✨ Gameplay</h3>
+
+                      <div class="feature-grid">
+
+                          <div class="feature-card">
+                              <span>🌍</span>
+                              <h4>Exploration</h4>
+                              <p>Discover application and understand the story behind</p>
+                          </div>
+
+                          <div class="feature-card">
+                              <span>🔍</span>
+                              <h4>Solve Puzzle</h4>
+                              <p>Find clues and what make this console so special to move on</p>
+                          </div>
+
+                          <div class="feature-card">
+                              <span>🫧</span>
+                              <h4>Nostalgia</h4>
+                              <p>A game inspired by console like 3DS and wii U, in every ways</p>
+                          </div>
+
+                      </div>
+
+                  </div>
+
+              </div>
+            </div>
+
+          <hr class="hr-projet">
+
+            <!-- Projet 2 -->
+            <div class="project-details" id="project-2">
+              <div class="game-page">
+
+                  <div class="game-header">
+                      <h2>Ready Fire Ants !</h2>
+                      <p class="game-tagline"><em>A two-player co-op racing game with cool ants !</em></p>
+                  </div>
+
+                  <div class="game-showcase">
+
+                      <div class="game-trailer">
+                          <iframe src="https://www.youtube.com/embed/LyTGhRocug8?si=DU9Ek04CU1N4XKHg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                      </div>
+
+                      <div class="game-info">
+                          <h3>· Informations</h3>
+
+                          <p><strong>Type :</strong> Racing game / Coop</p>
+                          <p><strong>Plateform :</strong> PC</p>
+                          <p><strong>Statut :</strong> Available</p>
+                          <p><strong>Credit :</strong> Game Designer, Level Designer, Video Maker, Voice Actor</p>
+
+                          <div class="game-links">
+                              <a href="https://laurinemty.itch.io/ready-fire-ants" target="_blank">🎮 Page itch.io</a>
+                          </div>
+                      </div>
+
+                  </div>
+
+                  <hr>
+
+                  <div class="game-description">
+                      <h3>✨ Pitch</h3>
+                      <p>
+                          Ready, Fire Ants! is a cooperative, race-against-time game where you play as a duo of ants piloting their very own origami aircraft! Show exceptional dexterity to control your quirky little machine and reach the finish line in record time !
+                      </p>
+                  </div>
+
+                  <div class="game-features">
+
+                      <h3>✨ Gameplay</h3>
+
+                      <div class="feature-grid">
+
+                          <div class="feature-card">
+                              <span>🤝🏽</span>
+                              <h4>Coopération</h4>
+                              <p>Fly in harmony with a friend or family !</p>
+                          </div>
+
+                          <div class="feature-card">
+                              <span>🐜</span>
+                              <h4>Race expérience</h4>
+                              <p>Learn how to fly and make it untill the finish line !</p>
+                          </div>
+
+                          <div class="feature-card">
+                              <span>🏆</span>
+                              <h4>Challenge</h4>
+                              <p>Beat your record with the scoreboard</p>
+                          </div>
+
+                      </div>
+
+                  </div>
+
+              </div>
+            </div>
+        </div>
+      </div> 
 </section>
 
 
@@ -1457,9 +1611,7 @@
     
         <ul class="contact-list">
           <li class="list-item"><i class="fa fa-map-marker fa-2x"></i><span class="contact-text place">FRANCE, Normandie</span></li>
-              
-          <li class="list-item"><i class="fa fa-phone fa-2x"></i><span class="contact-text phone">(+33) 7 82 41 78 66</span></li>
-              
+                            
           <li class="list-item"><i class="fa fa-envelope fa-2x"></i><span class="contact-text gmail"><a href="mailto:#" title="Send me an email">henryonastelie@gmail.com</a></span></li>
               
         </ul>
@@ -1478,6 +1630,11 @@
           <a href="https://github.com/Astelie07" target="_blank" class="contact-icon">
             <li>
             <i class="fab fa-github"></i>
+            </li>     
+          </a>
+          <a href="https://astelie.itch.io/" target="_blank" class="contact-icon">
+            <li>
+            <i class="fa-brands fa-itch-io"></i>
             </li>     
           </a>
         </ul>    

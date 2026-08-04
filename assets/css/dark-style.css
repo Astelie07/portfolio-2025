@@ -1125,12 +1125,11 @@ interets {
   }
 
   #gallery-dessin{
-    max-width: 85%;
+    max-width: 50%;
     margin: 1rem auto;
     display: flex;
     justify-content: center;
     align-items: center;
-    flex-wrap: wrap;
   }
 
   #gallery-titre{
@@ -1670,38 +1669,33 @@ footer {
     display:none;
 }
 
-.projects-section {
-  display: flex;
-  padding:0;
-  width: 100%;
-  min-height: 22rem;
-  position: relative; 
-  background: url("../img/projet-dark.png");
-  background-position: 50% 50%;
-  background-size: cover;
-  overflow: hidden;
-}
-
-#h2-projet {
-  position: absolute;
-  font-size: 45px;
-  left: 50%;
-  transform: translateX(-50%);
-  text-align: center;
-}
-
-/* Section de sélection */
-.project-selection {
-    width: 25%;
-    color: var(--color-secondary);
+  .projects-section {
     display: flex;
     flex-direction: column;
-    justify-content: center; /* Centre verticalement */
     align-items: center;
-    padding: 50px 0;
+    padding: 0;
+    width: 100%;
     position: relative;
-    z-index: 2; /* Pour être au-dessus du fond */
-}
+    overflow: hidden;
+  }
+
+  #h2-projet {
+    text-align: center;
+    margin: 0;
+  }
+
+  /* Section de sélection */
+  .project-selection {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    padding: 20px 0 5px;
+    margin: 0;
+    background: transparent;
+  }
 
 .project-tab {
     padding: 15px;
@@ -1709,7 +1703,8 @@ footer {
     cursor: pointer;
     transition: background 0.3s;
     border-radius : 10px;
-    width: 80%;
+    width: auto;
+    min-width: 180px;
 }
 
 .project-tab:hover {
@@ -1723,22 +1718,131 @@ footer {
 
 /* Séparateurs verticaux */
 .separator {
-    width: 2px; /* Largeur du trait vertical */
-    height: 30px; /* Hauteur du trait */
-    background-color: rgba(255, 255, 255, 0.5); /* Légèrement transparent */
-    margin: 10px 0; /* Espacement entre les onglets */
-}
+    width: 2px;
+    height: 25px;
+    margin: 0;
+} 
 
 /* Contenu du projet */
 .project-content {
   flex: 1;
-  padding: 20px;
+  padding: 0;
   position: relative; /* Garde la position relative pour gérer les enfants */
   min-height: auto; /* Permet à la hauteur de s'adapter au contenu */
   overflow: visible; /* Empêche la coupure du contenu */
 }
 
 /* Appliquer un background dynamique */
+.game-page {
+    width: 100%;
+}
+
+.game-header {
+    text-align: center;
+}
+
+.game-header h2 {
+    font-size: 2rem;
+}
+
+.game-tagline {
+    font-size: 1.2rem;
+}
+
+.game-showcase {
+    display: flex;
+    gap: 30px;
+    align-items: center;
+    margin: 35px 0 10px;
+}
+
+.game-trailer {
+    flex: 2;
+}
+
+.game-trailer iframe {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    border-radius: 20px;
+}
+
+.game-info {
+    flex: 1;
+    background: rgba(123,139,255,0.15);
+    padding: 25px;
+    border-radius: 20px;
+}
+
+.game-info p {
+    margin: 12px 0;
+}
+
+.game-links {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-top: 25px;
+}
+
+.game-links a {
+    background: var(--color-primary);
+    color: var(--color-text);
+    padding: 12px;
+    border-radius: 15px;
+    text-align: center;
+    text-decoration: none;
+    transition: .3s;
+}
+
+.game-links a:hover {
+    transform: translateY(-4px);
+    background: var(--color-accent);
+}
+
+.game-description,
+.game-features,
+.game-development {
+    padding: 20px;
+}
+
+.feature-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.feature-card {
+    background: rgba(123,139,255,0.15);
+    border-radius: 20px;
+    padding: 25px;
+    text-align: center;
+    transition: .3s;
+}
+
+.feature-card:hover {
+    transform: translateY(-5px);
+}
+
+.feature-card span {
+    font-size: 2.5rem;
+}
+
+.feature-card h4 {
+    margin: 15px 0;
+}
+
+@media screen and (max-width: 900px) {
+
+    .game-showcase {
+        flex-direction: column;
+    }
+
+    .feature-grid {
+        grid-template-columns: 1fr;
+    }
+
+}
+
 .project-details {
   display: none; /* Toujours caché par défaut */
   position: relative; /* Relative pour suivre la hauteur naturelle */
@@ -1771,17 +1875,14 @@ footer {
 
 /* Style général des détails de projet */
 .project-content .project-details {
-border-radius: 16px;
-padding: 24px;
-font-family: 'Arial', sans-serif;
-max-width: 100%;
-line-height: 1.6;
-transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-/* Paragraphes centrés pour les introductions */
-#project-1 p:first-of-type, #project-1 h2 {
-text-align: center;
+  border-radius: 16px;
+  padding: 0px;
+  font-family: 'Arial', sans-serif;
+  max-width: 100%;
+  line-height: 1.6;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  width: 80%;
+  margin: auto;
 }
 
 /* Ligne de séparation */
@@ -1818,7 +1919,8 @@ background-color: #7b8bff81;
 .project-content {
 text-align: left;
 font-size: 1.1em;
-margin: 10px 0;
+margin: 10px 0 0;
+min-height: 80vh;
 }
 
 /* Liste */
@@ -1839,9 +1941,6 @@ align-items: center;
 margin-left: 8px;
 }
 
-.project-content h2, #project-1 p:first-of-type{
-text-align: center;
-}
 
 /* --- Galerie d'images --- */
 
@@ -2816,6 +2915,27 @@ section:last-of-type{
 #portfolio .modal-content video {
   width: 80%;
   height: auto;
+}
+
+.modal {
+    position: fixed;
+    inset: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgba(0, 0, 0, 0.8);
+    z-index: 9999;
+}
+
+.modal.hidden {
+    display: none;
+}
+
+.modal video {
+    max-height: 80vh; /* 80% de la hauteur de l'écran */
+    max-width: 90vw;  /* évite que ça dépasse en largeur */
+    object-fit: contain;
+    border-radius: 15px;
 }
 
 #portfolio .close {
