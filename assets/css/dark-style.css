@@ -1125,12 +1125,11 @@ interets {
   }
 
   #gallery-dessin{
-    max-width: 85%;
+    max-width: 50%;
     margin: 1rem auto;
     display: flex;
     justify-content: center;
     align-items: center;
-    flex-wrap: wrap;
   }
 
   #gallery-titre{
@@ -2916,6 +2915,27 @@ section:last-of-type{
 #portfolio .modal-content video {
   width: 80%;
   height: auto;
+}
+
+.modal {
+    position: fixed;
+    inset: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgba(0, 0, 0, 0.8);
+    z-index: 9999;
+}
+
+.modal.hidden {
+    display: none;
+}
+
+.modal video {
+    max-height: 80vh; /* 80% de la hauteur de l'écran */
+    max-width: 90vw;  /* évite que ça dépasse en largeur */
+    object-fit: contain;
+    border-radius: 15px;
 }
 
 #portfolio .close {

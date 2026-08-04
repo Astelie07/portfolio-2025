@@ -1071,12 +1071,11 @@
   }
 
   #gallery-dessin{
-    max-width: 85%;
+    max-width: 70%;
     margin: 1rem auto;
     display: flex;
     justify-content: center;
     align-items: center;
-    flex-wrap: wrap;
   }
 
   #gallery-titre{
@@ -1514,6 +1513,7 @@
     width: 100%;
     position: relative;
     overflow: hidden;
+    text-shadow: -0.8px -0.8px 0 var(--color-background), 0.8px -0.8px 0 var(--color-background), -0.8px 0.8px 0 var(--color-background), 0.8px 0.8px 0 var(--color-background);
   }
 
   #h2-projet {
@@ -1604,6 +1604,8 @@
 
 .game-info {
     flex: 1;
+    color:var(--color-background);
+    text-shadow: -0.8px -0.8px 0 var(--color-primary), 0.8px -0.8px 0 var(--color-primary), -0.8px 0.8px 0 var(--color-primary), 0.8px 0.8px 0 var(--color-primary);
     background: rgba(123,139,255,0.15);
     padding: 25px;
     border-radius: 20px;
@@ -2823,6 +2825,27 @@ section:last-of-type{
 #portfolio .modal-content video {
   width: 80%;
   height: auto;
+}
+
+.modal {
+    position: fixed;
+    inset: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgba(0, 0, 0, 0.8);
+    z-index: 9999;
+}
+
+.modal.hidden {
+    display: none;
+}
+
+.modal video {
+    max-height: 80vh; /* 80% de la hauteur de l'écran */
+    max-width: 90vw;  /* évite que ça dépasse en largeur */
+    object-fit: contain;
+    border-radius: 15px;
 }
 
 #portfolio .close {
