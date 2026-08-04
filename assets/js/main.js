@@ -381,22 +381,25 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     },2500);
   });
   
-  document.querySelectorAll('.filter-btn').forEach(button => {
+document.querySelectorAll('.filter-btn').forEach(button => {
     button.addEventListener('click', () => {
-        let filter = button.getAttribute('data-filter');
-        console.log(filter);
-        let filterElements = document.querySelectorAll(filter);
+
+        const filter = button.getAttribute('data-filter');
+
         document.querySelectorAll('.card:not(.clone)').forEach(card => {
+
+            const container = card.closest('.card_container');
+
             if (filter === 'all' || card.classList.contains(filter)) {
-                card.style.display = "block";
-                filterElements.forEach((element) => element.style.display = "block");
+                container.style.display = "block";
             } else {
-                card.style.display = "none";
-                filterElements.forEach((element) => element.style.display = "none");
+                container.style.display = "none";
             }
+
         });
+
     });
-  });
+});
 
 //------------------------portfolio horizontal scroll
 
@@ -501,15 +504,6 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     });
 
-    function autoScroll() {
-        if (!userClicked && !isMobile) {
-            activeIndex = (activeIndex + 1) % projects.length;
-            showProject(activeIndex);
-        }
-    }
-
-    showProject(activeIndex);
-    if (!isMobile) setInterval(autoScroll, 60000); 
 });
 
 

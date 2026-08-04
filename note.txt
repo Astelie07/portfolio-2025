@@ -9,8 +9,16 @@ Ne pas s'inquiéter si inactif lors d'éditions
 - voir si on peut retrouver figma omniversus : video, lien -> meilleure description
 - besoin dans inventaire : jira
 
+----------------------------------------
+ENG TRAD
+
 - portfolio : à ajouter 	
-	projet m1 (pas mtn)	
+	artfight 2026	
+
+- NOUVELLE PARTIE : JEUX FINIS -> projet m1 + Ready fire ants
+	-> retirer RFA et Endheld du portfolio
+
+----------------------------------------
 
 - portfolio / carte 
 	carte rainbow challenge
@@ -22,6 +30,7 @@ Ne pas s'inquiéter si inactif lors d'éditions
 	escapausorus
 	projet m1 (pas mtn)
 
+----------------------------------------
 	
 - ajout stickers 
 	- huepoe - dark : Pamela ? Hollow knight charm ? Hollow knight grum ?
@@ -35,7 +44,7 @@ Ne pas s'inquiéter si inactif lors d'éditions
 		-> Oneshot : L : Lightbulb | D : Phosphor lantern
 		-> epic mickey : L : pinceau peinture | D : pinceau dissolvant
 			
-- Refaire arbre avec un sol !!!!!! pour transition avec projet (ou contact si autre idee pour projet)
+- Refaire arbre 
 
 IDEES + -------------------
 
@@ -50,87 +59,3 @@ Avec la recherche d'alternance, coder c'est dur
 
 save ---------------------------
 
-<!-- ------------------------------------------------------------- PROJETS ------------------------------------------------------- -->
-
-<section class="projects-section">
-
-  <h2 class="wavy" id="h2-projet">Projets</h2>  
-  
-  <!-- Sélection verticale des projets -->
-    
-    <div class="project-selection">
-        <div class="project-tab active" data-project="1">Ele Monster World</div>
-        <div class="separator"></div> 
-        <div class="project-tab" data-project="2">RPG Fantasy</div>
-        <div class="separator"></div> 
-        <div class="project-tab" data-project="3">?????</div>
-    </div>
-
-    <div class="project-content">
-        <div class="project-details" id="project-1">
-
-          <h2>🎮 Ele Monster World 🎮</h2>
-
-          <p><em>Un projet de jeu vidéo en développement, imaginé par <a href="https://www.linkedin.com/in/ben-vitré-aa24102aa/">Ben Vitré</a>, sur lequel je travaille en tant que développeuse.</em></p>
-
-          <hr>
-
-          <p><strong>Ele Monster World</strong> est un RPG en cours de création, pensé pour tous les publics. Son univers joyeux, coloré et contrasté plonge les joueurs dans un monde de fantasy médiévale, où l'aventure se vit à son rythme, en solo ou avec des amis.</p>
-
-          <h3>Piliers du gameplay :</h3>
-          <ul>
-              <li>🌍 <strong> Exploration </strong> : découvrir un monde riche, rempli de secrets et de surprises.</li>
-              <li>🐾 <strong> Combats d'Ele Monsters </strong> : affronter, capturer et entraîner des créatures uniques.</li>
-              <li>🔨 <strong> Gestion de ressources et création d'objets </strong> : récolter, crafter et optimiser son équipement.</li>
-          </ul>
-
-          <p>Conçu pour être accessible et facile à prendre en main, <strong>Ele Monster World</strong> s'adapte à tous les styles de jeu : des sessions courtes de quelques minutes comme des aventures plus longues de plusieurs heures.</p>
-
-          <p>Le projet est en développement pour une sortie sur <strong>mobile, PC et consoles</strong>. Il reflète des valeurs qui nous tiennent à cœur : <strong>le plaisir de jouer, la cohésion et la créativité</strong>.<br></p>
-          <p>N'hésitez pas à suivre le linkedIn du studio pour voir l'avancée : <a href="https://www.linkedin.com/company/gear-cloud-studio/">Cliquez ici</a></p>
-
-        </div>
-
-      <hr class="hr-projet">
-
-        <!-- Projet 2 -->
-        <div class="project-details" id="project-2">
-          <h2>🎮 RPG Fantaisie 🎮</h2>
-          <hr>
-          <p>
-            Ce jeu m'est venu à l'idée il y maintenant trois ans, et même si çe n'est pas le premier que j'ai imaginé, c'est en revanche celui qui est le plus avancé.<br>
-            Il s'agit d'un RPG de fantaisie parodique.<br>
-            En effet, même si je n'ai pas encore commencé un réel développement, l'histoire du jeu est écrite, les personnages principaux sont crées, et le gameplay est décidé.<br>
-          </p>
-          
-          <div class="gallery">
-            <div class="gallery-item">
-                <p>Une première version</p>
-                <img src="assets/img/projet/mie.jpg" alt="Premier design de Mie">
-            </div>
-        
-            <div class="gallery-item">
-                <p>Puis redessiné par <a href="https://firebell1703.github.io/honorine-portfolio.github.io/" target="_blank">Honorine Henryon</a></p>
-                <img src="assets/img/projet/mie-nn.png" alt="Mie dans le style de @firebell1703">
-            </div>
-        
-            <div class="gallery-item">
-                <p>Et je crée la version 3D sur Blender</p>
-                <iframe title="Mie" frameborder="0" allowfullscreen mozallowfullscreen="true" webkitallowfullscreen="true" allow="autoplay; fullscreen; xr-spatial-tracking" src="https://sketchfab.com/models/c0d38675a06a464984b57b672403626d/embed?ui_theme=dark"></iframe>
-            </div>
-          </div>
-
-          <p>
-              <strong>  →   Démo à venir</strong>
-          </p>
-        
-        </div>
-
-      <hr class="hr-projet">
-
-        <!-- Projet 3 -->
-        <div class="project-details" id="project-3">
-            <h2>A venir... </h2>
-        </div>
-    </div>
-</section> 

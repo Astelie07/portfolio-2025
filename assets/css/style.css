@@ -1501,180 +1501,282 @@
 
 /* ----------------------------------------------------------------PROJETS---------------------------------------------------------------------- */
 
+
   .hr-projet{
       display:none;
     }
 
-  .projects-section {
-      display: flex;
-      padding:0;
-      width: 100%;
-      min-height: 22rem;
-      position: relative; 
-      background: url("../img/projet-light.png");
-      background-position: 50% 50%;
-      background-size: cover;
-      overflow: hidden;
+ .projects-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0;
+    width: 100%;
+    position: relative;
+    overflow: hidden;
   }
 
   #h2-projet {
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
     text-align: center;
+    margin: 0;
   }
 
   /* Section de sélection */
   .project-selection {
-      width: 25%;
-      display: flex;
-      flex-direction: column;
-      justify-content: center; /* Centre verticalement */
-      align-items: center;
-      padding: 50px 0;
-      position: relative;
-      z-index: 2; /* Pour être au-dessus du fond */
-  }
-
-  .project-tab {
-      padding: 15px;
-      text-align: center;
-      cursor: pointer;
-      transition: background 0.3s;
-      border-radius : 10px;
-      width: 80%;
-  }
-
-  .project-tab:hover {
-      background: var(--color-accent);
-  }
-
-  .project-tab.active {
-      background: var(--color-primary);
-      color : var(--color-text);
-  }
-
-  /* Séparateurs verticaux */
-  .separator {
-      width: 2px; /* Largeur du trait vertical */
-      height: 30px; /* Hauteur du trait */
-      background-color: rgba(255, 255, 255, 0.5); /* Légèrement transparent */
-      margin: 10px 0; /* Espacement entre les onglets */
-  }
-
-  /* Contenu du projet */
-  .project-content {
-    flex: 1;
-    padding: 20px;
-    position: relative; /* Garde la position relative pour gérer les enfants */
-    min-height: auto; /* Permet à la hauteur de s'adapter au contenu */
-    overflow: visible; /* Empêche la coupure du contenu */
-  }
-
-  /* Appliquer un background dynamique */
-  .project-details {
-    display: none; /* Toujours caché par défaut */
-    position: relative; /* Relative pour suivre la hauteur naturelle */
     width: 100%;
-    padding: 50px;
-    background-size: cover;
-    background-position: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    padding: 20px 0 5px;
+    margin: 0;
+    background: transparent;
+  }
+
+.project-tab {
+    padding: 15px;
+    text-align: center;
+    cursor: pointer;
+    transition: background 0.3s;
+    border-radius : 10px;
+    width: auto;
+    min-width: 180px;
+}
+
+.project-tab:hover {
+    background: var(--color-background);
+}
+
+.project-tab.active {
+    background: var(--color-primary);
+    color : var(--color-text);
+}
+
+/* Séparateurs verticaux */
+.separator {
+    width: 2px;
+    height: 25px;
+    margin: 0;
+} 
+/* Contenu du projet */
+.project-content {
+  flex: 1;
+  padding: 0;
+  position: relative; /* Garde la position relative pour gérer les enfants */
+  min-height: auto; /* Permet à la hauteur de s'adapter au contenu */
+  overflow: visible; /* Empêche la coupure du contenu */
+}
+
+/* Appliquer un background dynamique */
+.game-page {
+    width: 100%;
+}
+
+.game-header {
+    text-align: center;
+}
+
+.game-header h2 {
+    font-size: 2rem;
+}
+
+.game-tagline {
+    font-size: 1.2rem;
+}
+
+.game-showcase {
+    display: flex;
+    gap: 30px;
+    align-items: center;
+    margin: 35px 0 10px;
+}
+
+.game-trailer {
+    flex: 2;
+}
+
+.game-trailer iframe {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    border-radius: 20px;
+}
+
+.game-info {
+    flex: 1;
+    background: rgba(123,139,255,0.15);
+    padding: 25px;
+    border-radius: 20px;
+}
+
+.game-info p {
+    margin: 12px 0;
+}
+
+.game-links {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-top: 25px;
+}
+
+.game-links a {
+    background: var(--color-primary);
     color: var(--color-text);
-    opacity: 0;
-    transition: opacity 0.5s ease-in-out;
-    animation: fadeIn 0.5s ease-in-out;
-  }
+    padding: 12px;
+    border-radius: 15px;
+    text-align: center;
+    text-decoration: none;
+    transition: .3s;
+}
 
-  /* Montrer le projet actif avec une animation douce */
-  .project-details.active {
-      display: block;
-      opacity: 1;
-  }
+.game-links a:hover {
+    transform: translateY(-4px);
+    background: var(--color-accent);
+}
 
-  /* Cacher les projets non actifs */
-  .hidden {
-      display: none;
-  }
+.game-description,
+.game-features,
+.game-development {
+    padding: 20px;
+}
 
-  /* Animation d'apparition */
-  @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(10px); }
-      to { opacity: 1; transform: translateY(0); }
-  }
+.feature-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
 
-  /* Style général des détails de projet */
+.feature-card {
+    background: rgba(123,139,255,0.15);
+    border-radius: 20px;
+    padding: 25px;
+    text-align: center;
+    transition: .3s;
+}
+
+.feature-card:hover {
+    transform: translateY(-5px);
+}
+
+.feature-card span {
+    font-size: 2.5rem;
+}
+
+.feature-card h4 {
+    margin: 15px 0;
+}
+
+@media screen and (max-width: 900px) {
+
+    .game-showcase {
+        flex-direction: column;
+    }
+
+    .feature-grid {
+        grid-template-columns: 1fr;
+    }
+
+}
+
+.project-details {
+  display: none; /* Toujours caché par défaut */
+  position: relative; /* Relative pour suivre la hauteur naturelle */
+  width: 100%;
+  padding: 50px;
+  background-size: cover;
+  background-position: center;
+  color: var(--color-text);
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+/* Montrer le projet actif avec une animation douce */
+.project-details.active {
+    display: block;
+    opacity: 1;
+}
+
+/* Cacher les projets non actifs */
+.hidden {
+    display: none;
+}
+
+/* Animation d'apparition */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Style général des détails de projet */
 .project-content .project-details {
   border-radius: 16px;
-  padding: 24px;
+  padding: 0px;
   font-family: 'Arial', sans-serif;
   max-width: 100%;
   line-height: 1.6;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-/* Paragraphes centrés pour les introductions */
-#project-1 p:first-of-type, #project-1 h2 {
-  text-align: center;
+  width: 80%;
+  margin: auto;
 }
 
 /* Ligne de séparation */
 .project-details hr {
-  margin: 15px 25%;
-  color: var(--color-primary);
-  background-color: var(--color-primary);
+margin: 15px 25%;
+color: var(--color-accent);
+background-color: var(--color-accent);
 }
 
 /* Mise en valeur des strong */
 .project-details strong {
-  text-shadow: 1px 1px 0px var(--color-primary);
+text-shadow: 1px 1px 0px var(--color-primary);
 }
 
 .project-details li strong {
-  background-color: var(--color-primary);
-  border-radius: 10px;
+background-color: #7b8bff81;
+border-radius: 10px;
 }
 
 /* Liens */
 .project-details a {
-  color: var(--color-accent);
-  text-decoration: none;
-  padding: 10px;
-  border-radius: 15px;
+color: var(--color-secondary);
+text-decoration: none;
+padding: 10px;
+border-radius: 15px;
 }
 
 .project-details a:hover {
-  color: var(--color-primary);
-  background-color: var(--color-text);
+color: white;
+background-color: #7b8bff81;
 }
 
 /* Contenu général */
 .project-content {
-  text-align: left;
-  font-size: 1.1em;
-  margin: 10px 0;
+text-align: left;
+font-size: 1.1em;
+margin: 10px 0 0;
+min-height: 80vh;
 }
 
 /* Liste */
 .project-content ul {
-  padding-left: 20px;
-  list-style: none;
+padding-left: 20px;
+list-style: none;
 }
 
 .project-content li {
-  padding: 0 10px;
-  font-size: 1.1em;
-  display: flex;
-  align-items: center;
+padding: 0 10px;
+font-size: 1.1em;
+display: flex;
+align-items: center;
 }
 
 /* Icônes */
 .project-content li strong {
-  margin-left: 8px;
+margin-left: 8px;
 }
 
-.project-content h2, #project-1 p:first-of-type{
-  text-align: center;
-}
 
 /* --- Galerie d'images --- */
 
