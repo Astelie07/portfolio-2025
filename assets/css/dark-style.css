@@ -1125,7 +1125,7 @@ interets {
   }
 
   #gallery-dessin{
-    max-width: 50%;
+    max-width: 70%;
     margin: 1rem auto;
     display: flex;
     justify-content: center;
@@ -2632,79 +2632,124 @@ margin-left: 8px;
 /* ========== CONTACT SECTION COMPACT ========== */
 
 #contact {
-  background: #1ba06a;
-  color: var(--color-background);
+  position: relative;
+  overflow: hidden;
+  color: var(--color-text);
   text-align: center;
+  padding: 5px;
 }
 
 #contact h2 {
-  font-size: 2rem;
+  margin-bottom: 2rem;
 }
 
-.contact-list {
+.contact-card {
+  position: relative;
+  z-index: 2;
+  max-width: 600px;
+  margin: auto;
+  padding: 2rem;
+  border-radius: 25px;
+  background: var(--color-background);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+}
+
+.contact-intro {
+  margin-bottom: 2rem;
+  font-size: 1.1rem;
+}
+
+.contact-info {
   display: flex;
-  flex-direction: row;
-  list-style: none;
-  padding: 0;
-  margin: 0;
   justify-content: center;
-  gap: 70px;
+  gap: 3rem;
+  flex-wrap: wrap;
+  margin-bottom: 2rem;
 }
 
-.list-item {
+.contact-item {
   display: flex;
   align-items: center;
-  gap: 0.7rem;
-  justify-content: center;
+  gap: 0.8rem;
   font-size: 1rem;
-  margin: 0.5rem 0;
 }
 
-.social-media-list {
+.contact-item i {
+  font-size: 1.4rem;
+}
+
+.contact-item a {
+  color: var(--color-text);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.contact-item a:hover {
+  color: #f04604;
+}
+
+.social-section {
+  margin-top: 2rem;
+}
+
+.social-section h3 {
+  margin-bottom: 1.5rem;
+}
+
+.social-buttons {
   display: flex;
-  gap: 1rem;
   justify-content: center;
-  list-style: none;
-  padding: 0;
+  align-items: center;
+  gap: 1.5rem;
 }
 
-.contact-icon i {
-  font-size: 1.8rem;
-  color: var(--color-contact);
-  transition: color 0.3s;
+.social-buttons a {
+  width: 65px;
+  height: 65px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 18px;
+  color: var(--color-text);
+  background: var(--color-secondary);
+  font-size: 2rem;
+  transition: transform 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
+  text-decoration: none;
 }
 
-.contact-icon i, .list-item a {
-  color: var(--color-background);
+.social-buttons a:hover {
+  transform: translateY(-6px) rotate(4deg);
+  color: #f04604;
+  box-shadow: 0 8px 15px rgba(0,0,0,0.15);
 }
 
-.contact-icon:hover i, .list-item a:hover {
-  color: var(--color-primary);
+.contact-sticker {
+  position: absolute;
+  max-width: 13%;
+  cursor: pointer;
+  z-index: 3;
+  transition: transform 0.3s ease;
 }
 
-.copyright {
-  font-size: 0.75rem;
+.contact-sticker:hover {
+  transform: scale(1.15) rotate(8deg);
+}
+
+.sticker-left {
+  top: 27%;
+  left: 6%;
+}
+
+.sticker-right {
+  top: 27%;
+  right: 6%;
+}
+
+footer {
+  margin-top: 3rem;
+  font-size: 0.8rem;
   opacity: 0.7;
-} 
-
-.gmail{
-  color: var(--text_color);
 }
-
-/* Responsive */
-
-@media (max-width: 768px) {
-  .contact-wrapper {
-    flex-direction: column;
-  }
-
-}
-
-section:last-of-type{
-  padding-bottom: 0.2rem;
-  padding-top: 1rem;
-}
-
 
 /* ------------------------------- SCROLL ------------------------------- */
 

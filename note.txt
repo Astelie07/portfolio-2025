@@ -1,21 +1,21 @@
+EN COURS : -----
+
+
+- Traduction anglaise
+
+- "https://assets.codepen.io/7237686/energy.svg?format=auto" - lien vers image health de stardew valley -> à refaire car lien mort
+
+
 A faire : -----
 
-NOTE IMPORTANTE : le transfert de style fonctionne en build!!!!
-Ne pas s'inquiéter si inactif lors d'éditions
+NOTE IMPORTANTE : le transfert de style et lecteur YouTube fonctionnent en build!!!! Ne pas s'inquiéter si inactif lors d'éditions
 
 - mettre à jour : texte + présentation + CV
-- refaire partie projet
 - refaire video site or3o (si possible)
 - voir si on peut retrouver figma omniversus : video, lien -> meilleure description
 - besoin dans inventaire : jira
-
-----------------------------------------
-ENG TRAD
-
 - portfolio : à ajouter 	
 	artfight 2026	
-
-----------------------------------------
 
 - portfolio / carte 
 	carte rainbow challenge
@@ -26,8 +26,6 @@ ENG TRAD
 	entrainement unity (plane)
 	escapausorus
 	projet m1 (pas mtn)
-
-----------------------------------------
 	
 - ajout stickers 
 	- huepoe - dark : Pamela ? Hollow knight charm ? Hollow knight grum ?
