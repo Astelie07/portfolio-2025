@@ -1,20 +1,8 @@
 EN COURS : -----
 
-
-- "https://assets.codepen.io/7237686/energy.svg?format=auto" - lien vers image health de stardew valley -> à refaire car lien mort
-
-
-A faire : -----
-
-NOTE IMPORTANTE : le transfert de style et lecteur YouTube fonctionnent en build!!!! Ne pas s'inquiéter si inactif lors d'éditions
-
 - mettre à jour : texte + présentation + CV
-- refaire video site or3o (si possible)
-- voir si on peut retrouver figma omniversus : video, lien -> meilleure description
-- besoin dans inventaire : jira
 - portfolio : à ajouter 	
 	artfight 2026	
-
 - portfolio / carte 
 	carte rainbow challenge
 	globale game jam
@@ -23,8 +11,14 @@ NOTE IMPORTANTE : le transfert de style et lecteur YouTube fonctionnent en build
 	Omega		<- https://khalerzaad.itch.io/omega
 	entrainement unity (plane)
 	escapausorus
-	projet m1 (pas mtn)
-	
+
+A faire : -----
+
+NOTE IMPORTANTE : le transfert de style et lecteur YouTube fonctionnent en build!!!! Ne pas s'inquiéter si inactif lors d'éditions
+
+- refaire video site or3o (si possible)
+- voir si on peut retrouver figma omniversus : video, lien -> meilleure description
+- besoin dans inventaire : jira	
 - ajout stickers 
 	- huepoe - dark : Pamela ? Hollow knight charm ? Hollow knight grum ?
 	Huepoe = dark -> anneau light ?
@@ -45,10 +39,4 @@ IDEES + -------------------
 
 - dialogue si 1min inactivité 
 
-- score avec petites étoiles
-
-
-Avec la recherche d'alternance, coder c'est dur
-
 save ---------------------------
-

@@ -1139,6 +1139,7 @@ interets {
   #archives{
     border : none;
     margin:25px;
+    background-color: var(--color-primary);
   }
 
   .archives-gallery-section .division{
@@ -2719,7 +2720,7 @@ margin-left: 8px;
 
 .social-buttons a:hover {
   transform: translateY(-6px) rotate(4deg);
-  color: #f04604;
+  color: #ce96d9;
   box-shadow: 0 8px 15px rgba(0,0,0,0.15);
 }
 
