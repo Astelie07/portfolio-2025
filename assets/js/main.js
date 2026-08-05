@@ -233,20 +233,6 @@ document.addEventListener("DOMContentLoaded", function() {
     }, 500); // Transition du loader
   }, 500); // Délai de 0.5s pour commencer la transition du loader
 
-  // Quand la première vidéo est terminée, afficher la deuxième vidéo et faire apparaître le logo
-  // firstVideo.addEventListener("ended", function() {
-  //   // Masquer la première vidéo et afficher la deuxième
-  //   firstVideo.style.display = "none";
-  //   secondVideo.style.display = "block";
-
-  //   // Ajouter la classe "show" pour déclencher le fondu du logo
-  //   logo.classList.add("show");
-
-  //   // Lancer la deuxième vidéo dès qu'elle est visible
-  //   secondVideo.play().catch(error => {
-  //     console.error("Erreur lors de la lecture de la deuxième vidéo : ", error);
-  //   });
-  // });
 
   // Menu burger
   const burgerIcon = document.querySelector(".menu-burger");
@@ -424,7 +410,7 @@ document.querySelectorAll('.filter-btn').forEach(button => {
       isDragging = true;
       lastX = e.clientX;
       velocity = 0;
-      cancelAnimationFrame(rafId); // Stoppe l'inertie quand on clique
+      cancelAnimationFrame(rafId); // Stop l'inertie quand on clique
   });
 
   container.addEventListener('mousemove', (e) => {

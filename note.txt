@@ -1,8 +1,6 @@
 EN COURS : -----
 
 
-- Traduction anglaise
-
 - "https://assets.codepen.io/7237686/energy.svg?format=auto" - lien vers image health de stardew valley -> à refaire car lien mort
 
 
