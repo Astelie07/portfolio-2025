@@ -1804,7 +1804,6 @@ margin-left: 8px;
 .project-content .gallery img, 
 .project-content .gallery iframe {
   max-width: 100%;
-  height: 450px; /* Hauteur uniforme pour toutes les images */
   object-fit: cover; /* Remplissage sans déformation */
   object-position: center; /* Centrage de l'image */
   border-radius: 12px;

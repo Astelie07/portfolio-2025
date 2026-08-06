@@ -1,16 +1,16 @@
 EN COURS : -----
 
 - mettre à jour : texte + présentation + CV
-- portfolio : à ajouter 	
-	artfight 2026	
 - portfolio / carte 
-	carte rainbow challenge
-	globale game jam
-	Projet Eesi <- serv discord dispo
-	Nanoprojet
-	Omega		<- https://khalerzaad.itch.io/omega
-	entrainement unity (plane)
-	escapausorus
+
+artfight 2026
+maskaboom
+Projet Eesi <- serv discord dispo
+Omega		<- https://khalerzaad.itch.io/omega
+the absurd waltz -entrainement unity (plane)
+Escape from jarda - escapausorus
+animations 3D portfolio	
+	
 
 A faire : -----
 
@@ -40,3 +40,5 @@ IDEES + -------------------
 - dialogue si 1min inactivité 
 
 save ---------------------------
+
+
