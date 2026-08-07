@@ -79,6 +79,14 @@
 
 /* ------------------------------FIN LOADER--------------------------*/
 
+#construction_p{
+  font-size: smaller;
+  flex-direction:row;
+  display:flex;
+  justify-content: center;
+  color:var(--color-background)
+}
+
   * {
     margin: 0;
     padding: 0;
@@ -1058,9 +1066,9 @@
     margin: 15px auto;
   }
 
-  #galleryModalInktober img, #jinx-gallery img, #galleryOmniversus img, #galleryOr3o img, #figmadGallery img, #hackGallery img{
-    max-width: 45%;
-    margin: 15px auto;
+  .media-gallery video{
+    max-width: 100%;
+    margin: 5px auto;
   }
 
   /* ------------------------------------------ Style du bouton de changement de thème ------------------------------------------*/
@@ -1789,7 +1797,7 @@ margin-left: 8px;
 /* Galerie en grille */
 .project-content .gallery {
   display: grid;
-  grid-template-columns: repeat(3, 1fr); /* 3 colonnes égales */
+  grid-template-columns: repeat(2, 1fr); 
   gap: 20px;
   margin: 20px 0;
   align-items: start;
@@ -1822,6 +1830,8 @@ margin-left: 8px;
 .project-content .gallery iframe:hover, .dessin-items:hover {
   transform: scale(1.05);
 }
+
+/* --- Galerie d'images SPECIFICATIONS --- */
 
 /* ---------------------------- MUSIC STICKERS ---------------------------- */
 
@@ -2169,19 +2179,19 @@ margin-left: 8px;
 
 .project {
     overflow: hidden;
-
     border-radius: 20px;
-
-    background: var(--color-accent);
+    background: var(--color-text);
+    background: linear-gradient(0deg,var(--color-primary) 0%, var(--color-text) 100%);
     color: white;
-
     box-shadow: 0 5px 15px rgba(0,0,0,.15);
-
     cursor: pointer;
-
     transition:
         transform .3s ease,
         box-shadow .3s ease;
+}
+
+#stars-container{
+  display:none;
 }
 
 .project:hover {
@@ -2217,7 +2227,7 @@ margin-left: 8px;
 
     border-radius: 30px;
 
-    background: var(--color-primary);
+    background: var(--color-accent);
     color: white;
 
     font-size: .85rem;

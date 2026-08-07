@@ -1,18 +1,19 @@
 EN COURS : -----
 
-- mettre à jour : texte + présentation + CV
+- mettre à jour : CV
 - portfolio / carte 
 
 artfight 2026
 maskaboom
-Projet Eesi <- serv discord dispo
-Omega		<- https://khalerzaad.itch.io/omega
-the absurd waltz -entrainement unity (plane)
-Escape from jarda - escapausorus
-animations 3D portfolio	
-	
+Projet Eesi <- https://fantome-apparent.itch.io/back-to-the-old-house
+
+
 
 A faire : -----
+
+-/* --- Galerie d'images SPECIFICATIONS --- */ - lignes :
+	1834
+	1992
 
 NOTE IMPORTANTE : le transfert de style et lecteur YouTube fonctionnent en build!!!! Ne pas s'inquiéter si inactif lors d'éditions
 

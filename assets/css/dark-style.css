@@ -92,6 +92,13 @@
 
 /* ------------------------------FIN LOADER--------------------------*/
 
+#construction_p{
+  font-size: smaller;
+  flex-direction:row;
+  display:flex;
+  justify-content: center;
+}
+
 /* ------------------------------------------------DARK THEME----------------------------------------------*/
 /* Réinitialisation de marges et paddings */
 * {
@@ -1112,10 +1119,11 @@ interets {
     margin: 15px auto;
   }
 
-  #galleryModalInktober img, #jinx-gallery img, #galleryOmniversus img, #galleryOr3o img, #figmadGallery img, #hackGallery img{
-    max-width: 45%;
-    margin: 15px auto;
+  .media-gallery video{
+    max-width: 100%;
+    margin: 5px auto;
   }
+
 
   /* ------------------------------------------ Style du bouton de changement de thème ------------------------------------------*/
 
@@ -1947,7 +1955,7 @@ margin-left: 8px;
 /* Galerie en grille */
 .project-content .gallery {
   display: grid;
-  grid-template-columns: repeat(3, 1fr); /* 3 colonnes égales */
+  grid-template-columns: repeat(2, 1fr); 
   gap: 20px;
   margin: 20px 0;
   align-items: start;
@@ -1980,6 +1988,8 @@ margin-left: 8px;
 .project-content .gallery iframe:hover, .dessin-items:hover {
   transform: scale(1.05);
 }
+
+/* --- Galerie d'images SPECIFICATIONS --- */
 
 /* ---------------------------- MUSIC STICKERS ---------------------------- */
 
@@ -2138,8 +2148,8 @@ margin-left: 8px;
 .btn-primary,
 .btn-secondary {
     border: none;
-    background: var(--color-text);
-    color: var(--color-background);
+    background: var(--color-secondary);
+    color: var(--color-accent);
     transition: .25s ease;
     padding: 15px;
     margin: 5px 10px;
@@ -2149,7 +2159,7 @@ margin-left: 8px;
 .btn:hover,
 .btn-primary:hover,
 .btn-secondary:hover {
-    background: var(--color-primary);
+    background: var(--color-background);
     color: var(--color-text);
 }
 
@@ -2338,6 +2348,7 @@ margin-left: 8px;
     overflow: hidden;
     border-radius: 20px;
     background: var(--color-primary);
+    background: linear-gradient(0deg,var(--color-background) 0%, var(--color-primary) 100%);
     color:var(--color-text);
     box-shadow: 0 5px 15px rgba(0,0,0,.15);
     cursor: pointer;
@@ -2345,6 +2356,8 @@ margin-left: 8px;
         transform .3s ease,
         box-shadow .3s ease;
 }
+
+
 
 .project:hover {
     transform: translateY(-4px);
@@ -2749,7 +2762,19 @@ margin-left: 8px;
         5px 5px 50px 14px var(--color-text);
 
     animation:
-        blink-2 3.5s linear infinite;
+        twinkle 20s linear infinite;
+}
+
+@keyframes twinkle {
+    0% {
+        opacity: 0.2;
+    }
+    50% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0.2;
+    }
 }
 
 @keyframes greentopBubbles {
