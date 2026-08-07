@@ -8,767 +8,1160 @@
     <link id="icon" rel="icon" href="assets/img/icon-L.ico"/>
 
     <title>Portfolio | Details</title>
+
 </head>
-<body id="body-portfolio">
 
-    <!-- Loader -->
-    <div id="loader_div" style="display: flex;">
-        <img src="assets/img/cat.gif" alt="Little seepling cat GIF" style="width: 20%;" id="catgif"/>
-        <span class="loader">Loading...</span>
-        <div class="cat_paw"></div>
-    </div>
+<body>
 
-<div id="content-portfolio" style="display: none;">
+<div id="stars-container"></div>
 
-    <h2 class="wavy" style="margin:0;padding:2rem;">Portfolio</h2>
-
-    <!-- Barre latérale -->
-    <div class="sidebar">
-        <button class="filter-btn active" data-filter="all">All</button>
-        <button class="filter-btn ux-ui" data-filter="ux-ui">UX / UI</button>
-        <button class="filter-btn video" data-filter="video">Video</button>
-        <button class="filter-btn graphisme" data-filter="graphisme">Graphic Design</button>
-        <button class="filter-btn modelisation" data-filter="modelisation">3D Modeling</button>
-        <button class="filter-btn jeu-video" data-filter="jeu-video">Video Game</button>
-        <button class="filter-btn dessin" data-filter="dessin">Drawing</button>
-    </div>
-
-    <!-- Conteneur principal -->
-    <div class="container">
-
-        <!-- Cartes de sélection -->
-        <div class="cards-wrapper">
-            <div class="cards-container">
-
-                <div class="card-details ux-ui" data-theme="ux-ui" data-title="Portfolio 2024" data-content="Previous portfolio, completed in February 2024 at the end of my Bachelor's degree." data-image="assets/img/portfolio/portfolio-2024.png">
-    <h4>Portfolio 2023-2024</h4>
-    <img src="assets/img/portfolio/portfolio-2024.png" class="img-fluid-details" alt="Portfolio 2024">
-
-    <div class="display-media" style="display: none;">
-
-    <div>
-        <p>I am very proud of this website, so I invite you to visit it and see the similarities between the previous version and this one.</p>
-        <a href="https://astelie07.github.io/henryonastelie-portfolio/" target="_blank" class="btn btn-primary">
-            💻 Visit the website
-        </a>
-        <p>It contains a lot of my identity and my early work. I worked on it for 5 months, from September 2023 to February 2024.<br>Here are some screenshots if you do not want to visit it right away:<br></p>
-    </div>
-
-    <div class="gallery" id="inktober24-gallery">
-        <img src="assets/img/portfolio/portfolio-home.png" width="40%" alt="Portfolio 2024 homepage">
-        <img src="assets/img/portfolio/portfolio-2024-dark.png" width="40%" alt="Portfolio 2024 homepage dark theme">
-    </div>
-    </div>
-                </div>
-
-                <div class="card-details dessin" data-theme="dessin" data-category="dessin" data-title="Inktober 2024" data-content="Art challenge: one drawing per day in October, with assigned themes. 31 illustrations inspired by various universes (games, series, movies, anime)." data-category="" data-date="October 2024" data-gallery-images='["assets/img/portfolio/inktober23/inktober-ensemble.png", "assets/img/portfolio/inktober23/inktober_liste.jpg"]'>
-                    <h4>Inktober 2024</h4>
-                    <img src="assets/img/portfolio/inktober2024.png" class="img-fluid-details" alt="Preview of the Inktober 2024 drawings">
-
-                    <div class="display-media" style="display: none;">
-                        <!-- Inktober 2024 gallery below the card -->
-                        <div class="gallery" id="inktober24-gallery">
-                            <img src="assets/img/portfolio/inktober24-1-16.png" width="40%" alt="Mosaic of the 31 drawings">
-                            <img src="assets/img/portfolio/inktober24-17-31.png" width="40%" alt="List of Inktober themes">
-                        </div>
-                    </div>
-                </div>
-
-                <div class="card-details dessin" data-theme="dessin" data-category="dessin" data-title="Rainbow challenge" data-content="Art challenge during the summer holidays of 2024: one drawing per week, each with a different color and at least 7 characters.">
-                    <h4>Rainbow Challenge</h4>
-                    <img src="assets/img/portfolio/rainbow-min.png" class="img-fluid-details" alt="Preview of the Rainbow Challenge drawings">
-
-                    <!-- Rainbow Challenge gallery below the card -->
-                    <div class="display-media" style="display: none;">
-
-                    <img src="assets/img/portfolio/rainbow.png" width="100%" alt="Rainbow Challenge mosaic">
-
-                    </div>
-                </div>
-
-                <div class="card-details jeu-video"
-                    data-theme="jeu-video"
-                    data-title="The Escape - MMI3 Project"
-                    data-content="Horror video game inspired by the Backrooms, created as part of the final BUT MMI project."
-                    data-category="Video game"
-                    data-date="September 2023 - February 2024">
-                    <h4>The Escape - MMI3 Project</h4>
-                    <img src="assets/img/portfolio/escape-min.png" class="img-fluid-details" alt="The Escape - MMI3 Project">
-
-                    <!-- Interactive buttons to access the website and trailer -->
-                    <div class="display-media" style="display: none;">
-
-                    <div class="portfolio-preview" id="escape-links">
-                        <a href="https://m-u-c-k-a.github.io/backroom-game/" target="_blank" class="btn btn-primary">
-                            💻 Visit the website
-                        </a>
-                        <a href="https://www.youtube.com/embed/rvK_ZZMRh08?si=6s_oHPKoeThFsKl7" target="_blank" class="btn btn-secondary">
-                            🎬 Watch the trailer
-                        </a>
-                        <!-- WARNING: LINK TO CHANGE !!!!! -->
-                        <a href="https://drive.google.com/file/d/1OnxE9-CM5teGECS5SuXqscY07XfH_v6X/view?usp=drive_link" target="_blank" class="btn btn-primary">
-                            🎮 Download the game
-                        </a>
-                    </div>
-
-                    <!-- Development team members list -->
-                    <div id="escape-member">
-                        <h5>Other members of the development team:</h5>
-                        <ul>
-                            <li><a href="https://www.linkedin.com/in/bilal-boukhorissa-6153622a1/" target="_blank" >Bilal Boukhorissa</a></li>
-                            <li><a href="https://www.linkedin.com/in/nabil-boukhorissa/" target="_blank" >Nabil Boukhorissa</a></li>
-                            <li><a href="https://www.linkedin.com/in/esther-amegnisse/" target="_blank" >Esther Amegnisse</a></li>
-                            <li><a href="https://www.linkedin.com/in/hugo-delacour/" target="_blank" >Hugo Delacour</a></li>
-                            <li><a href="https://www.linkedin.com/in/tombihoreau/" target="_blank" >Tom Bihoreau</a></li>
-                        </ul>
-                    </div>
-
-                    <div class="sketchfab-embed-wrapper" id="mercure">
-                        <p>An example of a creature designed for this project:</p>
-                        <iframe title="Mercure walking animation" frameborder="0" allowfullscreen mozallowfullscreen="true" webkitallowfullscreen="true" allow="autoplay; fullscreen; xr-spatial-tracking" xr-spatial-tracking execution-while-out-of-viewport execution-while-not-rendered web-share src="https://sketchfab.com/models/b31e52818f3c41b3814ae3f74acadc6d/embed"></iframe>
-                    </div>
-
-                    <hr id="hr-escape">
-
-                    <!-- Associated gallery below the card -->
-                    <div class="container">
-                        <div class="gallery row" id="escape-gallery">
-                            <p class="col-sm-12">Some screenshots of the game:</p>
-                            <img class="col-md-9" src="assets/img/portfolio/escape-e1-1.PNG" width="500px" alt="Screenshot from The Escape">
-                            <img class="col-md-3" src="assets/img/portfolio/escape-e1-2.png" width="500px" alt="Screenshot from The Escape">
-                            <img class="col-md-8" src="assets/img/portfolio/escape-e2-1.PNG" width="500px" alt="Screenshot from The Escape">
-                            <img class="col-md-4" src="assets/img/portfolio/escape-e2-2.png" width="500px" alt="Screenshot from The Escape">
-                        </div>
-                    </div>
-                </div>
-                </div>
-
-                <div class="card-details ux-ui"
-                    data-theme="ux-ui"
-                    data-title="Altea Hackathon Project"
-                    data-content="This is the Altea project, created in 24 hours during a hackathon, with a UX/UI design inspired by professional platforms.">
-                    <h4>Altea Hackathon Project</h4>
-                    <img src="assets/img/portfolio/altea-min.png" class="img-fluid-details" alt="Altea logo, hackathon project">
-
-                    <!-- Project information -->
-                    <div class="display-media" style="display: none;">
-
-                    <div class="portfolio-details-info">
-                        <ul>
-                            <li><strong>Date</strong>: December 2023</li>
-                            <li><strong>Other team members</strong>:
-                                <a href="https://www.linkedin.com/in/esther-amegnisse/" target="_blank">Esther Amegnisse</a>,
-                                <a href="https://www.linkedin.com/in/nabil-boukhorissa/" target="_blank">Nabil Boukhorissa</a>,
-                                <a href="https://www.linkedin.com/in/tombihoreau/" target="_blank">Tom Bihoreau</a>,
-                                <a href="https://www.linkedin.com/in/hugo-delacour/" target="_blank">Hugo Delacour</a>
-                            </li>
-                        </ul>
-                    </div>
-
-                    <!-- Project description -->
-                    <div class="project-description">
-                        <p>Altea was created during a hackathon in December 2023, where we imagined a website similar to LinkedIn to solve an issue faced by many students: the lack of responses from recruiters. The goal of the platform is to create a sense of urgency, encouraging companies to respond faster through a reputation and rating system.</p>
-                        <p>We had to complete this project in 24 hours and present it to the rest of our class. This project allowed us to work on UX/UI design while integrating specific needs for both students and recruiters, with a different interface for each type of user.</p>
-                    </div>
-
-                    <!-- Associated gallery below the card -->
-                    <div class="gallery" id="hackGallery">
-                        <img src="assets/img/portfolio/altea-logo.png" width="500px" alt="Logo of the fictional Altéa company">
-                        <img src="assets/img/portfolio/altea-pages.png" width="600px" alt="All Figma pages of the fictional Altéa website">
-                    </div>
-
-                    <!-- PDF link -->
-                    <div class="pdf-link">
-                        <p>To view the Figma file as a PDF:
-                            <a href="assets/download/Altea.pdf" target="_blank">click here</a>.
-                        </p>
-                    </div>
-
-                    </div>
-                </div>
-
-                <div class="card-details ux-ui"
-                    data-theme="ux-ui"
-                    data-title="Figma Dashboard"
-                    data-content="Design of a Figma dashboard for deploying websites from a GitHub repository.">
-                    <h4>Figma Dashboard</h4>
-                    <img src="assets/img/portfolio/dashboard-min.png" class="img-fluid-details" alt="Figma Dashboard">
-
-                    <div class="display-media" style="display: none;">
-
-                    <!-- Project information -->
-                    <div class="portfolio-details-info">
-                        <ul>
-                            <li><strong>Date</strong>: November 2023</li>
-                            <li><strong>Client</strong>: Bear Studio</li>
-                        </ul>
-                    </div>
-
-                    <!-- Presentation video -->
-                    <div class="video-presentation" style="float:right;">
-                        <iframe width="45%" height="45%" src="https://www.youtube.com/embed/4x3B5n76M04?si=fMTQ2AuKUuqUMocG" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-                    </div>
-
-                    <!-- Project description -->
-                    <div class="project-description">
-                        <p>As part of our course, we had the opportunity to work with <a href="https://ivan.dalmet.fr" target="_blank">Ivan Dalmet</a> from <a href="https://www.bearstudio.fr" target="_blank">Bear Studio</a> to learn Figma best practices. The goal was to design a dashboard for developers, allowing them to deploy websites from a GitHub repository.</p>
-                        <p>Here were the specific instructions we were given:</p>
-                        <ul>
-                            <li>Create a dashboard in Figma.</li>
-                            <li>Target: 1440x900px laptop screen.</li>
-                            <li>Use color styles and components.</li>
-                            <li>Apply auto-layout for a responsive layout.</li>
-                        </ul>
-                    </div>
-
-                    <!-- Associated gallery below the card -->
-                    <div class="gallery" id="figmadGallery">
-                        <img src="assets/img/portfolio/dashboard-ensemble.png" width="500px" alt="Screenshot of the Figma Dashboard">
-                        <img src="assets/img/portfolio/dashboard-min.png" width="500px" alt="Example of the Figma dashboard">
-                    </div>
-
-                    </div>
-                </div>
-
-                <!-- Inktober 2023 card -->
-                <div class="card-details dessin" data-theme="dessin" data-title="Inktober 2023"
-                    data-content="Art challenge: one drawing per day in October, with assigned themes. 31 illustrations inspired by various universes (games, series, movies, anime)."
-                    data-category="dessin" data-date="October 2023">
-                    <h4>Inktober 2023</h4>
-                    <img src="assets/img/portfolio/inktober-min.png" class="img-fluid-details" alt="Preview of the Inktober 2023 drawings">
-
-                    <!-- Modal gallery -->
-                    <div class="display-media" style="display: none;">
-
-                    <div class="gallery" id="galleryModalInktober">
-                        <img src="assets/img/portfolio/inktober23/inktober-ensemble.png" width="500px" alt="Mosaic of the 31 drawings">
-                        <img src="assets/img/portfolio/inktober23/inktober_liste.jpg" width="500px" alt="List of Inktober themes">
-                    </div>
-                    </div>
-                </div>
-
-                <!-- Roll a Ball card -->
-                <div class="card-details jeu-video" data-theme="jeu-video"
-                    data-title="Roll a Ball"
-                    data-content="Creation of a small game in one day where the player controls a ball collecting objects.
-                    The game required adding a score counter, obstacles, and a display when all objects had been collected."
-                    data-category="Video game" data-date="October 23, 2023">
-                    <h4>Roll a Ball</h4>
-                    <img src="assets/img/portfolio/rollaball-min.png" class="img-fluid-details" alt="Roll a Ball game thumbnail">
-
-                    <div class="display-media" style="display: none;">
-
-                    <p>The first video shows the final version, while the second one shows a test version.</p>
-
-                    <div class="gallery">
-                        <iframe width="45%" height="40%" src="https://www.youtube.com/embed/DpQMb_K9xPg?si=2kmA0Ua2Co6qft2T" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-                        <iframe width="45%" height="40%" src="https://www.youtube.com/embed/hMdnVAD2cpU?si=CYxq9dFlOI1Zdunp" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-                    </div>
-                    </div>
-                </div>
-
-                <!-- Blender Modeling card -->
-                <div class="card-details modelisation"
-                    data-theme="modelisation"
-                    data-title="Blender Modeling"
-                    data-content="Creation of a scene inspired by the game Sea of Thieves using Blender, including elements such as a table, a treasure map, and scrolls of paper.">
-
-                    <h4>Blender Modeling</h4>
-                    <img src="assets/img/portfolio/scene-min.png" class="img-fluid-details" alt="Blender modeling: Sea of Thieves inspired scene">
-
-                    <div class="display-media" style="display: none;">
-
-                    <!-- Project information -->
-                    <div class="portfolio-details-info">
-                        <ul>
-                            <li><strong>Date</strong>: September - October 2023</li>
-                            <li><strong>Software used</strong>: Blender</li>
-                        </ul>
-                    </div>
-
-                    <!-- Project description -->
-                    <div class="project-description">
-                        <p>The goal of this project was to create a scene inspired by the video game "Sea of Thieves" using Blender. This project allowed me to apply various 3D modeling techniques to create an immersive and realistic environment.</p>
-                        <p>The modeled elements include a table, a treasure map, and paper scrolls. These objects were integrated into a scene representing a typical pirate workspace.</p>
-                        <p>The last image shows the texture applied to the treasure map to give it a realistic and aged appearance.</p>
-                    </div>
-
-                    <!-- Image slider -->
-                    <div class="gallery" id="gallerySot">
-                        <img src="assets/img/portfolio/scene1.png" width="700px" alt="3D modeling of a Sea of Thieves scene: Table and objects">
-                        <img src="assets/img/portfolio/scene2.png" width="700px" alt="3D modeling of a treasure map and Sea of Thieves objects">
-                        <img src="assets/img/portfolio/carteuv2.png" width="700px" alt="Texture used for the treasure map">
-                    </div>
-
-                    </div>
-                </div>
-
-                <!-- Rouen website Figma card -->
-                <div class="card-details ux-ui"
-                    data-theme="ux-ui"
-                    data-title="Rouen Website Redesign"
-                    data-content="Our exercise consisted of learning how to use Figma by redesigning the website https://rouen.fr/. The images are the result of this exercise."
-                    data-category="Website / Figma"
-                    data-date="February 2023">
-                    <h4>Rouen Website Figma</h4>
-                    <!-- Thumbnail of the initially displayed image -->
-                    <img src="assets/img/portfolio/rouen-figma-min.png" class="img-fluid-details" alt="Thumbnail of the Rouen website redesign">
-
-                    <div class="display-media" style="display: none;">
-
-                    <!-- Gallery displayed in a modal after clicking -->
-                    <div class="gallery-modal" id="galleryRouen">
-                        <div class="gallery-modal-content container">
-                            <div class="gallery row">
-                                <img class="col-md-4" src="assets/img/portfolio/rouen-figma1.png" class="img-fluid-details" alt="First page of the 'new' Rouen website.">
-                                <img class="col-md-4" src="assets/img/portfolio/rouen-figma2.png" class="img-fluid-details" alt="Second page of the 'new' Rouen website.">
-                                <img class="col-md-2" src="assets/img/portfolio/rouen-figma1-portable.png" class="img-fluid-details" alt="Mobile version of the 'new' Rouen website.">
-                                <img class="col-md-2" src="assets/img/portfolio/rouen-figma2-portable.png" class="img-fluid-details" alt="Mobile version of the 'new' Rouen website.">
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
-                </div>
-
-                <!-- Personal and Professional Project -->
-                <div class="card-details graphisme"
-                    data-theme="graphisme"
-                    data-title="Personal and Professional Project"
-                    data-content="For this personal and professional project, we had to contact former MMI students in order to interview them about their current job and career path. The final result aims to show us the different career opportunities available after the BUT MMI degree. The open day poster was created by Lylian, Martin and Quentin, although my contribution mainly focused on the interviews."
-                    data-members="Lylian FAUCON, Martin FAUVEL, Quentin GALLIEGUE, Eva GUEDIN, Quentin GOUAS"
-                    data-category="Graphic Design"
-                    data-date="November 2022 - January 2023">
-
-                    <h4>Personal and Professional Project</h4>
-                    <!-- Poster thumbnail -->
-                    <img src="assets/img/portfolio/ppp_afiche_m.png" class="img-fluid-details" alt="Personal and professional project poster">
-
-                    <div class="display-media" style="display: none;">
-
-                    <!-- Modal gallery (displayed on click) -->
-                    <div class="gallery-modal" id="galleryModalppp">
-                        <div class="gallery-modal-content">
-                            <div class="gallery">
-                                <!-- POSTER MISSING -->
-                                <a href="assets/download/ppp_pdf.pdf" target="_blank">Final document</a>
-                            </div>
-                        </div>
-                    </div>
-
-                    </div>
-                </div>
-
-                <!-- Figma Or3o Website -->
-                <div class="card-details ux-ui"
-                    data-theme="ux-ui"
-                    data-title="Or3o Website - Figma"
-                    data-content="Creation of a website in Figma for the artist Or3o. The website includes an 'About' section, a 'Shop' section, and a 'Concert' section."
-                    data-category="UX/UI"
-                    data-date="January 2023">
-
-                    <h4>Or3o Website - Figma</h4>
-                    <img src="assets/img/portfolio/or3o.png" class="img-fluid-details" alt="Preview of the Or3o Figma design">
-
-                    <div class="display-media" style="display: none;">
-
-                    <!-- Modal gallery for video and image -->
-                    <div class="gallery-modal" id="galleryOr3o">
-                        
-                        <iframe width="560" height="315" src="https://www.youtube.com/embed/TRG72vlBCUY?si=-kLwc7s8ra9-lrSJ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-                        <img src="assets/img/portfolio/or3o.png" width="600px" alt="Complete Figma design for Or3o">
-                    </div>
-                            <a href="assets/download/Site Or3o.pdf" target="_blank">View the Figma file as PDF</a>
-                    </div>
-                </div>
-
-                <!-- Jinx bomb -->
-                <div class="card-details modelisation"
-                    data-theme="modelisation"
-                    data-title="Jinx Bomb"
-                    data-content="3D modeling of a bomb from the League of Legends universe. A weapon belonging to the character Jinx.">
-
-                    <h4>Jinx Bomb</h4>
-                    <img src="assets/img/portfolio/3d_rendu2_m.png" class="img-fluid-details" alt="Jinx bomb">
-
-                    <div class="display-media" style="display: none;">
-
-                    <!-- Informations sur le projet -->
-                    <div class="portfolio-details-info">
-                        <ul>
-                            <li><strong>Date</strong>: December 2022</li>
-                        </ul>
-                    </div>
-
-                    <!-- Description du projet -->
-                    <div class="project-description">
-                        <p>
-                            This 3D model showcases a bomb from the League of Legends universe, a weapon belonging to the character Jinx. The model was created using Blender.
-                        </p>
-                    </div>
-
-                    <!-- Galerie d'images -->
-                    <div class="gallery" id="jinx-gallery">
-                        <img src="assets/img/portfolio/3d_rendu.png" width="700px" alt="Jinx bomb render image (Arcane) angle 1">
-                        <img src="assets/img/portfolio/3d_rendu2.png" width="700px" alt="Jinx bomb render image (Arcane) angle 2">
-                    </div>
-
-                    </div>
-                </div>
-
-                <!-- Omniversus -->
-                <div class="card-details ux-ui"
-                    data-theme="ux-ui"
-                    data-title="Omniversus"
-                    data-content="Creation of a mobile video game prototype in Figma in 3 hours, inspired by Multiversus but as a card game."
-                    data-category="UX/UI"
-                    data-date="December 2022">
-
-                    <h4>Omniversus</h4>
-                    <img src="assets/img/portfolio/omniversus.png" class="img-fluid-details" alt="Omniversus project preview">
-
-                    <div class="display-media" style="display: none;">
-
-                    <!-- Galerie modale -->
-                    <div class="gallery-modal" id="galleryOmniversus">
-                        <iframe width="100%" height="auto"
-                            src="https://www.youtube.com/embed/Nc-OSfFKBGc?si=bg-Z_edX5Wa-977e"
-                            title="Omniversus project presentation"
-                            frameborder="0"
-                            allowfullscreen>
-                        </iframe>
-                        <img src="assets/img/portfolio/omniversus-ensemble.png" width="500px" alt="Overview of the Figma pages for the Omniversus project">
-                    </div>
-                    </div>
-                </div>
-
-                <!-- ------------- Animal Crossing et la pandémie ------------- -->
-                <div class="card-details video" data-theme="video" data-title="Report: Animal Crossing and the pandemic" data-content="Video report about the impact of Animal Crossing during the pandemic, created by a group of students as part of an audiovisual course.">
-                    <h4>Animal Crossing and the pandemic</h4>
-                    <img src="assets/img/portfolio/animal_crossing.png" class="img-fluid-details" alt="Report poster about Animal Crossing and the pandemic">
-
-                    <div class="display-media" style="display: none;">
-
-                    <!-- Informations sur le projet -->
-                    <div class="portfolio-details-info">
-                        <ul>
-                            <li><strong>Group members</strong>:
-                                <a href="https://www.linkedin.com/in/lylianfaucon/" target="_blank">Lylian FAUCON</a>,
-                                <a href="https://www.linkedin.com/in/martin-fauvel/" target="_blank">Martin FAUVEL</a>,
-                                <a href="https://www.linkedin.com/in/eva-guedin/" target="_blank">Eva GUEDIN</a>
-                            </li>
-                            <li><strong>Date</strong>: December 2022</li>
-                        </ul>
-                    </div>
-
-                    <!-- Bouton pour voir la vidéo -->
-                    <div class="video-preview" style="margin: 10px auto;text-align: center;">
-                        <a href="https://youtu.be/o2ht2GWdQD0" target="_blank" class="btn btn-primary" style="padding:10px;">
-                            🎬 Watch the video
-                        </a>
-                    </div>
-                    </div>
-                </div>
-
-                <!-- Tableau de bord covid -->
-                <div class="card-details ux-ui"
-                    data-theme="ux-ui"
-                    data-title="Dashboard"
-                    data-content="Creation of an interactive dashboard displaying graphs about the pandemic situation in the Drôme region, connected to a database. This project involves the use of graphical tools and dynamic data."
-                    data-date="December 2022"
-                    data-category="Website">
-
-                    <h4>Dashboard</h4>
-                    <!-- Image principale -->
-                    <img src="assets/img/portfolio/site_303_min.jpg" class="img-fluid-details" alt="Interactive dashboard showing the pandemic situation with dynamic graphs">
-
-                    <div class="display-media" style="display: none;">
-
-                    <!-- Description du projet -->
-                    <div class="project-description">
-                        <p>
-                            The goal of this project was to create a dashboard showing the pandemic situation in the Drôme department. Users can view different statistics through interactive graphs created from dynamic data.
-                        </p>
-                        <p>
-                            The website was designed to learn how to interact with a database, integrating interactive graphs and regularly updated data. It is only accessible to IUT members for educational purposes.
-                        </p>
-                        <p>
-                            Among the included graphs, we followed the requirement of presenting at least 4 different types, including one graph that had not been covered in class, in order to add an innovative touch to the project.
-                        </p>
-                    </div>
-
-                    <!-- Galerie d'images -->
-                    <div class="gallery" id="Gallery2020">
-                        <img src="assets/img/portfolio/site_303_min2.jpg" width="700px" alt="Example of a graph displayed in the dashboard">
-                        <img src="assets/img/portfolio/site_303_min3.jpg" width="700px" alt="Another dynamic graph from the dashboard">
-                        <img src="assets/img/portfolio/site_303.jpg" width="300px" alt="Dashboard presentation from another perspective">
-                    </div>
-
-                    </div>
-                </div> 
-
-                <div class="card-details graphisme"
-                    data-theme="graphisme"
-                    data-title="Pictograms representing MMI subjects"
-                    data-content="Creation of pictograms representing the following fields: Programming, Web, Graphic Design, 3D Creation, Motion Design and Communication. Presented on an A1 poster with mockups showing their placement within the department."
-                    data-category="Graphic Design"
-                    data-date="October 2, 2022">
-                    <h4>MMI Pictograms</h4>
-                    <img src="assets/img/portfolio/crea_graph_affiche_m.jpg" class="img-fluid-details" alt="Poster with MMI pictograms">
-
-                    <div class="display-media" style="display: none;">
-
-                    <!-- Galerie modale (affichage sur clic) -->
-                    <div class="container">
-                        <div class="gallery row" id="pictoGallery">
-                            <img class="col-md-8" src="assets/img/portfolio/crea_grapg_picto.gif" width="600px" alt="Pictogram GIF">
-                            <img class="col-md-4" src="assets/img/portfolio/crea_graph_mont_3.jpg" width="600px" alt="Pictogram mockup on walls">
-                            <img class="col-md-4" src="assets/img/portfolio/crea_graph_mont_2.jpg" width="450px" alt="Pictogram mockup on walls">
-                            <img class="col-md-8" src="assets/img/portfolio/crea_graph_mont_1.jpg" width="600px" alt="Pictogram mockup on walls">
-                        </div>
-                    </div>
-                    </div>
-                </div>
-
-                <!-- ---------------- Emote Opa ---------------- -->
-
-                <div class="card-details dessin"
-                    data-theme="dessin"
-                    data-title="Emotes for OpacityPST"
-                    data-content="Creation of emotes for streamer OpacityPST to enhance his Twitch streams."
-                    data-category="drawing"
-                    data-date="September 9, 2022">
-
-                    <h4>Emotes for OpacityPST</h4>
-                    <img src="assets/img/portfolio/emote_m.png" class="img-fluid-details" alt="OpacityPST emote">
-
-                    <div class="display-media" style="display: none;">
-
-                    <!-- Boutons interactifs pour voir la chaîne Twitch et les émotes -->
-                    <div class="portfolio-preview">
-                        <a href="https://www.twitch.tv/opacitypst" target="_blank" class="btn btn-primary">
-                            🎮 Watch on Twitch
-                        </a>
-                    </div>
-
-                    <!-- Informations sur les 3 émotes -->
-                    <div class="emote-description">
-                        <h5>Created emotes:</h5>
-                        <ul>
-                            <li><strong>Victory:</strong> Emote featuring a character holding a champagne bottle.</li>
-                            <li><strong>Sleeping:</strong> Emote featuring the character sleeping.</li>
-                            <li><strong>Shrugging:</strong> Emote featuring a character shrugging in a "meh" attitude.</li>
-                        </ul>
-                    </div>
-
-                    <!-- Galerie des émotes -->
-                    <div class="gallery" id="emote-gallery">
-                        <h5>Visit the emote gallery:</h5>
-                        <img src="assets/img/portfolio/emote_champagne.png" alt="Champagne emote">
-                        <img src="assets/img/portfolio/emote_dors.png" alt="Sleeping emote">
-                        <img src="assets/img/portfolio/emote_Meh.png" alt="Shrugging emote">
-                    </div>
-                    </div>
-                </div>
-
-                <div class="card-details graphisme"
-                    data-theme="graphisme"
-                    data-title="E.story & Chai à vin"
-                    data-content="An event combining new technologies and Norman history, organized in a former wine cellar in Rouen."
-                    data-category="Graphic Design / Communication"
-                    data-date="May 2022">
-                    <h4>E.story & Chai à vin</h4>
-                    <img src="assets/img/portfolio/estrory_moyen.png" class="img-fluid-details" alt="E.story event logo">
-
-                    <div class="display-media" style="display: none;">
-
-                    <!-- Bouton pour voir le projet complet -->
-                    <div class="portfolio-preview">
-                        <a href="assets/img/portfolio/estory_charte_graphique.png" target="_blank" class="btn btn-primary">
-                            📜 View the graphic guidelines
-                        </a>
-                        <a href="assets/img/portfolio/estory_flyer_202_page-0001.jpg" target="_blank" class="btn btn-secondary">
-                            📰 View the flyer
-                        </a>
-                    </div>
-                </div>
-                </div>
-
-                <div class="card-details graphisme"
-                    data-theme="graphisme"
-                    data-title="MMI Foundry"
-                    data-content="Creation of a logo available in three formats (large, medium, small), as well as a poster and various mockups showcasing the visual identity on different supports (card, cap, mug, pen, t-shirt, storefront)."
-                    data-category="Graphic Design"
-                    data-date="April-May 2022">
-
-                    <h4>MMI Foundry</h4>
-                    <img src="assets/img/portfolio/logo_moyen_min.jpg" class="img-fluid-details" alt="MMI Foundry logo">
-
-                    <div class="display-media" style="display: none;">
-
-                    <!-- Button to view more images -->
-                    <div class="image-preview">
-                        <a href="assets/img/portfolio/affiche_foundry.jpg" target="_blank" class="btn btn-primary">
-                            View the poster 🎨
-                        </a>
-                    </div>
-                    </div>
-                </div>
-
-                <!-- ------------- Film noir ------------- -->
-                <div class="card-details video"
-                    data-theme="video"
-                    data-title="Film noir"
-                    data-content="Short film inspired by classic film noir movies. Role: director and prop manager."
-                    data-category="Video"
-                    data-date="March 2022">
-
-                    <h4>Film noir</h4>
-                    <img src="assets/img/portfolio/film_noir.png" class="img-fluid-details" alt="Film Noir short film poster">
-
-                    <div class="display-media" style="display: none;">
-
-                    <!-- Button to watch the video -->
-                    <div class="video-preview" style="margin: 10px auto;text-align: center;">
-                        <a href="https://www.youtube.com/watch?v=Y6pFoDfNRxs" target="_blank" class="btn btn-primary" style="padding:10px;">
-                            🎬 Watch the short film
-                        </a>
-                    </div>
-                    </div>
-                </div>
-
-                <!-- ------------- Suki Burger ------------- -->
-                <div class="card-details ux-ui"
-                    data-theme="ux-ui"
-                    data-title="Suki-Burger Food Truck"
-                    data-content="Creation of a food truck concept and a website to represent it. This was my first website. Since the website is no longer online, screenshots of the different pages are displayed. In order: homepage, menu, 'where to find us', 'about us' and partners. Note: the 'about us' page is also available in English. We also created an English menu matching the food truck's visual identity."
-                    data-date="November - December 2021"
-                    data-category="Website"
-                    data-link="This website is no longer online">
-
-                    <h4>Suki-Burger Food Truck</h4>
-                    <img src="assets/img/portfolio/sae105_accueil.jpg" class="img-fluid-details" alt="Suki-Burger website homepage">
-
-                    <div class="display-media" style="display: none;">
-
-                    <div id="sukiGalleryContainer">
-
-                    <a href="assets/img/portfolio/sae105_accueil.jpg" target="_blank">
-                    <img src="assets/img/portfolio/sae105_accueil.jpg" class="sukiGallery" alt="Suki-Burger website homepage">
-                    </a>
-                    <a href="assets/img/portfolio/sae105_menu.jpg" target="_blank">
-                    <img src="assets/img/portfolio/sae105_menu.jpg" class="sukiGallery" alt="Suki-Burger menu page">
-                    </a>
-                    <a href="assets/img/portfolio/sae105_ou.jpg" target="_blank">
-                    <img src="assets/img/portfolio/sae105_ou.jpg" class="sukiGallery" alt="'Where to find us' Suki-Burger page">
-                    </a>
-                    <a href="assets/img/portfolio/sae105_a_propos.jpg" target="_blank">
-                    <img src="assets/img/portfolio/sae105_a_propos.jpg" class="sukiGallery" alt="'About us' Suki-Burger page">
-                    </a>
-                    <a href="assets/img/portfolio/sae105_partenaires.jpg" target="_blank">
-                    <img src="assets/img/portfolio/sae105_partenaires.jpg" class="sukiGallery" alt="Suki-Burger partners page">
-                    </a>
-                    <a href="assets/img/portfolio/sae105_logo.png" target="_blank">
-                    <img src="assets/img/portfolio/sae105_logo.png" class="sukiGallery" alt="Suki-Burger logo">
-                    </a>
-
-                </div>
-
-                    </div>
-                </div>
-
-                <!-- ------------- MMI POSTER ------------- -->
-                <div class="card-details graphisme"
-                    data-theme="graphisme"
-                    data-title="MMI Promotion Poster"
-                    data-content="Poster created to promote the MMI program, featuring a photo of Esteban Kervran and a graphic composition.">
-
-                    <h4>MMI Promotion Poster</h4>
-                    <img src="assets/img/portfolio/affiche_min.jpg" class="img-fluid-details" alt="MMI promotion poster">
-
-                    <div class="display-media" style="display: none;" id="mmiAfficheTxt">
-
-                    <a href="assets/img/portfolio/affiche.jpg" target="_blank"><img src="assets/img/portfolio/affiche.jpg" alt="BUT MMI program promotion poster" id="mmiAffiche"></a>
-
-                    <!-- Project information -->
-                    <div class="portfolio-details-info">
-                        <ul>
-                            <li><strong>Date</strong>: November 2021</li>
-                        </ul>
-                    </div>
-
-                    <!-- Project description -->
-                    <div class="project-description">
-                        <p>
-                            This poster was created to promote the MMI program (Multimedia and Internet Professions). I was responsible for taking the photo, making the necessary edits, and creating the final composition to produce an impactful image.
-                        </p>
-                        <p>
-                            The person featured in the photo is <a href="https://www.linkedin.com/in/estebankervran/" target="_blank" >Esteban Kervran</a>, an MMI student.
-                        </p>
-                        <p>
-                            <br>Click on the image to open the poster in a new tab.
-                        </p>
-                    </div>
-                </div>
-                </div>
-            </div>
-        </div>
-
-         <!-- Large div that changes depending on the selected card -->
-        <div class="main-display">
-            <h2 id="display-title">Select a card</h2>
-            <p id="display-content">Click on a card to display its content here.</p>
-            <div id="display-media"></div> <!-- Area to display videos, images, etc. -->
-        </div>
-
-        <!-- ======= Portfolio Details ======= -->
-        <div id="portfolio-details" class="portfolio-details" style="display: none;">
-        <div class="container">
-            <div class="row">
-            <div class="col-lg-8">
-                <h2 id="portfolio-title">Project title</h2>
-
-                <!-- Content area, can contain an iframe, video, or other media -->
-                <div id="portfolio-content">
-                <!-- This content will be updated dynamically -->
-                </div>
-            </div>
-
-            <div class="col-lg-4 portfolio-info">
-                <h3>Information</h3>
-                <ul id="portfolio-info-list">
-                <!-- Information from each card will be inserted here -->
-                </ul>
-            </div>
-            </div>
-        </div>
-        <div id="display-media" class="display-media"></div>
-        </div><!-- End Portfolio Details -->
-    </div>
-
-    <div style="display: flex;justify-content: center;margin: 1rem;">
-    <div class="cv link-btn">
-        <a href="index.html#portfolio">Back</a>
-    </div>
-    </div>
+<!-- Loader -->
+<div id="loader_div" style="display:flex;">
+    <img src="assets/img/cat.gif" alt="Little sleeping cat GIF" style="width:20%;" id="catgif">
+    <span class="loader">Loading...</span>
+    <div class="cat_paw"></div>
 </div>
 
-    <script>
+
+<h2 class="wavy" style="margin:0;padding:2rem 0 5px 0;font-size: 4rem;">
+    Portfolio
+</h2>
+
+<btn id="retour_portfolio">
+    <a href="index.html">Back</a>
+</btn>
+
+<!-- FILTERS -->
+<div class="sidebar">
+
+    <button class="filter-btn active" data-filter="all">
+        All
+    </button>
+
+    <button class="filter-btn ux-ui" data-filter="ux-ui">
+        UX / UI
+    </button>
+
+    <button class="filter-btn video" data-filter="video">
+        Video
+    </button>
+
+    <button class="filter-btn graphisme" data-filter="graphisme">
+        Graphic Design
+    </button>
+
+    <button class="filter-btn modelisation" data-filter="modelisation">
+        3D Modeling
+    </button>
+
+    <button class="filter-btn jeu-video" data-filter="jeu-video">
+        Video Game
+    </button>
+
+    <button class="filter-btn dessin" data-filter="dessin">
+        Drawing
+    </button>
+
+</div>
+
+<!-- PROJECT LIST -->
+<div class="projects-list">
+
+    <!-- ------------------------------------------------------------------------------ -->
+
+    <!-- Back to the old house -->
+    <!-- <article class="project" data-theme="jeu-video">
+
+        <div class="project-header">
+            <h3>Back to the old house </h3>
+            <span class="project-category">Video Game</span>
+        </div>
+
+        <div class="project-preview">
+            <img src="assets/img/portfolio/eesi-1.jpg" alt="Back to the old house">
+            <p>Nanoproject with EESI students</p>
+        </div>
+
+        <div class="project-content">
+
+            <section class="media-links">
+                <a href="https://khalerzaad.itch.io/omega" target="_blank" class="btn btn-primary">
+                    Itch.io page
+                </a>
+            </section>
+
+            <section class="media-info">
+                <p>Back to the old house is an Mixed Reality (MR) narrative video game, made in 5 days by 12  students from the Magelis campus (CNAM-ENJMIN + EESI).</p>
+                <h5>Other members of the development team:</h5>
+                <ul>
+                    <li><a href="https://www.linkedin.com/in/hugo-fustinoni-b52692248/" target="_blank">Hugo Fustinoni - Manager</a></li>
+                    <li><a href="https://www.linkedin.com/in/adrien-le-deunff-52a47615b/" target="_blank">Adrien LE DEUNFF - Manager</a></li>
+
+                    <li><a href="https://www.linkedin.com/in/ydris-b-947351220/" target="_blank">Ydris BENMANSOUR - Dev</a></li>
+                    <li><a href="https://www.linkedin.com/in/th%C3%A9o-fontany/" target="_blank">Théo FONTANY - Dev</a></li>
+                    <li><a href="https://www.linkedin.com/in/edouard-chhang-244931233/" target="_blank">Edouard CHHANG - Dev</a></li>
+
+                    <li><a href="https://www.linkedin.com/in/vassili-tritter-69442484/" target="_blank">Vassili TRITTER - Game Design</a></li>
+
+                    <li><a href="https://www.linkedin.com/in/orlane-guillon/" target="_blank">Orlane GUILLON - Graphic Design</a></li>
+
+                    <li><a href="https://www.linkedin.com/in/vincent-barth%C3%A9l%C3%A9mi-60aa9b251/" target="_blank">Vincent BARTHÉlÉMI - Sound Design</a></li>                    
+                </ul>
+            </section>
+
+            <section class="media-gallery">
+                <iframe src="https://www.youtube.com/embed/4CiZLEs8SG0?si=NxywceUFxtD39UqB" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            </section>
+
+            <section class="media-gallery">
+                <div class="gallery">
+                    <img src="assets/img/portfolio/omega_apercu.png" alt="First look omega gameplay">
+                    <img src="assets/img/portfolio/omega.png" alt="Logo Omega">
+                </div>
+            </section>
+
+        </div>
+
+    </article> -->
+
+    <!-- ------------------------------------------------------------------------------ -->
+
+    <!-- Omega -->
+    <article class="project" data-theme="jeu-video">
+
+        <div class="project-header">
+            <h3>Ωmega </h3>
+            <span class="project-category">Video Game</span>
+        </div>
+
+        <div class="project-preview">
+            <img src="assets/img/portfolio/omega.png" alt="Omega">
+            <p>Alternative controller project</p>
+        </div>
+
+        <div class="project-content">
+
+            <section class="media-links">
+                <a href="https://khalerzaad.itch.io/omega" target="_blank" class="btn btn-primary">
+                    Itch.io page
+                </a>
+            </section>
+
+            <section class="media-info">
+                <p>My Role : Game Design / Installation</p>
+                <h5>Other members of the development team:</h5>
+                <ul>
+                    <li><a href="https://www.linkedin.com/in/hugo-fustinoni-b52692248/" target="_blank">Hugo Fustinoni - Manager</a></li>
+                    <li><a href="https://www.linkedin.com/in/adrien-le-deunff-52a47615b/" target="_blank">Adrien LE DEUNFF - Manager</a></li>
+
+                    <li><a href="https://www.linkedin.com/in/ydris-b-947351220/" target="_blank">Ydris BENMANSOUR - Dev</a></li>
+                    <li><a href="https://www.linkedin.com/in/th%C3%A9o-fontany/" target="_blank">Théo FONTANY - Dev</a></li>
+                    <li><a href="https://www.linkedin.com/in/edouard-chhang-244931233/" target="_blank">Edouard CHHANG - Dev</a></li>
+
+                    <li><a href="https://www.linkedin.com/in/vassili-tritter-69442484/" target="_blank">Vassili TRITTER - Game Design</a></li>
+
+                    <li><a href="https://www.linkedin.com/in/orlane-guillon/" target="_blank">Orlane GUILLON - Graphic Design</a></li>
+
+                    <li><a href="https://www.linkedin.com/in/vincent-barth%C3%A9l%C3%A9mi-60aa9b251/" target="_blank">Vincent BARTHÉlÉMI - Sound Design</a></li>                    
+                </ul>
+            </section>
+
+            <section class="media-gallery">
+                <iframe src="https://www.youtube.com/embed/4CiZLEs8SG0?si=NxywceUFxtD39UqB" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            </section>
+
+            <section class="media-gallery">
+                <div class="gallery">
+                    <img src="assets/img/portfolio/omega_apercu.png" alt="First look omega gameplay">
+                    <img src="assets/img/portfolio/omega.png" alt="Logo Omega">
+                </div>
+            </section>
+
+        </div>
+
+    </article>
+
+    <!-- The Absurd Waltz -->
+    <article class="project" data-theme="jeu-video">
+
+        <div class="project-header">
+            <h3>The Absurd Waltz</h3>
+            <span class="project-category">Video Game</span>
+        </div>
+
+        <div class="project-preview">
+            <img src="assets/img/portfolio/the_absurd_waltz.png" alt="The Absurd Waltz">
+            <p>The Absurd Waltz - Little game on Unity for Graphic experiments</p>
+        </div>
+
+        <div class="project-content">
+
+            <section class="media-links">
+                <a href="https://astelie.itch.io/the-absurd-waltz" target="_blank" class="btn btn-primary">
+                    🎮 Download the game
+                </a>
+            </section>
+
+            <section class="media-info">
+                <p>I made the game to experiments with glow effects and other textures on Unity. <br>
+                You control a little toy plane in the solar system and must collect stars. </p>
+            </section>
+
+        </div>
+
+    </article>
+
+    <!-- Escape from jarda -->
+    <article class="project" data-theme="jeu-video">
+
+        <div class="project-header">
+            <h3>Escape from jarda</h3>
+            <span class="project-category">Video Game</span>
+        </div>
+
+        <div class="project-preview">
+            <img src="assets/img/portfolio/escape-from-jarda.png" alt="Escape from jarda">
+            <p>Escapausorus - First project in Enjmin : make a game in your first week !</p>
+        </div>
+
+        <div class="project-content">
+
+            <section class="media-links">
+                <a href="https://drive.google.com/file/d/1ZzhYTJOvg6WzZNVjCB_0gHt7OEki97Ib/view?usp=drive_link" target="_blank" class="btn btn-primary">
+                    🎮 Download the game
+                </a>
+            </section>
+
+            <section class="media-info">
+                <p>My Role : Graphic Artist / Assist Dev</p>
+                <h5>Other members of the development team:</h5>
+                <ul>
+                    <li><a href="https://www.linkedin.com/in/armand-all%C3%A9aume-b118a4113/" target="_blank">Armand ALLÉAUME - Game Design</a></li>
+                    <li><a href="https://www.linkedin.com/in/mathis-dos-99a452223/" target="_blank">Mathis DOS - Sound Design</a></li>
+                    <li><a href="https://www.linkedin.com/in/hugo-fustinoni-b52692248/" target="_blank">Hugo Fustinoni - Manager</a></li>
+                    <li><a href="https://www.linkedin.com/in/david-goblot-it/" target="_blank">David GOBLOT - Developer</a></li>
+                    <li><a href="https://www.linkedin.com/in/nils-van-eeckhout-a89318265/" target="_blank">Nils VAN EECKHOUT - Sound Design</a></li>
+                </ul>
+            </section>
+
+            <section class="media-gallery">
+                <iframe src="https://www.youtube.com/embed/olKsFlSxrjc?si=8v6YUG4tVIKPJboj" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            </section>
+
+        </div>
+
+    </article>
+
+    <!-- animations 3D portfolio -->
+    <article class="project" data-theme="modelisation">
+
+        <div class="project-header">
+            <h3>3D Animation - Test</h3>
+            <span class="project-category">3D Modeling</span>
+        </div>
+
+        <div class="project-preview">
+            <img src="assets/img/portfolio/portfolio-render.png" alt="Render 3D Animation">
+            <p>First animation test for the portfolio - Got replaced</p>
+        </div>
+
+        <div class="project-content">
+
+            <section class="media-info">
+                <ul>
+                    <li><strong>Date:</strong> June 2025 - February 2026 </li>
+                    <li><strong>Software used:</strong> Blender</li>
+                </ul>
+            </section>
+
+            <section class="media-text">
+                <p>I like making things in Blender sometimes and I wanted to try animation to make a cool opening for the website.</p>
+                <p>At the end it looked cool and I kept it for a while, but I changed for a 2D artwork witch represented my personnality in a better way.</p>
+            </section>
+
+            <section class="media-gallery">
+                <div class="gallery">
+                    <video autoplay muted loop playsinline>
+                        <source src="assets/video/dark-iddle.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+
+                    <video autoplay muted loop playsinline>
+                        <source src="assets/video/dark-opening.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+
+                    <video autoplay muted loop playsinline>
+                        <source src="assets/video/light-iddle.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+
+                    <video autoplay muted loop playsinline>
+                        <source src="assets/video/light-opening.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                </div>
+            </section>
+
+        </div>
+
+    </article>
+
+    <!-- Portfolio 2024 -->
+    <article class="project" data-theme="ux-ui">
+
+        <div class="project-header">
+            <h3>Portfolio 2023-2024</h3>
+            <span class="project-category">UX / UI</span>
+        </div>
+
+        <div class="project-preview">
+            <img src="assets/img/portfolio/portfolio-2024.png" alt="Portfolio 2024">
+            <p>Previous portfolio, completed in February 2024 at the end of my Bachelor's degree.</p>
+        </div>
+
+        <div class="project-content">
+
+            <section class="media-text">
+                <p>I am very proud of this website, so I invite you to visit it and see the similarities between the previous version and this one.</p>
+                <p>It contains a lot of my identity and my early work. I worked on it for 5 months, from September 2023 to February 2024.<br>Here are some screenshots if you do not want to visit it right away:</p>
+            </section>
+
+            <section class="media-links">
+                <a href="https://astelie07.github.io/henryonastelie-portfolio/" target="_blank" class="btn btn-primary">
+                    💻 Visit the website
+                </a>
+            </section>
+
+            <section class="media-gallery">
+                <div class="gallery">
+                    <img src="assets/img/portfolio/portfolio-home.png" alt="Portfolio 2024 homepage">
+                    <img src="assets/img/portfolio/portfolio-2024-dark.png" alt="Portfolio 2024 homepage dark theme">
+                </div>
+            </section>
+
+        </div>
+
+    </article>
+
+    <!-- Inktober 2024 -->
+    <article class="project" data-theme="dessin">
+
+        <div class="project-header">
+            <h3>Inktober 2024</h3>
+            <span class="project-category">Drawing</span>
+        </div>
+
+        <div class="project-preview">
+            <img src="assets/img/portfolio/inktober2024.png" alt="Preview of the Inktober 2024 drawings">
+            <p>Art challenge: one drawing per day in October, with assigned themes. 31 illustrations inspired by various universes (games, series, movies, anime).</p>
+        </div>
+
+        <div class="project-content">
+
+            <section class="media-text">
+                <p>Art challenge: one drawing per day in October, with assigned themes. This project contains 31 illustrations inspired by various universes such as games, series, movies and anime.</p>
+            </section>
+
+            <section class="media-gallery">
+                <div class="gallery">
+                    <img src="assets/img/portfolio/inktober24-1-16.png" alt="Mosaic of the 31 drawings">
+                    <img src="assets/img/portfolio/inktober24-17-31.png" alt="List of Inktober themes">
+                </div>
+            </section>
+
+        </div>
+
+    </article>
+
+    <!-- Rainbow Challenge -->
+    <article class="project" data-theme="dessin">
+
+        <div class="project-header">
+            <h3>Rainbow Challenge</h3>
+            <span class="project-category">Drawing</span>
+        </div>
+
+        <div class="project-preview">
+            <img src="assets/img/portfolio/rainbow-min.png" alt="Preview of the Rainbow Challenge drawings">
+            <p>Art challenge during the summer holidays of 2024: one drawing per week, each with a different color and at least 7 characters.</p>
+        </div>
+
+        <div class="project-content">
+
+            <section class="media-text">
+                <p>Art challenge during the summer holidays of 2024: one drawing per week, each with a different color and at least 7 characters.</p>
+            </section>
+
+            <section class="media-gallery">
+                <div class="gallery">
+                    <img src="assets/img/portfolio/rainbow.png" alt="Rainbow Challenge mosaic">
+                </div>
+            </section>
+
+        </div>
+
+    </article>
+
+    <!-- The Escape - MMI3 Project -->
+    <article class="project" data-theme="jeu-video">
+
+        <div class="project-header">
+            <h3>The Escape - MMI3 Project</h3>
+            <span class="project-category">Video Game</span>
+        </div>
+
+        <div class="project-preview">
+            <img src="assets/img/portfolio/escape-min.png" alt="The Escape - MMI3 Project">
+            <p>Horror video game inspired by the Backrooms, created as part of the final BUT MMI project.</p>
+        </div>
+
+        <div class="project-content">
+
+            <section class="media-links">
+                <a href="https://m-u-c-k-a.github.io/backroom-game/" target="_blank" class="btn btn-primary">
+                    💻 Visit the website
+                </a>
+                <a href="https://www.youtube.com/embed/rvK_ZZMRh08?si=6s_oHPKoeThFsKl7" target="_blank" class="btn btn-secondary">
+                    🎬 Watch the trailer
+                </a>
+                <a href="https://drive.google.com/file/d/1OnxE9-CM5teGECS5SuXqscY07XfH_v6X/view?usp=drive_link" target="_blank" class="btn btn-primary">
+                    🎮 Download the game
+                </a>
+            </section>
+
+            <section class="media-info">
+                <h5>Other members of the development team:</h5>
+                <ul>
+                    <li><a href="https://www.linkedin.com/in/bilal-boukhorissa-6153622a1/" target="_blank">Bilal Boukhorissa</a></li>
+                    <li><a href="https://www.linkedin.com/in/nabil-boukhorissa/" target="_blank">Nabil Boukhorissa</a></li>
+                    <li><a href="https://www.linkedin.com/in/esther-amegnisse/" target="_blank">Esther Amegnisse</a></li>
+                    <li><a href="https://www.linkedin.com/in/hugo-delacour/" target="_blank">Hugo Delacour</a></li>
+                    <li><a href="https://www.linkedin.com/in/tombihoreau/" target="_blank">Tom Bihoreau</a></li>
+                </ul>
+            </section>
+
+            <section class="media-embed">
+                <p>An example of a creature designed for this project:</p>
+                <iframe title="Mercure walking animation" frameborder="0" allowfullscreen src="https://sketchfab.com/models/b31e52818f3c41b3814ae3f74acadc6d/embed"></iframe>
+            </section>
+
+            <section class="media-gallery">
+                <div class="gallery">
+                    <img src="assets/img/portfolio/escape-e1-1.PNG" alt="Screenshot from The Escape">
+                    <img src="assets/img/portfolio/escape-e1-2.png" alt="Screenshot from The Escape">
+                    <img src="assets/img/portfolio/escape-e2-1.PNG" alt="Screenshot from The Escape">
+                    <img src="assets/img/portfolio/escape-e2-2.png" alt="Screenshot from The Escape">
+                </div>
+            </section>
+
+        </div>
+
+    </article>
+
+    <!-- Altea Hackathon Project -->
+    <article class="project" data-theme="ux-ui">
+
+        <div class="project-header">
+            <h3>Altea Hackathon Project</h3>
+            <span class="project-category">UX / UI</span>
+        </div>
+
+        <div class="project-preview">
+            <img src="assets/img/portfolio/altea-min.png" alt="Altea logo, hackathon project">
+            <p>This project was created in 24 hours during a hackathon, with a UX/UI design inspired by professional platforms.</p>
+        </div>
+
+        <div class="project-content">
+
+            <section class="media-info">
+                <ul>
+                    <li><strong>Date:</strong> December 2023</li>
+                    <li><strong>Other team members:</strong>
+                        <a href="https://www.linkedin.com/in/esther-amegnisse/" target="_blank">Esther Amegnisse</a>,
+                        <a href="https://www.linkedin.com/in/nabil-boukhorissa/" target="_blank">Nabil Boukhorissa</a>,
+                        <a href="https://www.linkedin.com/in/tombihoreau/" target="_blank">Tom Bihoreau</a>,
+                        <a href="https://www.linkedin.com/in/hugo-delacour/" target="_blank">Hugo Delacour</a>
+                    </li>
+                </ul>
+            </section>
+
+            <section class="media-text">
+                <p>Altea was created during a hackathon in December 2023, where we imagined a website similar to LinkedIn to solve an issue faced by many students: the lack of responses from recruiters. The goal of the platform is to create a sense of urgency, encouraging companies to respond faster through a reputation and rating system.</p>
+                <p>We had to complete this project in 24 hours and present it to the rest of our class. This project allowed us to work on UX/UI design while integrating specific needs for both students and recruiters, with a different interface for each type of user.</p>
+            </section>
+
+            <section class="media-gallery">
+                <div class="gallery">
+                    <img src="assets/img/portfolio/altea-logo.png" alt="Logo of the fictional Altéa company">
+                    <img src="assets/img/portfolio/altea-pages.png" alt="All Figma pages of the fictional Altéa website">
+                </div>
+            </section>
+
+            <section class="media-links">
+                <a href="assets/download/Altea.pdf" target="_blank">
+                    View the Figma file as PDF
+                </a>
+            </section>
+
+        </div>
+
+    </article>
+
+    <!-- Figma Dashboard -->
+    <article class="project" data-theme="ux-ui">
+
+        <div class="project-header">
+            <h3>Figma Dashboard</h3>
+            <span class="project-category">UX / UI</span>
+        </div>
+
+        <div class="project-preview">
+            <img src="assets/img/portfolio/dashboard-min.png" alt="Figma Dashboard">
+            <p>Design of a Figma dashboard for deploying websites from a GitHub repository.</p>
+        </div>
+
+        <div class="project-content">
+
+            <section class="media-info">
+                <ul>
+                    <li><strong>Date:</strong> November 2023</li>
+                    <li><strong>Client:</strong> Bear Studio</li>
+                </ul>
+            </section>
+
+            <section class="media-embed">
+                <iframe src="https://www.youtube.com/embed/4x3B5n76M04?si=fMTQ2AuKUuqUMocG" title="Figma Dashboard presentation" frameborder="0" allowfullscreen></iframe>
+            </section>
+
+            <section class="media-text">
+                <p>As part of our course, we had the opportunity to work with <a href="https://ivan.dalmet.fr" target="_blank">Ivan Dalmet</a> from <a href="https://www.bearstudio.fr" target="_blank">Bear Studio</a> to learn Figma best practices. The goal was to design a dashboard for developers, allowing them to deploy websites from a GitHub repository.</p>
+                <p>Here were the specific instructions we were given:</p>
+                <ul>
+                    <li>Create a dashboard in Figma.</li>
+                    <li>Target: 1440x900px laptop screen.</li>
+                    <li>Use color styles and components.</li>
+                    <li>Apply auto-layout for a responsive layout.</li>
+                </ul>
+            </section>
+
+            <section class="media-gallery">
+                <div class="gallery">
+                    <img src="assets/img/portfolio/dashboard-ensemble.png" alt="Screenshot of the Figma Dashboard">
+                    <img src="assets/img/portfolio/dashboard-min.png" alt="Example of the Figma dashboard">
+                </div>
+            </section>
+
+        </div>
+
+    </article>
+
+    <!-- Inktober 2023 -->
+    <article class="project" data-theme="dessin">
+
+        <div class="project-header">
+            <h3>Inktober 2023</h3>
+            <span class="project-category">Drawing</span>
+        </div>
+
+        <div class="project-preview">
+            <img src="assets/img/portfolio/inktober-min.png" alt="Preview of the Inktober 2023 drawings">
+            <p>Art challenge: one drawing per day in October, with assigned themes. 31 illustrations inspired by various universes (games, series, movies, anime).</p>
+        </div>
+
+        <div class="project-content">
+
+            <section class="media-gallery">
+                <div class="gallery">
+                    <img src="assets/img/portfolio/inktober23/inktober-ensemble.png" alt="Mosaic of the 31 drawings">
+                    <img src="assets/img/portfolio/inktober23/inktober_liste.jpg" alt="List of Inktober themes">
+                </div>
+            </section>
+
+        </div>
+
+    </article>
+
+    <!-- Roll a Ball -->
+    <article class="project" data-theme="jeu-video">
+
+        <div class="project-header">
+            <h3>Roll a Ball</h3>
+            <span class="project-category">Video Game</span>
+        </div>
+
+        <div class="project-preview">
+            <img src="assets/img/portfolio/rollaball-min.png" alt="Roll a Ball game thumbnail">
+            <p>Creation of a small game in one day where the player controls a ball collecting objects. The game required adding a score counter, obstacles, and a display when all objects had been collected.</p>
+        </div>
+
+        <div class="project-content">
+
+            <section class="media-text">
+                <p>The first video shows the final version, while the second one shows a test version.</p>
+            </section>
+
+            <section class="media-embed">
+                <iframe src="https://www.youtube.com/embed/DpQMb_K9xPg?si=2kmA0Ua2Co6qft2T" title="Roll a Ball final version" frameborder="0" allowfullscreen></iframe>
+                <iframe src="https://www.youtube.com/embed/hMdnVAD2cpU?si=CYxq9dFlOI1Zdunp" title="Roll a Ball test version" frameborder="0" allowfullscreen></iframe>
+            </section>
+
+        </div>
+
+    </article>
+
+    <!-- Blender Modeling -->
+    <article class="project" data-theme="modelisation">
+
+        <div class="project-header">
+            <h3>Blender Modeling</h3>
+            <span class="project-category">3D Modeling</span>
+        </div>
+
+        <div class="project-preview">
+            <img src="assets/img/portfolio/scene-min.png" alt="Blender modeling: Sea of Thieves inspired scene">
+            <p>Creation of a scene inspired by the game Sea of Thieves using Blender, including elements such as a table, a treasure map, and scrolls of paper.</p>
+        </div>
+
+        <div class="project-content">
+
+            <section class="media-info">
+                <ul>
+                    <li><strong>Date:</strong> September - October 2023</li>
+                    <li><strong>Software used :</strong> Blender</li>
+                </ul>
+            </section>
+
+            <section class="media-text">
+                <p>The goal of this project was to create a scene inspired by the video game "Sea of Thieves" using Blender. This project allowed me to apply various 3D modeling techniques to create an immersive and realistic environment.</p>
+                <p>The modeled elements include a table, a treasure map, and paper scrolls. These objects were integrated into a scene representing a typical pirate workspace.</p>
+                <p>The last image shows the texture applied to the treasure map to give it a realistic and aged appearance.</p>
+            </section>
+
+            <section class="media-gallery">
+                <div class="gallery">
+                    <img src="assets/img/portfolio/scene1.png" alt="3D modeling of a Sea of Thieves scene: Table and objects">
+                    <img src="assets/img/portfolio/scene2.png" alt="3D modeling of a treasure map and Sea of Thieves objects">
+                    <img src="assets/img/portfolio/carteuv2.png" alt="Texture used for the treasure map">
+                </div>
+            </section>
+
+        </div>
+
+    </article>
+
+    <!-- Rouen Website Figma -->
+    <article class="project" data-theme="ux-ui">
+
+        <div class="project-header">
+            <h3>Rouen Website Figma</h3>
+            <span class="project-category">UX / UI</span>
+        </div>
+
+        <div class="project-preview">
+            <img src="assets/img/portfolio/rouen-figma-min.png" alt="Thumbnail of the Rouen website redesign">
+            <p>Our exercise consisted of learning how to use Figma by redesigning the website https://rouen.fr/. The images are the result of this exercise.</p>
+        </div>
+
+        <div class="project-content">
+
+            <section class="media-gallery">
+                <div class="gallery">
+                    <img src="assets/img/portfolio/rouen-figma1.png" alt="First page of the redesigned Rouen website">
+                    <img src="assets/img/portfolio/rouen-figma2.png" alt="Second page of the redesigned Rouen website">
+                    <img src="assets/img/portfolio/rouen-figma1-portable.png" alt="Mobile version of the redesigned Rouen website">
+                    <img src="assets/img/portfolio/rouen-figma2-portable.png" alt="Mobile version of the redesigned Rouen website">
+                </div>
+            </section>
+
+        </div>
+
+    </article>
+
+    <!-- Personal and Professional Project -->
+    <article class="project" data-theme="graphisme">
+
+        <div class="project-header">
+            <h3>Personal and Professional Project</h3>
+            <span class="project-category">Graphic Design</span>
+        </div>
+
+        <div class="project-preview">
+            <img src="assets/img/portfolio/ppp_afiche_m.png" alt="Personal and professional project poster">
+            <p>Interview project with former MMI students to discover their careers after graduation. The final result highlights the different career opportunities available after the BUT MMI degree.</p>
+        </div>
+
+        <div class="project-content">
+
+            <section class="media-info">
+                <ul>
+                    <li><strong>Date:</strong> November 2022 - January 2023</li>
+                    <li><strong>Team members:</strong> Lylian FAUCON, Martin FAUVEL, Quentin GALLIEGUE, Eva GUEDIN, Quentin GOUAS</li>
+                </ul>
+            </section>
+
+            <section class="media-text">
+                <p>For this personal and professional project, we had to contact former MMI students in order to interview them about their current job and career path. The final result aims to show us the different career opportunities available after the BUT MMI degree.</p>
+                <p>The open day poster was created by Lylian, Martin and Quentin, although my contribution mainly focused on the interviews.</p>
+            </section>
+
+            <section class="media-links">
+                <a href="assets/download/ppp_pdf.pdf" target="_blank">
+                    View the final document
+                </a>
+            </section>
+
+        </div>
+
+    </article>
+
+    <!-- Or3o Website - Figma --> 
+    <article class="project" data-theme="ux-ui">
+
+        <div class="project-header">
+            <h3>Or3o Website - Figma</h3>
+            <span class="project-category">UX / UI</span>
+        </div>
+
+        <div class="project-preview">
+            <img src="assets/img/portfolio/or3o.png" alt="Preview of the Or3o Figma design">
+            <p>Creation of a website in Figma for the artist Or3o. The website includes an "About" section, a "Shop" section, and a "Concert" section.</p>
+        </div>
+
+        <div class="project-content">
+
+            <section class="media-embed">
+                <iframe src="https://www.youtube.com/embed/TRG72vlBCUY?si=-kLwc7s8ra9-lrSJ" title="Or3o website presentation" frameborder="0" allowfullscreen></iframe>
+            </section>
+
+            <section class="media-gallery">
+                <div class="gallery">
+                    <img src="assets/img/portfolio/or3o.png" alt="Complete Figma design for Or3o">
+                </div>
+            </section>
+
+            <section class="media-links">
+                <a href="assets/download/Site Or3o.pdf" target="_blank">
+                    View the Figma file as PDF
+                </a>
+            </section>
+
+        </div>
+
+    </article>
+
+    <!-- Jinx Bomb -->
+    <article class="project" data-theme="modelisation">
+
+        <div class="project-header">
+            <h3>Jinx Bomb</h3>
+            <span class="project-category">3D Modeling</span>
+        </div>
+
+        <div class="project-preview">
+            <img src="assets/img/portfolio/3d_rendu2_m.png" alt="Jinx bomb">
+            <p>3D modeling of a bomb from the League of Legends universe. A weapon belonging to the character Jinx.</p>
+        </div>
+
+        <div class="project-content">
+
+            <section class="media-info">
+                <ul>
+                    <li><strong>Date:</strong> December 2022</li>
+                </ul>
+            </section>
+
+            <section class="media-text">
+                <p>This 3D model showcases a bomb from the League of Legends universe, a weapon belonging to the character Jinx. The model was created using Blender.</p>
+            </section>
+
+            <section class="media-gallery">
+                <div class="gallery">
+                    <img src="assets/img/portfolio/3d_rendu.png" alt="Jinx bomb render image (Arcane) angle 1">
+                    <img src="assets/img/portfolio/3d_rendu2.png" alt="Jinx bomb render image (Arcane) angle 2">
+                </div>
+            </section>
+
+        </div>
+
+    </article>
+
+    <!-- Omniversus -->
+    <article class="project" data-theme="ux-ui">
+
+        <div class="project-header">
+            <h3>Omniversus</h3>
+            <span class="project-category">UX / UI</span>
+        </div>
+
+        <div class="project-preview">
+            <img src="assets/img/portfolio/omniversus.png" alt="Omniversus project preview">
+            <p>Creation of a mobile video game prototype in Figma in 3 hours, inspired by Multiversus but as a card game.</p>
+        </div>
+
+        <div class="project-content">
+
+            <section class="media-gallery">
+                <div class="gallery">
+                    <iframe src="https://www.youtube.com/embed/Nc-OSfFKBGc?si=bg-Z_edX5Wa-977e" title="Omniversus project presentation" frameborder="0" allowfullscreen></iframe>
+                    <img src="assets/img/portfolio/omniversus-ensemble.png" alt="Overview of the Figma pages for the Omniversus project">
+                </div>
+            </section>
+
+        </div>
+
+    </article>
+
+    <!-- Animal Crossing and the pandemic -->
+    <article class="project" data-theme="video">
+
+        <div class="project-header">
+            <h3>Animal Crossing and the pandemic</h3>
+            <span class="project-category">Video</span>
+        </div>
+
+        <div class="project-preview">
+            <img src="assets/img/portfolio/animal_crossing.png" alt="Report poster about Animal Crossing and the pandemic">
+            <p>Video report about the impact of Animal Crossing during the pandemic, created by a group of students as part of an audiovisual course.</p>
+        </div>
+
+        <div class="project-content">
+
+            <section class="media-info">
+                <ul>
+                    <li><strong>Group members:</strong>
+                        <a href="https://www.linkedin.com/in/lylianfaucon/" target="_blank">Lylian FAUCON</a>,
+                        <a href="https://www.linkedin.com/in/martin-fauvel/" target="_blank">Martin FAUVEL</a>,
+                        <a href="https://www.linkedin.com/in/eva-guedin/" target="_blank">Eva GUEDIN</a>
+                    </li>
+                    <li><strong>Date:</strong> December 2022</li>
+                </ul>
+            </section>
+
+            <section class="media-links">
+                <a href="https://youtu.be/o2ht2GWdQD0" target="_blank" class="btn btn-primary">
+                    🎬 Watch the video
+                </a>
+            </section>
+
+        </div>
+
+    </article>
+
+    <!-- Dashboard -->
+    <article class="project" data-theme="ux-ui">
+
+        <div class="project-header">
+            <h3>Dashboard</h3>
+            <span class="project-category">UX / UI</span>
+        </div>
+
+        <div class="project-preview">
+            <img src="assets/img/portfolio/site_303_min.jpg" alt="Interactive dashboard showing the pandemic situation with dynamic graphs">
+            <p>Creation of an interactive dashboard displaying graphs about the pandemic situation in the Drôme region, connected to a database.</p>
+        </div>
+
+        <div class="project-content">
+
+            <section class="media-text">
+                <p>The goal of this project was to create a dashboard showing the pandemic situation in the Drôme department. Users can view different statistics through interactive graphs created from dynamic data.</p>
+                <p>The website was designed to learn how to interact with a database, integrating interactive graphs and regularly updated data. It is only accessible to IUT members for educational purposes.</p>
+                <p>Among the included graphs, we followed the requirement of presenting at least 4 different types, including one graph that had not been covered in class, in order to add an innovative touch to the project.</p>
+            </section>
+
+            <section class="media-gallery">
+                <div class="gallery">
+                    <img src="assets/img/portfolio/site_303_min2.jpg" alt="Example of a graph displayed in the dashboard">
+                    <img src="assets/img/portfolio/site_303_min3.jpg" alt="Another dynamic graph from the dashboard">
+                    <img src="assets/img/portfolio/site_303.jpg" alt="Dashboard presentation from another perspective">
+                </div>
+            </section>
+
+        </div>
+
+    </article>
+
+    <!-- MMI Pictograms -->
+    <article class="project" data-theme="graphisme">
+
+        <div class="project-header">
+            <h3>MMI Pictograms</h3>
+            <span class="project-category">Graphic Design</span>
+        </div>
+
+        <div class="project-preview">
+            <img src="assets/img/portfolio/crea_graph_affiche_m.jpg" alt="Poster with MMI pictograms">
+            <p>Creation of pictograms representing the following fields: Programming, Web, Graphic Design, 3D Creation, Motion Design and Communication. Presented on an A1 poster with mockups showing their placement within the department.</p>
+        </div>
+
+        <div class="project-content">
+
+            <section class="media-gallery">
+                <div class="gallery">
+                    <img src="assets/img/portfolio/crea_grapg_picto.gif" alt="Pictogram GIF">
+                    <img src="assets/img/portfolio/crea_graph_mont_3.jpg" alt="Pictogram mockup on walls">
+                    <img src="assets/img/portfolio/crea_graph_mont_2.jpg" alt="Pictogram mockup on walls">
+                    <img src="assets/img/portfolio/crea_graph_mont_1.jpg" alt="Pictogram mockup on walls">
+                </div>
+            </section>
+
+        </div>
+
+    </article>
+
+    <!-- Emotes for OpacityPST -->
+    <article class="project" data-theme="dessin">
+
+        <div class="project-header">
+            <h3>Emotes for OpacityPST</h3>
+            <span class="project-category">Drawing</span>
+        </div>
+
+        <div class="project-preview">
+            <img src="assets/img/portfolio/emote_m.png" alt="OpacityPST emote">
+            <p>Creation of emotes for streamer OpacityPST to enhance his Twitch streams.</p>
+        </div>
+
+        <div class="project-content">
+
+            <section class="media-links">
+                <a href="https://www.twitch.tv/opacitypst" target="_blank" class="btn btn-primary">
+                    🎮 Watch on Twitch
+                </a>
+            </section>
+
+            <section class="media-text">
+                <h5>Created emotes:</h5>
+                <ul>
+                    <li><strong>Victory:</strong> Emote featuring a character holding a champagne bottle.</li>
+                    <li><strong>Sleeping:</strong> Emote featuring the character sleeping.</li>
+                    <li><strong>Shrugging:</strong> Emote featuring a character shrugging in a "meh" attitude.</li>
+                </ul>
+            </section>
+
+            <section class="media-gallery">
+                <div class="gallery">
+                    <img src="assets/img/portfolio/emote_champagne.png" alt="Champagne emote">
+                    <img src="assets/img/portfolio/emote_dors.png" alt="Sleeping emote">
+                    <img src="assets/img/portfolio/emote_Meh.png" alt="Shrugging emote">
+                </div>
+            </section>
+
+        </div>
+
+    </article>
+
+    <!-- E.story & Chai à vin -->
+    <article class="project" data-theme="graphisme">
+
+        <div class="project-header">
+            <h3>E.story & Chai à vin</h3>
+            <span class="project-category">Graphic Design</span>
+        </div>
+
+        <div class="project-preview">
+            <img src="assets/img/portfolio/estrory_moyen.png" alt="E.story event logo">
+            <p>An event combining new technologies and Norman history, organized in a former wine cellar in Rouen.</p>
+        </div>
+
+        <div class="project-content">
+
+            <section class="media-links">
+                <a href="assets/img/portfolio/estory_charte_graphique.png" target="_blank" class="btn btn-primary">
+                    📜 View the graphic guidelines
+                </a>
+                <a href="assets/img/portfolio/estory_flyer_202_page-0001.jpg" target="_blank" class="btn btn-secondary">
+                    📰 View the flyer
+                </a>
+            </section>
+
+        </div>
+
+    </article>
+
+    <!-- MMI Foundry -->
+    <article class="project" data-theme="graphisme">
+
+        <div class="project-header">
+            <h3>MMI Foundry</h3>
+            <span class="project-category">Graphic Design</span>
+        </div>
+
+        <div class="project-preview">
+            <img src="assets/img/portfolio/logo_moyen_min.jpg" alt="MMI Foundry logo">
+            <p>Creation of a logo available in three formats (large, medium, small), as well as a poster and various mockups showcasing the visual identity on different supports.</p>
+        </div>
+
+        <div class="project-content">
+
+            <section class="media-links">
+                <a href="assets/img/portfolio/affiche_foundry.jpg" target="_blank" class="btn btn-primary">
+                    View the poster 🎨
+                </a>
+            </section>
+
+        </div>
+
+    </article>
+
+    <!-- Film noir -->
+    <article class="project" data-theme="video">
+
+        <div class="project-header">
+            <h3>Film noir</h3>
+            <span class="project-category">Video</span>
+        </div>
+
+        <div class="project-preview">
+            <img src="assets/img/portfolio/film_noir.png" alt="Film Noir short film poster">
+            <p>Short film inspired by classic film noir movies. Role: director and prop manager.</p>
+        </div>
+
+        <div class="project-content">
+
+            <section class="media-links">
+                <a href="https://www.youtube.com/watch?v=Y6pFoDfNRxs" target="_blank" class="btn btn-primary">
+                    🎬 Watch the short film
+                </a>
+            </section>
+
+        </div>
+
+    </article>
+
+    <!-- Suki-Burger Food Truck -->
+    <article class="project" data-theme="ux-ui">
+
+        <div class="project-header">
+            <h3>Suki-Burger Food Truck</h3>
+            <span class="project-category">UX / UI</span>
+        </div>
+
+        <div class="project-preview">
+            <img src="assets/img/portfolio/sae105_accueil.jpg" alt="Suki-Burger website homepage">
+            <p>Creation of a food truck concept and a website to represent it. This was my first website.</p>
+        </div>
+
+        <div class="project-content">
+
+            <section class="media-text">
+                <p>This website is no longer online, so screenshots of the different pages are displayed below.</p>
+                <p>The pages presented are: homepage, menu, "where to find us", "about us", partners, and the visual identity elements.</p>
+            </section>
+
+            <section class="media-gallery">
+                <div class="gallery">
+                    <a href="assets/img/portfolio/sae105_accueil.jpg" target="_blank">
+                        <img src="assets/img/portfolio/sae105_accueil.jpg" alt="Suki-Burger website homepage">
+                    </a>
+                    <a href="assets/img/portfolio/sae105_menu.jpg" target="_blank">
+                        <img src="assets/img/portfolio/sae105_menu.jpg" alt="Suki-Burger menu page">
+                    </a>
+                    <a href="assets/img/portfolio/sae105_ou.jpg" target="_blank">
+                        <img src="assets/img/portfolio/sae105_ou.jpg" alt="'Where to find us' Suki-Burger page">
+                    </a>
+                    <a href="assets/img/portfolio/sae105_a_propos.jpg" target="_blank">
+                        <img src="assets/img/portfolio/sae105_a_propos.jpg" alt="'About us' Suki-Burger page">
+                    </a>
+                    <a href="assets/img/portfolio/sae105_partenaires.jpg" target="_blank">
+                        <img src="assets/img/portfolio/sae105_partenaires.jpg" alt="Suki-Burger partners page">
+                    </a>
+                    <a href="assets/img/portfolio/sae105_logo.png" target="_blank">
+                        <img src="assets/img/portfolio/sae105_logo.png" alt="Suki-Burger logo">
+                    </a>
+                </div>
+            </section>
+
+        </div>
+
+    </article>
+
+    <!-- MMI Promotion Poster -->
+    <article class="project" data-theme="graphisme">
+
+        <div class="project-header">
+            <h3>MMI Promotion Poster</h3>
+            <span class="project-category">Graphic Design</span>
+        </div>
+
+        <div class="project-preview">
+            <img src="assets/img/portfolio/affiche_min.jpg" alt="MMI promotion poster">
+            <p>Poster created to promote the MMI program, featuring a photo and a graphic composition.</p>
+        </div>
+
+        <div class="project-content">
+
+            <section class="media-info">
+                <ul>
+                    <li><strong>Date:</strong> November 2021</li>
+                </ul>
+            </section>
+
+            <section class="media-gallery">
+                <div class="gallery">
+                    <a href="assets/img/portfolio/affiche.jpg" target="_blank">
+                        <img src="assets/img/portfolio/affiche.jpg" alt="BUT MMI program promotion poster">
+                    </a>
+                </div>
+            </section>
+
+            <section class="media-text">
+                <p>This poster was created to promote the MMI program (Multimedia and Internet Professions). I was responsible for taking the photo, making the necessary edits, and creating the final composition to produce an impactful image.</p>
+                <p>The person featured in the photo is <a href="https://www.linkedin.com/in/estebankervran/" target="_blank">Esteban Kervran</a>, an MMI student.</p>
+                <p>Click on the image to open the poster in a new tab.</p>
+            </section>
+
+        </div>
+
+    </article>
+
+    
+</div>
+
+
+</body>
+
+<script>
+
+    function getPageHeight() {
+        const height = Math.max(
+            document.body.scrollHeight,
+            document.body.offsetHeight,
+            document.documentElement.scrollHeight,
+            document.documentElement.offsetHeight
+        );
+
+        console.log("Hauteur page :", height);
+        console.log("Hauteur écran :", window.innerHeight);
+
+        return height;
+    }
 
     function createStars(){
-        const numStars = 250;
-        const container = document.body;
 
-        for (let i=0; i<numStars; i++){
+        const container = document.getElementById("stars-container");
+        const numStars = 1500;
+
+        const pageHeight = getPageHeight();
+
+        for (let i = 0; i < numStars; i++){
+
             let star = document.createElement("div");
             star.classList.add("star");
-            star.style.top = (Math.random() * (window.innerHeight*2)) + "px";
+
+            star.style.top = Math.random() * pageHeight + "px";
             star.style.left = Math.random() * window.innerWidth + "px";
+
             star.style.animationDuration = (Math.random() * 2 + 1) + "s";
-            star.style.width = Math.random() * 11 + "px";
-            star.style.height = star.style.width;
-            star.style.opacity = (Math.random()*100 + 10) + "%";
+
+            const size = Math.random() * 11 + "px";
+            star.style.width = size;
+            star.style.height = size;
+
+            star.style.opacity = Math.random();
+
             star.style.zIndex = -1;
+
             container.appendChild(star);
         }
     }
@@ -786,7 +1179,6 @@
             if (savedTheme.includes("dark")) {
                 theme.setAttribute('href', 'assets/css/dark-style.css');
                 favicon.setAttribute('href','assets/img/icon-d.ico');
-                createStars();
             } else {
                 theme.setAttribute('href', 'assets/css/style.css');
                 favicon.setAttribute('href','assets/img/icon-L.ico');
@@ -796,7 +1188,6 @@
             if (isDarkMode) {
                 theme.setAttribute('href', 'assets/css/dark-style.css');
                 favicon.setAttribute('href','assets/img/icon-d.ico');
-                createStars();
             } else {
                 theme.setAttribute('href', 'assets/css/style.css');
                 favicon.setAttribute('href','assets/img/icon-L.ico');
@@ -820,133 +1211,70 @@
         }, 500);
     });
 
-    // CARDS --------------------
+    document.addEventListener("DOMContentLoaded",()=>{
 
-    document.addEventListener("DOMContentLoaded", function() {
-        const filterButtons = document.querySelectorAll(".filter-btn");
-        const cards = document.querySelectorAll(".card-details");
-        const cardsContainer = document.querySelector(".cards-wrapper");
-        const mediaContainer = document.getElementById("display-media"); // Récupérer la div principale
+        const projects=document.querySelectorAll(".project");
+        const buttons=document.querySelectorAll(".filter-btn");
 
-        // Application du filtre
-        function applyFilter(filter) {
-            cards.forEach(card => {
-                if (filter === "all" || card.getAttribute("data-theme") === filter) {
-                    card.classList.remove("hidden");
-                    setTimeout(() => card.classList.add("active"), 100);
-                } else {
-                    card.classList.remove("active");
-                    setTimeout(() => card.classList.add("hidden"), 500);
-                }
+        projects.forEach(project => {
+            project.addEventListener("click", e => {
+
+                if(e.target.closest("a")) return;
+
+                projects.forEach(other => {
+                    if(other !== project) {
+                        other.classList.remove("open");
+                    }
+                });
+
+                project.classList.toggle("open");
+
+            });
+        });
+
+        buttons.forEach(button => {
+
+            button.addEventListener("click", () => {
+
+                const filter = button.dataset.filter;
+
+                buttons.forEach(btn => btn.classList.remove("active"));
+                button.classList.add("active");
+
+                projects.forEach(project => {
+
+                    const category = project.dataset.theme;
+
+                    if(filter === "all" || category === filter) {
+                        project.style.display = "";
+                    } else {
+                        project.style.display = "none";
+                        project.classList.remove("open");
+                    }
+
+                });
+
             });
 
-            setTimeout(() => {
-                const firstVisibleCard = document.querySelector(".card-details:not(.hidden)");
-                if (firstVisibleCard) {
-                    centerCard(firstVisibleCard);
-                }
-            }, 600);
+        });
+
+        document.querySelector('[data-filter="all"]')?.click();
+
+        });
+
+    window.addEventListener("load", function () {
+
+        const theme = document.getElementById('theme');
+
+        if (!theme) return;
+
+        const currentTheme = theme.getAttribute('href');
+
+        if (currentTheme && currentTheme.includes("dark-style.css")) {
+            createStars();
         }
 
-        // Centrer une carte dans la vue
-        function centerCard(card) {
-            const containerWidth = cardsContainer.offsetWidth;
-            const cardOffset = card.offsetLeft - (containerWidth / 2) + (card.offsetWidth / 2);
-
-            let currentScroll = cardsContainer.scrollLeft;
-            let step = (cardOffset - currentScroll) / 20;
-
-            let animation = setInterval(() => {
-                currentScroll += step;
-                cardsContainer.scrollLeft = currentScroll;
-
-                if (Math.abs(currentScroll - cardOffset) < Math.abs(step)) {
-                    clearInterval(animation);
-                    cardsContainer.scrollLeft = cardOffset;
-                }
-            }, 15);
-        }
-
-        // Gestion des filtres
-        filterButtons.forEach(button => {
-            button.addEventListener("click", function() {
-                filterButtons.forEach(b => b.classList.remove("active"));
-                this.classList.add("active");
-                applyFilter(this.getAttribute("data-filter"));
-            });
-        });
-
-        // Sélection d'une carte
-        cards.forEach(card => {
-            card.addEventListener("click", function() {
-
-                // Mettre à jour le titre et le texte
-                document.getElementById("display-title").textContent = this.getAttribute("data-title");
-                document.getElementById("display-content").textContent = this.getAttribute("data-content");
-                document.getElementById("display-media").textContent = this.getAttribute("display-media");
-
-                mediaContainer.innerHTML = ""; // Nettoyer avant d'ajouter du nouveau contenu
-
-                // Si c'est une vidéo
-                if (this.hasAttribute("data-video-src")) {
-                    const videoSrc = this.getAttribute("data-video-src");
-                    const iframe = document.createElement("iframe");
-                    iframe.width = "100%";
-                    iframe.height = "auto";
-                    iframe.src = videoSrc;
-                    iframe.setAttribute("title", "Vidéo");
-                    iframe.setAttribute("frameborder", "0");
-                    iframe.setAttribute("allow", "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture");
-                    iframe.setAttribute("allowfullscreen", true);
-
-                    mediaContainer.appendChild(iframe);
-                }
-
-                // Si c'est une galerie d’images
-                if (this.hasAttribute("data-images")) {
-                    const images = this.getAttribute("data-images").split(",");
-                    images.forEach(imgSrc => {
-                        const img = document.createElement("img");
-                        img.src = imgSrc;
-                        img.width = 700;
-                        img.classList.add("img-fluid-details");
-                        img.alt = "Image du projet";
-
-                        mediaContainer.appendChild(img);
-                    });
-                }
-
-                centerCard(this);
-            });
-        });
-
-        // Activer "Tout afficher" au chargement
-        applyFilter("all");
     });
+</script>
 
-    document.addEventListener("DOMContentLoaded", function () {
-        const cards = document.querySelectorAll(".card-details");
-        const mediaContainer = document.getElementById("display-media"); // Le conteneur global
-
-        cards.forEach(card => {
-            card.addEventListener("click", function () {
-                const cardMedia = this.querySelector(".display-media"); // Récupère le media de la carte cliquée
-
-                if (cardMedia) {
-                    mediaContainer.innerHTML = ""; // Nettoie le conteneur global
-                    const clonedMedia = cardMedia.cloneNode(true); // Clone le media
-                    clonedMedia.style.display = "block"; // S'assurer qu'il est bien visible
-                    mediaContainer.appendChild(clonedMedia); // L'afficher dans le conteneur global
-                }
-            });
-        });
-    });
-
-    $(document).on("click", '[data-toggle="lightbox"]', function(event) {
-        event.preventDefault();
-        $(this).ekkoLightbox();
-    });
-    </script>
- <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-</body>
 </html>

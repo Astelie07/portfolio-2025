@@ -94,7 +94,7 @@
         if (count < 500) {
         setTimeout(spawnPopup, delay);
         } else {
-          if(!alert("Bravo, c'est cassé ! Il ne reste plus qu'à relancer le site...")){window.location.reload(true);}
+          if(!alert("Great, it's broken! Now all that's left is to relaunch the site !")){window.location.reload(true);}
         }
     }
 

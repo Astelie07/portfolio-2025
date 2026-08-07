@@ -1,18 +1,19 @@
 EN COURS : -----
 
-- mettre à jour : texte + présentation + CV
-- portfolio : à ajouter 	
-	artfight 2026	
+- mettre à jour : CV
 - portfolio / carte 
-	carte rainbow challenge
-	globale game jam
-	Projet Eesi <- serv discord dispo
-	Nanoprojet
-	Omega		<- https://khalerzaad.itch.io/omega
-	entrainement unity (plane)
-	escapausorus
+
+artfight 2026
+maskaboom
+Projet Eesi <- https://fantome-apparent.itch.io/back-to-the-old-house
+
+
 
 A faire : -----
+
+-/* --- Galerie d'images SPECIFICATIONS --- */ - lignes :
+	1834
+	1992
 
 NOTE IMPORTANTE : le transfert de style et lecteur YouTube fonctionnent en build!!!! Ne pas s'inquiéter si inactif lors d'éditions
 
@@ -40,3 +41,4 @@ IDEES + -------------------
 - dialogue si 1min inactivité 
 
 save ---------------------------
+
