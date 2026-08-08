@@ -1795,14 +1795,38 @@ margin-left: 8px;
 /* --- Galerie d'images --- */
 
 /* Galerie en grille */
-.project-content .gallery {
+.project-content .gallery,.project-content .gallery1, .project-content .gallery5{
   display: grid;
-  grid-template-columns: repeat(2, 1fr); 
   gap: 20px;
   margin: 20px 0;
   align-items: start;
   text-align: center;
 }
+
+.project-content .gallery img,.project-content .gallery1 img, .project-content .gallery5 img{
+  max-width: 100%;
+}
+
+.project-content .gallery{
+  grid-template-columns: repeat(2, 1fr); 
+}
+
+.project-content .gallery1{
+  grid-template-columns: repeat(1, 1fr); 
+}
+
+.project-content .gallery4{
+  grid-template-columns: repeat(4, 1fr); 
+}
+
+.project-content .gallery4 img{
+  max-width:24%;
+}
+
+.project-content .gallery5{
+  grid-template-columns: repeat(5, 1fr); 
+}
+
 
 /* Style des éléments individuels */
 .project-content .gallery-item {
@@ -2202,6 +2226,42 @@ margin-left: 8px;
 
 .project.open {
     box-shadow: 0 15px 30px rgba(0,0,0,.25);
+}
+
+/* ========================================================== VISIONNEUR */
+
+#visioneur {
+    display: none;
+    position: fixed;
+    inset: 0;
+    z-index: 1000;
+    background: rgba(0, 0, 0, 0.85);
+    align-items: center;
+    justify-content: center;
+}
+
+.visionneuse {
+    position: relative;
+    max-width: 90vw;
+    max-height: 90vh;
+}
+
+.visionneuse img {
+    display: block;
+    max-width: 90vw;
+    max-height: 90vh;
+    object-fit: contain;
+}
+
+.fermer {
+    position: absolute;
+    top: -40px;
+    right: -10px;
+    border: none;
+    background: none;
+    color: white;
+    font-size: 35px;
+    cursor: pointer;
 }
 
 /* ========================================================== HEADER */
