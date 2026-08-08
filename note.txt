@@ -1,38 +1,22 @@
 EN COURS : -----
 
-- mettre à jour : CV
-- portfolio / carte 
+- ajout sticker
+		-> layton : chapeau layton (L), casquette Luke (D)
+		-> Huepoe = dark -> anneau light ?
 
-artfight 2026
-maskaboom
-Projet Eesi <- https://fantome-apparent.itch.io/back-to-the-old-house
-
-
+- Refaire arbre 
 
 A faire : -----
 
--/* --- Galerie d'images SPECIFICATIONS --- */ - lignes :
-	1834
-	1992
-
 NOTE IMPORTANTE : le transfert de style et lecteur YouTube fonctionnent en build!!!! Ne pas s'inquiéter si inactif lors d'éditions
 
-- refaire video site or3o (si possible)
-- voir si on peut retrouver figma omniversus : video, lien -> meilleure description
 - besoin dans inventaire : jira	
 - ajout stickers 
-	- huepoe - dark : Pamela ? Hollow knight charm ? Hollow knight grum ?
-	Huepoe = dark -> anneau light ?
-		
-	- ajout sticker d & l à voir(à la place d'ocarinea)
-		-> layton : chapeau layton (L), casquette Luke (D)
 	- nvx sticker (bonus)					<- seulement si temps + place
 		-> Hades : L : Nectar / Heart | D : Obsidienne
 		-> Omori : L : ? | D : Basil's flower's crown	<- ajout something on click ?
 		-> Oneshot : L : Lightbulb | D : Phosphor lantern
 		-> epic mickey : L : pinceau peinture | D : pinceau dissolvant
-			
-- Refaire arbre 
 
 IDEES + -------------------
 
